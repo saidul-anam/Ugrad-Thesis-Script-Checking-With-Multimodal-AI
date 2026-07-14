@@ -19,3 +19,9 @@ The following folders are also included to support development and organization:
 - data/ - Raw or processed datasets
 - docs/ - Additional project documentation
 - tests/ - Test cases and validation scripts
+
+## Team Members
+
+- Shadman
+- Siam
+- Sadhin
