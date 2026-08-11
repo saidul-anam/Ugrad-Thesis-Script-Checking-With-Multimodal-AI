@@ -1,0 +1,72 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans: to the Q. No. 6\n\n|  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  c | h | o | a | e | d | g | i | f | b  |\n\nPesteun was on French scientists. he noticed that many disease are caused by germs and he also found cause for several of them. At first he treated only animals because he didn't want to cause death of any human being.\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 1060,
+     "top_left_y": 344,
+     "bottom_right_x": 1780,
+     "bottom_right_y": 481,
+     "content": "# Ans: to the Q. No. 6",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 615,
+     "bottom_right_x": 2296,
+     "bottom_right_y": 1054,
+     "content": "|  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  c | h | o | a | e | d | g | i | f | b  |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 365,
+     "top_left_y": 1170,
+     "bottom_right_x": 2338,
+     "bottom_right_y": 2262,
+     "content": "Pesteun was on French scientists. he noticed that many disease are caused by germs and he also found cause for several of them. At first he treated only animals because he didn't want to cause death of any human being.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3400,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2029602
+ },
+ "document_annotation": null
+}

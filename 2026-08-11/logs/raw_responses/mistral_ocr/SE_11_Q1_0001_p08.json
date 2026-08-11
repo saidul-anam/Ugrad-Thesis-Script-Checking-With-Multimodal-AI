@@ -1,0 +1,170 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# ~~Ansl~~ Answer of the Question Number-10\n\nJatrabari, Dhaka-1204\n\n27-06-2026\n\nDear Saiful,\n\nAt the beggining of the letter take my salam\nand the best wishes from the core of my heart.\n\nIn your letter you wanted to know\nabout my future plan after I passing\n\nthe HSC Exam. Today I am writing so.\n\nAfter my HSC Exam I will get a lot of\n\nfree time which I am thinking to use\n\nfor freelancing. Freelancing means working\n\nfrom home. There are so many works\n\nwhich can be done in Freelancing. A such\n\nas video editing, graphic design,\n\nAI work and many more other\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 434,
+     "top_left_y": 316,
+     "bottom_right_x": 2065,
+     "bottom_right_y": 474,
+     "content": "# ~~Ansl~~ Answer of the Question Number-10",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 420,
+     "top_left_y": 478,
+     "bottom_right_x": 1281,
+     "bottom_right_y": 594,
+     "content": "Jatrabari, Dhaka-1204",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 422,
+     "top_left_y": 632,
+     "bottom_right_x": 971,
+     "bottom_right_y": 741,
+     "content": "27-06-2026",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 825,
+     "bottom_right_x": 906,
+     "bottom_right_y": 955,
+     "content": "Dear Saiful,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 976,
+     "bottom_right_x": 2440,
+     "bottom_right_y": 1366,
+     "content": "At the beggining of the letter take my salam\nand the best wishes from the core of my heart.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 1317,
+     "bottom_right_x": 2249,
+     "bottom_right_y": 1644,
+     "content": "In your letter you wanted to know\nabout my future plan after I passing",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 420,
+     "top_left_y": 1644,
+     "bottom_right_x": 2274,
+     "bottom_right_y": 1858,
+     "content": "the HSC Exam. Today I am writing so.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 432,
+     "top_left_y": 1851,
+     "bottom_right_x": 2326,
+     "bottom_right_y": 2104,
+     "content": "After my HSC Exam I will get a lot of",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 432,
+     "top_left_y": 2069,
+     "bottom_right_x": 2262,
+     "bottom_right_y": 2283,
+     "content": "free time which I am thinking to use",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 422,
+     "top_left_y": 2252,
+     "bottom_right_x": 2368,
+     "bottom_right_y": 2459,
+     "content": "for freelancing. Freelancing means working",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 432,
+     "top_left_y": 2438,
+     "bottom_right_x": 2326,
+     "bottom_right_y": 2648,
+     "content": "from home. There are so many works",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 444,
+     "top_left_y": 2627,
+     "bottom_right_x": 2418,
+     "bottom_right_y": 2870,
+     "content": "which can be done in Freelancing. A such",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 432,
+     "top_left_y": 2828,
+     "bottom_right_x": 2420,
+     "bottom_right_y": 3056,
+     "content": "as video editing, graphic design,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 439,
+     "top_left_y": 3035,
+     "bottom_right_x": 2257,
+     "bottom_right_y": 3295,
+     "content": "AI work and many more other",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3165440
+ },
+ "document_annotation": null
+}

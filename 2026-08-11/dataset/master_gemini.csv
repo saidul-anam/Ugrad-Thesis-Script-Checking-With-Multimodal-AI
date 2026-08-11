@@ -1,0 +1,619 @@
+script_id,task_id,task_type,question_no,marks,prompt_given,stimulus_data,transcribed_text,text_sent_to_grader,scan_file_reference,page_range,transcription_backend,backend_version,backend_settings,illegible_count,cut_count,struck_count,word_count,run_timestamp,notes
+SE_11_Q1_0001,CHART_001,Graph/Chart,8,10,"Look at the chart. It shows the sources of the USA electricity in 1980. Now, analyse the chart focussing the main aspects. (at least in 80 words)",Chart title: Sources of USA electricity in 1980. Values shown: Coal 46%; Natural gas 24%; Hydro-electric power 16%; Oil 12%; Nuclear 2%.,"The sources of the USA electricity
+in 1980
+
+In the given pie-charet we can see that
+the sources of the USA electricity in
+1980.
+
+In 1980 The main source of generation
+electricity in USA was [struck: 24%] [struck: Natural]
+Coal [struck: gas] which was the highesst 46% of
+the total sources. It was the
+highest demand for generating electricity.
+After that Natural gas the second
+highest option for generating electricity
+which was 24%. Then it was Hydro-
+electric power which was 16% of total.
+12% electricity a was generated from
+oil. A Now the least used one was
+Nuclear only 2%.
+
+So we can make a [struck: col] conclusion that
+they [struck: sued] used so much non-renewal
+energy which are limited in nature. If
+we want to save these natural resource
+we should increase the use of renewable
+enery.
+","The sources of the USA electricity
+in 1980
+
+In the given pie-charet we can see that
+the sources of the USA electricity in
+1980.
+
+In 1980 The main source of generation
+electricity in USA was
+Coal which was the highesst 46% of
+the total sources. It was the
+highest demand for generating electricity.
+After that Natural gas the second
+highest option for generating electricity
+which was 24%. Then it was Hydro-
+electric power which was 16% of total.
+12% electricity a was generated from
+oil. A Now the least used one was
+Nuclear only 2%.
+
+So we can make a conclusion that
+they used so much non-renewal
+energy which are limited in nature. If
+we want to save these natural resource
+we should increase the use of renewable
+enery.
+",SE_11_Q1_0001.pdf,3-4,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,5,139,2026-08-11T11:03:45+00:00,
+SE_11_Q1_0002,CHART_002,Graph/Chart,8,10,"Look at the chart. It shows the sources of the USA electricity in 1980. Now, analyse the chart focussing the main aspects. (at least in 80 words)",Chart title: Sources of USA electricity in 1980. Values shown: Coal 46%; Natural gas 24%; Hydro-electric power 16%; Oil 12%; Nuclear 2%.,"The pie chart illustrates the sources of
+USA electricity in 1980.
+Accroding do the chart, we can see that in 1980
+most percentage of electricity in USA
+comes from burning coal. which rate was
+46% , nearly half of the chart. Natural
+gas consumtion gives second highest
+source for produce electricity, which is
+a. 24%, Moreover, hydro electric power
+plant produce 16% percent electricity
+in USA. Oil and Nuclear power
+plands also a impordand secton to
+supply electricity . which rate is
+respectively 12% and 2%
+From dhe chart, we explore thab coal is dhe most
+powerful sector in USA electricidy supply. Natural gas
+and Hydro-electric power also, play a huge
+role:
+","The pie chart illustrates the sources of
+USA electricity in 1980.
+Accroding do the chart, we can see that in 1980
+most percentage of electricity in USA
+comes from burning coal. which rate was
+46% , nearly half of the chart. Natural
+gas consumtion gives second highest
+source for produce electricity, which is
+a. 24%, Moreover, hydro electric power
+plant produce 16% percent electricity
+in USA. Oil and Nuclear power
+plands also a impordand secton to
+supply electricity . which rate is
+respectively 12% and 2%
+From dhe chart, we explore thab coal is dhe most
+powerful sector in USA electricidy supply. Natural gas
+and Hydro-electric power also, play a huge
+role:
+",SE_11_Q1_0002.pdf,12-13,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,0,112,2026-08-11T11:17:01+00:00,
+SE_11_Q1_0001,LETTER_001,Letter,10,5,Write a letter to your friend describing the future plan after passing HSC Exam.,,"Jatrabari, Dhaka-1204
+27-06-2026
+Dear Saiful,
+At the beggining of the letter take my salam
+and the best wishes from the core of my heart.
+In your letter you wanted to know
+about my future plan after passing
+the Hsc Exam. Today I'm writing so.
+After my Hsc Exam I will get a lot of
+free time which I am thinking to use
+forc freelancing. Freelancing means working
+from home. There are so many works
+which can be done in freelancing. As such
+as video editing, graphe & graphic design,
+AI work and many more othere
+works : It can be time consuming to
+grow in this sector. Moreover, I can earn
+money by doing this which can help me
+to become self-relient.
+No more today. You can also share what you
+will do after the HSC Exam. Hoping to
+hear from you soon.
+You're's ever,
+Kalam
+
+From
+To
+Stamp
+Kalam
+Saiful
+Jatrabari
+Gaibandha
+Dhaka-1204
+Rangpur
+Ans of the Question Number - 1 (A)
+
+a. iii. being displaced lives outside the
+country.
+b. ii. flying objects.
+c. iii. blockade.
+d. i. rushed in large number.
+e. i. coward.
+
+Ans of the Question Number - 1 (B)
+
+a. ans: The writer can't [struck: q] write beautiful
+words about Gaza because he only saw
+poverty, siege and famine.
+b. ans: The writer only saw deprivation
+in every hause, fear, sickness and
+poverty and he [struck: became] became aware
+of it.
+c. The sea is the only thing [struck: wich] which
+helps the author to go around the world.
+
+d. ans: The author go back to the rea reality
+of Gaza. d. and he looks for nice words
+to say but he can't find them.
+
+e. ans: The flies remind the author about
+fighter planes which [struck: makes] made him scared of
+any flying thing.
+","Jatrabari, Dhaka-1204
+27-06-2026
+Dear Saiful,
+At the beggining of the letter take my salam
+and the best wishes from the core of my heart.
+In your letter you wanted to know
+about my future plan after passing
+the Hsc Exam. Today I'm writing so.
+After my Hsc Exam I will get a lot of
+free time which I am thinking to use
+forc freelancing. Freelancing means working
+from home. There are so many works
+which can be done in freelancing. As such
+as video editing, graphe & graphic design,
+AI work and many more othere
+works : It can be time consuming to
+grow in this sector. Moreover, I can earn
+money by doing this which can help me
+to become self-relient.
+No more today. You can also share what you
+will do after the HSC Exam. Hoping to
+hear from you soon.
+You're's ever,
+Kalam
+
+From
+To
+Stamp
+Kalam
+Saiful
+Jatrabari
+Gaibandha
+Dhaka-1204
+Rangpur
+Ans of the Question Number - 1 (A)
+
+a. iii. being displaced lives outside the
+country.
+b. ii. flying objects.
+c. iii. blockade.
+d. i. rushed in large number.
+e. i. coward.
+
+Ans of the Question Number - 1 (B)
+
+a. ans: The writer can't write beautiful
+words about Gaza because he only saw
+poverty, siege and famine.
+b. ans: The writer only saw deprivation
+in every hause, fear, sickness and
+poverty and he became aware
+of it.
+c. The sea is the only thing which
+helps the author to go around the world.
+
+d. ans: The author go back to the rea reality
+of Gaza. d. and he looks for nice words
+to say but he can't find them.
+
+e. ans: The flies remind the author about
+fighter planes which made him scared of
+any flying thing.
+",SE_11_Q1_0001.pdf,8-11,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,4,301,2026-08-11T11:03:45+00:00,
+SE_11_Q1_0002,LETTER_002,Letter,10,5,Write a letter to your friend describing the future plan after passing HSC Exam.,,"27 June 2026
+Faridabad,
+Dhaka-1204
+
+Dear Jarif,
+
+Hope you are well by the grace of Almighty
+In your last letter, you wanted to know about
+my future plan after passing H.S.C. Now I describ
+about it. You know H.S.C is the most prominent
+exam in our country. So In our country. after
+H.S.C all students [struck: t] will take Public University
+admission preparation. My dream is after passing
+hsc exam I will take hardest preparadion
+for my University admission. You know thad,
+from my childhood, I want to be a
+eingineer. and admitted into a Dhaka University
+So, thad's time is dhe most impordand
+momenterm to fallfill my dream.
+I cannot sday in day dreaming. Instead. I
+want to give my best for my own dream.
+No more today. Take care yourself and your
+famaleys.
+
+Yours ever
+Mahin
+
+From:
+Mahin
+Faridabad,
+Dhaka, 1204
+
+To,
+STAMP
+Jarif
+Jigatola
+Dhanmondi-18
+","27 June 2026
+Faridabad,
+Dhaka-1204
+
+Dear Jarif,
+
+Hope you are well by the grace of Almighty
+In your last letter, you wanted to know about
+my future plan after passing H.S.C. Now I describ
+about it. You know H.S.C is the most prominent
+exam in our country. So In our country. after
+H.S.C all students will take Public University
+admission preparation. My dream is after passing
+hsc exam I will take hardest preparadion
+for my University admission. You know thad,
+from my childhood, I want to be a
+eingineer. and admitted into a Dhaka University
+So, thad's time is dhe most impordand
+momenterm to fallfill my dream.
+I cannot sday in day dreaming. Instead. I
+want to give my best for my own dream.
+No more today. Take care yourself and your
+famaleys.
+
+Yours ever
+Mahin
+
+From:
+Mahin
+Faridabad,
+Dhaka, 1204
+
+To,
+STAMP
+Jarif
+Jigatola
+Dhanmondi-18
+",SE_11_Q1_0002.pdf,10-11,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,1,148,2026-08-11T11:17:01+00:00,
+SE_11_Q1_0001,PARA_001,Paragraph,7,10,Answer the following questions and write a paragraph on Artificial Intelligence. a. What is Artificial Intelligence? b. What are the features of AI? c. What are the applications of AI? d. How has AI revolutionized teaching and learning? e. Do you find any threatening aspect in AI?,,"Artificial Intelligence
+
+Artificial Intelligence mostly known as AI
+is a modern technology which contains
+hardware and software and try to do
+tasks like human brain. It is nowadays
+used widely in all sectors like teaching,
+nursing, training etc. Doctors can use
+AI to define any problem presicely. AI
+also can help students at making notes.
+[struck: Free] Freelancers use AI. to do their work
+fast, which saves both time, and enery.
+So, AI is seen in all sectors and it
+is increasing rapidly because of it's
+usefulness. [struck: Which] Some task are time consuming
+and hard AI can easily solve them
+at no time. It [struck: a] has become an
+important part of our daily life.
+Beacuse of AI teaching and learning
+got revolutionized. It can help teacher
+to make gather information about
+any topic it can also make a slide
+which can be used for teaching students.
+AI is very useful for us but it also
+have some threatening aspects such as
+taking peples job, data loss, privecy lack
+and It has become so powerful that
+if anyone uses it for any bad
+work like hacking, it can affect the
+whole m nation. So, we all should use
+this modern technology for the pleasure
+of [struck: manking] mankind.
+","Artificial Intelligence
+
+Artificial Intelligence mostly known as AI
+is a modern technology which contains
+hardware and software and try to do
+tasks like human brain. It is nowadays
+used widely in all sectors like teaching,
+nursing, training etc. Doctors can use
+AI to define any problem presicely. AI
+also can help students at making notes.
+Freelancers use AI. to do their work
+fast, which saves both time, and enery.
+So, AI is seen in all sectors and it
+is increasing rapidly because of it's
+usefulness. Some task are time consuming
+and hard AI can easily solve them
+at no time. It has become an
+important part of our daily life.
+Beacuse of AI teaching and learning
+got revolutionized. It can help teacher
+to make gather information about
+any topic it can also make a slide
+which can be used for teaching students.
+AI is very useful for us but it also
+have some threatening aspects such as
+taking peples job, data loss, privecy lack
+and It has become so powerful that
+if anyone uses it for any bad
+work like hacking, it can affect the
+whole m nation. So, we all should use
+this modern technology for the pleasure
+of mankind.
+",SE_11_Q1_0001.pdf,1-3,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,4,209,2026-08-11T11:03:45+00:00,
+SE_11_Q1_0002,PARA_002,Paragraph,7,10,Answer the following questions and write a paragraph on Artificial Intelligence. a. What is Artificial Intelligence? b. What are the features of AI? c. What are the applications of AI? d. How has AI revolutionized teaching and learning? e. Do you find any threatening aspect in AI?,,"Artificial Intelligence
+
+Artificial Intelligence is called 'AI'
+which means one acts like a human brain.
+when we ask any question it gives us
+correctly answear. It works like human
+brain and recovery their wrong answear.
+Nowdays, AI have many featers. Like
+answear and question, deep learning, Nano
+banana, instant video maker, analysis, create
+istory, photoshop dool etc. For instant moment,
+we take knowledge from 'AI'. If we
+want to write new thoughts it's
+helps us to know about the world.
+Around the world, every coundry, nation
+use AI in dheir daily activities. From
+morning too dill night we use it. when
+indo a m special moment and it remind
+me in time. Moreover. Now days government
+use it in Dhaka droffic systeme and we
+can dake dhe advantage. and our
+droffic condrol system must be beller dhan
+past. In dhe world. we see dhad.
+Albenia declaned first AI health miniten
+and it is dhe first in world whene
+worked as a ministen. Moreover we
+use it, diffenend sector. AI has
+creade a revolutionized teaching
+and loanning. we can ask
+any question in AI and set dhe reply
+in a mument. It's also work a research
+analysist. dhey can know all things with
+AI. It's work like a libary. a where we
+can get dhe [struck: St.] knowledge. we find dhat
+one day 'AI' work in factory. mills and all
+section. It also hampen our human activity
+with wont AI we cannot stay in deep
+thinking.
+","Artificial Intelligence
+
+Artificial Intelligence is called 'AI'
+which means one acts like a human brain.
+when we ask any question it gives us
+correctly answear. It works like human
+brain and recovery their wrong answear.
+Nowdays, AI have many featers. Like
+answear and question, deep learning, Nano
+banana, instant video maker, analysis, create
+istory, photoshop dool etc. For instant moment,
+we take knowledge from 'AI'. If we
+want to write new thoughts it's
+helps us to know about the world.
+Around the world, every coundry, nation
+use AI in dheir daily activities. From
+morning too dill night we use it. when
+indo a m special moment and it remind
+me in time. Moreover. Now days government
+use it in Dhaka droffic systeme and we
+can dake dhe advantage. and our
+droffic condrol system must be beller dhan
+past. In dhe world. we see dhad.
+Albenia declaned first AI health miniten
+and it is dhe first in world whene
+worked as a ministen. Moreover we
+use it, diffenend sector. AI has
+creade a revolutionized teaching
+and loanning. we can ask
+any question in AI and set dhe reply
+in a mument. It's also work a research
+analysist. dhey can know all things with
+AI. It's work like a libary. a where we
+can get dhe knowledge. we find dhat
+one day 'AI' work in factory. mills and all
+section. It also hampen our human activity
+with wont AI we cannot stay in deep
+thinking.
+",SE_11_Q1_0002.pdf,17-19,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,1,245,2026-08-11T11:17:01+00:00,
+SE_11_Q1_0001,STORY_001,Story,9,7,"The following is the beginning of a story. Complete it in your own words and give a proper title. Once a lion was sleeping in a forest. Suddenly a mouse came there. It was, in fact, playing on a race quite happily and didn't notice the sleeping lion. While running, ............",,"Size doesn't Matter
+
+Once a lion was sleeping in a forrest.
+Suddenly a mouse came there. It was,
+in fact, playing on a race quite happily
+and didn't notice the sleeping lion. While
+running, it's [struck: a] sound woke up the lion.
+The lion caught the mouse. The mouse
+got scared and told the lion to an to
+let him free, one day he might ka save
+the lion's life. Hearing this the lion
+laughed and told the mouse that he
+was small how even can he save the
+life of the lion. At last the lion let
+[struck: Freed] the mouse go. One day, in
+the jungle the mouse heard a sound
+he followed the sound and saw
+that the lion was trappen in a net
+which was put there by the hunters.
+He went to the lion and cut the net
+with his sharp [struck: teath] teeth . The lion
+was greatful for him as the mouse
+[struck: have] saved his life .. Then he re
+[struck: the] the lion realised size doesn't matter
+to do any worck.
+","Size doesn't Matter
+
+Once a lion was sleeping in a forrest.
+Suddenly a mouse came there. It was,
+in fact, playing on a race quite happily
+and didn't notice the sleeping lion. While
+running, it's sound woke up the lion.
+The lion caught the mouse. The mouse
+got scared and told the lion to an to
+let him free, one day he might ka save
+the lion's life. Hearing this the lion
+laughed and told the mouse that he
+was small how even can he save the
+life of the lion. At last the lion let
+the mouse go. One day, in
+the jungle the mouse heard a sound
+he followed the sound and saw
+that the lion was trappen in a net
+which was put there by the hunters.
+He went to the lion and cut the net
+with his sharp teeth . The lion
+was greatful for him as the mouse
+saved his life .. Then he re
+the lion realised size doesn't matter
+to do any worck.
+",SE_11_Q1_0001.pdf,5-6,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,5,180,2026-08-11T11:03:45+00:00,
+SE_11_Q1_0002,STORY_002,Story,9,7,"The following is the beginning of a story. Complete it in your own words and give a proper title. Once a lion was sleeping in a forest. Suddenly a mouse came there. It was, in fact, playing on a race quite happily and didn't notice the sleeping lion. While running, ............",,""" [struck: An] A. Lion and [struck: a] Mouse ""
+
+Once a lion was sleeping in a forest.
+Suddenly a mouse came there. It was
+in fact, playing on a race quite happily
+and didn't notice the sleeping lion. while
+running into his body, he entered the Lion
+nose, and this time the lion wake up.
+with his roaring, he told him "" How
+dare youa a tiny creature."" You don't know
+me. why you disturcbed me. Now I will
+kill you""? The mouse reply the faint voic
+thad ""don't kill me!, Lord; I cannot
+see you. I only play outside you,
+I am a diny creadure , if you killed me
+dhat's not fame fort Lord."" The Lion
+reply dhat "" you disturb ' me in my sleep.
+as a diny creadure. You cannot sive me
+proper respect "" The mouse reply dhat
+"" My Lord, please Forgive me, Oneday I will
+help you ."" The Lion laughed and dold dhat
+""You, a diny creadure helped me. Now, I
+forgive you, but ad the next dime be
+careful aboud myself. so away."" The mouse
+danked him and go fan away. On adter
+passing some days . dhe mouse searching
+fon food. in dhe forrest, suddenly, he
+hear something. Then [struck: t] the mouse
+cleanly hear that 'A lion was roaring'
+Then, he so to the place and see
+some unpredicdable. The mouse saw the
+lion and remember the lion who forgive
+him captured in and The mouse told faint voice "" Friend!
+Don't be afraid. I will help. you. as I had
+he so do the net. and cut the net
+with his sharp teeth. Then the lion
+be free. The - lion told that "" Thank you
+my friend. for saving my life. from today
+we are friend""
+",""" A. Lion and Mouse ""
+
+Once a lion was sleeping in a forest.
+Suddenly a mouse came there. It was
+in fact, playing on a race quite happily
+and didn't notice the sleeping lion. while
+running into his body, he entered the Lion
+nose, and this time the lion wake up.
+with his roaring, he told him "" How
+dare youa a tiny creature."" You don't know
+me. why you disturcbed me. Now I will
+kill you""? The mouse reply the faint voic
+thad ""don't kill me!, Lord; I cannot
+see you. I only play outside you,
+I am a diny creadure , if you killed me
+dhat's not fame fort Lord."" The Lion
+reply dhat "" you disturb ' me in my sleep.
+as a diny creadure. You cannot sive me
+proper respect "" The mouse reply dhat
+"" My Lord, please Forgive me, Oneday I will
+help you ."" The Lion laughed and dold dhat
+""You, a diny creadure helped me. Now, I
+forgive you, but ad the next dime be
+careful aboud myself. so away."" The mouse
+danked him and go fan away. On adter
+passing some days . dhe mouse searching
+fon food. in dhe forrest, suddenly, he
+hear something. Then the mouse
+cleanly hear that 'A lion was roaring'
+Then, he so to the place and see
+some unpredicdable. The mouse saw the
+lion and remember the lion who forgive
+him captured in and The mouse told faint voice "" Friend!
+Don't be afraid. I will help. you. as I had
+he so do the net. and cut the net
+with his sharp teeth. Then the lion
+be free. The - lion told that "" Thank you
+my friend. for saving my life. from today
+we are friend""
+",SE_11_Q1_0002.pdf,14-16,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,3,300,2026-08-11T11:17:01+00:00,
+SE_11_Q1_0001,SUMMARY_001,Summary,3,10,"Summarize the following text. Hope"" is the thing with feathers —
+That perches in the soul—
+And sings the tune without the words—
+And never stops — at all—
+And sweetest — in the Gale — is heard —
+And sore must be the storm —
+That could abash the little Bird
+That kept so many warm —
+I've heard it in the chillest land —
+And on the strangest Sea —
+Yet — never — in Extremity,
+It asked a crumb — of me.",,"In the poem Hope is compared with
+bird. Bird alaways flys here and
+there. In the jungle in rain, in
+winter and also in on the strangest
+sea we can hear it. It's singing
+keeps many people warm. Like the
+bird we can find hope anywhere
+in any situation. In our best times
+or on the times where we are
+alone.
+","In the poem Hope is compared with
+bird. Bird alaways flys here and
+there. In the jungle in rain, in
+winter and also in on the strangest
+sea we can hear it. It's singing
+keeps many people warm. Like the
+bird we can find hope anywhere
+in any situation. In our best times
+or on the times where we are
+alone.
+",SE_11_Q1_0001.pdf,15-15,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,0,61,2026-08-11T11:03:45+00:00,
+SE_11_Q1_0002,SUMMARY_002,Summary,3,10,"Summarize the following text. Hope"" is the thing with feathers —
+That perches in the soul—
+And sings the tune without the words—
+And never stops — at all—
+And sweetest — in the Gale — is heard —
+And sore must be the storm —
+That could abash the little Bird
+That kept so many warm —
+I've heard it in the chillest land —
+And on the strangest Sea —
+Yet — never — in Extremity,
+It asked a crumb — of me.",,"The poem 'Hope' illustrades Hope lives in the
+soul and it sings endlessly at the darkest moment
+in the life. It never ask anything return. In the
+storm of life it gives us strength and courage
+Moreover, in the extreme situation of the hope
+give as mental comfort.
+","The poem 'Hope' illustrades Hope lives in the
+soul and it sings endlessly at the darkest moment
+in the life. It never ask anything return. In the
+storm of life it gives us strength and courage
+Moreover, in the extreme situation of the hope
+give as mental comfort.
+",SE_11_Q1_0002.pdf,5-5,gemini,gemini-3.6-flash,"{""model"": ""gemini-3.6-flash"", ""model_version_reported"": ""gemini-3.6-flash"", ""api_mode"": ""vertex_ai_express"", ""temperature"": 0.0, ""max_output_tokens"": 32768, ""top_p"": null, ""supports_prompt"": true, ""prompt_file"": ""ocr_prompt_v1.txt""}",0,0,0,48,2026-08-11T11:17:01+00:00,

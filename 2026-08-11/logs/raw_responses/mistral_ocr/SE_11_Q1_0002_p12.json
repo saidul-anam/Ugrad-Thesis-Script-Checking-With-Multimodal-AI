@@ -1,0 +1,62 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# An: to the Q No. 8\n\nThe pie chart illustrates the sources of USA electricity in 1980.\n\nAccording to the chart, we can see that in 1980 most percentage of electricity in USA comes from burning coal, which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity, which is a 24%. Moreover, hydro electric power plant produce 16% percent electricity in USA. Oil and Nuclear power plants also a important sector to supply electricity, which rate is\n\nCS CamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 981,
+     "top_left_y": 351,
+     "bottom_right_x": 1763,
+     "bottom_right_y": 502,
+     "content": "# An: to the Q No. 8",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 372,
+     "top_left_y": 555,
+     "bottom_right_x": 2204,
+     "bottom_right_y": 948,
+     "content": "The pie chart illustrates the sources of USA electricity in 1980.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 372,
+     "top_left_y": 948,
+     "bottom_right_x": 2388,
+     "bottom_right_y": 3017,
+     "content": "According to the chart, we can see that in 1980 most percentage of electricity in USA comes from burning coal, which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity, which is a 24%. Moreover, hydro electric power plant produce 16% percent electricity in USA. Oil and Nuclear power plants also a important sector to supply electricity, which rate is",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3368,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3474,
+     "content": "CS CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2822802
+ },
+ "document_annotation": null
+}

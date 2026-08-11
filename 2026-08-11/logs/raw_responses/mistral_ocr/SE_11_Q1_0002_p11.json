@@ -1,0 +1,143 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "I cannot stay in day dreaming. Instead, I\nwant to give my best for my own dream.\nNo more today, take care yourself and your\nfamilies.\n\nYours ever\n\nMakin\n\nFrom,\n\nMakin\n\nFaridabad,\n\nDhaka, 1204\n\nTo,\n\nJairif\n\nJigatola\n\nDhanmondi-18\n\nSTAMP\n\nCS CamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 213,
+     "top_left_y": 341,
+     "bottom_right_x": 2172,
+     "bottom_right_y": 1075,
+     "content": "I cannot stay in day dreaming. Instead, I\nwant to give my best for my own dream.\nNo more today, take care yourself and your\nfamilies.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 201,
+     "top_left_y": 1163,
+     "bottom_right_x": 648,
+     "bottom_right_y": 1286,
+     "content": "Yours ever",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 263,
+     "top_left_y": 1303,
+     "bottom_right_x": 499,
+     "bottom_right_y": 1409,
+     "content": "Makin",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 325,
+     "top_left_y": 1567,
+     "bottom_right_x": 561,
+     "bottom_right_y": 1672,
+     "content": "From,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 325,
+     "top_left_y": 1690,
+     "bottom_right_x": 549,
+     "bottom_right_y": 1795,
+     "content": "Makin",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 313,
+     "top_left_y": 1830,
+     "bottom_right_x": 698,
+     "bottom_right_y": 1953,
+     "content": "Faridabad,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 313,
+     "top_left_y": 1971,
+     "bottom_right_x": 698,
+     "bottom_right_y": 2076,
+     "content": "Dhaka, 1204",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1182,
+     "top_left_y": 1637,
+     "bottom_right_x": 1306,
+     "bottom_right_y": 1725,
+     "content": "To,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1182,
+     "top_left_y": 1725,
+     "bottom_right_x": 1380,
+     "bottom_right_y": 1848,
+     "content": "Jairif",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1182,
+     "top_left_y": 1883,
+     "bottom_right_x": 1430,
+     "bottom_right_y": 2006,
+     "content": "Jigatola",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1157,
+     "top_left_y": 2006,
+     "bottom_right_x": 1591,
+     "bottom_right_y": 2111,
+     "content": "Dhanmondi-18",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 1725,
+     "top_left_y": 1584,
+     "bottom_right_x": 1974,
+     "bottom_right_y": 1672,
+     "content": "STAMP",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2011,
+     "top_left_y": 3358,
+     "bottom_right_x": 2420,
+     "bottom_right_y": 3460,
+     "content": "CS CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3122792
+ },
+ "document_annotation": null
+}

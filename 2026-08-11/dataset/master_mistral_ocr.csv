@@ -1,0 +1,785 @@
+script_id,task_id,task_type,question_no,marks,prompt_given,stimulus_data,transcribed_text,text_sent_to_grader,scan_file_reference,page_range,transcription_backend,backend_version,backend_settings,illegible_count,cut_count,struck_count,word_count,run_timestamp,notes
+SE_11_Q1_0001,CHART_001,Graph/Chart,8,10,"Look at the chart. It shows the sources of the USA electricity in 1980. Now, analyse the chart focussing the main aspects. (at least in 80 words)",Chart title: Sources of USA electricity in 1980. Values shown: Coal 46%; Natural gas 24%; Hydro-electric power 16%; Oil 12%; Nuclear 2%.,"# The sources of the USA electricity in 1980
+
+In the given pie-chart we can see that the sources of the USA electricity in 1980.
+
+In 1980 The main source of generation electricity in USA was Coal which was the highest of 46% of
+
+CS CamScanner
+the total sources. It was the highest demand for generating electricity. After that Natural gas the second highest option for generating electricity which was 24%. Then it was Hydro-electric power which was 16% of total. 12% electricity was generated from oil. Now the least used one was Nuclear only 2%. So, we can make a conclusion that they used so much non-renewable energy which are limited in nature. If we want to save these natural resources we should increase the use of renewable energy.
+
+CS
+
+CamScanner
+","# The sources of the USA electricity in 1980
+
+In the given pie-chart we can see that the sources of the USA electricity in 1980.
+
+In 1980 The main source of generation electricity in USA was Coal which was the highest of 46% of
+
+CS CamScanner
+the total sources. It was the highest demand for generating electricity. After that Natural gas the second highest option for generating electricity which was 24%. Then it was Hydro-electric power which was 16% of total. 12% electricity was generated from oil. Now the least used one was Nuclear only 2%. So, we can make a conclusion that they used so much non-renewable energy which are limited in nature. If we want to save these natural resources we should increase the use of renewable energy.
+
+CS
+
+CamScanner
+",SE_11_Q1_0001.pdf,3-4,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,132,2026-08-11T10:35:03+00:00,
+SE_11_Q1_0002,CHART_002,Graph/Chart,8,10,"Look at the chart. It shows the sources of the USA electricity in 1980. Now, analyse the chart focussing the main aspects. (at least in 80 words)",Chart title: Sources of USA electricity in 1980. Values shown: Coal 46%; Natural gas 24%; Hydro-electric power 16%; Oil 12%; Nuclear 2%.,"The pie chart illustrates the sources of USA electricity in 1980.
+
+According to the chart, we can see that in 1980 most percentage of electricity in USA comes from burning coal, which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity, which is a 24%. Moreover, hydro electric power plant produce 16% percent electricity in USA. Oil and Nuclear power plants also a important sector to supply electricity, which rate is
+
+CS CamScanner
+respectively 12% and 2%
+
+From the chart, we explore that coal is the most powerful sector in USA electricity supply. Natural gas and Hydro-electric power also play a huge role:
+
+role:
+
+CS
+
+CamScanner
+","The pie chart illustrates the sources of USA electricity in 1980.
+
+According to the chart, we can see that in 1980 most percentage of electricity in USA comes from burning coal, which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity, which is a 24%. Moreover, hydro electric power plant produce 16% percent electricity in USA. Oil and Nuclear power plants also a important sector to supply electricity, which rate is
+
+CS CamScanner
+respectively 12% and 2%
+
+From the chart, we explore that coal is the most powerful sector in USA electricity supply. Natural gas and Hydro-electric power also play a huge role:
+
+role:
+
+CS
+
+CamScanner
+",SE_11_Q1_0002.pdf,12-13,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,115,2026-08-11T10:35:57+00:00,
+SE_11_Q1_0001,LETTER_001,Letter,10,5,Write a letter to your friend describing the future plan after passing HSC Exam.,,"Jatrabari, Dhaka-1204
+
+27-06-2026
+
+Dear Saiful,
+
+At the beggining of the letter take my salam
+and the best wishes from the core of my heart.
+
+In your letter you wanted to know
+about my future plan after I passing
+
+the HSC Exam. Today I am writing so.
+
+After my HSC Exam I will get a lot of
+
+free time which I am thinking to use
+
+for freelancing. Freelancing means working
+
+from home. There are so many works
+
+which can be done in Freelancing. A such
+
+as video editing, graphic design,
+
+AI work and many more other
+
+CS
+
+CamScanner
+works. It can be time consuming to grow in this sector. Moreover, I can earn money by doing this which can help me to become self-reliant.
+
+No more today. You can also share what you will do after the HSC Exam. Hoping to hear from you soon.
+
+Yours ever,
+
+Kalam
+
+|  From | To | Stamp  |
+| --- | --- | --- |
+|  Kalam | Saiful |   |
+|  Jatrabara | Graibandha |   |
+|  Dhaka-1804 | Rangpur |   |
+
+CS
+
+CamScanner
+# Ans of the Question Number-1(A)
+
+a. iii. being displaced lives outside the country.
+b. ii. flying objects.
+c. iii. blockade.
+d. i. rushed in large number.
+e. i. coward.
+
+# Ans of the Question Number-1(B)
+
+a. ans: The writer can't write beautiful words about Gaza because he only saw poverty, siege and famine.
+b. ans: The writer only saw deprivation in every house, fear, sickness and poverty and he became aware of it.
+
+CS
+
+CamScanner
+c. The sea is the only thing which helps the author to go around the world.
+
+d. ans: The author go back to the reality of Gaza. and he looks for nice words to say but he can't find them.
+
+e. ans: The flies remind the author about fighter planes which made him scared of
+
+any flying thing.
+
+CS
+
+CamScanner
+# Ans! Answer of the Question Number-2
+
+Dropping out of school
+
+working in in-law's household
+
+facing dowry-related violence
+
+increasing health risks
+
+lacking information about reproductive health and contraception
+
+losing their mobility
+
+Cap Hall
+
+CS
+
+CamScanner
+","Jatrabari, Dhaka-1204
+
+27-06-2026
+
+Dear Saiful,
+
+At the beggining of the letter take my salam
+and the best wishes from the core of my heart.
+
+In your letter you wanted to know
+about my future plan after I passing
+
+the HSC Exam. Today I am writing so.
+
+After my HSC Exam I will get a lot of
+
+free time which I am thinking to use
+
+for freelancing. Freelancing means working
+
+from home. There are so many works
+
+which can be done in Freelancing. A such
+
+as video editing, graphic design,
+
+AI work and many more other
+
+CS
+
+CamScanner
+works. It can be time consuming to grow in this sector. Moreover, I can earn money by doing this which can help me to become self-reliant.
+
+No more today. You can also share what you will do after the HSC Exam. Hoping to hear from you soon.
+
+Yours ever,
+
+Kalam
+
+| From | To | Stamp |
+| --- | --- | --- |
+| Kalam | Saiful | |
+| Jatrabara | Graibandha | |
+| Dhaka-1804 | Rangpur | |
+
+CS
+
+CamScanner
+# Ans of the Question Number-1(A)
+
+a. iii. being displaced lives outside the country.
+b. ii. flying objects.
+c. iii. blockade.
+d. i. rushed in large number.
+e. i. coward.
+
+# Ans of the Question Number-1(B)
+
+a. ans: The writer can't write beautiful words about Gaza because he only saw poverty, siege and famine.
+b. ans: The writer only saw deprivation in every house, fear, sickness and poverty and he became aware of it.
+
+CS
+
+CamScanner
+c. The sea is the only thing which helps the author to go around the world.
+
+d. ans: The author go back to the reality of Gaza. and he looks for nice words to say but he can't find them.
+
+e. ans: The flies remind the author about fighter planes which made him scared of
+
+any flying thing.
+
+CS
+
+CamScanner
+# Ans! Answer of the Question Number-2
+
+Dropping out of school
+
+working in in-law's household
+
+facing dowry-related violence
+
+increasing health risks
+
+lacking information about reproductive health and contraception
+
+losing their mobility
+
+Cap Hall
+
+CS
+
+CamScanner
+",SE_11_Q1_0001.pdf,8-12,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,352,2026-08-11T10:35:03+00:00,
+SE_11_Q1_0002,LETTER_002,Letter,10,5,Write a letter to your friend describing the future plan after passing HSC Exam.,,"27 June 2026
+
+Faridabad,
+
+Dhaka-1204
+
+Dear Jarit,
+
+Hope you are well by the grace of Almighty
+
+In your last letter, you wanted to know about
+
+my future plan after passing H.S.C. Now I described
+
+about it. You know H.S.C is the most prominent
+
+exam in our country, so in our country, after
+
+H.S.C all students & will take Public University
+
+admission preparation. My dream is afterpassing
+
+hsc exam I will take hardest preparation
+
+for my University admission. You know that
+
+from my childhood, I want to be a
+
+engineer and admitted into a Dhaka University
+
+so that's time is the most important
+
+momentum to fulfill my dream.
+
+CS
+
+CamScanner
+I cannot stay in day dreaming. Instead, I
+want to give my best for my own dream.
+No more today, take care yourself and your
+families.
+
+Yours ever
+
+Makin
+
+From,
+
+Makin
+
+Faridabad,
+
+Dhaka, 1204
+
+To,
+
+Jairif
+
+Jigatola
+
+Dhanmondi-18
+
+STAMP
+
+CS CamScanner
+","27 June 2026
+
+Faridabad,
+
+Dhaka-1204
+
+Dear Jarit,
+
+Hope you are well by the grace of Almighty
+
+In your last letter, you wanted to know about
+
+my future plan after passing H.S.C. Now I described
+
+about it. You know H.S.C is the most prominent
+
+exam in our country, so in our country, after
+
+H.S.C all students & will take Public University
+
+admission preparation. My dream is afterpassing
+
+hsc exam I will take hardest preparation
+
+for my University admission. You know that
+
+from my childhood, I want to be a
+
+engineer and admitted into a Dhaka University
+
+so that's time is the most important
+
+momentum to fulfill my dream.
+
+CS
+
+CamScanner
+I cannot stay in day dreaming. Instead, I
+want to give my best for my own dream.
+No more today, take care yourself and your
+families.
+
+Yours ever
+
+Makin
+
+From,
+
+Makin
+
+Faridabad,
+
+Dhaka, 1204
+
+To,
+
+Jairif
+
+Jigatola
+
+Dhanmondi-18
+
+STAMP
+
+CS CamScanner
+",SE_11_Q1_0002.pdf,10-11,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,150,2026-08-11T10:35:57+00:00,
+SE_11_Q1_0001,PARA_001,Paragraph,7,10,Answer the following questions and write a paragraph on Artificial Intelligence. a. What is Artificial Intelligence? b. What are the features of AI? c. What are the applications of AI? d. How has AI revolutionized teaching and learning? e. Do you find any threatening aspect in AI?,,"## Artificial Intelligence
+
+Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain. It is nowadays used widely in all sectors like teaching, nursing, training etc. Doctors can use AI to define any problem precisely. AI also can help students at making notes. Freelancers use AI to do their work fast, which saves both time, and energy. So, AI is seen in all sectors and it is increasing rapidly because of it's
+
+CS
+
+CamScanner
+usefulness. Some task are time consuming and hard AI can easily solve them at no time. It has become an important part of our daily life. Because of AI teaching and learning got revolutionized. It can help teachers to gather information about any topic it can also make a slide which can be used for teaching students. AI is very useful for us but it also have some threatening aspects such as taking peoples job, data loss, privacy, lack and it has become so powerful that if anyone uses it for any bad
+
+CS CamScanner
+3 work like hacking it can affect the whole nation. So, we all should use this modern technology for the pleasure of mankind.
+","## Artificial Intelligence
+
+Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain. It is nowadays used widely in all sectors like teaching, nursing, training etc. Doctors can use AI to define any problem precisely. AI also can help students at making notes. Freelancers use AI to do their work fast, which saves both time, and energy. So, AI is seen in all sectors and it is increasing rapidly because of it's
+
+CS
+
+CamScanner
+usefulness. Some task are time consuming and hard AI can easily solve them at no time. It has become an important part of our daily life. Because of AI teaching and learning got revolutionized. It can help teachers to gather information about any topic it can also make a slide which can be used for teaching students. AI is very useful for us but it also have some threatening aspects such as taking peoples job, data loss, privacy, lack and it has become so powerful that if anyone uses it for any bad
+
+CS CamScanner
+3 work like hacking it can affect the whole nation. So, we all should use this modern technology for the pleasure of mankind.
+",SE_11_Q1_0001.pdf,1-3,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,205,2026-08-11T10:35:03+00:00,
+SE_11_Q1_0002,PARA_002,Paragraph,7,10,Answer the following questions and write a paragraph on Artificial Intelligence. a. What is Artificial Intelligence? b. What are the features of AI? c. What are the applications of AI? d. How has AI revolutionized teaching and learning? e. Do you find any threatening aspect in AI?,,"# ""Artificial Intelligence""
+
+Artificial Intelligence is called 'AI'
+
+which acts like a human brain.
+
+when we ask any question it gives us
+
+correctly answer. It works like human
+
+brain and recovery their wrong answer.
+
+Nowadays, AI have many features. Like
+
+answer and question, deep learning, Nano
+
+banana, instant video maker, analysis, create
+
+istory, photoshop tool etc. For instant moment,
+
+we take knowledge from 'AI'. If we
+
+want to write new thoughts it's
+
+helps us to know about the world.
+
+CS
+
+CamScanner
+Around the world, every country, nation
+
+age AI in their daily activities. From
+
+morning too till night we use it when set
+
+into a special moment and it remind
+
+me in time. Moreover, Nowadays government
+
+use it in Dhaka traffic systems and we
+
+can take the advantage and our
+
+traffic control system must be better than
+
+past. In the world, we see that
+
+'Albenia' declared first AI healthminiter
+
+and it is the first in world where
+
+worked as a minister. Moreover we
+
+use it different sector. AI has
+
+create a revolutionized teaching
+
+and learning. we can ask
+
+CS
+
+CamScanner
+JUN 2023
+
+any question in AI and set the reply in a moment. It's also work a research analysis. They can know all things with AI. It's work like a library, where we can get the knowledge, we find that one day 'AI' work in factory, mills and all sector. It also hampers our human activity with work AI we cannot stay in deep thinking.
+
+CS CamScanner
+","# ""Artificial Intelligence""
+
+Artificial Intelligence is called 'AI'
+
+which acts like a human brain.
+
+when we ask any question it gives us
+
+correctly answer. It works like human
+
+brain and recovery their wrong answer.
+
+Nowadays, AI have many features. Like
+
+answer and question, deep learning, Nano
+
+banana, instant video maker, analysis, create
+
+istory, photoshop tool etc. For instant moment,
+
+we take knowledge from 'AI'. If we
+
+want to write new thoughts it's
+
+helps us to know about the world.
+
+CS
+
+CamScanner
+Around the world, every country, nation
+
+age AI in their daily activities. From
+
+morning too till night we use it when set
+
+into a special moment and it remind
+
+me in time. Moreover, Nowadays government
+
+use it in Dhaka traffic systems and we
+
+can take the advantage and our
+
+traffic control system must be better than
+
+past. In the world, we see that
+
+'Albenia' declared first AI healthminiter
+
+and it is the first in world where
+
+worked as a minister. Moreover we
+
+use it different sector. AI has
+
+create a revolutionized teaching
+
+and learning. we can ask
+
+CS
+
+CamScanner
+JUN 2023
+
+any question in AI and set the reply in a moment. It's also work a research analysis. They can know all things with AI. It's work like a library, where we can get the knowledge, we find that one day 'AI' work in factory, mills and all sector. It also hampers our human activity with work AI we cannot stay in deep thinking.
+
+CS CamScanner
+",SE_11_Q1_0002.pdf,17-19,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,247,2026-08-11T10:35:57+00:00,
+SE_11_Q1_0001,STORY_001,Story,9,7,"The following is the beginning of a story. Complete it in your own words and give a proper title. Once a lion was sleeping in a forest. Suddenly a mouse came there. It was, in fact, playing on a race quite happily and didn't notice the sleeping lion. While running, ............",,"# Size doesn't Matter
+
+Once a lion was sleeping in a forest.
+
+Suddenly a mouse came there. It was,
+
+in fact, playing on a race quite happily
+
+and didn't notice the sleeping lion. While
+
+running, it's sound woke up the lion.
+
+The lion caught the mouse. The mouse
+
+got scared and told the lion to go to
+
+let him free, one day he might have save
+
+the lion's life. Hearing this the lion
+
+laughed and told the mouse that he
+
+was small how even can he save the
+
+life of the lion. At last the lion let
+
+free the mouse go. One day, in
+
+CS
+
+CamScanner
+the jungle the mouse heard a sound
+
+he followed the sound and saw
+
+that the lion was troppen in a net
+
+which was put there by the hunters.
+
+He went to the lion and cut the net
+
+with his sharp teeth. The lion
+
+was greatful for him as the mouse
+
+have saved his life. Then he
+
+the lion realised size doesn't matter
+
+to do any work.
+
+CS
+
+CamScanner
+","# Size doesn't Matter
+
+Once a lion was sleeping in a forest.
+
+Suddenly a mouse came there. It was,
+
+in fact, playing on a race quite happily
+
+and didn't notice the sleeping lion. While
+
+running, it's sound woke up the lion.
+
+The lion caught the mouse. The mouse
+
+got scared and told the lion to go to
+
+let him free, one day he might have save
+
+the lion's life. Hearing this the lion
+
+laughed and told the mouse that he
+
+was small how even can he save the
+
+life of the lion. At last the lion let
+
+free the mouse go. One day, in
+
+CS
+
+CamScanner
+the jungle the mouse heard a sound
+
+he followed the sound and saw
+
+that the lion was troppen in a net
+
+which was put there by the hunters.
+
+He went to the lion and cut the net
+
+with his sharp teeth. The lion
+
+was greatful for him as the mouse
+
+have saved his life. Then he
+
+the lion realised size doesn't matter
+
+to do any work.
+
+CS
+
+CamScanner
+",SE_11_Q1_0001.pdf,5-6,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,174,2026-08-11T10:35:03+00:00,
+SE_11_Q1_0002,STORY_002,Story,9,7,"The following is the beginning of a story. Complete it in your own words and give a proper title. Once a lion was sleeping in a forest. Suddenly a mouse came there. It was, in fact, playing on a race quite happily and didn't notice the sleeping lion. While running, ............",,"C. A. Lion and C. Mouse
+
+Once a lion was sleeping in a forest.
+
+Suddenly a mouse came there. It was
+
+in fact, playing on a race quite happily
+
+and didn't notice the sleeping lion. while
+
+running into his body, he entered the lion
+
+nose, and this time the lion wake up.
+
+with his roaring, he told him ""How
+
+dare you a tiny creature,"" You don't know
+
+me. why you disturbed me. Now I will
+
+tell you."" The mouse reply the faint voice
+
+that ""don't kill me! Lord; I cannot
+
+see you. I only play outside you,
+
+CS
+
+CamScanner
+I am a tiny creature, if you killed me
+that's not fame for Lord."" The Lion
+reply that ""you disturb me in my sleep.
+as a tiny creature. you cannot give me
+proper respect."" The mouse reply that
+""My Lord, please forgive me. One day I will
+help you."" The Lion laughed and told that
+""You, a tiny creature helped me. Now, I
+forgive you, but at the next time be
+careful about myself, so away."" The mouse
+lanked him and go far away. an other
+passing some days. the mouse searching
+for food. in the forest. suddenly. he
+
+CS
+
+CamScanner
+hear something. Then the mouse clearly hear that ""A lion was roaring"" Then, he go to the place and see some unpredictable. The mouse saw the lion and remember the lion who forgive him. The mouse told faint voice ""Friend! Don't be afraid, I will help you, at that he go to the net, and cut the net with his sharp teeth. Then the lion be free. The lion told that ""Thank you my friend for saving my life from today we are friend""
+
+CS
+
+CamScanner
+","C. A. Lion and C. Mouse
+
+Once a lion was sleeping in a forest.
+
+Suddenly a mouse came there. It was
+
+in fact, playing on a race quite happily
+
+and didn't notice the sleeping lion. while
+
+running into his body, he entered the lion
+
+nose, and this time the lion wake up.
+
+with his roaring, he told him ""How
+
+dare you a tiny creature,"" You don't know
+
+me. why you disturbed me. Now I will
+
+tell you."" The mouse reply the faint voice
+
+that ""don't kill me! Lord; I cannot
+
+see you. I only play outside you,
+
+CS
+
+CamScanner
+I am a tiny creature, if you killed me
+that's not fame for Lord."" The Lion
+reply that ""you disturb me in my sleep.
+as a tiny creature. you cannot give me
+proper respect."" The mouse reply that
+""My Lord, please forgive me. One day I will
+help you."" The Lion laughed and told that
+""You, a tiny creature helped me. Now, I
+forgive you, but at the next time be
+careful about myself, so away."" The mouse
+lanked him and go far away. an other
+passing some days. the mouse searching
+for food. in the forest. suddenly. he
+
+CS
+
+CamScanner
+hear something. Then the mouse clearly hear that ""A lion was roaring"" Then, he go to the place and see some unpredictable. The mouse saw the lion and remember the lion who forgive him. The mouse told faint voice ""Friend! Don't be afraid, I will help you, at that he go to the net, and cut the net with his sharp teeth. Then the lion be free. The lion told that ""Thank you my friend for saving my life from today we are friend""
+
+CS
+
+CamScanner
+",SE_11_Q1_0002.pdf,14-16,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,286,2026-08-11T10:35:57+00:00,
+SE_11_Q1_0001,SUMMARY_001,Summary,3,10,"Summarize the following text. Hope"" is the thing with feathers —
+That perches in the soul—
+And sings the tune without the words—
+And never stops — at all—
+And sweetest — in the Gale — is heard —
+And sore must be the storm —
+That could abash the little Bird
+That kept so many warm —
+I've heard it in the chillest land —
+And on the strangest Sea —
+Yet — never — in Extremity,
+It asked a crumb — of me.",,"In the poem Hope is compared with bird. Bird always flys here and there. In the jungle in rain, in winter and also in on the strangest sea we can hear it. It's singing keeps many people warm. Like the bird we can find hope anywhere in any situation. In our best times or on the times where we are alone.
+
+CS CamScanner
+","In the poem Hope is compared with bird. Bird always flys here and there. In the jungle in rain, in winter and also in on the strangest sea we can hear it. It's singing keeps many people warm. Like the bird we can find hope anywhere in any situation. In our best times or on the times where we are alone.
+
+CS CamScanner
+",SE_11_Q1_0001.pdf,15-15,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,63,2026-08-11T10:35:03+00:00,
+SE_11_Q1_0002,SUMMARY_002,Summary,3,10,"Summarize the following text. Hope"" is the thing with feathers —
+That perches in the soul—
+And sings the tune without the words—
+And never stops — at all—
+And sweetest — in the Gale — is heard —
+And sore must be the storm —
+That could abash the little Bird
+That kept so many warm —
+I've heard it in the chillest land —
+And on the strangest Sea —
+Yet — never — in Extremity,
+It asked a crumb — of me.",,"The poem 'Hope' illustrates Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return. In the storm of life it gives us strength and courage. Moreover, in the extreme situation of the hope she is mental comfort.
+
+CS
+
+CamScanner
+","The poem 'Hope' illustrates Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return. In the storm of life it gives us strength and courage. Moreover, in the extreme situation of the hope she is mental comfort.
+
+CS
+
+CamScanner
+",SE_11_Q1_0002.pdf,5-5,mistral_ocr,mistral-ocr-latest,"{""model"": ""mistral-ocr-latest"", ""model_version_reported"": ""mistral-ocr-latest"", ""supports_prompt"": false, ""note"": ""OCR API accepts no transcription instructions; defaults used""}",0,0,0,50,2026-08-11T10:35:57+00:00,

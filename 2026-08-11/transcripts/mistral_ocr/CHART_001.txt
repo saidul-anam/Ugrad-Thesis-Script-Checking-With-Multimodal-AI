@@ -1,0 +1,12 @@
+# The sources of the USA electricity in 1980
+
+In the given pie-chart we can see that the sources of the USA electricity in 1980.
+
+In 1980 The main source of generation electricity in USA was Coal which was the highest of 46% of
+
+CS CamScanner
+the total sources. It was the highest demand for generating electricity. After that Natural gas the second highest option for generating electricity which was 24%. Then it was Hydro-electric power which was 16% of total. 12% electricity was generated from oil. Now the least used one was Nuclear only 2%. So, we can make a conclusion that they used so much non-renewable energy which are limited in nature. If we want to save these natural resources we should increase the use of renewable energy.
+
+CS
+
+CamScanner

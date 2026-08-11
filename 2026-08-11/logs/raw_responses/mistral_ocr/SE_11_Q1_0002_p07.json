@@ -1,0 +1,62 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans: do the Q No. 5\n\na) need\nb) peace\nc) food\nd) healthy\ne) educated\nf) healthy\ng) gives\nh) teaches\ni) best\nj) positive\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 854,
+     "top_left_y": 358,
+     "bottom_right_x": 1564,
+     "bottom_right_y": 502,
+     "content": "# Ans: do the Q No. 5",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 241,
+     "top_left_y": 615,
+     "bottom_right_x": 700,
+     "bottom_right_y": 2195,
+     "content": "a) need\nb) peace\nc) food\nd) healthy\ne) educated\nf) healthy\ng) gives\nh) teaches\ni) best\nj) positive",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 1731017
+ },
+ "document_annotation": null
+}

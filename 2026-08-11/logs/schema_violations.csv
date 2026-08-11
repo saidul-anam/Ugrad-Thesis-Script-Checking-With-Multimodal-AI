@@ -1,0 +1,2 @@
+timestamp,task_id,run_number,violation_type,detail
+2026-08-11T13:06:16+00:00,SUMMARY_002,1,score_outside_band,"total_score 7.5 outside 'Band 3 (6-7)' range (6, 7)"

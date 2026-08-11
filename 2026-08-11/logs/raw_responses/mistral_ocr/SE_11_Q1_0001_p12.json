@@ -1,0 +1,116 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans! Answer of the Question Number-2\n\nDropping out of school\n\nworking in in-law's household\n\nfacing dowry-related violence\n\nincreasing health risks\n\nlacking information about reproductive health and contraception\n\nlosing their mobility\n\nCap Hall\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 427,
+     "top_left_y": 334,
+     "bottom_right_x": 1984,
+     "bottom_right_y": 485,
+     "content": "# Ans! Answer of the Question Number-2",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 802,
+     "top_left_y": 544,
+     "bottom_right_x": 1579,
+     "bottom_right_y": 710,
+     "content": "Dropping out of school",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 631,
+     "top_left_y": 871,
+     "bottom_right_x": 1837,
+     "bottom_right_y": 1047,
+     "content": "working in in-law's household",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 680,
+     "top_left_y": 1120,
+     "bottom_right_x": 1805,
+     "bottom_right_y": 1307,
+     "content": "facing dowry-related violence",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 740,
+     "top_left_y": 1440,
+     "bottom_right_x": 1663,
+     "bottom_right_y": 1640,
+     "content": "increasing health risks",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 645,
+     "top_left_y": 1714,
+     "bottom_right_x": 2033,
+     "bottom_right_y": 1971,
+     "content": "lacking information about reproductive health and contraception",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 732,
+     "top_left_y": 2241,
+     "bottom_right_x": 1549,
+     "bottom_right_y": 2420,
+     "content": "losing their mobility",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 767,
+     "top_left_y": 2357,
+     "bottom_right_x": 1564,
+     "bottom_right_y": 2705,
+     "content": "Cap Hall",
+     "confidence_scores": null,
+     "type": "signature"
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2799483
+ },
+ "document_annotation": null
+}

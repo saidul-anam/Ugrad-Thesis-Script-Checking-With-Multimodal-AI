@@ -1,0 +1,5 @@
+pymupdf
+python-dotenv
+google-genai
+mistralai
+pyspellchecker

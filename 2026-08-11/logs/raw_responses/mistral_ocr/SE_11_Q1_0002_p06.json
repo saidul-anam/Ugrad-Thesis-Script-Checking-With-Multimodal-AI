@@ -1,0 +1,62 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans: to the Q. No. 4\n\na) allain\nb) why perhaps\nc) why\nd) overconf inspine overcome\ne) inspired\nf) result\ng) discourage\nh) encourage\ni) succeeded\nj) disaster\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 1077,
+     "top_left_y": 334,
+     "bottom_right_x": 1696,
+     "bottom_right_y": 481,
+     "content": "# Ans: to the Q. No. 4",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 442,
+     "top_left_y": 541,
+     "bottom_right_x": 1470,
+     "bottom_right_y": 2009,
+     "content": "a) allain\nb) why perhaps\nc) why\nd) overconf inspine overcome\ne) inspired\nf) result\ng) discourage\nh) encourage\ni) succeeded\nj) disaster",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3368,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3474,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3456,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 1814507
+ },
+ "document_annotation": null
+}

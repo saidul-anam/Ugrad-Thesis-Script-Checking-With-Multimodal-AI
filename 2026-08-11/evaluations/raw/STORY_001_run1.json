@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:05:46 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Story\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": true,\n    \"cap_applied\": false,\n    \"applied_cap_reason\": \"None\",\n    \"structural_notes\": \"Includes a title, smoothly continues the provided stem, maintains logical narrative sequence, and concludes with a clear constructive moral lesson.\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 2,\n    \"structure_format_brevity\": 2,\n    \"language_mechanics\": 1,\n    \"originality_comparisons_paraphrase\": 2,\n    \"total_score\": 7\n  },\n  \"performance_band\": \"Band 3 (6-7)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Spelling errors ('forrest', 'trappen', 'greatful', 'worck')\",\n      \"Phrasing and syntax glitches ('told the lion to an to let him free', 'ka save', 'how even can he save')\",\n      \"Possessive pronoun vs contractions confusion ('it's sound' instead of 'its sound')\"\n    ],\n    \"positive_aspects\": [\n      \"Smooth and logical continuation of the stem prompt\",\n      \"Includes an appropriate title that aligns with the moral outcome\",\n      \"Reaches a complete, positive resolution with an explicit constructive lesson\"\n    ]\n  },\n  \"feedback_summary\": \"The student successfully completes the story following the classic fable storyline. The narrative logic is clear, leading to a satisfying positive resolution and a stated moral. However, frequent minor spelling errors, awkward sentence constructions, and untidy phrasing prevent it from reaching the top marks band. The performance is placed in Band 3 with a score of 7 out of 10.\"\n}",
+      "thought_signature": "AY89a1_EHmy7EtNB2JW_syFG0fdrMuZJqNPRpmI_mSwnvc2wrhDcHki1HKbPY82-OfvwnveLCNE0l1v3x2Hmvn0Gy7qlo3tbC7nCIRaulOBkA3uiOvE7w6Gsi7CVPO9V7EST7JN48zugF2f4CoLRURz_T1f5Z14kI0hK2KgGhrXPan1RmeDMdg5Pnj8iE5aFB5a4reET1V7kiiKXI_xBbSCqWvwN4pRLcRBHFFfU1F5QFRbRKT0gV85fJw1RMS0qXwpiYDnTG1BcHqZyk_6BfX3FfFjyGvlVYKCn8-Nk5DGqotNQ-lfby8zLAsHZaR9kH3Yhhpb5Kqu4hN-IKngJEaeTzN35HUE8IoUIwI-k1hrDGXIsVYEXUaJIOjBSp9tzypVlbmbw62vnwi_mPIW0OB0AphCsaAudZaft3TuvdkpDoJERM3jsWgXMU7HmE9w5n7uKXiIB_3KSEk_Ay_Zy-OqjRgoTYaU1EET2z0jMl-0im3uujte6ITyBqtWanhwtLYbCTQ_t5_9sf4wBRKNPvYxmiC7oIPPtIxi1MRaLuXPf_UvmHyH3AbKkrrH94v-oCUzmHye9phrG9D4M9edCrMXjXuzQjrONLo83-uy7fUJDye_JWcO6-iyDEgf2dwahaozimS-GHNrmVoFUXzV9GOcfNOFIoZ2VXb7lBN-5WGWS15KQKNrp1bHaf4_yHMgPRgHV1wtE_772Wzl62em6vQ8jxtjaUWtR0SNp-MRvzFhoAtstMjA-xFsv03Cdiesy_EgwXpO9Mat04EzqvinRofEUpu3i2mCmGArvKLSHR3_UCbgfrgQQJ-DX2ODZG4wS812K47TR5zbyWyaFyZxgPxDkVjVi2x4DjxXEZxt4ZK_qdJYhbK3yMWae9sEB-Pee-Dd8Sqsz3LysUCekTR03A1zak-v92L2tARU5X0x00SYBvv5gVsv_B_15ljKx281JDDrWxEjIQl6EDsWdZBmbHkJKutEJk2KA1vteiwszwXQTMOaCzYMBsG7uHOu_uLN7Q7hLXjLbpGN6JoA0ht1ofRnAzLgMYiE6xFd1HTeWV8skuFMdsG9t2_3ZPEMxyMKiIOGXXLFwA4B3dIUntMazj8VK57c5XENvNTd2oQThad4gBiwYw-KZ4g4BUoQSQHgRv9Wuh-T72fZkMiFsOf4JX6aGaWrc1iBhss7tYX5L6YQAxQnmKV0Z3k1dGjTrsQg7eReNIxbmznolGtPx-lVhYT1VvEaSP3mw049MjsQZ954q6v2OQo0nvZQTsvxjyrY2qmyP0p4HmzqkcEtpfiUNvEaMmfPEh7uiuTKfoknf74ty7LQjreTvG88_cJFx-pd5eJKEDFQi4G2CQDJnD077XOQJJ4nJNbsrdv607SJAiPrfAxup22T842MRrxoZhuCwIrYu-fxuO7D-9xEc4REg1isVfcAFXNrjhy3wAkFYi8zPNIJVw6gRigRcTslMjONBixqjiekdbEddIG2tIWRsRMMPmjIdH5nNMaHzJdzba0EC54chMOG8gKil9O3JunP4dWgaPcW51pfHh-0ednntx6_cLwEzuSrMBlZF7CDG8UctHvbFQVCY8DcDkvlM07oQJ0htI8leVYtKtvpncmwt_c3Uuy-Co3hs4qeIvssz2fIxjvGY_fK5eWxSeZuHmE6RMJO8eQkIsGmQJKeV51Z2ziha6YpTFwVtalovwHEc2dxFVWK6jb0gASXeW_5346VzXty_jqf4_jpIatuwC4iku1H7c2T1R-24d67Rspl3O28YbK-SKQhVItQS36wSiur_cqICo6BLjwR3RkRHqso5afyF3Qwa5nhOh959OZOdf5UX7CZwF1xOwO-ZrF0RLsvxWr58x_panvZxDy7Su5Gqycq7CEzJA5sDSkGHIos4jLXUaQwDGWqNKYFU6q3xxzvd4QK2bY3MNa48c9_veY1G5YMCnojZzG5vXwspiSTfDRy4jj8jxC0vytNt4_bsu3RXrY9hl9AZm6XyhAqXV9KYtzfTV0kFL05AuGH9xAYgQmLABrAfVwLWQAomN_Nx6F8a-rbpClgL41IyTZpg23bHo24OJWf8xOJ2PInjFgdxn2Hb9F7LdCo8DaRSQM8HaG-o_pGaiI_nSACjGWq--nN-_Z4UgxnaqUsEsr9cKev5RfXA1pRh6H6Ytm5PfX7dPUgOE3NUZeir8Q6Lb3eOfll4n85Bpcqm9vCqgj31wwjL8U9eXgN443cTkO2jl98uAABWJnwf4WFQ5K5zGaLPbZeq6tGRnPwphJohUpe4ZMDGWy9U78XWxrvAZpFqqdpSbWaM8ICDN86AUHYJGbn5Xuf8n_h0QPsCxdLVTaCTZ3GNiEfvgGzftmcvTQi_S5yOh5jPI4jXJff64NLcsQFBUKdkB2WDgwNkmAyJDJTEEwWScVdo9xirj-DvNSYN9tUZHNl_401R9Mo28l7grgorhO8VS1jZBK4-iV1dyomMXLzNuMl5oUEPDSuKBuHYuB1qqCVMXucGiUHTMClHwewPMYFZ8XedYipauJZWJuvon83hs2-TTH_ZOBg4bOQJADXQoOLYVBSDRJXCCWJXBA3NMFMUUMWKB4hZ5om3JQS-c3X1M6ie2kqZyHaXnOp3VUOAITJ8XHlvBp2OFBvFXKBU7nIslUPWQt_KunevlDeaix3tSKulqQt7JO7gmgwO5dCcRVDYQnaLE_FQysaFnJcfFpzV3aBuHc_5RDAupgeqwl3UzmRVEuGC6xSnw_CkuwIObCeEkeKxI4js71eK6HduKWcvWMBeWBX3ROSYX08SMTH5J8e9oyFOatsmUDhU9yezn5GttP7UpGDa_DKLpG_O7Z2ahfkLdqBV6jYRDlV2kNuOZI0Umwwgkpi9diflm7HBYhJiU43KiiOlu39m0dbf6iOopOOiXjjNS4FVlo4qtrCWTEGfaTtD-S1wfEwHqsV3KDToTeDfcwmK1AXzfy07uZtz367D1szdPUiv_rEpY0PgbBmB1l3pfCYGWW5rzFsg1eWtX6XXHjceXwd_ql_9_fIB_NzYVa1BSQWr178XUo5Hf-wuose8Am4pXeQiUqGcWc8Sc_txFm_bHOZmA-p5yxK__0PimcqIR-q1_T30nGOIyXRpmMPB6ERhORx8sOmcevmEq2Og4AljxUr5WS-QvACp_Vqw0vb_pE-AjYQfH-EtAuRwnzL9nXsm6JhIut2tpzcrf6oumZFXuM9GYJLDncaNsto_Dj5nPMBsmDmrfElcFEuUsks08sYM5oh2UJrksxnww1QKw6SMuJgPaLxHzv4U4iqN_oJqJCh11EvAtmO1TGb4JZT2--dGEfiJi16C0ghItLnzKPgmtMVC6cl7Lt49ju6lELaFvMAtUPZFmXaz5sZ5IcFqAdBTAUarYaYV0OZEXZW9e9KDc9jnBE2K1zBhYU5XZRnIMv-3klvCYfQXJAUYcpumAqacFIuB3AYTLGexBpcoKO10ckpFKQsDMwfhlNx-mRwrIlVgAw13uL1Us_qYNyhJPiIfofAjSOL2DFc7vDTX7bdRQLpFs0B2UxUTdms1h0A7AmCeuSr04lCScTZ4QMGFzxIe8j7mP8DADCt7fJ4-M4bAj6oeMrfzjQJ-KGL_YGj-YjgtF0zU0YUyD3Ra1ZLEc71F4urgWkaBWhPfXGZX_pb5VMX_5PCwC6Kg2NLuhzzNTIbEv3mGcbFxFIx_TWmKx9rohrQUAK0ytkvjOMZFoR35Y8mkUfcfwTg0XBuaAYkUAu3duOfCYYzSalZL_9FSXh4uKGkFqMzItCQ6Q7wpQvGkNtgAJX-jjVG9ff4XJzY09j5vP0f8bNeuOGlwsaq2z0PocJSX4hSGn6GBa7ShHPRXmnACQZzlC1SJt8J9hjufHvRWhor_BkkVehZU7obV3omoB1HMH69x0KLwI2LopytIimIwcYBSKbDZ6ncEk_EZWz5nb1x-2dCuR4iGPycdThElaR0ptabmd1wn3-uIxu6bjmVBn7Z-5q8rRMDA8xrVCZpaum_lyllEXuAxoXJavfqMc4F9PIjCRp-rnpZOF-Pin0e5YGEyPs9vB5LCd1AifUhjyQrUvFrKun-0QzaR9bEgV8wyfXGG7omz-8HC9FKn-Ppv6RGMW3meyHrk1xJd4-KIDNIclD1fc1HMjm0u-UnQ3_Nf3jj0tZGppcu6tnao7vI="
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:05:39.241060Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "Ix57aqTbDtmS7PkP1rrU0QY",
+ "usage_metadata": {
+  "candidates_token_count": 442,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 442
+   }
+  ],
+  "prompt_token_count": 3138,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3138
+   }
+  ],
+  "thoughts_token_count": 850,
+  "total_token_count": 4430,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

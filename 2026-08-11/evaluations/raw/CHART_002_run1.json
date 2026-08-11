@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:04:56 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Graph_Chart\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": true,\n    \"cap_applied\": false,\n    \"applied_cap_reason\": \"None\",\n    \"structural_notes\": \"The student follows an objective analytical structure with an introductory sentence, sequential data description, and a concluding overview. No external opinions or unverified facts are introduced.\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 2.5,\n    \"structure_format_brevity\": 2.0,\n    \"language_mechanics\": 1.0,\n    \"originality_comparisons_paraphrase\": 1.5,\n    \"total_score\": 7.0\n  },\n  \"performance_band\": \"Band 3 (6-7)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Spelling and typographical mistakes ('Accroding do', 'dhe', 'thab', 'electricidy', 'plands', 'impordand')\",\n      \"Capitalization and clause linkage after full stops ('...burning coal. which rate was...')\",\n      \"Preposition and infinitive verb construction ('source for produce electricity')\"\n    ],\n    \"positive_aspects\": [\n      \"Accurately reports all 5 data points from the chart (46%, 24%, 16%, 12%, 2%) without distortion.\",\n      \"Uses effective comparative observation ('nearly half of the chart', 'second highest source').\",\n      \"Maintains strict adherence to visual data without including outside knowledge or personal opinions.\"\n    ]\n  },\n  \"feedback_summary\": \"The response successfully presents and compares all essential data points from the chart in a logical structure, including an introductory lead and analytical conclusion. However, noticeable spelling and mechanical errors lower the language precision score. Overall, it achieves a solid Band 3 score.\"\n}",
+      "thought_signature": "AY89a196D6aP-BnuhAWANzcut5aLmqhbenaegaS4JRLSJtvsqqO50tXldvWmDNaDcmN4eH0BahbhQj8N5J3SVsimqZlBcnM6wcganm0APBJE3xy4xA9wn19dylIiK5yk62iwu0nAcqUeXTxgXyWGtwoxNL8-Ole2sguxmptRXSDsJGLX7qM-i9KYlNEtVOmyrs1nkyHnafDBjus7jFN_kEDbF-UAypybH5HZj4epFLj7tQU5INF9yOPj9sBKSZt6Yfqsl4cIDT_fjP8v_jT4f5dGHkgtX1NDgdIy1XaI2oyFvvesWFglQEQ0P74ZM6L_2XIiX1oMzPrd-qqxev5aRqOpqRTjthBzO5w_aKC1zuPRefALIjIK1sjpLPTQ59BO8ldf3pRN7Z_5pa8d3TNHhB8tThbJdJnsFlRPfLMv0pEVVbR-FuisheZVX6blxgVF_K5pn-mM6OxFvq-wiF8ZmdZxeFWl-BjOIA7u4hhLmk_bZjJongjMcVQV66nhlo8rgjg3DnvrNU4yhCy00tK8fOHNMdgJeRjsyoCrqDquER2LXz0yFQgXPPB74sG6rQ0tLd99LXNCVhJ6_IucN5k59S0wEJZZnTLM3fWRPrFr68STgQIW_hYn3tTY26E_gf694_KIlI4nbkAzXB8h-bUV0SILh15ZFQsWSvkrSCbsGTY9kJNNzSKyeNqM7go0huz1mMR4-1GSTeAlLe7cJMyrE_rj4s01In7l3O3KsC1_G2R84icWDJN-lLhsJVpiI8wC9G-GzAXBNKjt5-WuE4aOcRtKqWKQMxXgsw0di_Or9hT7WarqvIQwOucqyyKDJbIxBjpUMkuxuI2almWLADj8MQ7TylZ-yiERNqz-9iLMZsyRaezqWK8i15nB7GOO69wo8FlwtjiqwAurxa2s6WXbF-GkDtW0NDdqtthBwhn8Ser2UnGhuu6tbmCPstDvQJcTtbmbuuL6r73LqHV05JPd_8dyHs2iiEMlwhRurEMN4U42cxQuXRLDq4QcFkAMdAOHzu9_r-7CAtgSEK3069lOSSIh94K1teUHcruUozpa8rjntkqitpMsgQG9PbAmXED1bTLSHblVY-nyNtm-pCadMpvRKmMHV0DCf6t1hOYVndVtOzob1vJ3ybtqZeBVbycwtlMuMEbEnvSEoD_PAV8lBmDnUgkporrtduOQ6nSCaZvV5x75Fu0vl30Dv5AiZMDARDAzPBvECP0LLI9MQ2fqE_rtvksg8oWDrODOrSwsDpuHT1UKWpO50Oc-yzBY6Zo3A8tki8YOReu-1TS5Hu-ZkZ-BtA8oDKc6y7Q6-eDu7VH-c8SqRlapv-06jGp6p7W6NirXW5JVugJV7zob0NTt_GykN_HEq0qbpHdHSDL1YFPUbU_0TqbshO1j2xBYP46D8Lo2NEcR_Zh9rm8Co3WNJCeZaGy_HEkcVoHZ6Dfio05UtNZavKJ-7bqxPw2aKGLb--IoqHcgRRcw3z_q02tO7NkzOP_jqmeX1pMIO1vu7IaK4iuim5dbrpVPqd0oiYsHlQEAOa4hwBKInZZaWFfREfTxImTcV2Q-8Nd4omjlPMHG9KT28HDJU5bjlKwZMJiy-DT3z85rTNuKcRwNvM20XqPwjmXmc8kTsbRY4hV6xTxze12cORfCwAFDQM0MQR4nNbXKnhQBnQvn8dZGqSEc7ztCR2d3F60aLI8Qmg1FvZE-gVqYEP7-Kg7RHz6tLH2BWjrFfn_2T9k-7lVPmIi0X9eLjzxgnxieg_0Jew8OJaJUrSqeXOVsSLDqHN6k3M2rIw0QY2nzbYHhEB7xneNiOJyVLqJcsZJsIAZJIMhXANJVTPcDC3CQiZXzwVkkaTOAWeJNWx1hhvESj7U-6ospwSyodlpkQrjCIcx37uOF_rQqrePaycBpsmZGCHLcDtA9czJ_lFwrxozMiY0ZrM9w6gsXA4-ORr4mho1LMQB-GjyyPc5RYnSJv8ujnG2je3_9aPPMZaqNAFgGNwH46KncS2PEU2dHLTokbqnmjLFYBdnYZLaizhAD_KfzMGau9BFnQz4AfUqzsDr7eNPwTFSn1UQg8lNRDWzCNFSIrccdoLrLKkvkxD40bVqojAiQ0FVptsq1jes6Qz5ZD_6bzL1CSj5qUKqjWJhiboEkYmmEhsdeBSpwX2q9JeQTofXJXEAkrEnW4r4knVxsTUkLIgQF_yo8iD0zgtj7B6hpvsFp6wv9NpkffYfnWGoa-Mz-n9EGUglX5h_9XeVB94b8pp-WimVWj3fLL6m-zoh-NvKysPRI5IQnRw-Ip0xIXnAznDX3uSEEheATgUhhlcLJ0D3yrS5eV47hQoqU9Cv2aOaJMWmZxQSh_U66BllpCVsNVOLkfLtHEHlXo8VEZhSE4KdJ8ApAwj23TVtir0K7nF6Yoc-kHBvfVWJkg7CyU6IMbk47hS0CRZj3Dbvn98sAmVS9_UowZiP4YFuZLoFxNQ46UAs_oTeCWoAp5XdmmIFLpApfgIYN9y0z_MOksZh_OronyypPjV2jTHQOcB8UZfYjO-pQyq5PfZsSR0c7Z8JCSA67sr6WhcOvBA9o-5OTzjQBPSny49iSUujNak2WeBrGkfa3vHmaKu3-be2Fmp4X7NNF667JC2xAHnr47WHu9R2ORDnAwMgGoukdR1b9DxfSwI80egpuJexA8sKib9z0_3VhWYlZ7el5s_IUPDN8o49804C7K3Kta8KUfbeKpmRy6I_E7x5oo61JZTgCLlJwik19ftOmMU4LAag_gywIFcPpoGsC15XoNlGKNF6bpshTOc14jrrAOXFH8KQdZZ0jAKtwPHakREWdVcMk2LFNasmhbUVm2CVzOc4NlCQSOD3_k5UZqjn1dEx8HkeDDuy8JfPqd9CD04avHqo9thIS7rLQkRMUZkIWbfcwfKDWk5_SEnJDWYCbfeROjA9EJ4vjLbXAGlQH63IseFEuEo_8nyk21-tEYpv2QyfPtzctX1DPSpcRxKIEHjhAIhjq1gGeZNYpUA7flfYDomBfjk9OJbfo5rtHL-NIyriep8MsoxHEBqsAa8fyv0xTlGwFgBSkzGy67xEdQ0JB5auoCUgb0E5qSdU85U3Gg2Ob_zArtLGqr1VLZqX2gODHyqAEVdwVcXWKutPmTO2D157O6mZXR0JO3m_zxzjg28CH_ucT9w25ddOtRgShwKFlZv5ZUl-YYsDWoBNeLfNfhcMEn3XS9iYAsO94Snj2n2WOd3l1BztvOHAw0p-lieAn-mN9gKo1T64ZfOwOIZSITnkZeIgNL8s-4OuST70rfGswzNlHRNDp3XBXaarfi8K3VSjGhUtMIcltH67syMRF5pWzLo-C5V7vUSp5XSVn214Vhp08lGBiFolBxSVv8VSO1BWZpHGI4uH0L7uGKL4txi9G6hMDwC4pZZyqIT0yZXr3a51cmkMxNhv4r605XJJ62zcTUbkPJNf9upS0CNmutNdOWC-xW3VN6KZMuDiQrgem2-OUvfFXT0qVpC2PG0bfYNBptcgF63HRUsa6ho05_XzP1Xgy_HQdf5JhyU8JEHiDUcXCLSXaMlpDN_U82MVd3jbOdFTszJrI60MGmO6GgQIUZsPC26K7HrLuEBjSLG2CI-w7ls7-zgdYRLYhr0iPbPi3mKMGmVhCT-HUu8TboWR4bF3eb-02pJfl7EK4WO3UjoOHWWVH55Wa3Y9BwU0mBtoiwdBvYa9R7JXtRg0uHrdpkcz1GULPr5Ic5XCB0kzJVDY8C2FZSr7bT7t4RHCc4myLqxWdzoMkk-bEmwmuz5IZR-ch8VZVjtHcMka3YTfLPExBrIhLrxs00ed-ZviGZa6guCQDfMtwta4F7yvHGXH77ZehXQBBv1TriT3KznF6tsIiOBHrgUvihSbgwxFNmwc682HcZ0veo2JHWHZG-xc1VgHslxybCndaZX3wdTX3Ztlp0uUp4dTgQjAxqSvNKoPGkzoDQrkeNRVChvt12qDnIjtPjNZpGYbbDG4an7271b2X5AsFXG7kikBUerbjJQpw2KjfGgXnX-JKd9eoFMAwfw66J7lx8vkyUGWe6ZBXFbO336EqLBBWgXMKuSBLaG2RnpDkTim5HpBuGs3NUBtRSUgklw6jcIONcxz8F26y_1XOo3Zk74OQ8_Hn5W-vkZunAsPIQLjCexrUK2ejvV33_pyv_wVwO1FTwNYsiVfiOuYfR6L6pY8MfY30JtyIGcZscd5qb5Xe-1KaAOk7bdLZIdo1BOIJwVJ7dPGkPpaJj27uC7aO8VwfFB1NKQUL88Rkxf32DLP421_wUm_u2GCImtFHqsNiuN4r5-RCENYkO994h4v-_E-9qvmECoA_FY412in9KtSyCU2f1HKtmngzOYdsP02zabEgERigtOXkZBG7gS5SXlWiSL04iDo3lEras7OH--Qp5hmXhtp7eLVkbw5JeflNiBdriyLloAWRFZ9BUKYmJqqTAR6eOA3_WjZQSC7lUScFzo_0ur4ljgNer7OelrNBlmEGbMYADE3uLQBxFP61A5liI1wjtEqgSkoOkZ8yDOeBepx8DHivps927YT_1HZ1aVazs2iY3uLIr5Z0LpoRmeOxCaLALDpkf8erkqULjxsBPsZXiD5j_UZMk-_DJvw_kgqjNHdtTkr8r9MRe52dzM7PxiKqgXNrA5W7BAVwrNNrC3OYMhfASHDVfEP1k7UHnJIxaASri1scJS5HiDbogefjek-BWR2BtqH9jpDdSrbU6C0a-j4OsrlnjWqVjYVxqaE3tTQ3LCOxj75SoxDIK92sNclGo4pFyTdLERvXmvQEsCqf_35S9HTlb-7bVGlj3QMQCZWmXbySH0nZ-rI4-C-FXtUAGV533sFZwMmzRQ2CBZrkIilC2uj_pAwzJQup1uYgZRbJr0ch9y4xOwVPcv2Exrc69Tg8PDLWSgXDlQypSHMs-raJtsx8MFybVYrUXd6iH1FexCC_ZS_iwt-g0VKH4IUlgw3uZts6uu_Ax4_eG-7lMjN7cbpOX0vBOVo2t-TN718mEMNCYkowemKiIEVWnl2Nkcz1rErWwgF0ojVjWjwNn4_j7747eRafVmoXubczBh_zj0D9oOS164_V_zff1pO9fqRyrnEPyvEVhMT9g_CrwcLJ6TFzdEHjQ-B9Hnr-RUyEcyGPve_oIGTpfpr1fUbNXEYZk6KiBvKUpT5ZnMlOgNSk7nXwuh8sG8ukOp149D4Ys_5i4h-Eiio8fplojVfKfW34RxWmdq5mPEtHT2-QFGWKvWNNGVbxMo9k3z-SQaE7hHcl57zcQQBmdl8H5dJ0N6Fsjg4GhT6PeaWwkR4_2zN7NaTO041s-AA54QLTFKySTyvcFawL8gaePcR7fLo-UwwFCNe0CRarmbsPGsSHUpNdVjVP1JxL4qXKeJhegaWZq2LkWltvKe_BRlrljIDjaNTHuNxkiW4MOFd3DevE4dtH8zNHKbHpviGI2NWGvqJd_lECA8T-I54zm30NfYDBJ5DvCk6tFsb0ZB3ssS6AnLr_6a1SbajuhUZmQL6RxbDzEM9TZ5mt84FL4maEBNwM1iLL0F9M7pEGk3ZeapDxCnOcorey-yXv7PBldL1Naa1iReZZDNDhwMHIahm6y0bEqr7OoXkQJmYwOJhGrdCS2YDqhdwuUZIImipmfUOLejiuC7SuzOa0XC7-bvJv2cTnlDG8OgSoAcQw_W9Dn0MEcYxU6DlBwbrjm52gxcRWNg2F5GkvAofbXmBGzU_8c6t_kcm56HWlu2vj3RoeiNeb1OMCANSn5ZHdebu2ETafoebECk-0viGaxbI1bXDgRTf6DMV-OSYeHiGhGgJvLBgtsIvTGv3wL_BQbcrxDwQTAibphtrZ4JAdgq-zQw9ydfxinbxRzQ1BpawYgIYbSYabTmz51_wv-WSp6nwGosSjVPmioBfxSwfSc37fY_Gc181n3dB63Kc3uAYFxWUTH2aq8t8TFZeBqHu75XY_F9edevPF7mjLyhmrLhf1iYoUmol37wZBbwvo_FLiwCgei6D_HtHiO2293VpW_tgqIbFTt3ydgWhUJaUVvTkwIa9FEKFal5Ug96jRD9JoOL-5BqEhcafCvaw_iqkuHorZPG-z1iQWtp-s9MwbT81myv_2mdSVN1U4vfC-rPVaLUUOr5hi4KSEhWwuy2zK7fGFFMU7HzpH042pcv9AcnLCuoKekGU0ga8vfkL77STuk2AmqErkZPYm1BJxGekgE2Xd_GTrT1_--ORDqDsAe4OPEmlqqGt_t6jFDxD36hJlHYuVxndujVvs2hoA"
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:04:45.569990Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "7R17aoblIoml7PkPy_TBkA8",
+ "usage_metadata": {
+  "candidates_token_count": 470,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 470
+   }
+  ],
+  "prompt_token_count": 3120,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3120
+   }
+  ],
+  "thoughts_token_count": 1296,
+  "total_token_count": 4886,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

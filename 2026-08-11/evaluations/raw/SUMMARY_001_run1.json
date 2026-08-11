@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:06:08 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Summary\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": true,\n    \"cap_applied\": false,\n    \"applied_cap_reason\": \"None\",\n    \"structural_notes\": \"The summary is written in a single paragraph. Although word count is slightly high relative to the short poem, it does not rely on verbatim copying.\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 2,\n    \"structure_format_brevity\": 1,\n    \"language_mechanics\": 1,\n    \"originality_comparisons_paraphrase\": 1,\n    \"total_score\": 5\n  },\n  \"performance_band\": \"Band 2 (4-5)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Spelling errors (e.g., 'alaways', 'flys')\",\n      \"Confused apostrophe usage ('It's' instead of possessive 'Its')\",\n      \"Redundant prepositions ('in on the strangest sea')\",\n      \"Literal misinterpretation of metaphoric elements ('in the jungle in rain')\"\n    ],\n    \"positive_aspects\": [\n      \"Attempts to capture the central metaphor in original words without direct line copying\",\n      \"Maintains a single-paragraph format suitable for a summary\"\n    ]\n  },\n  \"feedback_summary\": \"The student grasps the fundamental theme—comparing hope to a bird that supports people through difficult situations—and attempts original paraphrasing. However, literal misinterpretations of poetic metaphors (adding details like 'jungle in rain') along with noticeable grammatical and spelling errors limit the mark to 5/10 (Band 2).\"\n}",
+      "thought_signature": "AY89a192PJcBF-jQftirqif2M5DIXtZP6cp5cLZ7YMF-kfjWgO401RQO_CrIwGUFH1OrpsCtAExHmeFri4DBsa7dbcq7EneimrHh_S1lHBlol5gtTATjVcMQ311ceCW9QfmFABm-XEy8JUGmATahAH1frngusfNuFIL0qmu0jHlYZWrx5UumUEXOsthWlO_vd1WTQwrSxFuOltlvX5g0wRvxxI8DpXcg-HVMsBVR0dMrdGik9UUpPTL8OfoUwjKcGR4GLG6DagIeq95ko62_6pfJ6G8g5nQqVsioZoUaZA5Uxu88mq2_JuW02dUNwD4WDvNw51XZXqpA3rthMpN-faggIwjOhQyfLTMaxdkJ7f7lP9o0doN9Aw-RnlFDguvU7FoHvxT0h5TAMFqXTdCcLQ7Z9DxmFKMS4rvXWGWPdoIRGo4l6g2-qmvemepBP3TBySxlYcv722MJAAa3w7xbyycWF1VBaSgEtOamc41LgirguBbjFDrYtDxPHL7sCr8x3-srtnIfML3VVNJOehhZ_3rh5YAGi2NRzL-10N1icllqcxVoIqjE_zZgaPYbE5Y-2t_GsK-A7gYmwVkUEt0ZjdbJATH072HCImrhRHD9a33Q11fZQ53UbzB1riYm5kgS62jfsIL0D8EL4POvzFgI_6pdQgN8KYq9T8yZDU67dupYH0pe1qWRQV8gLkeaV7bsSl_bNtbtuEdPn4Eeb2tRVN0xSccGWYHd5tMrEJMbXlqsOCyTeHh0lccrjnqkOqd2gWhPOTdW9KdN8jPj5rprydofhMtYdp5TT9VAfqHZRJCTKH0gkpfY90UtoLjQduTufz5K5L319w12MfYTbizS1EY_joaxBJi4KZY9GZFfOfC5KosyKRO-80g8Rzppuvfy8P1lZvv3lkBcLRzJnnuZ6R8Lo5NmLlakQZYk79I-NVSy3hi5UFkLAHomXix7c4ctLQ8jgutqfAuUleWChUM-MYxadnE5NViiAPdeFKYEluC110cSlK7ZPw-u4kIteH1Zeyjta2tVzhw20yXxCkW0BQIP2ijfSwzAx3m-LM3O75LD1IdzbQtkmIqu9vulU_tsK-br5AKs0l-ChcGWvdbAfB1YM8QegXu2SuCfQACuNcT3wL0fLC2SWWUHj9DHCE0esXR0sjrXhsaPAyJFQ2__WN159p9_zqV_JFMX53YQISxlHDoa8XRrvyXs99xMzl59UhPwtwBmZO4p211zEa9jW0BZeI73yL4HqI_da50qdBWu3e4ZdmvAUY9SC2SsMH1KP32jLgim9p4TFhLPighu089ypvu52xsdvISx7Gg_jutSk8epAeveieqM_lqyvlIeqg2xJsL8mV-UKFGRYCcyUBuWvsEVcggaeGE-PFWtx32gWUNECWjb_peBpmAGvPcqVExOyab1qHhI7rn2cEFyC0WTGiKb6SjI3AycwQOzHr87NwKyWYTHkNbTpkAOcmeceOJGg9b57kKaHtlCTyDI7KgQT-kXIweNK4wp5faW9Axs411Jl1uZMZaHYN0dMddv7HKz8GCo8oRPsYI3RRWE3WUCp8IrgAKpXESsWc6QeE54p85POtMd2biwDLUcuNt6--VWowcZ7pqKi-Vjot_87FLgK5zykpoK-a30LrT1dyk7XkYB0BCi9sTbpkV0QKOIVjV-KpllI59Pnil3I_AQA-sN_oJc_n9K_y_yZqc4fFIJxVc0VwZSMCfHaTfXLGya2B57wWwOfpFwKxTeFiAfJQbsVHh-LJGj3OmgzJwqmQarogj5MZc32kEbdmS-DO0_4tT87_igLWBVaE3ME-t9R8Mukj7hRWhsQNWHg9etp3u9b5I8O4hVUdKr-OGafaGNzSZhoQi8WEhgpTnDipjgzilqsDndjuV6sLt9iHrqQ6kf9q0ThmVGGW1wCBXe1udVRxWS6AzHGGeUhU1qzSO2MNgSb-hOrsG5BH7AZecezjbzaK52xYvmDNf32wqO5r8SgBtqf-DZb4W9tNGg7tJFNKIg5nrr-tiiisigg64pBVi-ANLVr4Fw5_98cfEUbV3wfrNrDJeLAn4sau8nBzgrIRKR9EXkUhr4FNdnOMTa4TxX-DoLFweQvXYp4Mu1Ba9j4-jQo6P3m90UpaA1c_7t9yKk10z-gEoy7zWpwSuTR-UTQO-7DPqfes84II9fORVDAurkLCV5MrrHW3J6gd9LQp7XXgoy_jnm5fBL172bJ0agXjtYVM61NRPLQO15hgZRXKaPXovdGOVdC1qX9yi2_p3AAoocFGKxdAUz762DT8maGJWhiNdpv0-Pz6H_QY_NkU2b-2lq6mcppYe_3rqEUEXVMuGTCosaIFG5eY2ZEXcJycdWjS276EmTEoCtvmToedVHnY_0H0SKZcVGqxqibWUMkiBSYpX3hZtIRtB52LVdEjzYb49fJ0G_-fLotJ1YwoU9YxXGPG5c_ixLih2uBOT-FHEQJvimH5nPc8PoytznptSa11mWHxgK7dghSt2IoCaCUUzV1B21soBozjcs-WfhM5gmuSYmVK4kll1fAYBK8Vd2jWfiV0Q3qFaPrNLeGk_bdsDiZAQhz19frR5srW2QIdKGFCc90OZ91E_Kq2JD38Qsm1n58iDamhaHKJ0i5ZC-PRmWfqBiaJpozsQQflamCgN_9Qtlbo1xxtrLKGW1rHO2zsN98M0bRRAZsxKSndcEqvkF8Xce2EClgGJVWDIYvirG5JbojAr9WySPSuPDw5lZ2qCkD2FaZijSuqReKajzTr3d08Yx8sIsaQmtgRZf86hHor2YZ5NhiCMaQxiTvztWu66l6E8BnQWOW4cckrLUEf468r3BLgeNVCyp2quNYfeEL4HuLWpRMxwC-jO1e3Mv-Yb6haU6cVY0cvRLa936XBTLenPNbwVQX3LTASII5i0Q5CBuSTFkQafRh9-mBgJvcpEPxbXKhpGfqvA4-HDxs5I0oGV4-pX45TUxQGca5fjrI8kdG52EvsnrfSAGx089hsHiSJxeeVyGB8iN0a2OTIsbySP7Pfuq593TgIM2lRE8gnmCUB0NwOFIkxXoGdxwkpoY_vPrfgnXbiHiM9bYEYSNfbFZVk7Vgy4EsoRaPcQgGh2-_bdwdsRdpIJ3BHR24-_krCRLnxGY5_WFCe0E0FF64o-QWOZH8rvrnoD0PWQh5EKIChLporgx1cnRR9mVHRwHOv4WRPUqGEAD14_qEQnqBXS4K-rSCB0GTebxF0Z_OIrIOl3nwIOvEO4I5rFlQ71AZfh9D9KdQwfkRPtgruHbZSDWIBXpXDJ3H2NYEVrJTCdCtoK7bMlHq1NscF3M2OPpV6hup7uqT_7qnkDCermD_siaSHgZnhHPB56H2Z4NvZ5oFieVKUbvTENGkeAs1AZgp3DrW6A3-ORfeY0Yph1ZP55zw7iFZCd_7ouHruFT7azrkODRUovsZjyeRhywCGQU87w2O0iH203uPTsvFEneA8vxB-uu5-zylAHF-BJ4ipLH7Es5urCaN5SO4mywgP0iKT2IGhJQg2cKSLZNsjeHzybfXjdroH7pCSeLb1IxUY6tj_DGWapI4oCKWYhdb7Z2FDKMXZP5xJ5oP2ZN0iuJN8ifY-cbTnyw31EX1zJCZouWdQ11GKWW-rznRp_GTE-k34UEpi9tDNMJRWePMEU2tiZ2Q7aA4OCvSLqM6nMnE1PjzZcG5AB4hGOxu3758m8VgXn2T6a8t6htOqL5FpLxoAcXiCsbO2J72Ln8clfx0TPtUnJpj-MtE1jbJXrqgU7sxt2lRKJs90TeVCS9Z8l-vKHBZMmHwq8kFu6Xxd7-OW-j5E47Pt1u3V1HzAH-2_PsWh311tP2ySICoYuwq1rtmz27KoJxqD_po_OiJ4cQC7HnumvvJNzloH2B5OR9y48l0iC_C0hI90TPA0z6p3g19Tn1dIzSx2HyFe2IxOpAU0-nkaoKXJUtRcV2qvNhNXL29FWKt7LqENmn5Ubs-WUb5T8356z18AX-AroBiXKiPGNVY7_D-ytV8iFajIy3bfrZ_RbRC5D5fO2uH-seunV6Rg1qCX-igQ6j_-AZ5ncj0c8QIjltoo-IMhOjifnXuPULvFs1URfcOsxAM-aPJlXbp1kv6DIcVKuh4M2NkNQw0SKYRcOCU--tJGpIkwTMFifRv_9OwIEQZ1SrXSO8LOhR-YY5Tl6_zcHUYA8GP8At3CfvrweR4MdX9TL3HPV99hoVpDeSzctSrlxEN3lgBv5O0eqzqZw8PcV53y6LjV_RV79rDD95jFHDG8sCToTgu2KEnzcWsKrmq-nrWUUB2NLuZeWhqre0Kf2QA0SHu8k-sGWun5Vlv6lMlS_b8P3PXPDPoEOeDTcADFdbxIg6CBsttKUtXshVGqzW2aKHRnrHe-gfmQxOjEM_Ad0wjs-atg4g5Gvf6FH5mt8uHWNpzBte6H-lQzjj-t6iVk4UzlX4y4a85FPx2-WmUEzTq-XejoQXdqtR3SxNx29wJ00hOl-2QxEK2Zv34RjwWPSUkPcGYejqx83GbXw-BfJ2t2kt2bzewkIjK3Q6emUHNDt7DnfinDt6cSeId7BRmFvCpDZ0xkjSAnejhtFwkG693FpZLjXOUj3TspnO6skGN-Uvvsv5y2__uIgxmYuopAzYfiLr3N9BBWH1Vobsb26f_mk3TfWKH9vgpN0UzRC4T9Nh6zlrklW1u7nM-cp5mdOJBPABCL92RdHMMTVJvMhisAnV_7Ab7YXR4LPbEEjPzF21JOWUKcsZOFGthmmA9MlmQB8AxjtDc70BM90gyv2M1o09FegRLyZ2gWGJXiBssxN2_vVBpEWpCTePadxyh6KsZeL2ZDqCbqHOFEibrgSW6RXVHVsej4XCJ0XQO1bC_KZDH9XZ0v6mYCCZHw9u-FYupZpXbHRcADfiliF5LsgYkFMq1ZMbJd9kzM99uXeBz3HYJIFXXbcya2bwRj0BHP_puf4p4vlDLVQOW6x1SWen86Zyj2Spl36clvaMj8ARl9WGvUcc6vQfHiKg3jmlzbpC3F7P_sbIcUy-2G3INpCaOdS3jEDvoJQ_5BOSWshA9UFnC3QNSr8hjAMbadBhQGdw4lJulH5AFpS7XhU2x020KrIzmSk4scMHtOxHkONMd5qOw-rl-v3JdY-MzDF9VMR9xHTE6FuDLAr4m5lJPCEMp0ZCz0R8NaoUs9tPeb3KO9hjBr3jXXLUF1s_R7thcKiYCJa0uP3yk3x47Tlxh-0M-RT3crnX5m8o2AxNGh9AIIGqJ-eXxNuY7RQ3-E_tqurg4WgXM8LWlUwZu5jGEG0Cm-qZxvXzPYGVaLPLKS0YkP7sjiqZkaNMq9-ZM2PdFhzARi1nveLNmNnvHqAK_pizSedVbY_ipkEMat-gtZpG_ZmC-q0XYgeb_tP-vLoJC48nFPdklL1vZt_AuPUVdd4L9WJi8JS1jmwiB7LSY1YKuo5e4wLk268MDvwKBVcuAwY9izg4K2qqf5xyERtctoLVPAJnSGrDVv6HUmt_ssLt2EyrqQEJQCCAf14PzPwRHXvQOTKm8tZ9pcLf0pAR32wEqgWM9H_I2Ybo-_Uw3QXdVXFpPRr1RyexB-gQt7LDNJwnuBYE_cBYOHPavvF0DrbTnMibOmNUiXgQKbJVyMflPda639xtr1KkEGV-RM4HJ54YmeGcjxolmgBFvOYI95d3cbWOGhGoiCFopxWNvQywiOHvTemYl4u8RwpRqjzJIglvcPDs1lU5adAhFKLZ8iUexHL2gNIFibgUWoUlkRlWFdE4g01IDzcBkMg1PxNn5rIXcdwxE1dgTtI2IbfgL_0jJ4thONLe2z5Tup9cw58ZiDUC-6ewPN6duSCUTYQo4tVLSPiCUX2Wfby8CClnBIhNnRGjAtyF7wyRRcR53FMMSNKaApYihQ1iQWr3emMJQngspxsnzBQB5ccQUwDNzb49ahqTl_3KBgowytr0JClhYrMxalyJyfHpvGGQ0WUk7nC-xZ2Jk9BCMESX1c1KCDmdbxlQV3SuGPZ9gatesPS5MaOZzr3X4GN8JDN06Z2BQBDjN0UbEvq2KtBZGuIOaI93KI20vqcG7hwCE5vjxjdphBVLNh-lVSzeIMZBAhy6LWT35yMtdE64gHT2HM7a8o1W0g4nZDrtVe2Sllmc0u_iDPDM6d8g1HwHn25OMgQR-VuYNdJfjmrN8ukXfZLZrT3S_vbyIlWf6UFhVNRPsLFusv_GMpbCYNSUN1ZjMizyhLbWtbfQZokS2leVYkTzCkvsIlcwnxRnnDJpmGTEEna-y8gzVzCcGPfQnIuKnC5RZGix3OkuRoLmzEevS3mmycgSDVpkE_A2APhTA_zC3PK6ECgvFVq2PZAMemOwxDtK_VAOi_McTBal5-ee-Jvl4iX6Ta1ELTjYnyCrNNP6scZ-8w_kj4JbXwP-isPa20bC9n9SFHJgBCinr8prFVzBvSbbFcMpFCrRQk-RsoFxqZFTBxT56x1qqiAtuS7TgAW3TFWT-ZbgZlDw_J04fm4Q30HYI3O0NGkFz7QQv9zPpwkU1GmyWPEUc607KRxDfaCIa8QpWLrUM9WRRNvQFvp7MTffjtgDfvlS5NQ4Q-sIDcoQWDweJCWmpv79_eX4Vdi-LM7MmyDP-1n0GyzWdqbq_Cw7HvrarossZIZVzlxlUfQLSXv98pDOiMdjNBAnKkQwYTK2XZ4jzkwbOb95TBLZvenajPGcC9HOYop_EKHIGgIuzPeAnr31axGC0rEZaKFbboYVPFkqocQLfZvboTkIWAK_AbcbPhoBbj2WYB3W8RX5RsEyjUrjxU78eGBO1fyue8E9uQjE_FnFjYaxARW3Sye0M6gVzaKSF2gAUnrQxftKPzgCNyDQ0a7CIBAJWTQJ4Sb8DKZ04uudE2ASTEwDO7_BkdnzgG1R7aGjOlFln1P3i5ec0sfRfcHLvRL-GIxY5DElbl-qfA6ZAO3oEbVCuw3GxxUpjo7xcvvXqIm6VN-bxf50_PNDIEiDNQXPYPCFzRMMNPHnX5VOkZP08NWhhhCEGDvI86clsFpIFp3rDkNbmqcFgw4F4oQ4LlKJ98lUJJOyDEUpRloA7llv9DI2uB1IQdFIUOfriZfmm_ZJC7COBEO1Xcc6ET6BaDt8cU4FSlxrp2UWPGSSVJ7AY1UhKYG26w-vaXmSr0bC98MKh4I1xQxZSNx5wuqX-OD8RlON81r7CwCQhWz4b7a_8zvQnJkTxwSM5VBumvwfUUyspHg7-KA="
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:05:57.272217Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "NR57atnOEKjq8vUP2OvXgQM",
+ "usage_metadata": {
+  "candidates_token_count": 428,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 428
+   }
+  ],
+  "prompt_token_count": 3046,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3046
+   }
+  ],
+  "thoughts_token_count": 1517,
+  "total_token_count": 4991,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

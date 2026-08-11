@@ -1,0 +1,80 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "3 work like hacking it can affect the whole nation. So, we all should use this modern technology for the pleasure of mankind.\n\n# Answers of Question Number - 8\n\n# The sources of the USA electricity in 1980\n\nIn the given pie-chart we can see that the sources of the USA electricity in 1980.\n\nIn 1980 The main source of generation electricity in USA was Coal which was the highest of 46% of\n\nCS CamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 392,
+     "top_left_y": 313,
+     "bottom_right_x": 2465,
+     "bottom_right_y": 1152,
+     "content": "3 work like hacking it can affect the whole nation. So, we all should use this modern technology for the pleasure of mankind.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 365,
+     "top_left_y": 1310,
+     "bottom_right_x": 1735,
+     "bottom_right_y": 1507,
+     "content": "# Answers of Question Number - 8",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 603,
+     "top_left_y": 1595,
+     "bottom_right_x": 2222,
+     "bottom_right_y": 1925,
+     "content": "# The sources of the USA electricity in 1980",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1981,
+     "bottom_right_x": 2326,
+     "bottom_right_y": 2490,
+     "content": "In the given pie-chart we can see that the sources of the USA electricity in 1980.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 392,
+     "top_left_y": 2596,
+     "bottom_right_x": 2326,
+     "bottom_right_y": 3246,
+     "content": "In 1980 The main source of generation electricity in USA was Coal which was the highest of 46% of",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2006,
+     "top_left_y": 3368,
+     "bottom_right_x": 2408,
+     "bottom_right_y": 3463,
+     "content": "CS CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3419342
+ },
+ "document_annotation": null
+}

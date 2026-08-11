@@ -1,0 +1,62 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans: the Q. No. 3\n\nThe poem 'Hope' illustrates Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return. In the storm of life it gives us strength and courage. Moreover, in the extreme situation of the hope she is mental comfort.\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 886,
+     "top_left_y": 372,
+     "bottom_right_x": 1589,
+     "bottom_right_y": 516,
+     "content": "# Ans: the Q. No. 3",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 154,
+     "top_left_y": 580,
+     "bottom_right_x": 2368,
+     "bottom_right_y": 1531,
+     "content": "The poem 'Hope' illustrates Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return. In the storm of life it gives us strength and courage. Moreover, in the extreme situation of the hope she is mental comfort.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3400,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2484012
+ },
+ "document_annotation": null
+}

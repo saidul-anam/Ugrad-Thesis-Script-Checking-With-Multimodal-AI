@@ -1,0 +1,179 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Answer of the Question Number - 9\n\n# Size doesn't Matter\n\nOnce a lion was sleeping in a forest.\n\nSuddenly a mouse came there. It was,\n\nin fact, playing on a race quite happily\n\nand didn't notice the sleeping lion. While\n\nrunning, it's sound woke up the lion.\n\nThe lion caught the mouse. The mouse\n\ngot scared and told the lion to go to\n\nlet him free, one day he might have save\n\nthe lion's life. Hearing this the lion\n\nlaughed and told the mouse that he\n\nwas small how even can he save the\n\nlife of the lion. At last the lion let\n\nfree the mouse go. One day, in\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 410,
+     "top_left_y": 334,
+     "bottom_right_x": 1976,
+     "bottom_right_y": 527,
+     "content": "# Answer of the Question Number - 9",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 814,
+     "top_left_y": 597,
+     "bottom_right_x": 1715,
+     "bottom_right_y": 752,
+     "content": "# Size doesn't Matter",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 766,
+     "bottom_right_x": 2309,
+     "bottom_right_y": 934,
+     "content": "Once a lion was sleeping in a forest.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 941,
+     "bottom_right_x": 2351,
+     "bottom_right_y": 1092,
+     "content": "Suddenly a mouse came there. It was,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 392,
+     "top_left_y": 1103,
+     "bottom_right_x": 2259,
+     "bottom_right_y": 1331,
+     "content": "in fact, playing on a race quite happily",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 392,
+     "top_left_y": 1296,
+     "bottom_right_x": 2316,
+     "bottom_right_y": 1517,
+     "content": "and didn't notice the sleeping lion. While",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 1482,
+     "bottom_right_x": 2286,
+     "bottom_right_y": 1644,
+     "content": "running, it's sound woke up the lion.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 434,
+     "top_left_y": 1693,
+     "bottom_right_x": 2326,
+     "bottom_right_y": 1886,
+     "content": "The lion caught the mouse. The mouse",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1834,
+     "bottom_right_x": 2388,
+     "bottom_right_y": 2030,
+     "content": "got scared and told the lion to go to",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 422,
+     "top_left_y": 2023,
+     "bottom_right_x": 2420,
+     "bottom_right_y": 2262,
+     "content": "let him free, one day he might have save",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 422,
+     "top_left_y": 2220,
+     "bottom_right_x": 2316,
+     "bottom_right_y": 2469,
+     "content": "the lion's life. Hearing this the lion",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2420,
+     "bottom_right_x": 2286,
+     "bottom_right_y": 2624,
+     "content": "laughed and told the mouse that he",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 397,
+     "top_left_y": 2610,
+     "bottom_right_x": 2388,
+     "bottom_right_y": 2817,
+     "content": "was small how even can he save the",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 447,
+     "top_left_y": 2789,
+     "bottom_right_x": 2361,
+     "bottom_right_y": 3010,
+     "content": "life of the lion. At last the lion let",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 422,
+     "top_left_y": 2986,
+     "bottom_right_x": 2267,
+     "bottom_right_y": 3228,
+     "content": "free the mouse go. One day, in",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2008,
+     "top_left_y": 3368,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3456,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3189268
+ },
+ "document_annotation": null
+}

@@ -1,0 +1,71 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans of the Question Number - 11\n\nThere are two kind of dream, one which we see while we sleep and another because of which we can not sleep. Those dream we see while sleeping is not for us. Those which take our sleep is our real dream and these are possible to\n\ncome true.\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 400,
+     "top_left_y": 351,
+     "bottom_right_x": 1909,
+     "bottom_right_y": 502,
+     "content": "# Ans of the Question Number - 11",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 397,
+     "top_left_y": 555,
+     "bottom_right_x": 2445,
+     "bottom_right_y": 1560,
+     "content": "There are two kind of dream, one which we see while we sleep and another because of which we can not sleep. Those dream we see while sleeping is not for us. Those which take our sleep is our real dream and these are possible to",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 392,
+     "top_left_y": 1570,
+     "bottom_right_x": 1457,
+     "bottom_right_y": 1725,
+     "content": "come true.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2982424
+ },
+ "document_annotation": null
+}

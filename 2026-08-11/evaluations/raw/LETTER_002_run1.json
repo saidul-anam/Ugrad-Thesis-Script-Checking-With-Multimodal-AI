@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:05:15 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Letter_Email\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": true,\n    \"cap_applied\": false,\n    \"applied_cap_reason\": \"None\",\n    \"structural_notes\": \"All six standard informal letter layout components (heading date/address, salutation, body, complimentary close, signature) are present, along with a complete envelope.\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 2,\n    \"structure_format_brevity\": 3,\n    \"language_mechanics\": 0,\n    \"originality_comparisons_paraphrase\": 1,\n    \"total_score\": 6\n  },\n  \"performance_band\": \"Band 3 (6-7)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Phonetic spelling/transcription errors ('preparadion', 'thad', 'dhe', 'impordand', 'momenterm', 'fallfill', 'sday')\",\n      \"Spelling and word form errors ('describ', 'eingineer', 'famaleys')\",\n      \"Punctuation and capitalization errors inside sentences\"\n    ],\n    \"positive_aspects\": [\n      \"Flawless structural layout and envelope formatting\",\n      \"Direct alignment with the prompt requirements (describing university admission plans and career choice)\",\n      \"Clear expressions of personal determination ('cannot stay in daydreaming')\"\n    ]\n  },\n  \"feedback_summary\": \"The letter strictly follows structural conventions with all layout parts present, including an envelope. The content directly addresses the prompt requirement by outlining the candidate's post-HSC university admission plans. However, significant spelling and phonetic errors (particularly substituting 'd' for 't') and minor syntax issues lower the language mechanics score, placing the script in Band 3 with 6/10.\"\n}",
+      "thought_signature": "AY89a1_j-TEhq3rB9aLmr2uumctdDg9vkbEuswkV55LscMLegjKXxwYEX4zJ1LSVj9yGSz9p7t8iz2_qj5voApgpdK9_u9NfGW0yBBSbyTzOeS-oPX8xHQYbhApiJ-11eSINuqAXr2cZgKFvZLKPV3-a3k34yvSJdspkmxlvgMATFkdYfjaA5NS6MMADCNeq0e-Em98jYQb7UxNuQmz6FxMAO3PcSeF50FZZHvpKSYoK9toXlx03pLw2-WbQJ6JmTypz3a_O-4PlU4Jn7rJVUp0J1AJbNDm88Dtr_-9L51HcSlzbIhXQ4TbIQyLh_IWvXszvhUZEm_5BbfuQe-GjCkXUqIdb9z98OM-OsmlYd74iQifxPE7yS2hl1mQ8L0FBvoZE5Gw9-zZGY7AZgpx9hPiB6Ak7vTFeD3JBsxCnWYCz0-3dJSzAXf6H8nr3ZNxYgMpuqPs67iXJCVya5bxjVwK4veqXy54DwTrOEz9AHELX6fCo3OZqPlnkUCqDvRtXmlkgUhgsrjchgIOm9DSV3VicfeXf5Gud-wV7RGQUZLTgxhnEyZa3BHnMabJ0y6uMpwKUaB7lJuAROYLPbSyVYZY3xDLQdoeokSQ0dy0G219jf3PhwPc-H9teJjMNPFedDRkMaAc8Cg_kJ256RVtlT_Elhionii_twiOVcPsBP0D2HQdZ1tdJ9S_oo8TXf92H6YNMitemhhmQ7YNE8i1ROg7ubkyabWt9APT8qL55s_UIvDIm_NWaTNabWHeXGtmT0hFZyrJQqxriSQBvzKoRq6hPKnkmX2zB5lyZzsPRhs6MM1RqK35QdwREAHIzUNKvp9Ib4Z6Ch08UkjVYTK3O6WmmFieiz3bY_o-gbauAyV0TpKRvpT7pUiWSI6LWINuSOrMZTTb3iOHHvgTbG8n7UZe7GEhhmP7CCIBrjWbGp1G9Q8JYXZyvhjtvsxWC-NX-8wvpmF1MOVThmbvt6iNzFfLMDpP5jdGenYBiY186FjQrMipFLZJ9l_DrVd-16kM8sO2Aj_HeHOmsH7xgVrR8X3CBSC9PO7RgwLXt22LEEEDKVZdNa660po9448devnRY8kNmBbXcxqtlPerv5glGYVaMzfC_QUyX41SYI6NTdc0vLCOiFqBpE1Uy1v2_2JOw3ApkuWs9x2-t3-mDxYwT6wYmbgD4VZeVvqI97W3cPKoFgQG7dFL8ESfhgtfBlMR0eVi0OPwf39oEgHZKfriVaC2-zbuvVXafJJY9eHBjbgvR2NPa-b6A6Hji8jK1-jx60JWyW2JhYMAn8Axls5KvyO0VPx4M1Fp9P71ZkSz22eLn5OaIcc71sL4rbH3Mv_NWFxYEvX4kJe-vv-5HKXXCJx6KTkStx5rDnfibyEOJWYXnyEJMah0qBfdgtMk75cBTAkYrZE3rcKvH0TNHfof_DHq1KfwL4W3XA0QQsqV8AVrQ2dbvwl_PxmnPZUoXFwWMDfAstnPU6GPfDJHP81myUzRQyWZkaZztfjWSZE59YimBIlCJBArh6znX3qBUGG_ZsZbIg1Fu0mFTo1wJ9aFZ2O-fJWAZGkILF_dVggvN4E0w5tniriuEhbphhz-VEuJJfKu7peyjRIifFLuEQLRVN1q5kJ-YZ9X8JDaHLbbOhvaf_9hRyxgKc4SJNQbnHEZNvX4JHH9ILRHfVBWBMulCzX3LwqUraxZ5lxk9zzaOozWgycpfek1XqTg0z20PgJf2C3duZAXE3d9RQv0yMCKYPIHV33o-3W3k7RQZdXMtB8TEYfq9JaRCdbxpE4qyeAlzq1nQZxMfKSNvje2on_wiYjadwOPz9d074m4Ds1M89y4Fqd1oEBGhirrLlBFcVLHsaRHswQOU-pPHRpIcMyUZij69LuxbzJ7XgjIOuQcTOM0zrnu6HOp-NaJPHcaBmJtEqvmq0uvcmuh550Mr--LueChoUJbKojdTf91I46g_FBrFuYOuM5yJKw24Pl7qQjTDBKNdfbhNOKkAmOWqbUO1CffkDrYKbb0GOCeotVx5WJvxPb37qztt3Znh8Y6OdAP5dmoy-sxV5HHhuzshA103fbpYJJoW172QhFK4xOk2O6_N091QK8SOtHBWLkmt5zLmDoRIlgrKSVtQtN8YwxsV-08LQxeO7pp82FSDrg2aNZLZSLtea72_daCv8PesUQtP9PtHOo0DmmcYDRa6kUzEwY5TWz2LUeTSLbHubj-QADstiWNiEBA23rBql4ZaT4Tee1JCs4Um7Bmw8c0nXbPa5oyzVfvHnfQChYoS86Bix_PfrJR4l_w_LekHNl3SR1CatIW2Dxrgq5kgWt0GhupTpW6ucnkdTzU0X0Hl8WhbpxqQYpYE7ZIHxTqarxRX_UC0XgfrJBsfpFdzC0aS5tY9yhgK0S-WXPrBOXwyvbIATDNllYfQSztmQ_nyCfzhcpc4w89YqLB9Q2OXCWIX3hDEHt4KHs0kXKtTXmQrVVA21XKvPCD-FMYxBdA3qe1XXF1CeUMk-ztKEuvHheE4Gp-iZQwt2DsQlJet-UoKsC9w9CZ6gO2gC2PGt6eVFvi2ZUFFk-f0Z0qTlcnfAFmmptjYiDBMPKfKDOTXd56JpU4Y9xGaaa2cI33c3bBW-HdNZGW7Cv_tIlmaswCDkfU9-vP-25BImvUgZtQQIP-2T-jzL6VW_nDRkBiH8hXOYCOYG2TkG247StBXVi8q_iib031CJ8O8-S8S1AoKxtkn5Cg9-o1XzZTKQohc_FWOfgh7YFwxxHscwDhLidmzfUclR8gaNHBO6W6OK409UrII7b3oy65tZdziJnVy0Qwjz2pZQW1SbOmUgMmNUwe0ZNPNqIDYU0oBO2SmBJkeNYi3cDyU6pQP7FdQw-_iP0gVICo2pmXxSbl4JiVx39nk5XvnZhZu_ekCEbASh6OJYr3-4EFCLKSGQww2sAFKVTOnIYCySfaiYEJiC90huMt3tW9jQur6RYM39g-B9aMZZgyCmiUXoD65Gv-0Y4x_XMcVB1F0PzvifPDFphTufZq0tYj0WlAHx2x2Fd6Ehpyjl7hm7Nr8HBrVAQRFfzq5RiW3pdD7-91ou096NPzdD7Ly1QIioezZIaF9r7pXhiepJRqBEmwZzlju2MeBwX00kh4l49cQmFu_SK6pHuOc2hm07-DsuLiQ2m0n8_88DOg7_x6bGNwTjORI5gOmmb4vGwh7gReQA9gA7KUjPksXcK254ZKWWDxstWkw_9bFb86DXuQi2zvia_tsGFTpKm7DoCIVnSzenqeXIjh2JivTzM5GWmTTpDmSwYPgKgX439LInZdjtqEnVYHvWoPrkITs2r6mDEjhrodSvLroxnSih_PsyRKhyW3QKJd_e7GAtJvDmvyMGtHif8ap6w-zEujgP6nW5uHtyJG8Aeaa4RTW_qkzT7qpfmTkckQ4pHczCgGzqQUHlxp2GZKlqQ3NYEB7ETab0yVDT7dT3jEdv-U0T8sKsG9Ka5HElGx5V7SMP1C6fgToDeLVduonyPggScyZ4vvfqLnOlwxx1oEc7q7ThTvrBwvb6fDelC-c5QYzsCBrfxaVbBdqy5Mv4oy8jM0R1Q9BTwac6dXnjemX_cExIu9cKbT6j-Uy6KZeBzg_SDKY-Fjguf3KxssIGAjVScfbF-s_LZ3Xsdrd6I8TC-IRHqHgfDOkqiHXbAhgZuDvTSvNkIRDQ1-pojBufzNP_sfAihCDFH3NSyq-lJY_RzFRlJnSo05j07FYW65muJY_6JhOggFJfoqEpD5vPqTGwnOxbDzooceBxMNY9iEMozsF6d_NVRCPFBQx6rzGizOghrNurXXuSSp2Oq1G0HOmsf-La7wVJ8i3HTaHNoal9UcJIMCqRDmkSOQkY_XUgsMxnREFXw2XVE6MnHpVczquVToDzBiISEkQ_WvN9z4QJahcZ9Mv6By4Kj5qAtX24KqEugDJ0sLH0CFxq0gf12YXpp53tUFbrkL0O3kNNCDJSmXns_6vkclqZHIqib2P5YOYwPUFpnSmspwkHn1fdb6N-HKtRdA742fFUI9WeuFzwwpDKnWCpkRqPygD9zHJqkYVeH0dBkiTjUJ1ckazqVNe_CzhUy73eiKWNYr4S2iGW-1Bb-57w1uiTKB5Ompzj_A7i8kA379CVgvp25JqgoAf77di4x_4bMbo1gRGnc9zXT8KOo6TrUbuQ8D_Gp7Gr6N1s5LiaUF_Cg8Of9HYDAof2fSdo0QPznYm78J9slK9QTr7Ui3Z9xfTvCujE5FyeEQjXXFTr5sI8bjqW32y0CE4GEe_b5A7VBpXHdYjTUTP56_7AWr_9E9Fe69TPKXrKGvvpzymjWweDKpxR1Ii3ysa_rcKrXNOKKjgBI4TM01q32zTB9qvJ-tITQwGqXGX8lth_YzE77Cz855dIkf9bh2qGIIV3xgaLjySP5_6SzW9g7gceQBKrEsn0ApAP1aH9Qw2iGltbMwBQidLmHUAZnZmTkCuIbtLH--zmUIABaEvFpJUJWBWu9uQoNkekGlHQg2fLd0zJXJS3IjCgSXd9kVfAnba40VIJVpHZTiTwlkEivvpcWhD5rSWpPCS08lOQr6FiedZqsffGc9neGKMYIptzZY4Qsofjg0b4lApEIHlGA52M8UF0USQm-0DveKZbnvKZoe_YsEjuJp6Qd80sU3OPRcp53DG4OrI9AWUGDX39-1n5S8TcQcpBSp34EUYCIXE4Lr48KzaqpDwjZneLSP6cmQEwRXnDc3KcTGGfUURcuc6fOXbxjOR-3PVcxmN_vrdz7QyJvpAkBJpXEPgI7ycN5iFtEpHdlBVnZ9Hhcl4eYkd6JAkxMy2iYmDlSiHUDt5dAgqTu7EH2Bq85kjknIwFw8fPb5dxH4y2NNjWAkjxSFOaBuZgqlxvbWKJkg1nyT006SsNo-vti0Y5khRMpa0CoY9XcvkHsP07pDLdV7KzLtLp_KT7UuOUhaYHuzVkyKMx4MVrrfx1ZwawmpEgvyg_2U3l0XxKDSDmxmBEFbz_gcSCwge2gvZeeseHbnbX-rT7pC0rcqNzHA8nOJrhzYufLv1WwytOjc6XjOMYp71V5uoNvWvRoiDL9GtBbfGDjSrx9MexooqCxCJ2M7gpVQLw_j9-lsamsbHZT227yjEB729x_L6Cm28WEVw0oneZNcUJXcZJIdMIbjbriw50slEVHivGxeGk9QbrxDylODyl9G2rX7DsVPy_wkRUT87ypy3xfYgKUTXOXlOEY_oY8QmfSU0Rxqo4wS5Ll1UQr84f2mtfac0kYj0BrDLNCQeX3CxoPuUMNxuATMLphtCwJCGarmq0-pG2DAHm2fr-6FBifBtGu02ozhnyXMOHg1vbe98gdTbrxc7PgPh_nSZj3IxvSZhMThZWF79yQib-FhRUp7-30lB8FpjEaGtPlT5mAJUt94KUFwEUsZ7niut0VVVBXsqYI5efXkh9JidxwhPM9fmqbONnhGRhQq-_84sBNJm4PntdvykwUhtvvnipJy2_NUcGF1jlRuEkIhH7wLqfSmLg9hl-4gFMHkdU1kLSJjQR2FGmbfWrT_m1Wt5ktF3UQ7gxfjAmrQ93f8dVsMa-TMfGRYg7wrNVZ5qck0D01AEdFEtbXJMKQu8GKuEo2MEPZ0jt4vuB2ux6SKFdMiqmGugDCSu_FfhGpelopAZ1JELBUB2UMgSoLe0wrcAjEJmrhNN7eN3KPpMnptGWGCZEHlSexIz4Yx6JKa0S15v3OnWLtpDtLV_v6DlenZlMsCeChBCWoQdZ_jYoXjPBPMpFbwiKYPheVWE9U7PZ3U9iXTSS2QLcRm8bex4F7Jdk1HfJNMxHDpRfFhaAr8QTrgMXzSyW_0e_4h75Am0-tfIW_RupKLiB9Od2OlIC1uUf4J3Vn8JR9EbGnoKkfeoTqrv0kMBn_T8niyz56MP2kg0tl8Hy8lrtfUiSdXZRZW8Yx9maPedbKTwimRIGel0gpyUwdWWtzufAmB6vlYyk7FLe5EUEFyGQWZFYdEPxN_W2dimqXFk2bOc_oMuTmmH57zc4yZsPhsAXsZe3yY5J7TCsiRkuMlg9JLkgKEc_rN6_dhLgduz7D9Dja7LDRley8lfmeJBC6YVhTYINYVDrCq5gIVGXO_t7ZP0W5Mmm0t2pE7EnsxYXadIhXHaMeQq-TWtto6iL8huBk-qrJof-VVkHhTimA2-tNxOT3LWEgHwVyv4VKwW0eMO8TloCKtOcefw7UthqtEJhnxZdZJdgEZ4YpPgcg2lm_6ePx0jZoPgYslCU4GsPnUk6MapVakzSMkrUdzGrFAH91Muv283ShgG50T5CCofj8z4nFPFMcU8aenGJ62iOy2y41o6E422qPWuKvpXKIOe2VefSOlCxMw6OqWYBCVDHllSdAG5QYqylzy8wzsD4X0Vf0yZI_Pn1KIlWNURlsRlIpJe14ls4hetRqG9GBXRlvQ8XaZj1jE6u4AQn-oVfqsscksj-DjCHQ2QnIBysFa19YUF8yX6Zahjnji7YhhVdoujKxEuf5hhbWRyErYFN4RUkxtNGC5buRlHxc9oaJWdIH_Eqa_HAlXBDS37fDgToTMBGRZ0xj9VqvwDjqFbM50g88UrZISvJOPX8hIrlZlVmt0CJuqfhElMwvacayKRumgML1LGAD_P8lNqnIHG1QzXFtDNUsM8-2_Ni_96GC1loiMlN5bBRezHoB9nOoq1KsIkc6OuBn44x6DgbxUMR46tJAURnGSqqq2iSnSWfQitBulj5xW1SQoKD0hIY5tTWm1KLQme0zWsC-l0y6sWBQQz4nN67W71lzhmS1or2fGgryBNgDKf28vVz-Q87aWNOPU2yoHsVghaAxtv8EGm7zYxFC2HNeElnGPGFPSmtg_JkOubTs8XfhMDVu6FpQLD_MDME9-HLCZHgPIcAbqU1AwUNWYrrAmo-06y1DxYao4mhdgt2oEkszGuw7BuGTRgbNqK5wg35UYvNyAzPFdS_k8vwKK79f65HAvZekIJ__yn7aP_8sG7AVhfnXk4ZON01G9cM2oSgI8LW22_rpgobW_OnQLBSm_iVMX3MWZDLUSt2fOiHwX5induMqYr9I9j3wQ1SdngHlFjt-eq9GDoW_0e0uHDJ98rYWJmm4S7bfAuWWUNxts3BQM7LTbsPTbMbA-Bb4prmuAYx5RFn36id3rrVzDhTr-Odc915q7P8k29NHa54gAhwMUOB5hFff-ATCqxAsvNaRD8PDKaKC5AgrNHF5i1BYHY5n6NSlv8ju_uoMv2BNj2RXNtr44Ce2UBf-rf43-PBmLS0d-6KIxrqNgkABfU-DfHheJ1QcJljxPhxHwn78xflGdO9xB9tIX3ivVf8WtBi4qVeNCMOU5TI6TufU4qqAF6JCw="
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:05:05.226311Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "AR57aofoDfLo8vUP567TmA8",
+ "usage_metadata": {
+  "candidates_token_count": 464,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 464
+   }
+  ],
+  "prompt_token_count": 3128,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3128
+   }
+  ],
+  "thoughts_token_count": 1613,
+  "total_token_count": 5205,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

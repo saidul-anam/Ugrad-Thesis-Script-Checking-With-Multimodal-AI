@@ -1,0 +1,80 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "c. The sea is the only thing which helps the author to go around the world.\n\nd. ans: The author go back to the reality of Gaza. and he looks for nice words to say but he can't find them.\n\ne. ans: The flies remind the author about fighter planes which made him scared of\n\nany flying thing.\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 372,
+     "top_left_y": 365,
+     "bottom_right_x": 2440,
+     "bottom_right_y": 752,
+     "content": "c. The sea is the only thing which helps the author to go around the world.",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 372,
+     "top_left_y": 766,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 1328,
+     "content": "d. ans: The author go back to the reality of Gaza. and he looks for nice words to say but he can't find them.",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 372,
+     "top_left_y": 1307,
+     "bottom_right_x": 2388,
+     "bottom_right_y": 1704,
+     "content": "e. ans: The flies remind the author about fighter planes which made him scared of",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 390,
+     "top_left_y": 1704,
+     "bottom_right_x": 1884,
+     "bottom_right_y": 1932,
+     "content": "any flying thing.",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3400,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2474391
+ },
+ "document_annotation": null
+}

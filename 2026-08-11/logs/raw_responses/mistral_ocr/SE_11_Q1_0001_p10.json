@@ -1,0 +1,80 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans of the Question Number-1(A)\n\na. iii. being displaced lives outside the country.\nb. ii. flying objects.\nc. iii. blockade.\nd. i. rushed in large number.\ne. i. coward.\n\n# Ans of the Question Number-1(B)\n\na. ans: The writer can't write beautiful words about Gaza because he only saw poverty, siege and famine.\nb. ans: The writer only saw deprivation in every house, fear, sickness and poverty and he became aware of it.\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 407,
+     "top_left_y": 334,
+     "bottom_right_x": 1946,
+     "bottom_right_y": 492,
+     "content": "# Ans of the Question Number-1(A)",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 544,
+     "bottom_right_x": 2195,
+     "bottom_right_y": 1612,
+     "content": "a. iii. being displaced lives outside the country.\nb. ii. flying objects.\nc. iii. blockade.\nd. i. rushed in large number.\ne. i. coward.",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 1647,
+     "bottom_right_x": 1909,
+     "bottom_right_y": 1816,
+     "content": "# Ans of the Question Number-1(B)",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 407,
+     "top_left_y": 1830,
+     "bottom_right_x": 2388,
+     "bottom_right_y": 3116,
+     "content": "a. ans: The writer can't write beautiful words about Gaza because he only saw poverty, siege and famine.\nb. ans: The writer only saw deprivation in every house, fear, sickness and poverty and he became aware of it.",
+     "confidence_scores": null,
+     "type": "list"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3372,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2925642
+ },
+ "document_annotation": null
+}

@@ -1,0 +1,170 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "Ans: to the Q. No. 9\n\nC. A. Lion and C. Mouse\n\nOnce a lion was sleeping in a forest.\n\nSuddenly a mouse came there. It was\n\nin fact, playing on a race quite happily\n\nand didn't notice the sleeping lion. while\n\nrunning into his body, he entered the lion\n\nnose, and this time the lion wake up.\n\nwith his roaring, he told him \"How\n\ndare you a tiny creature,\" You don't know\n\nme. why you disturbed me. Now I will\n\ntell you.\" The mouse reply the faint voice\n\nthat \"don't kill me! Lord; I cannot\n\nsee you. I only play outside you,\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 1023,
+     "top_left_y": 334,
+     "bottom_right_x": 1787,
+     "bottom_right_y": 474,
+     "content": "Ans: to the Q. No. 9",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 812,
+     "top_left_y": 555,
+     "bottom_right_x": 2033,
+     "bottom_right_y": 710,
+     "content": "C. A. Lion and C. Mouse",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 377,
+     "top_left_y": 818,
+     "bottom_right_x": 2237,
+     "bottom_right_y": 1043,
+     "content": "Once a lion was sleeping in a forest.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 377,
+     "top_left_y": 1043,
+     "bottom_right_x": 2269,
+     "bottom_right_y": 1198,
+     "content": "Suddenly a mouse came there. It was",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 1198,
+     "bottom_right_x": 2326,
+     "bottom_right_y": 1394,
+     "content": "in fact, playing on a race quite happily",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 1394,
+     "bottom_right_x": 2296,
+     "bottom_right_y": 1598,
+     "content": "and didn't notice the sleeping lion. while",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 1598,
+     "bottom_right_x": 2281,
+     "bottom_right_y": 1774,
+     "content": "running into his body, he entered the lion",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 385,
+     "top_left_y": 1774,
+     "bottom_right_x": 2306,
+     "bottom_right_y": 1897,
+     "content": "nose, and this time the lion wake up.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 372,
+     "top_left_y": 1897,
+     "bottom_right_x": 2227,
+     "bottom_right_y": 2100,
+     "content": "with his roaring, he told him \"How",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 2100,
+     "bottom_right_x": 2338,
+     "bottom_right_y": 2311,
+     "content": "dare you a tiny creature,\" You don't know",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 2311,
+     "bottom_right_x": 2338,
+     "bottom_right_y": 2469,
+     "content": "me. why you disturbed me. Now I will",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 2469,
+     "bottom_right_x": 2338,
+     "bottom_right_y": 2659,
+     "content": "tell you.\" The mouse reply the faint voice",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 2659,
+     "bottom_right_x": 2132,
+     "bottom_right_y": 2870,
+     "content": "that \"don't kill me! Lord; I cannot",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 2870,
+     "bottom_right_x": 2314,
+     "bottom_right_y": 3116,
+     "content": "see you. I only play outside you,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3400,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3254340
+ },
+ "document_annotation": null
+}

@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:04:45 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Graph_Chart\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": false,\n    \"cap_applied\": true,\n    \"applied_cap_reason\": \"Graph_External_Facts\",\n    \"structural_notes\": \"The student included external facts, personal opinions, and moral recommendations regarding non-renewable/renewable energy preservation in the concluding section, which triggers the mandatory hard cap of 6/10 for Graph/Chart descriptions.\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 2,\n    \"structure_format_brevity\": 1,\n    \"language_mechanics\": 1,\n    \"originality_comparisons_paraphrase\": 2,\n    \"total_score\": 6\n  },\n  \"performance_band\": \"Band 3 (6-7)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Inclusion of subjective personal opinion and policy recommendations in an analytical summary\",\n      \"Minor spelling mistakes ('pie-charet', 'highesst', 'non-renewal', 'enery')\",\n      \"Capitalization and punctuation errors after numeric values ('In 1980 The', 'A Now')\"\n    ],\n    \"positive_aspects\": [\n      \"Accurately extracted and cited all data points and percentages from the visual stimulus\",\n      \"Logical sequence following a peak-to-trough order (highest to least used)\"\n    ]\n  },\n  \"feedback_summary\": \"The candidate successfully captures all five numerical data points and sequences them logically from highest (Coal 46%) to lowest (Nuclear 2%). However, the concluding paragraph introduces external facts and personal advice regarding non-renewable resources and environmental conservation, which is strictly prohibited in objective graph analysis. Due to this rule violation, a hard cap of 6/10 is applied.\"\n}",
+      "thought_signature": "AY89a18JdAyF1lBwNJfkSgpWloQk5hzLhCaud7ISILyBq4UOcuwO9uiDz-3MAd2W5WgWkXz0SiDHyaM88OIYxKSTt3YTS7I3JntQ2WAwVZnYlJQknGGbQOHsH73w-W5u7YswRdLTKzfpyjJ974MPOySDN_cA0qhMNe-tNIZDkxA983IO1gWCXtjIroIuWk0ECZev55XRzowwsH8pD9Hc603JBYCmXtn7ocYbxktoW_2n5UnISU_Hl_WjBN2NKqJSQTcrPDJyA3UoYvG9z4ut1nO4BLpfCNaEjIjIoZ_Ex893mK6j7V5QEC5jeMYIvRwmbPBb7VRb132V5S9ewinCPq98Q9dfoWI1v8LLhF8-pbPaNdRzHOuWFP8miYGZfcyzbAgNFp-eEJZ_Wihl2yuucSnAl12hkR72k_-VqF5ZS0KmeG8fF0m07pGkTh_omeqFDCG23VDwwF_gUVJoJnv8q257NOswYJ2z7f3EMJPbWNTDwG4iAaG8R5baVFTGWCyiJcGLK_Zqf8nozLyyStuYxrTmJaklmZ9PAO_Eyl65ZXP2fcrAjCPYzN_dBCeG16uVvsH8l14Ib6SsFUYZ_h3q_yO1DME_mYzDywXtjOp5JOa-0E5myJrUJ5ySqlLQapkHlBAn-K2CKaDDVPMD16eMe0xjKJZLothXHQL1kc0qgWZUqGSqJPKAuzOFseQvO8B274IAVh3ZkdfWFUzBC3OXTr1WsOxQ84qQecbayAvZGVfT1_RVHBo2qVAG4QEbNWjxNE7z_Z3PzJRgTD10FRQsGdINF3bJ281jT414kSKDkKIhsfna3fcqKaOr-PcIMDzH-NeHm6Js7TlBj8qoyNIQk_9iJ3nUMVYdWi5W01SEQAcKFRRN44M1UB3zkJ7Sw0v1FRvKeb5cYddnDUSnmOS3l4-BKDNWzzAkd-mZsVD5XMrXndMfIXOB23TUa9hU9WCQOXLA40fqCiGSOWBv6QxYTqD1mfLVqEM7CuXfQvveBpupvf9h2lEcdVZpz64JRw4LWqXpxW-S3ZDhWhYJQeQqWWYN0eO7OpiAeXxyT2rF4Vo6kwm2ODCcbvfSLR6OQZp6iGz6wv3CB2X6ezj6OJ10wF0TgnvYM_9QVGBK8lrd2jj895r2D2piJtBZ2dZ9jJHs6GwrXaohzLfOOxzjCbT-7dCvVPessPXybXCWIDq1I0myNIpaNeCz37aTLGA9mwPhtWI56zEtTU_8j5AMuPGu8iy5u0RDGRhqUA-7ZAyAVTSv_epyusupkA3luRWNUDodAwkajgPlJD2FFtCttfIS4Z8HD5KsRs3X9-AWvKJG4Ri2OSa_a2BwmAUcR-NNopCOL-f7Wzzwn-o7voBPUJ355TbMVyGqSrO9LFExSrAHAp14rg0amL7wwIU7syMIhBg99acgnm4_wryzDUqL9WCqLMBDYoq_s3Ke1a7t7-I7PsVQTgRMpiLjEbcqSnfcJHZuV5fljR_xcdX2BTOGETCUW8qhgiGNOCf_ZRpQCu9rQH6bve3XhjLXfN8ZcJXEpg8QGsuALUHrPqW9Ks8ysKmnjkbtAV-KZqigWgUZXRX1WzBRqkw7jksXFEnKkUQ4Vj6F-Y0Jwc7Md9wjRCujxBvxQ30eAyxl42ZoDavLkgLcJKCCFvWSh5ylnvBzvhczYh6Ow6POdm_qEEs40V_tqA5b-HrWjfZpupWgdOLX8lfILtUusu0QWblfznXRYYuwCSelzMA5jOXumcXsc_vR-OJUNp7UDw7qLpkEj1z71ObXPJnMlP7tP_QwCKvj-c545GPipq0H0qYoJZmoVr_GtZFeT25RCfwO3CmCApoCgNPLS1o7IzcXG9enIMWuI7CgffRrp9L4GgFA7GqFK5NerN5HEkO75MNFt600VuBDRm0gab_KVxwl0KCBgYXrNol8Me3rofTECL8V5y9rI-Bvvbb8pTC9lVTRn-ip2Kfp_BDDoPrsC-3eURubmtEPgO_zM3nId8LE0te5GSmGXR5v0UwwCQg5IpbDEPoUvuIDCOsWOhg1nenTTlyDwGLdAhrjT4FLnmwFSiMmRY6KLY2hiDX9jk3Z_VDM6Xbym_4whdafmnDuyIwGKViagtnhw-tjLBuZOAG-M5eGsck7gqSiy9kI0QTfTJ4IC6kfiy61JKLTSg29cNyK6m3IROKnlQ-bW-pQclXlgJqXlXRGLEfM9oytTpDYAWdowD_XLQ4n8PITtYsG09W4zeQmorpenLhz7sxCVdfrx8s-ImucmbcLBr56obZEQ6ozdfvoMHE2YKieRDWm_MVLsyBHOnNatduEHajaOAnNgiLo8GM1NsetVqVxip5lxIGoeL371paDqYhM9ZwsEnrj9tR8EZdE2PTRGknRJWKc-xvfX3a-MzerrOMzHPjwDKsxgwHGR_nJp15FfAt5Rgds51XNBDN6v3r0Poy6fRC5u86jm7MkcyH58r3t8H5bDW6bvFjxCdnnuXQKrmiQNW9vt9ondKNBoLsY35YhXkM1Qad-PGnZx9KSGQU9h5fsUKjaYYC9dyxYiZ9GcdWLGOs8XRfze2jQveWV4U6Ik-HHHvy9inH92N-Mjh704w61PxFb73o6mw3Q6f1z13FuAUvVSJmqLtKLXqiWWgoyhhj7-_eik7SYBsL9F69049WY6m1lGYmhk2FeHBoK3JUQYS9gxEV0wGasJE9yDwTjM2H3fXkNV9N9794BZL-2KuczPfQAsnE8j_LhMM_4mfrsoPrlAgiNCYSH0tHEcGxx66rRidPU4sK8aMGyUXLol0oWqei6XUNAX5OCuq4Eg6BOTZg5Ajby6u0Bo-jTtbxT777D8Njy1GYuydT_hxCbRROfBQA1E1fAxPXUrpTxK8kcuANSeP0A_g6FLSqRxLXIKkYVrP3J7ayBlbkDAfxxdXuIdZbp1qPB25mk_d7-zQiEUSOA-klKcdXTjXKGXfEogHgSmOWl54XJZgmVNM_AIyYrPKUOLJ8pcUJEvnsrxOBGisOpBZ90OrYL8Z4YgeisXfCjHc_UyUzUG-V3FBLIDbwl_D0QtB9alSgR5ptC81iXypJk5RLTKFSB1HTiyh5SQBSBJlxouFBU_JbtAXrH1PRgw_6mI_GIa442hH3iNEbCpaOWrUZpUuuOT2gfVdxtG7Eed8RP-0-BqNXG9xOzTIxxfS8hzyRT3H280FtTZsOt0KlsVvyVGSlXuURtJR0G08OOz1g-PKY8LIHMRCWcw3wgqVe9AAkSwKg_dZmqPBjQqOne0bPnEmvqpL_YZADZ6mXuczmdZCB8HEt4E7jjSIKhIE3ipou5hUAjZG32XdTKwCZ1Pxq8jIVUm_SMcXznxWn0GnwZ4PP_RAP7qhR1-bvwtNLWdpnYGzCoCZL8yc-DLk4As9TGZYSgdAJ-GLEVcegUI5WATJp7OLFjE0lie1njVhG7MtnRXH_ZYTLJJZMf8x6uteMyf1K5e3H-LVb1z--YnsXHSIZyHzA7GznQiYYFnb7JjvOrj5XU76K34XCjqeVeBm37GORrE_WukxPdFiOGnyntLZ_QmrQ1IXMF9BfRYwJD3f5l5esvInc-pEfBEFV9yh2DFkqKNEjCmkugM0WDuttuR1QbYOGhaDKnnvdIHvSCPI3Iy8Q2J0wdU3tU1YRvSAKUilGFoDQF-Hlp2MrrY-3JWuH5tONem0FbUewVgijYVpE88HncJXv5J7XDKgEFtdVoUh6smdU2s7LFajXf2y0oWERqFV8TVHZHmoFU1FnL-R3LirOOvSKe8qf6TxaDIZK6DCvqf_G8mNoUb6i1izoxoYis48ZANwHLp9yCgUHgm7v-CkY4cnkwjF8-3Ospr9fe45b9BU6-wBncVkWNJGSpYW714PrQagtJ4YnMxCVHl5D7o_uwdOBJmOgdNnSuy9j3lXwY11yuxjp9VQ27dn1phuKvm4ooQaCf-oXkmO2-wJXJuEClZHUVdGZ5ZbKA4y_6FVR5o7emyZLXMpUNi1iK97_01TwHSLFwmx_wxDAgjwO67_SZR3gW2OyMgXjC6g2YUvFWw0OMgk-wBYI1YKTW-8zr9rHrvZY8Dgq94ov6E1W0OBLt3KB3QlnvW_bslDDFUw-mhfpJlyRxqGNSv903p4uW-C-YABbqwywyG6vZ5ec1nuJHh-GWTZ4erAF0mnZ9-AXEL0A-UyvcwvAp0sYlI5_ngIrBPM9JVLrb-4dXDuK0mDw9YrfXHJEgIgB_DJ9QKS-tIzWLzBSo4mJqpEOdiyFsCts_aPJHpGKPCnNypFzdthdsMcdkpU7Zo0tYDVBq09cwZXqIVYpzvUIM-8EE1WlhZI3jjYLBCdr-_GjQWpWBHvYMeHJW1N9WPhkz9RnSzTozt0B-Nfgt7VFnhCNmSfdvAEvACyZQyr_h5rEx1r8PwntnKp-sA2dfOFhYAsgLNAXl9ovM5Kmn5bnSAC8kFSMSfOtMP0if5_hodqPafKOHQpGU8y1rVK6LIn9dPXmUgP1MAWAD5xC9o7BmMBQo98PbqCtYqhxqFlZWe-m4yoJpOaLWRX7p_gxLTo7sXpqiQNGhDPqaOFtoIpiokciGAsD4rV7Niiri10xdviVUwkyRu2dGJkGWSZrQ0bYYYFQElPQEYO-1q5r1SUJQMsg0uyrimdbp-TxxnVxDaB-Rs2oS8k579Av0tJYqI-LzRooUoUYLNIh1IlL3a3tNKD0SXtUgF2jiX2vCicvd1KXbaPyWxxKneEqtaTonTcC8tCE94F_uw6qDFDNN6p4OoyECwMRAvBVxMRxf_SoSC6w5c1L0j_iWTPCHFs6jI4TfD0aCJUDgXseUS2KT6SZKHd0gav17Xvvs-X-8mL0XVZYzf630v-NFfGPlIh2lCxdeSIRW2IRwQqtx_3Y0Z1-T9ZXXV6UL6bPd8JlIb6hTFSNdpHChfk8LuDyUxvw3ig6PJJ07IsXmaYpBpn-AjyVHGXZHCoGbDDkkF4nvIat3pekrYUMQSAdHSXciePGNwmm84-45TYkM81n_MZFOSAMQ5aSF3meCuxDrK3_F49T9kKL9M6RYbo94gSt0Yg7LPMGY5RcJAmHmaqTVPpySp7ofQs4ivjxdvpaqnSq_DWgZJb0L_BiaLDeFmLKztsp_xoe5qklgU6XqBkqYC9E2XaI5VDfXVYSjlpHDDcc0Ej2bVMOVNtb7GKpO0uXMbnxbjICvCV28kn9ANvHeAQQ="
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:04:36.375270Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "5B17aubzFuGe7PkPjLXj0As",
+ "usage_metadata": {
+  "candidates_token_count": 459,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 459
+   }
+  ],
+  "prompt_token_count": 3137,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3137
+   }
+  ],
+  "thoughts_token_count": 1052,
+  "total_token_count": 4648,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

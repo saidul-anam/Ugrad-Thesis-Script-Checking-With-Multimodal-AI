@@ -1,0 +1,90 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "works. It can be time consuming to grow in this sector. Moreover, I can earn money by doing this which can help me to become self-reliant.\n\nNo more today. You can also share what you will do after the HSC Exam. Hoping to hear from you soon.\n\nYours ever,\n\nKalam\n\n|  From | To | Stamp  |\n| --- | --- | --- |\n|  Kalam | Saiful |   |\n|  Jatrabara | Graibandha |   |\n|  Dhaka-1804 | Rangpur |   |\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 367,
+     "top_left_y": 365,
+     "bottom_right_x": 2430,
+     "bottom_right_y": 998,
+     "content": "works. It can be time consuming to grow in this sector. Moreover, I can earn money by doing this which can help me to become self-reliant.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 1036,
+     "bottom_right_x": 2438,
+     "bottom_right_y": 1538,
+     "content": "No more today. You can also share what you will do after the HSC Exam. Hoping to hear from you soon.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 1538,
+     "bottom_right_x": 1028,
+     "bottom_right_y": 1651,
+     "content": "Yours ever,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 410,
+     "top_left_y": 1693,
+     "bottom_right_x": 665,
+     "bottom_right_y": 1802,
+     "content": "Kalam",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 367,
+     "top_left_y": 1816,
+     "bottom_right_x": 1606,
+     "bottom_right_y": 2494,
+     "content": "|  From | To | Stamp  |\n| --- | --- | --- |\n|  Kalam | Saiful |   |\n|  Jatrabara | Graibandha |   |\n|  Dhaka-1804 | Rangpur |   |",
+     "confidence_scores": null,
+     "type": "table",
+     "table_id": null
+    },
+    {
+     "top_left_x": 2016,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3400,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3453,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 2774700
+ },
+ "document_annotation": null
+}

@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:06:16 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Summary\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": true,\n    \"cap_applied\": false,\n    \"applied_cap_reason\": \"None\",\n    \"structural_notes\": \"The response is written as a concise single-paragraph summary well within the length limit (under 1/3rd of original text) and successfully avoids verbatim copying.\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 2.5,\n    \"structure_format_brevity\": 2.5,\n    \"language_mechanics\": 1.0,\n    \"originality_comparisons_paraphrase\": 1.5,\n    \"total_score\": 7.5\n  },\n  \"performance_band\": \"Band 3 (6-7)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Spelling mistake ('illustrades' instead of 'illustrates')\",\n      \"Subject-verb agreement error ('never ask' instead of 'never asks')\",\n      \"Typographical/preposition error ('give as mental comfort' instead of 'gives us mental comfort')\"\n    ],\n    \"positive_aspects\": [\n      \"Excellent paraphrasing without copying direct poetic lines verbatim\",\n      \"Successfully distills abstract poetic imagery into clear core themes (resilience, selflessness of hope)\",\n      \"Adheres strictly to the structural and length constraints of summary writing\"\n    ]\n  },\n  \"feedback_summary\": \"The student has successfully extracted the central theme of Dickinson's poem and explained it in their own words without relying on verbatim copying. The summary remains concise and structured in a single block. Slight marks were deducted for subject-verb agreement and minor spelling errors.\"\n}",
+      "thought_signature": "AY89a19WPCncP8ex9g1lzELx0I2humMok-_4eHio-zZ_VyD6mXL2RL3oeGfGdcOK14WinffmxZI0Ap40TFESnjuQmdGFwCWrW1J4w9qaGEQ7E7SKJYWqTjlrLYcFHMgO2RNEagA-RNRzze0CO0sJFG4J9uZZuVy30QdpXBR3clfI0ep-bs3ZqSb6CBsSl4qWMYwoluLASPu9cp05e6JKfelCPWIKFxMJGmxprPDPZVe9kbygPQ2b7jgdrKE-gFmZ0ztT56pbL49iM22Q1Tn9IXia0sMrctdnN_7Xd4SUX6f9JRitvMSrV5CJkN4Nh1cmxvxieKh2vshUz4RKUdPlODcNtKoAlmKQU1rM15hKnPD5NuMzV8t28tU-x8_i_YQu4myKpKI6REgnv7toTOhiw1kzEF5H8wMMfTnbpr67HWJr4EKfQcSsd52wW61AHeXcyTwbMxKmP72MlKQF2eBMAdGyC_MqGpmEV5ONW50oYfIOxqEZ0owMC0tKa9pMl6fo5MluB9hlRS0SWdbXGRexUtrhYLysCTKAjc2sTPD3P8M0E0Gh4ZEJ8ANHG6QOXv9JdAy018SFlocVvP5lUOZ-8Axd2UCTbIfdBJGnb2JUNx6Czjh49Kkk5-iw_y-1fYYghP_rthwGGvld4RVw7K-vRbM7sSyzTKHdNTkNlGOjJyrP5aE6pfnkg0RHu71EMxFtvrw-ElWpyh6e1VOu-_FVvbSWn6phclyZoENr2cLbYVT0dayFzZv-QuNTC8TODmlAzcmUaxjnfzbDBaRZLP_QLS7cNJDfM66CZv_R5SbcwMbQqyDcfRQ_zhkx2I0AI0HlusjDrYjUW4C6mJwDMCoyq0jMv15bvpaAcdrnsUawvSmkNCPDmrDAAcsiWBe_riS6owUejyu6Z49WNdRtSg5RlZ76t1-xQjUWBmScO1XYazALIZl03GyOSfNg2og8-YRv41yqnD4aL0i3-x_SjhCmU1Vk3VO73bKt1k2HhBMnqunjikola5KDuwAvou6uKuUMj-E_cPvSG30f45NQoVaR8rMys8Lo-gu-k6Lo_pMOHAxEYxUlVwEFM-FU9W7U0nbX0BxHPUmftzwKgQctIERabkeiIEfAQOpKPUcIwpv7FglPlajblYgA9qqazZW4dVoMKBFL4-5gpcBlSMPt8pEazemUBD4fzMfxhGEApMAvIqcSpNiQCX3jJ_SdMAufKLxBmtcqtGRui8WZh9XG-fkouVgIo3MU3aO8IjImw64c9L6Q909Aylpp-kJ9yPGezNxMhM_XW8cSIdUidE7XYWWB2oVo26aMJGg6m2wKjuD_5kdWffJYUiJHmYyuLcNf3R6EM64cX1syad5ANHGaeWuHlS0Fvt9pkW9xlY020XF5QIGm8ER8MFXSBZR--mD0Pilv7gGHoZsfTTHN_-XM73hpEbcZT6WJlIef4CifED4fP7voQwumGoxgEcllryz727odqjvEgf8XwsEwziH17e0mDb4risPYuTgykEAx5wtKbu4TmB7hUuPJZj8x1khccRCsxVhrjijwAFrPI_W3MURxsG7OedA_Io2vDNblTMInacV2uyFZnNyv21ciZJ4RMJ97W5q9Huu6SqkaymnuTqPz5HCRfDyUnwjtPogjF0_2STAXMjPni9E6xJAj7SLVLI9avTyKS-eOAcdAUXWKAgIzaNTaVQlUzlHivTUTw3t3pba1OFDhH6wNKZcSj8ARSHlNtIZmzhLVDH3_QJpX-OppqbVJi9vM7INd7AcrV_gB_rkMu_VcajXeQa_CO_FmCzCWd61BqpQOXAXh6K3bsyV3l52K91qA8fO7mkuRn8pO6UPFZQpTQR7vZeMImS8VqrYEWdyfKP0Jrt58Ftuz3eHRlo46zOZR3IOG7TtuAtVBZcHa1pnLeSKjGBko530c1a95aDMhXAfqe_JtjA4XNgEOrr1RHmc9_21aNxsxA0KoOGCBH5dNkxNmOd6h5qSnWQGcBlSyabGUmodcP-PLQ7zOK7wGOhfPZO0y1XxryYId9N9o0Vvt3MTmK7BIrM-6jAD1xExOfROYDenry4DVME9bmch8eaybgSsbtrbzOvSt75DsSZ5Eez6yoJ3dFRQeAvs3IGIAA4VlSeBoqutgMKeBzYGWkdB3WoBQAMxMgx7yCUdLzmAoi1aYhFI-YUo9ip3AmiOHFq75MdFJBcQF8ka4XvQFSkJFB22Yf1SGAyN1B1cBu6QPa-voLxjqD8hMapi5nV1uhM1pwbLEziNq859ux7Qmv-0v3K_fAUUy-R7nXEOX2KiUV18dL8CMJ5cuiWGCjKYIvf8pQoFd3sjcUCQbjLC8j_PSSXTDgJ5dFXiBkO8ccEb3NToPQjuA9MG6chi1WfXFZEvoZgekALaZvlQN4jaaK1Sr5Th4ySPx4KmL8zAZIne9xIkh7QoZMhqJZnAoKoXa2HzFWfJhq2wdcy1C1cNZRDx5COqqcj54qYG9GLbNl9V_Q0_CQlwIbnrdYynLY9wJD8rI6EgPb423LXUnTutmyEBb_L_h2nEtSRE5FpNbmxkBG-j-lXY7m3ML0vdevepj4gFgZh-3cU7jeD6Ugf6n4WWCAE5Tkunn1ua9M0-DP2g02v88jkj7-0lUveqOrc6NPcYPfMepHGOaeTe4MV2MWhPjCJzOM_ay-f-NValPpFX2y_6asoSjg4xQ3OXx_OtVXHmnwyn2zEtskn-7UbXuev58P9lfFqM6rq3_gpBLnThH77yMElxDtaegRUxwBJ8yc_zC7ZgYafotjYt2KbbU7EYk_bCzcawbqBt9HPXmPfIzpfI27JDLcLeM42gdpZ7xvCZ1xMZo5o2Obnp0PnD2a-3Ljl2iWTKfOipB_xylbbRBTm8MWNJkqwF0IQztn_-5rHP-71U3tjQq9BOei1xU96CeHYD23OgZqkjbUHgKlLrvDw1fDPmEMB-QdvYK3utZYM2aSvyz_RwI_h91ninxgTdAiDY-mq63Q7a2oriwRTMOU_6j-AtXGOAUsi5g31GUjzBt89Gv2SjMFsXU4cIDuslXAWBnVlIH2U8jsN_HUZB54oEtoeGYgpxu96-Kf8XLLAhS2rGnXv3Xpggh9xN3k-ts2ysW4EX6MhvBe_EobXqN9dM0EGj53YhlFcAeTkWaVcOYWAU6U3drKHueRGGd-VK3XVPGAcVqiGO3RRGzLXAGW3w--pquzA08sfwx4-a6YAZgEW2vWbF5uTPXtI68PN5Gb5_PTYAa6alfOu6T8REaZqli4jSBOFdqIEIPHIOBcJNbNRSgRWKHs-5t8NfTy6bWd4tOqcIwo4wHzli4FXhCw2TE5yMPsm5LlyEXH7bT2W5VBc-hNWRhnfQr_h05LOVGFeUySx1XRwy5XZ_LRSHRjbaoNZ5Y7hTeW-7mLidzA3xRQIblvrsNAwkY75FM0k8ZdZsWackiDcESJb2cogKjw7afwWd1MO1W6IjTHd9FaFIhqzk5HCh5ctMbyo1q9xI0Lq4YJ85UzJfZ_L_1siWt06REY-wju75MULxBr9ugID45-sAodpyHOBT__lLO9z03-w5sCSw2WYihv80Zq_4k5wxdW4oY9Uyp4hpe9FHJ2y7LnpKzS522RJzCm2ZCanyPvP-Yv4tlbWmDbmnevOd4HwEtGprPtnMolXnSKSxYMtQmQknR2OzubsSbssPtDcpFYq2fEQMD1fBDIeFKpWOI9uOOf2WUo4VZ4GevVTWXCEoRR4lXlc272bu5-E1mJezUCWi2I11jhGdz67OJY0SxtNesbr3wzOSX1ADmPF1fXj6fQyI-6fHzVTZE2sou2SiRykWndXove6hjfiQlAD9JTYTMef7CyajEPJlusFamqbJrNlbnZdha646BCrVdq9wVhvXNJ5vLj8GjXDXkd2qZd8h55gM47fSI0ePsHwusXb6UvJOuTzPQp0XtQqmMN5KQ26muj8TUuYajWFxQhpJyAyFTj-0Y9jcg7NB9Z4cvQBljVl3KUALqqXF-xWQ0TyrIeiFHJ-9GAQ=="
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:06:09.107437Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "QR57aq3HBqmd8vUPg5-q4QE",
+ "usage_metadata": {
+  "candidates_token_count": 432,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 432
+   }
+  ],
+  "prompt_token_count": 3024,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3024
+   }
+  ],
+  "thoughts_token_count": 843,
+  "total_token_count": 4299,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

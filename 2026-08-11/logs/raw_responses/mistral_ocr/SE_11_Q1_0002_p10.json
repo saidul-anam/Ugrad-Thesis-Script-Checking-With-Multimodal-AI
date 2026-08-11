@@ -1,0 +1,206 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "# Ans: to the Q. No. 10\n\n27 June 2026\n\nFaridabad,\n\nDhaka-1204\n\nDear Jarit,\n\nHope you are well by the grace of Almighty\n\nIn your last letter, you wanted to know about\n\nmy future plan after passing H.S.C. Now I described\n\nabout it. You know H.S.C is the most prominent\n\nexam in our country, so in our country, after\n\nH.S.C all students & will take Public University\n\nadmission preparation. My dream is afterpassing\n\nhsc exam I will take hardest preparation\n\nfor my University admission. You know that\n\nfrom my childhood, I want to be a\n\nengineer and admitted into a Dhaka University\n\nso that's time is the most important\n\nmomentum to fulfill my dream.\n\nCS\n\nCamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 1085,
+     "top_left_y": 316,
+     "bottom_right_x": 1904,
+     "bottom_right_y": 446,
+     "content": "# Ans: to the Q. No. 10",
+     "confidence_scores": null,
+     "type": "title"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 488,
+     "bottom_right_x": 919,
+     "bottom_right_y": 601,
+     "content": "27 June 2026",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 590,
+     "bottom_right_x": 794,
+     "bottom_right_y": 692,
+     "content": "Faridabad,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 692,
+     "bottom_right_x": 829,
+     "bottom_right_y": 797,
+     "content": "Dhaka-1204",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 825,
+     "bottom_right_x": 859,
+     "bottom_right_y": 948,
+     "content": "Dear Jarit,",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 955,
+     "bottom_right_x": 2381,
+     "bottom_right_y": 1128,
+     "content": "Hope you are well by the grace of Almighty",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1110,
+     "bottom_right_x": 2381,
+     "bottom_right_y": 1268,
+     "content": "In your last letter, you wanted to know about",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1257,
+     "bottom_right_x": 2381,
+     "bottom_right_y": 1423,
+     "content": "my future plan after passing H.S.C. Now I described",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1405,
+     "bottom_right_x": 2334,
+     "bottom_right_y": 1553,
+     "content": "about it. You know H.S.C is the most prominent",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1538,
+     "bottom_right_x": 2284,
+     "bottom_right_y": 1721,
+     "content": "exam in our country, so in our country, after",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1693,
+     "bottom_right_x": 2381,
+     "bottom_right_y": 1858,
+     "content": "H.S.C all students & will take Public University",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 1844,
+     "bottom_right_x": 2381,
+     "bottom_right_y": 2034,
+     "content": "admission preparation. My dream is afterpassing",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2006,
+     "bottom_right_x": 2381,
+     "bottom_right_y": 2220,
+     "content": "hsc exam I will take hardest preparation",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2213,
+     "bottom_right_x": 2324,
+     "bottom_right_y": 2410,
+     "content": "for my University admission. You know that",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2399,
+     "bottom_right_x": 2232,
+     "bottom_right_y": 2627,
+     "content": "from my childhood, I want to be a",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2578,
+     "bottom_right_x": 2396,
+     "bottom_right_y": 2768,
+     "content": "engineer and admitted into a Dhaka University",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2757,
+     "bottom_right_x": 2338,
+     "bottom_right_y": 2958,
+     "content": "so that's time is the most important",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 417,
+     "top_left_y": 2933,
+     "bottom_right_x": 2294,
+     "bottom_right_y": 3151,
+     "content": "momentum to fulfill my dream.",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3376,
+     "bottom_right_x": 2115,
+     "bottom_right_y": 3467,
+     "content": "CS",
+     "confidence_scores": null,
+     "type": "footer"
+    },
+    {
+     "top_left_x": 2120,
+     "top_left_y": 3397,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3456,
+     "content": "CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3766056
+ },
+ "document_annotation": null
+}

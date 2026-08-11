@@ -1,0 +1,57 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 11:06:51 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "Ans: to the Q. No. 5\n\na) needs\nb) peace\nc) food\nd) healthy\ne) educated\nf) healthy\ng) gives\nh) teaches\ni) best\nj) positive",
+      "thought_signature": "AY89a1_XJfTY7yuiObebUpjAn7_Zz7j4VagUFiqR3OzKwMU4wkTr5m-lwnvvSRBiUU9ZazGurO6WTcOrRncCY2sdUjBJ0N56Q3uBg1z9VtyP4c643bpd2GY4cl7pPbymBf_hOG3TkWzBkT1C8UzxI0FCp-WyZoQrjgxbGTpyPXhdCJIWs2eTE2zSq8rxCzYKikqwJpF5a4q6ZK70ZbulJC5pDPLs-v3AZMjYdBP9DnCorzaIy4xvkw7r25C6bePZXmj6sDI3SPTEbaktG8qSwVxhRz6-0dZTeQTIUKwHSkw7WOGCoOPVBleF_5OqL5m31MrEfeyd2YIczC5UA3l5LkbZ6tWb-y3O7zCQxUV9oj4sKs8GEsHSLwdMv9r7qGLrG7S_qkpjRVb0mo0HR_UbZsx50LkNluG79aAJoMTXVVOfc9XQPiQif6xyGTu9tvLBRHBe2Ronu721XanGP38FjJEiYoPixzITLYPLyGdO2bxbzzqsQdyNOQVciLdMo1DEMmR05FQkQl75qS9986QdxzrZ--c7eoXfpTFMTwOXPxRrMcDrDIMvlBJeZoRWTsUHWQnR2ulW_bnezgR_t6kgVjHkyRALmjWR1NIRMZsF1Q3uZLUZKmjezq6zZB8V89tfmENggQNzQ_U0fj9dCCvg1Yy8lXx5RWmnNxVm9ZfIFftJuT6zmmIxzEBsaY1BvH5sjUsfXi5h8sGJ9jVwu77ut-mhPN6QKpD1BdKntQ3c-La5aPQ6HpoylDJd_86DYtas7zJ6zZJdHwHEZmXgLxtZBg6jeFRq5ZcA5ue4LsZOIfdtZpX2br7ZTte06aCjIDu8SpQaUqGRM7y2vSdARJf3xem-MwDnlq39Wcq53SN_PtiSVLhaf7MoaZLuPrOk-g3SwT5pXQrfbC-xXsUaiCK3-mMu6Cqt79X2mYpWD6Xw9U7Bj10CMoFunrwina2hdro6fl4AuQC9WJZPItmGXZHeeRzsvkDwkKMYDvvH2lBTHzSROgSa7Pvw1xOnS3eG96QWmMUij_KMyr3N3mz-1cI0uRsbk2hmu-wA3T1IBnHOSyhSAWCnLYufzapWlZiPBNPtY2MYHBZbU0SlEUuflGpAiPNidrjuGNC2GDsHbgCBAzWjTw_fhvyohv1KvelhcGSsZbkD1wDyEoTKEuJPTdy-lSuo5EMF_peL4ZV5E-vA8tgRSqgrOJGLhV6F6MClzGbhraX_Lasxvk3ioJf1b5PXED7vaKw7d7GAjdIGg49OrfuKFhSJB1wvAtAZMxOoBtN_wwKCklbwCO2qvE7bnw0lPaHC_RcqVwQVvnPA0so9vySusqTYmEbtWd3lqOj8wjRJmvCDv8TyqYpfPhkzlZJ9kf7Rw5H-YBGPCpmEha8jmx7tC0bfWYvozUKeLC-JNqIc7xEFLPpnLkjUk6hJLB4spNF33ckCE-VRDP169ukw-hSBJoCmmXKdfyR2Ar5PIWEr0ZaJfDPeRxtRuygBBB_103OY0-0gvweegDb_zQZdqtLPSgztglBCxxxiqAXxOnUllPLnaPaamvj2FkJTn76iDj4NfvaDi-1WVu7UOqdA1KBDG838c2K2Q_8SNqspOo4HZGHeIZFNs2zrzu1juISSyx4n_lbj395Q2WxdaPhpXNhrjEtFS67rVziJaJbrpQKZavjwYkStUB-9ZPaa2nL6JkF41PeaejxuZfPgdaz366ag7UJAVRameUTq3KvvePQ3CVqdcpre0MmOfT8bnmLWhFdvDBs06Na0DZANWBlUNlYtzw=="
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T11:06:33.518328Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "OQJ7arjRH-zs8vUP-KmuoA8",
+ "usage_metadata": {
+  "candidates_token_count": 50,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 50
+   }
+  ],
+  "prompt_token_count": 1678,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 586
+   },
+   {
+    "modality": "IMAGE",
+    "token_count": 1092
+   }
+  ],
+  "thoughts_token_count": 497,
+  "total_token_count": 2225,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

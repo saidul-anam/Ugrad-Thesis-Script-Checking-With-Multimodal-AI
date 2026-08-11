@@ -1,0 +1,53 @@
+{
+ "sdk_http_response": {
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "vary": "Origin, X-Origin, Referer",
+   "content-encoding": "gzip",
+   "date": "Tue, 11 Aug 2026 13:05:05 GMT",
+   "server": "scaffolding on HTTPServer2",
+   "x-xss-protection": "0",
+   "x-frame-options": "SAMEORIGIN",
+   "x-content-type-options": "nosniff",
+   "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+   "transfer-encoding": "chunked"
+  }
+ },
+ "candidates": [
+  {
+   "content": {
+    "parts": [
+     {
+      "text": "{\n  \"task_type\": \"Letter_Email\",\n  \"attempt_status\": {\n    \"is_attempted\": true,\n    \"is_blank_or_unintelligible\": false\n  },\n  \"structural_audit\": {\n    \"format_compliant\": true,\n    \"cap_applied\": false,\n    \"applied_cap_reason\": \"None\",\n    \"structural_notes\": \"All six mandatory informal letter structural components are present (heading address, date, salutation, body text, complimentary close, signature) alongside the standard envelope layout diagram (To/From/Stamp).\"\n  },\n  \"score_breakdown\": {\n    \"context_content_data\": 3,\n    \"structure_format_brevity\": 3,\n    \"language_mechanics\": 1,\n    \"originality_comparisons_paraphrase\": 1,\n    \"total_score\": 8\n  },\n  \"performance_band\": \"Band 4 (8-10)\",\n  \"error_analysis\": {\n    \"frequent_errors\": [\n      \"Spelling errors ('beggining', 'forc', 'othere')\",\n      \"Punctuation and possessive contraction error in close ('You're's ever')\",\n      \"Minor execution slips in phrasing ('graphe & graphic design')\"\n    ],\n    \"positive_aspects\": [\n      \"Flawless structural layout adhering to NCTB letter conventions\",\n      \"Immediate state of purpose with clear, modern practical ideas (freelancing, video editing, AI work)\",\n      \"Maintains correct informal letter tone and appropriate closing transitions\"\n    ]\n  },\n  \"feedback_summary\": \"The candidate presents a structurally complete informal letter containing all relevant components, including the envelope format. The focus on acquiring freelancing skills post-HSC is highly practical and directly addresses the prompt. While there are a few surface-level spelling errors ('beggining', 'forc', 'You're's'), the overall communicative intent and organization place this script comfortably in Band 4.\"\n}",
+      "thought_signature": "AY89a1_iHD7cIssQTQrOQgjBsIV7WrY5maYOJ-ehSDbg4_PEQZBsUkQJafeKfWtBZWPA3OtqZW967UE1MePxHzYCLa40stUX-n_zIhLqRSJvHRR6EwtJGItknLI5Yd6nOxAFJRo6-t5iaGEiZMkNEw_Y5n1x8JoXk5Ru9Z1MDU2orticJ-OZOcIbAgI-sNk7bHVFZZvYpeX6j-9o9pgVqHGnTxEe2AaXcw5jEBjPniCLelLN8EW3d4RUaSdfPhNhTSG3pm3lqj6xK8Y8t71kl_LEwccX2Gri_ocEq17V2FQKIt4fFVe2Vg-_Tx0hyK5WMBmUHifGDi5UdNILzYHD8nCrvWIWCVsmImehb4bk8yekmbnxfIEUCH1S5lE1o_rWaau99XHYWhZPfQWbMsdQ5msbGDhHG0ffm8XsrHsVqPHtsIFduc5A3li8NLmdHSNxiE6wPmjFSgjJ3Ka_9OaAGe8kEPgfXm2BmxU0kWg2G3h33UT2ZdKOdQVVFeCggrG7QWMEo-OMrnQlylx0PsMGN68_O1aAahkruVNe3BTep-y4BiQ9-nKSZVygEF2mT33D_hPryO7hNcBnMZYnPPoE7pts_KzKElYA9_XoJDXggR4hyeVQdprR4mGA8rjQTbrRf_Ug7AcM-bvGU6drOw3SPVho6SUGIPTseEilBMqv-rDkqtrlYIoKQX5hYW8H_pH5SSxWf-8JmWtpQi7-qDytdQfm08yzvGePDIaZJ8LnlgQXS9ZmH7isAfvS-sb3HveKquYDQgAiOypHF5_KslgBwKftrcOP6EcNamRf8cklw0iw3X6kyHCtynpHeanhjoir2lAB_hTpP3gZWWib47jv4C7GEmbtHWZtiUMcIV7cgSs52dmSnasV-vcVMEPy-SMJawwhk2GsmBGwrV1CvrodLcY5jdK6GYWHV9h_MDxCoMBM57gajCfdLCAHzI0zxIyQAk9M9V0jE6y-EAykxCsDMXYe7h1myBohWCxwIVWCE0F_ZOTpLimAyn4ANWIxObwCOvAOvzapCx_dGSe1Mcd_vtwXBwpFTQ64McDMhI3oZ1S9w-TRyUOKuPbdPyXEoGw_YWx5eTUp3q_jae45QqpzZan_l7PSwC59PHBRJku8-oBni2-HLLmLnW9F8A5hxoo0ZAfessUnvCvQPtJdVwl8-rmYlsiIrQAykZQwhbpHwybHaEFHD9hsyC2oCPNwDkaOvFKdHNaUicj8mROAXiMavnQwc65enMeBhzwwVr3ujWDbtXGml7lWP5vRdOD05Li3KIrqIrATrIkUQ2Mucw4eT8oPKJUsAfDmKMdWQRbAd5PX54H4JxJViZO3UR35hXmV_SAX4Ob9WIeehi5yJvarhUqJZa6ELOGPfqmrLquGbiroX0LgGAVFBsFeuZT990W9LdKmOhTs3zG65CJYLQgwv0eiDQn_4-RJKkTj3iL5e-cXetVzMzoqqKBub5iz-dlZ-K7TKgP7OuixI-vus_2KX0Mr9w4BAcmtyN_U_BHA1IkVUCNGV8rFbhSz_9lb9iKSfUW0I09pgn_w2gyaPt2HpbDUC8XJRS4OrLGWAO4iATKmHgstySV1MM2i5viYEujWB9fAH7jW_ol9wdD5bXbxUJtUHZGNCSPysXZxlcRBH4BFbQOe7VeEuDlrEWV4lFYIZxQ0k6_kt80zyqEFgDFGhQvnLalFl9qNmmS5VU4cJnjfhvygKR_7wly9c-3IyLG_pZaxOtXZze59YKXvuBjCxAZ4eJh6UvHjwVHoBp_8A-Tw08X8WUjUUKO-4GaWyWJLSrlDabJ7reAe-3I3PJACIG174J2zifw5fU7ZbhalWYHQ4-AN9O0IhRvrbIDR5IIBHOl29wSAzBglkh7Yl5CgLyyFt7avXdOwumT-HA2CGfIaVLgH73W2z64VYRpD_3zwUIc73daTLQOdBS5jvndtaAF6KidBZgoSXqubSpOPFlkFE5D3rUzIZPtX-FAXtZ_Qs0p88oTm-m7CVugHbW9NpI7h5ko9iQJ4697T2ti4TRocz_Wmcp6_xG5sIXuZ1orbXraAkrwqnAbPilgdvP_Y2H2JgDS5taMMr2KXgxVF1DegRytj4QPN7jfrK_M-xOFoK-IciluWW4R9eVZRrnfakCA4Ah2_5B0qVl_osvAE8aHmvVx8SGTde3tAvjIZgm8FtmRCQlvByppQ8U7FeyWNaLDQGPCq-YEEckSh0W_pn6uSkqJZlZTERVTLnh7IIfTxn7gmFVvql9lTYqpL-5VOyapfI-pHQcIAeyJsirR3W3Hvrqu78v23BxF3_SMIduWPlPr1xa4S2nh1hoTA7p4IfZ4ZseQbFGQqfxxtw1q-5jI4es4JNmpqIqgAt1bSF7lvyzshi_C7gW6w7InDWMvPsqDRkzrIdVeqe8YduZhLxvb3ZRhUcI-Fr-DJB4V0v_FjZ9D-DyFaG8kXDUeOrqWyPE2VEO25g5yqUDYFi5ovc2yUXQfn7Tu1ON10flosIqqhZw06bHQxfRIdXbIy6_GPKN6tP_VLVh3-zwbhglON-bSJAny13Z-u5QivuDhgG_QMmHCCfKjQSn6v2krvFElqRCETYGfT8oGgBvynSw708ZAvLxgaU6EJoYchehnmYRRbEJukeWIuPduSeT1U6AjmZSCMm6sBvITlD71bpRY3kt_DKVVRLVvQOKUXujPZkvhIAvviuYDbeGsibSk9tKon5s03wvmckvOT5-r2QLD-sO2h8BIoWzChewpIbiExVc9Ti8NpoHCNRAr5zSC5ZRo2dCRntrInUqD4lkqeyiU_YANMgF3ZyOjD7pof2kvd3dlRdutxDADsHkXEu6oz9PWZgckeSLB_Za4KXi32vDLIRvrXdT0rpfwdwzN71v8qx4rB4PEFIeTrxPsqSieYiv2FDEUDVzbqebLEKiGUasoYp4y0H6jPraAIaDSq2gWqSNMpQ4FDFGdRbjb2wj2t9xNaHHzPU4N71GB3O5msNtucD95rM-31HtNhj2CjncVTijSZW66Ks-XsrVF9D9Ftdn3jLQOa2owIJRhfiRnOuCBmfN3d2pJQnGD_n0hzvaNWS2Kb1KH-UVe28VdowXvsWD52PSMT24guZzQzcnNY2oUS59CgMQMjqgyAER1G_x9PZafbmLIU4fKjsUO2hpqhJWfrxkZfQrBQcgmsv-KugPJ40t8ojtIPo0EqHpI66onktvQ9wYsdleLIQqYWSsQXsAx_FoLYGaZqKr7-xTiCC4Y3My9B-fBRhQ4J3CpTjVtPhGeZWI_oVTq-t5WPUUp4DinBIQF_0Fesm56twpmAzgGRxt55duCFANUdez7ZpcgTkSSXDiqdb9CpXNGu1Y20glvgBnFdLTBh6T3SyTHXsP3v3V6TJzGUosxY_DC8K-EkObFKGV06p1NSk31Kc0HyzojDU_XhOh6Nc91Vzs1-aepQaCMVaigb19aR9cA5Jr5ofvFpH7Ju_cyB_UL-fA5Si05HExZ5VALfhcWHqMtaDm3VByX1693kZFDB3ehy4pS8iwXW0dXfJqqtUqloyROt_x1SH89GiojVMGz4F3oh06_kXMWYWwit7lHm6UlCham_daBcx7CCR9hXTqlqo7BtyB2JAVPrAwy5h-LO1tPk3uxH4DukQmjsWypjbwurXJZM1F348auKJuW4GG4raKj0T4KUSbzNaEeIdB7NoQPyqBQU6FpBTeQLznPiWjhZcB4UM4bjpID1Hafu27UH88kE3xJ5tCcYwBjK0CjNIa121qMCWRDnyi_SiIStq0whpQ8TOwo3f6QsIPVBcSpFelJ1hdFn8Q0CR2NjJSeU26okByKS9rmIA8-iqqqOg1YVRjy0ZXNI6A3jmabQAoFipoRU6ohv64Om4uUQ47IXJ1mhJ7Jskv6kGpLxkkMcypvrB44awAwdHTksIzLniEh-3qpJWpNbhsG3_pvfRbgwQ19_OM-JgLIid8mGnAvVJ8YH0Rzr4bPU9khGzTzWu7fsJbJLqssJw9TUnrOwSt4vKxfQpRwXL4SU3hYT3AeDIE96JvsQCgEV1pqxaztJyIUd4p9Mq3YmNo9byl4rDugU-BkEQwt3dIC4p0JJpy_20SbIrml2HNe-VJvfVRzk0eEdN6uN6t7q6eVGfUw3hA9UVkIl95jpw9j16FfxFSenjOeyKXd9vNhp_Le1WKPegQldGqbvSdTp4DKY3vt6dTd4qb_NKohpG5h0"
+     }
+    ],
+    "role": "model"
+   },
+   "finish_reason": "STOP"
+  }
+ ],
+ "create_time": "2026-08-11T13:04:56.306630Z",
+ "model_version": "gemini-3.6-flash",
+ "response_id": "-B17asbbEoCe7PkPktH5yAI",
+ "usage_metadata": {
+  "candidates_token_count": 457,
+  "candidates_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 457
+   }
+  ],
+  "prompt_token_count": 3330,
+  "prompt_tokens_details": [
+   {
+    "modality": "TEXT",
+    "token_count": 3330
+   }
+  ],
+  "thoughts_token_count": 882,
+  "total_token_count": 4669,
+  "traffic_type": "ON_DEMAND"
+ },
+ "automatic_function_calling_history": []
+}

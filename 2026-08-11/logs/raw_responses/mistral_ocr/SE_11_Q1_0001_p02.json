@@ -1,0 +1,44 @@
+{
+ "pages": [
+  {
+   "index": 0,
+   "markdown": "usefulness. Some task are time consuming and hard AI can easily solve them at no time. It has become an important part of our daily life. Because of AI teaching and learning got revolutionized. It can help teachers to gather information about any topic it can also make a slide which can be used for teaching students. AI is very useful for us but it also have some threatening aspects such as taking peoples job, data loss, privacy, lack and it has become so powerful that if anyone uses it for any bad\n\nCS CamScanner",
+   "dimensions": {
+    "dpi": 200,
+    "height": 3509,
+    "width": 2480
+   },
+   "tables": [],
+   "hyperlinks": [],
+   "header": null,
+   "footer": null,
+   "confidence_scores": null,
+   "blocks": [
+    {
+     "top_left_x": 402,
+     "top_left_y": 348,
+     "bottom_right_x": 2353,
+     "bottom_right_y": 3193,
+     "content": "usefulness. Some task are time consuming and hard AI can easily solve them at no time. It has become an important part of our daily life. Because of AI teaching and learning got revolutionized. It can help teachers to gather information about any topic it can also make a slide which can be used for teaching students. AI is very useful for us but it also have some threatening aspects such as taking peoples job, data loss, privacy, lack and it has become so powerful that if anyone uses it for any bad",
+     "confidence_scores": null,
+     "type": "text"
+    },
+    {
+     "top_left_x": 2013,
+     "top_left_y": 3376,
+     "bottom_right_x": 2406,
+     "bottom_right_y": 3467,
+     "content": "CS CamScanner",
+     "confidence_scores": null,
+     "type": "footer"
+    }
+   ]
+  }
+ ],
+ "model": "mistral-ocr-latest",
+ "usage_info": {
+  "pages_processed": 1,
+  "doc_size_bytes": 3187491
+ },
+ "document_annotation": null
+}
