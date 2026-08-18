@@ -1,0 +1,4 @@
+comparison_target,sample_size,MAE (Mean Absolute Error),RMSE (Root Mean Square Error),Pearson_r (Correlation),QWK (Quadratic Weighted Kappa),Exact_Agreement (%),Adjacent_Agreement_PM1 (%)
+Gemma Pipeline vs Teacher Marks,141,2.273,2.5672,0.1137,0.0014,1.4%,20.6%
+Gemini Model (Ground Truth) vs Teacher Marks,141,1.9787,2.3293,0.2117,0.1351,7.1%,47.5%
+Gemma Pipeline vs Gemini Model Predictions,141,1.1241,1.3026,0.4874,0.3531,3.5%,64.5%

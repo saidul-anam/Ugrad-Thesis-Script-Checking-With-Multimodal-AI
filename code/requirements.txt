@@ -1,0 +1,29 @@
+# Pinned dependencies for Kaggle and local environments
+# Note: On Kaggle, enable Internet in notebook settings before running pip install
+
+# Core Deep Learning & LLM / VLM serving
+vllm>=0.6.0; sys_platform == 'linux'
+transformers>=4.48.0
+torch>=2.4.0
+accelerate>=0.34.0
+bitsandbytes>=0.43.0
+safetensors>=0.4.5
+peft>=0.13.0
+trl>=0.12.0
+
+# Document & Image Ingestion
+pypdfium2>=4.30.0
+pymupdf>=1.24.0
+pillow>=10.4.0
+img2pdf>=0.5.1
+numpy>=1.26.0
+
+# Serialization & Config
+pydantic>=2.8.0
+pyyaml>=6.0.1
+
+# Metrics & Utilities
+pandas>=2.2.0
+tqdm>=4.66.0
+scikit-learn>=1.5.0
+scipy>=1.13.0

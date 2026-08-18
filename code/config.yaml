@@ -1,0 +1,33 @@
+# Pipeline Configuration for HSC English 1st Paper (Rubric v2)
+pipeline:
+  enabled_stages:
+    extractor_a: true
+    rubric_aligner: true
+    extractor_b: true
+    ocr_supervisor: true
+    examiner: true
+    compressor: true
+
+model:
+  backend: easyocr         # easyocr (100% local deep learning OCR) | transformers | vllm | mock
+  checkpoint: easyocr-craft-bilstm
+  quantization: w4a16     # w4a16 | bitsandbytes_4bit | none
+  kv_cache: fp8           # fp8 | fp16
+  temperature: 0.0
+  max_tokens: 4096
+
+ingestion:
+  pdf_dpi: 300
+  max_image_side: 2048
+  page_router: true        # Group pages into questions
+
+language:
+  supported:
+    - bn
+    - en
+
+rubric_path: rubric_v2.txt
+
+logging:
+  output_dir: outputs
+  save_per_stage_json: true

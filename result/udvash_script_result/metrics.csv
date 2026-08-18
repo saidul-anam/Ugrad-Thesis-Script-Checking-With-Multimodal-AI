@@ -1,0 +1,9 @@
+subject,variant,n,exact_agreement,within_0.5,normalized_mae
+ALL,rubric,75,0.2933,0.52,0.2628
+Bangla,rubric,9,0.0,0.1111,0.5293
+Biology,rubric,47,0.3191,0.6596,0.2307
+English,rubric,19,0.3684,0.3684,0.2158
+ALL,solution,75,0.32,0.5333,0.2518
+Bangla,solution,9,0.0,0.1111,0.5226
+Biology,solution,47,0.3404,0.6596,0.2178
+English,solution,19,0.4211,0.4211,0.2079

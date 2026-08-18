@@ -1,0 +1,119 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller / Py2app
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Environments & Virtualenvs
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Deep Learning / OCR Caches & Model Weights
+.easyocr/
+~/.EasyOCR/
+*.pth
+*.pt
+*.bin
+*.safetensors
+*.onnx
+*.h5
+*.tflite
+checkpoints/
+weights/
+
+# LaTeX Auxiliary Build Files (keep report.tex and report.pdf)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# Datasets (Large PDFs / images hosted externally on Google Drive)
+datasets/*.pdf
+datasets/scans/
+raw_scans/
+temp_images/
+code/other/
+data/
+scratch/
+tmp/
+*.tar.gz
+*.zip
+*.7z
+
+# Ignore heavy raw scanned images except documentation assets
+*.jpg
+*.jpeg
+*.png
+!docs/assets/*.jpg
+!docs/assets/*.jpeg
+!docs/assets/*.png
+
+# IDE & OS Caches
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
