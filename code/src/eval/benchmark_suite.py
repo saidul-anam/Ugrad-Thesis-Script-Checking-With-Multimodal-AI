@@ -48,30 +48,67 @@ except ImportError:
 def load_ground_truth_csv(
     extraction_csv_path: str,
     evaluation_csv_path: str
-) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, Dict[str, Any]]]:
+) -> Tuple[Dict[Any, Dict[str, Any]], Dict[Any, Dict[str, Any]]]:
     """
-    Load extraction.csv and evaluation.csv into dictionary indexed by task_id.
+    Load extraction.csv (or extraction_cleaned.csv) and evaluation.csv into dictionaries
+    indexed both by task_id and by composite (script_id, question_no).
     """
-    extractions: Dict[str, Dict[str, Any]] = {}
-    evaluations: Dict[str, Dict[str, Any]] = {}
+    extractions: Dict[Any, Dict[str, Any]] = {}
+    evaluations: Dict[Any, Dict[str, Any]] = {}
 
-    if os.path.exists(extraction_csv_path):
-        with open(extraction_csv_path, "r", encoding="utf-8", errors="replace") as f:
+    # Check for cleaned extraction file first
+    cand_clean = os.path.join(os.path.dirname(extraction_csv_path), "extraction_cleaned.csv")
+    ext_path_to_use = cand_clean if os.path.exists(cand_clean) else extraction_csv_path
+
+    if os.path.exists(ext_path_to_use):
+        with open(ext_path_to_use, "r", encoding="utf-8", errors="replace") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 tid = row.get("task_id", "").strip()
+                sid = row.get("script_id", "").strip()
+                qno = row.get("question_no", "").strip()
+                # Ensure cleaned text is available
+                if "extracted_text_clean" not in row or not row["extracted_text_clean"]:
+                    row["extracted_text_clean"] = clean_text_for_ocr_eval(row.get("extracted_text", ""), remove_punct=True, to_lower=True)
                 if tid:
                     extractions[tid] = row
+                if sid and qno:
+                    extractions[(sid, qno)] = row
 
     if os.path.exists(evaluation_csv_path):
         with open(evaluation_csv_path, "r", encoding="utf-8", errors="replace") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 tid = row.get("task_id", "").strip()
+                sid = row.get("script_id", "").strip()
+                # Extract question_no from evaluation_id or notes if present
                 if tid:
                     evaluations[tid] = row
+                if sid:
+                    evaluations[sid] = row
 
     return extractions, evaluations
+
+
+def get_matching_gt(
+    result: PipelineResult,
+    extractions: Dict[Any, Dict[str, Any]]
+) -> Dict[str, Any]:
+    """
+    Retrieve matching ground truth record strictly checking composite (script_id, question_no)
+    before falling back to task_id only if script_id matches.
+    """
+    # 1. Try composite key
+    if (result.script_id, str(result.question_no)) in extractions:
+        return extractions[(result.script_id, str(result.question_no))]
+
+    # 2. Try task_id key with script_id verification
+    if result.task_id in extractions:
+        ext_row = extractions[result.task_id]
+        if ext_row.get("script_id") == result.script_id:
+            return ext_row
+
+    return {}
 
 
 def generate_comparative_marks_csv(
@@ -220,16 +257,15 @@ def generate_stage_by_stage_performance_csv(
     word_counts = []
     total_struck_tokens = 0
     for r in pipeline_results:
-        tid = r.task_id
-        ext_row = extractions.get(tid, {})
-        gt_text = ext_row.get("extracted_text", "")
+        ext_row = get_matching_gt(r, extractions)
+        gt_text = ext_row.get("extracted_text_clean") or ext_row.get("extracted_text", "")
         if r.stage1_output:
             pred_text = r.stage1_output.STUDENT_ANSWER
             word_counts.append(r.stage1_output.word_count or len(pred_text.split()))
             total_struck_tokens += len(r.stage1_output.struck_tokens)
             if gt_text:
-                s1_cers.append(compute_cer(gt_text, pred_text))
-                s1_wers.append(compute_wer(gt_text, pred_text))
+                s1_cers.append(compute_cer(gt_text, pred_text, clean=True))
+                s1_wers.append(compute_wer(gt_text, pred_text, clean=True))
 
     stage_metrics.append({
         "stage_number": 1,
@@ -271,15 +307,14 @@ def generate_stage_by_stage_performance_csv(
     resolutions_count = 0
     uncertain_count = 0
     for r in pipeline_results:
-        tid = r.task_id
-        ext_row = extractions.get(tid, {})
-        gt_text = ext_row.get("extracted_text", "")
+        ext_row = get_matching_gt(r, extractions)
+        gt_text = ext_row.get("extracted_text_clean") or ext_row.get("extracted_text", "")
         if r.stage3_output:
             resolutions_count += len(r.stage3_output.RESOLVED_VIA_REFERENCE)
             uncertain_count += len(r.stage3_output.STILL_UNCERTAIN)
             if gt_text:
-                s3_cers.append(compute_cer(gt_text, r.stage3_output.STUDENT_ANSWER))
-                s3_wers.append(compute_wer(gt_text, r.stage3_output.STUDENT_ANSWER))
+                s3_cers.append(compute_cer(gt_text, r.stage3_output.STUDENT_ANSWER, clean=True))
+                s3_wers.append(compute_wer(gt_text, r.stage3_output.STUDENT_ANSWER, clean=True))
 
     stage_metrics.append({
         "stage_number": 3,
@@ -298,12 +333,11 @@ def generate_stage_by_stage_performance_csv(
     s4_cers = []
     s4_wers = []
     for r in pipeline_results:
-        tid = r.task_id
-        ext_row = extractions.get(tid, {})
-        gt_text = ext_row.get("extracted_text", "")
+        ext_row = get_matching_gt(r, extractions)
+        gt_text = ext_row.get("extracted_text_clean") or ext_row.get("extracted_text", "")
         if r.stage4_output and gt_text:
-            s4_cers.append(compute_cer(gt_text, r.stage4_output.STUDENT_ANSWER))
-            s4_wers.append(compute_wer(gt_text, r.stage4_output.STUDENT_ANSWER))
+            s4_cers.append(compute_cer(gt_text, r.stage4_output.STUDENT_ANSWER, clean=True))
+            s4_wers.append(compute_wer(gt_text, r.stage4_output.STUDENT_ANSWER, clean=True))
 
     s1_mean_wer = (sum(s1_wers) / len(s1_wers)) if s1_wers else 0.0
     s4_mean_wer = (sum(s4_wers) / len(s4_wers)) if s4_wers else 0.0
@@ -380,9 +414,8 @@ def generate_ocr_stage_accuracy_csv(
     """
     rows = []
     for r in pipeline_results:
-        tid = r.task_id
-        ext_row = extractions.get(tid, {})
-        gt_text = ext_row.get("extracted_text", "")
+        ext_row = get_matching_gt(r, extractions)
+        gt_text = ext_row.get("extracted_text_clean") or ext_row.get("extracted_text", "")
         if not gt_text:
             continue
 

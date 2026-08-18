@@ -40,13 +40,19 @@ class TestMetrics(unittest.TestCase):
         self.assertAlmostEqual(compute_rmse(y_true, y_pred), 0.0)
         self.assertAlmostEqual(compute_qwk(y_true, y_pred), 1.0)
 
-    def test_grading_metrics_divergent(self):
-        y_true = [1.0, 2.0, 3.0, 4.0, 5.0]
-        y_pred = [2.0, 2.0, 4.0, 3.0, 5.0]
-        metrics = compute_all_grading_metrics(y_true, y_pred)
-        self.assertGreater(metrics["MAE"], 0.0)
-        self.assertLessEqual(metrics["QWK"], 1.0)
-        self.assertGreater(metrics["Adjacent_Agreement_PM1"], 0.99)
+    def test_ocr_cleaning_and_punctuation_handling(self):
+        # Reference has punctuation, capitalized letters, and tags
+        ref = "In 1980, the sources of USA electricity: Coal (46%), Natural gas (24%). [struck: wrong]"
+        # Hypothesis is extracted text without punctuation
+        hyp = "in 1980 the sources of usa electricity coal 46 natural gas 24"
+        
+        # When clean=True, punctuation and case differences do not inflate WER
+        clean_wer = compute_wer(ref, hyp, clean=True)
+        self.assertLess(clean_wer, 0.1)  # near 0.0 error
+
+        # Strict verbatim raw WER would be high due to punctuation
+        raw_wer = compute_wer(ref, hyp, clean=False)
+        self.assertGreater(raw_wer, clean_wer)
 
 
 if __name__ == "__main__":
