@@ -20,13 +20,16 @@ from pathlib import Path
 from typing import List, Optional
 
 try:
-    import fitz  # PyMuPDF
+    import pymupdf as fitz
 except ImportError:
-    print("Error: PyMuPDF (fitz) is required. Install via: pip install pymupdf")
-    sys.exit(1)
+    try:
+        import fitz
+    except ImportError:
+        print("Error: PyMuPDF is required. Install via: pip install pymupdf")
+        sys.exit(1)
 
 
-def download_gdrive_folder(gdrive_url: str, target_dir: str) -> None:
+def download_gdrive_folder(gdrive_url: str, target_dir: str, top: Optional[int] = None) -> None:
     """Download PDFs from Google Drive folder if gdown is available."""
     try:
         import gdown
@@ -35,11 +38,26 @@ def download_gdrive_folder(gdrive_url: str, target_dir: str) -> None:
         return
 
     os.makedirs(target_dir, exist_ok=True)
-    print(f"\n[GDown] Downloading folder contents from: {gdrive_url}")
+    print(f"\n[GDown] Fetching folder metadata from: {gdrive_url}")
     print(f"[GDown] Target download directory: {target_dir}")
     try:
-        gdown.download_folder(url=gdrive_url, output=target_dir, quiet=False, use_cookies=False)
-        print("[GDown] Download complete!")
+        if top and top > 0:
+            file_items = gdown.download_folder(
+                url=gdrive_url, output=target_dir, skip_download=True, quiet=False, use_cookies=False
+            )
+            # Filter for PDF files or take top items
+            pdf_items = [f for f in file_items if getattr(f, "path", "").lower().endswith(".pdf")]
+            selected_items = pdf_items[:top] if pdf_items else file_items[:top]
+
+            print(f"[GDown] Total items found: {len(file_items)}. Downloading TOP {len(selected_items)} script(s)...")
+            for idx, item in enumerate(selected_items, 1):
+                print(f"[GDown {idx}/{len(selected_items)}] Downloading {item.path}...")
+                os.makedirs(os.path.dirname(item.local_path), exist_ok=True)
+                gdown.download(id=item.id, output=item.local_path, quiet=False, use_cookies=False)
+            print("[GDown] Download complete!\n")
+        else:
+            gdown.download_folder(url=gdrive_url, output=target_dir, quiet=False, use_cookies=False)
+            print("[GDown] Download complete!\n")
     except Exception as e:
         print(f"[GDown] Download error (You can also download the folder manually to {target_dir}): {e}")
 
@@ -136,7 +154,7 @@ def main():
 
     # Step 1: Optional Google Drive download
     if args.gdrive_url:
-        download_gdrive_folder(args.gdrive_url, args.pdf_dir)
+        download_gdrive_folder(args.gdrive_url, args.pdf_dir, top=args.top)
 
     # Step 2: Discover PDF files
     pdf_dir = Path(args.pdf_dir)
