@@ -13,6 +13,11 @@ import glob
 from pathlib import Path
 from typing import List
 
+# Direct all model downloads and caches to D: drive (146+ GB available)
+os.environ["HF_HOME"] = "D:\\hf_cache\\huggingface"
+os.environ["TRANSFORMERS_CACHE"] = "D:\\hf_cache\\huggingface\\hub"
+os.environ["TORCH_HOME"] = "D:\\hf_cache\\torch"
+
 # Add workspace to path
 current_dir = Path(__file__).resolve().parent.parent
 if str(current_dir) not in sys.path:

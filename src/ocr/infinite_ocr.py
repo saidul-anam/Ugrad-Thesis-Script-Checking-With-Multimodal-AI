@@ -1,13 +1,19 @@
 """
 Infinite-OCR / Nanonets / Vision-Language Model Backend for Handwritten Document Transcription.
-Supports full-page handwritten English text extraction directly.
+Supports full-page handwritten English text extraction natively on GPU and CPU.
 """
 
+import os
 import time
 from datetime import datetime, timezone
 from typing import Optional, List, Dict, Any
 from PIL import Image
 import torch
+
+# Direct all model downloads and caches to D: drive (146+ GB available)
+os.environ["HF_HOME"] = "D:\\hf_cache\\huggingface"
+os.environ["TRANSFORMERS_CACHE"] = "D:\\hf_cache\\huggingface\\hub"
+os.environ["TORCH_HOME"] = "D:\\hf_cache\\torch"
 
 from src.ocr.base import OCRBackend
 from src.ocr.schemas import OCRResult, OCRContent, InputMetadata, ExecutionMetadata, OCRSegment
@@ -32,7 +38,7 @@ class InfiniteOCRBackend(OCRBackend):
         self,
         model_name: str = "nanonets/Nanonets-OCR2-3B",
         device: str = "auto",
-        max_new_tokens: int = 4096,
+        max_new_tokens: int = 2048,
         torch_dtype: str = "auto"
     ):
         self.model_name = model_name
@@ -47,32 +53,39 @@ class InfiniteOCRBackend(OCRBackend):
         print(f"[InfiniteOCRBackend] Initializing {self.model_name} on {self.device}...")
         self.model = None
         self.processor = None
-        self.tokenizer = None
         self._init_model(torch_dtype)
 
     def _init_model(self, torch_dtype: str) -> None:
         try:
-            from transformers import AutoTokenizer, AutoProcessor, AutoModelForImageTextToText
+            from transformers import AutoProcessor
+            try:
+                from transformers import Qwen2_5_VLForConditionalGeneration as ModelClass
+            except ImportError:
+                from transformers import AutoModelForImageTextToText as ModelClass
 
-            dtype = "auto" if self.device == "cuda" else torch.float32
-
-            load_kwargs = {
-                "torch_dtype": dtype,
-            }
             if self.device == "cuda":
-                load_kwargs["device_map"] = "auto"
+                dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+                load_kwargs = {
+                    "torch_dtype": dtype,
+                    "device_map": "auto",
+                }
+            else:
+                dtype = torch.float32
+                load_kwargs = {
+                    "torch_dtype": dtype,
+                    "low_cpu_mem_usage": True,
+                }
 
-            self.model = AutoModelForImageTextToText.from_pretrained(
+            self.model = ModelClass.from_pretrained(
                 self.model_name,
                 **load_kwargs
             )
-            if self.device == "cpu":
+            if self.device == "cpu" and not hasattr(self.model, "hf_device_map"):
                 self.model = self.model.to("cpu")
             self.model.eval()
 
-            self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
             self.processor = AutoProcessor.from_pretrained(self.model_name)
-            print(f"[InfiniteOCRBackend] Model loaded successfully.")
+            print(f"[InfiniteOCRBackend] Loaded {self.model_name} successfully.")
         except Exception as e:
             print(f"[InfiniteOCRBackend] Model initialization deferred or failed: {e}")
 
@@ -91,27 +104,46 @@ class InfiniteOCRBackend(OCRBackend):
                 f"Model '{self.model_name}' is not initialized. Ensure required weights/packages are available."
             )
 
-        # Prepare messages
+        rgb_img = image.convert("RGB")
+
+        # Prepare messages in Qwen-VL format
         messages = [
             {
                 "role": "user",
                 "content": [
-                    {"type": "image", "image": image},
+                    {"type": "image", "image": rgb_img},
                     {"type": "text", "text": self.PROMPT_PLAIN_TEXT},
                 ],
             }
         ]
 
-        text_prompt = self.processor.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
+        try:
+            from qwen_vl_utils import process_vision_info
+            text_prompt = self.processor.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+            image_inputs, video_inputs = process_vision_info(messages)
+            inputs = self.processor(
+                text=[text_prompt],
+                images=image_inputs,
+                videos=video_inputs,
+                padding=True,
+                return_tensors="pt",
+            )
+        except Exception:
+            text_prompt = self.processor.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+            inputs = self.processor(
+                text=[text_prompt],
+                images=[rgb_img],
+                padding=True,
+                return_tensors="pt",
+            )
 
-        inputs = self.processor(
-            text=[text_prompt],
-            images=[image],
-            padding=True,
-            return_tensors="pt",
-        ).to(self.model.device)
+        # Send inputs to model device
+        model_dev = next(self.model.parameters()).device
+        inputs = inputs.to(model_dev)
 
         with torch.no_grad():
             output_ids = self.model.generate(
@@ -130,7 +162,7 @@ class InfiniteOCRBackend(OCRBackend):
 
         normalized_text = safe_normalize_text(raw_text)
 
-        # Derive observable confidence signal since autoregressive models do not output scalar OCR confidence
+        # Derive observable confidence signal
         derived_conf = ConfidenceEstimator.estimate_derived_confidence(normalized_text)
         conf_type = "derived" if derived_conf is not None else "none"
         conf_avail = derived_conf is not None
@@ -156,7 +188,7 @@ class InfiniteOCRBackend(OCRBackend):
             ),
             metadata=ExecutionMetadata(
                 processing_time_seconds=elapsed_time,
-                device=self.device,
+                device=str(model_dev),
                 gpu_memory_peak_mb=get_peak_gpu_memory_mb(),
                 cpu_memory_mb=get_process_memory_mb(),
                 timestamp=datetime.now(timezone.utc).isoformat()
