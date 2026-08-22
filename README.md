@@ -59,6 +59,18 @@ In accordance with [`English Handwritten Exam OCR + Confidence.md`](file:///e:/t
 
 ---
 
+## 📁 Dataset & Ground Truth
+
+- **Dataset Google Drive Link**: [Handwritten Exam Scripts Dataset (Google Drive)](https://drive.google.com/drive/folders/1ijH5q24-dHC2LimjYsWpTLMpRXp8G63z)
+- **Directory Layout**:
+  - `data/samples/`: Test image scripts (e.g. `sample.png`, `sample_exam_001.jpg`).
+  - `data/ground_truth.jsonl`: Benchmark split containing human ground-truth transcriptions formatted as `GroundTruthSample` JSON lines:
+    ```json
+    {"script_id": "exam_001", "image_path": "data/samples/exam_001.jpg", "ground_truth_text": "The student answer text..."}
+    ```
+
+---
+
 ## 🚀 Quick Start & CLI Usage
 
 ### 1. Run Single-Image OCR
