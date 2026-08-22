@@ -1,0 +1,19 @@
+# Core Deep Learning & Vision-Language Model serving
+torch>=2.4.0
+transformers>=4.48.0
+accelerate>=0.34.0
+safetensors>=0.4.5
+sentencepiece>=0.2.0
+
+# Document & Image Processing
+pillow>=10.4.0
+pymupdf>=1.24.0
+numpy>=1.26.0
+easyocr>=1.7.0
+
+# Data schemas, Evaluation & Metrics
+pydantic>=2.8.0
+pyyaml>=6.0.1
+pandas>=2.2.0
+scikit-learn>=1.5.0
+psutil>=5.9.0

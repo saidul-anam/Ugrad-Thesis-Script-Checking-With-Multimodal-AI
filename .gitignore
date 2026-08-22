@@ -87,13 +87,14 @@ weights/
 *.snm
 *.vrb
 
-# Datasets (Large PDFs / images hosted externally on Google Drive)
+# Datasets & Outputs (Large PDFs / images / runs)
 datasets/*.pdf
 datasets/scans/
 raw_scans/
 temp_images/
 code/other/
 data/
+outputs/
 scratch/
 tmp/
 *.tar.gz

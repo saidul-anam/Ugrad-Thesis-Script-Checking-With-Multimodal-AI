@@ -1,0 +1,25 @@
+# Image Preprocessing Configuration for Handwriting Preservation
+
+preprocessing:
+  # Global master switch
+  enabled: true
+  
+  # Image geometry & resolution
+  resize: true
+  max_image_side: 2048
+  min_image_side: 600
+  target_dpi: 300
+  
+  # Image enhancement flags (keep disabled by default to prevent handwriting distortion)
+  deskew: false
+  denoise: false
+  contrast_normalization: false
+  
+  # Formats
+  convert_to_rgb: true
+  supported_extensions:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".webp"
+    - ".pdf"
