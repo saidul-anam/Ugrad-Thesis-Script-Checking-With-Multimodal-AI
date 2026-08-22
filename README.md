@@ -73,11 +73,22 @@ In accordance with [`English Handwritten Exam OCR + Confidence.md`](file:///e:/t
 
 ## 🚀 Quick Start & CLI Usage
 
-### 1. Run Single-Image OCR
+### 1. Convert Exam Script PDFs to High-Resolution Images
+If you have examination scripts in PDF format (or from Google Drive), convert them into high-resolution images:
+
+```powershell
+# Convert top 5 PDFs from a local directory:
+python scripts/convert_pdf_to_images.py --pdf_dir data/raw_pdfs --output_dir data/samples --top 5
+
+# Or download from Google Drive folder and convert top 3 PDFs:
+python scripts/convert_pdf_to_images.py --gdrive_url "https://drive.google.com/drive/folders/1bIQMLlBYwyPb_f6tuycvk5iHz3lMkQYi?usp=sharing" --top 3
+```
+
+### 2. Run Single-Image OCR
 Process a single handwritten answer script image:
 
 ```powershell
-python scripts/run_ocr.py --input data/samples/sample_exam_001.jpg --backend mock
+python scripts/run_ocr.py --input data/samples/sample.png --backend trocr
 ```
 
 **Example Terminal Output:**
