@@ -2,18 +2,19 @@
 
 ocr:
   # BACKEND OPTIONS:
+  # - 'trocr' (Handwriting Vision Transformer: microsoft/trocr-base-handwritten - Default)
   # - 'infinite_ocr' / 'nanonets' (Vision-Language model: nanonets/Nanonets-OCR2-3B or Qwen2.5-VL)
-  # - 'trocr' (Handwriting Vision Transformer: microsoft/trocr-base-handwritten)
+  # - 'unlimited_ocr' / 'baidu' (Baidu Unlimited-OCR 3B MoE)
   # - 'easyocr' (CRAFT + BiLSTM baseline)
   # - 'mock' (Deterministic testing backend)
-  backend: "infinite_ocr"
+  backend: "trocr"
   
   # MODEL CHECKPOINTS:
+  # - "microsoft/trocr-base-handwritten"
+  # - "baidu/Unlimited-OCR"
   # - "nanonets/Nanonets-OCR2-3B"
   # - "Qwen/Qwen2.5-VL-3B-Instruct"
-  # - "Qwen/Qwen2.5-VL-7B-Instruct"
-  # - "microsoft/trocr-base-handwritten"
-  model_name: "nanonets/Nanonets-OCR2-3B"
+  model_name: "microsoft/trocr-base-handwritten"
   
   # Device & execution settings
   # 'auto' automatically selects CUDA GPU if available, else CPU
