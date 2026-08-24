@@ -1,0 +1,39 @@
+# Configuration for Gemma 4 31B IT Multimodal Script Checking Pipeline
+
+model:
+  # Explicitly target Gemma 4 31B IT
+  model_id: "google/gemma-4-31b-it"
+  # Precision for model weights: bfloat16 (supported on RTX 5090 Blackwell architecture)
+  torch_dtype: "bfloat16"
+  # Quantization mode: "4bit" (recommended for 32GB VRAM ~18GB footprint), "8bit", or "none"
+  quantization: "4bit"
+  # Automatic GPU device map allocation
+  device_map: "auto"
+  trust_remote_code: true
+  use_flash_attention_2: false  # enable if flash-attn is installed on target machine
+
+decoding:
+  # Exact verbatim settings specified in gemma_setup.txt
+  temperature: 0.0          # Greedy decoding (0.0 removes sampling randomness)
+  top_p: 0.1                # Top_p filter (relevant if temperature > 0)
+  max_new_tokens: 4096      # Maximum response length per stage
+  do_sample: false          # Deterministic generation
+  
+  # Ablation flag: validate whether thinking/reasoning mode helps or quietly corrects errors
+  thinking_mode: false
+
+pipeline:
+  # Active stages (can toggle off specific stages for debugging)
+  stage1_verbatim: true
+  stage2_verification: true
+  stage3_error_extraction: true
+  stage4_rubric_evaluation: true
+
+  # RAG context configuration
+  rag:
+    enabled: true
+    thematic_context_dir: "configs/context/"
+
+  # Checkpointing / Caching of intermediate stage outputs
+  cache_intermediate_stages: true
+  output_dir: "outputs/runs"

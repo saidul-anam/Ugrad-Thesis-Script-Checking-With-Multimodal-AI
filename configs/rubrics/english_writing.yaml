@@ -1,0 +1,27 @@
+# English Descriptive / Essay / Long Answer Rubric
+subject: "English"
+question_type: "Descriptive Writing / Essay / Comprehension"
+total_marks: 10.0
+
+criteria:
+  - id: "content_relevance"
+    name: "Content & Relevance"
+    max_marks: 3.0
+    description: "Completeness of answer, direct addressing of prompt, and depth of explanation."
+  - id: "organization_structure"
+    name: "Organization & Structure"
+    max_marks: 2.5
+    description: "Logical paragraph sequencing, coherent transitions, and clear introduction/conclusion."
+  - id: "vocabulary_expression"
+    name: "Vocabulary & Expression"
+    max_marks: 2.5
+    description: "Appropriate academic vocabulary, varied sentence structures, and lexical clarity."
+  - id: "linguistic_accuracy"
+    name: "Grammar, Spelling & Mechanics"
+    max_marks: 2.0
+    description: "Grammatical precision, spelling accuracy, and correct punctuation."
+
+penalties:
+  spelling_error_deduction: 0.25
+  grammar_error_deduction: 0.5
+  max_linguistic_deduction: 2.0

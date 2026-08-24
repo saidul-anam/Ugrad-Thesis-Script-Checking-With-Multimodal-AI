@@ -1,0 +1,27 @@
+# Bangla Creative Question (CQ) Evaluation Rubric
+subject: "Bangla"
+question_type: "Creative Question (সৃজনশীল প্রশ্ন - গ/ঘ)"
+total_marks: 10.0
+
+criteria:
+  - id: "knowledge"
+    name: "জ্ঞানমূলক (Knowledge / Recall)"
+    max_marks: 2.0
+    description: "পাঠ্যপুস্তক বা উদ্দীপকের মূল ধারণা ও তথ্য নির্ভুলভাবে উল্লেখ করা।"
+  - id: "comprehension"
+    name: "অনুধাবনমূলক (Comprehension)"
+    max_marks: 2.0
+    description: "প্রশ্নোক্ত ভাব বা ধারণার যথাযথ ব্যাখ্যা এবং মূল বক্তব্য বিশ্লেষণ।"
+  - id: "application"
+    name: "প্রয়োগমূলক (Application)"
+    max_marks: 3.0
+    description: "উদ্দীপকের সাথে পাঠ্যবইয়ের বিষয়বস্তুর সঙ্গতি ও প্রাসঙ্গিকতা স্থাপন।"
+  - id: "higher_ability"
+    name: "উচ্চতর দক্ষতা (Higher Order Synthesis & Evaluation)"
+    max_marks: 3.0
+    description: "নিজস্ব মতামত, যুক্তিগ্রাহ্য মূল্যায়ন, এবং সুসংগঠিত সিদ্ধান্ত উপস্থাপন।"
+
+penalties:
+  spelling_error_deduction: 0.25      # per distinct major spelling error
+  grammar_error_deduction: 0.5        # per structural grammar error
+  max_linguistic_deduction: 2.0       # maximum marks that can be deducted for language errors alone

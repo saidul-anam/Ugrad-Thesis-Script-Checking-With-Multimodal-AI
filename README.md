@@ -1,180 +1,96 @@
-# Stage 1: English Handwritten Examination OCR + Confidence Subsystem
+# Multimodal Exam Script Checking Pipeline (Gemma 4 31B IT)
 
-A research subsystem for high-fidelity transcription and confidence calibration of handwritten English examination answer scripts.
+An automated 4-stage multimodal evaluation pipeline for handwritten exam scripts powered by **Gemma 4 31B IT** with local CUDA acceleration and direct PDF input processing.
 
 ---
 
-## 🏛️ System Architecture
+## 📂 Google Drive Dataset & Smart Caching
 
-```text
-                  HANDWRITTEN ENGLISH EXAM IMAGE
-                                │
-                                ▼
-                    Image Preprocessor (RGB/Resize)
-                                │
-                                ▼
-                       SINGLE-PASS OCR BACKEND
-                   (Infinite-OCR / TrOCR / EasyOCR)
-                                │
-                                ▼
-                 ┌──────────────────────────────┐
-                 │                              │
-                 ▼                              ▼
-            Extracted Text              OCR Confidence Score
-         (Raw & Normalized)              [0.0 to 1.0 Signal]
-                 │                              │
-                 └──────────────┬───────────────┘
-                                ▼
-                       STRUCTURED OCR RESULT
-                       (Typed JSON Metadata)
-                                │
-                                ▼
-                       CONFIDENCE ROUTING
-                          /           \
-                         /             \
-        High Confidence (C >= τ)      Low Confidence (C < τ)
-                   │                             │
-                   ▼                             ▼
-        Fast Text-Only Inference       Multimodal Image + OCR Text
-         (Future Gemma 4 Stage)           (Future Gemma 4 Stage)
+The raw handwritten script PDFs are hosted at:
+> [Google Drive Folder](https://drive.google.com/drive/folders/11spWhJTncBfM_qsOvpH17AgduhyQpqSN)
+
+The pipeline includes built-in smart caching:
+- PDFs are downloaded locally into `data/raw_pdfs/`.
+- **Already downloaded PDFs are automatically detected and NOT redownloaded.**
+- Use `--top N` to control how many PDF scripts to download and evaluate in one batch.
+
+---
+
+## 🚀 4-Stage Pipeline Architecture
+
+```mermaid
+graph TD
+    A[Handwritten Script PDF / Image] -->|Page Extraction & Verbatim Prompt| B[Stage 1: Verbatim Transcription]
+    B -->|Raw Transcript + Image| C[Stage 2: Autocorrection Verification]
+    C -->|Verified Transcript| D[Stage 3: Error Extraction]
+    D -->|Error List + Verified Transcript + Rubric + RAG| E[Stage 4: Rubric Evaluation & Feedback]
+    E --> F[Complete JSON & Markdown Evaluation Report]
 ```
 
----
-
-## 🎯 Scope & Boundaries for Stage 1
-
-In accordance with [`English Handwritten Exam OCR + Confidence.md`](file:///e:/thesis/English%20Handwritten%20Exam%20OCR%20+%20Confidence.md):
-
-- **English Handwriting Only**: Focused on handwritten English answer scripts.
-- **Single OCR Pass**: Strictly eliminates multi-model cascades, OCR-to-OCR corrections, or LLM post-processing loops.
-- **Uncompromised Raw Output**: Raw model predictions are preserved verbatim; safe normalization only handles Unicode NFC and whitespace standardization.
-- **Measurable Confidence Calibration**: Focuses on whether OCR confidence predicts actual correctness (CER/WER against human ground truth).
-
----
-
-## 🛠️ Hardware & Execution Support
-
-- **Automatic Device Resolution**: GPU acceleration (`CUDA`, `bfloat16`/`float16`) on NVIDIA RTX 5090 / CUDA devices; graceful CPU fallback.
-- **Stable Image Hashing**: SHA-256 image hashes embedded in all outputs to detect duplicates and prevent train/test contamination.
-
----
-
-## 📁 Dataset & Ground Truth
-
-- **Dataset Google Drive Link**: [Handwritten Exam Scripts Dataset (Google Drive)](https://drive.google.com/drive/folders/1ijH5q24-dHC2LimjYsWpTLMpRXp8G63z)
-- **Directory Layout**:
-  - `data/samples/`: Test image scripts (e.g. `sample.png`, `sample_exam_001.jpg`).
-  - `data/ground_truth.jsonl`: Benchmark split containing human ground-truth transcriptions formatted as `GroundTruthSample` JSON lines:
-    ```json
-    {"script_id": "exam_001", "image_path": "data/samples/exam_001.jpg", "ground_truth_text": "The student answer text..."}
-    ```
-
----
-
-## 🚀 Quick Start & CLI Usage
-
-### 1. Convert Exam Script PDFs to High-Resolution Images
-If you have examination scripts in PDF format (or from Google Drive), convert them into high-resolution images:
-
-```powershell
-# Convert top 5 PDFs from a local directory:
-python scripts/convert_pdf_to_images.py --pdf_dir data/raw_pdfs --output_dir data/samples --top 5
-
-# Or download from Google Drive folder and convert top 3 PDFs:
-python scripts/convert_pdf_to_images.py --gdrive_url "https://drive.google.com/drive/folders/1bIQMLlBYwyPb_f6tuycvk5iHz3lMkQYi?usp=sharing" --top 3
+### Stage-by-Stage Output Hierarchy:
+Every script run creates a dedicated folder with intermediate artifacts at every stage:
 ```
-
-### 2. Run Single-Image OCR
-Process a single handwritten answer script image:
-
-```powershell
-python scripts/run_ocr.py --input data/samples/sample.png --backend trocr
-```
-
-**Example Terminal Output:**
-```text
-========================================
-OCR RESULT
-========================================
-Script ID:       sample_exam_001
-Backend:         mock (mock-deterministic-v1)
-Language:        English
-Confidence:      0.9400 (type: raw)
-Processing time: 0.02 seconds
-Device:          cpu
-Extracted text:
-----------------------------------------
-The student answers that honesty is the best policy in human life.
-----------------------------------------
-Saved to:        outputs/ocr/sample_exam_001.json
-```
-
-### 2. Run Batch OCR Directory Processing
-Process an entire directory of handwritten exam images:
-
-```powershell
-python scripts/run_ocr.py --input data/samples/ --output outputs/ocr/ --backend infinite_ocr
+outputs/runs/<script_id>/
+  ├── stage1_transcription.json        # Stage 1 metrics, tags & character stats
+  ├── stage1_raw_transcript.txt        # Exact raw verbatim text
+  ├── stage2_verification.json         # Reverted silent autocorrection diffs
+  ├── stage2_verified_transcript.txt   # Canonical verified transcript
+  ├── stage3_errors.json               # Structured error catalog
+  ├── stage3_errors.csv                # Tabular error list (spelling, grammar, syntax)
+  ├── stage4_evaluation.json           # Rubric marks breakdown & deductions
+  ├── complete_report.json             # Consolidated 4-stage report
+  └── evaluation_report.md             # Human-readable GitHub Markdown report
 ```
 
 ---
 
-## 📊 Ground-Truth Benchmarking & Metrics
+## 💻 Top Controller Usage (`scripts/process_scripts.py`)
 
-### 1. Benchmark OCR Accuracy (CER & WER)
-Evaluate single-pass OCR against human ground-truth transcriptions:
+### 1. Fast Local Development (Mock Engine on Your Current PC)
+```bash
+# Process top 3 PDFs from Google Drive with Mock simulation engine:
+python scripts/process_scripts.py --top 3 --mock
 
-```powershell
-python scripts/benchmark_ocr.py --dataset data/ground_truth.jsonl --backend infinite_ocr
+# Download all PDFs only (without evaluating):
+python scripts/process_scripts.py --download-only
+
+# Process top 5 PDFs with Thinking Mode ablation:
+python scripts/process_scripts.py --top 5 --mock --thinking
 ```
 
-Generates:
-- `outputs/reports/ocr_benchmark.csv`: Per-sample CER, WER, confidence, and binary acceptability.
-- `outputs/reports/ocr_benchmark_summary.json`: Aggregate dataset statistics.
+### 2. Production Run on NVIDIA RTX 5090 (32GB VRAM)
+```bash
+# Verify GPU environment and VRAM
+python scripts/setup_env.py
 
-### 2. Analyze Confidence Calibration & Bins
-Calculate Expected Calibration Error (ECE), Brier score, and confidence bins:
+# Process top 10 PDF scripts on CUDA with Gemma 4 31B IT (4-bit NF4)
+python scripts/process_scripts.py --top 10 --model google/gemma-4-31b-it --quant 4bit
 
-```powershell
-python scripts/analyze_confidence.py --benchmark_csv outputs/reports/ocr_benchmark.csv
+# Process all available PDFs from Google Drive
+python scripts/process_scripts.py --quant 4bit
 ```
-
-### 3. Evaluate Routing Thresholds (4 Quadrants)
-Assess candidate confidence thresholds $\tau \in [0.50, 0.95]$ across the four routing quadrants:
-
-```powershell
-python scripts/threshold_analysis.py --benchmark_csv outputs/reports/ocr_benchmark.csv
-```
-
-**Four-Quadrant Routing Matrix:**
-
-| Category | Definition | System Action |
-|---|---|---|
-| **Q1: True High** | $C \ge \tau \land \text{Acceptable}$ | Fast Text-Only Grading |
-| **Q2: False High** | $C \ge \tau \land \text{Unacceptable}$ | **CRITICAL RISK** (Erroneous Text Grading) |
-| **Q3: False Low** | $C < \tau \land \text{Acceptable}$ | Unnecessary Multimodal Inference |
-| **Q4: True Low** | $C < \tau \land \text{Unacceptable}$ | **Safe Multimodal Visual Fallback** |
 
 ---
 
-## ⚙️ Configuration Files
+## ⚙️ Configuration (`configs/pipeline_config.yaml`)
 
-All parameters are configured via `configs/`:
-- **`configs/ocr.yaml`**: Model backends (`infinite_ocr`, `trocr`, `easyocr`, `mock`), checkpoints, token limits, and device mapping.
-- **`configs/preprocessing.yaml`**: Safe stroke-preserving image resizing and RGB standardization.
-- **`configs/confidence.yaml`**: Aggregation algorithms (`length_weighted_mean`, `mean`, `minimum`, `geometric_mean`), calibration methods, and CER/WER acceptability thresholds.
+```yaml
+model:
+  model_id: "google/gemma-4-31b-it"
+  torch_dtype: "bfloat16"
+  quantization: "4bit"  # 4-bit NF4 (~18-20GB VRAM footprint), 8-bit, or none
+  device_map: "auto"
+
+decoding:
+  temperature: 0.0      # Greedy decoding
+  top_p: 0.1
+  max_new_tokens: 4096
+  thinking_mode: false  # Ablation flag: validate reasoning on vs. off
+```
 
 ---
 
-## 🧪 Unit Test Suite
-
-Run all automated unit tests:
-
-```powershell
-python -m unittest discover tests
+## 🧪 Running Unit Tests
+```bash
+pytest
 ```
-
-Tests cover:
-- Schema validation, serialization, and boundary conditions.
-- Confidence aggregation algorithms and derived confidence estimators.
-- Character Error Rate (CER) and Word Error Rate (WER) precision against ground truths.
-- Isotonic regression and Platt scaling calibrators.

@@ -1,0 +1,35 @@
+Pipeline structure
+
+Stage 1 — Verbatim transcription (image → text)
+Gemma 4, given the script image, produces the initial transcript using the verbatim prompt below.
+
+Stage 2 — Autocorrection check (image + Stage 1 transcript → verified transcript)
+Same model, given both the original image and its own Stage 1 output, asked to compare the two and flag/fix any place where it silently "corrected" what was actually written.
+
+Stage 3 — Error extraction (text only)
+Spelling/grammar/syntax errors pulled from the now-verified transcript — a text-only task, cheap, and automatically aligned since it's derived from one canonical string.
+
+Stage 4 — Evaluation + feedback
+Rubric-based grading using the verified transcript + error list (+ RAG context for Bangla literary/thematic tasks).
+
+The verbatim prompt (Stage 1)
+You are transcribing a handwritten exam script. Your ONLY job is to reproduce exactly what is written on the page, character for character — not to correct, improve, or interpret it.
+
+Rules:
+1. Transcribe every word exactly as written, including spelling mistakes, grammar errors, and incorrect word choices. Do NOT fix them.
+2. Preserve the student's original sentence structure and word order, even if it is grammatically incorrect or awkward.
+3. If text is illegible or unclear, write [illegible] rather than guessing a "likely" word.
+4. If a word is ambiguous but you can make out a plausible reading, transcribe your best reading and mark it with [unclear: your reading].
+5. Preserve line breaks and paragraph structure as they appear on the page.
+6. Do not add punctuation, capitalization, or spacing that is not present in the original — match what is actually on the page.
+7. Do not translate. If the text is in Bangla, transcribe in Bangla script. If in English, transcribe in English. Do not mix or convert scripts.
+8. Do not summarize, paraphrase, or omit any part of the response, even if it seems repetitive or off-topic.
+
+Your output should read exactly as if a scribe copied the page by hand, mistakes and all — not as if an editor cleaned it up. It is critical that spelling and grammar errors are preserved exactly, since these errors are the object of evaluation.
+
+Now transcribe the attached image.
+Decoding settings
+Temperature: 0–0.2 (as close to 0 as the interface allows — greedy decoding removes sampling randomness entirely)
+Top_p: 0.1–0.3 (irrelevant if temperature is exactly 0, since there's no sampling happening)
+Thinking/reasoning mode: test both on and off — reasoning steps can go either way (help disambiguate genuinely illegible strokes, or "notice" and quietly fix an error), so this needs to be an explicit variable in your validation, not assumed.
+Consider adding 2–3 few-shot examples in the prompt (image snippet + its correctly-preserved-error transcription) if instruction alone doesn't hold up in testing — demonstration tends to work better than instruction text alone.
