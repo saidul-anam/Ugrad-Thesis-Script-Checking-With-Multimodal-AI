@@ -1,11 +1,15 @@
-#!/usr/bin/env python3
-"""
-Environment and Hardware Diagnostics Tool for Gemma 4 31B IT Local Deployment.
-Verifies CUDA availability, GPU architecture, VRAM capacity, and bitsandbytes quantization support.
-"""
-
+import os
 import sys
 import platform
+from pathlib import Path
+
+# Ensure repository root is on sys.path
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+# Load .env
+from src.core.config import load_config
 
 
 def check_environment():
@@ -41,9 +45,20 @@ def check_environment():
     except ImportError:
         print("\n[ERROR] PyTorch is not installed. Install torch with CUDA support.")
 
-    # 2. Transformers & BitsAndBytes Check
+    # 2. Hugging Face Authentication Check
+    print("\n--- Hugging Face Authentication ---")
+    hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")
+    if hf_token and hf_token.strip():
+        masked_token = hf_token[:6] + "..." + hf_token[-4:] if len(hf_token) > 10 else "***"
+        print(f"  [✓] HF_TOKEN detected: {masked_token}")
+    else:
+        print("  [!] HF_TOKEN is not set in .env or environment variables.")
+        print("      Gemma models require accepting Google's license at https://huggingface.co/google/gemma-4-31b-it")
+        print("      Add your token to '.env' as: HF_TOKEN=hf_your_token_here")
+
+    # 3. Transformers & BitsAndBytes Check
     print("\n--- Dependencies Check ---")
-    packages = ["transformers", "accelerate", "bitsandbytes", "pydantic", "PIL", "yaml", "rich"]
+    packages = ["transformers", "accelerate", "bitsandbytes", "pydantic", "PIL", "yaml", "rich", "pymupdf", "gdown"]
     for pkg in packages:
         try:
             mod = __import__(pkg)

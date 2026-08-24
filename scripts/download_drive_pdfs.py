@@ -11,12 +11,18 @@ from pathlib import Path
 from typing import List, Optional
 
 
-DEFAULT_GDRIVE_FOLDER = "https://drive.google.com/drive/folders/11spWhJTncBfM_qsOvpH17AgduhyQpqSN"
+GDRIVE_FOLDERS = {
+    "bangla": "https://drive.google.com/drive/folders/1tUwj_h5fCMhzymloXhUEJqTeTFKD-ogS",
+    "english": "https://drive.google.com/drive/folders/11spWhJTncBfM_qsOvpH17AgduhyQpqSN"
+}
+DEFAULT_GDRIVE_FOLDER_BANGLA = GDRIVE_FOLDERS["bangla"]
+DEFAULT_GDRIVE_FOLDER_ENGLISH = GDRIVE_FOLDERS["english"]
+DEFAULT_GDRIVE_FOLDER = DEFAULT_GDRIVE_FOLDER_BANGLA
 
 
 def download_drive_pdfs(
     gdrive_url: str = DEFAULT_GDRIVE_FOLDER,
-    target_dir: str = "data/raw_pdfs",
+    target_dir: str = "data/raw_pdfs/bangla",
     top_limit: Optional[int] = None,
     skip_existing: bool = True
 ) -> List[str]:

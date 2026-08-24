@@ -6,9 +6,17 @@ whether reasoning steps reduce or increase silent error correction.
 """
 
 import os
+import sys
 import glob
 import argparse
+from pathlib import Path
 import pandas as pd
+
+# Ensure repository root is on sys.path when running as a standalone script
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 from rich.console import Console
 from rich.table import Table
 

@@ -6,9 +6,11 @@ bitsandbytes>=0.43.0
 
 # Hugging Face Multimodal & LLM stack
 transformers>=4.48.0
+huggingface-hub>=0.20.0
 sentencepiece>=0.2.0
 protobuf>=4.25.0
 pillow>=10.0.0
+python-dotenv>=1.0.0
 
 # PDF & Google Drive Processing
 pymupdf>=1.23.0

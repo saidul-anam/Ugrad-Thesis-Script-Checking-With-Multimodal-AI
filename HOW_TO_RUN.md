@@ -4,14 +4,19 @@ This cheatsheet provides all copy-pasteable commands to run the **4-Stage Multim
 
 ---
 
-## ⚡ 1. Setup & Installation
+## ⚡ 1. Setup & Environment Activation
 
-```bash
-# Ensure you are on the gemma branch
-git checkout gemma
+```powershell
+# 1. Activate your virtual environment (e.g. on Windows PowerShell)
+D:\environments\myenv\scripts\Activate.ps1
 
-# Install dependencies (PyTorch, Transformers, PyMuPDF, gdown, etc.)
+# 2. Ensure dependencies are installed
 pip install -r requirements.txt
+
+# 3. Configure Hugging Face Token in .env
+# Gemma models are gated: accept terms at https://huggingface.co/google/gemma-4-31b-it
+# Create a token at https://huggingface.co/settings/tokens and add to .env:
+# HF_TOKEN=hf_your_token_here
 ```
 
 ---
@@ -59,19 +64,25 @@ python scripts/setup_env.py
 ```
 *(Check that CUDA is available and that total VRAM shows ~32 GB)*
 
-### Step 2: Run on Top 5 PDF Scripts from Google Drive
+### Step 2: Interactive Terminal Mode (Wizard)
 ```bash
-python scripts/process_scripts.py --top 5 --model google/gemma-4-31b-it --quant 4bit
+# Simply run the script - it will ask whether you are processing Bangla or English, how many scripts, rubric, etc.:
+python scripts/process_scripts.py
 ```
 
-### Step 3: Run on ALL Available PDF Scripts
+### Step 3: Run Bangla Exam Scripts Directly
 ```bash
-python scripts/process_scripts.py --quant 4bit
+# Top 5 Bangla scripts with Creative Question rubric (PDFs stored in data/raw_pdfs/bangla, outputs in outputs/runs/bangla)
+python scripts/process_scripts.py --lang bangla --top 5 --quant 4bit
+
+# All available Bangla scripts:
+python scripts/process_scripts.py --lang bangla --quant 4bit
 ```
 
-### Step 4: Run with English Writing Rubric
+### Step 4: Run English Writing Exam Scripts Directly
 ```bash
-python scripts/process_scripts.py --top 5 --rubric configs/rubrics/english_writing.yaml --quant 4bit
+# Top 5 English scripts with Essay Writing rubric (PDFs stored in data/raw_pdfs/english, outputs in outputs/runs/english)
+python scripts/process_scripts.py --lang english --top 5 --quant 4bit
 ```
 
 ### Step 5: Run Thinking Mode Benchmark / Ablation Study
@@ -83,10 +94,10 @@ python scripts/evaluate_benchmark.py --image-dir data/samples/
 
 ## 📊 4. How to Inspect Output Results
 
-Every evaluated script creates its own folder with all 4 stage outputs under `outputs/runs/<script_id>/`:
+Evaluated scripts are stored separately by language under `outputs/runs/<lang>/<script_id>/`:
 
 ```
-outputs/runs/<script_id>/
+outputs/runs/bangla/<script_id>/  (or outputs/runs/english/<script_id>/)
   ├── stage1_transcription.json        # Stage 1 metrics & character stats
   ├── stage1_raw_transcript.txt        # Raw verbatim transcription
   ├── stage2_verification.json         # Silent autocorrection audit diffs
@@ -101,7 +112,7 @@ outputs/runs/<script_id>/
 To quickly view the summary markdown report of a script:
 ```bash
 # On Windows PowerShell
-cat outputs/runs/<script_id>/evaluation_report.md
+cat outputs/runs/bangla/<script_id>/evaluation_report.md
 ```
 
 ---
