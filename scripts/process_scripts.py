@@ -154,11 +154,38 @@ def interactive_wizard(args):
         default=args.thinking
     )
 
-    # 7. Skip already evaluated scripts (--skip-evaluated)
-    args.skip_evaluated = Confirm.ask(
-        "\n[bold green]7. Skip scripts that already have completed evaluation reports?[/bold green]",
-        default=args.skip_evaluated
-    )
+    # 7. Google Drive Sync / Download Action
+    console.print("\n[bold green]7. Google Drive Download Action:[/bold green]")
+    console.print("   [1] Smart Sync (Download if missing, skip if already present) [yellow](default)[/yellow]")
+    console.print("   [2] Local Only (Do NOT download from GDrive, use local PDFs only)")
+    console.print("   [3] Force Re-download (Re-download from GDrive even if files exist)")
+    console.print("   [4] Download Only (Download PDFs from GDrive and exit without evaluating)")
+
+    dl_default = "2" if args.skip_download else ("3" if args.force_download else ("4" if args.download_only else "1"))
+    dl_choice = Prompt.ask("[bold green]   Select Download Action[/bold green]", choices=["1", "2", "3", "4"], default=dl_default)
+    if dl_choice == "1":
+        args.skip_download = False
+        args.force_download = False
+        args.download_only = False
+    elif dl_choice == "2":
+        args.skip_download = True
+        args.force_download = False
+        args.download_only = False
+    elif dl_choice == "3":
+        args.skip_download = False
+        args.force_download = True
+        args.download_only = False
+    elif dl_choice == "4":
+        args.skip_download = False
+        args.force_download = False
+        args.download_only = True
+
+    # 8. Skip already evaluated scripts (--skip-evaluated)
+    if not args.download_only:
+        args.skip_evaluated = Confirm.ask(
+            "\n[bold green]8. Skip scripts that already have completed evaluation reports?[/bold green]",
+            default=args.skip_evaluated
+        )
 
     # Review & Confirm
     console.print("\n" + "="*50)
@@ -166,6 +193,7 @@ def interactive_wizard(args):
     top_label = str(args.top) if args.top else "All available"
     thinking_label = "[green]Enabled[/green]" if args.thinking else "[dim]Disabled[/dim]"
     skip_label = "[green]Yes[/green]" if args.skip_evaluated else "[yellow]No[/yellow]"
+    dl_action_label = "Local Only (No Download)" if args.skip_download else ("Force Re-download" if args.force_download else ("Download Only" if args.download_only else "Smart Sync"))
 
     console.print(Panel(
         f"• [cyan]Language / Subject (--lang):[/cyan] [bold yellow]{args.lang.capitalize()}[/bold yellow]\n"
@@ -174,6 +202,7 @@ def interactive_wizard(args):
         f"• [cyan]Quantization (--quant):[/cyan] [bold white]{args.quant}[/bold white]\n"
         f"• [cyan]Engine Mode (--mock):[/cyan] {engine_label}\n"
         f"• [cyan]Thinking Mode (--thinking):[/cyan] {thinking_label}\n"
+        f"• [cyan]Download Action:[/cyan] [bold white]{dl_action_label}[/bold white]\n"
         f"• [cyan]Skip Evaluated (--skip-evaluated):[/cyan] {skip_label}\n"
         f"• [cyan]Raw PDF Directory:[/cyan] [bold white]{args.pdf_dir}[/bold white]\n"
         f"• [cyan]Output Directory:[/cyan] [bold white]{args.output_dir}[/bold white]\n"
@@ -270,6 +299,12 @@ def main():
         help="Only download PDFs without running evaluation"
     )
     parser.add_argument(
+        "--skip-download",
+        "--local-only",
+        action="store_true",
+        help="Do not download from Google Drive; use existing local PDFs only"
+    )
+    parser.add_argument(
         "--skip-evaluated",
         action="store_true",
         default=True,
@@ -337,7 +372,8 @@ def main():
         gdrive_url=args.gdrive_url,
         target_dir=args.pdf_dir,
         top_limit=args.top,
-        skip_existing=not args.force_download
+        skip_existing=not args.force_download,
+        skip_download=args.skip_download
     )
 
     if not pdf_paths:

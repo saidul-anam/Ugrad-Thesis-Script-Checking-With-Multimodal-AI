@@ -121,11 +121,13 @@ cat outputs/runs/bangla/<script_id>/evaluation_report.md
 
 | Argument | Example | Purpose |
 | :--- | :--- | :--- |
-| `--top N` | `--top 5` | Process only the first `N` scripts. |
-| `--mock` | `--mock` | Use the simulated engine (no GPU / no model download). |
-| `--model` | `--model google/gemma-4-31b-it` | Model checkpoint identifier or path. |
-| `--quant` | `--quant 4bit` | `4bit` (recommended for 32GB VRAM), `8bit`, or `none`. |
+| `--lang` | `--lang bangla` or `--lang english` | Select subject/language (`bangla` or `english`). |
+| `--top N` | `--top 5` | Limit download and processing to the first `N` scripts. |
+| `--mock` | `--mock` | Use simulated CPU engine (no GPU / no model download). |
+| `--model` | `--model google/gemma-4-31b-it` | Model checkpoint identifier or local directory. |
+| `--quant` | `--quant 4bit` | `4bit` (recommended for RTX 5090), `8bit`, or `none`. |
 | `--thinking` | `--thinking` | Enable reasoning/thinking mode ablation. |
 | `--rubric` | `--rubric path/to/rubric.yaml` | Select grading rubric. |
 | `--download-only` | `--download-only` | Download PDFs from Google Drive without evaluating. |
-| `--force-download`| `--force-download` | Force re-download even if PDFs exist locally. |
+| `--local-only` | `--local-only` (or `--skip-download`) | Skip Google Drive download and use local PDFs only. |
+| `--force-download`| `--force-download` | Force re-download even if PDFs already exist locally. |

@@ -24,11 +24,12 @@ def download_drive_pdfs(
     gdrive_url: str = DEFAULT_GDRIVE_FOLDER,
     target_dir: str = "data/raw_pdfs/bangla",
     top_limit: Optional[int] = None,
-    skip_existing: bool = True
+    skip_existing: bool = True,
+    skip_download: bool = False
 ) -> List[str]:
     """
     Downloads exam script PDFs from Google Drive folder using gdown.
-    Skips downloading if files already exist locally.
+    Skips downloading if files already exist locally or if skip_download is True.
     """
     target_path = Path(target_dir)
     target_path.mkdir(parents=True, exist_ok=True)
@@ -36,6 +37,12 @@ def download_drive_pdfs(
     # Check already existing PDFs
     existing_pdfs = sorted(list(target_path.glob("*.pdf")) + list(target_path.glob("*.PDF")))
     
+    if skip_download:
+        print(f"[GDrive Downloader] Local-only mode active. Found {len(existing_pdfs)} existing PDFs in '{target_dir}'.")
+        if top_limit and top_limit > 0:
+            return [str(p) for p in existing_pdfs[:top_limit]]
+        return [str(p) for p in existing_pdfs]
+
     if skip_existing and existing_pdfs:
         print(f"[GDrive Downloader] Found {len(existing_pdfs)} existing PDFs in '{target_dir}'.")
         if top_limit and len(existing_pdfs) >= top_limit:
