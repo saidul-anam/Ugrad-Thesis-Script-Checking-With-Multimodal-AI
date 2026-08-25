@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the primary source (coal at 46%) and secondary source (natural gas at 24%), noting that electricity was largely coal-based. However, the data for oil is misreported as 2% instead of 12%, and nuclear/oil are conflated.",
+      "evidence": "On the other hand a short number of electricity come from the Hydro-electric power, Nuclear and oil. and to it is 16%, 2%, and 2%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a recognizable introduction, analytical grouping of sources, and a concluding synthesis, but is undermined by truncated words and disjointed sentence boundaries.",
+      "evidence": "The chart hilight the data of the sources of the USA electricity in the year of 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive density of grammatical errors, tense inconsistencies, subject-verb agreement failures, and severe spelling mistakes throughout the entire script.",
+      "evidence": "We can clearly seen fra the pie chart that a hage numbe of electricity is come from natura gas"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts comparative structures and analytical deductions, though expressed in very crude, non-standard phrasing.",
+      "evidence": "But coal has big more portion than natural gas an this number is 46% which is high"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('hilight', 'fra', 'hage', 'numbe', 'natura')",
+      "Faulty verb forms and tense control ('can clearly seen', 'is come', 'we can told')",
+      "Data misrepresentation (recording Oil as 2% rather than 12%)",
+      "Fragmented sentences and incomplete words ('cha', 'char')"
+    ],
+    "positive_aspects": [
+      "Correctly identifies the dominant energy source (Coal at 46%)",
+      "Attempts an analytical overview and logical conclusion rather than purely isolated line listing"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a basic understanding of the chart by identifying the major power source (coal) and providing an overview and concluding remark. However, severe linguistic breakdown across spelling, verb forms, and sentence mechanics, combined with a factual error in the secondary data (misstating oil as 2%), places the script at the lower end of Band 2.",
+  "_metadata": {
+    "task_id": "CHART_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "dcd497d19b949348b3c65a963b06ff0b5ad7950bb912cb2d3bda6c5a3e9afbe4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:22:27.733438+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "0790bb5ad7a7c097bad4164ea9fad22f2196beb52c477e316c738387ea52fddb",
+    "input_tokens": 4442,
+    "output_tokens": 3635,
+    "thoughts_tokens": 2780,
+    "cost_usd": 0.01042,
+    "latency_ms": 83983,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4442,
+        "output_tokens": 3635,
+        "thoughts_tokens": 2780,
+        "cost_usd": 0.01042,
+        "latency_ms": 83983,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

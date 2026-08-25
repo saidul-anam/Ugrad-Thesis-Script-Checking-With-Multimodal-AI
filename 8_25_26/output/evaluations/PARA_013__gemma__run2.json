@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully addresses all components of the prompt (definition, features, applications, education, and threats), although the development of these points is superficial and repetitive.",
+      "evidence": "Student get many benefits by using AI. They can find any problems solution with a few second. They can take help by make their assingment."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response adheres to the single-paragraph constraint. However, the opening sentence is a weak definition of an acronym rather than a strong topic sentence, and the internal flow is choppy.",
+      "evidence": "Artificial intelligence is the short form of AI."
+    },
+    "language_mechanics": {
+      "rationale": "There is an extreme density of errors in spelling, subject-verb agreement, and syntax. Almost every sentence contains a mechanical error, though the meaning remains discernible.",
+      "evidence": "AI is the a meachinge which is buit up by using human intelligence . That's mean AI is the outcome of human intelligence."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing is authentic and does not appear to be copied from a guide, showing a genuine attempt to express personal thoughts, albeit in very basic English.",
+      "evidence": "we can find emotion when there is a human teacher but we can't find any emotion in AI teacher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (meachinge, buit, systam, assingment, opperation)",
+      "Subject-verb agreement and tense inconsistency",
+      "Article misuse",
+      "Syntax breakdown"
+    ],
+    "positive_aspects": [
+      "Full coverage of prompt requirements",
+      "Adherence to single-paragraph format",
+      "Authentic expression of ideas"
+    ]
+  },
+  "feedback_summary": "The candidate earns a score of 5 (Band 2) because they have fundamentally addressed all parts of the prompt within a single paragraph. However, the script is severely hampered by pervasive linguistic failures in spelling and grammar. While the effort is original and the content is relevant, the lack of mechanical control prevents it from reaching Band 3.",
+  "_metadata": {
+    "task_id": "PARA_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d0a0c09fe4284371db5994dfa153db2f99c226e28da58c8b620e854b0c24036",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:24:08.982234+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d7a119d44012fbb2455b9febd8f0657af03f93b699ec7867d07ea6836dfb43bb",
+    "input_tokens": 4666,
+    "output_tokens": 2375,
+    "thoughts_tokens": 1566,
+    "cost_usd": 0.001179,
+    "latency_ms": 67390,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4666,
+        "output_tokens": 2375,
+        "thoughts_tokens": 1566,
+        "cost_usd": 0.001179,
+        "latency_ms": 67390,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

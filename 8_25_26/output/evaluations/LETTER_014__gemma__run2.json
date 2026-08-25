@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, stating a clear plan to pursue university admission after the HSC exam.",
+      "evidence": "Today I want to tell you about my plan after HSC exam... I want to admit in well known university."
+    },
+    "structure_format_brevity": {
+      "rationale": "The letter contains the majority of required layout components (address, date, salutation, body, and close), though the execution is basic.",
+      "evidence": "Azimpur, Dhaka\nDate: 26-06-26\n\nDear friend,"
+    },
+    "language_mechanics": {
+      "rationale": "There are several notable spelling errors and grammatical slips that hinder the flow, though meaning remains intelligible.",
+      "evidence": "pre paration... admission bettle... Convergi my regards"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies on highly formulaic and cliché phrases common in memorized templates rather than authentic expression.",
+      "evidence": "HSC exam is very significant exam in academic life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'bettle', 'Convergi')",
+      "Formulaic phrasing",
+      "Awkward verb usage ('want to admit in')"
+    ],
+    "positive_aspects": [
+      "Correct informal register",
+      "Direct relevance to the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate successfully fulfills the prompt's objective and maintains the correct informal register. While the structure is mostly complete, the script is weakened by several spelling mistakes and a reliance on generic, memorized phrasing. The overall performance falls comfortably into Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "17956f5c0ac921cfbc83d2872babe7528f9b39c146c6a52e8710496eab212f86",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:37:55.986251+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2d6d23433990cc4c751f48d787285f2fa1abc08309fa76f346db7b41e9aaea36",
+    "input_tokens": 4302,
+    "output_tokens": 2468,
+    "thoughts_tokens": 1765,
+    "cost_usd": 0.001171,
+    "latency_ms": 69672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4302,
+        "output_tokens": 2468,
+        "thoughts_tokens": 1765,
+        "cost_usd": 0.001171,
+        "latency_ms": 69672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

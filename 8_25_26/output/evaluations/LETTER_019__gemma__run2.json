@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt and states the purpose of the letter immediately.",
+      "evidence": "In the letter y wanted to know about my future Plan affi passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components (Address, Date, Salutation, Body, Close, Signature) are present.",
+      "evidence": "27-06-2026\nDemira, Dhaka\nBangladesh\n\nDear Messi,\n...\nYour loving,\nMridul"
+    },
+    "language_mechanics": {
+      "rationale": "The text contains high error density with frequent spelling mistakes and grammatical lapses, though the meaning remains discernible.",
+      "evidence": "I reci your letter just now... developed my English Spiking and listining Skill"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The introduction uses a highly common memorized template, though the academic goals (BUET/RUET) show some personal specificity.",
+      "evidence": "At first take my heartiest love. Hope you great by the grace of Almighty ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (reci, affi, spiking, parrants)",
+      "Grammatical omissions (Hope you [are] great)",
+      "Tense inconsistency (developed vs develop)"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to structural layout",
+      "Clear and relevant content"
+    ]
+  },
+  "feedback_summary": "The candidate earns a Band 4 score primarily due to a flawless structural layout and a clear adherence to the prompt's purpose. However, the total score is kept at the lower end of the band because of significant linguistic errors in spelling and grammar, and a reliance on a standard memorized opening.",
+  "_metadata": {
+    "task_id": "LETTER_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "9e2f17c3279a8a14d69b1748161c0baf99aff60f3174950b0034a43a1814ac13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:26:54.847241+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2277bfebeb4294a51c97354e29d0b351a40cc6388417f38cb010b6a286945c75",
+    "input_tokens": 4408,
+    "output_tokens": 2456,
+    "thoughts_tokens": 1730,
+    "cost_usd": 0.001178,
+    "latency_ms": 69218,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4408,
+        "output_tokens": 2456,
+        "thoughts_tokens": 1730,
+        "cost_usd": 0.001178,
+        "latency_ms": 69218,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

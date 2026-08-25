@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the central contrast between night and day dreamers but describes the poem's content rather than articulating the abstract theme (e.g., ambition or conscious will).",
+      "evidence": "Thore who dreams with the open eye and make their dreams come true are real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block without padding, though it lacks a formal opening sentence that explicitly states the theme.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of linguistic errors, including significant spelling mistakes and subject-verb agreement issues.",
+      "evidence": "Some drems while they sleep and some dreams while they are concious."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids verbatim copying, but the interpretation is a superficial paraphrase of the poem's lines.",
+      "evidence": "Everyone dreams but not in the same."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (drems, concious, Thore)",
+      "Subject-verb agreement (some dreams, who dreams)"
+    ],
+    "positive_aspects": [
+      "Correct identification of the poem's core contrast",
+      "Successful paraphrasing without verbatim copying"
+    ]
+  },
+  "feedback_summary": "The response demonstrates a basic understanding of the poem's content but fails to transition from a plot summary to a thematic explanation. Significant errors in spelling and syntax are present throughout the text, and the lack of abstract interpretation limits the score to Band 2.",
+  "_metadata": {
+    "task_id": "THEME_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3e1f287ebb0c375d8063d4518a90a1f4ad75d1b265ff68a0b84c8870d9ea8b57",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:17:43.237296+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6d77511d39d0a440747738cc46458bb66d023746b82163121b08e2432b2c4e5e",
+    "input_tokens": 4264,
+    "output_tokens": 2398,
+    "thoughts_tokens": 1706,
+    "cost_usd": 0.001146,
+    "latency_ms": 75812,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4264,
+        "output_tokens": 2398,
+        "thoughts_tokens": 1706,
+        "cost_usd": 0.001146,
+        "latency_ms": 75812,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

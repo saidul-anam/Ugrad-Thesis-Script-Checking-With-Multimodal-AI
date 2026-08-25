@@ -1,0 +1,102 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately establishes the purpose of the letter and provides a comprehensive set of future plans that directly answer the prompt.",
+      "evidence": "In your last letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components of an informal letter (Address, Date, Salutation, Body, Close, and Signature) are present, despite a redundant address block at the end.",
+      "evidence": "Road-6, Avenue-7, Mirpur-DOHS, Dhaka 27 June, 2026... Yours dearly, Azwad"
+    },
+    "language_mechanics": {
+      "rationale": "The register is appropriate for a friend, but there are frequent errors in capitalization of the first-person pronoun and a spelling error.",
+      "evidence": "write abort it to you... from where i will prepare... im also thinking"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic and avoids memorized templates, using natural (though slightly flawed) expressions.",
+      "evidence": "crack one of the many engineering universities... love to the younglings"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "First-person pronoun capitalization ('i' instead of 'I')",
+      "Spelling errors ('abort' instead of 'about')",
+      "Missing 'to' in infinitive phrases ('trying improve')"
+    ],
+    "positive_aspects": [
+      "Strong, authentic voice",
+      "Full adherence to structural requirements",
+      "Clear and logical progression of thoughts"
+    ]
+  },
+  "feedback_summary": "The candidate provides a well-structured and authentic response that fully addresses the prompt. The letter includes all necessary structural elements, although the student added an unnecessary redundant address section at the bottom. The score is placed at the lower end of Band 4 due to consistent lapses in basic mechanics, specifically the failure to capitalize the pronoun 'I' and a few spelling/syntax slips.",
+  "_metadata": {
+    "task_id": "LETTER_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "748c3de50ecdc1dcbd9a1f82f7553d9fd834f19a31e0d792ec47af6d348352e9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:56:45.047320+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "01e12e38becde6a787713daf6086421690cfe1d0a7f0aa62a939179ef8a4da69",
+    "input_tokens": 4453,
+    "output_tokens": 2658,
+    "thoughts_tokens": 1888,
+    "cost_usd": 0.001243,
+    "latency_ms": 74140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4453,
+        "output_tokens": 2658,
+        "thoughts_tokens": 1888,
+        "cost_usd": 0.001243,
+        "latency_ms": 74140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all five prompts (definition, features, applications, education, and threats), but the content is very basic and lacks depth or analytical detail.",
+      "evidence": "Some says AI can replace a human and take their job. I think AI is to help us."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is correctly formatted as a single unified block. However, it lacks smooth transitions between the prompt-based answers, making it feel more like a list of answers than a cohesive paragraph.",
+      "evidence": "Artificial Intelligence is something that we human created to to make our life much easy."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of errors in subject-verb agreement, spelling, and phrasing, although the text remains intelligible.",
+      "evidence": "we human created to to make our life much easy... 3d imodel... coleges use AI to teaching and learning."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears authentic and not copied from a guide, but the vocabulary is repetitive and the sentence structures are simplistic.",
+      "evidence": "It can answer everything. It can generate any type of picture."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement (e.g., 'Some says')",
+      "Spelling Errors (e.g., 'imodel', 'coleges')",
+      "Incorrect Adjective/Adverb usage (e.g., 'much easy')"
+    ],
+    "positive_aspects": [
+      "Full adherence to prompt requirements",
+      "Correct single-paragraph structural layout",
+      "Authentic student voice"
+    ]
+  },
+  "feedback_summary": "The candidate successfully addressed all components of the prompt and followed the structural requirement of writing a single paragraph. However, the score is limited by very basic vocabulary and a high frequency of grammatical and spelling errors. While the text is clear and authentic, the lack of sophisticated sentence transitions and shallow content depth places this script in the lower range of Band 3.",
+  "_metadata": {
+    "task_id": "PARA_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3215bf8b98341296783d38ded46b23dafff3717134d37de081b9480004b9689d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:15:54.709055+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a6172eb8936a3a01732281ec467cd749cc4e9320a94c02bb90e80f95b893c8fd",
+    "input_tokens": 4411,
+    "output_tokens": 2935,
+    "thoughts_tokens": 2169,
+    "cost_usd": 0.001322,
+    "latency_ms": 82016,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4411,
+        "output_tokens": 2935,
+        "thoughts_tokens": 2169,
+        "cost_usd": 0.001322,
+        "latency_ms": 82016,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully connects with the prompt stem and maintains the sequential narrative arc of the traditional fable through to the resolution, though clarity is occasionally strained by missing words.",
+      "evidence": "The mouse apologize for it's did and told him if he forgive the mouse it will be his friend and help in we when he needs."
+    },
+    "structure_format_brevity": {
+      "rationale": "A clear moral lesson and positive resolution are provided at the end, but the candidate completely omitted a story title, which was explicitly instructed in the prompt.",
+      "evidence": "Moral of the story is — we should not judge anyone by their outlook."
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits pervasive grammatical weaknesses, including severe past/present tense inconsistency, missing words, incorrect possessives, and flawed syntax.",
+      "evidence": "While running the mouse jumped into the of lion. The lion woke up and got very angry over the mouse. The mouse apologize for it's did"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies entirely on a standard, formulaic recounting of Aesop's fable without unique descriptive detail or stylistic flair.",
+      "evidence": "The mouse came and helped the lion by cutting the net by it's sharp teeth."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency and failure to maintain past tense (e.g., 'apologize', 'forgive', 'leave')",
+      "Omission of mandatory story title",
+      "Structural sentence omissions and wrong parts of speech ('jumped into the of lion', 'it's did', 'was pleasure')"
+    ],
+    "positive_aspects": [
+      "Logically completed the storyline initiated by the prompt",
+      "Explicitly articulated a constructive moral ending"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete narrative arc following the provided prompt stem, concluding with an explicit moral. However, the response fails to include a title, demonstrates severe tense shifts between past and present, and contains notable sentence fragmentation and grammatical inaccuracies.",
+  "_metadata": {
+    "task_id": "STORY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bb90af09d69476bc00a80dd2db6422b17a265ee835435a5ca432a03ebd4b1201",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:16:29.192138+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "716249e76dbd30c8c8a2be0c3a0c9e872d7a731cad059ee5c26f0d28bd537661",
+    "input_tokens": 4413,
+    "output_tokens": 3508,
+    "thoughts_tokens": 2739,
+    "cost_usd": 0.010094,
+    "latency_ms": 39186,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4413,
+        "output_tokens": 3508,
+        "thoughts_tokens": 2739,
+        "cost_usd": 0.010094,
+        "latency_ms": 39186,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

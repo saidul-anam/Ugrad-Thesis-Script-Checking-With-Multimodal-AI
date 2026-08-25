@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script includes all major energy sources (Coal, Natural Gas, Hydro-electric, Oil, Nuclear) and correctly highlights Coal as the dominant source and Nuclear as the least. However, it fails to mention the exact 2% figure for Nuclear and has a slight arithmetic slip regarding the Coal-Oil difference.",
+      "evidence": "The major scale of electricity is produced from coal. Coal produces 46% of the USA electricity in 1980."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate organizes the response logically with an introductory lead, a comparative body paragraph, and a concluding overview. There is slight repetition between the introduction and conclusion.",
+      "evidence": "The chart shows the sources of the USA electricity in 1980. We can see a crystal clear dividition of the sources of USA electricity in 1980 from the chart."
+    },
+    "language_mechanics": {
+      "rationale": "The response suffers from multiple spelling errors ('dividition', 'proudes', 'Goal'), accidental word duplications ('Which Which', 'excessive excessive', 'least least'), and incomplete sentence fragments.",
+      "evidence": "Which almost half of the amount what coals produces."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script demonstrates an authentic effort to perform mathematical comparisons ('almost half', '22% more', '30% less'), but the vocabulary and sentence structures remain rudimentary and repetitive.",
+      "evidence": "Goal produces 22% more electricity than natural gas."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragments beginning with relative pronouns ('Which almost half...')",
+      "Spelling errors ('dividition', 'proudes', 'Goal' for Coal)",
+      "Word repetition/duplication ('Which Which', 'least least', 'excessive excessive')"
+    ],
+    "positive_aspects": [
+      "Clear comparative calculations between categories (e.g., Coal vs. Natural gas)",
+      "Proper identification of highest and lowest data points",
+      "Adherence to chart data without inserting outside opinions or facts"
+    ]
+  },
+  "feedback_summary": "The candidate successfully analyzes the chart by highlighting key trends, peaks, and comparative differences across the energy sources. However, frequent mechanical slips, spelling mistakes, word duplications, and fragmented sentences prevent the script from scoring higher. It comfortably meets Band 3 criteria.",
+  "_metadata": {
+    "task_id": "CHART_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b4d1a4bf259423ea045bc9ae381c0dee59cd689102f285ccdc8fd13466a11170",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:27:03.634561+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "de0a1020c74408b488d92aa366eeae7106e72e496ca846b4545bd3e2c2fabed3",
+    "input_tokens": 4436,
+    "output_tokens": 3232,
+    "thoughts_tokens": 2390,
+    "cost_usd": 0.009411,
+    "latency_ms": 25734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4436,
+        "output_tokens": 3232,
+        "thoughts_tokens": 2390,
+        "cost_usd": 0.009411,
+        "latency_ms": 25734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

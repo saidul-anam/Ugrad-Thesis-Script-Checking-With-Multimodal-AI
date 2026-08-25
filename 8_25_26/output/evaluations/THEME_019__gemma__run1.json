@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the general subject (dreams/inspiration) and recognizes the contrast between passive night-dreamers and active day-dreamers. However, it stays close to a summary of the poem's logic rather than articulating an abstract governing theme (e.g., ambition or the power of will).",
+      "evidence": "The poem is about an inspiration named dream ."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single coherent block and begins by immediately addressing the topic without unnecessary padding.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are significant grammatical failures and spelling errors that impede fluency, including subject-verb agreement issues and awkward phrasing.",
+      "evidence": "can unable to man to Sleep . ... Inspairication"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoids copying the poem verbatim (0% overlap) and provides an original interpretation of the 'dangerous' dreamers as 'real hero's'.",
+      "evidence": "Dreamers of the day are the real hero's"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (Inspairication)",
+      "Subject-Verb Agreement (Someone dream)",
+      "Syntax/Word Choice (can unable to man to Sleep)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct structural layout",
+      "Accurate identification of the poem's core contrast"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the poem's meaning and avoids any verbatim copying, which is a strong point. However, the response is more of a summarized explanation than an analysis of an abstract theme. The score is heavily penalized by poor language mechanics, specifically regarding syntax and spelling, which places the script firmly in Band 3.",
+  "_metadata": {
+    "task_id": "THEME_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "78c7e4d6426b44308318867daff79312fb0f49f78a049dd18c803fb20543ee85",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:28:17.507262+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "04a3530a9e6d8d016f8c588faea52a4f1323e2ce579bcfc7d581bd2da04f71a2",
+    "input_tokens": 4307,
+    "output_tokens": 2200,
+    "thoughts_tokens": 1466,
+    "cost_usd": 0.001091,
+    "latency_ms": 61578,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4307,
+        "output_tokens": 2200,
+        "thoughts_tokens": 1466,
+        "cost_usd": 0.001091,
+        "latency_ms": 61578,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

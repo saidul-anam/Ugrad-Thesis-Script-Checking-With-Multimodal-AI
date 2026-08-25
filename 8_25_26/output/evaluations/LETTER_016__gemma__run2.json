@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, providing a clear set of future plans including university admission, gym, and military goals.",
+      "evidence": "In your last letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components are present, but the layout is marred by a confusing and redundant footer where addresses and signatures are repeated illogically.",
+      "evidence": "From, Azwad To, Abrar Road-11, Sector-7, Uttara Road-6, Avenue-7, Mirpur DOHS, Dhaka Yours dearly, Azwad"
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple minor errors including a significant typo ('abort' instead of 'about'), failure to capitalize the first-person pronoun 'I' and 'English', and missing apostrophes.",
+      "evidence": "write abort it to you. Well, first of all, I'm getting admitted to a coaching centre from where i will prepare"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic and personalized, avoiding the stale, memorized phrases typically found in guidebooks.",
+      "evidence": "I'm planning to crack one of the many engineering universities in the country."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Typographical errors (e.g., 'abort')",
+      "Capitalization failures (lowercase 'i', 'english')",
+      "Punctuation omissions (missing apostrophes in 'im')"
+    ],
+    "positive_aspects": [
+      "Authentic and mature expression",
+      "Clear adherence to the prompt's purpose",
+      "Comprehensive inclusion of all structural parts"
+    ]
+  },
+  "feedback_summary": "The candidate produced a coherent and authentic response that fully addresses the prompt. While all structural elements of an informal letter are present, the layout at the end is repetitive and confusing. Language mechanics show a pattern of minor slips in capitalization and spelling. According to the tiebreaker rule for Band 4, the score is set at the lowest value of the band (4) due to these multiple minor mechanical errors.",
+  "_metadata": {
+    "task_id": "LETTER_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "748c3de50ecdc1dcbd9a1f82f7553d9fd834f19a31e0d792ec47af6d348352e9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:56:55.578074+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7a9973c0e5e1af18d2deb049ce68c9c3897f873209a958c867bae45f8e8e3976",
+    "input_tokens": 4453,
+    "output_tokens": 2662,
+    "thoughts_tokens": 1860,
+    "cost_usd": 0.001244,
+    "latency_ms": 75452,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4453,
+        "output_tokens": 2662,
+        "thoughts_tokens": 1860,
+        "cost_usd": 0.001244,
+        "latency_ms": 75452,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively addresses all five components of the prompt: definition, features, applications, impact on education, and potential threats.",
+      "evidence": "Artificial Intelligence is a sophisticated com technology... AI is more important for students... many people don't get job."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is correctly formatted as a single unified paragraph with a clear topic sentence, although the internal cohesion and transitions between ideas are weak.",
+      "evidence": "Artificial Intelligence is a sophisticated com technology of a modern modern computer science"
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of errors in spelling, subject-verb agreement, and syntax, which significantly impacts the professional quality of the writing.",
+      "evidence": "Noae a days AI become popular... assupoe that their answer cuas high or armyong"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears authentic and not copied from a guide, but the vocabulary is basic and repetitive.",
+      "evidence": "They seach in AI what question their unknown."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors (e.g., 'Noae', 'assupoe', 'benie')",
+      "Subject-Verb Agreement (e.g., 'AI give', 'Many Factory us')",
+      "Syntax and word choice errors"
+    ],
+    "positive_aspects": [
+      "Full coverage of prompt requirements",
+      "Adherence to single-paragraph structural constraint"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the subject matter and successfully answers all parts of the prompt. The structural requirement of a single paragraph was maintained. However, the score is heavily constrained by pervasive linguistic errors in spelling and grammar. The writing is readable but lacks the mechanical precision required for higher bands.",
+  "_metadata": {
+    "task_id": "PARA_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b257563db8d7e7c68ea26f36a91fb5a2027fa5bed209215f94b8dab69e325182",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:01:27.326002+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "57a7c57b702691ee207407a3a6dfd14ef3223da51113476a07d29ad2c80d0a57",
+    "input_tokens": 4482,
+    "output_tokens": 3612,
+    "thoughts_tokens": 2874,
+    "cost_usd": 0.001532,
+    "latency_ms": 103281,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4482,
+        "output_tokens": 3612,
+        "thoughts_tokens": 2874,
+        "cost_usd": 0.001532,
+        "latency_ms": 103281,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

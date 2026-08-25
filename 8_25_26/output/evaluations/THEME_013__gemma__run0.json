@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between night dreamers and day dreamers but provides a literal paraphrase of the poem rather than an abstract thematic statement (e.g., the power of determination).",
+      "evidence": "But real dreamers are very dangerous people. They can do any thing to make there dreams true."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is concise, though it lacks a formal opening statement explicitly defining the theme.",
+      "evidence": "Every people have dream. But every dream and every dreamers are not equal."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive grammatical errors including subject-verb agreement failures, incorrect pluralization, and homophone confusion.",
+      "evidence": "Every people have dream... Their are some dreamers... make there dreams true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words to simplify the text, but the interpretation remains surface-level and follows the poem's structure too closely.",
+      "evidence": "Their are some dreamers who see dreams in night, don't want to make their dreams in reality."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement (Every people have)",
+      "Homophone confusion (Their/There/There)",
+      "Article and noun number errors"
+    ],
+    "positive_aspects": [
+      "Accurate comprehension of the text's main contrast",
+      "Adherence to single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's meaning, correctly identifying the difference between passive and active dreamers. However, the response is a simplified paraphrase rather than an analysis of the theme. The score is significantly lowered by pervasive linguistic errors in every sentence, particularly in basic grammar and spelling.",
+  "_metadata": {
+    "task_id": "THEME_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de42167462f987f331573c0127594e8c1a5cf4a3116ef27648bec63579bce539",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:30:13.479980+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "70702525e47673874055cdb05df7a88e17f468030200734db34804fa6c767120",
+    "input_tokens": 4282,
+    "output_tokens": 2337,
+    "thoughts_tokens": 1609,
+    "cost_usd": 0.001129,
+    "latency_ms": 66562,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4282,
+        "output_tokens": 2337,
+        "thoughts_tokens": 1609,
+        "cost_usd": 0.001129,
+        "latency_ms": 66562,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

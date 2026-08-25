@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between night dreamers and day dreamers, though the explanation is a surface-level paraphrase of the poem's logic rather than an exploration of an abstract theme (e.g., ambition or determination).",
+      "evidence": "Thore who dreams with the open eye and make their dreams come true are real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single coherent block and adheres to brevity requirements without unnecessary padding.",
+      "evidence": "Everyone dreams but not in the same."
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple spelling errors ('drems', 'concious', 'Thore') and a lack of subject-verb agreement ('who dreams' instead of 'who dream').",
+      "evidence": "Some drems while they sleep"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoided verbatim copying (0% overlap), using their own basic phrasing to convey the meaning.",
+      "evidence": "Everyone dreams but not in the same."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.5,
+    "capped_from": 5.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors",
+      "Subject-verb agreement",
+      "Awkward phrasing"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of the central contrast"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identifies the distinction between passive and active dreaming, showing a clear understanding of the poem's message. The structural requirements are met. However, the response is more of a simplified summary than a thematic analysis, and it is significantly weakened by frequent spelling and grammatical errors.",
+  "_metadata": {
+    "task_id": "THEME_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3e1f287ebb0c375d8063d4518a90a1f4ad75d1b265ff68a0b84c8870d9ea8b57",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:50:16.297337+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c1a8df6d1c7e7f9797fdcba03a7c2c2a60c0c57eb260240614bb308d7ede3a09",
+    "input_tokens": 4264,
+    "output_tokens": 2266,
+    "thoughts_tokens": 1571,
+    "cost_usd": 0.001106,
+    "latency_ms": 63796,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4264,
+        "output_tokens": 2266,
+        "thoughts_tokens": 1571,
+        "cost_usd": 0.001106,
+        "latency_ms": 63796,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

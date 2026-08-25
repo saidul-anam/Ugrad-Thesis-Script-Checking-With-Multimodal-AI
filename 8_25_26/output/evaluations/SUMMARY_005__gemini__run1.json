@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures a generic interpretation of hope's omnipresence but misses the core poetic substance (the bird metaphor, resilience in storms, and asking nothing in return). It also introduces an external idea not present in the poem ('reach our goal').",
+      "evidence": "'Hope' is something that keep us alive. It helps us to reach our goal."
+    },
+    "structure_format_brevity": {
+      "rationale": "Maintained in a single concise block without paragraph breaks, but missing terminal punctuation at the end of the text.",
+      "evidence": "NO matter where you go you can find hope everywhere"
+    },
+    "language_mechanics": {
+      "rationale": "Exhibits a subject-verb agreement error ('something that keep'), incorrect mid-sentence/word capitalization ('NO'), and an omitted ending full stop.",
+      "evidence": "something that keep us alive. It helps us to reach our goal. NO matter where you go you can find hope everywhere"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Written entirely in the student's own words with zero verbatim copying, although the expression and vocabulary are very simplistic.",
+      "evidence": "'Hope' is something that keep us alive."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement error ('keep' instead of 'keeps')",
+      "Erratic capitalization ('NO matter')",
+      "Omission of terminal punctuation at the end of the summary"
+    ],
+    "positive_aspects": [
+      "Zero verbatim overlap with the source poem",
+      "Concise single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate makes a genuine effort to paraphrase rather than copying lines directly from Dickinson's poem. However, the summary is overly generic and omits the central extended metaphor (the bird singing through adversity and asking for nothing), while inserting an external personal assertion ('reach our goal'). Grammatical control is weak due to agreement and punctuation slips.",
+  "_metadata": {
+    "task_id": "SUMMARY_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "df02c76ffaa7af92d053eaf858da538a33dd11595de21419c9b79fb9af2f1691",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:14:17.311276+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ec72388691ebe93a484d69239843f55af4ce2385410692461246299a9813abf0",
+    "input_tokens": 4346,
+    "output_tokens": 3447,
+    "thoughts_tokens": 2704,
+    "cost_usd": 0.009921,
+    "latency_ms": 36561,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4346,
+        "output_tokens": 3447,
+        "thoughts_tokens": 2704,
+        "cost_usd": 0.009921,
+        "latency_ms": 36561,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

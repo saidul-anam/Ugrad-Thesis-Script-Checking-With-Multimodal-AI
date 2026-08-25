@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses most prompt questions, including definitions, educational applications, comparisons with human teachers, and negative aspects. However, development remains superficial and heavily repetitive.",
+      "evidence": "In education systam, AI is very important . Student get many benefits by using AI. They can find any problems solution with a few second."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script is presented as a single paragraph block without subdivisions. However, the opening topic sentence is awkward, and the response severely lacks brevity and discipline, repeating identical sentences across 382 words.",
+      "evidence": "Artificial intelligence is the short form of AI. AI is the a meachinge which is buit up by using human intelligence ."
+    },
+    "language_mechanics": {
+      "rationale": "High density of grammatical, syntactic, and spelling errors throughout the text (e.g., faulty verb structures, incorrect prepositions, missing words, and spelling slips).",
+      "evidence": "If students always use AI, they are become over dependes on AI. They can't solve any problems without AI even they can't do their assignment by thein ownself."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Expression is rudimentary and highly formulaic. The phrase 'by using AI' is mechanically repeated almost ten times with negligible syntactic variety or transitional devices.",
+      "evidence": "Human being can many dangerous work by using AI. We can find any question's answer with a few second by using AI. Even we can do many dangerous work by using AI."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (meachinge, buit, Beveloping, systam, assingment, increse, opperation, easy er, dependes, distroy)",
+      "Faulty verb phrasing and missing verbs (can many dangerous work, are become, are also can learn)",
+      "Incorrect preposition and gerund usage (by make, by giving, by solving, learn better in human teacher)",
+      "Pronoun and homophone confusion (Their are, thein ownself)"
+    ],
+    "positive_aspects": [
+      "Followed the single-paragraph structural layout without illegal sub-breaks",
+      "Covered both constructive applications and potential threats of AI"
+    ]
+  },
+  "feedback_summary": "The response maintains single-paragraph formatting and touches on all aspects of the prompt (definition, benefits in education/medicine, and threats). However, it is held back by pervasive spelling mistakes, faulty grammatical structures, and extreme repetition of phrasing ('by using AI') which inflates the word count without adding substantive depth.",
+  "_metadata": {
+    "task_id": "PARA_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d0a0c09fe4284371db5994dfa153db2f99c226e28da58c8b620e854b0c24036",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:22:34.286306+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "93e2b433b80daf3c955342e00bc38b41b344d83063f15bb732cf7641c059beb6",
+    "input_tokens": 4665,
+    "output_tokens": 3445,
+    "thoughts_tokens": 2554,
+    "cost_usd": 0.010012,
+    "latency_ms": 20734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4665,
+        "output_tokens": 3445,
+        "thoughts_tokens": 2554,
+        "cost_usd": 0.010012,
+        "latency_ms": 20734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

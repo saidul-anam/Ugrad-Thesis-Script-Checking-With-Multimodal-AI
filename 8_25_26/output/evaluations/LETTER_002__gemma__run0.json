@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately establishes the purpose of the letter and provides a clear future plan regarding university admission and career goals.",
+      "evidence": "you wanted to know about my future plan after passing H.S.C."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components of an informal letter (Address, Date, Salutation, Body, Close, Signature) are present, although the candidate redundantly added a 'To/From' block at the end.",
+      "evidence": "27 June 2026\nFaridabad,\nDhaka-1204\nDear Jarif... Yours ever\nMakin"
+    },
+    "language_mechanics": {
+      "rationale": "There are several spelling errors and awkward phrasing/grammatical slips that hinder the flow of the writing.",
+      "evidence": "eingineer and admitted into a Dhaka University so that's time is the most important momenterm to fullfill my dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The thoughts follow a logical sequence and express a personal ambition, though the vocabulary remains basic and slightly formulaic.",
+      "evidence": "I cannot stay in day dreaming. Instead I want to give my best for my own dream."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (eingineer, momenterm, familys)",
+      "Subject-verb agreement/Tense slips"
+    ],
+    "positive_aspects": [
+      "Full structural compliance",
+      "Direct adherence to prompt"
+    ]
+  },
+  "feedback_summary": "The script is structurally sound and fulfills the communicative purpose of the prompt. It earns full marks for layout and content relevance. However, the overall score is lowered to the bottom of Band 4 due to significant spelling mistakes and clumsy syntax in the body paragraphs.",
+  "_metadata": {
+    "task_id": "LETTER_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f1b47b897410335b68604983298b0572f75125711f1f153025725be979e47",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:36:04.994923+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4c63b09736e2679e286ba65760e3061ac687204141c04e1d53aaa3b11deb387b",
+    "input_tokens": 4407,
+    "output_tokens": 1863,
+    "thoughts_tokens": 1133,
+    "cost_usd": 0.001,
+    "latency_ms": 52453,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 1863,
+        "thoughts_tokens": 1133,
+        "cost_usd": 0.001,
+        "latency_ms": 52453,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

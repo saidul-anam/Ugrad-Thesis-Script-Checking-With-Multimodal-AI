@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively addresses all five prompts: definition, features, applications, educational impact, and threats.",
+      "evidence": "AI has started to use our personal information to improve its own server. It can run through our smart devices easily and scan our files and folders."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified paragraph with a clear, albeit linguistically simple, opening topic sentence.",
+      "evidence": "Artificial intelligence known as AI is a software which has his own power to solve or qunswen many things."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling and grammatical errors (orthography and subject-verb agreement), although the meaning remains clear.",
+      "evidence": "solve or qunswen many things... more human fried friendly... thei work easy... informations are save safe... be caustions about it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing is authentic and avoids memorized guide templates, mentioning specific contemporary AI tools, though the syntax remains basic.",
+      "evidence": "Our most known AI's are Chat Gpt, & Gemini, Cloude."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Phonetic spelling errors (e.g., 'qunswen' for 'answer', 'caustions' for 'cautious')",
+      "Incorrect noun pluralization ('many information', 'informations')",
+      "Pronoun-antecedent disagreement ('software which has his own power')"
+    ],
+    "positive_aspects": [
+      "Strong adherence to the prompt's multi-part requirements",
+      "Use of contemporary, relevant examples",
+      "Correct structural format (single paragraph)"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the subject matter and strictly follows the structural requirements of a paragraph. All prompt questions were answered. However, the score is limited to the lower end of Band 4 due to frequent mechanical errors in spelling and grammar. The authenticity of the expression and the inclusion of specific modern AI examples prevent it from dropping into Band 3.",
+  "_metadata": {
+    "task_id": "PARA_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e59845e1c5e2dabe0d43f0c283994facc1ac78d35f6b9ba9c719dfb400d85f5e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:18:22.904649+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d0c5de7632a2139f9ae532ba7414999b59c7c031e0a512e1234780562885c95b",
+    "input_tokens": 4499,
+    "output_tokens": 2392,
+    "thoughts_tokens": 1605,
+    "cost_usd": 0.001168,
+    "latency_ms": 68280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4499,
+        "output_tokens": 2392,
+        "thoughts_tokens": 1605,
+        "cost_usd": 0.001168,
+        "latency_ms": 68280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The story is a seamless continuation of the provided stem with a clear, sequential plot development that resolves the conflict logically.",
+      "evidence": "Then the mouse arrived and told the lion that he will help him."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and establishes a friendship, but it fails to provide a proper title and lacks an explicitly stated moral lesson.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in tense consistency, specifically failing to use the simple past ('slip' instead of 'slipped') and incorrect back-shifting in reported speech ('will' instead of 'would').",
+      "evidence": "While running he suddenly slip into lion's nose."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a very common, memorized fable. While phrased in the student's own words, it lacks creative turns, vivid descriptions, or authentic narrative flair.",
+      "evidence": "The lion became very happy and thanked the mouse for his help."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present used for Past)",
+      "Incorrect reported speech verb forms",
+      "Missing title"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Consistent narrative flow",
+      "Positive resolution"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extends the stem into a coherent story with a logical progression of events and a positive resolution. However, the script is penalized for the total omission of a title, which is a mandatory structural requirement. Linguistically, the writing is basic and plagued by tense errors, particularly the failure to use the past tense in the opening action ('slip') and the incorrect use of 'will' instead of 'would' during dialogue/reported speech. The plot is a standard rendition of a well-known fable with no creative embellishment.",
+  "_metadata": {
+    "task_id": "STORY_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e68e531becbf9d0b5842ab905e5a4c0e3772b975678e702f3aa59ad1e0eee06",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:34:16.705080+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "636bf9aedd52c8fb389672cc42f72ab54424b0cb6c5e22d0c809ebc48e5d0722",
+    "input_tokens": 4475,
+    "output_tokens": 2832,
+    "thoughts_tokens": 2090,
+    "cost_usd": 0.001297,
+    "latency_ms": 79422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4475,
+        "output_tokens": 2832,
+        "thoughts_tokens": 2090,
+        "cost_usd": 0.001297,
+        "latency_ms": 79422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

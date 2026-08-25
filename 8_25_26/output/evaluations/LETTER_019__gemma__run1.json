@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt and provides a clear future plan (Computer Engineering/BUET).",
+      "evidence": "In the letter y wanted to know about my future Plan affi passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required layout components for an informal letter (Address, Date, Salutation, Body, Close, Signature) are present.",
+      "evidence": "27-06-2026\nDemira, Dhaka\nBangladesh\n\nDear Messi, ... Your loving,\nMridul"
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of spelling and grammatical errors that impede professional quality, although the text remains legible.",
+      "evidence": "reci your letter just now... affi passing HSC Exam... mentlime I can also developed my English Spiking and listining Skill... Convey my Salam to your parrants"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies heavily on memorized, formulaic templates commonly found in guides.",
+      "evidence": "At first take my heartiest love... My HSC Exa is close to door or knocking at the door."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (reci, affi, mentlime, Spiking, parrants)",
+      "Subject-verb agreement and tense errors (Hope you great, I have a plan to belong)",
+      "Formulaic/Template phrasing"
+    ],
+    "positive_aspects": [
+      "Complete structural layout",
+      "Clear and relevant content"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong understanding of the required layout and successfully addresses the prompt's purpose. However, the quality of expression is significantly hampered by frequent spelling and grammatical errors, as well as a reliance on generic templates. The total score is held at Band 3 due to these pervasive mechanical failures.",
+  "_metadata": {
+    "task_id": "LETTER_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "9e2f17c3279a8a14d69b1748161c0baf99aff60f3174950b0034a43a1814ac13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:26:53.187575+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "51432006973f8204d61a3f43a62ed7a1224897705ecb6236c62bd4679b8547af",
+    "input_tokens": 4408,
+    "output_tokens": 2997,
+    "thoughts_tokens": 2253,
+    "cost_usd": 0.00134,
+    "latency_ms": 84420,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4408,
+        "output_tokens": 2997,
+        "thoughts_tokens": 2253,
+        "cost_usd": 0.00134,
+        "latency_ms": 84420,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

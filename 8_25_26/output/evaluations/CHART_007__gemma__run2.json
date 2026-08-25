@@ -1,0 +1,100 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies and reports all data points from the chart, including the highest (coal) and lowest (nuclear) values.",
+      "evidence": "the most used methed was coal. 46% of the electricity was mode from coal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response starts with a clear overview sentence and logically groups the data in ascending order. No external opinions or irrelevant facts were added.",
+      "evidence": "The following Pie-chart shows the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There are several noticeable spelling errors ('methed', 'mode', 'remoing') and a subject-verb agreement error ('use... were'), which reduce the score.",
+      "evidence": "the use of nuclear plants were the lowest... 46% of the electricity was mode from coal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts comparative analysis ('lowest', 'second largest', '10% rise'), though the vocabulary is occasionally too informal ('big ones', 'right next up').",
+      "evidence": "Right next up is oil which makes 12% of the electricity with a staggering 10% rise from nuclear plants."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (methed, mode, remoing)",
+      "Subject-verb agreement errors",
+      "Informal register (e.g., 'big ones')"
+    ],
+    "positive_aspects": [
+      "Perfect data accuracy",
+      "Clear structural progression from lowest to highest value",
+      "Appropriate overview sentence"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the data, presenting all figures accurately and logically. The structure is sound, beginning with a proper lead sentence and avoiding forbidden external commentary. However, the score is moderated to the lower end of Band 4 due to frequent spelling errors and some informal phrasing that detracts from the academic tone required for a chart analysis.",
+  "_metadata": {
+    "task_id": "CHART_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c9d4346591fb09893e7d50c1515595876bc33cdbf31cbced3972ce4cc9846b31",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:10:54.060902+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ce212f53336cef1ff7391a1242ba9c9416b5cde7d359f9a7c93da194634e927a",
+    "input_tokens": 4437,
+    "output_tokens": 2027,
+    "thoughts_tokens": 1257,
+    "cost_usd": 0.001052,
+    "latency_ms": 57140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4437,
+        "output_tokens": 2027,
+        "thoughts_tokens": 1257,
+        "cost_usd": 0.001052,
+        "latency_ms": 57140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

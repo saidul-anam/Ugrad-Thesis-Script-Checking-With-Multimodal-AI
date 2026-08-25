@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All data points from the chart are accurately captured (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) with correct identification of the highest and second-highest sources without introducing external facts.",
+      "evidence": "in 1980 most percentage of electricity in USA comes from burning coal. which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity which is 24%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response features an introductory overview, an analytical body grouping the major and minor energy sources, and a concluding synthesis in a single paragraph, though structural cohesion is slightly weakened by fragmented sentence boundaries.",
+      "evidence": "The pie chart illustrates the sources of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical issues are present, including sentence fragments starting with relative pronouns, spelling errors, tense shifts between past and present, redundant unit phrasing, and article omissions.",
+      "evidence": "Accroding to the chart, we can see that in 1980 most percentage of electricity in USA comes from burning coal. which rate was 46%"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate makes an effort to use comparative terms such as 'nearly half', 'second highest', and 'respectively', but the overall phrasing remains basic and somewhat awkward.",
+      "evidence": "which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragments beginning with 'which' ('which rate was 46%', 'which rate is respectively 12% and 2%')",
+      "Spelling error ('Accroding')",
+      "Tense and preposition errors ('comes', 'for produce electricity')",
+      "Article and agreement errors ('also a important sector', 'hydro electric power plant produce')"
+    ],
+    "positive_aspects": [
+      "100% accurate representation of all five data categories and their exact values",
+      "Effective proportional interpretation ('nearly half of the chart', 'second highest source')",
+      "Clear three-part analytical structure (introduction, body, conclusion) adhering strictly to chart data"
+    ]
+  },
+  "feedback_summary": "The candidate accurately reported and interpreted all data points from the chart without deviating into outside facts or opinions. The response maintains an appropriate analytical structure with an introduction and a concluding overview. However, the score is held in Band 3 due to noticeable mechanical errors, including relative clause sentence fragments, inconsistent tense control, and minor spelling slips.",
+  "_metadata": {
+    "task_id": "CHART_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d36cc554d456e7526143afd7dc68af87460b09b4b133378dd0a48c701d902d0a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:06:22.835330+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6764c874f7a9bae65b58ad94d75c2c2ae9e6fc0cb013797a5791bbc240737e75",
+    "input_tokens": 4381,
+    "output_tokens": 3751,
+    "thoughts_tokens": 2845,
+    "cost_usd": 0.010692,
+    "latency_ms": 23031,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4381,
+        "output_tokens": 3751,
+        "thoughts_tokens": 2845,
+        "cost_usd": 0.010692,
+        "latency_ms": 23031,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

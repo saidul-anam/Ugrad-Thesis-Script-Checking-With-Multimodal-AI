@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.75,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the contrast between night dreams and day dreams, but fails to articulate an abstract theme (e.g., ambition or willpower), instead providing a surface-level summary of the poem's content.",
+      "evidence": "Dreams are two kind of one is in subconcious mind and another is unsubconcious mind."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block as required, but it lacks a formal theme statement at the beginning and functions more as a paraphrase than a thematic analysis.",
+      "evidence": "People are all see dream."
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe breakdown in linguistic mechanics, characterized by incorrect verb usage, subject-verb disagreement, spelling errors, and poor sentence construction.",
+      "evidence": "People are all see dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying of the text, but the response is a mechanical rewrite of the poem's sequence rather than an original interpretation of its imagery.",
+      "evidence": "But who see dreams in the day end an open eyes."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.75,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe subject-verb agreement failure",
+      "Spelling errors (e.g., 'effact', 'unsubconcious')",
+      "Syntactic breakdown/Broken English"
+    ],
+    "positive_aspects": [
+      "Avoided verbatim copying of the source text",
+      "Maintained a single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate attempted to explain the poem's contrast between two types of dreamers, but confused the 'theme' with a basic plot summary. While the student avoided direct copying, the writing is plagued by severe grammatical errors and poor syntax. The response is awarded the lower end of Band 2 because while it is barely readable and lacks analytical depth, it does show a basic understanding of the text's primary contrast.",
+  "_metadata": {
+    "task_id": "THEME_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0a089c0f40e5817b18c20c07f700d8316defa2de03f98a9d2a6f4624b0524fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:15:00.630959+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d90a8fa8fcc364af0a9d2c3a9f5a851db3602a86f1d1fef29e9b811807c005ce",
+    "input_tokens": 4317,
+    "output_tokens": 3202,
+    "thoughts_tokens": 2427,
+    "cost_usd": 0.001392,
+    "latency_ms": 94141,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4317,
+        "output_tokens": 3202,
+        "thoughts_tokens": 2427,
+        "cost_usd": 0.001392,
+        "latency_ms": 94141,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate logically continues the narrative arc from the stem through capture, release, and eventual rescue, though narrative development remains minimal.",
+      "evidence": "Mouse went to the lion and asured him to save his life. Then the mouse cut the net to save the life of the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "A proper title is completely missing, and the ending is overly abrupt with no articulated constructive or moral lesson.",
+      "evidence": "The lion thanked him."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling distortions, tense inconsistencies, missing dialogue punctuation, and severe syntax breakdowns occur throughout the response.",
+      "evidence": "Why were you done that kind of mishehave with me."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story is a basic, predictable retelling of a classic fable without creative descriptive detail or authentic phrasing.",
+      "evidence": "The lion lought at to hapired his. And then the lion forgave him."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling errors ('mous', 'fucront', 'contrineously', 'mishehave', 'toune', 'lought')",
+      "Tense inconsistency and faulty auxiliary usage ('lion wake up', 'Why were you done')",
+      "Omission of required story title",
+      "Missing punctuation and quotation marks in direct speech"
+    ],
+    "positive_aspects": [
+      "Maintains the correct sequential order of events from the stem",
+      "Brings the narrative to a complete resolution"
+    ]
+  },
+  "feedback_summary": "The candidate successfully maintains the logical storyline of the fable from the provided stem to its resolution. However, the performance falls into Band 2 due to the omission of the required title, an abrupt ending lacking a moral lesson, and pervasive spelling, syntax, and grammatical inaccuracies.",
+  "_metadata": {
+    "task_id": "STORY_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e6d4f291e4d35dd47e1fc312467c7a86136c98673207d1b8fa6ccef80b94998",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:44:41.295789+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5826b9c3af2ce466f34e0657297f208652583657b31101cd02ec974a2f82822c",
+    "input_tokens": 4441,
+    "output_tokens": 3339,
+    "thoughts_tokens": 2605,
+    "cost_usd": 0.00968,
+    "latency_ms": 44609,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4441,
+        "output_tokens": 3339,
+        "thoughts_tokens": 2605,
+        "cost_usd": 0.00968,
+        "latency_ms": 44609,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

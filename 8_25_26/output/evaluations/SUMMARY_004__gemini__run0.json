@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Partially captures the general idea that hope resides in the soul and sustains human beings, but fails to extract and synthesize the deeper symbolic meaning of enduring through hardships.",
+      "evidence": "Hope is the saviour thing Which helps to Senvise the human beings; Our soul always hold a lot of hope."
+    },
+    "structure_format_brevity": {
+      "rationale": "Maintains a single block layout, but includes an unnecessary heading label and narrative meta-framing ('The poet writing in the poem that').",
+      "evidence": "Summery: Hope is the saviour thing"
+    },
+    "language_mechanics": {
+      "rationale": "High density of mechanical errors across three short sentences, including spelling errors ('Summery', 'Senvise', 'perchaes'), subject-verb agreement failure ('Our soul always hold', 'he have heard'), and improper mid-sentence capitalization.",
+      "evidence": "Summery: Hope is the saviour thing Which helps to Senvise the human beings; Our soul always hold a lot of hope. The poet writing in the poem that hope is the thing with feathers which is perchaes in the soul. Hope kept warm he have heard it in the chillest land."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the opening sentence makes an authentic paraphrasing attempt, the second half heavily borrows and strings together direct poem imagery with slight misspellings rather than summarizing in original language.",
+      "evidence": "hope is the thing with feathers which is perchaes in the soul. Hope kept warm he have heard it in the chillest land."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'Summery', 'Senvise', 'perchaes')",
+      "Subject-verb agreement errors ('soul always hold', 'he have heard')",
+      "Meta-commentary ('The poet writing in the poem that')",
+      "Improper mid-sentence capitalization ('Which')"
+    ],
+    "positive_aspects": [
+      "Demonstrates a discernible attempt to explain the central concept of hope in the opening line",
+      "Maintains a unified single-block structure"
+    ]
+  },
+  "feedback_summary": "The response shows a basic effort to capture the central theme of the poem in a single paragraph. However, it suffers from heavy grammatical, spelling, and agreement errors, and transitions into loosely patched phrases copied from the poem. Avoid meta-phrases like 'The poet writing in the poem' and focus on synthesizing the core message using fully original sentences.",
+  "_metadata": {
+    "task_id": "SUMMARY_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "03d409d299007ae8547889174d4174ae43e5a3064bfab99339fbd60473e0e57a",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:11:20.986469+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "0083bfbdbddc3c15bad95185ec7f7b4036323893efaa066035edb137a4170467",
+    "input_tokens": 4381,
+    "output_tokens": 3573,
+    "thoughts_tokens": 2702,
+    "cost_usd": 0.010247,
+    "latency_ms": 23577,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4381,
+        "output_tokens": 3573,
+        "thoughts_tokens": 2702,
+        "cost_usd": 0.010247,
+        "latency_ms": 23577,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

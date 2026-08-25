@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate misidentifies the largest source (46% Coal) as natural gas and repeats natural gas for the second segment, omitting Coal entirely from the analysis.",
+      "evidence": "majority of USA's electricity come natural gases. Which covered almost 224% 46% of the pie. Next in line is natural gases"
+    },
+    "structure_format_brevity": {
+      "rationale": "While an introductory overview is provided, roughly half of the writing consists of external knowledge, environmental commentary, and personal opinions regarding fossil fuels and green energy.",
+      "evidence": "As much convenient as they are, fossil fuel can run out pretty easily. Not only that, the use of causes global warming and all sorts of natural catamilities. But on the other hand, nuclear energy which comes in last place is a pretty safe and a green energy source."
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits notable spelling errors ('pie-chant', 'catamilities', 'emergy'), syntactic omissions ('the use of causes'), and a sentence fragment ('Which covered...').",
+      "evidence": "The pie-chant shows the sources of the USA electricity in 1980."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative depth is minimal, relying on simple sequential enumeration rather than synthesizing relationships or comparative contrasts between sources.",
+      "evidence": "Next in line is natural gases, which was 221% of the chart. Then comes Hydro-electric power consisting of 16% of the pie. Oil makes its place at number four with 12%. and, lastly comes nuclear power with only 2%."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data misattribution (omitting Coal and labeling 46% as natural gas)",
+      "Inclusion of external facts, moral judgments, and personal opinions",
+      "Spelling errors ('pie-chant', 'catamilities', 'emergy')",
+      "Sentence fragments and punctuation slips ('Which covered...', 'and, lastly comes')"
+    ],
+    "positive_aspects": [
+      "Includes an introductory overview sentence identifying the chart topic",
+      "Accurately reports percentages for hydro-electric, oil, and nuclear power",
+      "Follows a clear descending order sequence from highest to lowest"
+    ]
+  },
+  "feedback_summary": "The candidate attempts to describe the pie chart in descending order but makes a critical data error by mislabeling the largest energy sector (Coal) as natural gas. Furthermore, the response violates graph task constraints by introducing extensive personal opinions and external facts about global warming and green energy, triggering the external facts cap. Combined with multiple spelling and structural slips, the script falls into Band 2 with a total score of 4.",
+  "_metadata": {
+    "task_id": "CHART_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7a473ffce7ad92b90e5e06b992c72f5b6cee5f637eabe8f3825122d786341092",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:52:30.815615+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9376cd9a69d3dd6b17e30b6e30dba1afc7914d92eb2058125398f235cb86dd72",
+    "input_tokens": 4474,
+    "output_tokens": 4027,
+    "thoughts_tokens": 3104,
+    "cost_usd": 0.01141,
+    "latency_ms": 25858,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4474,
+        "output_tokens": 4027,
+        "thoughts_tokens": 3104,
+        "cost_usd": 0.01141,
+        "latency_ms": 25858,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

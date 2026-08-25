@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all prompt questions, covering definition, features, diverse applications, educational use, and cybersecurity/privacy threats.",
+      "evidence": "The AI can generat images and videos, solve our educational problems, makes our doubts easier and many more things."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script is written in a single unified paragraph block with a clear opening topic sentence, though sentence sequencing relies heavily on repetitive starters like 'Even'.",
+      "evidence": "Artificial intelligence known as AI is a software which has his own power to solve or qunswen many things."
+    },
+    "language_mechanics": {
+      "rationale": "There is a noticeable frequency of spelling errors ('qunswen', 'servilenced', 'caustions', 'generat'), double words ('in in'), improper personification pronouns ('his', 'him'), and double-conjunction structures ('Though... but').",
+      "evidence": "Even recently our streets are being servilenced by CCTV using AI."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing is authentic and avoids memorized template formulas by including contemporary real-world models and specific privacy concerns, though vocabulary and syntax remain basic.",
+      "evidence": "Our most known AI's are Chat Gpt, & Gemini, Cloude."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling slips (e.g., 'qunswen', 'thei', 'generat', 'servilenced', 'caustions')",
+      "Inappropriate personification and pronoun gender references ('his own power', 'safe with him')",
+      "Grammatical and syntactic slips (uncountable noun error 'many information', correlative error 'Though... but', word duplication 'in in')"
+    ],
+    "positive_aspects": [
+      "Maintained strict single-paragraph structural integrity without unwarranted paragraph splits",
+      "Demonstrated genuine content engagement with relevant modern examples (ChatGPT, Gemini, Claude, CCTV surveillance, data privacy)"
+    ]
+  },
+  "feedback_summary": "The candidate has produced an authentic, fully on-topic response that addresses all the guide questions in a single continuous paragraph. While the ideas and modern references are commendable, the script contains noticeable mechanical errors, including spelling mistakes, improper pronoun usage for non-human entities, and basic sentence linkers.",
+  "_metadata": {
+    "task_id": "PARA_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e59845e1c5e2dabe0d43f0c283994facc1ac78d35f6b9ba9c719dfb400d85f5e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:17:20.606086+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b8732e8a5521205b7f7c53740ea0c155c13d4b1e832defef2ccf41fa2056b90a",
+    "input_tokens": 4498,
+    "output_tokens": 2996,
+    "thoughts_tokens": 2167,
+    "cost_usd": 0.008839,
+    "latency_ms": 18092,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4498,
+        "output_tokens": 2996,
+        "thoughts_tokens": 2167,
+        "cost_usd": 0.008839,
+        "latency_ms": 18092,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

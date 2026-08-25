@@ -1,0 +1,23 @@
+question_no,task_type,marks,prompt_given,stimulus_data
+3,Summary,10,"Summarize the following text. Hope"" is the thing with feathers —
+That perches in the soul—
+And sings the tune without the words—
+And never stops — at all—
+And sweetest — in the Gale — is heard —
+And sore must be the storm —
+That could abash the little Bird
+That kept so many warm —
+I've heard it in the chillest land —
+And on the strangest Sea —
+Yet — never — in Extremity,
+It asked a crumb — of me.",""
+7,Paragraph,10,"Answer the following questions and write a paragraph on Artificial Intelligence. a. What is Artificial Intelligence? b. What are the features of AI? c. What are the applications of AI? d. How has AI revolutionized teaching and learning? e. Do you find any threatening aspect in AI?",""
+8,Graph/Chart,10,"Look at the chart. It shows the sources of the USA electricity in 1980. Now, analyse the chart focussing the main aspects. (at least in 80 words)","Chart title: Sources of USA electricity in 1980. Values shown: Coal 46%; Natural gas 24%; Hydro-electric power 16%; Oil 12%; Nuclear 2%."
+9,Story,7,"The following is the beginning of a story. Complete it in your own words and give a proper title. Once a lion was sleeping in a forest. Suddenly a mouse came there. It was, in fact, playing on a race quite happily and didn't notice the sleeping lion. While running, ............",""
+10,Letter,5,"Write a letter to your friend describing the future plan after passing HSC Exam.",""
+11,Theme,8,"Write down the theme of the poem.","All people dream, but not equally.
+Those who dream by night in the dusty recesses of their mind,
+Wake in the morning to find that it was vanity.
+But the dreamers of the day are dangerous people,
+For they dream their dreams with open eyes,
+And make them come true."

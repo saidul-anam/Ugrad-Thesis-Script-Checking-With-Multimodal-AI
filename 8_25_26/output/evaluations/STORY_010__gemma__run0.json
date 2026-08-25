@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and complete continuation of the stem, following the sequential plot of the classic fable accurately.",
+      "evidence": "The mouse suddenly see the lion. He goes to the lion and cut the net by his teeth and rescue the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script includes a proper title and concludes with a clear, positive moral lesson, satisfying all structural requirements for the task.",
+      "evidence": "A lion and a mouse ... understand that not to Judge anyone by his height."
+    },
+    "language_mechanics": {
+      "rationale": "There are significant and frequent errors in tense consistency and syntax, particularly the incorrect use of 'was fall' and mixing present/past tenses.",
+      "evidence": "the mouse was fall into the lion. The lion woke up and see the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is highly predictable as it follows a well-known fable. While written in the candidate's own words, it lacks descriptive detail or creative flair.",
+      "evidence": "From the day, they would become very good friend and go away from there."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing past and present)",
+      "Syntax errors (e.g., 'was fall' instead of 'fell')",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Complete plot resolution",
+      "Clear inclusion of a moral lesson",
+      "Appropriate title provided"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical plot and a clear moral ending. All structural requirements, including the title, were met. However, the score is limited by frequent grammatical errors, specifically regarding tense consistency and basic sentence structure. The narrative is a standard reproduction of a known fable and lacks original descriptive depth.",
+  "_metadata": {
+    "task_id": "STORY_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "95b6aa4fc876a73433a5a7312cf0b0b039c9132a79ed7fe990d032b4f4a8e9cb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:37:14.261153+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d56b7b3c8c6aff336af6919e775f2c925414e3680e69e7371565287379b53d33",
+    "input_tokens": 4417,
+    "output_tokens": 1959,
+    "thoughts_tokens": 1220,
+    "cost_usd": 0.001029,
+    "latency_ms": 55219,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4417,
+        "output_tokens": 1959,
+        "thoughts_tokens": 1220,
+        "cost_usd": 0.001029,
+        "latency_ms": 55219,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

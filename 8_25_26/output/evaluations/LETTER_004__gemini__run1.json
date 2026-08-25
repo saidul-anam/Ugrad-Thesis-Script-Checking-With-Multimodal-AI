@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by outlining clear and relevant post-HSC plans, including a tour to Sundarbans, coaching for BUET admission, and community social work.",
+      "evidence": "After compliting my HSC I will go to vacation for an week. I will go to the sundanban."
+    },
+    "structure_format_brevity": {
+      "rationale": "Key structural components of an informal letter are present (date, address, salutation, body paragraphs, close, signature, and envelope), though minor layout punctuation and formatting slips occur.",
+      "evidence": "From: Azmain Mahtab, Bhuighan-107 Road-2 house-325 Dhaka\nTo: MD. AUF Cumilla City-1200. Road-12, house-105, Cumilla"
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of spelling, grammatical, and tense errors throughout the letter, which severely undermines mechanical accuracy.",
+      "evidence": "You know that I always want to addmitted myshelf in Bangladesh university of Engeoneiering and Technology."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate writes with authentic personal intent and maintains a logical flow of thought rather than relying strictly on generic rote-memorised templates.",
+      "evidence": "In the end of my addmission journy I want to some social work. That's why I'll engaged myself with some social work community."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'compliting', 'myshelf', 'Engeoneiering', 'addmission', 'Prefared', 'journy', 'freind', 'plane')",
+      "Verb form and tense inaccuracies (e.g., 'want to addmitted', 'I'll admitted', 'I'll engaged myself')"
+    ],
+    "positive_aspects": [
+      "Immediate and concrete response to the prompt detailing specific personal ambitions",
+      "Full presentation of standard informal letter conventions including body paragraphing and an envelope"
+    ]
+  },
+  "feedback_summary": "The candidate successfully communicates their future plans after the HSC examination with genuine details and appropriate letter layout. However, extensive spelling errors and awkward grammatical constructions limit the performance to Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d9e382573f2e56a9e366272a99d828aac1d4a86f9a9935ddaba9f041341ddfeb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:05.157508+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b16c7af1245451483f42928916bcbf719aac02b6c33d93b3627261023bf8d90a",
+    "input_tokens": 4462,
+    "output_tokens": 3600,
+    "thoughts_tokens": 2771,
+    "cost_usd": 0.010339,
+    "latency_ms": 23579,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4462,
+        "output_tokens": 3600,
+        "thoughts_tokens": 2771,
+        "cost_usd": 0.010339,
+        "latency_ms": 23579,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

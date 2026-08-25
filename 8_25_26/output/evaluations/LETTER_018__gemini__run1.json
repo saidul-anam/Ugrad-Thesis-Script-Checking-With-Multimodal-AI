@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by clearly explaining their future plans to study medicine and serve poor patients after the HSC examination.",
+      "evidence": "In last letter you wanted to about my future plan after passing HSC exam. You are well known about that, my aim is to be an honest and wise doctore."
+    },
+    "structure_format_brevity": {
+      "rationale": "All structural components of an informal letter are fully present and correctly sequenced: heading (address and date), salutation, organized body paragraphs, complimentary close, signature, and postal address envelope.",
+      "evidence": "Yours ever\nEva\n\nFrom, Eva Asulia, Savar, Dhaka, 1215\nTo, Neha Azimpur, Old Dhaka Dhaka, 1205\nStamp"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple mechanical issues including spelling errors ('doctore', 'renwed'), missing words ('wanted to about'), missing subject pronoun ('will join'), awkward punctuation ('after pas HSC :'), and missing terminal punctuation.",
+      "evidence": "So, I will take admission in a renwed medical college after pas HSC : After passing from the Medical college, will join in a medical camping for helping poor and sick peopote people beside continui continuing my higher education."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter moves logically from the inquiry response to specific future career aspirations and community service, reflecting genuine personal phrasing rather than purely memorised filler.",
+      "evidence": "will join in a medical camping for helping poor and sick peopote people beside continui continuing my higher education."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'doctore', 'renwed', 'peopote')",
+      "Omission of words/pronouns (e.g., 'wanted to [know] about', '[I] will join')",
+      "Erratic punctuation (colon mid-sentence, missing ending full stop)"
+    ],
+    "positive_aspects": [
+      "Complete 6-part informal letter structure along with envelope formatting",
+      "Direct contextual fulfillment describing future career and social service plans",
+      "Warm and authentic informal tone"
+    ]
+  },
+  "feedback_summary": "The candidate presents a structurally complete informal letter that directly fulfills the prompt objective by outlining their career plans after the HSC exam. The layout is fully intact with all standard components. While the ideas are authentic and well-sequenced, multiple minor spelling, punctuation, and grammatical slips are present, placing the script at the lowest score point of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "66fbb49268653cba6f99b9995a3b3f5334080e31808dc8ea9f2946672135614e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:15:18.582590+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "e627424657174d65e1d65aca16e0ed6719f9bc401999c7be9ab98412c4cf5b39",
+    "input_tokens": 4355,
+    "output_tokens": 3749,
+    "thoughts_tokens": 2858,
+    "cost_usd": 0.010679,
+    "latency_ms": 22312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4355,
+        "output_tokens": 3749,
+        "thoughts_tokens": 2858,
+        "cost_usd": 0.010679,
+        "latency_ms": 22312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

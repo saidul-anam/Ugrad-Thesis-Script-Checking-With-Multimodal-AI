@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative smoothly connects to the provided stem and maintains a coherent sequential plot following the classic fable.",
+      "evidence": "After some time the mouse sees the lion inside a netting. It was a trap set by the hunters. After seeing this the mouse doesn't hesitate even for a bit and rushes to help."
+    },
+    "structure_format_brevity": {
+      "rationale": "While the story reaches a complete, positive, and constructive ending, the candidate failed to provide a title as explicitly required by the prompt instructions.",
+      "evidence": "Once a lion was sleeping in a forest."
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits pervasive tense inconsistency, shifting erratically between past and present tense throughout the narrative, alongside spelling errors ('migh', 'pathetie') and faulty phrasings ('cut of', 'real releasing').",
+      "evidence": "While running it accidentally bumps onto the lion which leads to the lion waking up. After seeing the mouse the lion  roars with the irritation and rage and  told the mouse"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows the predictable, memorised storyline of the classic Lion and the Mouse fable with basic vocabulary and limited descriptive flair.",
+      "evidence": "That's how the mouse helped the king of jungle the lion and they becomes best friends."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inconsistent narrative tense (uncontrolled shifts between simple present and simple past)",
+      "Spelling and typographical mistakes ('migh', 'pathetie', 'ro ee')",
+      "Missing title required by the prompt"
+    ],
+    "positive_aspects": [
+      "Smooth continuation and complete resolution of the plot",
+      "Inclusion of direct dialogue to advance the interaction between characters"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete and coherent continuation of the prompt with a satisfying positive ending. However, the score is lowered due to the omission of a mandatory title and persistent grammatical weaknesses, notably frequent tense switching and mechanics errors.",
+  "_metadata": {
+    "task_id": "STORY_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3130fce00120ed9008a0472fd0d9e4a35af1940945b37a8b5d7a63e890617b77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:10:56.711152+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "302c70ce746fd12caaf4b86cacec5c740503768ed549d576a23c9175dd05d553",
+    "input_tokens": 4498,
+    "output_tokens": 2786,
+    "thoughts_tokens": 2022,
+    "cost_usd": 0.008314,
+    "latency_ms": 20312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4498,
+        "output_tokens": 2786,
+        "thoughts_tokens": 2022,
+        "cost_usd": 0.008314,
+        "latency_ms": 20312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

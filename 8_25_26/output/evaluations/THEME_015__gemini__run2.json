@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the underlying contrast between passive night dreamers and active day dreamers who work to realize their ambitions, though the explanation remains simplistic rather than exploring deeper thematic layers.",
+      "evidence": "But the dreemiers who dreem day they want to see his dreem in reality so they work heard."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented in a single paragraph of appropriate length, but it lacks a strong, definitive opening thematic statement and instead moves directly into narrative explanation.",
+      "evidence": "All of the people watch dream in their subconcious mind."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling errors ('nigh', 'hind', 'dreem', 'trive', 'dreemiers', 'heard'), L1 collocation transfers ('watch dream'), and subject-verb/pronoun agreement issues severely impair mechanical accuracy.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies entirely on their own words with zero verbatim copying from the source poem, attempting genuine paraphrase despite linguistic limitations.",
+      "evidence": "Some one dream in the nigh after sleeping. This hind of dreem is valueless"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent phonetic and orthographic spelling mistakes (dreem, dreemiers, trive, hind, heard)",
+      "L1 collocation transfer (watch dream instead of dream / have dreams)",
+      "Pronoun and agreement inconsistencies (his dreem referring to plural dreemiers)"
+    ],
+    "positive_aspects": [
+      "Completely avoided verbatim copying from the poem text",
+      "Successfully understood the core contrast between passive dreaming and active hard work"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the poem's central message by contrasting passive night dreams with active daytime ambition. The response is written entirely in original wording without copying the poem. However, pervasive spelling mistakes, grammatical inconsistencies, and unnatural phrasing keep the performance within Band 2.",
+  "_metadata": {
+    "task_id": "THEME_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b418e1baab05071ff9df8fb1d1baddd66f822930320703cefee116bc0edf9979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:48:17.503769+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "883afdb3763b0cad655fdcd96fff284ab0725ac5471db5c979d9bae18ce3bcc2",
+    "input_tokens": 4286,
+    "output_tokens": 2977,
+    "thoughts_tokens": 2194,
+    "cost_usd": 0.008728,
+    "latency_ms": 26202,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4286,
+        "output_tokens": 2977,
+        "thoughts_tokens": 2194,
+        "cost_usd": 0.008728,
+        "latency_ms": 26202,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to synthesize the central theme (the resilience and selflessness of hope). Instead, they merely list the images from the poem in sequence, treating it as a literal description rather than an abstract summary.",
+      "evidence": "Hope is the with feathers that perches in the soul and mind."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the primary objective of a summary: conciseness. The student's response (79 words) is actually longer than the original source text (69 words), indicating a complete lack of summarizing skill.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are significant grammatical failures, including missing nouns ('is the with feathers') and sentence fragments ('that could abash the little bird...').",
+      "evidence": "Hope is the with feathers that perches in the soul and mind."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing is a line-by-line retelling of the poem. While some words are added to avoid a high verbatim percentage, the structural dependence on the source is absolute, showing no original interpretation.",
+      "evidence": "It sings the tune without the words that are not important."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lack of synthesis/summarization",
+      "Sentence fragments",
+      "Omission of key nouns",
+      "Failure to condense text"
+    ],
+    "positive_aspects": [
+      "Maintained a single-block paragraph structure",
+      "Correctly identified the subject of the poem"
+    ]
+  },
+  "feedback_summary": "The candidate has submitted a paraphrased retelling of the poem rather than a summary. The response is critically flawed in terms of brevity, as it is longer than the original text. Linguistically, the script contains several errors in syntax and sentence construction. The candidate followed the poem line-by-line without extracting the abstract theme of hope's resilience. Total score is placed at the lower end of Band 2 due to basic syntax and lack of synthesis.",
+  "_metadata": {
+    "task_id": "SUMMARY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3d607e48fc5af2f1f45172e84d68653a301972c9f9fd06499b73360929089313",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:06:46.332430+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e670edf98d3fa6ac7faa55bdedc734586df8c21661072860013de13d98b0deff",
+    "input_tokens": 4412,
+    "output_tokens": 3187,
+    "thoughts_tokens": 2418,
+    "cost_usd": 0.001397,
+    "latency_ms": 88641,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4412,
+        "output_tokens": 3187,
+        "thoughts_tokens": 2418,
+        "cost_usd": 0.001397,
+        "latency_ms": 88641,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures the central thematic contrast between passive dreamers and active dreamers who work hard to turn their visions into reality, though the thematic articulation is somewhat basic.",
+      "evidence": "Dreamers of the day are the real hero's and they take their dreams as Inspairication and motivation And. also work hard to make it dreams truer."
+    },
+    "structure_format_brevity": {
+      "rationale": "The theme is presented in a unified single paragraph of concise length, stating the core idea early without unnecessary padding.",
+      "evidence": "The poem is about an inspiration named dream . Dream is a common thing but varied from person to person ."
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits high error density across mechanics, including punctuation spacing faults, erratic full stops, subject-verb agreement errors, apostrophe misuse, and spelling/word-formation errors.",
+      "evidence": "Someone dream by night, and in the morning he can realize that was not real but real dream is that which can unable to man to Sleep . Dreamers of the day are the real hero's and they take their dreams as Inspairication and motivation And."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate writes entirely in their own words with 0% verbatim copying from the poem and attempts an authentic interpretation, though limited by basic vocabulary.",
+      "evidence": "Someone dream by night, and in the morning he can realize that was not real"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Punctuation anomalies (spaces preceding periods, mid-sentence full stop in 'And.')",
+      "Subject-verb agreement and noun inflection errors ('Someone dream', 'real hero's')",
+      "Lexical and spelling errors ('Inspairication', 'unable to man to Sleep', 'make it dreams truer')"
+    ],
+    "positive_aspects": [
+      "Identifies the abstract contrast between passive night dreaming and actionable day dreaming",
+      "Zero verbatim overlap with the source poem, demonstrating genuine effort to paraphrase",
+      "Maintains single-block formatting and appropriate brevity"
+    ]
+  },
+  "feedback_summary": "The candidate understands the core theme of T.E. Lawrence's poem, correctly identifying the difference between idle dreamers and those who actively work to fulfill their ambitions. The response is concise and entirely in the student's own words. However, the score is constrained to the lower end of Band 3 (5/8) due to persistent grammatical, punctuation, and spelling flaws throughout the short script.",
+  "_metadata": {
+    "task_id": "THEME_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "78c7e4d6426b44308318867daff79312fb0f49f78a049dd18c803fb20543ee85",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:27:15.127833+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "089a31895d28e57b66fad251fe20c3185f02029e1f68e36dd5ae83c6bb2cbda4",
+    "input_tokens": 4306,
+    "output_tokens": 2931,
+    "thoughts_tokens": 2062,
+    "cost_usd": 0.008619,
+    "latency_ms": 19109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4306,
+        "output_tokens": 2931,
+        "thoughts_tokens": 2062,
+        "cost_usd": 0.008619,
+        "latency_ms": 19109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

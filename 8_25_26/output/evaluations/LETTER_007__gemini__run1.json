@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by describing clear future plans regarding higher education and career choices after the HSC examination.",
+      "evidence": "I like engineering so, I was thinking about moving to Russia after my HSC and continue my study there and get a degree."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural parts of an informal letter are present in correct order (heading/date/address, salutation, structured body, subscription, signature, and postal envelope).",
+      "evidence": "27th June, 2026\nAzimpur , Dhaka\n\nDear Siyom,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple minor mechanical lapses including homophone confusion ('to' for 'too'), terminal punctuation omission ('about its'), informal spelling ('tho'), and capitalisation issues.",
+      "evidence": "Yeah I'm doing well to."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is authentic, engaging, and conversational without relying on stereotyped, memorised opening or closing formulas.",
+      "evidence": "Remember our last conversation at your home? You asked me about my plans after HSC. I didn't have one that day but now I have one."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Homophone confusion ('to' instead of 'too')",
+      "Missing end punctuation and incomplete phrasing ('write about its')",
+      "Informal slang/abbreviation in writing ('tho')",
+      "Capitalisation error in complimentary close ('your best friend')"
+    ],
+    "positive_aspects": [
+      "Complete and fully compliant informal letter layout with postal envelope format",
+      "Authentic, natural tone and prompt-focused narrative progression",
+      "Clear, relevant future plan described logically"
+    ]
+  },
+  "feedback_summary": "The response is a well-structured informal letter that successfully covers all required layout components and maintains a natural, communicative tone. While the content and originality are strong, minor mechanical errors and colloquialisms prevent it from achieving the full ceiling mark of 5, placing it at the lower bound of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a2e1d1854a08e9396c5c839168d1d0a72ebdeb259ab28d603968130fb6201867",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:12:36.867700+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2caa93d1f0fa6b827f057b7b729cff402d8b8ca55922256e3932c6dd3c80d3c2",
+    "input_tokens": 4425,
+    "output_tokens": 2694,
+    "thoughts_tokens": 1906,
+    "cost_usd": 0.008063,
+    "latency_ms": 18375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4425,
+        "output_tokens": 2694,
+        "thoughts_tokens": 1906,
+        "cost_usd": 0.008063,
+        "latency_ms": 18375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

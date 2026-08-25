@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate logically continues the narrative arc of the traditional fable from the given stem, but the execution suffers from garbled sequence and confusing descriptions.",
+      "evidence": "The mouse saw the lion and remember the lion who forgive captured in and him"
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate completely omitted the required title and failed to articulate an explicit moral lesson, although the story concludes with a positive, friendly resolution.",
+      "evidence": "The lion told that \"Thank you my friend for saving my life. from today we one friend\""
+    },
+    "language_mechanics": {
+      "rationale": "The script demonstrates pervasive grammatical breakdowns, severe tense inconsistency (mixing base verbs and past tense), poor dialogue punctuation, and spelling slips.",
+      "evidence": "the lion wake up. with his roaring, he told him \"How dare you a tiny creature,\""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies on a standard pre-memorized fable rendered in broken, unidiomatic English with awkward sentence formulations.",
+      "evidence": "Then, he so do the place and see some unpredictable."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inconsistent narrative past tense (wake up, reply, hear, be free)",
+      "Incorrect dialogue punctuation and capitalization",
+      "Unidiomatic and syntactically fractured phrasing (e.g., 'he so do the place', 'that's not fame for Lord')",
+      "Missing story title"
+    ],
+    "positive_aspects": [
+      "Successfully maintains the sequential plot points of the classic fable",
+      "Reaches a positive and constructive resolution between characters"
+    ]
+  },
+  "feedback_summary": "The candidate successfully develops the plot of the classic lion and mouse fable to a positive conclusion. However, the response lacks a mandatory story title, exhibits frequent and severe grammatical errors, struggles with past-tense consistency, and contains fractured sentence structures throughout.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4382898e254607f85048422cc00c0d5980b17c504be8dff1f0b06f271add0c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:06:56.242643+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "82be636e5c5021242252ad5a77a63cc4dcf6621150e985b4080f00348ee975ba",
+    "input_tokens": 4553,
+    "output_tokens": 3344,
+    "thoughts_tokens": 2601,
+    "cost_usd": 0.009726,
+    "latency_ms": 22780,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4553,
+        "output_tokens": 3344,
+        "thoughts_tokens": 2601,
+        "cost_usd": 0.009726,
+        "latency_ms": 22780,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

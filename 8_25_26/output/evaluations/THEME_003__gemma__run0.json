@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core distinction between passive sleep-dreams and active life goals, though the explanation is quite basic.",
+      "evidence": "Dreams are that which make our path of life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is appropriately brief, although it lacks a formal thematic introductory sentence.",
+      "evidence": "Dreams still are not the sleeping part... goal of human life."
+    },
+    "language_mechanics": {
+      "rationale": "The writing contains pervasive errors in spelling ('for got'), tense ('after woke up'), and awkward syntax ('Future life is depending on dream').",
+      "evidence": "which we for got after woke up"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student uses their own words and avoids verbatim copying, but fails to engage with or interpret the poem's specific imagery (e.g., 'open eyes').",
+      "evidence": "Future life is depending on dream that refers to goal of human life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency",
+      "Spelling/Spacing errors",
+      "Poor syntactic construction"
+    ],
+    "positive_aspects": [
+      "Accurate conceptual understanding of the theme",
+      "Complete avoidance of verbatim copying"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid understanding of the poem's central message, successfully distinguishing between vanity-based sleep dreams and goal-oriented daydreams. However, the score is heavily penalized by poor linguistic mechanics, including basic grammar and spelling errors. While original in phrasing, the response remains a surface-level observation rather than a thematic analysis of the poem's imagery.",
+  "_metadata": {
+    "task_id": "THEME_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3b35fceeed7d42beba44e316381317323e058921a9596e04183c6289eaead081",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:42:21.834870+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bf5e42518f3e34f9eea26acfb39f3586f2a1ed74b068382b95380569d5c60d5d",
+    "input_tokens": 4263,
+    "output_tokens": 2300,
+    "thoughts_tokens": 1607,
+    "cost_usd": 0.001116,
+    "latency_ms": 64437,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4263,
+        "output_tokens": 2300,
+        "thoughts_tokens": 1607,
+        "cost_usd": 0.001116,
+        "latency_ms": 64437,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

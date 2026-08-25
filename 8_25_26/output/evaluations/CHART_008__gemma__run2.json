@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies and includes all data points from the chart (Coal, Gas, Hydro, Oil, Nuclear) and correctly identifies the highest and lowest values.",
+      "evidence": "the percentage is 46%... which is only 2%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows the required layout with an introductory sentence and a concluding remark, written as a single block. However, the internal flow is repetitive and disjointed.",
+      "evidence": "The chart in the passage declares us the source of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of linguistic errors, including severe spelling mistakes ('neuclean', 'neucleane'), incorrect word choices ('declares us', 'It is clean'), and fragmented phrasing ('e elec tricity').",
+      "evidence": "It is clean that in the late USA the natural elements were the main source"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses basic comparative markers ('massive amount', 'least amount'), but the writing relies on a repetitive 'listing' pattern rather than sophisticated analytical synthesis.",
+      "evidence": "Second most main source of electricity was natural gas"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling of 'nuclear')",
+      "Lexical inaccuracies (wrong word usage)",
+      "Repetitive sentence structures"
+    ],
+    "positive_aspects": [
+      "Full data coverage",
+      "Correct identification of peaks and troughs"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the data, capturing every percentage accurately and identifying the primary and secondary sources. However, the score is heavily penalized by poor language mechanics, specifically recurring spelling errors and awkward syntax. While the structure is acceptable, the analysis remains at a basic descriptive level rather than an analytical one. Awarded the lower end of Band 3 due to standard/weak syntax.",
+  "_metadata": {
+    "task_id": "CHART_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "85a04beac66f49ee0396ea180b32d9547fe584f23193d0afd7d1eac398a24fa7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:20:07.737029+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d98336fef9fb936e65a4673058383e6840eba389f0221a9b7569efd562412662",
+    "input_tokens": 4430,
+    "output_tokens": 2256,
+    "thoughts_tokens": 1501,
+    "cost_usd": 0.00112,
+    "latency_ms": 63375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4430,
+        "output_tokens": 2256,
+        "thoughts_tokens": 1501,
+        "cost_usd": 0.00112,
+        "latency_ms": 63375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

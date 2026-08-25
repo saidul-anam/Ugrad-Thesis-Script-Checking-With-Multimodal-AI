@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the highest and lowest sources (Coal at 46% and Nuclear at 2%) and correctly reports Hydro (16%) and Oil (12%). However, they completely omit the percentage for Natural Gas (24%, the second largest source) from the data analysis and introduce an inaccurate figure of 20% for Nuclear in paragraph 2.",
+      "evidence": "the 20% of electricity came From Nuclear power plant."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes an introductory sentence, grouped observations, and a concluding summary. However, it incorporates external background facts not present in the graph and breaks a short description into four fragmented mini-paragraphs.",
+      "evidence": "Electricity is one of the most valuable source of energy."
+    },
+    "language_mechanics": {
+      "rationale": "Displays recurring mechanical slips, including improper mid-sentence capitalization ('From', 'Nuclear'), redundant article usage ('the 16% electricity'), and singular/plural agreement errors ('valuable source').",
+      "evidence": "In the chart, the 16% electricity came From Hydro-electric power plant."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts a relevant numerical comparison ('44% less than') and identifies extremes ('majority', 'lowest amount'), but relies on highly repetitive sentence frames ('came from') throughout.",
+      "evidence": "lowest amount of electricity in USA like 2% electricity came from Nuclear power plant which is 44% less than coal factories."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data omission and inaccuracy (omitted Natural Gas percentage of 24% and incorrectly wrote Nuclear as 20% before stating 2%)",
+      "Erratic mid-sentence capitalization ('came From', 'From Nuclear')",
+      "Incorrect article and quantifier usage ('the 16% electricity', 'most of electricity')",
+      "Singular/plural agreement error ('valuable source of energy')"
+    ],
+    "positive_aspects": [
+      "Accurately identifies the primary peak (Coal 46%) and trough (Nuclear 2%)",
+      "Includes an explicit mathematical comparison calculation (44% difference)",
+      "Features a recognizable overview opening and concluding statement"
+    ]
+  },
+  "feedback_summary": "The candidate identifies the highest and lowest electricity sources and provides a valid comparative calculation. However, the analysis suffers from major data omissions (Natural Gas at 24% is missing) and internal inconsistency (Nuclear cited as both 20% and 2%). Furthermore, the inclusion of external general knowledge statements triggers the external facts constraint. These data issues combined with mid-sentence capitalization errors place the script in Band 2 with 5 marks.",
+  "_metadata": {
+    "task_id": "CHART_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e2295018ad0e7653f519b67fc53858cd3ce3a25776171936d2812aa991f2f6c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:31:30.801694+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7e88204bca97358ca6f8407533c1637cf74704aac2d1af4b539e133fe363a3cb",
+    "input_tokens": 4424,
+    "output_tokens": 4276,
+    "thoughts_tokens": 3358,
+    "cost_usd": 0.012017,
+    "latency_ms": 29125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4424,
+        "output_tokens": 4276,
+        "thoughts_tokens": 3358,
+        "cost_usd": 0.012017,
+        "latency_ms": 29125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

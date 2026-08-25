@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the letter and provides a coherent plan regarding educating villagers.",
+      "evidence": "Now. I am going to describe the future plan after passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural elements (Address, Date, Salutation, Body, Close, Signature) are present and correctly placed.",
+      "evidence": "28 June, 2026, Donia, Dhaka. 1236... Dear Lamia... Yours ever Sadia"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent grammatical errors, including incorrect pluralization, awkward prepositional usage, and punctuation slips (sentence fragments).",
+      "evidence": "Their childs also don't get education."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The introduction follows a highly common, memorized template. While the body content is a typical student response, it is logically sequenced.",
+      "evidence": "How are you? I hope you are well. I am also well by the Grace of Almighty Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect pluralization (e.g., 'childs')",
+      "Grammatical phrasing (e.g., 'for live a healthy')",
+      "Sentence fragment punctuation (e.g., 'Now. I am going')"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout",
+      "Clear alignment with the prompt objective"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a strong grasp of the informal letter format, with all required components present. The prompt is addressed directly and logically. However, the linguistic quality is hindered by frequent grammatical errors and the use of a memorized template for the opening. Because the structural integrity is high but the mechanics show multiple errors, the total score is awarded at the lowest value of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a9e1915ba2112b96016e011faa9fca9dc9aaa7cb33ef58f0852003973c1bee36",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:11:07.192831+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a320e5bb3f081767a20108c5ce5f1ac75b094005dd842495d3c6774ed141d523",
+    "input_tokens": 4530,
+    "output_tokens": 2511,
+    "thoughts_tokens": 1764,
+    "cost_usd": 0.001206,
+    "latency_ms": 70686,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4530,
+        "output_tokens": 2511,
+        "thoughts_tokens": 1764,
+        "cost_usd": 0.001206,
+        "latency_ms": 70686,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

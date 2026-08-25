@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a smooth and logical continuation of the stem, following the traditional plot of the Lion and the Mouse fable to its natural conclusion.",
+      "evidence": "The lion caught the mouse. The mouse got scared and told the lion to eat to let him free, one day he might save the lion's life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive resolution and includes a clear moral lesson; however, the candidate failed to provide a title as explicitly required by the prompt.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling errors and significant syntax failures, particularly in the final sentence which is nearly unintelligible. Tense consistency is weak.",
+      "evidence": "trappen in a net... greatful for him... do any worek."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a predictable, memorized fable with no creative variations, though the phrasing is the student's own rather than a direct copy of a guide.",
+      "evidence": "cut the net with his sharp teeth."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling)",
+      "Syntactic breakdown in concluding sentence",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Clear identification of a moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical flow and a positive ending that includes a moral. However, the script is marred by significant linguistic inaccuracies, including spelling errors ('forrest', 'trappen', 'greatful', 'worek') and a breakdown in sentence structure at the end. The omission of a title further reduced the structural score. The response falls into Band 3 due to the coherence of the plot despite the mechanical failures.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0e788379019ad8c4d8df0147446961f907193b58f950b3f75c88fa7f2bbb34f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:39:18.532627+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "901a4e54a92651fd5945a8997309fa8188413b0f0843aa5ec67667f84c73059d",
+    "input_tokens": 4405,
+    "output_tokens": 2397,
+    "thoughts_tokens": 1651,
+    "cost_usd": 0.00116,
+    "latency_ms": 67187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4405,
+        "output_tokens": 2397,
+        "thoughts_tokens": 1651,
+        "cost_usd": 0.00116,
+        "latency_ms": 67187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

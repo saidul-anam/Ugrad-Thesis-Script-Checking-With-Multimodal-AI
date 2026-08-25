@@ -1,0 +1,108 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt requirement by clearly stating their post-HSC plans regarding freelancing, graphic design, and video editing.",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential formal components of an informal letter are present in standard sequence: sender's address, date, salutation, body paragraphs, complimentary close, signature, and postal envelope details.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple recurring mechanical, spelling, and punctuation errors, including mispunctuated contractions, erroneous periods creating sentence fragments, incorrect colon use, spelling mistakes, and an apostrophe error in the sign-off.",
+      "evidence": "such as video editing.  graphic design, AI work and many more other works : It can be time consuming"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While opening and closing with standard formulaic greetings, the body content presents authentic and contemporary ideas concerning freelancing and self-reliance rather than purely memorised traditional essay lines.",
+      "evidence": "After my HSC Exam I will get a lot of free time which I am thinking to use for freelancing."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'beggining', 'self-relient', 'Rangpure')",
+      "Punctuation faults and sentence fragments (e.g., 'such as video editing. graphic design', misplaced colon)",
+      "Incorrect contraction and possessive apostrophe usage (e.g., 'I'am', 'Your's ever')",
+      "Countability/pluralisation error ('so many works')"
+    ],
+    "positive_aspects": [
+      "Complete letter layout with all 6 required components plus an envelope block",
+      "Direct, on-topic explanation of modern post-exam plans",
+      "Appropriate informal tone and clear overall readability"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a complete informal letter containing all standard structural components and addressing the prompt effectively. The core body provides authentic detail regarding post-exam freelancing aspirations. However, recurring punctuation flaws, spelling slips, and minor grammatical inaccuracies in the mechanics domain limit the script to the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e49f72906fc8002de80bd1cc1b24eb489b9824abceb27c38910ec3b35532bde1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:40:24.783592+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6c1eceaa7ca2044344feb1595bfe5ae27c1bd100aed6b9b9971b1e59fd4bb0a0",
+    "input_tokens": 8843,
+    "output_tokens": 5155,
+    "thoughts_tokens": 3508,
+    "cost_usd": 0.01554,
+    "latency_ms": 34500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4403,
+        "output_tokens": 2631,
+        "thoughts_tokens": 1846,
+        "cost_usd": 0.007898,
+        "latency_ms": 22469,
+        "attempt_number": 1,
+        "http_status": 200
+      },
+      {
+        "input_tokens": 4440,
+        "output_tokens": 2524,
+        "thoughts_tokens": 1662,
+        "cost_usd": 0.007642,
+        "latency_ms": 34500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

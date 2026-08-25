@@ -1,0 +1,101 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a smooth continuation of the stem and follows the logical sequence of the classic fable, leading to a clear resolution.",
+      "evidence": "the mouse searching for food, in the forest, suddenly, he hear something... and cut the net with his sharp teeth."
+    },
+    "structure_format_brevity": {
+      "rationale": "While the story reaches a positive ending with a lesson on friendship, the candidate completely failed to provide a title, which is a mandatory requirement of the task.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive failure in tense consistency, with the candidate frequently using present tense for a past-tense narrative. Dialogue punctuation is incorrect and sentence structures are often broken.",
+      "evidence": "the lion wake up... The mouse reply the faint voice... Then the lion be free."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a rote reproduction of a common memorized fable without any creative turns or vivid descriptive details.",
+      "evidence": "Oneday I will help you"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present used instead of Past)",
+      "Missing mandatory title",
+      "Incorrect dialogue punctuation",
+      "Subject-verb agreement failures"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Successful narrative resolution"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the story's plot and successfully completes the narrative arc. However, the script is severely hampered by linguistic weaknesses, specifically a consistent failure to maintain the past tense. The omission of a title is a significant structural lapse. The score reflects a basic ability to convey a story despite poor grammatical control.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4382898e254607f85048422cc00c0d5980b17c504be8dff1f0b06f271add0c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:36:10.689943+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "67a3f3a31ab4e39cdf6027d169a21da4cdd34153858aaed27e358dfb61eb52cb",
+    "input_tokens": 4554,
+    "output_tokens": 2060,
+    "thoughts_tokens": 1358,
+    "cost_usd": 0.001073,
+    "latency_ms": 58952,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4554,
+        "output_tokens": 2060,
+        "thoughts_tokens": 1358,
+        "cost_usd": 0.001073,
+        "latency_ms": 58952,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

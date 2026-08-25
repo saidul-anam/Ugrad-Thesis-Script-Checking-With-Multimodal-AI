@@ -1,0 +1,101 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively addresses all five parts of the prompt, including the definition, features, applications, impact on education, and ethical threats.",
+      "evidence": "AI's like chatgpt, Gemini, Deepseek, Grok etc help us to solve complex problems with ease"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response violates the core requirement of a single unified paragraph by using a title and dividing the text into multiple blocks, as confirmed by the paragraph_break_count.",
+      "evidence": "Artificial Intelligence\n\nArtificial Intelligence is a man made technology"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in spelling, subject-verb agreement, and comparative adjective usage.",
+      "evidence": "they helps us generating images... For learning AI is more good... generating fake expliceit images"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing is authentic and avoids memorized templates, utilizing contemporary and specific examples of AI tools.",
+      "evidence": "Deepseek, Grok etc"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (teonology, mueh, expliceit, assignmen)",
+      "Subject-Verb Agreement (they helps)",
+      "Incorrect comparative forms (more good)",
+      "Punctuation and spacing (doesnot)"
+    ],
+    "positive_aspects": [
+      "Comprehensive content coverage",
+      "Modern and relevant examples",
+      "Clear and logical progression of ideas"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a strong understanding of the topic, covering all prompt requirements with relevant, modern examples. However, the script failed the primary structural constraint of paragraph writing by splitting the text into multiple sections. Additionally, there is a high density of spelling and grammatical slips. Due to the structural breakdown (splitting the paragraph), a hard cap of 5 was applied to the total score.",
+  "_metadata": {
+    "task_id": "PARA_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "459b20c7fa4f5b5ac1a1da6a8c6ff2b85274e01ea46340f384d9771172d76896",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:09:30.557883+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5a3d1eca421696ae0f620441dec422cef35c74201836ecae3ecdb881f201237a",
+    "input_tokens": 4602,
+    "output_tokens": 1930,
+    "thoughts_tokens": 1186,
+    "cost_usd": 0.001039,
+    "latency_ms": 55327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4602,
+        "output_tokens": 1930,
+        "thoughts_tokens": 1186,
+        "cost_usd": 0.001039,
+        "latency_ms": 55327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

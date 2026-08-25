@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by explicitly stating future academic plans (studying engineering in Russia) after the HSC examination.",
+      "evidence": "You asked me about my plans after HSC. I didn't have one that day but now I have one."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural components of an informal letter are present and correctly positioned: sender's address, date, salutation, body paragraphs, complimentary close, signature, and postal address boxes.",
+      "evidence": "27th June, 2026\nAzimpur , Dhaka\n\nDear Siyom,"
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple mechanical errors including homophone confusion ('to' for 'too'), missing end punctuation after 'its', colloquial abbreviation ('tho'), and lack of capitalization in the complimentary close.",
+      "evidence": "Yeah I'm doing well to."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Displays an authentic, conversational voice and personal reflection rather than relying on clichéd memorized templates.",
+      "evidence": "I was thinking about moving to Russia after my HSC and continue my study there and get a degree."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Homophone confusion ('to' instead of 'too')",
+      "Punctuation and capitalization slips (missing terminal punctuation after 'its', uncapitalized 'your best friend')",
+      "Informal colloquialisms and spelling errors ('tho', 'chittbagong')"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout with all 6 components and envelope block intact",
+      "Engaging, authentic informal tone that directly answers the question"
+    ]
+  },
+  "feedback_summary": "The letter satisfies all format requirements of an informal letter with complete layout components and an authentic personal voice. The core topic of post-HSC plans is clearly elaborated. A deduction is made in language mechanics due to minor punctuation omissions, spelling mistakes, and colloquial informalities, placing the script at the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a2e1d1854a08e9396c5c839168d1d0a72ebdeb259ab28d603968130fb6201867",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:12:40.325678+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "98345ffe5415d8e8d65079b400946dbd7b66e9936cc12071a3b34139126ef091",
+    "input_tokens": 4425,
+    "output_tokens": 2742,
+    "thoughts_tokens": 1965,
+    "cost_usd": 0.008183,
+    "latency_ms": 18094,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4425,
+        "output_tokens": 2742,
+        "thoughts_tokens": 1965,
+        "cost_usd": 0.008183,
+        "latency_ms": 18094,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

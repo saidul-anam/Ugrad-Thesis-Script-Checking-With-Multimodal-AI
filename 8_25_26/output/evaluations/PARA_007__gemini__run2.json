@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively addresses all five guiding questions in the prompt, covering definition, features, educational impacts, and threatening misuse scenarios with relevant details.",
+      "evidence": "AI's like chatgpt, Gemini, Deepseek, Grok etc help us to solve complex problems with ease, they helps us generating images from our own imagination."
+    },
+    "structure_format_brevity": {
+      "rationale": "A clear topic sentence and concluding thought are present, but the script contains paragraph breaks and discarded introductory fragments instead of remaining a single unified paragraph block.",
+      "evidence": "AI means Artificial Intelligence. Artificial Intelligence is a teonology\n\nArtificial Intelligence"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent subject-verb agreement errors ('they helps', 'AI have', 'teachers now uses'), spelling errors ('teonology', 'expliceit', 'assignmen', 'untill'), and inappropriate informal colloquialisms ('wanna') detract from language precision.",
+      "evidence": "Some of the teachers now uses AI to mark their students exam sheets while they personally take care of their students."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing demonstrates authentic personal expression with timely, contemporary references to specific modern AI tools and nuanced risks rather than reliance on memorised formulaic templates.",
+      "evidence": "generating fake expliceit images of others to blackmail them and rob them for money."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors (e.g., 'they helps', 'AI have', 'teachers now uses')",
+      "Spelling errors and typos (e.g., 'teonology', 'expliceit', 'assignmen', 'mueh', 'untill')",
+      "Informal/colloquial diction unsuitable for formal academic writing (e.g., 'wanna', 'easy mode')"
+    ],
+    "positive_aspects": [
+      "Thorough response directly addressing all prompt questions",
+      "Authentic modern contextual knowledge referencing real tools (ChatGPT, Gemini, DeepSeek, Grok) and current societal threats"
+    ]
+  },
+  "feedback_summary": "The response displays commendable engagement with the topic, addressing all prompt questions with original thought and up-to-date real-world examples. However, due to structural division across multiple paragraph blocks, a hard cap of 5/10 is applied. Additionally, grammatical mechanics require attention, particularly subject-verb agreement, spelling, and avoiding informal slang like 'wanna'.",
+  "_metadata": {
+    "task_id": "PARA_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "459b20c7fa4f5b5ac1a1da6a8c6ff2b85274e01ea46340f384d9771172d76896",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:08:43.512658+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f222c66853bbd9b7a5d3860f43e9fc6247bf2146d6c866445f136e9b85565d74",
+    "input_tokens": 4601,
+    "output_tokens": 3121,
+    "thoughts_tokens": 2258,
+    "cost_usd": 0.009183,
+    "latency_ms": 20844,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4601,
+        "output_tokens": 3121,
+        "thoughts_tokens": 2258,
+        "cost_usd": 0.009183,
+        "latency_ms": 20844,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

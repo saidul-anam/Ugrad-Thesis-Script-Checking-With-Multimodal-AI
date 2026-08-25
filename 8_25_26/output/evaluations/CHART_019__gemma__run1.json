@@ -1,0 +1,101 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies Coal as the primary source (46%) and Natural Gas (24%), but fails significantly on data precision by stating Oil is 2% (it is 12%). Furthermore, the script includes confusing, non-requested degree calculations (e.g., 165.6) which detract from the clarity of the data analysis.",
+      "evidence": "But coal has big more portion than natural gas an this number is 46%... it obtain 165.6 from the char."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows a basic structural path: an introductory sentence, a body describing data, and a concluding statement. However, the cohesion is weak due to fragmented phrasing.",
+      "evidence": "The chart hilight the data of the sources of the USA electricity in the year of 1980... At last we can told that in 1980 the electricity of USA were coal based ."
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of linguistic errors, including spelling ('hilight', 'hage', 'numbe', 'natura'), severe subject-verb agreement failures, and incorrect verb forms ('can seen', 'is come', 'can told').",
+      "evidence": "We can clearly seen fra the pie chart that a hage numbe of electricity is come from natura gas"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative language is extremely basic and grammatically incorrect. The candidate attempts to compare portions but lacks the professional vocabulary (e.g., 'surpassed', 'dominant') required for Band 3 or 4.",
+      "evidence": "But coal has big more portion than natural gas"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling inaccuracies",
+      "Subject-verb agreement failure",
+      "Data hallucination (incorrect percentages and irrelevant degree calculations)",
+      "Incorrect verb conjugation (e.g., 'can told')"
+    ],
+    "positive_aspects": [
+      "Successfully identified the dominant data point (Coal)",
+      "Attempted the required structure (Intro, Body, Conclusion)"
+    ]
+  },
+  "feedback_summary": "The script falls into Band 2 due to high error density and inaccurate data reporting. While the candidate correctly identifies the primary source of electricity, they misreport the value for oil and include confusing numerical calculations that are not part of the requested analysis. The language mechanics are severely compromised, with pervasive spelling and grammatical mistakes. Structure is present but basic.",
+  "_metadata": {
+    "task_id": "CHART_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "dcd497d19b949348b3c65a963b06ff0b5ad7950bb912cb2d3bda6c5a3e9afbe4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:23:19.692536+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d46b6c0b9c0d22774594bba31f61f0853747ee6e906896d698a3ecfdbf2225a0",
+    "input_tokens": 4443,
+    "output_tokens": 2635,
+    "thoughts_tokens": 1739,
+    "cost_usd": 0.001235,
+    "latency_ms": 73936,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4443,
+        "output_tokens": 2635,
+        "thoughts_tokens": 1739,
+        "cost_usd": 0.001235,
+        "latency_ms": 73936,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

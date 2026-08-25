@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the fundamental contrast between active dreamers who work to achieve their goals and passive dreamers, though the explanation remains surface-level and somewhat simplistic.",
+      "evidence": "Those people who dreams under light works hard to achieve it."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is appropriately concise and structured as a single block, but the final sentence is syntactically incomplete and leaves the concluding thought disjointed.",
+      "evidence": "They are the real successful people and like the other  fake  dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive subject-verb agreement errors ('People who dreams', 'works hard') and singular/plural confusion ('wide open eye') along with a garbled final clause warrant zero marks in language mechanics.",
+      "evidence": "People who dreams with wide open eye in the morning are not normal like people who dreams at night."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies entirely on their own words with zero verbatim copying from the source text, attempting creative interpretation ('dreams under light', 'fake dreamers'), despite non-standard phrasing.",
+      "evidence": "Those people who dreams under light works hard to achieve it."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement failure ('People who dreams', 'Those people... works')",
+      "Singular/plural noun phrase errors ('wide open eye')",
+      "Garbled syntax/omission of negation in the concluding clause ('and like the other fake dreamers')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the original poem (100% original phrasing)",
+      "Correctly identifies the core thematic contrast between active and passive dreamers"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an authentic understanding of the poem's core theme by distinguishing between those who take action on their dreams and those who merely daydream. However, the score is significantly lowered due to frequent subject-verb agreement errors and an incomplete/garbled final sentence.",
+  "_metadata": {
+    "task_id": "THEME_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8ea0d5a019c65a6412550dcb301a1c4b6336257b82aa6f7925f901b6a8a34725",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:22:52.592049+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "882cc998c9459c12db70f3d100367dcca7767e660a4cc62ed1c7170c2072e584",
+    "input_tokens": 4270,
+    "output_tokens": 2997,
+    "thoughts_tokens": 2228,
+    "cost_usd": 0.008774,
+    "latency_ms": 18593,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4270,
+        "output_tokens": 2997,
+        "thoughts_tokens": 2228,
+        "cost_usd": 0.008774,
+        "latency_ms": 18593,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

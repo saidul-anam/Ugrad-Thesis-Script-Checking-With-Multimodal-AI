@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt directly, explicitly stating their post-HSC future plans to study computer engineering and prepare for admission tests.",
+      "evidence": "In the letter y wanted to know about my future Plan affi passing HSC Exam. Actually My HSC Exa is close to door"
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential formal conventions of an informal letter are correctly included: sender's address, date, salutation, body paragraphs, complimentary close, signature, and envelope layout.",
+      "evidence": "27-06-2026\nDemira, Dhaka\nBangladesh\n\nDear Messi,"
+    },
+    "language_mechanics": {
+      "rationale": "The writing contains pervasive spelling slips, incorrect verb forms, faulty articles, and broken syntax throughout the body.",
+      "evidence": "My childhood I have a plan to belong computer engineer . So, to q fullfill dream I have to get chance in a Engineering university"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script leans heavily on memorised stock phrases for the opening and conclusion, with abrupt and unrefined sentence transitions in the main body.",
+      "evidence": "At first take my heartiest love. Hope you great by the grace of Almighty . I reci your letter just now."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent orthographic and spelling mistakes (e.g., 'reci', 'affi', 'mentlime', 'Spiking', 'listining', 'parrants')",
+      "Grammatical and syntactic errors including wrong verb forms ('developed'), incorrect article usage ('a Engineering'), and unnatural phrasing ('belong computer engineer')"
+    ],
+    "positive_aspects": [
+      "Complete informal letter structure with all standard layout components and envelope blocks present",
+      "Remains directly focused on the topic of future plans after the HSC examination"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the standard informal letter format, correctly incorporating all structural elements including date, address, salutation, closing, and envelope details. The topic is directly addressed with relevant personal aspirations regarding engineering university admission. However, the linguistic quality is significantly compromised by high error density in spelling, grammar, and vocabulary usage, alongside a reliance on generic memorised opening and closing formulas.",
+  "_metadata": {
+    "task_id": "LETTER_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "9e2f17c3279a8a14d69b1748161c0baf99aff60f3174950b0034a43a1814ac13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:25:28.758233+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5b54ae8ecac4f3b2051b646cd576c8bb2db8ebf883206947692943f3a9c0dfbc",
+    "input_tokens": 4407,
+    "output_tokens": 2921,
+    "thoughts_tokens": 2100,
+    "cost_usd": 0.008625,
+    "latency_ms": 23250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 2921,
+        "thoughts_tokens": 2100,
+        "cost_usd": 0.008625,
+        "latency_ms": 23250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

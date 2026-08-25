@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately establishes the purpose of the letter and provides specific, relevant details about their future plan (freelancing in AI, graphic design, etc.).",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components (Address, Date, Salutation, Body, Close, Signature) are present and correctly positioned.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "The text is readable, but contains multiple spelling errors, incorrect apostrophe usage, and a misuse of uncountable nouns.",
+      "evidence": "beggining... I'am... so many works... self-relient... Your's"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the opening is a common memorized template, the actual content regarding freelancing and AI shows an authentic attempt to describe a personal plan.",
+      "evidence": "take my salam and the best wishes from the core of my heart"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (beggining, relient)",
+      "Punctuation/Apostrophe errors (I'am, Your's)",
+      "Grammatical error with uncountable nouns (works)"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to structural layout requirements",
+      "Contextually relevant and modern content"
+    ]
+  },
+  "feedback_summary": "The script demonstrates full structural competence and effectively addresses the prompt. The content is well-focused and avoids generic filler. However, the total score is limited to the lowest value of Band 4 due to frequent minor linguistic slips in spelling and basic grammar.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e49f72906fc8002de80bd1cc1b24eb489b9824abceb27c38910ec3b35532bde1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:40:55.077558+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2145a2d10dbe0014226e05f94896ff2f100fab6808fe8a3bf67c943f3b7b8bab",
+    "input_tokens": 4404,
+    "output_tokens": 2250,
+    "thoughts_tokens": 1510,
+    "cost_usd": 0.001115,
+    "latency_ms": 64577,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 2250,
+        "thoughts_tokens": 1510,
+        "cost_usd": 0.001115,
+        "latency_ms": 64577,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

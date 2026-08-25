@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly and comprehensively addresses all prompt questions, offering accurate explanations of AI definition, capabilities, educational applications, and real-world ethical threats.",
+      "evidence": "AI's like chatgpt, Gemini, Deepseek, Grok etc help us to solve complex problems with ease, they helps us generating images from our own imagination."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script fails the single unified block requirement by including an aborted opening fragment and separate heading before the main text, resulting in multiple paragraph breaks.",
+      "evidence": "AI means Artificial Intelligence. Artificial Intelligence is a teonology"
+    },
+    "language_mechanics": {
+      "rationale": "Contains recurring grammatical slips (subject-verb agreement, plural/possessive confusion like 'AI's'), informal colloquialisms ('wanna'), and several spelling errors ('teonology', 'expliceit', 'mueh', 'doesnot').",
+      "evidence": "AI have limitless information about everything. We can use AI to get help with anything we wanna know."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Displays exceptional authenticity, referencing contemporary AI tools and real-life scenarios rather than relying on stale, rote-memorized guidebook templates.",
+      "evidence": "Suddenly wanna learn another language? Or wanna learn chess? AI can help you with that easily"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subdivision of paragraph structure (false start/heading separated from body)",
+      "Subject-verb agreement errors ('AI have', 'they helps us', 'teachers now uses')",
+      "Informal slang and contractions ('wanna')",
+      "Spelling errors ('teonology', 'expliceit', 'mueh', 'doesnot', 'assignmen')"
+    ],
+    "positive_aspects": [
+      "Thorough and comprehensive coverage of all prompt questions",
+      "Modern, authentic, and original examples (ChatGPT, DeepSeek, Gemini, Grok)",
+      "Balanced exploration of both educational benefits and serious security/ethical hazards"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates strong topical knowledge and original thinking, fully answering all guiding questions with modern, practical examples. However, because the response is subdivided with an unedited false start and separate heading blocks (2 paragraph breaks), a mandatory structural hard cap of 5 marks is applied. Additionally, attention is needed to correct informal phrasing ('wanna'), subject-verb agreement, and typographical errors.",
+  "_metadata": {
+    "task_id": "PARA_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "459b20c7fa4f5b5ac1a1da6a8c6ff2b85274e01ea46340f384d9771172d76896",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:08:35.225909+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "84d30eec94a7bfa01af8b732314164234e5e73f069e4b6f12cd97c6be2c3acef",
+    "input_tokens": 4601,
+    "output_tokens": 3050,
+    "thoughts_tokens": 2195,
+    "cost_usd": 0.009005,
+    "latency_ms": 17952,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4601,
+        "output_tokens": 3050,
+        "thoughts_tokens": 2195,
+        "cost_usd": 0.009005,
+        "latency_ms": 17952,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

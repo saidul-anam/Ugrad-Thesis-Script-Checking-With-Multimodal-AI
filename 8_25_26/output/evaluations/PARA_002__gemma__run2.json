@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all components of the prompt: definition, features, applications, education, and threats. However, the explanations are simplistic and occasionally vague.",
+      "evidence": "AI has create a revolutionized teaching and leanning. we can ask any question in AI and get the reply in a moment."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is correctly written as a single unified paragraph. It lacks a strong, formal topic sentence but introduces the subject immediately.",
+      "evidence": "Artificial Indelligence is called \"AI\" which means one acts like a human brain."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of errors in spelling, subject-verb agreement, and syntax. While the meaning is generally recoverable, the mechanics are weak.",
+      "evidence": "Artificial Indelligence... government use it in Dhaka Traffic systeme... betten than past... AI health miniten"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears original and not copied from a guide, showing an attempt to use specific examples (Albania, Dhaka Traffic), though phrased poorly.",
+      "evidence": "Albania' declaned first AI health miniten and it is the first in world where worked as a minister"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling)",
+      "Subject-verb agreement",
+      "Syntax/Sentence construction"
+    ],
+    "positive_aspects": [
+      "Attempted all prompt requirements",
+      "Original content and specific examples",
+      "Adhered to single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate successfully followed the structural requirement of a single paragraph and attempted to answer every part of the prompt, including the threat of AI and its role in education. However, the score is heavily constrained by poor linguistic mechanics, including frequent spelling mistakes and broken syntax. The content is original and avoids memorized templates, but the lack of grammatical precision places it at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "PARA_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f4cc7abac58e1f657222172441bc4b7b39f99fe7d9b26de684d06fe9996ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:34:41.257331+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7b3f717887553bf65f3df24c868a4215d94f856c29ca037ca31b8f6e313f4d08",
+    "input_tokens": 4511,
+    "output_tokens": 1795,
+    "thoughts_tokens": 1032,
+    "cost_usd": 0.00099,
+    "latency_ms": 50609,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4511,
+        "output_tokens": 1795,
+        "thoughts_tokens": 1032,
+        "cost_usd": 0.00099,
+        "latency_ms": 50609,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

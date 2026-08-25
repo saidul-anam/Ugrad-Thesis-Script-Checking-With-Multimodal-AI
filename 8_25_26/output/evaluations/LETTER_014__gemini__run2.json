@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt directly without delay, clearly stating their post-HSC goal of preparing for university admission.",
+      "evidence": "Today I want to tell you about my plan after HSC exam. HSC exam is very significant exam in academic life. After completing this I want to admit in well known university."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script includes the essential letter layout components (heading, date, salutation, body, subscription, signature, and envelope draft), though minor capitalization lapses are present.",
+      "evidence": "Azimpur, Dhaka\nDate: 26-06-26\n\nDear friend,\n...\nyour friend\nNeha"
+    },
+    "language_mechanics": {
+      "rationale": "There is a noticeable density of spelling and grammatical slips in a brief script, including broken words, incorrect preposition usage, and vocabulary misspellings.",
+      "evidence": "admit in well known university. So, I need a strong pre paration. For this I want to make myself prepared for this admission bettle. No more today. Convergi my regards to all."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The ideas are expressed simply and authentically, following a logical train of thought without relying on excessive pre-memorized filler.",
+      "evidence": "For this I want to make myself prepared for this admission bettle."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'bettle' for 'battle', 'Convergi' for 'Convey', 'pre paration')",
+      "Grammatical and prepositional inaccuracies ('admit in well known university' instead of 'get admitted to a well-known university')",
+      "Missing articles ('very significant exam' instead of 'a very significant exam')",
+      "Capitalization error in complimentary close ('your friend')"
+    ],
+    "positive_aspects": [
+      "Prompt is addressed directly with clear focus on future plans",
+      "Essential informal letter layout structure is maintained",
+      "Logical flow of ideas throughout the body paragraph"
+    ]
+  },
+  "feedback_summary": "The candidate produces a relevant informal letter fulfilling the core prompt requirement. While the layout and flow of ideas are sound, the script suffers from multiple mechanical errors (spelling and syntax), placing it squarely in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "17956f5c0ac921cfbc83d2872babe7528f9b39c146c6a52e8710496eab212f86",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:36:46.292940+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "4d8a7f023b8190eb28f4609f999d1f24a80e875b1143ac74aa879230a16cff98",
+    "input_tokens": 4301,
+    "output_tokens": 3163,
+    "thoughts_tokens": 2329,
+    "cost_usd": 0.009198,
+    "latency_ms": 29000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4301,
+        "output_tokens": 3163,
+        "thoughts_tokens": 2329,
+        "cost_usd": 0.009198,
+        "latency_ms": 29000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

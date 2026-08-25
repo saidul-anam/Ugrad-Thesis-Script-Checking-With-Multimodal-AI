@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the email and details relevant future plans following the HSC exam, including medical admission coaching and the ambition to serve poor people.",
+      "evidence": "You know, I alway wanted to be a great doctor. I want to give free treatment to the poore people. To fulfil my dream, it is must to get a good result in Hsc Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes most email layout elements (To, Subject, Salutation, Body, Sign-off, Signature), but omits the 'From' field and uses slightly unpolished sign-off formatting ('Yours friend').",
+      "evidence": "To : sawda25671@gmail.com.\nSubject : Describing the future plan after HSC Exam."
+    },
+    "language_mechanics": {
+      "rationale": "The text suffers from a high frequency of spelling errors ('will' for 'well', 'madical', 'couching', 'grammare', 'knowledg', 'poore', 'aboud') and grammatical inaccuracies in verb phrasing ('I will admitted').",
+      "evidence": "I will admitted in Admission couching center to get a good preparation for madical exam."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response exhibits genuine personal expression with logical thought progression from exam completion to coaching, skill enhancement, and career goals rather than relying on a rigid generic template.",
+      "evidence": "In this, admission period, I will increase my general knowledg and English language and grammare skill because both are important for madical exam."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent orthographic errors ('madical', 'grammare', 'couching', 'knowledg', 'poore', 'aboud', 'ic')",
+      "Grammatical verb form error ('I will admitted' instead of 'I will get admitted' / 'I will enroll')"
+    ],
+    "positive_aspects": [
+      "Prompt topic is clearly fulfilled with logical progression of post-exam plans",
+      "Core email structural components are correctly positioned and sequenced"
+    ]
+  },
+  "feedback_summary": "The candidate provides a coherent, on-topic email detailing their post-HSC aspirations with a clear personal voice. While the organizational structure is sound and meets the task requirements, the script contains persistent spelling and grammatical errors that restrict the language mechanics score.",
+  "_metadata": {
+    "task_id": "LETTER_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "86638f9b3411232f69f22a70fce6530414f5e28b22b5cdf93d1235ad7077e6e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:27:25.712242+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "241ef04b17c60626ac797d2c30f0c104a058ffa8aa73a356911b02e5da25ec22",
+    "input_tokens": 4415,
+    "output_tokens": 3157,
+    "thoughts_tokens": 2311,
+    "cost_usd": 0.009217,
+    "latency_ms": 21187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4415,
+        "output_tokens": 3157,
+        "thoughts_tokens": 2311,
+        "cost_usd": 0.009217,
+        "latency_ms": 21187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

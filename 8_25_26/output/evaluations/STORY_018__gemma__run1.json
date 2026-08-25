@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully extends the stem with a logical sequence of events, maintaining continuity and resolving the plot effectively.",
+      "evidence": "So, the mouse cut the trap by its teeth and freed the lion from the cage."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story concludes with a clear positive ending and a constructive moral lesson, but it fails to provide a proper title as mandated by the prompt.",
+      "evidence": "From the story we came do understa uderstan- d that we should not uderestimate little thing."
+    },
+    "language_mechanics": {
+      "rationale": "The script is marred by pervasive errors in verb conjugation, spelling, and basic syntax, which significantly hinder linguistic quality.",
+      "evidence": "accidentally beated the lion... threaten the mouse to it... Many days passa... tried do escape"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a direct reproduction of the classic Aesop's fable 'The Lion and the Mouse', indicating a memorized response rather than an original creative effort.",
+      "evidence": "the mouse cut the trap by its teeth and freed the lion from the cage"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect verb forms (e.g., 'beated' for beat, 'threaten' for threatened)",
+      "Spelling inaccuracies (e.g., 'passa', 'uderestimate')",
+      "Syntactic errors (e.g., 'tried do escape', 'was also go passing')"
+    ],
+    "positive_aspects": [
+      "Logical plot development",
+      "Inclusion of a clear moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of story structure and plot progression, successfully extending the stem to a logical and positive conclusion with a moral. However, the score is lowered due to the omission of a title and a high density of grammatical and spelling errors. Additionally, the use of a well-known memorized fable instead of an original narrative limits the originality score.",
+  "_metadata": {
+    "task_id": "STORY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "60fb43a11dab9a851f079e80c94b7c8e710fc2e4ab3e0b473aed038bcb73e2d7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:15:08.635664+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "60686eede85a5c059686ca76c75ca00474758cbf320cb9ac8f259b8c8d62315e",
+    "input_tokens": 4412,
+    "output_tokens": 2932,
+    "thoughts_tokens": 2169,
+    "cost_usd": 0.001321,
+    "latency_ms": 82937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4412,
+        "output_tokens": 2932,
+        "thoughts_tokens": 2169,
+        "cost_usd": 0.001321,
+        "latency_ms": 82937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script systematically answers all the guiding questions from the prompt, covering definition, features, everyday applications, educational impacts, and potential threats.",
+      "evidence": "The features of AI or artificial intelligence i that it can talk,  listen, write and think like human."
+    },
+    "structure_format_brevity": {
+      "rationale": "Composed in a single unified paragraph with an introductory topic sentence and a closing remark, though transitional linkages between sentences are somewhat abrupt.",
+      "evidence": "Artificial intelligence is a kind of machine or  robot which requires to human intelligence."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors, truncated/incomplete words, subject-verb inconsistencies, and spelling slips compromise linguistic accuracy.",
+      "evidence": "Beside it decreases the thinking capability of humon. Students are being id because of the AI."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Displays authentic personal engagement and up-to-date examples rather than relying on a rigid memorised template, albeit with basic vocabulary.",
+      "evidence": "We have some programed AI such as:- G Chatgpt, Gemini, Alexa, Siri, Deepseek etc."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling slips and truncated words ('prog mable', 'solve pro', 'writting', 'chopter', 'humon', 'gelting')",
+      "Syntactic and grammatical awkwardness ('requires to human intelligence', 'searching datas', 'revolutionized changes', 'threat our humanity')"
+    ],
+    "positive_aspects": [
+      "Adheres strictly to the single-paragraph structural requirement without subdividing",
+      "Directly addresses all five guide questions with contemporary AI tool references"
+    ]
+  },
+  "feedback_summary": "The candidate addresses all prompt questions within a single unified block and includes relevant real-world examples (ChatGPT, DeepSeek, Alexa). However, frequent spelling errors, incomplete words, and basic sentence construction place the script at the baseline of Band 3.",
+  "_metadata": {
+    "task_id": "PARA_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "329a5f9f42ab0b1dc4550d79dccb8986a462be4172f329fa8ed96fc23ecd814e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:10:18.811450+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ca85d66a427612cbbe5654eed797ca7e6fadbfc51bbd3774a81c58bce6a06bfd",
+    "input_tokens": 4514,
+    "output_tokens": 2658,
+    "thoughts_tokens": 1906,
+    "cost_usd": 0.007999,
+    "latency_ms": 18702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4514,
+        "output_tokens": 2658,
+        "thoughts_tokens": 1906,
+        "cost_usd": 0.007999,
+        "latency_ms": 18702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

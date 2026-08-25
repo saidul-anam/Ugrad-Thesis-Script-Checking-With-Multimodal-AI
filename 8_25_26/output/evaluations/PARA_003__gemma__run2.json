@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully addresses all five prompts (definition, features, applications, education, and threats), though the depth of analysis is superficial.",
+      "evidence": "In medica, Engeniering, Business, AI in also Impactfut. But demerits also finded in in feature."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response adheres to the single-paragraph constraint. However, it lacks a sophisticated topic sentence and cohesive transitions between ideas.",
+      "evidence": "Artificial Intelligence or AI is a computer based prograne which, can do any types of software command we give it."
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of errors in spelling, subject-verb agreement, and syntax, which significantly hinders readability.",
+      "evidence": "AI is alr revalationized the teaching and learning process."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears authentic and not copied from a guide, but the expression is basic, repetitive, and lacks linguistic maturity.",
+      "evidence": "It connected the whole world in a chain which in too much impact but impactful for this generatn."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (prograne, prvous, revalationized, finded)",
+      "Syntax and grammar (too much helpful, AI in in also helping)",
+      "Tense inconsistency"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of all prompt requirements",
+      "Strict adherence to single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the prompt by answering all five required components. However, the script is heavily penalized for poor language mechanics, including pervasive spelling and grammatical errors. While the structure is correct (single block), the lack of cohesion and basic vocabulary place this in Band 2.",
+  "_metadata": {
+    "task_id": "PARA_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "709123dcdacc174e69a7d712bb73d438f674f594533af852b979d58f18956efa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:39:28.145005+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "39e2692a7b60de1e20926fb82e08e74c32e87c5f701a81e6d3f3426de39127b4",
+    "input_tokens": 4565,
+    "output_tokens": 2629,
+    "thoughts_tokens": 1888,
+    "cost_usd": 0.001245,
+    "latency_ms": 74515,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4565,
+        "output_tokens": 2629,
+        "thoughts_tokens": 1888,
+        "cost_usd": 0.001245,
+        "latency_ms": 74515,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

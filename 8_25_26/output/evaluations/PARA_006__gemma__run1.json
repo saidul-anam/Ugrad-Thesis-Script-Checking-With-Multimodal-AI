@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all parts of the prompt (definition, features, applications, education, and threats), although the depth of exploration is minimal and repetitive.",
+      "evidence": "AI helps them to read so smoothly and gain knowledge."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is split into two distinct paragraphs, violating the 'single unified paragraph' requirement. It also lacks a strong, concise topic sentence.",
+      "evidence": "gain knowledge.\n\n learn and children's"
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in spelling, subject-verb agreement, and syntax. The writing is frequently awkward and borderline incoherent in several places.",
+      "evidence": "many countrie's childs are are poor economy"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is simple and authentic (not copied from a guide), but lacks any sophisticated vocabulary or logical transitions.",
+      "evidence": "many naughty people use AI for for their need"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling)",
+      "Subject-verb agreement",
+      "Incorrect pluralization (childs, countrie's)",
+      "Structural subdivision"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of prompt questions",
+      "Original attempt at expression"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies and discusses all required aspects of Artificial Intelligence. However, the script suffers from severe linguistic deficiencies, including pervasive spelling and grammatical errors. Crucially, the candidate failed the structural requirement by splitting the response into two paragraphs. While the prompt triggers a structural cap of 5, the raw score based on linguistic failure is already below this threshold. The score reflects a basic ability to communicate ideas despite poor mechanical control.",
+  "_metadata": {
+    "task_id": "PARA_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e50dcd506cfadf0f574158fa337891fcd9fa9a79b1f5148c69b4b9925a73d735",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:04:07.124342+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1552090a5c4c4dc09996f619e38e78e7b3c41edf0679c5c5fcd34c2babe9e36f",
+    "input_tokens": 4481,
+    "output_tokens": 2850,
+    "thoughts_tokens": 2119,
+    "cost_usd": 0.001303,
+    "latency_ms": 80062,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4481,
+        "output_tokens": 2850,
+        "thoughts_tokens": 2119,
+        "cost_usd": 0.001303,
+        "latency_ms": 80062,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

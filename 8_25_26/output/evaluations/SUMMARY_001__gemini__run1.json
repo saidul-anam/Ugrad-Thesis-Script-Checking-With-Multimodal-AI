@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the central metaphor of the poem (hope as a bird) and correctly conveys that hope provides warmth and remains present through hardships, though some slight extraneous details are introduced.",
+      "evidence": "In the poem Hope is compared with bird."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is structured within a single unified block with an appropriate length for the short poem, maintaining good concise focus.",
+      "evidence": "In the poem Hope is compared with bird. Bird always flys here and there. In the jungle in rain, in winter and also on the strangest sea we can hear it."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical errors are present, including missing articles ('compared with bird'), spelling errors ('flys'), possessive apostrophe confusion ('It's singing'), and a final sentence fragment.",
+      "evidence": "Bird always flys here and there. In the jungle in rain, in winter and also on the strangest sea we can hear it. It's singing keeps many people warm."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response achieves 0.0% verbatim copying, successfully expressing the poem's meaning entirely in the candidate's own words, though phrasing is basic.",
+      "evidence": "Like the bird we can find hope anywhere in any situation."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling error ('flys' instead of 'flies')",
+      "Omission of determiners/articles ('compared with bird')",
+      "Punctuation/contraction error ('It's' instead of possessive 'Its')",
+      "Sentence fragment at the conclusion"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Clear understanding of the central metaphor",
+      "Single paragraph layout maintained"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear comprehension of Emily Dickinson's poem by explaining the central metaphor of hope as a resilient bird in their own words. Paraphrasing is fully original with no direct copying from the text. However, the script contains noticeable grammatical and mechanical slips (spelling 'flys', confusing 'It's' for 'Its', missing articles, and a concluding fragment) which keep language mechanics in the lower range.",
+  "_metadata": {
+    "task_id": "SUMMARY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "00141ad1ef6868fa39a3ff4f893bf1ac2870d7f82485c23b6956acb68240c2b8",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T20:32:52.771259+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "312bfefbf98a8fa55272f2c3c1b8566f5f8bce428187a474c9884172542f9088",
+    "input_tokens": 4389,
+    "output_tokens": 2571,
+    "thoughts_tokens": 1748,
+    "cost_usd": 0.007744,
+    "latency_ms": 19109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4389,
+        "output_tokens": 2571,
+        "thoughts_tokens": 1748,
+        "cost_usd": 0.007744,
+        "latency_ms": 19109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

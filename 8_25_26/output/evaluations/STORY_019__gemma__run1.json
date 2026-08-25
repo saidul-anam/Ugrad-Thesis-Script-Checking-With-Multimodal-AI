@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem with a logically sequential plot that follows the known fable of the Lion and the Mouse.",
+      "evidence": "suddenly the mouse enter into the nose of lion"
+    },
+    "structure_format_brevity": {
+      "rationale": "A title is provided (though misspelled), the story reaches a positive conclusion, and a clear moral lesson is stated at the end.",
+      "evidence": "Moral: Every creature need other's help to live"
+    },
+    "language_mechanics": {
+      "rationale": "There is significant instability in tense (switching between present and past) and frequent spelling/grammatical errors.",
+      "evidence": "The lion smile loudly and say you will help me"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard reproduction of a common memorized fable with very little creative deviation or authentic descriptive detail.",
+      "evidence": "The mouse notice that and cut the net with it's sharp teeth"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past)",
+      "Spelling errors (e.g., 'slepping', 'virtud')",
+      "Subject-verb agreement (e.g., 'Every creature need')"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Inclusion of all required story components (Title, Moral, Conclusion)"
+    ]
+  },
+  "feedback_summary": "The student provides a complete and logically sequenced narrative that fulfills the prompt's requirements. However, the writing is heavily reliant on a memorized fable and is marred by frequent grammatical errors, particularly in tense consistency and spelling. The title 'Marcy is a great virtud' is an attempt at 'Mercy is a great virtue' but fails linguistically. Despite these mechanical flaws, the story is coherent and reaches a satisfying moral conclusion, placing it in Band 3.",
+  "_metadata": {
+    "task_id": "STORY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "849b1b43cd884b3fbbaa24055e205009cfd8bd88b89aec2c18617c0e6011512a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:25:05.509668+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c1fa655543378ba9894e33fb3eb9f993d7bea580d760d4f5a13e4af59e3a3409",
+    "input_tokens": 4480,
+    "output_tokens": 2828,
+    "thoughts_tokens": 2075,
+    "cost_usd": 0.001296,
+    "latency_ms": 78954,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 2828,
+        "thoughts_tokens": 2075,
+        "cost_usd": 0.001296,
+        "latency_ms": 78954,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

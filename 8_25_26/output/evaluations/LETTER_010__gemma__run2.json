@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student directly addresses the prompt, stating the purpose immediately and detailing specific plans (Cox's Bazar and teaching in the village).",
+      "evidence": "Today I describe you about the future Plan after Passing HSC Exam!"
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural elements (Address, Date, Salutation, Body, Close, and Signature) are present and correctly positioned.",
+      "evidence": "27 June, 2026\nDonia,Dhaka-1236\nDear Sadia,"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent basic errors in spelling ('hare' for 'have', 'Parunts' for 'Parents'), subject-verb agreement ('Your are'), and tense consistency ('I came to my village' for future intent).",
+      "evidence": "Many days hare passed since we met last."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content is authentic and avoids generic templates; the aspiration to educate illiterate villagers demonstrates original thought.",
+      "evidence": "I have a Plan for poor People at my village. I want to be a teacher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (hare, Parunts)",
+      "Subject-verb agreement (Your are)",
+      "Tense inconsistency (came instead of will go)"
+    ],
+    "positive_aspects": [
+      "Perfect structural layout",
+      "Constructive and original content"
+    ]
+  },
+  "feedback_summary": "The script is structurally flawless and contains original, relevant content that fully satisfies the prompt. However, due to the high density of basic linguistic errors in spelling and grammar, the total score is adjusted to the lowest value of Band 4 as per the precision tiebreaker rules.",
+  "_metadata": {
+    "task_id": "LETTER_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c8de56b33916a8332411fcd8e0bcb0497be43425e9166cdc0eeb80ff5721ee1a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:39:55.882481+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e09ec6880695a25c2b67a43d7dce6ded900a690fb469c833f087434e74c638dd",
+    "input_tokens": 4440,
+    "output_tokens": 2687,
+    "thoughts_tokens": 1965,
+    "cost_usd": 0.00125,
+    "latency_ms": 75328,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4440,
+        "output_tokens": 2687,
+        "thoughts_tokens": 1965,
+        "cost_usd": 0.00125,
+        "latency_ms": 75328,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

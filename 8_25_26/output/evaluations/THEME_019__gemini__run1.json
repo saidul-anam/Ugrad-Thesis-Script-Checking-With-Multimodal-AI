@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core thematic contrast of the poem between passive nocturnal dreaming and proactive day-dreaming that leads to real action, though the thematic articulation is somewhat basic.",
+      "evidence": "Dreamers of the day are the real hero's and they take their dreams as Inspairication and motivation And. also work hard to make it dreams truer."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single compact block with a direct introductory statement followed by brief supporting interpretation.",
+      "evidence": "The poem is about an inspiration named dream . Dream is a common thing but varied from person to person ."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of grammatical and mechanical errors, including subject-verb disagreement ('Someone dream'), faulty plurals ('hero's'), spelling mistakes ('Inspairication'), broken syntax ('unable to man to Sleep'), and irregular punctuation ('And. also').",
+      "evidence": "which can unable to man to Sleep . Dreamers of the day are the real hero's and they take their dreams as Inspairication"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids copying lines directly from the poem and attempts an authentic interpretation in their own words, incorporating a well-known interpretive concept regarding dreams and hard work.",
+      "evidence": "Someone dream by night, and in the morning he can realize that was not real but real dream is that which can unable to man to Sleep ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors ('Someone dream')",
+      "Spelling and morphological errors ('Inspairication', 'hero\\'s')",
+      "Faulty punctuation and misplaced full stops ('And. also', spacing before periods)",
+      "Garbled syntax and awkward phrasing ('which can unable to man to Sleep')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Correctly identifies the abstract theme of purposeful dreaming versus passive fantasy",
+      "Maintains single-block structural brevity"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies and interprets the poem's central message—contrasting idle dreams with purposeful action—without relying on verbatim text from the poem. However, the score is held down by pervasive linguistic and mechanical weaknesses, including severe grammatical slips, non-standard spelling, and punctuation errors.",
+  "_metadata": {
+    "task_id": "THEME_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "78c7e4d6426b44308318867daff79312fb0f49f78a049dd18c803fb20543ee85",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:27:15.919080+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "74a0bbd571bcef854e34f7698c41a2dfa20f9f6113457f1a7d6c0915914b5e25",
+    "input_tokens": 4306,
+    "output_tokens": 3233,
+    "thoughts_tokens": 2395,
+    "cost_usd": 0.009374,
+    "latency_ms": 21077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4306,
+        "output_tokens": 3233,
+        "thoughts_tokens": 2395,
+        "cost_usd": 0.009374,
+        "latency_ms": 21077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

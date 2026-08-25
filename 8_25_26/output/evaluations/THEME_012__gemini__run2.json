@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the core philosophical contrast between passive dreaming during sleep and active, purposeful daytime vision, though the interpretation is phrased simply and refers to the poem as a 'passage'.",
+      "evidence": "the dream we see with our open eyes is the purpose of our life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single unified block, states the central premise early, and maintains appropriate brevity without excessive length or padding.",
+      "evidence": "The main theme of the passage is everyone can see dreams. But the people who work for it can make it come true."
+    },
+    "language_mechanics": {
+      "rationale": "The short text contains several mechanical and grammatical slips, including double verbs ('is can be'), missing plural inflection ('called dream'), and subject-verb agreement error ('each of them bear').",
+      "evidence": "is can be sweet enough to memorize, but the dream we see with our open eyes is the purpose of our life. Both are called dream. But each of them bear different value."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate achieves complete paraphrase with zero verbatim overlap from the source poem, relying on authentic personal phrasing, though the expression remains basic.",
+      "evidence": "The dream we see while sleeping is can be sweet enough to memorize"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Double verb construction ('is can be')",
+      "Subject-verb agreement error ('each of them bear')",
+      "Noun number error ('called dream' instead of 'dreams')",
+      "Terminology slip (referring to a poem as a 'passage')"
+    ],
+    "positive_aspects": [
+      "Accurate abstract identification of daytime dreams representing life purpose",
+      "Zero verbatim copying from the source text",
+      "Concise single-paragraph structural unity"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the abstract central theme of the poem by contrasting idle nighttime dreams with purposeful, actionable daytime dreams in their own words (0% verbatim overlap). Structurally, it is concise and well-contained in a single paragraph. However, marks are lost in language mechanics and expression due to basic syntax and noticeable grammatical errors ('is can be', 'each of them bear', 'called dream'). Applying the within-band precision tiebreaker for basic syntax, the script earns 5 out of 8 (Band 3).",
+  "_metadata": {
+    "task_id": "THEME_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ebe0ff2b14f6b0d79fbac3c557aff0b32cdfcaa2fd5821c5cce2979c235936a4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:19:59.742102+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "52e957d58ba1105b338c827fb7fa9bdf06535e5d1c46194fc0c7a8da8888efc0",
+    "input_tokens": 4290,
+    "output_tokens": 2934,
+    "thoughts_tokens": 2095,
+    "cost_usd": 0.008622,
+    "latency_ms": 23405,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4290,
+        "output_tokens": 2934,
+        "thoughts_tokens": 2095,
+        "cost_usd": 0.008622,
+        "latency_ms": 23405,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

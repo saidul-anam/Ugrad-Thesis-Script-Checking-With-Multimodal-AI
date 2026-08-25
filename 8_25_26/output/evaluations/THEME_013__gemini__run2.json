@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the basic contrast between passive dreamers and action-oriented dreamers, but presents it as a literal paraphrase rather than identifying an abstract, overarching theme.",
+      "evidence": "Their are some dreamers who see dreams in night, don't want to make their dreams in reality. But real dreamers are very  dangerous people."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single block with appropriate brevity, but lacks an elevated, clear opening statement that explicitly identifies the theme before explaining it.",
+      "evidence": "Every people have dream. But every dream and every dreamers are not equal."
+    },
+    "language_mechanics": {
+      "rationale": "Displays multiple fundamental grammatical errors, including subject-verb/quantifier disagreement, repeated homophone errors, and awkward prepositional choices.",
+      "evidence": "Every people have dream... Their are some dreamers... make there dreams true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate expresses the ideas in their own words with 0% verbatim overlap, though the phrasing remains basic and closely mirrors the poem's surface statements.",
+      "evidence": "They can do any thing to make there dreams true."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Homophone confusion ('Their are' instead of 'There are', 'there dreams' instead of 'their dreams')",
+      "Quantifier and agreement errors ('Every people have', 'every dreamers')",
+      "Unidiomatic phrasing and preposition usage ('see dreams in night', 'make their dreams in reality')"
+    ],
+    "positive_aspects": [
+      "Successfully uses candidate's own words with zero verbatim copying from the poem",
+      "Correctly identifies the primary contrast between passive wishful thinking and active determination"
+    ]
+  },
+  "feedback_summary": "The candidate grasps the core idea of the poem regarding active vs. passive dreamers and avoids direct line copying. However, the text functions more like a simplistic paraphrase than an abstract thematic analysis. High error density in basic mechanics (homophones 'Their/there', agreement errors) keeps the score in Band 2 (4/8).",
+  "_metadata": {
+    "task_id": "THEME_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de42167462f987f331573c0127594e8c1a5cf4a3116ef27648bec63579bce539",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:29:14.855647+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "dc8ed5aa02a5cdb03b82cc69c9c6196ee8c181f872b34ff509231826680e0eba",
+    "input_tokens": 4281,
+    "output_tokens": 3302,
+    "thoughts_tokens": 2513,
+    "cost_usd": 0.009539,
+    "latency_ms": 20625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4281,
+        "output_tokens": 3302,
+        "thoughts_tokens": 2513,
+        "cost_usd": 0.009539,
+        "latency_ms": 20625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

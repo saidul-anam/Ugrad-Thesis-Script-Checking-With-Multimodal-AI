@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, clearly stating the desire to become a doctor and the specific steps they plan to take after the exam.",
+      "evidence": "You send me a email and wanted to know aboud my future plan after passing HSC Exam. Now, I am telling you about that."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate adopts an email format. While the 'From' field is missing, the 'To', 'Subject', 'Salutation', 'Body', 'Close', and 'Signature' are all present. The structure is logical.",
+      "evidence": "To : sawda25671@gmail.com. Subject : Describing the future plan after HSC Exam."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling and grammatical errors throughout the text, including confusion between adjectives and adverbs and incorrect verb forms.",
+      "evidence": "I hope you are will by the grace of Almighty Allah... I will admitted in Admission couching center to get a good preparation for madical exam."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is logically sequenced and authentic in its intent, though the vocabulary and phrasing are very basic and repetitive.",
+      "evidence": "I want to give free treatment to the poore people."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'aboud', 'poore', 'madical', 'knowledg')",
+      "Grammatical errors (e.g., 'you are will', 'will admitted')"
+    ],
+    "positive_aspects": [
+      "Directly addresses the prompt objective",
+      "Appropriate email layout"
+    ]
+  },
+  "feedback_summary": "The candidate successfully fulfills the prompt's requirements and follows the email format correctly, missing only one structural element ('From'). However, the script is characterized by pervasive spelling mistakes and basic grammatical failures. While the meaning remains clear, the linguistic mechanics are weak, placing the response in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "86638f9b3411232f69f22a70fce6530414f5e28b22b5cdf93d1235ad7077e6e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:28:43.195698+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "84efe82e42de72e3d73a501ae324442f62ff100aac5be60748d2d6c813e6ca0a",
+    "input_tokens": 4416,
+    "output_tokens": 2756,
+    "thoughts_tokens": 1981,
+    "cost_usd": 0.001268,
+    "latency_ms": 77467,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4416,
+        "output_tokens": 2756,
+        "thoughts_tokens": 1981,
+        "cost_usd": 0.001268,
+        "latency_ms": 77467,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

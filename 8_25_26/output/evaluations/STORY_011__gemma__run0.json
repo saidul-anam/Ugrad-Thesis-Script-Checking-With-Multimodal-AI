@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a complete and logical continuation of the stem, following the classic narrative arc of the Lion and the Mouse with a clear sequence of events.",
+      "evidence": "The mouse helped the lion to se escape the trap."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive ending and concludes with a constructive outcome (friendship), but fails to provide a proper title as explicitly required by the prompt.",
+      "evidence": "From this they were firm friends."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive grammatical errors, including incorrect negation ('don't kill him'), invented words ('roarnd'), and inconsistent capitalization at the start of sentences.",
+      "evidence": "The lion was roarnd but no one came."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story is a reproduction of a very common, memorized fable. It lacks creative turns or vivid descriptive detail, relying on a standard plot template.",
+      "evidence": "Once a lion was sleeping in a forest. suddenly a mouse came there."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Syntax errors in negation (to don't kill)",
+      "Lexical invention (roarnd)",
+      "Punctuation/Capitalization failures"
+    ],
+    "positive_aspects": [
+      "Strong narrative coherence",
+      "Successful completion of the plot arc"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical progression and a positive ending. However, the total score is limited by the omission of a title and significant linguistic errors, particularly in verb usage and sentence structure. The content is highly formulaic, indicating a memorized fable rather than original creative writing.",
+  "_metadata": {
+    "task_id": "STORY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a95f2b6012f13a2ed024def8ddd8d304f5de18e5f2f5267f456dab9ff6621da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:09:37.576065+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bcc775c19f936261ef8248c9fb9b73d36c976a35454ecc10e9b7cfade9031639",
+    "input_tokens": 4490,
+    "output_tokens": 3029,
+    "thoughts_tokens": 2330,
+    "cost_usd": 0.001358,
+    "latency_ms": 85327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4490,
+        "output_tokens": 3029,
+        "thoughts_tokens": 2330,
+        "cost_usd": 0.001358,
+        "latency_ms": 85327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

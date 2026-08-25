@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five data points from the chart are correctly reported, and the candidate successfully identifies the largest (coal) and smallest (nuclear) sources without introducing outside facts or personal opinions.",
+      "evidence": "The highes amount of electricity generatet by caal and the percentage is 46%. Natural gass's percentage is 22 24% percent which is 2nd highest."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script uses mismatched generic template introductory sentences that refer to 'progression' and 'evolution' for static 1980 data. The body lists data points sequentially rather than grouping them analytically.",
+      "evidence": "This graph effective illustrate the progression of data hightlith highlighting the variation. The portrayas offers a clear peruspective on how the variable evolves over the given data."
+    },
+    "language_mechanics": {
+      "rationale": "There is a noticeable density of basic spelling errors, faulty word forms, and punctuation slips throughout the response.",
+      "evidence": "The highes amount of electricity generatet by caal and the percentage is 46%."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies heavily on pre-memorised template filler at the opening and demonstrates limited original comparative vocabulary beyond simple listings and basic superlatives.",
+      "evidence": "Summerising the graph chart it is seen that the large contribute in electricity came from using coal. The smallest contribution comes from Nuclear in 1980."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling mistakes (e.g., 'caal', 'neucklear', 'portrayas', 'peruspective', 'generatet', 'Summerising')",
+      "Grammatical and word-form errors (e.g., 'effective illustrate', 'large contribute')",
+      "Use of ill-fitting pre-memorised stock phrases for static single-year data"
+    ],
+    "positive_aspects": [
+      "All chart categories and their corresponding percentages are accurately presented",
+      "Correctly identifies the highest and lowest contributors in the summary",
+      "Remains strictly within the provided chart data with zero external bias or personal opinion"
+    ]
+  },
+  "feedback_summary": "The candidate captures all relevant data points from the 1980 electricity chart, identifying coal as the major source and nuclear as the minor source without introducing outside information. However, the response relies on a generic, ill-fitting opening template and suffers from frequent spelling blunders and weak grammatical structures, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "CHART_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d299ba34e59dfccf17ee24d10018d4c885a2f55ece0a91ddb0592c057ba36f3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:14:36.970252+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9b89f7cb9470081542c60467d906f8ab0a750e748eaf1225ec9e4b0824260c5a",
+    "input_tokens": 4391,
+    "output_tokens": 2939,
+    "thoughts_tokens": 2062,
+    "cost_usd": 0.008665,
+    "latency_ms": 18797,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4391,
+        "output_tokens": 2939,
+        "thoughts_tokens": 2062,
+        "cost_usd": 0.008665,
+        "latency_ms": 18797,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

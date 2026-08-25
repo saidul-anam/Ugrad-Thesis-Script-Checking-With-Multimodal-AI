@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides generic motivational advice rather than identifying the specific theme of the poem (the distinction between passive night-dreaming and active day-dreaming).",
+      "evidence": "Everyone should have a dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the response lacks a clear thematic statement and ends with fragmented, repetitive phrasing.",
+      "evidence": "Because Because,"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling errors ('opticals', 'los', 'Alamys') and severe grammatical failures ('are try', 'success success').",
+      "evidence": "Some times many opticals are try to destroy you."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is written in the candidate's own words (no verbatim copying), but it ignores the poem's imagery entirely in favor of external clichés.",
+      "evidence": "Always be Alamys try your best"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors (opticals for obstacles, los for lose)",
+      "Subject-verb agreement and tense failures",
+      "Repetitive and fragmented sentence construction"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying of the poem",
+      "Attempt to maintain a positive, constructive tone"
+    ]
+  },
+  "feedback_summary": "The script is a generic motivational piece rather than a thematic analysis of the poem. The candidate missed the central contrast between night dreams and day dreams, offering instead a collection of clichés. The writing is marred by severe linguistic errors and a fragmented conclusion, placing it firmly in Band 2.",
+  "_metadata": {
+    "task_id": "THEME_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "53911b2fea66f273c27932d5a72d0948b68cc456e4d28ff79540c743ff1d6a76",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:06:52.839307+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "db7c78b1d138aca0aa86ba81952115da5d7ea8d8bff100456c8d83f8b6471e7d",
+    "input_tokens": 4308,
+    "output_tokens": 2013,
+    "thoughts_tokens": 1329,
+    "cost_usd": 0.001035,
+    "latency_ms": 57890,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4308,
+        "output_tokens": 2013,
+        "thoughts_tokens": 1329,
+        "cost_usd": 0.001035,
+        "latency_ms": 57890,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

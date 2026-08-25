@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies the highest (Coal at 46%) and lowest (Nuclear at 2%) sources, but completely omits Natural Gas (24%, the second largest source) and contradicts themselves by stating Nuclear was 20% in paragraph 2 before stating 2% in paragraph 3.",
+      "evidence": "the 20% of electricity came From Nuclear power plant."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory lead-in and a summary conclusion are provided, but the response is fragmented into four disjointed paragraphs and includes irrelevant external filler in the opening sentence.",
+      "evidence": "Electricity is one of the most valuable source of energy."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mid-sentence capitalization errors ('came From', 'Nuclear power plant'), awkward article/preposition usage ('the 16% electricity', 'most of electricity'), and noun number slips ('valuable source') are present.",
+      "evidence": "the 16% electricity came From Hydro-electric power plant."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts basic comparative analysis by calculating the 44% difference between coal and nuclear, though the phrasing relies on repetitive structures ('came from').",
+      "evidence": "which is 44% less than coal factories."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of external background filler and personal assertions not in the chart",
+      "Omission of major data point (Natural Gas at 24%) and internal numerical contradiction (20% vs 2% for nuclear)",
+      "Erratic mid-sentence capitalization (e.g., 'came From', 'From Nuclear')",
+      "Determiner and article errors (e.g., 'the 16% electricity', 'most of electricity')"
+    ],
+    "positive_aspects": [
+      "Correctly highlighted the peak (Coal) and lowest (Nuclear) electricity sources",
+      "Calculated the mathematical percentage gap (44%) between highest and lowest contributors",
+      "Included a clear concluding summary ('So in a nutshell...')"
+    ]
+  },
+  "feedback_summary": "The candidate captures the primary extremes of the chart (Coal at 46% and Nuclear at 2%) and makes an apt mathematical comparison between them. However, the response completely neglects the second largest source (Natural Gas at 24%), gives contradictory data for Nuclear power (20% in paragraph 2), and introduces external background commentary in the opening paragraph. Due to the inclusion of external facts/opinions, the script is subject to the Graph/Chart hard cap of 6, which matches its raw merit score within Band 3.",
+  "_metadata": {
+    "task_id": "CHART_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e2295018ad0e7653f519b67fc53858cd3ce3a25776171936d2812aa991f2f6c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:31:31.825877+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b51ea0511a95b38956dd89f8d81260afeb4634b89bfb77405c3bf8208adcf880",
+    "input_tokens": 4424,
+    "output_tokens": 4408,
+    "thoughts_tokens": 3495,
+    "cost_usd": 0.012347,
+    "latency_ms": 32969,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4424,
+        "output_tokens": 4408,
+        "thoughts_tokens": 3495,
+        "cost_usd": 0.012347,
+        "latency_ms": 32969,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

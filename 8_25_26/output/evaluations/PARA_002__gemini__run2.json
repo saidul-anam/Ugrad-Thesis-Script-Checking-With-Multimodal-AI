@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script attempts to answer all guiding questions from the prompt (definition, features, applications, education, and threats), but includes factual inaccuracies and vague ideas.",
+      "evidence": "AI has create a revolutionized teaching and leanning. we can ask any question in AI and get the reply in a moment."
+    },
+    "structure_format_brevity": {
+      "rationale": "Although written as a single block without paragraph breaks, the structural flow is hindered by broken sentence boundaries, fragmented clauses, and missing capitalization at the start of sentences.",
+      "evidence": "when we ask any question it gives us correctly answer. It works like human brain and recovery their wrong answer."
+    },
+    "language_mechanics": {
+      "rationale": "High density of spelling errors ('Indelligence', 'betten', 'declaned', 'miniten', 'diffenend', 'leanning', 'libary', 'hampen'), poor subject-verb agreement, and faulty syntax throughout.",
+      "evidence": "'Albania' declaned first AI health miniten and it is the first in world where worked as a minister"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts authentic generation and uses contextual examples (e.g., Dhaka traffic control) rather than reciting a generic pre-memorized template, though phrasing is clumsy.",
+      "evidence": "Moreover, Now days government use it in Dhaka Traffic systeme. and we can take the advantage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent orthographic/spelling errors across core vocabulary (e.g., 'Indelligence', 'leanning', 'libary', 'hampen')",
+      "Faulty sentence capitalization and run-on sentence constructions",
+      "Subject-verb agreement failures (e.g., 'AI have', 'AI work', 'It's also work')",
+      "Incorrect part of speech usage and prepositional errors"
+    ],
+    "positive_aspects": [
+      "Maintained single-paragraph formatting without invalid subdivisions",
+      "Directly addressed all key questions from the prompt stem",
+      "Authentic attempt without reliance on memorized boilerplate cliches"
+    ]
+  },
+  "feedback_summary": "The response demonstrates a genuine attempt to answer all prompt questions in a unified single paragraph. However, severe and pervasive mechanical issues—including extensive spelling mistakes, subject-verb agreement errors, and lack of capitalization at sentence boundaries—limit the script to Band 2 (Score: 5/10).",
+  "_metadata": {
+    "task_id": "PARA_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f4cc7abac58e1f657222172441bc4b7b39f99fe7d9b26de684d06fe9996ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:05:43.781622+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2c26bdbd129dfc8a0cb606c63f6412880afb84d6bb39e59430c39d0209829921",
+    "input_tokens": 4510,
+    "output_tokens": 3852,
+    "thoughts_tokens": 2998,
+    "cost_usd": 0.010983,
+    "latency_ms": 24812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4510,
+        "output_tokens": 3852,
+        "thoughts_tokens": 2998,
+        "cost_usd": 0.010983,
+        "latency_ms": 24812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

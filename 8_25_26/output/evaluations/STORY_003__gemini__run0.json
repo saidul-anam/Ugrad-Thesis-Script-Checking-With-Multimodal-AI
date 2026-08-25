@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script follows a sequential progression from the provided prompt, maintaining the essential plot points of the classic fable up to the rescue.",
+      "evidence": "At that moment the mouse arrived the place. the lion requested him to help"
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative completes the plot sequence, but fails to include a required title at the top, offering only an obscure rhyming moral at the end.",
+      "evidence": "\" King in perfect with crown Not in the eitre it's just a clown \""
+    },
+    "language_mechanics": {
+      "rationale": "Contains pervasive grammatical errors, irregular past-tense errors, inconsistent punctuation in dialogues, and severely corrupted spelling.",
+      "evidence": "They saw the lion and cathed him on a net. After that they went to have their car. At that moment the mouse arrived the place. the lion requested him to help, but the mouse refused for the first time: he said if they  kill him after helping, so that the mouse didn't want to help the lion. But the lion ensurt the mouse that he will wener napem the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic retelling of a standard fable with clumsy sentence structures and awkward narrative turns.",
+      "evidence": "when the lion take the mouse he asked \" whate are you doing here? I'll just kill you for disturbing me \""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling blunders and distorted words ('cathed', 'ensurt', 'wener napem', 'befor', 'dit')",
+      "Tense inconsistency and faulty verb forms ('lion take', 'he said if they kill him', 'will')",
+      "Improper direct speech punctuation and uncapitalized sentence beginnings"
+    ],
+    "positive_aspects": [
+      "Maintains the narrative thread from the stem to a complete resolution",
+      "Attempts an original dialogue exchange during the negotiation scene"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the storyline from the prompt, bringing the plot to a full conclusion where the mouse rescues the lion. However, the response lacks a proper story title at the beginning and suffers from extensive mechanical errors, including faulty past-tense forms, severe spelling mistakes, and poor dialogue punctuation, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "STORY_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8bdf6f9cf0ab048aa06d5323d30478d3968cb530e36bd8be65021fed6cfa791f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:09:59.916548+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "83275a5ada0c9f48bf4f7b6158126b53a3a9424d61871f2a581b23de7022e8dc",
+    "input_tokens": 4488,
+    "output_tokens": 3305,
+    "thoughts_tokens": 2478,
+    "cost_usd": 0.009609,
+    "latency_ms": 32890,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4488,
+        "output_tokens": 3305,
+        "thoughts_tokens": 2478,
+        "cost_usd": 0.009609,
+        "latency_ms": 32890,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

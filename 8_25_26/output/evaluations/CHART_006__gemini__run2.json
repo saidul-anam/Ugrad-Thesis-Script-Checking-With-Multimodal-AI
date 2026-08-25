@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately extracts all data points from the chart (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) and correctly identifies the highest and lowest sources.",
+      "evidence": "percentage of coal was 46% Lastly, natural gas was 24%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The structure is rudimentary and fragmented into an unpolished second paragraph with severe false starts and repetitions rather than a smooth, analytical grouping of data.",
+      "evidence": "So, in the grap chart we see that in eel electricity USA wed So, in the chart we see that, the wed high coal is the highest percentage"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors occur throughout, including faulty punctuation, uncorrected garbled text, lower-case sentence openings, and incorrect prepositions.",
+      "evidence": "then we see nuclear  was 2% and this is the low percentage lowest percentage."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Data is presented primarily as an isolated, line-by-line list with minimal comparative vocabulary beyond basic mentions of 'highest' and 'lowest'.",
+      "evidence": "After that - oil was 12%. Then, used 12% in 100%. Then, the most useful thing was coal."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Uncorrected false starts and garbled phrasing ('in eel electricity USA wed')",
+      "Faulty sentence capitalization and punctuation ('then we see', 'and the percentage of coal')",
+      "Repetitive and mechanical sentence transitions ('Then', 'After that', 'Lastly')"
+    ],
+    "positive_aspects": [
+      "Accurately reported all five numerical values from the source chart",
+      "Correctly identified Coal as the peak and Nuclear as the trough"
+    ]
+  },
+  "feedback_summary": "The response successfully captures all necessary data values and identifies the highest and lowest electricity sources in 1980. However, the report lacks analytical depth, presenting data as a simple serial list. The writing is compromised by frequent mechanical slips, weak sentence connectors, and garbled draft remnants in the concluding section.",
+  "_metadata": {
+    "task_id": "CHART_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e1e796ea9dcfbeaf32d4129bbd367e910739cb983ac26e54da1c5917d4ab5ac",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:04:40.691048+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "71c474ec3bf7dc89c447b08420f53c7e20e4068182304976659a6ee34896f405",
+    "input_tokens": 4392,
+    "output_tokens": 2776,
+    "thoughts_tokens": 1965,
+    "cost_usd": 0.008258,
+    "latency_ms": 23500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4392,
+        "output_tokens": 2776,
+        "thoughts_tokens": 1965,
+        "cost_usd": 0.008258,
+        "latency_ms": 23500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

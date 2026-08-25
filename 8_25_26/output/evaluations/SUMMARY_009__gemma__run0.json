@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core subject (Hope) and its general importance, but fails to summarize the actual progression of the poem (the storm, the chillest land, and the fact that hope asks for nothing in return). It is more of a reflection than a summary.",
+      "evidence": "Hope gives a us a reason to live and do things in our life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response lacks conciseness; it is nearly the same length as the source text (68 words vs 69 words). The flow is fragmented and lacks a unified summary structure.",
+      "evidence": "Hope is something why we live. Hopelife without hope is unthinkable."
+    },
+    "language_mechanics": {
+      "rationale": "High error density. Notable issues include spelling ('Hopelife', 'porms'), syntactic failure ('something why we live'), and word repetition ('encourages encourages').",
+      "evidence": "In the porms, \"Hope\" poet encourages encourages us"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate fails to paraphrase the key imagery of the poem, instead copying the most distinct phrases verbatim while using very basic, repetitive fillers for the rest.",
+      "evidence": "Hope perches in the soul. Writes said, sings the tune without the words and never stops."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (porms, Hopelife)",
+      "Syntax and subject-verb agreement",
+      "Direct quoting instead of paraphrasing",
+      "Repetitive phrasing"
+    ],
+    "positive_aspects": [
+      "Correctly identified the central theme of hope",
+      "Attempted to relate the poem's imagery to the soul"
+    ]
+  },
+  "feedback_summary": "The candidate provides a reflection on the concept of hope rather than a summary of the provided text. The response lacks brevity, being almost as long as the original poem, and relies on verbatim copying for its only accurate points. Significant linguistic errors in spelling and syntax further detract from the quality. Per the provided metrics, the length cap was waived for this poem, but the score remains low due to poor paraphrasing and linguistic mechanics.",
+  "_metadata": {
+    "task_id": "SUMMARY_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b8083ff0d1b178bb3d8f301617838a4e9b6759329e2f0d18845f6632b08b0fc0",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:25:10.959129+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2615beaf4f4a44da312fbd15d9aacbd79adaca251584a547cdc778a6d77cdfca",
+    "input_tokens": 4407,
+    "output_tokens": 2065,
+    "thoughts_tokens": 1244,
+    "cost_usd": 0.00106,
+    "latency_ms": 58890,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 2065,
+        "thoughts_tokens": 1244,
+        "cost_usd": 0.00106,
+        "latency_ms": 58890,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

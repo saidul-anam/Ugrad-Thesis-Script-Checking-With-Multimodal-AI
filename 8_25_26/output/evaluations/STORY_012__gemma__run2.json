@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a logical continuation of the stem and maintains a clear sequential plot progression typical of the lion-and-mouse fable.",
+      "evidence": "The mouse came and helped the lion by cutting the net by it's sharp teeth."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and includes a clear moral lesson; however, it completely fails to provide the required title.",
+      "evidence": "Moral of the story is — we should not judge anyone by their outlook."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in tense consistency (e.g., 'apologize' instead of 'apologized', 'leave' instead of 'left') and severe syntax breakdowns in the dialogue.",
+      "evidence": "\" You a little mouse ea think that yo I will ever need your help?\""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a highly predictable, memorized fable with no creative turns or vivid descriptive details to distinguish it.",
+      "evidence": "One day the lion was walking in the jungle and suddenly he got traped by a net of a hunter."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (present used instead of past)",
+      "Syntax breakdown in dialogue",
+      "Spelling errors (traped, plying)"
+    ],
+    "positive_aspects": [
+      "Logical plot development",
+      "Clear moral conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a coherent plot and a constructive moral. However, the score is limited by the complete absence of a title and significant linguistic errors, particularly regarding past-tense consistency and sentence structure in the dialogue. The content is a standard reproduction of a common fable, lacking original creative expression.",
+  "_metadata": {
+    "task_id": "STORY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bb90af09d69476bc00a80dd2db6422b17a265ee835435a5ca432a03ebd4b1201",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:17:44.829034+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "91c619b1035d190bd807710f3646d5638d79fa748b4a0dd111f75f249457c7cc",
+    "input_tokens": 4414,
+    "output_tokens": 2374,
+    "thoughts_tokens": 1634,
+    "cost_usd": 0.001154,
+    "latency_ms": 66327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4414,
+        "output_tokens": 2374,
+        "thoughts_tokens": 1634,
+        "cost_usd": 0.001154,
+        "latency_ms": 66327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

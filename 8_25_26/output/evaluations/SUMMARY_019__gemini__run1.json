@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the main subject (hope) and captures the central metaphor of the bird providing inspiration, but adds generic motivational phrasing and misses the poem's theme of resilience during hardship and extremity.",
+      "evidence": "In the passag the poet compare the hope with the little bird, which chirping sound inspire us to do  something and. being successful ."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented in a single block of text of appropriate length, but internal cohesion is hindered by fragmented concluding syntax.",
+      "evidence": "inspire us to do  something and. being successful ."
+    },
+    "language_mechanics": {
+      "rationale": "There is a noticeable density of grammatical slips, spelling mistakes, and punctuation faults, including subject-verb disagreement, incorrect part of speech usage, and a misplaced period.",
+      "evidence": "Hope courage us to take step in brilliant work . In the passag the poet compare the hope with the little bird"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The summary is written entirely in the candidate's own words with zero verbatim copying from the poem, attempting genuine paraphrase of the imagery.",
+      "evidence": "Hope is the more powerful thing, we cann't see it but it gives us the strength to do something which is impossible ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors ('poet compare', 'sound inspire')",
+      "Part of speech misuse ('courage' used as a verb)",
+      "Spelling and punctuation errors ('cann't', 'passag', misplaced period in 'and.')"
+    ],
+    "positive_aspects": [
+      "100% original phrasing with zero verbatim copying from the source text",
+      "Correctly identifies the core metaphor of hope as a bird"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good basic understanding of the poem's central metaphor and expresses it entirely in their own words. However, the score is constrained to the lower end of Band 3 due to recurring grammatical, mechanical, and spelling errors, as well as minor syntactic fragmentation towards the end.",
+  "_metadata": {
+    "task_id": "SUMMARY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4df6f2d03f255c79f7cd4dfb3f3900dfa776b077083e584e05bf45eaaa666f4",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-25T00:18:30.662799+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5112ef93bbe7004fa8455264d199e0fee6612c598b346cabcd847b691cc80085",
+    "input_tokens": 4393,
+    "output_tokens": 3746,
+    "thoughts_tokens": 2960,
+    "cost_usd": 0.010683,
+    "latency_ms": 31327,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4393,
+        "output_tokens": 3746,
+        "thoughts_tokens": 2960,
+        "cost_usd": 0.010683,
+        "latency_ms": 31327,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

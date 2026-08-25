@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the central contrast between passive and active dreamers, though it leans more toward a plot summary/paraphrase than an abstract thematic statement (e.g., 'The power of ambition').",
+      "evidence": "But real dreamers are very dangerous people. They can do any thing to make there dreams true."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and avoids unnecessary padding, following the required format.",
+      "evidence": "Every people have dream. But every dream and every dreamers are not equal."
+    },
+    "language_mechanics": {
+      "rationale": "Severe errors in subject-verb agreement ('Every people have'), homophone confusion ('Their are' instead of 'There are', 'there dreams' instead of 'their dreams'), and noun plurality.",
+      "evidence": "Every people have dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies heavily on the poem's specific vocabulary ('dangerous people', 'make their dreams true') rather than interpreting the imagery in their own words.",
+      "evidence": "But real dreamers are very dangerous people."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Homophone errors (Their/There)",
+      "Noun-Number agreement"
+    ],
+    "positive_aspects": [
+      "Correct identification of the poem's core contrast",
+      "Adherence to single-block structure"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captures the main idea of the poem but fails to articulate it as an abstract theme, instead providing a simplified paraphrase. The score is significantly hindered by poor linguistic mechanics, including basic errors in subject-verb agreement and the misuse of 'their/there'. While the structural requirements are met, the lack of original interpretation and high error density place this in the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de42167462f987f331573c0127594e8c1a5cf4a3116ef27648bec63579bce539",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:29:52.745226+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b7fba3276ca832834c22891c711a7321076f3cbab9ea76ca016f89e602a34f68",
+    "input_tokens": 4282,
+    "output_tokens": 1558,
+    "thoughts_tokens": 824,
+    "cost_usd": 0.000896,
+    "latency_ms": 45172,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4282,
+        "output_tokens": 1558,
+        "thoughts_tokens": 824,
+        "cost_usd": 0.000896,
+        "latency_ms": 45172,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical, complete continuation from the prompt stem, capturing the essential sequence of the classic fable including the capture, mercy, subsequent trapping, and rescue.",
+      "evidence": "while running into his body, he entered the lion nose, and this time the lion wake up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative reaches a complete and positive resolution of friendship; however, the student completely omitted a story title as demanded by the prompt instructions.",
+      "evidence": "The lion told that \"Thank you my friend for saving my life. from today we one friend\""
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive breakdown in grammatical mechanics, characterized by constant shifts between present and past tense, erroneous sentence syntax, punctuation flaws in direct speech, and faulty word choice.",
+      "evidence": "The mouse saw the lion and remember the lion who forgive captured in and him"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story follows the predictable, traditional plot of the Lion and the Mouse fable with simple dialogue, demonstrating authentic personal phrasing rather than a memorized template, but lacking descriptive depth.",
+      "evidence": "The mouse reply the faint voice that \"don't kill me!, lord; I cannot see you. I only play outside you"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inconsistent past-tense narrative control (e.g., 'wake up', 'reply', 'hear', 'see')",
+      "Garbled syntax and fragmented sentence construction",
+      "Omission of the required story title",
+      "Faulty dialogue punctuation and capitalization"
+    ],
+    "positive_aspects": [
+      "Followed the narrative arc to a complete and positive resolution",
+      "Direct and unbroken continuation from the given prompt stem",
+      "Attempted authentic direct dialogue to convey character interaction"
+    ]
+  },
+  "feedback_summary": "The script develops the stem effectively to complete the classic fable with a clear resolution. However, marks are lost due to the complete omission of a title and pervasive grammatical inaccuracies, particularly tense inconsistencies and syntactical flaws.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4382898e254607f85048422cc00c0d5980b17c504be8dff1f0b06f271add0c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:06:58.408762+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c227987b5502e418a89293feeeb600f9b6a5a1bb4274cafdf057144d08e79e4e",
+    "input_tokens": 4553,
+    "output_tokens": 3765,
+    "thoughts_tokens": 2984,
+    "cost_usd": 0.010778,
+    "latency_ms": 25625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4553,
+        "output_tokens": 3765,
+        "thoughts_tokens": 2984,
+        "cost_usd": 0.010778,
+        "latency_ms": 25625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

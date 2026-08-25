@@ -1,0 +1,100 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all five energy sources and correctly cites all corresponding percentages (Coal 46%, Natural Gas 24%, Hydro 16%, Oil 12%, Nuclear 2%), accurately highlighting the highest and lowest contributors.",
+      "evidence": "USA produced 16% of its e elec tricity using hydro- electric power of its total. After that there is neucleane which was the least amount of percentage to generate electricity at USA in 1980, which is only 2%. The oil produced 12% of its total electricity in 1980."
+    },
+    "structure_format_brevity": {
+      "rationale": "An opening introductory sentence and concluding remark frame the writing in a single paragraph, but data presentation lacks logical grouping and repeats entries for coal and nuclear rather than progressing systematically.",
+      "evidence": "As per shown in the chart the massive amount of electricity was produced by coal... Lastly, thein is coal which covers almost half of our the chart"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors are present, including repeated spelling distortions of 'nuclear' ('neuclean', 'neucleane', 'thein'), punctuation slips ('it's' for possessive 'its'), and awkward lexical choices ('declares us', 'It is clean that').",
+      "evidence": "And it is also clear that the least amount of electricity was made using neuclean."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts comparative descriptions ('covers almost half', 'second most main source', 'massive amount'), but sentence structures remain basic, clumsy, and repetitive in their transitions.",
+      "evidence": "Lastly Second most main source of electricity was natural gas which was only 24% of it's total. Lastly, thein is coal which covers almost half of our the chart"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors with technical terminology ('neuclean', 'neucleane', 'thein')",
+      "Awkward syntactic structures and malapropisms ('declares us', 'It is clean that' instead of 'clear')",
+      "Repetitive transitional markers ('Lastly Second most...', 'Lastly')"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of all chart values and percentages",
+      "Identification of peak (coal) and lowest (nuclear) energy sources",
+      "Good approximation of data fractions ('covers almost half')"
+    ]
+  },
+  "feedback_summary": "The candidate successfully reports all numerical figures from the chart without introducing outside information. However, the organization is disjointed due to repetitive mentions of data points, and frequent spelling and lexical errors reduce overall mechanical quality, placing the script at the baseline of Band 3.",
+  "_metadata": {
+    "task_id": "CHART_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "85a04beac66f49ee0396ea180b32d9547fe584f23193d0afd7d1eac398a24fa7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:19:04.354760+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7ca1d4a1655d1ff5d38bdd012b34aa3bf6122962a4825b2e0e3b23f73fbb6613",
+    "input_tokens": 4429,
+    "output_tokens": 3447,
+    "thoughts_tokens": 2528,
+    "cost_usd": 0.009946,
+    "latency_ms": 20327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4429,
+        "output_tokens": 3447,
+        "thoughts_tokens": 2528,
+        "cost_usd": 0.009946,
+        "latency_ms": 20327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

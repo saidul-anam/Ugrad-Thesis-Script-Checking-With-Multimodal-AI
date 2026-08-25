@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the abstract core theme of the poem by distinguishing active dreamers who work to realize their ambitions from those who do not, though the interpretation is somewhat simplified.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is delivered in a single unified block of suitable brevity, introducing the theme at the beginning, though the progression between sentences lacks polish.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    },
+    "language_mechanics": {
+      "rationale": "The writing contains multiple spelling errors ('achive', 'planm', 'libes'), duplicated words ('doesn't doesn't'), and faulty clause structure ('Those who dream by day it can work hand').",
+      "evidence": "Those who dream by day it can work hand to achive their success and make the dream come true. It helps people to make a happy and planm life. And the others who doesn't doesn't have a dream cannot shape their libes."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows zero verbatim copying from the source text and attempts an independent interpretation, although vocabulary and phrasing remain basic.",
+      "evidence": "Those who dream by day it can work hand to achive their success and make the dream come true."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies ('achive', 'planm', 'libes')",
+      "Faulty subject-pronoun agreement and syntax ('it can work hand')",
+      "Word duplication and subject-verb agreement errors ('others who doesn't doesn't have')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the stimulus poem",
+      "Correctly identifies the abstract contrast between active dreamers and passive individuals",
+      "Maintains single-block formatting with concise length"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an adequate basic understanding of the poem's underlying theme, avoiding direct quotation and presenting an original interpretation in a single paragraph. However, the score is constrained to Band 2 due to significant mechanical and spelling errors throughout the short response.",
+  "_metadata": {
+    "task_id": "THEME_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "06fca6e85ae6034abf25c383242697d75d00afb4386152fb111addcc0e9066bc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:16:24.747271+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "710f263c9874fb7e168b7a92bae7669f5d9f66c443dc12df795b84b229014138",
+    "input_tokens": 4293,
+    "output_tokens": 3238,
+    "thoughts_tokens": 2425,
+    "cost_usd": 0.009383,
+    "latency_ms": 20625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4293,
+        "output_tokens": 3238,
+        "thoughts_tokens": 2425,
+        "cost_usd": 0.009383,
+        "latency_ms": 20625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.5,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the core themes: the internal nature of hope, its persistence during hardship, and its selflessness.",
+      "evidence": "Hope lives in the soul and it sings endlessly at the darkest moment in the life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is presented as a single coherent block and maintains a concise length appropriate for the source poem.",
+      "evidence": "The poem 'Hope' illustrodes Hope lives in the soul..."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent errors in spelling ('illustrodes', 'strensth') and significant failures in subject-verb agreement ('never ask', 'hope give').",
+      "evidence": "illustrodes Hope lives in the soul... It never ask anything return... gives us strensth"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Excellent effort in paraphrasing; the candidate translates poetic metaphors (the bird, the gale, the crumb) into abstract concepts without any verbatim copying.",
+      "evidence": "In the storm of life it gives us strensth and courage"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.5,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling)",
+      "Subject-verb agreement",
+      "Omission of prepositions"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Strong thematic synthesis",
+      "Correct structural format"
+    ]
+  },
+  "feedback_summary": "The candidate shows a strong cognitive grasp of the poem, successfully transforming metaphorical imagery into a clear summary of the theme. The summary is structurally sound and original. However, the total score is heavily penalized due to frequent linguistic slips, specifically spelling mistakes and basic grammatical errors, which place the script in Band 3.",
+  "_metadata": {
+    "task_id": "SUMMARY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d549192170665e185897da644da5cdaa549f113bb0c495019ed5a04da7462877",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:34:21.424759+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "707aad5659b11c3a00dc973c716206c4ee87a0491b073c6212e7aa61331e3711",
+    "input_tokens": 4376,
+    "output_tokens": 2946,
+    "thoughts_tokens": 2221,
+    "cost_usd": 0.001321,
+    "latency_ms": 85125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4376,
+        "output_tokens": 2946,
+        "thoughts_tokens": 2221,
+        "cost_usd": 0.001321,
+        "latency_ms": 85125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

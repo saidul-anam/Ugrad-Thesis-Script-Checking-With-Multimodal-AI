@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the central abstract idea of the poem—distinguishing between passive sleep-time dreams and real, actionable ambitions—though the elaboration is basic.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is concise and presented in a single paragraph block, but internal structural flow and coherence are undermined by run-on thoughts and abrupt sentence breaks.",
+      "evidence": "Those which take our sleep is our real. dream"
+    },
+    "language_mechanics": {
+      "rationale": "High density of grammatical and mechanical errors relative to length, including noun-number and subject-verb disagreements, capitalization omissions, an errant mid-sentence period, and an ungrammatical/garbled word.",
+      "evidence": "Those dream we see while sleeping is not for us. Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies entirely on their own phrasing with 0.0% verbatim copying from the source text, drawing on a known thematic analogy, though expressed with basic syntax.",
+      "evidence": "Those which take our sleep is our real."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb and noun-number agreement faults ('two kind', 'Those dream... is', 'Those... is')",
+      "Faulty punctuation and capitalization ('one which we see', 'real. dream')",
+      "Lexical corruption and awkward syntax ('possible to fata come true')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the poem; candidate expresses the interpretation entirely in their own words",
+      "Correctly identifies the core abstract contrast between passive night dreams and active ambition"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear conceptual grasp of the poem's theme by identifying the distinction between passive dreaming and actionable ambition, avoiding direct line reproduction entirely. However, the final score remains in Band 2 due to frequent mechanical and grammatical errors, including pluralization slips, agreement errors, punctuation breaks, and garbled phrasing.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e191280e2479814d83562f9fd6108c34c80f83c36b34ad5d01f2cb3007534351",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:41:23.929675+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "1f86af683e744183ffbea0ff084243135b936df70eefe95ea4f9f6d1c261c8e2",
+    "input_tokens": 4276,
+    "output_tokens": 3702,
+    "thoughts_tokens": 2903,
+    "cost_usd": 0.010538,
+    "latency_ms": 28843,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 3702,
+        "thoughts_tokens": 2903,
+        "cost_usd": 0.010538,
+        "latency_ms": 28843,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

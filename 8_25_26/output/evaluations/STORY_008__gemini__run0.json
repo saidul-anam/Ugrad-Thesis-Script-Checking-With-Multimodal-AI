@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate seamlessly continues the stem narrative with logical, sequential plot development depicting the classic fable of the lion and the mouse.",
+      "evidence": "While  running, the mouse stumbled on the taile of the lion. The sleeping lion woke up and grabbed the  mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative concludes with a clear constructive moral lesson and a positive resolution; however, the script completely omits the required title.",
+      "evidence": "He got the reward of his forgiveness."
+    },
+    "language_mechanics": {
+      "rationale": "The response exhibits frequent spelling mistakes, irregular past-tense errors, incorrect irregular plurals, and faulty verb structures.",
+      "evidence": "He rushed towards him and cutted the net using his sharp teeths."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story follows a highly predictable, pre-memorized moral fable with basic phrasing and limited descriptive or creative narrative expansion.",
+      "evidence": "The mouse thanked him and said he will neture his favour one day."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'taile', 'pitty', 'neture', 'iscreaming')",
+      "Irregular past tense and plural morphology errors ('cutted', 'teeths')",
+      "Missing possessive apostrophe ('hunters net')",
+      "Omission of the required story title"
+    ],
+    "positive_aspects": [
+      "Smooth and logical continuation from the provided prompt stem",
+      "Clear sequential storytelling leading to a moral resolution"
+    ]
+  },
+  "feedback_summary": "The candidate successfully continues the stem to tell a complete, coherent story with a clear moral outcome. However, marks are lost due to the omission of a title and a noticeable density of spelling and morphological errors (such as 'cutted' and 'teeths'). Under Band 3 tiebreaker criteria, basic syntax defaults the script to the lower score of the band (4/7).",
+  "_metadata": {
+    "task_id": "STORY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1f7656b5bb782bb0bbc24a9645a5182a97a77f8f546c8b3414ec40d58312cd89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:19:53.300495+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "74bdc5946e68951a0d51942a209611a9fe11c15dd0fc5fea031e4bdf06acf987",
+    "input_tokens": 4476,
+    "output_tokens": 2813,
+    "thoughts_tokens": 2057,
+    "cost_usd": 0.008375,
+    "latency_ms": 16625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4476,
+        "output_tokens": 2813,
+        "thoughts_tokens": 2057,
+        "cost_usd": 0.008375,
+        "latency_ms": 16625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

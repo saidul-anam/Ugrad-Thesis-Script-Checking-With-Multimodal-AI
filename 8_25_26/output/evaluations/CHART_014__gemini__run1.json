@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all data points accurately from the chart (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) and correctly identifies the highest and second-highest sources.",
+      "evidence": "It is important to note that the highest use of electricity is 46% and it's of source is coal. Thought, though The 2nd highest source is Naturzal gas 24%."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory overview is provided, and the script is maintained in a single paragraph. However, significant space is dedicated to irrelevant external facts and moralizing conclusions, triggering the Graph_External_Facts hard cap.",
+      "evidence": "Environ- ment friendly source can reduce climate change. so, we all should concern about the use of electricity source."
+    },
+    "language_mechanics": {
+      "rationale": "Grammar and mechanics show frequent slips including duplicated words ('the the'), awkward syntax ('it's of source is coal'), punctuation and capitalization errors ('Thought, though The', 'we can say'), and spelling errors ('Naturzal').",
+      "evidence": "The pie chart represents the the sources of USA electricity in 1980."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative phrasing is simple and basic ('highest use', '2nd highest', 'more than') without higher-level analytical connectors or diverse data synthesis vocabulary.",
+      "evidence": "we can say that USA use coal more than Hydro electric power this is not so good."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of external commentary, personal opinions, and moral recommendations in a factual chart report",
+      "Duplication and false starts ('the the', 'Thought, though')",
+      "Faulty subject-verb agreement and phrasing ('hydro electric source use 16%', 'it's of source is coal')",
+      "Capitalization and punctuation errors mid-sentence ('so, we all', 'The 2nd highest')"
+    ],
+    "positive_aspects": [
+      "Successfully reported all five numerical values from the source chart",
+      "Correctly highlighted the highest and second highest electricity sources",
+      "Clear introductory lead sentence identifying the subject matter"
+    ]
+  },
+  "feedback_summary": "The response accurately covers all data points from the chart and identifies primary contributors. However, it incorporates external opinions and moral advice on climate change, which is strictly prohibited in objective graph description and triggers the hard cap of 6. Language mechanics also require refinement in sentence structure and punctuation.",
+  "_metadata": {
+    "task_id": "CHART_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f516c48e3e75de225dd1ff545b543d69e7d932aab8a663dff6295f78b8c83faa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:33:38.025296+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d747f34040dcba9a5ebb59a05f5f5c3e60f3db417d0fe80173cc10555637b9fc",
+    "input_tokens": 4380,
+    "output_tokens": 2590,
+    "thoughts_tokens": 1701,
+    "cost_usd": 0.007789,
+    "latency_ms": 31812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4380,
+        "output_tokens": 2590,
+        "thoughts_tokens": 1701,
+        "cost_usd": 0.007789,
+        "latency_ms": 31812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

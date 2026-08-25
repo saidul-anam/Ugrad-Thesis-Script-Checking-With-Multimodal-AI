@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core theme of hope as a source of strength and endurance, though the explanation is generic and lacks the nuance of the poem's imagery.",
+      "evidence": "Hope is the thing makes him keeps a person alive"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and remains within a concise length, adhering to the guidelines provided in the cap note for poetry summaries.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are significant grammatical errors, including subject-verb agreement issues ('makes him keeps') and improper article usage ('the a worse situation').",
+      "evidence": "makes him keeps a person alive and, work hard"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the candidate successfully avoids verbatim copying, the phrasing is highly formulaic and relies on clichés rather than an authentic interpretation of the text.",
+      "evidence": "fight until he reaches his destination"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Article misuse",
+      "Generic/Cliché phrasing"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of central theme",
+      "Proper structural format"
+    ]
+  },
+  "feedback_summary": "The student successfully captured the essence of the poem and avoided direct copying. However, the response is marred by basic grammatical errors and a reliance on generic phrasing. In accordance with the tiebreaker rules for Band 3, the lower value is awarded because the syntax and vocabulary are basic rather than elevated.",
+  "_metadata": {
+    "task_id": "SUMMARY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "56bc3e402ac9b566e35d75d367b0c5d67f66d3e1231fc4a06c93fb6d77ccc096",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:17:14.621674+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9eedca3cd20916373ce5ede0947a489963fcd6f01e8b5ff1938714f9534d2e24",
+    "input_tokens": 4357,
+    "output_tokens": 2899,
+    "thoughts_tokens": 2225,
+    "cost_usd": 0.001305,
+    "latency_ms": 80562,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4357,
+        "output_tokens": 2899,
+        "thoughts_tokens": 2225,
+        "cost_usd": 0.001305,
+        "latency_ms": 80562,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

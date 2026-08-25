@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately and explicitly addresses the prompt objective, outlining specific post-HSC plans including admission preparation and community service in their village.",
+      "evidence": "Now. I am going to describe the future plan after passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes all required structural components of an informal letter: date, sender address, salutation, body paragraphs, complimentary close, signature, and an envelope format.",
+      "evidence": "28 June, 2026,\nDonia, Dhaka. 1236\n\nDear Lamia,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple recurring grammatical and mechanical errors, including faulty punctuation, non-standard pluralisation, wrong prepositional usage, and incorrect verb complementation.",
+      "evidence": "Because of this they don't know how to farming very well. Their childs also don't get education."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative features authentic personal thought and concrete planning regarding village literacy rather than relying entirely on rote-memorised templates.",
+      "evidence": "In my village, there are many illiterate people. They don't know how to live, a happy and healthy life. I want to educate them."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty punctuation and sentence fragmentation (e.g., 'Now. I am going to...')",
+      "Incorrect morphological forms and pluralisation (e.g., 'childs', 'youngers')",
+      "Faulty verb complementation and prepositions (e.g., 'know how to farming', 'beside of this', 'for live a healthy... life')"
+    ],
+    "positive_aspects": [
+      "Fully intact informal letter layout with all 6 core components plus envelope format",
+      "Clear, constructive, and contextualised narrative regarding post-HSC plans"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates complete structural competence with all six essential letter components present. The response directly fulfills the prompt with an authentic and meaningful plan to educate illiterate villagers. However, language mechanics suffer from frequent grammatical and syntactical slips, placing the overall mark at the bottom of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a9e1915ba2112b96016e011faa9fca9dc9aaa7cb33ef58f0852003973c1bee36",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:10:10.660423+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "428403ff3309a0d7cd04f94348dcc02e9f4c4eadbed1336f1af7f59f41ded52b",
+    "input_tokens": 4529,
+    "output_tokens": 3104,
+    "thoughts_tokens": 2291,
+    "cost_usd": 0.009119,
+    "latency_ms": 21390,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4529,
+        "output_tokens": 3104,
+        "thoughts_tokens": 2291,
+        "cost_usd": 0.009119,
+        "latency_ms": 21390,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

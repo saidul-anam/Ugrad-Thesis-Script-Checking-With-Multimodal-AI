@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately captures the core contrasting themes of passive dreaming versus active realization, though the explanation remains somewhat brief.",
+      "evidence": "One those who passively dream at night, another those one is who actively dream at day."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single concise block without irrelevant padding or digression.",
+      "evidence": "The poem reppresents two types of dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple mechanical issues including spelling errors ('reppresents', 'meningless'), faulty syntax ('another those one is who'), and inappropriate apostrophe usage for plurals ('dreamers's', 'dream's').",
+      "evidence": "in meningless but day dreamers's are powerful because they pursue their dream's"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The interpretation is presented entirely in the candidate's own words with zero verbatim copying, though vocabulary and sentence structures remain relatively basic.",
+      "evidence": "they pursue their dream's with open eyes and make their dream successful."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('reppresents', 'meningless')",
+      "Misuse of apostrophes in forming plurals ('day dreamers's', 'dream's')",
+      "Clunky phrasing and syntax ('another those one is who', 'forget their dream in meningless')"
+    ],
+    "positive_aspects": [
+      "Accurately comprehends the central contrast between passive and active dreamers",
+      "Composed entirely in original phrasing with zero verbatim lift from the poem",
+      "Adheres strictly to single-paragraph concise structure"
+    ]
+  },
+  "feedback_summary": "The response successfully captures the central idea of the poem by contrasting active dreamers who make things happen with passive night dreamers. The writing is completely original and appropriately concise. However, frequent mechanical slips in spelling, syntax, and punctuation place the score at the lower end of Band 3 (5/8).",
+  "_metadata": {
+    "task_id": "THEME_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "5a2c7ad3443e8b106d88bf558cad17e6b310e13e3641dd4d7281cc86f1f656b8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:07:00.591558+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9a88621669af03285959a06f8898232fae86a043d18af09892ae5afa27691170",
+    "input_tokens": 4285,
+    "output_tokens": 2793,
+    "thoughts_tokens": 2021,
+    "cost_usd": 0.008268,
+    "latency_ms": 29422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4285,
+        "output_tokens": 2793,
+        "thoughts_tokens": 2021,
+        "cost_usd": 0.008268,
+        "latency_ms": 29422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The purpose of the letter is stated immediately and the candidate directly addresses the prompt regarding future plans.",
+      "evidence": "Today I want to tell you about my plan after HSC exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "Based on authoritative computed metrics, one structural component is missing, preventing a full score, although it does not trigger the hard cap.",
+      "evidence": "Azimpur, Dhaka\nDate: 26-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "There are several spelling errors and a grammatical error regarding the use of 'admit'.",
+      "evidence": "admit in well known university... pre paration... bettle... Convergi"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is basic and lacks mature expression, though it avoids an obvious memorized template.",
+      "evidence": "I want to make myself prepared for this admission bettle."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (pre paration, bettle, Convergi)",
+      "Grammatical inaccuracy (admit in)"
+    ],
+    "positive_aspects": [
+      "Clear and immediate statement of purpose",
+      "Generally appropriate informal register"
+    ]
+  },
+  "feedback_summary": "The candidate successfully fulfilled the prompt's objective with a clear statement of purpose. The score is docked due to a missing structural component (per authoritative metrics) and multiple spelling and grammatical lapses. The writing is readable but remains at a basic linguistic level.",
+  "_metadata": {
+    "task_id": "LETTER_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "17956f5c0ac921cfbc83d2872babe7528f9b39c146c6a52e8710496eab212f86",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:37:26.032178+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a26b4cefd7f385b5ae00f3362e26f5beb6d13127fccee44999a5b97ad81b447a",
+    "input_tokens": 4302,
+    "output_tokens": 2409,
+    "thoughts_tokens": 1737,
+    "cost_usd": 0.001153,
+    "latency_ms": 67827,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4302,
+        "output_tokens": 2409,
+        "thoughts_tokens": 1737,
+        "cost_usd": 0.001153,
+        "latency_ms": 67827,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central theme regarding the difference between passive and active dreaming, although the explanation is basic and lacks the nuance of the 'danger' mentioned in the poem.",
+      "evidence": "inspires people to work hard and achive success"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that states the subject immediately and avoids unnecessary padding.",
+      "evidence": "The poem tells us about 'Dream'"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors and significant grammatical failures in sentence construction.",
+      "evidence": "achive success. Those who dream by day it can work hand to achive their success... planm life... libes"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids copying the poem's text and expresses the idea in their own words, although the vocabulary is limited and phrasing is awkward.",
+      "evidence": "And the others who doesn't doesn't have a dream cannot shape their libes."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (achive, planm, libes)",
+      "Syntax/Grammar errors (it can work hand, others who doesn't doesn't)"
+    ],
+    "positive_aspects": [
+      "Correct identification of the theme",
+      "Complete absence of verbatim copying from the source"
+    ]
+  },
+  "feedback_summary": "The student successfully identified the core theme of the poem and adhered to the structural requirements of a single-block response. They avoided copying lines from the poem, which is a critical requirement. However, the total score is limited by significant linguistic issues, including pervasive spelling mistakes and broken syntax. The interpretation is accurate but basic.",
+  "_metadata": {
+    "task_id": "THEME_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "06fca6e85ae6034abf25c383242697d75d00afb4386152fb111addcc0e9066bc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:18:09.836833+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6753142908a8631baf147f579cbe55f0589a5f1a5d9704ef345bd29f51c8f1d9",
+    "input_tokens": 4294,
+    "output_tokens": 1981,
+    "thoughts_tokens": 1268,
+    "cost_usd": 0.001024,
+    "latency_ms": 56609,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4294,
+        "output_tokens": 1981,
+        "thoughts_tokens": 1268,
+        "cost_usd": 0.001024,
+        "latency_ms": 56609,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

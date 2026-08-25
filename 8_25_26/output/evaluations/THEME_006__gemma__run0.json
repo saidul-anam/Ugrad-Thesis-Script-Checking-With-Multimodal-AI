@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate mentions 'dreams' generally, but completely fails to identify the specific theme of the poem, which is the distinction between passive night-dreamers and active, successful day-dreamers.",
+      "evidence": "Everyone should have a dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block, but it is structurally disjointed, ending with repetitive words and a fragmented quote that does not contribute to a coherent theme statement.",
+      "evidence": "Because Because,"
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive and severe errors in spelling, grammar, and word choice throughout the script.",
+      "evidence": "opticals are try to destroy you. But you should never los hope. Always be Alamys try your best"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate provides a generic motivational template rather than an interpretation of the poem's specific imagery or abstract idea.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors (opticals, los, Alamys)",
+      "Incorrect word usage (success success instead of succeed)",
+      "Lack of thematic analysis"
+    ],
+    "positive_aspects": [
+      "Attempted to write original sentences",
+      "Maintained a single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate failed to identify the central theme of the poem, instead producing a generic motivational piece about working hard. The script exhibits severe linguistic breakdown with multiple spelling and grammatical errors, and it lacks any meaningful interpretation of the poem's actual content or contrast.",
+  "_metadata": {
+    "task_id": "THEME_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "53911b2fea66f273c27932d5a72d0948b68cc456e4d28ff79540c743ff1d6a76",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:06:59.746276+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "75f58868ac198ded6518cec1814942fc47913817c49cd6fa778202cba33d353d",
+    "input_tokens": 4308,
+    "output_tokens": 2580,
+    "thoughts_tokens": 1905,
+    "cost_usd": 0.001205,
+    "latency_ms": 73063,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4308,
+        "output_tokens": 2580,
+        "thoughts_tokens": 1905,
+        "cost_usd": 0.001205,
+        "latency_ms": 73063,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the distinction between night dreamers and day dreamers, but fails to articulate an abstract theme (e.g., determination, ambition), instead providing a surface-level summary of the poem's content.",
+      "evidence": "But who see dreams in the day end an open eyes. They are dangerous because this dreams will be gain they in their heal life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written in a single block as required, but it lacks a clear, concise opening statement that explicitly names the theme.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits pervasive grammatical failure, including severe subject-verb agreement errors, spelling mistakes, and fragmented syntax that significantly impede readability.",
+      "evidence": "People are all see dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoided copying the poem verbatim, attempting to paraphrase the ideas in their own words, although the phrasing is very basic and fractured.",
+      "evidence": "Dreams are two kind of one is in subconcious mind and another is unsubconcious mind."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Orthographic errors (Spelling)",
+      "Syntax/Sentence construction"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source",
+      "Basic conceptual understanding of the poem's contrast"
+    ]
+  },
+  "feedback_summary": "The candidate understands the fundamental contrast in the poem between passive and active dreaming. However, the response functions as a plot summary rather than a thematic analysis. The writing is severely marred by linguistic errors in grammar and spelling. Despite these mechanical failures, the effort to paraphrase without copying is noted.",
+  "_metadata": {
+    "task_id": "THEME_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0a089c0f40e5817b18c20c07f700d8316defa2de03f98a9d2a6f4624b0524fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:14:41.950114+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5d1c0a0d0201837a6b19f0ea53189ad3d10109b51a23ccbabe95f823a75391ba",
+    "input_tokens": 4317,
+    "output_tokens": 2526,
+    "thoughts_tokens": 1818,
+    "cost_usd": 0.00119,
+    "latency_ms": 76359,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4317,
+        "output_tokens": 2526,
+        "thoughts_tokens": 1818,
+        "cost_usd": 0.00119,
+        "latency_ms": 76359,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

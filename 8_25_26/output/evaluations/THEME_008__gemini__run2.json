@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Identifies the core contrast between passive night dreamers and active dreamers who work hard to achieve success, though the conceptual explanation is simple.",
+      "evidence": "Those people who dreams under light works hard to achieve it. They are the real successful people"
+    },
+    "structure_format_brevity": {
+      "rationale": "Written in a single, compact paragraph that states the theme immediately without padding.",
+      "evidence": "People who dreams with wide open eye in the morning are not normal like people who dreams at night."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive subject-verb agreement errors across every sentence and a garbled final clause.",
+      "evidence": "People who dreams with wide open eye in the morning are not normal like people who dreams at night. Those people who dreams under light works hard"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Expresses the theme entirely in the candidate's own words with zero verbatim copying, though vocabulary and syntactic sophistication remain basic.",
+      "evidence": "They are the real successful people and like the other  fake  dreamers."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors ('People who dreams', 'Those people... works')",
+      "Syntax and semantic confusion in the final clause ('and like the other fake dreamers')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim overlap with the source poem; completely original phrasing",
+      "Correctly identifies the core thematic contrast between active and passive dreamers"
+    ]
+  },
+  "feedback_summary": "The candidate grasps the abstract message of the poem, correctly identifying that daytime dreamers actively work to achieve their goals unlike passive dreamers. The response is written entirely in original phrasing with zero verbatim reliance. However, multiple subject-verb agreement errors and an awkward concluding clause limit the score to the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8ea0d5a019c65a6412550dcb301a1c4b6336257b82aa6f7925f901b6a8a34725",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:23:04.642098+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2474530a53fcf43af8c6f06285ef3c16a0c1242f7701adeee5dd6e3f79e9ab16",
+    "input_tokens": 4270,
+    "output_tokens": 2531,
+    "thoughts_tokens": 1799,
+    "cost_usd": 0.007608,
+    "latency_ms": 16312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4270,
+        "output_tokens": 2531,
+        "thoughts_tokens": 1799,
+        "cost_usd": 0.007608,
+        "latency_ms": 16312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

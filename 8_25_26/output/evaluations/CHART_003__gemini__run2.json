@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all five data points (Coal 46%, Natural Gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) accurately and correctly highlights the largest and smallest contributors.",
+      "evidence": "USA generate 46%. electricity for for m coal. 24% of electricity was generated from natural gas which was not an average deal. 16% from hydro electric power and 12% from oil was also a notable source of electricity."
+    },
+    "structure_format_brevity": {
+      "rationale": "Follows a logical analytical progression with an introductory overview, body data points, and a concluding synthesis, meeting the minimum length requirement.",
+      "evidence": "Thin pie chant is about the sources of USA electricity in 1980. The chart contain 100%, devided into 5 parts of different percentages"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive mechanical and orthographical errors throughout, including spelling mistakes ('chant', 'devided', 'accordin', 'ebbective'), subject-verb agreement failures ('chart contain', 'chart clearly show'), and repeated word slips ('for for m', 'choice choice').",
+      "evidence": "The chart contain 100%, devided into 5 parts of different percentages which neboring the some sources."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic comparative ordering is attempted ('main source', '2nd choice', 'Finally, a few amount'), but vocabulary remains simplistic and informal rather than analytical.",
+      "evidence": "The main source of electricity of USA in 1980, was coal. Natural gas was the 2nd choice choice of them."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('chant' for chart, 'devided' for divided, 'accordin' for according, 'ebbective' for effective)",
+      "Word repetition and punctuation errors ('for for m', 'choice choice', rogue full stops inside sentences)",
+      "Subject-verb agreement slips ('chart contain', 'chart clearly show')"
+    ],
+    "positive_aspects": [
+      "Accurately reports all 5 data values from the pie chart",
+      "Organized into a clear introduction, data breakdown, and concluding summary"
+    ]
+  },
+  "feedback_summary": "The response covers all required data points accurately and maintains a clear structural flow from introduction to conclusion. However, frequent spelling, punctuation, and grammatical slips, combined with basic comparative phrasing, place the script at the lower threshold of Band 3 (6/10).",
+  "_metadata": {
+    "task_id": "CHART_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7eeae1609833b12d156a76f3f3eb774ef22df4a03d5a6da96d0f4807ef9fa13b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:09:31.094860+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "557d6b7ec7645dc68724216243a1717ebdc655db0342d2772575f7f17b4cadc2",
+    "input_tokens": 4410,
+    "output_tokens": 3588,
+    "thoughts_tokens": 2700,
+    "cost_usd": 0.010293,
+    "latency_ms": 26157,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4410,
+        "output_tokens": 3588,
+        "thoughts_tokens": 2700,
+        "cost_usd": 0.010293,
+        "latency_ms": 26157,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

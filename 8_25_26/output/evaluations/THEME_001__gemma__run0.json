@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central dichotomy of the poem (night dreams vs. day dreams) and the idea that the latter are achievable. However, it describes the content rather than articulating an abstract theme.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that gets straight to the point without unnecessary padding.",
+      "evidence": "There are two kind of dream."
+    },
+    "language_mechanics": {
+      "rationale": "There are significant errors in subject-verb agreement, pluralization, and punctuation, including a confusing typo ('fata') and a misplaced period.",
+      "evidence": "two kind of dream... Those dream... real. dream... possible to fata come true"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying (0% overlap) and uses their own words, though the phrasing is basic and lacks a mature interpretative depth.",
+      "evidence": "those which take our sleep is our real. dream"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Noun pluralization",
+      "Punctuation/Typographical errors"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Accurate identification of the poem's core contrast"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the central contrast of the poem and expressed it in their own words, avoiding any direct copying. However, the writing is marred by poor grammatical control (e.g., 'two kind of dream') and punctuation errors. The response functions more as a summary than a thematic analysis. Awarded the lower end of Band 3 due to the high density of linguistic errors.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e191280e2479814d83562f9fd6108c34c80f83c36b34ad5d01f2cb3007534351",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:42:19.031724+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2bbd8cee3e262ad01fde8368d5015c8f2cc4cfb74ea765fca373e0f1c0ae6322",
+    "input_tokens": 4277,
+    "output_tokens": 1419,
+    "thoughts_tokens": 696,
+    "cost_usd": 0.000853,
+    "latency_ms": 40672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 1419,
+        "thoughts_tokens": 696,
+        "cost_usd": 0.000853,
+        "latency_ms": 40672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

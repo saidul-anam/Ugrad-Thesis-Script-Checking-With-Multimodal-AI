@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by clearly explaining their future plan after the HSC exam (preparing for public university admission to study engineering).",
+      "evidence": "In your last letter, you wanted to know about my future plan after passing H.S.C. Now, I describe about it."
+    },
+    "structure_format_brevity": {
+      "rationale": "All mandatory structural elements of an informal letter (sender's address, date, salutation, body, complimentary close, signature, and envelope layout) are correctly included.",
+      "evidence": "27 June 2026\nFaridabad,\nDhaka-1204\nDear Jarif,"
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple noticeable spelling, punctuation, and grammatical mistakes (e.g., incorrect article usage, run-on sentence, misspelled words, and plural form errors).",
+      "evidence": "I want to be a eingineer and admitted into a Dhaka University so that's time is the most important momenterm to fullfill my dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The core message reflects genuine personal voice and authentic thoughts regarding university admission rather than purely memorised stock sentences.",
+      "evidence": "I cannot stay in day dreaming. Instead I want to give my best for my own dream."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'eingineer', 'momenterm', 'fullfill', 'familys')",
+      "Article and preposition errors (e.g., 'a eingineer', 'admitted into a Dhaka University', 'describe about it')",
+      "Missing punctuation and sentence boundary markers (e.g., 'grace of Almighty In your last letter')"
+    ],
+    "positive_aspects": [
+      "Full compliance with structural layout requirements of an informal letter",
+      "Direct focus on the prompt objective with relevant personal context"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a complete informal letter containing all necessary structural components and directly fulfilling the prompt topic. While the expression is authentic and coherent, language mechanics require improvement regarding spelling precision, punctuation, and correct article usage.",
+  "_metadata": {
+    "task_id": "LETTER_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f1b47b897410335b68604983298b0572f75125711f1f153025725be979e47",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:07:28.822564+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "855894b9d6a61d4ba97626a595f07cf531dc373ac350d25a80022d3acc8e6799",
+    "input_tokens": 4406,
+    "output_tokens": 3731,
+    "thoughts_tokens": 2931,
+    "cost_usd": 0.010649,
+    "latency_ms": 22922,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4406,
+        "output_tokens": 3731,
+        "thoughts_tokens": 2931,
+        "cost_usd": 0.010649,
+        "latency_ms": 22922,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

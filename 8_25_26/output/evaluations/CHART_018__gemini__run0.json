@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies key data points from the chart including the highest (coal at 46%), second highest (natural gas), and lowest (nuclear at 2%). However, relevance is compromised by excessive focus on external chemical effects and environmental consequences not in the prompt.",
+      "evidence": "From the pie chart we can see that the highest amount of electricity come  from coal. It is 46%"
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory sentence and sequential data reporting are present, but the structure is overloaded with extraneous external facts, moralizing warnings, and subjective judgments that violate graph analysis conventions.",
+      "evidence": "The pie ehart represents us the soucees of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive grammatical slips, frequent subject-verb agreement errors (e.g., 'electricity come', 'It produce'), mechanical spelling errors ('ehart', 'soucees', 'consequenees'), and duplicated words ('not not', 'use use', 'to to').",
+      "evidence": "If we do not not use use it will finish and one day and we have to  to face hazardous consequenees."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows basic comparative awareness ('highest amount', 'second highest', 'least amount'), but relies on highly repetitive sentence frames ('we can see that') without sophisticated analytical transitions.",
+      "evidence": "From the piechart we can see that the least amount of  electricity, comes from nuclear."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Extraneous outside knowledge and personal opinions inserted into chart description",
+      "Subject-verb agreement errors (e.g., 'electricity come', 'It produce', 'it also cause')",
+      "Spelling errors and typographical duplicates (e.g., 'ehart', 'soucees', 'consequenees', 'not not', 'to to')"
+    ],
+    "positive_aspects": [
+      "Correct identification of key proportions and rankings (highest, second highest, lowest)",
+      "Clear opening sentence introducing the subject of the pie chart"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captures the key numerical data points and trends shown in the pie chart. However, the response heavily violates the graph interpretation guidelines by including extraneous external knowledge, moral judgments, and consequences regarding greenhouse gases and radiation that are not shown in the chart. A mandatory structural cap for external facts applies (maximum mark 6). Furthermore, frequent subject-verb agreement errors, spelling slips, and duplicated words keep the score at Band 3.",
+  "_metadata": {
+    "task_id": "CHART_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b28e216829ab2b739e72902d7949defd67785da741147a3f0c59de616f048ab9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:11:39.898444+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "cfb979a725ef314c10909edb8ebaac410e93cb75a032972b11cc2fb1fdb1ef54",
+    "input_tokens": 4479,
+    "output_tokens": 2693,
+    "thoughts_tokens": 1793,
+    "cost_usd": 0.008076,
+    "latency_ms": 18609,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4479,
+        "output_tokens": 2693,
+        "thoughts_tokens": 1793,
+        "cost_usd": 0.008076,
+        "latency_ms": 18609,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

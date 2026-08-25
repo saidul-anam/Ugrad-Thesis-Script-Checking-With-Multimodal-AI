@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly states the purpose of the letter and provides specific future plans (computer programs, business, and tuition) as requested by the prompt.",
+      "evidence": "In your letter, You have wanted to know about the future plan after passing HSC exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components of an informal letter are present: date, address, salutation, body, closing, and signature.",
+      "evidence": "27 June , 2026\nAzimpure , Dhaka\n\nDear fried,\n...\nYours ever\nSakib"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of severe spelling and grammatical errors that impede the quality of the writing, including basic vocabulary failures and tense inconsistencies.",
+      "evidence": "Dear fried, At first take my condial love... received your letter yeasted... it's will be... loth of things... penferect"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The introduction and conclusion rely heavily on memorized, formulaic templates common in guidebooks, lacking authentic personal phrasing.",
+      "evidence": "At first take my condial love and good wishes to you. Hope that you are all well by the grace of Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors (orthography)",
+      "Subject-verb agreement/Tense inconsistency",
+      "Use of memorized templates"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to letter layout",
+      "Clear fulfillment of the prompt objective"
+    ]
+  },
+  "feedback_summary": "The script is structurally sound and fulfills the content requirements of the prompt. However, it is severely undermined by pervasive linguistic errors, including critical spelling mistakes ('fried' for 'friend', 'yeasted' for 'yesterday', 'penferect' for 'perfect') and the use of a highly formulaic introduction. The score is held at Band 3 because while the syntax remains readable, the mechanical failures and lack of original phrasing prevent it from reaching Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "979443a216a6382e2c776d1dc7d85f4ac53a6aaf075c5ba2d093d4bdc0d75f89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:42:01.740532+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9a0d24d3c0950d7023bcbead6a4c2bee351c382a0344178373e2bdd3a4c6197b",
+    "input_tokens": 4466,
+    "output_tokens": 3282,
+    "thoughts_tokens": 2496,
+    "cost_usd": 0.001431,
+    "latency_ms": 91233,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4466,
+        "output_tokens": 3282,
+        "thoughts_tokens": 2496,
+        "cost_usd": 0.001431,
+        "latency_ms": 91233,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

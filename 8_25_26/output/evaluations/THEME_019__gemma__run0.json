@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core contrast between night dreams (illusory) and day dreams (actionable). However, it incorporates external ideas (like the notion of dreams keeping one awake) not present in the poem, which slightly dilutes the textual focus.",
+      "evidence": "Someone dream by night, and in the morning he can realize that was not real but real dream is that which can unable to man to Sleep ."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single coherent block and introduces the theme immediately in the opening sentence.",
+      "evidence": "The poem is about an inspiration named dream ."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in spelling, punctuation, and syntax that impede the professional quality of the writing.",
+      "evidence": "Inspairication and motivation And. also work hard to make it dreams truer."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids all direct copying from the poem, using their own interpretation to describe 'dangerous people' as 'real hero's'.",
+      "evidence": "Dreamers of the day are the real hero's and they take their dreams as Inspairication"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (e.g., 'Inspairication')",
+      "Incorrect pluralization (e.g., 'hero's')",
+      "Poor sentence punctuation and capitalization"
+    ],
+    "positive_aspects": [
+      "Strong adherence to the single-block structure",
+      "Zero verbatim copying of poem lines",
+      "Accurate thematic identification"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the central theme and the contrast between different types of dreamers without relying on verbatim copying. The structural requirements were fully met. However, the script is marred by significant linguistic errors, particularly in spelling and syntax, which prevents it from reaching Band 4.",
+  "_metadata": {
+    "task_id": "THEME_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "78c7e4d6426b44308318867daff79312fb0f49f78a049dd18c803fb20543ee85",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:28:18.961653+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d663faf303b6320806ea99fa4d743fe0ccafe4219f489d1c6d86a5f24f877914",
+    "input_tokens": 4307,
+    "output_tokens": 2270,
+    "thoughts_tokens": 1526,
+    "cost_usd": 0.001112,
+    "latency_ms": 63827,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4307,
+        "output_tokens": 2270,
+        "thoughts_tokens": 1526,
+        "cost_usd": 0.001112,
+        "latency_ms": 63827,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

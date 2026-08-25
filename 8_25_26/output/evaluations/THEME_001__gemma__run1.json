@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identifies the dichotomy between night dreams and waking dreams, capturing the essence that only the latter lead to reality.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that states the theme immediately without padding.",
+      "evidence": "There are two kind of dream."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in subject-verb agreement, pluralization, punctuation (mid-sentence period), and a significant spelling error ('fata').",
+      "evidence": "two kind of dream... is our real. dream and these are possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids copying the poem entirely (0% verbatim), but the interpretation is slightly superficial and the phrasing is clumsy.",
+      "evidence": "another because of which we can not sleep"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Pluralization",
+      "Spelling/Typographical errors"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Accurate identification of core contrast"
+    ]
+  },
+  "feedback_summary": "The student demonstrates a good understanding of the poem's central theme, successfully distinguishing between passive and active dreaming. The structure is appropriate, and the student deserves credit for expressing the ideas in their own words. However, the score is heavily penalized due to poor linguistic mechanics, including multiple grammatical slips and a confusing spelling error ('fata'), which detracts from the professional quality of the response.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e191280e2479814d83562f9fd6108c34c80f83c36b34ad5d01f2cb3007534351",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:42:39.212542+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dcb06462affb7c9cde7f527f5d016052962d6484882111a56d192d980a7cc893",
+    "input_tokens": 4277,
+    "output_tokens": 1885,
+    "thoughts_tokens": 1189,
+    "cost_usd": 0.000993,
+    "latency_ms": 52937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 1885,
+        "thoughts_tokens": 1189,
+        "cost_usd": 0.000993,
+        "latency_ms": 52937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a smooth and logical continuation of the provided stem, following a clear sequential plot from the encounter to the rescue.",
+      "evidence": "it accidentally fell on th lion. This woke the lion up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and includes a clear moral lesson, but it fails to provide a title as required by the prompt.",
+      "evidence": "Moral of the story: Size doesn't matter. Help can come from unexpected sources."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors and a notable inconsistency in tense, shifting from past to present mid-narrative.",
+      "evidence": "the lion catches the monse and holds him in his palm."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a reproduction of a very common, predictable fable (The Lion and the Mouse) with no creative variations or original turns.",
+      "evidence": "the lion fell into the hunter's slick trap. He was caged in a net."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'monse' for mouse, 'lite' for life)",
+      "Tense inconsistency (shifting between past and present)"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Appropriate moral conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the story with a logical flow and a positive resolution. However, the score is limited by the omission of a title and several linguistic lapses, specifically inconsistent verb tenses and repetitive spelling mistakes. Furthermore, the plot is a standard reproduction of a well-known fable, lacking original creative development.",
+  "_metadata": {
+    "task_id": "STORY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c3d14c5df9ddab57739025a19caf8181a1a60831836298dccf8236e8fc1208f4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:55:15.877662+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "faffdc7f1411948dc865695648cdfb6d6af6870f83c35b81487e2a66534aebd4",
+    "input_tokens": 4465,
+    "output_tokens": 2747,
+    "thoughts_tokens": 2033,
+    "cost_usd": 0.001271,
+    "latency_ms": 76031,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4465,
+        "output_tokens": 2747,
+        "thoughts_tokens": 2033,
+        "cost_usd": 0.001271,
+        "latency_ms": 76031,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

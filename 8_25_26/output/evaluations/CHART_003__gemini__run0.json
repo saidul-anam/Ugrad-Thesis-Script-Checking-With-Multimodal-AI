@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately includes all five data points from the chart (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, and Nuclear 2%) and correctly highlights the highest and lowest sources.",
+      "evidence": "USA generate 46%. electricity for for m coal. 24% of electricity was generated from natural gas which was not an average deal. 16% from hydro electric power and 12% from oil was also a notable source of electricity. Finally, a few amount of electricity was generated from nuclear and in was 2%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes an introductory overview sentence, a body grouping the data points, and a concluding summary, though slightly hampered by clumsy editorial comments.",
+      "evidence": "Thin pie chant is about the sources of USA electricity in 1980. The chart contain 100%, devided into 5 parts of different percentages which neboring the some sources."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling, punctuation, and grammatical mistakes throughout (e.g., 'Thin pie chant', 'contain', 'devided', 'neboring', 'accordin', 'in was', 'ebbective', duplicated words, and misplaced full stops).",
+      "evidence": "Thin pie chant is about the sources of USA electricity in 1980. The chart contain 100%, devided into 5 parts of different percentages which neboring the some sources."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative language is rudimentary and basic ('2nd choice choice of them', 'main source') rather than using standard analytical comparative markers.",
+      "evidence": "The main source of electricity of USA in 1980, was coal. Natural gas was the 2nd choice choice of them."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('chant' for chart, 'devided' for divided, 'neboring', 'accordin', 'ebbective')",
+      "Punctuation and capitalization errors (full stops mid-clause, e.g., '46%. electricity', 'show that, The')",
+      "Subject-verb agreement and tense inconsistency ('The chart contain', 'USA generate', 'clearly show')",
+      "Word repetition ('for for m', 'choice choice')"
+    ],
+    "positive_aspects": [
+      "All chart statistics and categories are correctly cited without data distortion",
+      "Clear structural framework featuring an introduction, body analysis, and concluding synthesis"
+    ]
+  },
+  "feedback_summary": "The candidate captures all essential data points and organizes the response logically with an introduction, body, and conclusion. However, the score is constrained to the lower boundary of Band 3 due to pervasive mechanical errors in spelling, punctuation, and subject-verb agreement, alongside a lack of varied analytical comparative phrasing.",
+  "_metadata": {
+    "task_id": "CHART_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7eeae1609833b12d156a76f3f3eb774ef22df4a03d5a6da96d0f4807ef9fa13b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:09:26.579546+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5187e05edfc43cd5bf36ac8eaa5cc682038dc9b7c44b9f6cc2baac7bf8403ae1",
+    "input_tokens": 4410,
+    "output_tokens": 2944,
+    "thoughts_tokens": 1980,
+    "cost_usd": 0.008683,
+    "latency_ms": 29045,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4410,
+        "output_tokens": 2944,
+        "thoughts_tokens": 1980,
+        "cost_usd": 0.008683,
+        "latency_ms": 29045,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

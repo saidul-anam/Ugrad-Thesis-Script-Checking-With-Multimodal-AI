@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the core contrast between passive night dreaming and active day dreaming, though the thematic explanation is basic and lacks analytical depth.",
+      "evidence": "Night dream is not real dream this are only subconsus activity. Day dream is real dream. Day dream can reache help people to reach goal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate erroneously prefixes the theme with an informal letter header (address and date), although the response itself is kept to a single brief block.",
+      "evidence": "Nazipur, Naogaon,\nDate: 27-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "Displays multiple mechanical errors in a very short sample, including spelling mistakes, subject-verb agreement issues, and uncorrected drafting errors.",
+      "evidence": "this are only subconsus activity. Day dream can reache help people to reach goal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts an authentic interpretation in their own words with zero verbatim copying from the poem lines.",
+      "evidence": "The poem is about the power of dream. Dream can make us strong."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of unrelated letter format header (address and date)",
+      "Subject-verb agreement error ('this are')",
+      "Spelling mistake ('subconsus' instead of 'subconscious')",
+      "Syntax and verb duplication error ('reache help')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim overlap with the source poem",
+      "Identifies the basic contrast between passive and active dreamers"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captures the underlying contrast of the poem (passive subconscious dreaming vs. actionable day dreaming) without copying lines directly. However, the response includes an irrelevant letter-writing header, contains several spelling and grammatical errors ('subconsus', 'this are', 'reache help'), and remains overly simplistic in interpretation.",
+  "_metadata": {
+    "task_id": "THEME_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "626f017fdef24047c80e7cbe5432b263c7dd8123349227121f740ccdbe8fe2d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:37:44.478588+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6cbe011bbe146f6316e046546a1882be46cdff7bc3f32c6d89295321a9d4022f",
+    "input_tokens": 4290,
+    "output_tokens": 2946,
+    "thoughts_tokens": 2191,
+    "cost_usd": 0.008652,
+    "latency_ms": 18452,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4290,
+        "output_tokens": 2946,
+        "thoughts_tokens": 2191,
+        "cost_usd": 0.008652,
+        "latency_ms": 18452,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

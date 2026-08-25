@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative develops sequentially from the stem, following a logical plotline where the mouse repays the lion's mercy.",
+      "evidence": "The mouse remembered about his promise with lion. The mouse goes to help the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "A positive resolution is achieved, but the candidate completely omitted the required story title.",
+      "evidence": "After that, they become very good friends."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling errors, missing articles, and inconsistent shifts between past and present tense are present throughout.",
+      "evidence": "But lion catched him... he cuill save him... traped the lion with net... The mouse goes to help"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies entirely on a conventional, predictable fable structure with basic descriptive phrasing.",
+      "evidence": "Only day a group of hunters came in the forest."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Irregular past tense verb formation (e.g., 'catched')",
+      "Tense inconsistency shifting into present tense (e.g., 'goes', 'become')",
+      "Spelling errors (e.g., 'collied', 'cuill', 'traped', 'sharpp')",
+      "Omission of required story title"
+    ],
+    "positive_aspects": [
+      "Clear chronological sequence and narrative progression",
+      "Satisfying positive resolution aligned with the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate presents a coherent and logical continuation of the classic fable with a complete narrative arc and positive ending. However, marks are lost due to the omission of an appropriate title, pervasive spelling slips, and shifts into present tense.",
+  "_metadata": {
+    "task_id": "STORY_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8522eb0331f9d14bf9631fd125dfd0b2c9f7d5962fdcd34c2b2887362abd68fe",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:28:34.498405+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "8bb8b60892315fa0a7007eaa8299308f78d4b9f01fdddf97f4777d7483bd9242",
+    "input_tokens": 4407,
+    "output_tokens": 2729,
+    "thoughts_tokens": 2025,
+    "cost_usd": 0.008145,
+    "latency_ms": 20078,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 2729,
+        "thoughts_tokens": 2025,
+        "cost_usd": 0.008145,
+        "latency_ms": 20078,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the key guiding questions, including the definition of AI, its applications in education and healthcare, and its potential negative consequences on human intellect.",
+      "evidence": "AI (Artificial Intelligence) is most used word in the modern folk. It is a type of intilligence which enab machines to work as human"
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate has split the response into 5 separate sub-paragraphs instead of maintaining a single unified paragraph structure as required by the NCTB syllabus.",
+      "evidence": "Not only the student but also the teachers are helped by AI ."
+    },
+    "language_mechanics": {
+      "rationale": "The response contains pervasive spelling errors, awkward phrasing, and subject-verb/modal agreement faults throughout.",
+      "evidence": "Marzely people can depands on AI which distroy our brain's ability . People do not use his brain to solve any prob for AI. So, If we want to get a good world we should use AI comciosly ."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing reflects authentic, unscripted thought and original effort rather than memorized stock templates, despite limited linguistic competence.",
+      "evidence": "AI can friees up teachers time by auto marking marking the quizes ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('intilligence', 'computre', 'feild', 'friees', 'distroy', 'comciosly')",
+      "Faulty verb/modal constructions ('can able computre to operate', 'can depands')",
+      "Punctuation and spacing errors around commas and periods"
+    ],
+    "positive_aspects": [
+      "Directly responds to the prompt questions with relevant content",
+      "Authentic ideas and personal voice without relying on rote memorised cliches"
+    ]
+  },
+  "feedback_summary": "The response covers the relevant content areas specified in the prompt, addressing AI's definition, utility in education, and drawbacks. However, the script violates the fundamental single-paragraph structural rule by dividing into multiple sub-paragraphs, triggering a hard cap at 5 marks. The language is also marred by heavy spelling and mechanical errors.",
+  "_metadata": {
+    "task_id": "PARA_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "db839986060a1d36b1a4377a385a423c9f96da6342887f99827f83784835b5ca",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:20:13.157891+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c2d83de1683af6beea06e5d870c4f54c98976d43c8545c777953b024227ed5c5",
+    "input_tokens": 4551,
+    "output_tokens": 2661,
+    "thoughts_tokens": 1855,
+    "cost_usd": 0.008018,
+    "latency_ms": 19780,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4551,
+        "output_tokens": 2661,
+        "thoughts_tokens": 1855,
+        "cost_usd": 0.008018,
+        "latency_ms": 19780,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

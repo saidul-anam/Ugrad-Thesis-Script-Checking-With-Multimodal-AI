@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly addresses the guiding questions by discussing the definition, tools, multi-sector applications, educational use, and disadvantages (unemployment, creativity loss). However, explanations remain relatively brief and simplistic.",
+      "evidence": "The doctore are use ai to diagnose a disease perfectly. The doctore use ai to find the source of a disease."
+    },
+    "structure_format_brevity": {
+      "rationale": "Includes a functional introductory sentence and concluding thought, maintaining thematic continuity. However, it violates the core NCTB formatting rule by splitting the response into three separate paragraphs.",
+      "evidence": "Artificial Intelligence is the wonderful invention of modern science."
+    },
+    "language_mechanics": {
+      "rationale": "Displays pervasive mechanical flaws, including frequent spelling errors, subject-verb agreement issues, erratic capitalization, and incorrect verb forms.",
+      "evidence": "Artificial Intelligene is use to math dicition, to solve problem and to give information."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates authentic knowledge by citing real-world AI platforms (OpenAI, Gemini, Meta AI), but sentence structures are repetitive and basic.",
+      "evidence": "The enample of ai is just like : open ai, google asistant, gemini, meta ai etc."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'Intelligene', 'dicition', 'Algorth', 'enample', 'asistant', 'doctore', 'ditfect', 'sumirige', 'demanitles', 'decrEase')",
+      "Faulty verb forms and passive/active voice confusion (e.g., 'is use to', 'to invented it', 'are use ai', 'It has taking place')",
+      "Structural division of a paragraph into multiple sub-blocks"
+    ],
+    "positive_aspects": [
+      "Addresses all prompt questions systematically",
+      "Incorporates contemporary real-world examples of AI models"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good conceptual understanding of the prompt questions, citing contemporary applications and drawbacks of AI. However, the response is structurally split into three paragraphs, triggering a mandatory hard cap of 5 marks under NCTB paragraph assessment rules. Additionally, high error density in spelling and verb forms limits the linguistic score.",
+  "_metadata": {
+    "task_id": "PARA_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d3f9db778398967dcd93b2c649d9dbb94c3074c3b1b99abadbb7443b1ae47cd2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:41:04.206978+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7e4d95f88d6cd4c719abe88564cf03428cdcf12c9912699f9441d0832b06bc4d",
+    "input_tokens": 4460,
+    "output_tokens": 3510,
+    "thoughts_tokens": 2688,
+    "cost_usd": 0.010113,
+    "latency_ms": 20327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4460,
+        "output_tokens": 3510,
+        "thoughts_tokens": 2688,
+        "cost_usd": 0.010113,
+        "latency_ms": 20327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

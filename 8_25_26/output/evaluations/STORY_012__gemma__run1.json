@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem and completes the plot logically, following the well-known fable of the Lion and the Mouse. However, the development is rudimentary and lacks narrative depth.",
+      "evidence": "The mouse came and helped the lion by cutting the net by it's sharp teeth."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story has a positive resolution and includes a clear moral lesson. However, the candidate failed to provide a title, which is a mandatory structural requirement.",
+      "evidence": "Moral of the story is — we should not judge anyone by their outlook."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in tense (mixing present and past), subject-verb agreement, and severe syntactic breakdowns that hinder fluency.",
+      "evidence": "the mouse jumped into the of lion... apologize for it's did... You a little mouse ea think that yo I will ever need your help?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a highly predictable, memorized version of a common fable. There is no evidence of creative phrasing or authentic narrative voice.",
+      "evidence": "The lion woke up and got very angry over the mouse."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (apologize, leave)",
+      "Syntactic breakdown/Word omission (jumped into the of lion)",
+      "Spelling errors (traped)",
+      "Incorrect word usage (it's did, was pleasure)"
+    ],
+    "positive_aspects": [
+      "Logical plot completion",
+      "Presence of a clear moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of plot progression by completing the fable logically. However, the script is severely weakened by the absence of a title and frequent grammatical errors, particularly in tense consistency and sentence structure. The content is entirely based on a memorized template with no original creative input, placing it firmly in Band 2.",
+  "_metadata": {
+    "task_id": "STORY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bb90af09d69476bc00a80dd2db6422b17a265ee835435a5ca432a03ebd4b1201",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:17:40.131613+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e6eacf78c9fe040526b5b8bd79cb8d747c93bd4eb0a630aa1fb6f1d6aebc3794",
+    "input_tokens": 4414,
+    "output_tokens": 2510,
+    "thoughts_tokens": 1736,
+    "cost_usd": 0.001194,
+    "latency_ms": 70938,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4414,
+        "output_tokens": 2510,
+        "thoughts_tokens": 1736,
+        "cost_usd": 0.001194,
+        "latency_ms": 70938,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

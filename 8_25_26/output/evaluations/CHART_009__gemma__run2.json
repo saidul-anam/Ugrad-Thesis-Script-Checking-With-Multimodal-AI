@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all data points and identifies the highest/lowest sources. However, the specific percentage for nuclear (2%) is omitted, and there is a calculation error regarding the difference between coal and oil (46-12=34, not 36).",
+      "evidence": "Comparatively Coal produced 36% more electricity."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a lead-in sentence and a concluding summary. It strictly adheres to the data provided without introducing external opinions or facts.",
+      "evidence": "The chart shows the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors ('dividition', 'proudes'), accidental repetitions ('excessive excessive', 'least least'), and poor syntax ('Which almost half of the amount'). Tense is inconsistent between present and past.",
+      "evidence": "We can see a crystal clear dividition of the sources of USA electricity in 1980 from the chart."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts to move beyond a simple list by using comparative phrases, but the vocabulary is basic and repetitive.",
+      "evidence": "Which almost half of the amount what coals produces."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (dividition, proudes)",
+      "Word repetition (excessive excessive, least least)",
+      "Fragmented sentence structure",
+      "Tense inconsistency"
+    ],
+    "positive_aspects": [
+      "Accurate identification of peak and trough data",
+      "Correct attempt at comparative subtraction",
+      "No inclusion of external/forbidden information"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the chart's data and successfully implements comparative analysis. However, the writing is significantly hindered by linguistic inaccuracies, including numerous spelling mistakes and fragmented sentences. While the structure is appropriate for a graph description, the poor language mechanics and minor data inaccuracies place this script at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "CHART_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b4d1a4bf259423ea045bc9ae381c0dee59cd689102f285ccdc8fd13466a11170",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:28:24.156628+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e0b5d7338c43613cffdd8b16f887838af39741207d77280b41da591a31e5def3",
+    "input_tokens": 4437,
+    "output_tokens": 2337,
+    "thoughts_tokens": 1559,
+    "cost_usd": 0.001145,
+    "latency_ms": 65719,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4437,
+        "output_tokens": 2337,
+        "thoughts_tokens": 1559,
+        "cost_usd": 0.001145,
+        "latency_ms": 65719,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

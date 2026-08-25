@@ -1,0 +1,101 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central theme: the difference between passive dreaming and active pursuit of goals. However, the explanation is basic and lacks nuance regarding the 'danger' mentioned in the poem.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and states the theme immediately in the first sentence.",
+      "evidence": "The poem tells us about 'Dream'..."
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple spelling errors and significant syntactic failures that hinder fluency.",
+      "evidence": "achive success... it can work hand to achive... planm life... doesn't doesn't... libes."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the candidate avoids verbatim copying of the poem, the phrasing is generic and relies on clichés rather than interpreting the poem's specific imagery.",
+      "evidence": "inspires people to work hard and achive success."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (achive, planm, libes)",
+      "Syntax/Grammar (Subject-verb agreement and phrasing)",
+      "Repetition (doesn't doesn't)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct structural format",
+      "Accurate identification of core theme"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the theme and adheres to the structural requirements of a single-block response. However, the score is limited by weak language mechanics (spelling and syntax) and a lack of interpretive depth. Per the tiebreaker rule for Band 3, the lower value (5) is awarded due to the basic and erroneous nature of the syntax.",
+  "_metadata": {
+    "task_id": "THEME_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "06fca6e85ae6034abf25c383242697d75d00afb4386152fb111addcc0e9066bc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:17:59.321291+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "eb5807a3e4817c3f9e26c2cd4d7d3bc39e8cefcbded5a3b7fe2749c50f8ffb50",
+    "input_tokens": 4294,
+    "output_tokens": 2140,
+    "thoughts_tokens": 1409,
+    "cost_usd": 0.001071,
+    "latency_ms": 59516,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4294,
+        "output_tokens": 2140,
+        "thoughts_tokens": 1409,
+        "cost_usd": 0.001071,
+        "latency_ms": 59516,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

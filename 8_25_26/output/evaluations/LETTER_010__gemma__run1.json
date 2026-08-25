@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides a detailed plan including travel and a vocational goal (teaching in the village).",
+      "evidence": "Today I describe you about the future Plan after Passing HSC Exam!"
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components (Address, Date, Salutation, Body, Close, Signature) are present and correctly positioned. The redundancy at the end does not detract from the primary layout.",
+      "evidence": "27 June, 2026\nDonia,Dhaka-1236\nDear Sadia... Yours ever\nrethia"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of grammatical and spelling errors (e.g., 'Your are', 'hare passed', 'Parunts'). However, the communication remains entirely intelligible.",
+      "evidence": "Hope that Your are fantastic. I am over the moon. Many days hare passed since we met last."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script relies on several memorized templates ('over the moon', 'Convey my salam'), but incorporates authentic, specific personal goals regarding village education which demonstrate some original thought.",
+      "evidence": "I have a Plan for poor People at my village. I want to be a teacher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement/Pronoun errors ('Your are')",
+      "Spelling errors ('hare' for 'have', 'Parunts' for 'Parents')",
+      "Tense inconsistency ('came' instead of 'will come/go')"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to the structural layout of an informal letter",
+      "Clear and direct communication of the intended purpose",
+      "Specific, non-generic content regarding community service"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the letter format and fully addresses the prompt. While the structural integrity is flawless, the linguistic mechanics are weak, with frequent spelling and grammatical slips. Because the layout is perfect and the meaning is clear, the script falls into the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c8de56b33916a8332411fcd8e0bcb0497be43425e9166cdc0eeb80ff5721ee1a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:39:25.915469+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c10eb097497b8ed4170946eba1b2341267507cd286301b8782f8ed097192e988",
+    "input_tokens": 4440,
+    "output_tokens": 2878,
+    "thoughts_tokens": 2072,
+    "cost_usd": 0.001307,
+    "latency_ms": 79921,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4440,
+        "output_tokens": 2878,
+        "thoughts_tokens": 2072,
+        "cost_usd": 0.001307,
+        "latency_ms": 79921,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the basic contrast between day and night dreamers but fails to articulate the abstract theme (ambition vs. passivity), instead providing a literal paraphrase of the poem's surface meaning.",
+      "evidence": "People who dreams with wide open eye in the morning are not normal like people who dreams at night."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block as required, but the concluding sentence is logically fragmented and grammatically incoherent, weakening the overall structure.",
+      "evidence": "They are the real successful people and like the other fake dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "Significant and frequent errors in subject-verb agreement ('People who dreams', 'people... works') and singular/plural consistency ('wide open eye').",
+      "evidence": "Those people who dreams under light works hard to achieve it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoids direct copying (0% verbatim overlap), but the phrasing is very basic and lacks interpretive depth.",
+      "evidence": "Those people who dreams under light works hard to achieve it."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Noun number (singular/plural) inconsistency",
+      "Logical conjunction error"
+    ],
+    "positive_aspects": [
+      "Zero direct copying of the poem",
+      "Correct structural format (single block)"
+    ]
+  },
+  "feedback_summary": "The candidate understands the basic premise of the poem but fails to transition from a literal summary to a thematic analysis. The writing is hampered by pervasive grammatical errors, particularly in subject-verb agreement, and a confusing final sentence. While the student successfully avoided copying the text, the linguistic quality is basic.",
+  "_metadata": {
+    "task_id": "THEME_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8ea0d5a019c65a6412550dcb301a1c4b6336257b82aa6f7925f901b6a8a34725",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:23:53.017804+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "77aa548900407d43d2f5cf19e1561d68748e13512299bff97e47608674ada436",
+    "input_tokens": 4271,
+    "output_tokens": 2123,
+    "thoughts_tokens": 1398,
+    "cost_usd": 0.001064,
+    "latency_ms": 60422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4271,
+        "output_tokens": 2123,
+        "thoughts_tokens": 1398,
+        "cost_usd": 0.001064,
+        "latency_ms": 60422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

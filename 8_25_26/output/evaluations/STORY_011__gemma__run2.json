@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully extends the provided stem and develops a logical, sequential plot based on the classic fable, ensuring a clear cause-and-effect relationship between the lion's mercy and the mouse's help.",
+      "evidence": "The mouse helped the lion to se escape the trap."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear, positive conclusion where the characters become friends; however, the candidate completely omitted the required title.",
+      "evidence": "From this they were firm friends."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent and distracting errors in grammatical construction, specifically with negation ('to don't kill'), verb aspect ('was decided to'), and the invention of non-existent words ('roarnd').",
+      "evidence": "the lion was decided to don't kill the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a very predictable retelling of a well-known fable. It lacks creative descriptive detail or authentic phrasing, relying on basic and formulaic sentence structures.",
+      "evidence": "for the kind of lion, the mouse got back his life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect negation (e.g., 'to don't kill')",
+      "Morphological errors/Non-words (e.g., 'roarnd')",
+      "Tense and aspect inconsistency (e.g., 'was decided to')"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Satisfying positive resolution"
+    ]
+  },
+  "feedback_summary": "The candidate provides a logically coherent continuation of the stem, successfully navigating the plot from the initial encounter to a positive resolution. However, the script is penalized for the absence of a title. Language mechanics are significantly flawed, with recurring errors in verb usage and negation. Furthermore, the story is a formulaic reproduction of a standard fable, lacking original creative detail or elevated vocabulary.",
+  "_metadata": {
+    "task_id": "STORY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a95f2b6012f13a2ed024def8ddd8d304f5de18e5f2f5267f456dab9ff6621da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:09:47.579624+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a8d8eb975ba52f4261f37acf3a00ef81905cb34dffd78385e376627aebd86813",
+    "input_tokens": 4490,
+    "output_tokens": 2549,
+    "thoughts_tokens": 1790,
+    "cost_usd": 0.001214,
+    "latency_ms": 72420,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4490,
+        "output_tokens": 2549,
+        "thoughts_tokens": 1790,
+        "cost_usd": 0.001214,
+        "latency_ms": 72420,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

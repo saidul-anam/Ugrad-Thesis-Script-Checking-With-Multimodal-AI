@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The purpose of the letter is stated immediately and the candidate provides a specific, relevant future plan.",
+      "evidence": "I want to discuss about my future plan with you."
+    },
+    "structure_format_brevity": {
+      "rationale": "The core components (date, address, salutation, body, close, signature) are present, though the inclusion of a 'From/To' envelope-style block at the bottom is non-standard for an informal letter.",
+      "evidence": "27 June, 2026\nAzimpur, Dhaka"
+    },
+    "language_mechanics": {
+      "rationale": "The register is appropriately informal, but there are multiple mechanical errors including spelling ('prespective'), redundant prepositions ('discuss about'), and clunky phrasing.",
+      "evidence": "give me suggestions in your prespective should I do this or not."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content is authentic and creative, avoiding the memorized 'study hard' or 'go abroad' templates typical of these scripts.",
+      "evidence": "I am thinking to learn how to make an AI of my own and if it goes well I'll publish it online"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lexical/Spelling errors (prespective)",
+      "Grammatical slips (discuss about, finish in next month)"
+    ],
+    "positive_aspects": [
+      "Highly original and personalized content",
+      "Consistent informal tone"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong ability to communicate a personal narrative with an original idea (creating an AI), which elevates the script above generic responses. The informal register is consistent throughout. However, the total score is limited to the lower end of Band 4 due to frequent minor linguistic errors and a slightly confused layout at the end of the script. No structural cap was applied as only one component was flagged as missing per the metrics.",
+  "_metadata": {
+    "task_id": "LETTER_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a65e59e4bd13d171db731e72fe53ecfeac70ece39f87a02b8ce6179feb7d813",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:22:48.328412+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3e89b63e02b1e76d51a7a305d06793e1fb300e7e5cff609f7085da627618bba2",
+    "input_tokens": 4401,
+    "output_tokens": 2221,
+    "thoughts_tokens": 1470,
+    "cost_usd": 0.001106,
+    "latency_ms": 62641,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4401,
+        "output_tokens": 2221,
+        "thoughts_tokens": 1470,
+        "cost_usd": 0.001106,
+        "latency_ms": 62641,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by detailing specific post-HSC plans including a trip to the Sundarbans, BUET admission coaching, and social work.",
+      "evidence": "Now, I will share my future Plan after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate adheres to the standard informal letter format by including the date, address, salutation, body paragraphs, complimentary close, signature, and envelope details.",
+      "evidence": "From: Azmain Mahtab, Bhuighan-107 Road-2 house-325 Dhaka\nTo: MD. AUF Cumilla City-1200. Road-12, house-105, Cumilla"
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe density of basic spelling mistakes and grammatical errors involving infinitives and modal verb forms, warranting zero credit for mechanics.",
+      "evidence": "You know that I always want to addmitted myshelf in Bangladesh university of Engeoneiering and Technology."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter exhibits authentic, sequential personal thoughts and ideas rather than reproducing a memorized template.",
+      "evidence": "In the end of my addmission journy I want to some social work. That's why I'll engaged myself with some social work community."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'compliting', 'sundanban', 'addmitted', 'myshelf', 'Engeoneiering', 'freind', 'plane')",
+      "Incorrect verb forms following modals and infinitives (e.g., 'want to addmitted', 'I'll admitted', 'I'll engaged')",
+      "Word spacing and phrasing errors (e.g., 'Howmany', 'each an other', 'laten')"
+    ],
+    "positive_aspects": [
+      "Direct fulfillment of prompt requirements with concrete, personal details",
+      "Correct inclusion of essential structural letter components including the envelope box"
+    ]
+  },
+  "feedback_summary": "The candidate presents a well-developed informal letter that directly fulfills the task prompt by explaining clear future aspirations. Structure is maintained with opening and closing envelope conventions. However, language mechanics show persistent spelling errors and grammatical slips in basic verb structures.",
+  "_metadata": {
+    "task_id": "LETTER_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d9e382573f2e56a9e366272a99d828aac1d4a86f9a9935ddaba9f041341ddfeb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:06.355372+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "303badeada2924acceb336b19f3900aba1034f89674e9b032c7898db852d2935",
+    "input_tokens": 4462,
+    "output_tokens": 3635,
+    "thoughts_tokens": 2801,
+    "cost_usd": 0.010426,
+    "latency_ms": 22922,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4462,
+        "output_tokens": 3635,
+        "thoughts_tokens": 2801,
+        "cost_usd": 0.010426,
+        "latency_ms": 22922,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script addresses several core questions in the prompt, covering AI's definition, practical applications, impact on education, and negative aspects such as misinformation.",
+      "evidence": "Ai has revolutionized teching and learning and earing too."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response opens with a basic topic sentence but splits the response into two separate paragraphs, breaching the single-paragraph format requirement.",
+      "evidence": "Programming and coding is the heart of financial industry."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling slips ('date' for data, 'inputed', 'desinged', 'teching', 'explian', 'negetive', 'spreced', 'diffrence'), tense/auxiliary errors ('can are helping'), and faulty punctuation.",
+      "evidence": "Human use Ai to spreced fake news and photos. videos Ai is becoming more powerful' so the diffrence between reality and Ai is getting lessen day by day."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows authentic, unmemorized writing by referencing current AI tools (Grok, Claude, Gemini, ChatGPT), though the vocabulary and sentence structures remain rudimentary.",
+      "evidence": "Chatbot Ai like chatgpt, gemini, grok, claude can are helping humans in their daily life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'date' for data, 'inputed', 'desinged', 'teching', 'earing', 'explian', 'negetive', 'spreced', 'diffrence')",
+      "Grammatical and auxiliary errors (e.g., 'can are helping', 'Ai is just a tools', 'Human use', 'getting lessen')",
+      "Punctuation and run-on sentence structure issues"
+    ],
+    "positive_aspects": [
+      "Directly engages with guided questions on features, applications, learning, and risks",
+      "Incorporates contemporary, relevant AI examples (Siri, ChatGPT, Claude, Gemini, Grok)"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good conceptual understanding of the prompt and incorporates modern AI examples rather than relying on rote-learned templates. However, dividing the text into two distinct paragraphs violates the core structural rule for paragraph writing, resulting in a mandatory hard cap at 5 marks. In addition, the script exhibits pervasive spelling, grammatical, and punctuation errors that impede fluency.",
+  "_metadata": {
+    "task_id": "PARA_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de29b2a460bd711dd849f4c2d6af0fa690057ec68df7374051490d376f009389",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:25:43.492606+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "92694e1375485c4fb3b86fb23978e06ce67cb3997a873633248b02dffa139cea",
+    "input_tokens": 4415,
+    "output_tokens": 4227,
+    "thoughts_tokens": 3364,
+    "cost_usd": 0.011892,
+    "latency_ms": 25140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4415,
+        "output_tokens": 4227,
+        "thoughts_tokens": 3364,
+        "cost_usd": 0.011892,
+        "latency_ms": 25140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

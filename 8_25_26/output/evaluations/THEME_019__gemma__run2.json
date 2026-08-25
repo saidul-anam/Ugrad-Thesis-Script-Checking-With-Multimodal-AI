@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central contrast between night dreams (vanity) and day dreams (action/success), though the explanation is a surface-level paraphrase rather than an abstract thematic analysis.",
+      "evidence": "Dreamers of the day are the real hero's and they take their dreams as Inspairication and motivation"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows the structural requirements perfectly: it is a single coherent block and states the theme immediately in the opening sentence.",
+      "evidence": "The poem is about an inspiration named dream ."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in subject-verb agreement, spelling, and syntax that significantly hinder the professional quality of the writing.",
+      "evidence": "can unable to man to Sleep . ... Inspairication ... make it dreams truer."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoided verbatim copying of the poem's lines, but the phrasing is basic and lacks original interpretative depth.",
+      "evidence": "Dream is a common thing but varied from person to person ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement (e.g., 'Someone dream')",
+      "Orthographic errors (e.g., 'Inspairication')",
+      "Syntactic breakdown (e.g., 'can unable to man to Sleep')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Strict adherence to the single-paragraph structural format"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's core message and adheres strictly to the required structural format. However, the total score is heavily constrained by poor language mechanics, including significant spelling and grammatical errors. The analysis is a competent paraphrase but lacks the maturity of an abstract thematic interpretation. According to the Band 3 tiebreaker, the lower value is awarded due to the basic and error-prone syntax.",
+  "_metadata": {
+    "task_id": "THEME_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "78c7e4d6426b44308318867daff79312fb0f49f78a049dd18c803fb20543ee85",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:28:57.624396+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c1f6ddbfdfea0b74ffb292bec45ac3f6f7d0686dab499c69985bb40bf1015c2d",
+    "input_tokens": 4307,
+    "output_tokens": 2278,
+    "thoughts_tokens": 1524,
+    "cost_usd": 0.001114,
+    "latency_ms": 64672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4307,
+        "output_tokens": 2278,
+        "thoughts_tokens": 1524,
+        "cost_usd": 0.001114,
+        "latency_ms": 64672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

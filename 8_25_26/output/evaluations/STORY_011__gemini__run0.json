@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative continues smoothly from the stem, sequentially developing the classic plot of the lion and the mouse without logical breakdown.",
+      "evidence": "While running the mouse came very close to the lion. The mouse jumped into the lion and he woke up from sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear and positive resolution, but loses marks because it completely omits the required title.",
+      "evidence": "From this they were firm friends."
+    },
+    "language_mechanics": {
+      "rationale": "Displays recurring grammatical errors, flawed negative infinitives, incorrect passive constructions, and non-standard verb forms.",
+      "evidence": "Seeing this the lion was decided to don't kill the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies on a highly predictable fable with repetitive, basic phrasing rather than descriptive originality or mature expression.",
+      "evidence": "The mouse greeted the lion so well and he told the  lion that he will remember the kindness of lion and also back the help."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty infinitive negation (e.g., 'to don't kill')",
+      "Incorrect verb formation and spelling (e.g., 'was roarnd', 'continuesly')",
+      "Missing title required by prompt"
+    ],
+    "positive_aspects": [
+      "Logical sequential progression following the prompt stem",
+      "Satisfying resolution with a positive ending"
+    ]
+  },
+  "feedback_summary": "The script develops the prompt into a complete, coherent narrative with a positive resolution. However, no title was provided, and the writing exhibits pervasive grammatical errors, faulty verb forms ('was roarnd', 'was decided to don't kill'), and basic vocabulary, placing it at the base of Band 3 (4/7).",
+  "_metadata": {
+    "task_id": "STORY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a95f2b6012f13a2ed024def8ddd8d304f5de18e5f2f5267f456dab9ff6621da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:08:12.253850+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5303476a0c743a9e57fb742f5189265c2197a9b2397e375ddd9f26a6e6926813",
+    "input_tokens": 4489,
+    "output_tokens": 2499,
+    "thoughts_tokens": 1778,
+    "cost_usd": 0.007594,
+    "latency_ms": 16766,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4489,
+        "output_tokens": 2499,
+        "thoughts_tokens": 1778,
+        "cost_usd": 0.007594,
+        "latency_ms": 16766,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

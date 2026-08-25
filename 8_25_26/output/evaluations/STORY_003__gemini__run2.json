@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the stem, completing the full traditional narrative arc logically through the hunter encounter and the mouse's rescue.",
+      "evidence": "At that moment the mouse arrived the place. the lion requested him to help, but the mouse refused for the first time: he said if they  kill him after helping, so that the mouse didn't want to help the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a positive conclusion, but fails to provide a proper title at the beginning, and concludes with an incoherent rhyming moral statement.",
+      "evidence": "\" King in perfect with crown Not in the eitre it's just a clown \""
+    },
+    "language_mechanics": {
+      "rationale": "Severe error density in spelling, tense inconsistency, and quotation punctuation throughout the script.",
+      "evidence": "But the lion ensurt the mouse that he will wener napem the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows authentic effort with some personalized phrasing, but narrative quality and descriptive range remain constrained by weak lexical precision.",
+      "evidence": "the mouse guiltly answered the lion that he was playing and lion was a burden for the mouse."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe phonetic spelling errors (e.g., 'cathed', 'ensurt', 'wener napem', 'dit', 'whate', 'befor')",
+      "Tense inconsistencies and past tense failure (e.g., 'when the lion take', 'he will wener')",
+      "Improper dialogue punctuation and blended reported speech"
+    ],
+    "positive_aspects": [
+      "Follows a coherent and complete narrative sequence from the stem to resolution",
+      "Concludes on a constructive positive resolution where the mouse successfully frees the lion"
+    ]
+  },
+  "feedback_summary": "The candidate develops a complete and logically progressive story from the given prompt, successfully reaching a positive resolution. However, the script completely omits an initial title, appends a garbled concluding moral rhyme, and displays pervasive spelling and grammatical inaccuracies that severely impact mechanical clarity.",
+  "_metadata": {
+    "task_id": "STORY_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8bdf6f9cf0ab048aa06d5323d30478d3968cb530e36bd8be65021fed6cfa791f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:09:59.169823+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "91841f99e94c635224c6ef006c6de1c22a5f143697c9680def0016ac8c98393c",
+    "input_tokens": 4488,
+    "output_tokens": 3537,
+    "thoughts_tokens": 2757,
+    "cost_usd": 0.010189,
+    "latency_ms": 27890,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4488,
+        "output_tokens": 3537,
+        "thoughts_tokens": 2757,
+        "cost_usd": 0.010189,
+        "latency_ms": 27890,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

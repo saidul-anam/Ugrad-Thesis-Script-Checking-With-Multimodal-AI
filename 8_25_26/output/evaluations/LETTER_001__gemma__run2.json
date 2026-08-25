@@ -1,0 +1,102 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides a concrete future plan (freelancing in AI, video editing, and graphic design) that directly answers the prompt.",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam. Today I'am writing so."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six essential components of an informal letter (Address, Date, Salutation, Body, Close, Signature) are present and correctly positioned. The addition of an envelope is a positive bonus.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful... Your's ever,\nKalam"
+    },
+    "language_mechanics": {
+      "rationale": "The informal register is appropriate for the recipient, but there are frequent spelling errors and punctuation slips in the layout.",
+      "evidence": "At the beggining of the letter... I'am... self-relient... Your's ever"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content avoids a completely memorized 'guide' feel by mentioning specific modern career paths like AI and graphic design, although the opening is somewhat formulaic.",
+      "evidence": "such as video editing. graphic design, AI work and many more other works"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (beggining, self-relient)",
+      "Incorrect punctuation in complimentary close (Your's)",
+      "Incorrect contraction usage (I'am)"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout",
+      "Direct and relevant content",
+      "Appropriate informal tone"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the letter format and fully addresses the prompt with specific, relevant plans. The writing is clear and logically sequenced. However, the total score is set at the lowest value of Band 4 due to a high density of minor spelling and punctuation errors throughout the text.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e49f72906fc8002de80bd1cc1b24eb489b9824abceb27c38910ec3b35532bde1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:41:46.279005+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c169a836521c73a8fae66f81f6841ec960c1de16a8f6a411f56a27cef7d220de",
+    "input_tokens": 4404,
+    "output_tokens": 2879,
+    "thoughts_tokens": 2088,
+    "cost_usd": 0.001304,
+    "latency_ms": 81500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 2879,
+        "thoughts_tokens": 2088,
+        "cost_usd": 0.001304,
+        "latency_ms": 81500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

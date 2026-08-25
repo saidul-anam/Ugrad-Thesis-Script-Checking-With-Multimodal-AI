@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core metaphor of hope being like a bird that comforts people, but introduces extraneous invented details that do not exist in the source poem.",
+      "evidence": "In the jungle in rain, in winter and also on the strangest sea we can hear it."
+    },
+    "structure_format_brevity": {
+      "rationale": "Presented as a single block of text, but ending with a disjointed sentence fragment that disrupts structural completion.",
+      "evidence": "In our best times or on the times where we are alone."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical errors are present, including missing articles, the misspelling of 'flies' as 'flys', confusion between possessive 'its' and contraction 'it's', and an incomplete sentence structure.",
+      "evidence": "Bird always flys here and there. In the jungle in rain, in winter and also on the strangest sea we can hear it. It's singing keeps many people warm."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates independent paraphrasing with zero verbatim overlap, expressing the poem's concepts entirely in the student's own words.",
+      "evidence": "Like the bird we can find hope anywhere in any situation."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Missing determiners/articles ('compared with bird', 'Bird always')",
+      "Spelling error in verb inflection ('flys' instead of 'flies')",
+      "Punctuation/apostrophe error ('It's' instead of 'Its')",
+      "Sentence fragment at conclusion"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Accurately comprehends the central metaphorical theme of the poem",
+      "Single-block paragraph structure"
+    ]
+  },
+  "feedback_summary": "The response shows a clear understanding of the poem's central theme and successfully expresses it entirely in original words without copying. However, the score is limited to the lower end of Band 3 due to basic syntax, several mechanical errors (spelling, articles, apostrophe confusion), extraneous additions not present in the original text, and a final sentence fragment.",
+  "_metadata": {
+    "task_id": "SUMMARY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "00141ad1ef6868fa39a3ff4f893bf1ac2870d7f82485c23b6956acb68240c2b8",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T20:32:55.493161+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "a6931f8ddf4273e6da43abf03dc044bcccf52af3d283e497eaf2c2a29978daec",
+    "input_tokens": 4389,
+    "output_tokens": 2857,
+    "thoughts_tokens": 2063,
+    "cost_usd": 0.008459,
+    "latency_ms": 21844,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4389,
+        "output_tokens": 2857,
+        "thoughts_tokens": 2063,
+        "cost_usd": 0.008459,
+        "latency_ms": 21844,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

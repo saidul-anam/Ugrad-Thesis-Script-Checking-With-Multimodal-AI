@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The summary identifies the core theme of hope providing warmth and comfort during difficult times. However, marks are deducted for personal moralizing and subjective preaching rather than maintaining objective summary distance.",
+      "evidence": "We should never stop hoping cause it keeps us warm in the hardest situation of life."
+    },
+    "structure_format_brevity": {
+      "rationale": "Presented in a single block without paragraph breaks, but structure is weakened by unnecessary meta-textual opening and repetitive conclusions.",
+      "evidence": "The following tent is about hope which inspires people"
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple noticeable mechanical and lexical slips, including 'tent' for 'text', 'continues handwork' for 'continuous hard work', and the informal colloquialism 'cause'.",
+      "evidence": "to do continues handwork. It perches our soul."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates an attempt to rewrite the poem into prose, but heavily leans on sequential line-by-line adaptation of the source metaphors rather than synthesizing the meaning holistically.",
+      "evidence": "It sings the tune without words."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling and malapropism errors ('tent' instead of 'text', 'continues handwork' instead of 'continuous hard work')",
+      "Informal and conversational register ('cause')",
+      "Inclusion of subjective moral advice ('We should never stop hoping', 'we must keep hope') instead of objective summarization"
+    ],
+    "positive_aspects": [
+      "Maintains a single unified paragraph block",
+      "Correctly identifies the central metaphor of hope offering strength in hardship"
+    ]
+  },
+  "feedback_summary": "The candidate understands the central message of Emily Dickinson's poem and attempts to convey how hope comforts people in adversity. However, the summary relies on line-by-line adaptation rather than synthesized analysis, uses conversational and moralizing language ('cause', 'we must keep hope'), and contains several lexical/spelling slips ('tent', 'continues handwork'). It achieves Band 3 performance.",
+  "_metadata": {
+    "task_id": "SUMMARY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "52ef0e406d4ae688c046d1cd7293b7a0608a4bd7197827322ae197a8afb72698",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-25T00:08:26.701690+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "23562b8175c7aa2bb8e8be5c5fae11c717abd14990422ab146d259d7c3cd6388",
+    "input_tokens": 4392,
+    "output_tokens": 2902,
+    "thoughts_tokens": 2127,
+    "cost_usd": 0.008573,
+    "latency_ms": 25516,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4392,
+        "output_tokens": 2902,
+        "thoughts_tokens": 2127,
+        "cost_usd": 0.008573,
+        "latency_ms": 25516,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and sequential continuation of the stem, following the plot from the encounter to the resolution effectively.",
+      "evidence": "The mouse remembered about his promise with lion. The mouse goes to help the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and exhibits a clear sequence, but fails the explicit requirement to provide a proper title.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Severe issues with basic grammar and tense consistency. Multiple non-standard verb forms ('catched', 'collied', 'cuill') and a shift to present tense in the final paragraph ('goes', 'become').",
+      "evidence": "But lion catched him."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a verbatim retelling of the classic Aesop's fable 'The Lion and the Mouse', showing no original creative input or narrative deviation.",
+      "evidence": "With his sharpp teeth he cut the net and freed the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (shifting from past to present)",
+      "Incorrect verb conjugation (e.g., 'catched' instead of 'caught')",
+      "Spelling errors (e.g., 'collied', 'cuill', 'traped')"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Successful adherence to the prompt's narrative arc"
+    ]
+  },
+  "feedback_summary": "The candidate successfully continued the story with a logical plot and a positive resolution. However, the script is heavily penalized for the omission of a required title and significant linguistic failures, including frequent spelling errors and inconsistent tense usage. Additionally, the narrative is a memorized fable, limiting the originality score. The total score of 4 falls into Band 3, defaulting to the lower value due to basic syntax.",
+  "_metadata": {
+    "task_id": "STORY_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8522eb0331f9d14bf9631fd125dfd0b2c9f7d5962fdcd34c2b2887362abd68fe",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:29:38.495215+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bcb06f30e998e2b7352311557f24ad216a330fe963cc49ec67c8a1976df05a22",
+    "input_tokens": 4408,
+    "output_tokens": 2302,
+    "thoughts_tokens": 1564,
+    "cost_usd": 0.001131,
+    "latency_ms": 64000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4408,
+        "output_tokens": 2302,
+        "thoughts_tokens": 1564,
+        "cost_usd": 0.001131,
+        "latency_ms": 64000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

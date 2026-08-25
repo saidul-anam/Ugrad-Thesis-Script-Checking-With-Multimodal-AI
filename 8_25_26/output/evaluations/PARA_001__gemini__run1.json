@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly addresses all parts of the prompt questions, covering definitions, applications across sectors like teaching and freelancing, and threats such as job displacement and hacking without topic drift.",
+      "evidence": "AI is very useful for us but it also have some threatening aspects such as taking peoples job, data loss, privecy lack and It has become so powerful that if anyone uses it for any bad work like hacking it can affect the whole nation."
+    },
+    "structure_format_brevity": {
+      "rationale": "Maintained in a single unbroken paragraph with an opening definition and a concluding recommendation, though internal structural flow is hindered by severe run-on sentence boundaries.",
+      "evidence": "Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain."
+    },
+    "language_mechanics": {
+      "rationale": "Exhibits frequent grammatical and mechanical errors, including subject-verb disagreement ('try', 'it also have'), spelling errors ('sectores', 'presisely', 'privecy', 'Beacuse'), double verbs ('is has become'), and errant internal punctuation ('time. and energy').",
+      "evidence": "It is has become an important part of our daily life. Beacuse of AI teaching and learning got revolutionized."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Presents authentic, unmemorized personal formulation and practical examples (slide creation, doctor diagnostics) rather than a rote guidebook template, though phrasing remains basic.",
+      "evidence": "Freelancers use AI to do their work fast which saves both time. and energy."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes ('sectores', 'presisely', 'Beacuse', 'privecy')",
+      "Subject-verb agreement failures ('contains hardware and software and try', 'it also have')",
+      "Punctuation and run-on sentences ('time. and energy.', missing period between 'students' and 'AI is very useful')",
+      "Faulty syntax and double verbs ('It is has become', 'help teacher to make gather information')"
+    ],
+    "positive_aspects": [
+      "Maintains single-paragraph format compliant with NCTB requirements",
+      "Directly addresses all guiding questions in the prompt",
+      "Demonstrates authentic, non-templated engagement with concrete examples"
+    ]
+  },
+  "feedback_summary": "The script answers all guiding questions on Artificial Intelligence within a single unified paragraph, avoiding formulaic memorization. However, score progression is limited to Band 3 due to a high density of grammatical inaccuracies, spelling errors, syntax breakdowns, and run-on sentences.",
+  "_metadata": {
+    "task_id": "PARA_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e2b3e3553173dd24caec05e16adbd611eb376220c86cf9e5dcd994e534af167b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:34:18.229557+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9cda56dc7aa45a000d29ba9993a8686073fa62f922062016364585a92d3c9ab6",
+    "input_tokens": 4433,
+    "output_tokens": 3190,
+    "thoughts_tokens": 2306,
+    "cost_usd": 0.009305,
+    "latency_ms": 22422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4433,
+        "output_tokens": 3190,
+        "thoughts_tokens": 2306,
+        "cost_usd": 0.009305,
+        "latency_ms": 22422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

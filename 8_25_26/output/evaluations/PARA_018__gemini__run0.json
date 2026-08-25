@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all five prompt questions (definition, features, everyday applications, educational impact, and negative consequences) with clear contextual relevance.",
+      "evidence": "The features of AI or artificial intelligence i that it can talk,  listen, write and think like human. It can also solve pro within less time."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single continuous paragraph with a defined introductory statement and a concluding warning, though transitions between points are slightly abrupt.",
+      "evidence": "Artificial intelligence is a kind of machine or  robot which requires to human intelligence."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling slips ('writting', 'datas', 'chopter', 'gelting', 'humon', 'mone') and subject-verb/grammatical errors ('human are', 'revolutionized changes', 'Those ai threat').",
+      "evidence": "Now a days, human are gelting  attached with AI. more than They spend more time with AI mone than human."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script demonstrates authentic ideas by referencing real-world AI tools (ChatGPT, Gemini, Siri, Deepseek), but relies on repetitive and basic phrasing across sentences.",
+      "evidence": "We have some programed AI such as:- G Chatgpt, Gemini, Alexa, Siri, Deepseek etc. which helps us in our daily life do make decisions."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'writting', 'chopter', 'gelting', 'humon', 'mone')",
+      "Plural/count noun confusion (e.g., 'datas', 'in other')",
+      "Grammar and syntax errors (e.g., 'revolutionized changes', 'human are gelting', 'Those ai threat')"
+    ],
+    "positive_aspects": [
+      "Follows single-paragraph formatting strictly without breaking into sub-sections",
+      "Directly addresses every guiding question in the prompt",
+      "Uses relevant modern examples (Deepseek, ChatGPT, Gemini, Alexa)"
+    ]
+  },
+  "feedback_summary": "The script fulfills all content requirements of the prompt within a single unified paragraph and uses relevant real-world examples. However, the score is placed at the lower end of Band 3 (6/10) due to frequent spelling inaccuracies, fragmented syntax, and basic sentence structures.",
+  "_metadata": {
+    "task_id": "PARA_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "329a5f9f42ab0b1dc4550d79dccb8986a462be4172f329fa8ed96fc23ecd814e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:10:13.734122+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c872e17aba4b504ca9e61d3527ecfadf70872fd0bc5d28255c6ec32cca457031",
+    "input_tokens": 4514,
+    "output_tokens": 3273,
+    "thoughts_tokens": 2420,
+    "cost_usd": 0.009537,
+    "latency_ms": 29655,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4514,
+        "output_tokens": 3273,
+        "thoughts_tokens": 2420,
+        "cost_usd": 0.009537,
+        "latency_ms": 29655,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

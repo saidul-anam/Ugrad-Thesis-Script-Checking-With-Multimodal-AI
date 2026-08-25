@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The purpose of the letter is stated immediately, and the content directly addresses the prompt by detailing vacation, university goals, and social work.",
+      "evidence": "Now, I will share my future Plan after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "The letter contains almost all structural elements (Address, Date, Salutation, Body, Close, Signature). Per computed metrics, only one component is missing, which is not enough to trigger the hard cap.",
+      "evidence": "27 June, 2026\nBhuighan-107, Dhaka\nDear Alif,"
+    },
+    "language_mechanics": {
+      "rationale": "The informal register is appropriate, but there are frequent spelling errors ('compliting', 'Engeoneiering', 'plane') and syntactical issues.",
+      "evidence": "Howmany days we don't meet each an other."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows authenticity and a logical flow of thoughts, avoiding generic templates by mentioning specific goals like BUET and the Sundarbans.",
+      "evidence": "I will go to the sundanban... I always want to addmitted myshelf in Bangladesh university of Engeoneiering and Technology."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies (e.g., 'compliting', 'Engeoneiering', 'plane')",
+      "Syntactical errors in question/negative structures ('Howmany days we don't meet')"
+    ],
+    "positive_aspects": [
+      "Authentic and personalized content",
+      "Correct adherence to informal letter register"
+    ]
+  },
+  "feedback_summary": "The student has successfully fulfilled the prompt's requirements with a coherent and authentic set of future plans. While the structure is nearly complete and the tone is appropriate, the score is placed at the lower end of Band 4 due to significant errors in spelling and basic sentence construction. No structural cap was applied as the missing component count was below the threshold.",
+  "_metadata": {
+    "task_id": "LETTER_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d9e382573f2e56a9e366272a99d828aac1d4a86f9a9935ddaba9f041341ddfeb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:44:55.117292+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bcd13be520c10ca602b3a13880b6998242a3111e2966bd96fa768a00848dbf0f",
+    "input_tokens": 4463,
+    "output_tokens": 2438,
+    "thoughts_tokens": 1660,
+    "cost_usd": 0.001178,
+    "latency_ms": 68500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4463,
+        "output_tokens": 2438,
+        "thoughts_tokens": 1660,
+        "cost_usd": 0.001178,
+        "latency_ms": 68500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

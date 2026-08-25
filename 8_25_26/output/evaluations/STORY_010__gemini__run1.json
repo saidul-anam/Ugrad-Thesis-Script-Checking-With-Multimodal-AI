@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative continues seamlessly from the provided prompt, maintaining a logical and sequential plot progression throughout the story.",
+      "evidence": "While running, the mouse was fall into the lion. The lion woke up and see the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "A title is provided and the story reaches a positive, constructive conclusion with a moral, though paragraphing is somewhat fragmented.",
+      "evidence": "The lion become happy and understand that not to Judge anyone by his height."
+    },
+    "language_mechanics": {
+      "rationale": "Severe and pervasive tense inconsistencies, awkward passive-like verb constructions, and subject-verb agreement errors throughout the text warrant no credit in this criterion.",
+      "evidence": "The mouse become afraid and request him not to eat him. The mouse Promised to the lion that he would help him one day. The lion was laughed and said that you are too short to help me any situation."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script follows a standard, predictable retelling of a classic Aesop fable with basic vocabulary and limited descriptive depth.",
+      "evidence": "He goes to the lion and cut the net by his teeth and rescue the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inappropriate auxiliary verb usage with past verbs ('was fall', 'was laughed')",
+      "Tense inconsistency shifting between past and simple present ('see', 'become', 'goes', 'cut', 'rescue')",
+      "Capitalization and preposition errors ('Was', 'Promised', 'Judge', 'fall in a trapped')"
+    ],
+    "positive_aspects": [
+      "Logical story progression adhering strictly to the prompt stem",
+      "Inclusion of an appropriate title and an explicit moral conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete and coherent continuation of the prompt with an appropriate title, clear sequential events, and a positive moral resolution. However, the score is held down by persistent grammatical and tense errors (e.g., 'was fall', 'see', 'was laughed') and basic narrative expression, placing the response at the lower boundary of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "95b6aa4fc876a73433a5a7312cf0b0b039c9132a79ed7fe990d032b4f4a8e9cb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:36:47.255476+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "3d589337037da45357d38023a85a99053e31de473131f9ce4a30d160ddfeb65a",
+    "input_tokens": 4416,
+    "output_tokens": 3101,
+    "thoughts_tokens": 2317,
+    "cost_usd": 0.009077,
+    "latency_ms": 33344,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4416,
+        "output_tokens": 3101,
+        "thoughts_tokens": 2317,
+        "cost_usd": 0.009077,
+        "latency_ms": 33344,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

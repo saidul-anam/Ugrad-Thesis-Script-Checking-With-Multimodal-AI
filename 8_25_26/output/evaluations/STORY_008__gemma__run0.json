@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a seamless continuation of the stem, maintaining a logical and sequential plot that resolves the conflict effectively.",
+      "evidence": "the mouse stumbled on the taile of the lion... cutted the net using his sharp teeths"
+    },
+    "structure_format_brevity": {
+      "rationale": "The story concludes with a positive ending and a clear moral lesson; however, the candidate failed to provide a title as explicitly requested in the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of basic errors including spelling ('taile', 'pitty', 'iscreaming'), incorrect irregular verb forms ('cutted'), and faulty pluralization ('teeths').",
+      "evidence": "cutted the net using his sharp teeths"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a standard reproduction of a memorized Aesop's fable. It lacks creative turns, vivid descriptive detail, or original phrasing.",
+      "evidence": "The lion thanked the mouse for saving his life"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (taile, pitty, iscreaming)",
+      "Morphological errors (cutted, teeths)",
+      "Tense inconsistency (forgive instead of forgiven)"
+    ],
+    "positive_aspects": [
+      "Strong narrative cohesion",
+      "Clear moral resolution"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good grasp of storytelling structure and plot development, successfully concluding the story with a constructive moral. However, the work is heavily reliant on a memorized template and contains numerous basic linguistic errors in spelling and grammar. The omission of the required title also resulted in a loss of structural marks.",
+  "_metadata": {
+    "task_id": "STORY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1f7656b5bb782bb0bbc24a9645a5182a97a77f8f546c8b3414ec40d58312cd89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:21:30.354086+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "50d9708cd0da1265f27ab24ff0bac9cad66b6032589594584043dc78a7baf9ce",
+    "input_tokens": 4477,
+    "output_tokens": 2983,
+    "thoughts_tokens": 2267,
+    "cost_usd": 0.001343,
+    "latency_ms": 83733,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4477,
+        "output_tokens": 2983,
+        "thoughts_tokens": 2267,
+        "cost_usd": 0.001343,
+        "latency_ms": 83733,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

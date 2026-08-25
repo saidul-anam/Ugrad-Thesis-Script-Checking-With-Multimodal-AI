@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the stem and maintains a coherent, sequential storyline through the capture and rescue.",
+      "evidence": "While running it accidentally bumps onto the lion which leads to the lion waking up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a satisfying and positive ending showing mutual friendship, but completely omits the required story title.",
+      "evidence": "That's how the mouse helped the king of jungle the lion and they becomes best friends."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive shifts between past and present tense throughout the narrative, alongside spelling mistakes and preposition errors.",
+      "evidence": "After seeing the mouse the lion  roars with the irritation and rage and  told the mouse"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, predictable retelling of a well-known fable with straightforward sentence structures.",
+      "evidence": "It was a trap set by the hunters. After seeing this the mouse doesn't hesitate even for a bit and rushes to help."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inconsistent narrative tense (arbitrary switching between simple present and simple past)",
+      "Spelling errors (e.g., 'pathetie', 'migh')",
+      "Omission of required story title",
+      "Prepositional and grammatical slips (e.g., 'let the mouse of the hook', 'cut of the net', 'real releasing')"
+    ],
+    "positive_aspects": [
+      "Clear, sequential plot continuation from the stem",
+      "Positive and constructive thematic resolution",
+      "Effective incorporation of dialogue to advance the plot"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a complete and cohesive continuation of the prompt with a positive moral resolution. However, the response lacks a title, exhibits standard/basic vocabulary, and suffers from chronic tense inconsistency (jumping between present and past tense) along with multiple spelling and mechanical errors. Consequently, the script is placed at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3130fce00120ed9008a0472fd0d9e4a35af1940945b37a8b5d7a63e890617b77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:11:11.928076+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "4675188d0d73c55dac5bc2db5cc97d3e2b97d0bce28071faca5883e7fa7ede76",
+    "input_tokens": 4498,
+    "output_tokens": 2909,
+    "thoughts_tokens": 2141,
+    "cost_usd": 0.008622,
+    "latency_ms": 17859,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4498,
+        "output_tokens": 2909,
+        "thoughts_tokens": 2141,
+        "cost_usd": 0.008622,
+        "latency_ms": 17859,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

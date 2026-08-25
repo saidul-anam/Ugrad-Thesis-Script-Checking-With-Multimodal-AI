@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate confuses the abstract theme with a literal summary of the poem's content. Instead of identifying the theme of ambition or determination, they simply describe the two types of dreamers mentioned in the text.",
+      "evidence": "Their are two types of dreams."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block as required, but the structure is fragmented and lacks a sophisticated thematic lead sentence.",
+      "evidence": "People dreams in their life."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in subject-verb agreement and basic spelling/homophone usage.",
+      "evidence": "People dreams... Their are... what don't let us sleep."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids direct copying and uses their own words, but the phrasing is basic and lacks any interpretation of the poem's imagery.",
+      "evidence": "And the other is what don't let us sleep."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.5,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Homophone confusion (Their vs There)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Correctly identifies the basic dichotomy of the poem"
+    ]
+  },
+  "feedback_summary": "The candidate provided a literal summary of the poem rather than extracting the abstract theme. While they succeeded in paraphrasing the text in their own words (avoiding copying), the writing is marred by repetitive subject-verb agreement errors and a lack of thematic depth. The response falls into Band 2 as it prioritizes plot/content description over thematic analysis.",
+  "_metadata": {
+    "task_id": "THEME_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c7a7ed79c238dab5243534e83db8748acd2287447d290bde5a5ba5541f73156f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:33:02.263768+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b7da84819c37a1f92f29b43bb59b586375dab8383a8cc641501d9b82b6e33283",
+    "input_tokens": 4277,
+    "output_tokens": 2312,
+    "thoughts_tokens": 1607,
+    "cost_usd": 0.001121,
+    "latency_ms": 65032,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 2312,
+        "thoughts_tokens": 1607,
+        "cost_usd": 0.001121,
+        "latency_ms": 65032,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

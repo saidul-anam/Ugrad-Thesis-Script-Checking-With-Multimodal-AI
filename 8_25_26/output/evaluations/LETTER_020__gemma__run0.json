@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides a comprehensive future plan including travel, education, and career goals.",
+      "evidence": "In your last letter you want to about my after Hsc plans. So, today I will write about it."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components (address, date, salutation, body, complimentary close, and signature) are present and correctly positioned.",
+      "evidence": "27 June, 2026\nDonia, Dhaka-1236\n\nDear Habib,"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in spelling ('Japanesse', 'universitys', 'bussiness') and basic syntax ('want to about', 'settle their'), though the meaning remains clear.",
+      "evidence": "My main target is to apply for Japanesse national universitys."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The introduction follows a highly memorized template, but the body of the letter contains authentic and creative phrasing regarding the local academic climate.",
+      "evidence": "I don't want participate In Bangladesh's University admission hell."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Japanesse, universitys, bussiness)",
+      "Homophone confusion (their vs there)",
+      "Omission of verbs (want to [know] about)"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to letter layout",
+      "Authentic expression ('admission hell')",
+      "Clear logical progression of future goals"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates excellent structural knowledge and fully addresses the prompt with a clear, logical plan. While the writing is hindered by several spelling and grammatical mistakes and a formulaic introduction, the authenticity of the content and the correct layout justify a score at the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "50e76c73e1093f8f7102087f4038383a4d402bcbcb70edb483f1548885973793",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:36:17.847310+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "44448231dac4b4d6dab2dc17eee1305ada74f697f3c8fb6f20692a859be94126",
+    "input_tokens": 4402,
+    "output_tokens": 2973,
+    "thoughts_tokens": 2220,
+    "cost_usd": 0.001332,
+    "latency_ms": 83812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4402,
+        "output_tokens": 2973,
+        "thoughts_tokens": 2220,
+        "cost_usd": 0.001332,
+        "latency_ms": 83812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

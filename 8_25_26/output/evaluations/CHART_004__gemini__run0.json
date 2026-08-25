@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate misreads key data figures from the chart (recording Coal as 49% instead of 46% and Hydro-electric as 18% instead of 16%), which undermines the analytical accuracy of the response.",
+      "evidence": "In 1980, we see the largest electrycity source is Coal which hold 49%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The structure is disorganized and repetitive; the student unnecessarily repeats the introductory summary in the final paragraph and introduces external commentary not shown in the chart.",
+      "evidence": "Which is so much expensive to make on genarate the electricity."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling errors ('sounces', 'Nuclean', 'electrycity', 'diffrence', 'empact', 'Pencantage'), verb tense inconsistency ('hold', 'dominant'), and sentence fragments beginning with 'Which' occur throughout.",
+      "evidence": "Which is 18% little bit to the secound largest Natural gas, Now, it's turn to 4th Position"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "There is an attempt to use comparative framing ('secound largest', 'lion Pencantage', 'difference is 47%'), though the expression remains basic and clumsy.",
+      "evidence": "There are hold the lion Pencantage of source is coal which is 49%."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data misreading and incorrect percentages (49% for coal, 18% for hydro-electric)",
+      "Sentence fragments starting with relative pronouns ('Which hold...', 'Which is...')",
+      "Pervasive spelling errors ('sounces', 'Nuclean', 'Pencantage', 'resounce', 'empact')",
+      "Redundant concluding paragraph repeating earlier points"
+    ],
+    "positive_aspects": [
+      "Identifies the highest and lowest sources of electricity",
+      "Attempts comparative analysis between the dominant and least significant categories"
+    ]
+  },
+  "feedback_summary": "The script attempts to analyze the chart by identifying the highest and lowest energy sources and calculating a difference between them. However, accuracy is compromised by misreading the source data (49% instead of 46%, 18% instead of 16%). The response contains substantial grammatical errors, sentence fragments, heavy spelling mistakes, and repetitive concluding text, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "CHART_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ff85287f6ade61e119d6d1721fe03d5e8fca88ebdfa86af1e2c3dab3c00f8287",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:12:37.998337+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "56d2549576c279490641902dea494bbbafcc68fb84eb33a08d078a6fa9b4a6f9",
+    "input_tokens": 4555,
+    "output_tokens": 3883,
+    "thoughts_tokens": 3023,
+    "cost_usd": 0.011074,
+    "latency_ms": 26484,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4555,
+        "output_tokens": 3883,
+        "thoughts_tokens": 3023,
+        "cost_usd": 0.011074,
+        "latency_ms": 26484,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

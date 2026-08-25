@@ -1,0 +1,100 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fundamentally misattributes the highest data point (Coal 46%) to Natural Gas and includes confusing numerical errors (224%, 221%) that contradict the chart.",
+      "evidence": "majority of USA's electricity come natural gases. Which covered almost 224% 46% of the pie."
+    },
+    "structure_format_brevity": {
+      "rationale": "While a lead sentence is present, the candidate violates the strict prohibition against personal opinions and external facts, dedicating nearly half the response to an essay on global warming and nuclear safety.",
+      "evidence": "fossil fuel can run out pretty easily. Not only that, the use of causes global warming and all sorts of natural catamilities."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains repeated severe spelling errors and grammatical failures in subject-verb agreement and sentence construction.",
+      "evidence": "The pie-chant shows... the use of causes global warming and all sorts of natural catamilities."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses basic comparative transitions to organize the data, though they are simplistic.",
+      "evidence": "Next in line is... Oil makes its place at number four"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data misattribution (Coal vs Natural Gas)",
+      "Spelling errors (pie-chant, catamilities, emergy)",
+      "Inclusion of external opinions/moral judgments"
+    ],
+    "positive_aspects": [
+      "Accurate reporting of lower-value data points (Hydro, Oil, Nuclear)",
+      "Presence of an introductory overview sentence"
+    ]
+  },
+  "feedback_summary": "The response is fundamentally flawed due to the inclusion of external opinions on global warming and nuclear energy, which triggers a structural cap and severely penalizes the structure score. Data accuracy is poor for the primary sources, with the candidate confusing Coal and Natural Gas. Furthermore, the writing is marred by frequent spelling errors ('pie-chant') and grammatical inconsistencies. While the candidate attempted to use comparative sequencing, the total lack of objectivity and the data errors place this in Band 1.",
+  "_metadata": {
+    "task_id": "CHART_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7a473ffce7ad92b90e5e06b992c72f5b6cee5f637eabe8f3825122d786341092",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:53:49.100892+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0abf5c436ecdccef174150641016898adf2359b6152cdb2ca413a510889dda78",
+    "input_tokens": 4475,
+    "output_tokens": 3092,
+    "thoughts_tokens": 2278,
+    "cost_usd": 0.001375,
+    "latency_ms": 87108,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4475,
+        "output_tokens": 3092,
+        "thoughts_tokens": 2278,
+        "cost_usd": 0.001375,
+        "latency_ms": 87108,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

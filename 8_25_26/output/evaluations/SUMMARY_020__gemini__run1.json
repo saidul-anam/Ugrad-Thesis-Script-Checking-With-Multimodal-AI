@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate recognizes the subject as hope, but completely misinterprets core poetic lines and inverts the poem's concluding meaning by stating that hope asks for everything instead of never asking for a crumb.",
+      "evidence": "It asked about everything."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single paragraph, but relies on an exclamatory and conversational introductory sentence rather than a concise summary statement.",
+      "evidence": "This poem is all about Hope!"
+    },
+    "language_mechanics": {
+      "rationale": "Demonstrates recurring mechanical and grammatical faults, including modal verb followed by past tense ('can came'), article stacking with a superlative ('a chillest a land'), and missing determiners/pluralization ('Human can't').",
+      "evidence": "Hope can came from a chillest a land"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts to use their own words and avoids verbatim copying from the source poem, but the paraphrasing is awkward, overly literal, and distorts the central metaphors.",
+      "evidence": "If hope comes true that is the sweetest if not that is the sourest like a storm."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Modal verb error with past tense form ('can came')",
+      "Redundant article before superlative ('a chillest a land')",
+      "Severe misinterpretation of poem's explicit ending ('It asked about everything')",
+      "Conversational/exclamatory opening tone ('Hope!')"
+    ],
+    "positive_aspects": [
+      "Composed entirely in the candidate's own words with zero verbatim copying",
+      "Maintains a single continuous block without splitting into multiple paragraphs"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an earnest attempt to summarize the poem using their own words rather than copying lines directly. However, the response misinterprets several key metaphors and concludes with a factual inversion of Dickinson's message (stating hope asks for everything rather than nothing). Coupled with basic syntax and grammatical errors, the script places at the lower end of Band 2 (4/10).",
+  "_metadata": {
+    "task_id": "SUMMARY_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ddf7c387ca51a688d3e24cfa29648b70b2f8121cbf7baeea4330222b87a5e479",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-25T00:28:39.493812+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "21ec3b193a46d4b3143d28377c2266fe24145b61db75366d0f8fe38f93873b1a",
+    "input_tokens": 4406,
+    "output_tokens": 3219,
+    "thoughts_tokens": 2435,
+    "cost_usd": 0.009369,
+    "latency_ms": 20531,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4406,
+        "output_tokens": 3219,
+        "thoughts_tokens": 2435,
+        "cost_usd": 0.009369,
+        "latency_ms": 20531,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

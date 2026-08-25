@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem and provides a logically sequenced plot that reaches a resolution.",
+      "evidence": "He came and eat the met and free the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "While the story reaches a positive ending, the candidate completely failed to provide a title as explicitly required by the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe lack of tense consistency (mixing present and past) and frequent spelling errors that hinder the professional quality of the writing.",
+      "evidence": "the mouse get into the sleeping lion nose... playing on a race quite happity... walking in the jangle"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story is a direct reproduction of a common, memorized fable with no original creative turns or vivid descriptions.",
+      "evidence": "the mouse promised the lion to help him in his danger"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (e.g., 'get' instead of 'got', 'agree' instead of 'agreed')",
+      "Spelling errors ('happity', 'thim', 'jangle', 'met')",
+      "Missing structural component (Title)"
+    ],
+    "positive_aspects": [
+      "Clear understanding of plot progression",
+      "Successful resolution of the conflict"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a clear understanding of the story's plot and successfully completed the narrative arc. However, the script is heavily penalized for the omission of a title and poor linguistic mechanics, specifically regarding subject-verb agreement and tense consistency. The content is highly formulaic, relying on a memorized fable without any original descriptive effort.",
+  "_metadata": {
+    "task_id": "STORY_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ab428952ba0c2cc4fae2fc8cc780d4b8ba2bea283c6112f5368416d8b026fa9e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:26:51.594853+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d6f8857b79ffbaeb65bebff4a708e137768b489c4d9b65cfa9247e124207e441",
+    "input_tokens": 4457,
+    "output_tokens": 2451,
+    "thoughts_tokens": 1730,
+    "cost_usd": 0.001181,
+    "latency_ms": 69000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4457,
+        "output_tokens": 2451,
+        "thoughts_tokens": 1730,
+        "cost_usd": 0.001181,
+        "latency_ms": 69000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

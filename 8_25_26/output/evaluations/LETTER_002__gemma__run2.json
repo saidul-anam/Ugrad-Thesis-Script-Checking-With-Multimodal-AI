@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, explicitly stating the purpose of the letter and outlining specific goals (University admission and becoming an engineer).",
+      "evidence": "you wanted to know about my future plan after passing H.S.C. Now, I describe about it."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required layout components (Address, Date, Salutation, Body, Closing, Signature) are present and correctly positioned.",
+      "evidence": "27 June 2026\nFaridabad,\nDhaka-1204\nDear Jarif... Yours ever\nMakin"
+    },
+    "language_mechanics": {
+      "rationale": "While the informal register is appropriate, the text contains multiple spelling errors and grammatical inconsistencies (e.g., 'eingineer', 'fullfill', 'momenterm').",
+      "evidence": "I want to be a eingineer and admitted into a Dhaka University so that's time is the most important momenterm to fullfill my dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The thoughts follow a logical sequence. While some phrases are formulaic ('Hope you are well'), the specific details regarding university preparation show authentic intent.",
+      "evidence": "My dream is after passing hsc exam I will take hardest preparation for my University admission."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., eingineer, fullfill, momenterm, familys)",
+      "Article omission (e.g., grace of Almighty)",
+      "Inconsistent capitalization"
+    ],
+    "positive_aspects": [
+      "Perfect structural compliance",
+      "Clear and direct response to the prompt"
+    ]
+  },
+  "feedback_summary": "The script is structurally complete and effectively conveys the required information. The total score is placed at the lower end of Band 4 because, while the communication is clear and the layout is flawless, there are pervasive mechanical errors in spelling and grammar that prevent it from reaching the top mark.",
+  "_metadata": {
+    "task_id": "LETTER_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f1b47b897410335b68604983298b0572f75125711f1f153025725be979e47",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:08:40.399231+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9003773a33e97688521eddf798904a80e41c3a2da4907d63da67c0fa99fe91d9",
+    "input_tokens": 4407,
+    "output_tokens": 2430,
+    "thoughts_tokens": 1653,
+    "cost_usd": 0.00117,
+    "latency_ms": 76655,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 2430,
+        "thoughts_tokens": 1653,
+        "cost_usd": 0.00117,
+        "latency_ms": 76655,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

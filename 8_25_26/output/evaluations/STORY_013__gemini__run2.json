@@ -1,0 +1,96 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly extends the provided prompt stem, maintaining sequential plot progression through the mouse's capture, the mutual agreement, the hunter's trap, and the eventual rescue.",
+      "evidence": "While running, the mouse get into the sleeping lion nose. As a result, the lion  woke up and chased the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a clear and positive resolution, but loses marks because the candidate failed to provide a title as explicitly instructed.",
+      "evidence": "The lion was very greatful to the mouse. The lion thanked the mouse to help him."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of grammatical breakdowns, irregular past-tense usage, faulty verb structures, incorrect word choices, and multiple spelling errors.",
+      "evidence": "The lion was started to laughing because the mouse was so small how he could help, the lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing follows a standard, predictable fable plot line with basic vocabulary and minimal descriptive flair or dialogue punctuation.",
+      "evidence": "He came and eat the met and free the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency and faulty verb formations (e.g., 'the mouse get', 'was started to laughing', 'the lion agree', 'eat the met')",
+      "Spelling, lexical, and typographical errors (e.g., 'happity', 'forgive' instead of 'beg/plead', 'thim', 'jangle', 'se net', 'couldnot', 'greatful')"
+    ],
+    "positive_aspects": [
+      "Clear sequential storyline continuing directly from the stem",
+      "Reaches a complete and positive conclusion where the lion's life is saved"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the plot and smoothly develops the story to a satisfying positive conclusion. However, the score is constrained to the lower end of Band 3 due to the omission of an appropriate story title and frequent grammatical, tense, and spelling errors throughout the script.",
+  "_metadata": {
+    "task_id": "STORY_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ab428952ba0c2cc4fae2fc8cc780d4b8ba2bea283c6112f5368416d8b026fa9e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:25:54.835186+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "8f1cb076caeac640cc5d609929428457f294ccaaa47e32d17ef849a5bd960229",
+    "input_tokens": 4456,
+    "output_tokens": 3192,
+    "thoughts_tokens": 2408,
+    "cost_usd": 0.009317,
+    "latency_ms": 17187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4456,
+        "output_tokens": 3192,
+        "thoughts_tokens": 2408,
+        "cost_usd": 0.009317,
+        "latency_ms": 17187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

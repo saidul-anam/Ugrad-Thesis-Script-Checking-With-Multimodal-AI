@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate explicitly states the purpose of the letter and provides a variety of specific future plans (computer learning, business, tuitions) that directly fulfill the prompt.",
+      "evidence": "In your letter, You have wanted to know about the future plan after passing HSC exam. Now I'm writing you about about it."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural elements (Address, Date, Salutation, Body, Close, and Signature) are present and correctly positioned.",
+      "evidence": "27 June , 2026\nAzimpure , Dhaka\n\nDear fried,\n...Yours ever\nSakib"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and grammatical slips that hinder professional quality, although the meaning remains clear.",
+      "evidence": "Dear fried... I received your letter yeasted... it'll will be penferect"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The sequence of thoughts is logical; however, the candidate uses several formulaic phrases typical of memorized templates for the intro and outro.",
+      "evidence": "At first take my condial love and good wishes to you... HSC exam is knocking at door."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (e.g., 'fried' for 'friend', 'yeasted' for 'yesterday')",
+      "Tense/Modal redundancy (e.g., 'it'll will')"
+    ],
+    "positive_aspects": [
+      "Perfect structural layout adherence",
+      "Relevant and detailed content"
+    ]
+  },
+  "feedback_summary": "The script is structurally sound and fully addresses the prompt's requirements. However, it contains numerous mechanical errors in spelling and syntax. According to the Band 4 tiebreaker rules, the lowest value of the band (4) is awarded because while the structure and content are strong, the language mechanics show multiple errors.",
+  "_metadata": {
+    "task_id": "LETTER_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "979443a216a6382e2c776d1dc7d85f4ac53a6aaf075c5ba2d093d4bdc0d75f89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:11:42.348261+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "20f2ce4e4f620205a9aff4a7ee5180eb0748694ea056acd0e97e21249ca5f57a",
+    "input_tokens": 4466,
+    "output_tokens": 2415,
+    "thoughts_tokens": 1650,
+    "cost_usd": 0.001171,
+    "latency_ms": 84172,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4466,
+        "output_tokens": 2415,
+        "thoughts_tokens": 1650,
+        "cost_usd": 0.001171,
+        "latency_ms": 84172,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

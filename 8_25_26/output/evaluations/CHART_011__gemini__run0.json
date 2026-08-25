@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures most data points and orders them hierarchically, but makes a factual labelling error by attributing the 46% figure to oil instead of coal before later mentioning coal.",
+      "evidence": "The other source amount of oil is 46%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response presents data in a mechanical line-by-line format and violates the analytical requirement by concluding with irrelevant personal opinions and moralizing statements about energy preservation.",
+      "evidence": "Every source of electricity is very important for us. We have to increased the amount of the sicsourcen of electricity."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors, fused/malformed words, and grammatical inaccuracies throughout the text.",
+      "evidence": "The another source is nucleare and it's amount is 2%."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies heavily on repetitive sentence templates and lacks standard comparative vocabulary, using unnatural phrasing to compare figures.",
+      "evidence": "Nuclear's source amount is short from the source amount of Hydro-electric power."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors and corrupted words ('fixe', 'nucleare', 'isourcenamount', 'sicsourcen')",
+      "Grammar and syntax errors ('The another source', 'have to increased', 'short from')",
+      "Inclusion of external personal opinions and prescriptive moral advice in a chart report"
+    ],
+    "positive_aspects": [
+      "Includes an introductory overview identifying the chart topic and year",
+      "Successfully identifies rankings from 2nd highest down to lowest"
+    ]
+  },
+  "feedback_summary": "The candidate attempts to describe the chart and provides a basic ranking of the energy sources. However, the description is mechanically listed line-by-line, contains multiple spelling and syntactic errors, mistakenly mislabels data (attributing 46% to oil), and includes external opinions and conservation advice that trigger the graph external facts cap rule. The overall merit places the script in Band 2.",
+  "_metadata": {
+    "task_id": "CHART_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "89bb7d7a28b8fd56a0e6ae66e9877c200833cbfb34097e0182bd13c010de8e0c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:06:46.687822+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d4a57b1933feb3b65b9ee80a9c0997ce62e1e230d85a669e0af6fa78bf77329d",
+    "input_tokens": 4481,
+    "output_tokens": 3989,
+    "thoughts_tokens": 3204,
+    "cost_usd": 0.011317,
+    "latency_ms": 24280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4481,
+        "output_tokens": 3989,
+        "thoughts_tokens": 3204,
+        "cost_usd": 0.011317,
+        "latency_ms": 24280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

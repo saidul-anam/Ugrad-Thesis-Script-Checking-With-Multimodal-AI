@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central theme of the power of dreams and the distinction between night dreams and day dreams, though the explanation is superficial.",
+      "evidence": "The poem is about the power of dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "The student incorrectly included a letter-style header (address and date) which is irrelevant to a theme task, though the actual response is a single block.",
+      "evidence": "Nazipur, Naogaon, Date: 27-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in subject-verb agreement, pluralization, and spelling ('subconsus').",
+      "evidence": "this are only subconsus activity"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is written in the candidate's own words with zero verbatim copying, but it lacks a deeper interpretation of the poem's imagery.",
+      "evidence": "Day dream can reache help people to reach goal."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (subconsus)",
+      "Subject-verb agreement (this are)",
+      "Incorrect format (included address/date)"
+    ],
+    "positive_aspects": [
+      "No verbatim copying from the source text",
+      "Correct identification of the core contrast in the poem"
+    ]
+  },
+  "feedback_summary": "The candidate understands the core concept of the poem (day dreams vs night dreams) and avoids plagiarism. However, the response is severely marred by poor language mechanics and a confusing attempt to use a letter format for a theme analysis. The thematic interpretation is basic rather than abstract.",
+  "_metadata": {
+    "task_id": "THEME_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "626f017fdef24047c80e7cbe5432b263c7dd8123349227121f740ccdbe8fe2d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:38:40.506282+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "75fe5f4a88239f31d2fed1b23e1fc424fc814ef86d8b06236ccfd2150f6be44e",
+    "input_tokens": 4291,
+    "output_tokens": 1748,
+    "thoughts_tokens": 1056,
+    "cost_usd": 0.000953,
+    "latency_ms": 49813,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4291,
+        "output_tokens": 1748,
+        "thoughts_tokens": 1056,
+        "cost_usd": 0.000953,
+        "latency_ms": 49813,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

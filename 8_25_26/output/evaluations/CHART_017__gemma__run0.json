@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies all five sources and their respective percentages. However, there is a factual inconsistency where oil is called the 'paest' (least) source, even though nuclear is correctly identified as 2% later.",
+      "evidence": "paest uses source is oill."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows a basic logical flow with an introductory sentence and a concluding synthesis. It avoids prohibited external facts or personal opinions.",
+      "evidence": "The pie chart represents the five types of sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling and grammatical errors. Syntax is frequently broken, and there are significant spelling lapses in basic words.",
+      "evidence": "differece botween coal and Nuclear is 42%. almost half. So,  V.S.A electricity is fully depend's on  coal"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts a comparative analysis by calculating the mathematical difference between the highest and lowest values, though the vocabulary remains basic.",
+      "evidence": "the differece botween coal and Nuclear is 42%"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (oill, differece, botween)",
+      "Morphological errors (depend's)",
+      "Lexical confusion (paest for least)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of all chart data points",
+      "Ability to perform a data-driven comparison (calculating the 42% gap)"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good ability to read and extract data from the chart, including a successful attempt at calculating the difference between the maximum and minimum values. However, the script is significantly weakened by poor linguistic mechanics, including frequent spelling mistakes and incorrect grammar. A contradictory statement regarding oil being the least used source slightly impacts the content score. The response remains within Band 3 as it is a functional, though unpolished, description of the data.",
+  "_metadata": {
+    "task_id": "CHART_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2353ae2ff1a4e85cc2ac3440f484ea8b65dad583e149c92c0bbdbd938b5cec62",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:03:00.645998+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ba292eea8d68dcda5fac1ea0ac51aefbefbc731a48de6449d4f98a1810e612ec",
+    "input_tokens": 4389,
+    "output_tokens": 2182,
+    "thoughts_tokens": 1398,
+    "cost_usd": 0.001093,
+    "latency_ms": 60844,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4389,
+        "output_tokens": 2182,
+        "thoughts_tokens": 1398,
+        "cost_usd": 0.001093,
+        "latency_ms": 60844,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

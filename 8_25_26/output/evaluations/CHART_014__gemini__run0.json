@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately captures all numerical data points from the chart (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) and identifies key high points, though the analysis lacks depth.",
+      "evidence": "It is important to note that the highest use of electricity is 46% and it's of source is coal."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory overview is provided and the text forms a single block, but the response deviates significantly by introducing outside facts, personal opinions, and moralizing statements at the end.",
+      "evidence": "Environ- ment friendly source can reduce climate change. so, we all should concern about the use of electricity source."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical and mechanical slips are present, including duplicated words ('the the'), spelling mistakes ('Naturzal'), uncorrected false starts ('Thought, though'), and subject-verb agreement errors ('source use').",
+      "evidence": "Thought, though The 2nd highest source is Naturzal gas 24%."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic comparative markers are utilized ('highest use', '2nd highest source', 'more than'), but overall expression and vocabulary remain basic and repetitious.",
+      "evidence": "we can say that USA use coal more than Hydro electric power this is not so good."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of external opinions and moral judgments not depicted in the chart",
+      "Subject-verb agreement and syntactic errors (e.g., 'source use 16%', 'it's of source is')",
+      "Spelling and typographical slips ('Naturzal', 'the the', 'Environ- ment')"
+    ],
+    "positive_aspects": [
+      "All five energy sources and their respective percentages from the prompt are mentioned",
+      "Identifies the highest and second-highest sources of electricity"
+    ]
+  },
+  "feedback_summary": "The response accurately covers all data points provided in the pie chart and incorporates basic comparisons such as identifying the highest and second highest sources. However, the script violates objective chart description requirements by introducing external commentary on climate change, development, and moral recommendations, triggering the Graph_External_Facts cap at 6. Additionally, frequent mechanical and grammatical errors limit the quality of expression.",
+  "_metadata": {
+    "task_id": "CHART_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f516c48e3e75de225dd1ff545b543d69e7d932aab8a663dff6295f78b8c83faa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:33:37.945725+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c2837f2f2c6bae578a3653bb044ecc2c72c8f5334b6b23714c36ad4ad06ffd58",
+    "input_tokens": 4380,
+    "output_tokens": 2921,
+    "thoughts_tokens": 2074,
+    "cost_usd": 0.008616,
+    "latency_ms": 31750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4380,
+        "output_tokens": 2921,
+        "thoughts_tokens": 2074,
+        "cost_usd": 0.008616,
+        "latency_ms": 31750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

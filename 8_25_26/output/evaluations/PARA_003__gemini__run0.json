@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script addresses all five guiding questions systematically, covering the definition, features, applications, role in education, and potential threats of AI. However, ideas remain somewhat basic and repetitive.",
+      "evidence": "In medica, Engeniering, Business, AI in also Impactfut. But demerits also finded in in feature."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized as a single unbroken paragraph with a distinct opening definition and a concluding reflection, though transitions between different points are somewhat abrupt.",
+      "evidence": "Artificial Intelligence or AI is a computer based prograne which, can do any types of software command we give it."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling mistakes, irregular past tense formations, subject-verb agreement errors, and awkward prepositional uses throughout, though meaning remains broadly decipherable.",
+      "evidence": "Creativits is hardly finded in students nowaday, Everything is working within a blink of eye. So, After some years, people will litter depended on AI."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows authentic personal effort rather than relying on memorized introductory/concluding formulas, though phrasing is hindered by limited lexical control.",
+      "evidence": "office worker are repearing their files, Student making notes and influencen getting ideas from AI."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'prograne', 'prvous', 'calculat', 'repearing', 'influencen', 'developped', 'generatn', 'medica', 'Engeniering', 'Impactfut', 'Creativits', 'nevalutionary')",
+      "Incorrect irregular verb inflection and passive formation (e.g., 'demerits also finded', 'Creativits is hardly finded', 'can be simplify')",
+      "Subject-verb agreement and pluralisation errors (e.g., 'It make', 'office worker are', 'Student making', 'thin works')",
+      "Faulty modifier and preposition usage (e.g., 'many too much helpful', 'litter depended on')"
+    ],
+    "positive_aspects": [
+      "Maintained single-paragraph structural discipline throughout without breaking into sub-sections",
+      "Successfully covered all guiding prompt points including definition, educational impact, and negative aspects",
+      "Demonstrated authentic expression and avoided generic pre-memorized paragraph templates"
+    ]
+  },
+  "feedback_summary": "The candidate writes a fully relevant, single-block paragraph covering all required aspects of Artificial Intelligence. Content and thematic coverage are solid and authentic. However, the score is constrained to the lower end of Band 3 due to pervasive mechanical weaknesses, including frequent spelling errors, incorrect verb forms, and grammatical slips.",
+  "_metadata": {
+    "task_id": "PARA_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "709123dcdacc174e69a7d712bb73d438f674f594533af852b979d58f18956efa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:08:49.895747+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ffb6d1a8900ce95dd827161f47a2178213cb23a25307ee359dbed7daffb6c60b",
+    "input_tokens": 4564,
+    "output_tokens": 3269,
+    "thoughts_tokens": 2337,
+    "cost_usd": 0.009542,
+    "latency_ms": 21265,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4564,
+        "output_tokens": 3269,
+        "thoughts_tokens": 2337,
+        "cost_usd": 0.009542,
+        "latency_ms": 21265,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

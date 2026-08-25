@@ -1,0 +1,101 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures all five data points from the chart (Coal at 46%, Natural gas at 24%, Hydro-electric power at 16%, Oil at 12%, and Nuclear at 2%) without omitting or misrepresenting numerical values.",
+      "evidence": "USA produced 16% of its e elec tricity using hydro- electric power of its total. After that there is neucleane which was the least amount of percentage to generate electricity at USA in 1980, which is only 2%. The oil produced 12% of its total electricity in 1980. Lastly Second most main source of electricity was natural gas which was only 24% of it's total. Lastly, thein is coal which covers almost half of our the chart and the percentage is 46%."
+    },
+    "structure_format_brevity": {
+      "rationale": "While introductory and concluding statements are present, the internal sequencing is erratic. The candidate introduces Coal and Nuclear first, jumps to Hydro-electric and Nuclear again, covers Oil and Natural gas, and finishes by repeating Coal.",
+      "evidence": "As per shown in the chart the massive amount of electricity was produced by coal. And it is also clear that the least amount of electricity was made using neuclean... Lastly, thein is coal which covers almost half of our the chart"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling errors ('neuclean', 'neucleane', 'e elec tricity', 'thein', 'clean' instead of 'clear') and awkward grammatical phrasing ('declares us', 'at USA') detract from syntactic clarity.",
+      "evidence": "The chart in the passage declares us the source of USA electricity in 1980... And it is also clear that the least amount of electricity was made using neuclean."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative framing is basic and repetitive ('least amount', 'massive amount', 'Second most main source'). The phrasing relies on simple formulaic structures rather than varied analytical discourse.",
+      "evidence": "Lastly Second most main source of electricity was natural gas which was only 24% of it's total."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('neuclean', 'neucleane', 'thein', 'clean' for 'clear')",
+      "Disorganized/repetitive data presentation (repeating coal and nuclear descriptions)",
+      "Unidiomatic verb choices and prepositional usage ('declares us', 'at USA')"
+    ],
+    "positive_aspects": [
+      "Accurate reporting of all five chart data percentages",
+      "Inclusion of an introductory sentence and an analytical overview/conclusion",
+      "Correct identification of the highest and lowest sources of electricity"
+    ]
+  },
+  "feedback_summary": "The script demonstrates good comprehension of the chart by accurately incorporating every data point and identifying both maximum and minimum values. However, the organization is unstructured and repeats sectors unnecessarily. Language mechanics need improvement, specifically regarding spelling precision and grammatical accuracy.",
+  "_metadata": {
+    "task_id": "CHART_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "85a04beac66f49ee0396ea180b32d9547fe584f23193d0afd7d1eac398a24fa7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:18:44.021195+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "db58e499f02462c0f223155c5f3311fd9488b679638f23ef2b132a7f7a57edd5",
+    "input_tokens": 4429,
+    "output_tokens": 3726,
+    "thoughts_tokens": 2738,
+    "cost_usd": 0.010644,
+    "latency_ms": 21109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4429,
+        "output_tokens": 3726,
+        "thoughts_tokens": 2738,
+        "cost_usd": 0.010644,
+        "latency_ms": 21109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

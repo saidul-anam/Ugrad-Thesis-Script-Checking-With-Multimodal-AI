@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and complete continuation of the plot, following the classic fable structure where the lion is saved by the mouse he previously spared.",
+      "evidence": "the mouse cut the trap by its teeth and freed the lion from the cage."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and includes a clear moral lesson. However, the candidate completely failed to provide a title, which is a required structural element.",
+      "evidence": "we should not uderestimate little thing."
+    },
+    "language_mechanics": {
+      "rationale": "The script is marred by frequent errors in spelling ('playi', 'passa', 'uderestimate') and severe grammatical lapses, specifically in verb forms and tense ('beated', 'threaten').",
+      "evidence": "White running It accidentally beated the lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, memorized version of Aesop's fable. There is no evidence of original descriptive detail or creative modification of the plot.",
+      "evidence": "The mouse started crying and begged' for his life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (orthographic slips)",
+      "Incorrect past tense formation (non-standard verbs)",
+      "Missing structural component (Title)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Successful inclusion of a moral lesson"
+    ]
+  },
+  "feedback_summary": "The student demonstrates a clear understanding of the plot and provides a logically sequenced ending with a moral. However, the overall grade is lowered by a total absence of a title and significant linguistic instability, characterized by poor spelling and incorrect verb conjugations. The content is entirely derivative of a memorized fable with no original creative input.",
+  "_metadata": {
+    "task_id": "STORY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "60fb43a11dab9a851f079e80c94b7c8e710fc2e4ab3e0b473aed038bcb73e2d7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:15:06.201373+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "26ccd6f7fe8b5bd4a035ab632fe5ed8087d5d0b020340776d2828642a427c5d9",
+    "input_tokens": 4412,
+    "output_tokens": 2530,
+    "thoughts_tokens": 1807,
+    "cost_usd": 0.0012,
+    "latency_ms": 70969,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4412,
+        "output_tokens": 2530,
+        "thoughts_tokens": 1807,
+        "cost_usd": 0.0012,
+        "latency_ms": 70969,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

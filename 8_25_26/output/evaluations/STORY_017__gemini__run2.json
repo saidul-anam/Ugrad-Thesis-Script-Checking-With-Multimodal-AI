@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate continues the narrative logically from the stem through the traditional plotline to resolution, though the sequencing is basic and hasty.",
+      "evidence": "While running he acent lion's face at once the lion awoke up and caught the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate fails to provide an essential story title, and the conclusion ends abruptly without explicitly articulating a moral lesson.",
+      "evidence": "The lion ashamed because because one he wanted to kill the mouse."
+    },
+    "language_mechanics": {
+      "rationale": "Severe and pervasive orthographic distortions ('cuas', 'acent', 'cealking', 'goarning', 'cuith'), missing auxiliary verbs, run-on sentences, and faulty capitalization merit zero credit.",
+      "evidence": "he Fastly acent to the lion cuith his sharp teeth he cut the net and save the lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The text follows a predictable, highly formulaic fable structure with limited creative development or descriptive vocabulary.",
+      "evidence": "The lion laughed and suddenly he Felt pity on mouse, so he didn't kill the mouse."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling distortions and character substitutions ('cuas' for was, 'acent' for went, 'cealking' for walking, 'goarning' for groaning/roaring, 'cuith' for with)",
+      "Missing mandatory story title",
+      "Run-on sentences and punctuation errors",
+      "Omission of auxiliary verbs and past participle inflections ('lion ashamed', 'he trapped', 'save the lion')"
+    ],
+    "positive_aspects": [
+      "Follows the complete sequential narrative arc of the fable",
+      "Maintains logical character motivations from the given stem"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete narrative continuation based on the familiar fable of the lion and the mouse. However, the script is missing the required title, lacks a clearly formulated moral takeaway, and suffers from severe linguistic degradation characterized by repeated spelling corruptions, run-on sentence structures, and weak tense discipline, placing it firmly in Band 2.",
+  "_metadata": {
+    "task_id": "STORY_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c4c55dee58756769cdefa1c7f423e3773e183ddf44364e161304e2efdaea8f10",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:03:49.164695+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "320ab5e729446f2a997350878462727366ba544c129d8b2f4ba492b9c4e7abf7",
+    "input_tokens": 4392,
+    "output_tokens": 4088,
+    "thoughts_tokens": 3290,
+    "cost_usd": 0.011538,
+    "latency_ms": 25937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4392,
+        "output_tokens": 4088,
+        "thoughts_tokens": 3290,
+        "cost_usd": 0.011538,
+        "latency_ms": 25937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

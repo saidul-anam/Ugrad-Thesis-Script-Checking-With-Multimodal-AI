@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the stem with a complete narrative arc covering the capture, rescue, and resolution without plot holes.",
+      "evidence": "One day the lion was walking in the jungle and suddenly he got traped by a net of a hunter. The mouse saw behind the the tree. The mouse came and helped the lion by cutting the net"
+    },
+    "structure_format_brevity": {
+      "rationale": "A clear moral and positive resolution are included, but the candidate failed to provide a title as required by the prompt.",
+      "evidence": "Moral of the story is — we should not judge anyone by their outlook."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive grammatical errors, tense shifts (present/past mixing), missing words, and corrupted phrasing throughout the narrative.",
+      "evidence": "jumped into the of lion. The lion woke up and got very angry over the mouse. The mouse apologize for it's did and told him if he forgive the mouse it will be his friend"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a highly standard, predictable retelling of Aesop's fable with basic syntax and limited descriptive depth.",
+      "evidence": "The mouse came and helped the lion by cutting the net by it's sharp teeth. The lion was pleasure."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing past and base/present forms: 'apologize', 'forgive', 'leave')",
+      "Omission of words and syntax errors ('jumped into the of lion', 'The lion was pleasure')",
+      "Incorrect possessive pronoun/contraction usage ('it's did', 'it's sharp teeth')",
+      "Missing title"
+    ],
+    "positive_aspects": [
+      "Clear, sequential continuation from the prompt stem",
+      "Inclusion of an explicit moral lesson and positive resolution"
+    ]
+  },
+  "feedback_summary": "The candidate successfully maintains narrative continuity from the given stem, resolving the fable with a positive conclusion and an explicit moral lesson. However, marks are lost due to the complete omission of a title and persistent grammatical flaws, including tense shifting, missing words, and awkward phrasing. The script falls into the lower boundary of Band 3 (Score: 4/7).",
+  "_metadata": {
+    "task_id": "STORY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bb90af09d69476bc00a80dd2db6422b17a265ee835435a5ca432a03ebd4b1201",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:16:20.308691+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2e4b7ba127fe0b0ea58a66b40db1a88f3700485bedda2c3b486ab8f48de717de",
+    "input_tokens": 4413,
+    "output_tokens": 3275,
+    "thoughts_tokens": 2459,
+    "cost_usd": 0.009511,
+    "latency_ms": 19718,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4413,
+        "output_tokens": 3275,
+        "thoughts_tokens": 2459,
+        "cost_usd": 0.009511,
+        "latency_ms": 19718,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

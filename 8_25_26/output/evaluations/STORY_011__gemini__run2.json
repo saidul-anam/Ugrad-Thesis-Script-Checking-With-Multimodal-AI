@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative smoothly continues the prompt's stem with a logical sequence of events, depicting the lion releasing the mouse and the mouse subsequently rescuing the lion.",
+      "evidence": "While running the mouse came very close to the lion. The mouse jumped into the lion and he woke up from sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response reaches a clear, constructive resolution with a positive moral outcome, but completely omits the required story title.",
+      "evidence": "From this they were firm friends."
+    },
+    "language_mechanics": {
+      "rationale": "Language mechanics suffer from recurring errors, including faulty negative infinitives ('to don't kill'), erroneous passive/auxiliary constructions ('lion was decided', 'was help him'), and invented past tense forms ('was roarnd').",
+      "evidence": "The lion was roarnd but no one came. suddenly that mouse heard the roarnd of lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a predictable, highly conventional retelling with basic vocabulary and limited descriptive creativity.",
+      "evidence": "The mouse helped the lion to se escape the trap. Then they went from there."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect negative infinitive structures ('to don't kill')",
+      "Non-standard verb forms and auxiliary misuse ('was roarnd', 'was decided', 'was help him')",
+      "Missing mandatory story title",
+      "Capitalization and typing slips ('suddenly', 'se escape')"
+    ],
+    "positive_aspects": [
+      "Smooth and logical continuation from the provided stem",
+      "Satisfying positive ending emphasizing friendship and mutual help"
+    ]
+  },
+  "feedback_summary": "The candidate provides a coherent plot that successfully carries the stem forward to a clear and positive resolution. However, the story lacks a title as explicitly instructed in the prompt, and the writing is marred by frequent mechanical errors in verb formation, auxiliary usage, and negative infinitive construction.",
+  "_metadata": {
+    "task_id": "STORY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a95f2b6012f13a2ed024def8ddd8d304f5de18e5f2f5267f456dab9ff6621da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:08:35.140300+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ba44688eba380b6bac52ce33c69a066e84fe7a18d35466f1d27b7fb1bf4cac01",
+    "input_tokens": 4489,
+    "output_tokens": 3899,
+    "thoughts_tokens": 3147,
+    "cost_usd": 0.011094,
+    "latency_ms": 25594,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4489,
+        "output_tokens": 3899,
+        "thoughts_tokens": 3147,
+        "cost_usd": 0.011094,
+        "latency_ms": 25594,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

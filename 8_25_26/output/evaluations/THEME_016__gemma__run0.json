@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the primary contrast of the poem (day vs night dreamers) but describes the content rather than explicitly articulating the abstract theme of ambition or the realization of goals.",
+      "evidence": "The content of the poem indicates the difference between day and night dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a coherent single block that states the core idea in the first sentence without unnecessary padding.",
+      "evidence": "The content of the poem indicates the difference between day and night dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "Generally clear, but contains a noticeable subject-verb agreement error ('people... wakes').",
+      "evidence": "The people who dream in the night wakes up"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoids verbatim copying of the poem and uses original phrasing to convey the meaning, adding a touch of interpretation.",
+      "evidence": "are hungry to make that dream come true"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Clear and concise structure",
+      "Effective paraphrasing"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the poem's contrast and avoids the common mistake of copying lines directly. However, the response leans more toward a summary of the poem's events than an analysis of its abstract theme. A minor grammatical error in subject-verb agreement is present, but the overall expression is clear.",
+  "_metadata": {
+    "task_id": "THEME_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "da8c91c76c042bc8fb71a62156fe8d23fc52022f9daf25f2cd6a8a86c61ded73",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:57:41.948194+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "256ae47078430ed206ecef3349064d07894bd942d9a6dbc018b8588dc0fa7ac6",
+    "input_tokens": 4279,
+    "output_tokens": 1630,
+    "thoughts_tokens": 958,
+    "cost_usd": 0.000917,
+    "latency_ms": 46375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4279,
+        "output_tokens": 1630,
+        "thoughts_tokens": 958,
+        "cost_usd": 0.000917,
+        "latency_ms": 46375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

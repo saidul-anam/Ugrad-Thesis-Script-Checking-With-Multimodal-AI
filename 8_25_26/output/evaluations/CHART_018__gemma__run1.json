@@ -1,0 +1,102 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the highest (Coal) and lowest (Nuclear) sources and provides most accurate percentages, though the Natural Gas value is cut off in transcription.",
+      "evidence": "the highest amount of electricity come from coal. It is 46%... the least amount of electricity, comes from nuclear. It is 2 %."
+    },
+    "structure_format_brevity": {
+      "rationale": "While an overview sentence is present, the response is severely compromised by the inclusion of extensive external facts and personal opinions regarding greenhouse gases and resource depletion, which are not in the chart.",
+      "evidence": "From the burning of the coal, It produce harmful green house gas... If we do not not use use it will finish and one day and we have to to face hazardous consequenees."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent errors in spelling ('ehart', 'soucees'), subject-verb agreement ('electricity come'), and an incorrect use of present tense for historical 1980 data.",
+      "evidence": "The pie ehart represents us the soucees of USA electricity in 1980."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparisons are limited to basic superlatives ('highest', 'least'). There is no use of advanced comparative vocabulary to describe trends or shifts.",
+      "evidence": "highest amount of electricity... second highest amount... least amount"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Tense inconsistency (Present used for past data)",
+      "Orthographic errors (Spelling)",
+      "Inclusion of non-chart external data"
+    ],
+    "positive_aspects": [
+      "Correct identification of data peaks and troughs",
+      "Presence of an introductory overview sentence"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the primary data points (highest and lowest sources) from the chart. However, the response fails significantly in terms of task constraints by including a large amount of external scientific and moral commentary regarding environmental impacts and sustainability, which triggers a structural hard cap. Furthermore, the writing is marred by frequent grammatical errors, particularly in subject-verb agreement and the failure to use the past tense for 1980 data. The comparative language is basic and repetitive.",
+  "_metadata": {
+    "task_id": "CHART_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b28e216829ab2b739e72902d7949defd67785da741147a3f0c59de616f048ab9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:13:02.501865+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "24573a3f37331fd99d6c796ba678f2b1274c798aa4bb8b5c59fe383af53c55de",
+    "input_tokens": 4480,
+    "output_tokens": 2411,
+    "thoughts_tokens": 1587,
+    "cost_usd": 0.001171,
+    "latency_ms": 66734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 2411,
+        "thoughts_tokens": 1587,
+        "cost_usd": 0.001171,
+        "latency_ms": 66734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

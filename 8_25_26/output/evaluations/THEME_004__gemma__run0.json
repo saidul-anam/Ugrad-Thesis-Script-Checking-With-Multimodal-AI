@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between night dreamers and day dreamers but fails to state an abstract theme (e.g., ambition or willpower), instead providing a plot-level summary.",
+      "evidence": "Dreams are two kind of one is in subconcious mind and another is unsubconcious mind."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block as required, but it is composed of fragmented sentences and lacks a cohesive flow.",
+      "evidence": "Who dreams at night to close there eyes Which have. no effact."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive grammatical errors, including severe issues with subject-verb agreement, word choice ('unsubconcious', 'heal life'), and punctuation.",
+      "evidence": "People are all see dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoids copying lines from the poem verbatim, expressing the ideas in their own (albeit limited) words.",
+      "evidence": "this dreams will be gain they in their heal life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Incorrect word coinage (unsubconcious)",
+      "Sentence fragmentation"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Correct identification of the poem's central contrast"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the poem's content, specifically the distinction between passive night dreams and active day dreams. However, the response is a summary rather than a thematic analysis. The score is heavily penalized due to severe linguistic failures; the English is broken, with frequent errors in syntax and spelling that make the writing struggle to meet basic academic standards.",
+  "_metadata": {
+    "task_id": "THEME_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0a089c0f40e5817b18c20c07f700d8316defa2de03f98a9d2a6f4624b0524fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:14:39.411379+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8a0afcf48f612b8e6c14d6b6ec02d0deb49f8f3168766ce1236e1842d4bf1aee",
+    "input_tokens": 4317,
+    "output_tokens": 2406,
+    "thoughts_tokens": 1674,
+    "cost_usd": 0.001154,
+    "latency_ms": 76312,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4317,
+        "output_tokens": 2406,
+        "thoughts_tokens": 1674,
+        "cost_usd": 0.001154,
+        "latency_ms": 76312,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

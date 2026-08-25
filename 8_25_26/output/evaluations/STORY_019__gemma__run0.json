@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a seamless continuation of the stem, maintaining the plot of the classic fable and ensuring a logical sequence of events from the conflict to the resolution.",
+      "evidence": "The mouse notice that and cut the net with it's sharp teeth . By this the lion can get rid from the net."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story includes a title and a clear moral lesson at the end, although the title contains significant spelling errors. The pacing is functional.",
+      "evidence": "Moral: Every creature need other's help to live"
+    },
+    "language_mechanics": {
+      "rationale": "There is pervasive tense inconsistency, frequently switching between present and past tense within the same sequence, along with basic spelling mistakes.",
+      "evidence": "the mouse enter into the nose of lion . Being ferocious the lion groaning and tell"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, memorized fable with very little original descriptive detail or creative phrasing.",
+      "evidence": "The lion smile loudly and say you will help me"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past)",
+      "Spelling errors (e.g., 'virtud', 'slepping')"
+    ],
+    "positive_aspects": [
+      "Correct plot progression",
+      "Presence of a clear moral and title"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the narrative arc of the provided stem, ending with a positive resolution and a clear moral. However, the script is held back by frequent grammatical errors, specifically a failure to maintain consistent past tense. The title 'Marcy is a great virtud' (likely intended as 'Mercy is a great virtue') shows a lack of vocabulary precision. The content is a basic retelling of a known story with minimal original descriptive effort.",
+  "_metadata": {
+    "task_id": "STORY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "849b1b43cd884b3fbbaa24055e205009cfd8bd88b89aec2c18617c0e6011512a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:24:58.698649+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "57a29a3ae7bf19414d3bb941478ddbf6114d78d7b55d4e0998b0a31cd5cdaa15",
+    "input_tokens": 4480,
+    "output_tokens": 2758,
+    "thoughts_tokens": 2021,
+    "cost_usd": 0.001275,
+    "latency_ms": 77984,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 2758,
+        "thoughts_tokens": 2021,
+        "cost_usd": 0.001275,
+        "latency_ms": 77984,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

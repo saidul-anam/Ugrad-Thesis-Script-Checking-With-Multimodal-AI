@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies the core thematic contrast between passive dreamers and active dreamers who realize their goals, though the analysis remains somewhat basic.",
+      "evidence": "The poem reppresents two types of dreamers. One those who passively dream at night, another those one is who actively dream at day."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script is presented as a single concise block without extraneous filler, stating the central idea immediately.",
+      "evidence": "The poem reppresents two types of dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "Severe mechanical inaccuracies are present throughout the brief response, including spelling errors, faulty conjunctions, and misuse of apostrophes for plural forms.",
+      "evidence": "day dreamers's are powerful because they pursue their dream's with open eyes"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate demonstrates independent understanding and phrasing (e.g., 'passively', 'actively') with zero verbatim copying, though phrasing is grammatically unrefined.",
+      "evidence": "passively dream at night, another those one is who actively dream at day"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('reppresents', 'meningless')",
+      "Incorrect use of apostrophes for plural nouns ('dreamers's', 'dream's')",
+      "Faulty clause construction and awkward phrasing ('another those one is who', 'forget their dream in meningless but')"
+    ],
+    "positive_aspects": [
+      "Accurately grasps the central thematic distinction between active and passive dreaming",
+      "Avoids verbatim copying from the source poem",
+      "Follows proper structural conciseness as a single unified paragraph"
+    ]
+  },
+  "feedback_summary": "The candidate accurately identifies the core theme of the poem by contrasting passive night dreaming with active day dreaming. The response is concise, structured in a single block, and paraphrases the concept in original terms without verbatim copying. However, persistent language mechanics issues—including spelling mistakes ('reppresents', 'meningless'), faulty syntax, and erroneous apostrophe usage ('dreamers's', 'dream's')—prevent the script from reaching Band 4, placing it at the lower boundary of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "5a2c7ad3443e8b106d88bf558cad17e6b310e13e3641dd4d7281cc86f1f656b8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:06:57.922866+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "359803e5759019dcc1b4f4905326f76db6748b5408417cfe779350bf31633d68",
+    "input_tokens": 4285,
+    "output_tokens": 2900,
+    "thoughts_tokens": 2083,
+    "cost_usd": 0.008535,
+    "latency_ms": 30718,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4285,
+        "output_tokens": 2900,
+        "thoughts_tokens": 2083,
+        "cost_usd": 0.008535,
+        "latency_ms": 30718,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

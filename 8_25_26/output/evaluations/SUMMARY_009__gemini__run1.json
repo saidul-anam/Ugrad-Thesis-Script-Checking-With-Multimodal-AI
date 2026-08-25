@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the broad subject of hope being essential to human life, but relies on redundant tautology and misses the specific poetic imagery regarding resilience in storms and asking nothing in return.",
+      "evidence": "Hope is something why we live. Hopelife without hope is unthinkable."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is fragmented across multiple paragraph breaks rather than presented as a single unified block, and suffers from repetitive padding.",
+      "evidence": "Hope is something why we live.\n\n Hopelife without hope is unthinkable."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains noticeable mechanical errors, including spelling mistakes ('porms'), word duplication ('encourages encourages'), redundant articles ('gives a us a reason'), and faulty syntax ('something why we live', 'Writes said').",
+      "evidence": "In the porms, \"Hope\" poet encourages encourages us and let us know about the importance about hope in life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the student attempts to use their own words rather than copying large sections verbatim, the phrasing is basic, circular, and splices lines from the poem awkwardly without proper syntactic integration.",
+      "evidence": "Writes said, sings the tune without the words and never stops."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tautological padding and repetitive sentence structures",
+      "Spelling and typographical slips ('porms', 'Hopelife')",
+      "Duplication of words ('encourages encourages')",
+      "Malformed sentence syntax when introducing textual lines ('Writes said, sings...')"
+    ],
+    "positive_aspects": [
+      "Identifies the core subject (the importance of hope)",
+      "Avoids verbatim reproduction of the majority of the poem"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic grasp of the poem's central theme (the importance of hope), but the response is weakened by repetitive padding, fragmentation into sub-paragraphs, and multiple grammatical/mechanical slips ('porms', 'gives a us a reason', 'encourages encourages'). The attempt falls into Band 2 with a total score of 4/10.",
+  "_metadata": {
+    "task_id": "SUMMARY_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b8083ff0d1b178bb3d8f301617838a4e9b6759329e2f0d18845f6632b08b0fc0",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:24:12.042017+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d531888bd36a155af4f3c5541df48bb782775161739bad36e7ee600aa9b97f12",
+    "input_tokens": 4406,
+    "output_tokens": 2899,
+    "thoughts_tokens": 2105,
+    "cost_usd": 0.008569,
+    "latency_ms": 19015,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4406,
+        "output_tokens": 2899,
+        "thoughts_tokens": 2105,
+        "cost_usd": 0.008569,
+        "latency_ms": 19015,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

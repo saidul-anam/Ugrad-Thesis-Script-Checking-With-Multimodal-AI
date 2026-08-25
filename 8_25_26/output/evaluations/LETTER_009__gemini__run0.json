@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt objective by explaining their immediate plan to prepare for medical college admission and having Dhaka University as a backup.",
+      "evidence": "In your letter you wanted to know about my future plan after HSC. In this letter, I'm going to discribe my plan. After HSC examination, I will start preparing for addmission."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout components of an informal letter are present: date, sender's address, salutation, body paragraphs, complimentary close, signature, and postal envelope layout.",
+      "evidence": "27 June, 2026\n7/A Dhanmondi 32, Dhaka\nDear Luffy,"
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple spelling errors ('discribe', 'addmission', 'litte'), missing possessive apostrophe ('students dream'), missing article/plural agreement ('become doctor'), and an incorrect complimentary close ('Your ever' instead of 'Yours ever').",
+      "evidence": "I'm going to discribe my plan. After HSC examination, I will start preparing for addmission. As you know I wanted to become a doctor from the very litte."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Features authentic voice, practical self-reflection, and mature reasoning about admission challenges rather than memorized stock filler.",
+      "evidence": "Since many students dream is to become a doctor, they all can't become doctor. Losing hope of life after that is a foolish mindset. That's why if medical doesn't work out, Dhaka University is my back up plan."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling slips ('discribe', 'addmission', 'litte')",
+      "Missing possessive punctuation ('students dream' instead of 'students' dream')",
+      "Subscription phrasing error ('Your ever' instead of 'Yours ever')"
+    ],
+    "positive_aspects": [
+      "Complete informal letter structural layout including address box",
+      "Realistic, mature, and authentic expression regarding post-HSC admission backup planning",
+      "Clear paragraph organization and appropriate informal tone"
+    ]
+  },
+  "feedback_summary": "A very well-structured informal letter that adheres completely to NCTB layout requirements and responds directly to the prompt with mature, authentic content. The total mark is placed at Band 4 (4/5) due to several minor mechanical errors and spelling slips that prevent a full score.",
+  "_metadata": {
+    "task_id": "LETTER_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2c562c70a50a9e58d5bdd933832902a6bab9b1dbc5fbe46307343d7611456e77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:29:58.643490+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "fa01d42bcf204d7436446e0607eb59c534a0cf03fdeb645e45503553eaa36542",
+    "input_tokens": 4429,
+    "output_tokens": 3095,
+    "thoughts_tokens": 2234,
+    "cost_usd": 0.009066,
+    "latency_ms": 20140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4429,
+        "output_tokens": 3095,
+        "thoughts_tokens": 2234,
+        "cost_usd": 0.009066,
+        "latency_ms": 20140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

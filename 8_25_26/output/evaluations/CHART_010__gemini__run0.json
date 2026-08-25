@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Correctly identifies the primary and lowest sources (coal and nuclear), but records an inaccurate value for hydro-electric power (15% instead of 16%) and incorporates irrelevant external commentary.",
+      "evidence": "the source Hydro-electric power is 15%."
+    },
+    "structure_format_brevity": {
+      "rationale": "Lacks analytical grouping, presenting data in a simple line-by-line list alongside an unnecessary opinion-based concluding paragraph.",
+      "evidence": "In 1980, natural elements are available that time. so, the sources have perfect amount. but nowadays, the amount of natural elements are inc decrease day by day."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple mechanical faults, including random capitalization ('Provides', 'Perfect'), erratic punctuation ('. ,'), and ungrammatical verb forms ('are inc decrease', 'we analysis').",
+      "evidence": "the amount of natural elements are inc decrease day by day. So we analysis that"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative phrasing is rudimentary and restricted to a basic high/low observation without sophisticated trend analysis or varied transitional vocabulary.",
+      "evidence": "Most of the sources come from coal and the lowest sources come from Nuclear."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of external opinions and non-chart facts",
+      "Data misreporting (15% instead of 16%)",
+      "Punctuation and capitalization inconsistencies",
+      "Faulty verb phrasing and word forms ('are inc decrease', 'we analysis')"
+    ],
+    "positive_aspects": [
+      "Successfully identifies the highest (coal) and lowest (nuclear) contributors",
+      "Maintains focus on the 1980 time frame in the data section"
+    ]
+  },
+  "feedback_summary": "The response identifies key data points like coal and nuclear power, but relies on a mechanical listing rather than comparative synthesis. It misquotes the hydro-electric figure as 15% and breaches chart-writing conventions by adding external speculation about modern resource depletion. Punctuation, capitalization, and grammatical slips place the script firmly in Band 2.",
+  "_metadata": {
+    "task_id": "CHART_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d37fc4c1bdba5a00b1b1b8ecc5895c204d9d3c3e8499cdeb22492ba9312fa369",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:34:52.856128+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "182ac409eb0372270e6bc0f75d4821381300cbd9a100557b710b680c08e4cd3d",
+    "input_tokens": 4387,
+    "output_tokens": 3031,
+    "thoughts_tokens": 2231,
+    "cost_usd": 0.008894,
+    "latency_ms": 18702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4387,
+        "output_tokens": 3031,
+        "thoughts_tokens": 2231,
+        "cost_usd": 0.008894,
+        "latency_ms": 18702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

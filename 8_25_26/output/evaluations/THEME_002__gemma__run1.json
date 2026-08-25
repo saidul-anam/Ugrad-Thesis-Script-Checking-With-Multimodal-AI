@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the central contrast between passive and active dreaming, though the explanation is very concise.",
+      "evidence": "explore the difference between active and passive dream"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that states the theme immediately and avoids unnecessary padding.",
+      "evidence": "Theme: The poem 'Dream'..."
+    },
+    "language_mechanics": {
+      "rationale": "There are significant subject-verb agreement errors ('explore' instead of 'explores') and pluralization issues ('passive dream', 'make dream change') within a very short text.",
+      "evidence": "explore the difference between active and passive dream... make dream change to reality"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying and uses their own interpretive vocabulary to explain the concept.",
+      "evidence": "with purpose and vision"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Noun Pluralization"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from source",
+      "Direct and concise thematic identification"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identified the abstract theme and successfully avoided reproducing lines from the poem. The structural requirements were met. However, the total score is limited to Band 3 due to poor language mechanics—specifically repeated subject-verb agreement and pluralization errors—and a lack of deeper interpretation of the poem's imagery.",
+  "_metadata": {
+    "task_id": "THEME_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3ba4c547e178ff15bee9c8b311b7684d392a8660c9ec919b6799a425362ecd04",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:37:15.230468+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4402aa30ae57d25a614c79d20ab136af435324fc010bc8155cbba08f0393a880",
+    "input_tokens": 4256,
+    "output_tokens": 2325,
+    "thoughts_tokens": 1670,
+    "cost_usd": 0.001123,
+    "latency_ms": 64547,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4256,
+        "output_tokens": 2325,
+        "thoughts_tokens": 1670,
+        "cost_usd": 0.001123,
+        "latency_ms": 64547,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

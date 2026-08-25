@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script addresses most of the prompt questions, covering the definition, real-world tools (ChatGPT, Gemini), impact on teachers/students, and potential threats to creativity and human existence. However, the development of ideas remains superficial.",
+      "evidence": "Artificial intelligence (AI) is a kind of artificial brain. Human makes it for helping them different sector of their daily life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single unified block with an identifiable topic sentence and a concluding recommendation. It maintains structural unity without paragraph splits, though transitions between points are basic.",
+      "evidence": "so, we should use it in limit and we should not abuse of AI."
+    },
+    "language_mechanics": {
+      "rationale": "The response contains frequent grammatical and mechanical errors, including faulty modal verb patterns ('can thinking solving'), incorrect verb forms ('is turn into', 'are depends'), agreement slips ('Human makes', 'many purpose'), and spelling mistakes ('Artifical', 'benetifed', 'existance'). Meaning remains decipherable despite the error density.",
+      "evidence": "It can thinking solving problem and so on. Nowadays AI is turn into chatgpt, Gemini etc."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate writes in an authentic, self-generated voice rather than copying a memorized template. However, phrasing is simplistic and marred by awkward lexical selections and garbled phrasing.",
+      "evidence": "Above all, AI makes our workload light and makes our thi time long."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Modal and auxiliary verb construction errors (e.g., 'can thinking solving', 'is turn into', 'are depends')",
+      "Subject-verb and noun number disagreement (e.g., 'Human makes', 'different sector', 'many purpose', 'some disadvantage')",
+      "Spelling errors and inappropriate word usage (e.g., 'Artifical', 'benetifed', 'existance', 'mobiled')"
+    ],
+    "positive_aspects": [
+      "Strictly maintained the single-paragraph format without illegal sub-breaks",
+      "Directly engaged with prompt cues including definition, applications, educational utility, and risks"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a structurally sound single-paragraph response that touches on all key aspects of the prompt. While the content is relevant and authentic, the score is limited by frequent grammatical errors, faulty verb phrases, spelling inaccuracies, and simplistic vocabulary. It meets Band 3 criteria at the lower boundary (6/10).",
+  "_metadata": {
+    "task_id": "PARA_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "baf0930b639c357af40f76c7178eb12e6685e6e647669cdd63bc96ca12da7fb8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:32:08.844775+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "643fdb6e781a95da22843a5de566dbf4ae24bda51a26c74a7e8aa11144bca103",
+    "input_tokens": 4364,
+    "output_tokens": 3925,
+    "thoughts_tokens": 3050,
+    "cost_usd": 0.011122,
+    "latency_ms": 24500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4364,
+        "output_tokens": 3925,
+        "thoughts_tokens": 3050,
+        "cost_usd": 0.011122,
+        "latency_ms": 24500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

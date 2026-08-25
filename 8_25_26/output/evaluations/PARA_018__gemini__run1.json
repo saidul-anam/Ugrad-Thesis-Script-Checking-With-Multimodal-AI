@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly and fully addresses all the prompt questions regarding AI definition, features, real-world tools, impact on education, and human threats without drifting off-topic.",
+      "evidence": "We have some programed AI such as:- G Chatgpt, Gemini, Alexa, Siri, Deepseek etc. which helps us in our daily life do make decisions."
+    },
+    "structure_format_brevity": {
+      "rationale": "Strictly maintained in a single cohesive paragraph with an introductory definition and a concluding recommendation, though sentence sequencing is slightly jerky.",
+      "evidence": "Artificial intelligence is a kind of machine or  robot which requires to human intelligence."
+    },
+    "language_mechanics": {
+      "rationale": "Exhibits a high density of mechanical errors, including truncated/incomplete words ('pro', 'con sto', 'id', 'h being'), spelling errors ('writting', 'datas', 'chopter', 'humon'), and faulty syntax.",
+      "evidence": "It has brought a revolutionized changes in teaching and learning. It helps students by helping them in  their study."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Presents authentic personal expression and timely examples rather than a rigid rote-memorized template, though syntactic variety remains elementary.",
+      "evidence": "Beside it decreases the thinking capability of humon."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Word truncations and severe spelling slips ('pro', 'con sto', 'writting', 'datas', 'chopter', 'humon', 'id')",
+      "Grammatical and phrasing inaccuracies ('requires to human intelligence', 'revolutionized changes', 'cause on the end')",
+      "Punctuation and run-on sentence fragments ('Now a days, human are gelting  attached with AI. more than They spend more time with AI mone than human.')"
+    ],
+    "positive_aspects": [
+      "Followed single-paragraph structural constraints without subdividing into multiple blocks",
+      "Comprehensive coverage of prompt cues including modern AI tools (ChatGPT, Gemini, DeepSeek)"
+    ]
+  },
+  "feedback_summary": "The candidate provides a relevant and well-scoped paragraph that addresses every guiding question in the prompt, utilizing modern examples to illustrate AI's role and threats. The paragraph format is preserved as a single block. However, the score is constrained to Band 3 due to frequent mechanical errors, fragmented sentences, and numerous truncated or misspelled words.",
+  "_metadata": {
+    "task_id": "PARA_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "329a5f9f42ab0b1dc4550d79dccb8986a462be4172f329fa8ed96fc23ecd814e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:10:29.940921+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f8e5e4ae3e0f7dc370a4aaed571c03fbefa823ccfbe800abada306d65a5c9abd",
+    "input_tokens": 4514,
+    "output_tokens": 3274,
+    "thoughts_tokens": 2433,
+    "cost_usd": 0.009539,
+    "latency_ms": 36452,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4514,
+        "output_tokens": 3274,
+        "thoughts_tokens": 2433,
+        "cost_usd": 0.009539,
+        "latency_ms": 36452,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

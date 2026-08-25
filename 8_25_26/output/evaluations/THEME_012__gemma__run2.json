@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the central theme: the difference between passive dreaming (night) and active ambition (day).",
+      "evidence": "But the people who work for it can make it come true."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single cohesive block that states the theme immediately and remains focused without padding.",
+      "evidence": "The main theme of the passage is everyone can see dreams."
+    },
+    "language_mechanics": {
+      "rationale": "There are several significant grammatical failures, including a double verb construction ('is can be') and a subject-verb agreement error ('each of them bear').",
+      "evidence": "is can be sweet enough to memorize"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids all verbatim copying of the poem, successfully paraphrasing the concept of 'open eyes' into a personal interpretation of life's purpose.",
+      "evidence": "the dream we see with our open eyes is the purpose of our life"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Incorrect Verb/Modal phrasing"
+    ],
+    "positive_aspects": [
+      "Original paraphrasing",
+      "Accurate thematic identification",
+      "Correct structural format"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's abstract theme, distinguishing effectively between the 'vanity' of night dreams and the 'danger' (power) of day dreams. The response is structurally sound and entirely original. However, the score is limited to Band 3 due to pervasive basic grammatical errors in sentence construction and subject-verb agreement.",
+  "_metadata": {
+    "task_id": "THEME_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ebe0ff2b14f6b0d79fbac3c557aff0b32cdfcaa2fd5821c5cce2979c235936a4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:20:59.486320+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7a6dfc7efbbd1de81f0812825810262fba8f5f18957b74b029d5b47c41a380b7",
+    "input_tokens": 4291,
+    "output_tokens": 2079,
+    "thoughts_tokens": 1396,
+    "cost_usd": 0.001053,
+    "latency_ms": 59733,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4291,
+        "output_tokens": 2079,
+        "thoughts_tokens": 1396,
+        "cost_usd": 0.001053,
+        "latency_ms": 59733,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

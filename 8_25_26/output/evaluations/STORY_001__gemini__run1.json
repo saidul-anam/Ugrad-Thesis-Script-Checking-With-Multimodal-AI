@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues from the prompt, preserving the narrative arc and developing all key plot points logically to completion.",
+      "evidence": "He went to the lion and cut the net with his sharp  teeth."
+    },
+    "structure_format_brevity": {
+      "rationale": "Although a positive moral conclusion is attempted, the candidate failed to provide the mandatory title requested by the prompt.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "High density of spelling errors ('forrest', 'trappen', 'greatful', 'worek'), incorrect possessive punctuation ('it's sound'), tense inconsistency ('mouse have saved'), and fragmented syntax.",
+      "evidence": "saw that the lion was trappen in a net which was put there by the hunters."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies entirely on a standard, predictable retelling of a classic fable with basic vocabulary and no creative embellishments.",
+      "evidence": "The lion was greatful for him as the mouse have saved his life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'forrest', 'trappen', 'greatful', 'worek')",
+      "Omission of required story title",
+      "Subject-verb agreement and auxiliary tense errors (e.g., 'mouse have saved')",
+      "Run-on sentences and garbled concluding syntax"
+    ],
+    "positive_aspects": [
+      "Smooth and logical continuation of the provided stem",
+      "Clear plot progression leading to a constructive moral outcome"
+    ]
+  },
+  "feedback_summary": "The response successfully continues the prompt through a complete narrative arc with a moral conclusion. However, marks are lost due to the complete omission of a story title, repetitive and formulaic phrasing, and numerous spelling, punctuation, and grammatical slips.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0e788379019ad8c4d8df0147446961f907193b58f950b3f75c88fa7f2bbb34f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:38:16.955659+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "91b35b106148512a215de4ec13b0787e60b9092a5a0bcc8a7c49b7bcf7905af2",
+    "input_tokens": 4404,
+    "output_tokens": 3131,
+    "thoughts_tokens": 2393,
+    "cost_usd": 0.009149,
+    "latency_ms": 32625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3131,
+        "thoughts_tokens": 2393,
+        "cost_usd": 0.009149,
+        "latency_ms": 32625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

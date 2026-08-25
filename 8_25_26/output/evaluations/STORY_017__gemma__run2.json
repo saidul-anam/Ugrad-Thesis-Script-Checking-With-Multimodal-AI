@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.75,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully continues the story from the stem, maintaining the sequential plot of the classic fable. The progression from the lion catching the mouse to the mouse saving the lion is logical.",
+      "evidence": "he cut the net and save the lion"
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive resolution with an implied moral lesson (humility/kindness), but it completely fails the structural requirement of providing a title.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of errors. The word 'was' is consistently misspelled as 'cuas'. Other critical vocabulary is distorted ('cealking' for walking, 'goarning' for groaning), and 'Fastly' is used incorrectly. Tense is generally past but unstable.",
+      "evidence": "Once a lion cuas sleeping in a forest... the lion cealking in the forest"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a predictable reproduction of a well-known fable with no creative variations, vivid descriptive language, or original turns of phrase.",
+      "evidence": "Mouse begged his life and said one day he will help the lion"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.75,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Systemic spelling errors (cuas, cealking, goarning)",
+      "Non-standard adverb usage (Fastly)",
+      "Missing structural component (Title)"
+    ],
+    "positive_aspects": [
+      "Clear understanding of plot sequence",
+      "Successful continuation of the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good grasp of narrative sequence and successfully completes the story with a positive resolution. However, the score is heavily penalized due to severe mechanical failures—specifically systemic spelling errors (e.g., 'cuas' for 'was')—and the omission of a required title. The content is a basic reproduction of a memorized fable without original creative input.",
+  "_metadata": {
+    "task_id": "STORY_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c4c55dee58756769cdefa1c7f423e3773e183ddf44364e161304e2efdaea8f10",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:05:09.091353+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "acab2af35a8d8c8bd7834cb1466ad03c2ce48a871a8e8eda6d69f9f94a03f34a",
+    "input_tokens": 4393,
+    "output_tokens": 2707,
+    "thoughts_tokens": 1930,
+    "cost_usd": 0.001251,
+    "latency_ms": 75640,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4393,
+        "output_tokens": 2707,
+        "thoughts_tokens": 1930,
+        "cost_usd": 0.001251,
+        "latency_ms": 75640,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

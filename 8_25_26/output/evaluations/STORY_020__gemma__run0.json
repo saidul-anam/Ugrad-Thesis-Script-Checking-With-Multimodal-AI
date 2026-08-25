@@ -1,0 +1,96 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a seamless continuation of the stem and develops the plot logically from the rescue to the conclusion.",
+      "evidence": "While running he suddenly slip into lion's nose."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive ending with a clear moral outcome (friendship), but the candidate failed to provide a required title.",
+      "evidence": "From that day, that lion and mouse became best friends."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in tense consistency, particularly the use of present tense where past tense is required.",
+      "evidence": "he suddenly slip into lion's nose."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard retelling of a well-known Aesop fable with no original creative turns or authentic descriptive detail.",
+      "evidence": "Then the rat started cutting the net by his sharp teeth."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present vs Past)",
+      "Missing title"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Satisfying positive resolution"
+    ]
+  },
+  "feedback_summary": "The student successfully completed the story with a logical flow and a positive ending. However, the script is heavily reliant on a memorized fable, lacks originality, and contains frequent grammatical slips in tense (e.g., 'slip' instead of 'slipped'). The omission of a title also resulted in a loss of structural marks. Due to the basic syntax and formulaic nature, the score is placed at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e68e531becbf9d0b5842ab905e5a4c0e3772b975678e702f3aa59ad1e0eee06",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:34:32.385163+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d08a8e7938b67d0558f3a06ae233d9968191478dba040b95d3f7444f43552c52",
+    "input_tokens": 4475,
+    "output_tokens": 3436,
+    "thoughts_tokens": 2748,
+    "cost_usd": 0.001478,
+    "latency_ms": 95922,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4475,
+        "output_tokens": 3436,
+        "thoughts_tokens": 2748,
+        "cost_usd": 0.001478,
+        "latency_ms": 95922,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

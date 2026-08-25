@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central theme—distinguishing between passive night dreams and active goals—though the explanation is simplistic and lacks depth.",
+      "evidence": "Dreams are that which make our path of life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is concise, avoiding unnecessary padding.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Significant grammatical errors are present, including spelling mistakes ('for got'), subject-verb agreement issues, and incorrect tense usage.",
+      "evidence": "which we for got after woke up"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids any verbatim copying from the poem, showing a genuine attempt at interpretation.",
+      "evidence": "Future life is depending on dream that refers to goal of human life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Syntax and sentence structure errors",
+      "Spelling/Morphological errors (e.g., 'for got')",
+      "Tense inconsistency"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of the core theme"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the theme of the poem and expressed it in their own words without copying. However, the score is heavily impacted by poor linguistic mechanics, including fragmented sentences and basic grammatical errors. The conceptual understanding is present, but the execution in English is weak.",
+  "_metadata": {
+    "task_id": "THEME_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3b35fceeed7d42beba44e316381317323e058921a9596e04183c6289eaead081",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:42:43.260334+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "42376b6b452413b9990f13a8ad7c6b3adf817475464ddf923da53a779db846e0",
+    "input_tokens": 4263,
+    "output_tokens": 1462,
+    "thoughts_tokens": 814,
+    "cost_usd": 0.000865,
+    "latency_ms": 41515,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4263,
+        "output_tokens": 1462,
+        "thoughts_tokens": 814,
+        "cost_usd": 0.000865,
+        "latency_ms": 41515,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

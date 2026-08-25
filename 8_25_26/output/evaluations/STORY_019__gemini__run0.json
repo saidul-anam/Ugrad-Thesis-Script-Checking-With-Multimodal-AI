@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the prompt and develops the full narrative arc of the fable logically, showing the lion sparing the mouse and later being rescued.",
+      "evidence": "The mouse notice that and cut the net with it's sharp  teeth . By this the lion can get rid from the net."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story features a relevant title and a clear constructive moral lesson at the conclusion, although the title contains spelling errors and dialogue layout is basic.",
+      "evidence": "Marcy is a great virtud\n\nMoral: Every creature need other's help to live"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent tense shifts between past and present, subject-verb agreement errors, irregular dialogue punctuation, and spelling confusions.",
+      "evidence": "Being ferocious the lion groaning and tell \"who is here? I can kill you now\"."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies on a standard predictable plot with basic phrasing; while clearly original student writing rather than a copied template, it lacks vivid descriptive detail.",
+      "evidence": "The lion smile loudly and say you will help me : you are very little creation I don't need your help any day"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency across narrative beats (e.g., 'enter', 'groaning and tell', 'notice and cut')",
+      "Spelling and phonetic confusions ('Marcy', 'virtud', 'slepping', 'in rain' for 'in vain')",
+      "Faulty dialogue punctuation and capitalization"
+    ],
+    "positive_aspects": [
+      "Logical, complete plot progression directly continuing from the stem",
+      "Explicit moral stated with a corresponding thematic title"
+    ]
+  },
+  "feedback_summary": "The candidate presents a complete and logically structured continuation of the story, concluding with an appropriate moral and title. However, frequent tense shifts, spelling mistakes, and mechanics slips restrict the score to the lower end of Band 3 (4/7).",
+  "_metadata": {
+    "task_id": "STORY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "849b1b43cd884b3fbbaa24055e205009cfd8bd88b89aec2c18617c0e6011512a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:23:39.822676+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6b7f816c668e475f22ff4c3dea2646e8e47109e69fbb1df5e065e7c892daaa66",
+    "input_tokens": 4479,
+    "output_tokens": 3093,
+    "thoughts_tokens": 2321,
+    "cost_usd": 0.009076,
+    "latency_ms": 21702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4479,
+        "output_tokens": 3093,
+        "thoughts_tokens": 2321,
+        "cost_usd": 0.009076,
+        "latency_ms": 21702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Captures the highest and lowest points but contains a blatant data error (stating 20% for Nuclear initially) and omits Natural Gas entirely from the analytical body.",
+      "evidence": "the 20% of electricity came From Nuclear power plant."
+    },
+    "structure_format_brevity": {
+      "rationale": "Follows a logical flow with an introduction and conclusion, but includes external general knowledge/opinion not found in the chart, triggering the structural cap.",
+      "evidence": "Electricity is one of the most valuable source of energy."
+    },
+    "language_mechanics": {
+      "rationale": "Contains recurring errors in capitalization and number agreement ('most valuable source').",
+      "evidence": "the 16% electricity came From Hydro-electric power plant."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Uses basic comparative terms ('majority', 'lowest') and attempts a mathematical comparison between the highest and lowest values.",
+      "evidence": "lowest amount of electricity in USA like 2% electricity came from Nuclear power plant which is 44% less than coal factories"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data inconsistency",
+      "Inclusion of external facts",
+      "Arbitrary capitalization",
+      "Subject-number agreement"
+    ],
+    "positive_aspects": [
+      "Successful identification of peaks and troughs",
+      "Attempted relative data comparison"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identifies the dominant and least significant energy sources and attempts a comparative analysis. However, the response is hampered by the inclusion of external filler regarding the value of electricity, which triggers a hard cap of 6. Furthermore, the script contains a significant data error (citing Nuclear as 20% instead of 2%) and completely omits Natural Gas from the description. Language mechanics are basic with frequent capitalization and grammatical errors.",
+  "_metadata": {
+    "task_id": "CHART_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e2295018ad0e7653f519b67fc53858cd3ce3a25776171936d2812aa991f2f6c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:32:57.282389+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bf34792bdf477422f88280ba15e172104778b2c98e25b38ab8babbc0ab1bc014",
+    "input_tokens": 4425,
+    "output_tokens": 2523,
+    "thoughts_tokens": 1791,
+    "cost_usd": 0.001199,
+    "latency_ms": 70452,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4425,
+        "output_tokens": 2523,
+        "thoughts_tokens": 1791,
+        "cost_usd": 0.001199,
+        "latency_ms": 70452,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

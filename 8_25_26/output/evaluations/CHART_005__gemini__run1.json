@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all five energy sources, but severely distorts the primary data point by writing 4650% instead of 46% for coal, and merely lists the values rather than analyzing broader trends or significant gaps.",
+      "evidence": "In 1980, USA produce 4650% of electricity by burning Coal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response contains a basic introductory sentence but fails to group data analytically, devolving into a mechanical line-by-line listing without an overarching synthesis or concluding observation.",
+      "evidence": "In the chart it shows the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent grammatical and mechanical errors appear, notably using present tense verbs ('produce', 'get', 'create') for 1980 historical data, erratic capitalization ('Coal', 'Nuclear'), and omitting the terminal full stop.",
+      "evidence": "At last they create 2% electricity from Nuclear power plant"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative vocabulary is extremely limited; aside from noting the 'second biggest source', the candidate relies on monotonous and repetitive syntactic patterns ('They get... They get...').",
+      "evidence": "They get 24% electricity from natural gas, which is the second biggest source of their electricity. They get 12% electricity from oil."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (using present tense for historical 1980 data)",
+      "Data transcription error (writing 4650% for coal)",
+      "Punctuation and capitalization faults (missing terminal period, mid-sentence capitalization)",
+      "Repetitive sentence structures ('They get...')"
+    ],
+    "positive_aspects": [
+      "Included all five energy sectors from the chart",
+      "Correctly identified natural gas as the second largest contributor"
+    ]
+  },
+  "feedback_summary": "The script provides a basic attempt to describe the chart by listing all five energy sources, but falls into Band 2 due to line-by-line data presentation, a major numerical error (4650% for coal), lack of comparative depth, and repeated present-tense usage for past data. In accordance with tiebreaker rules for basic syntax, the lower value of Band 2 (4/10) is awarded.",
+  "_metadata": {
+    "task_id": "CHART_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "74d4ea978bcefe07adfd40f190e8d1be7fa162315965c8c8b268d7df044f4c43",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:15:11.580908+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6b3b6459a43abd5235d736f2f297bc8ee36a0afbfc7c558018e407b08dc96d30",
+    "input_tokens": 4334,
+    "output_tokens": 2990,
+    "thoughts_tokens": 2141,
+    "cost_usd": 0.008775,
+    "latency_ms": 29625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4334,
+        "output_tokens": 2990,
+        "thoughts_tokens": 2141,
+        "cost_usd": 0.008775,
+        "latency_ms": 29625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully identifies the core thematic points of the poem: hope as an enduring presence in the human soul, its role during hardship, and its selfless nature.",
+      "evidence": "The poet compare hope to a little bird that is sings contrineously in our soul."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented in a single paragraph block of concise length, but includes an unnecessary title tag and omits terminal sentence punctuation.",
+      "evidence": "\"hope\"\nThe poemashows"
+    },
+    "language_mechanics": {
+      "rationale": "High error density in basic mechanics, including spelling errors ('contrineously', 'inpiration', 'leaving' for 'living'), subject-verb agreement slips ('poet compare', 'it never ask'), fused words ('poemashows'), and missing end punctuation.",
+      "evidence": "The poet compare hope to a little bird that is sings contrineously in our soul."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows complete independence from direct copying (0.0% verbatim overlap), rephrasing the poem's symbolic imagery entirely into the student's own words.",
+      "evidence": "Even in difficult time hope gives us courage, comfort and inpiration."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement failure (e.g., 'poet compare', 'it never ask')",
+      "Spelling and lexical inaccuracies ('contrineously', 'inpiration', 'leaving' instead of 'living')",
+      "Punctuation and spacing errors ('poemashows', unpunctuated final sentence)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the original poem text",
+      "Accurate comprehension and summary of the poem's central theme"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's central metaphor and key ideas without copying lines from the source. However, frequent mechanical slips in subject-verb agreement, spelling, and punctuation limit the script to Band 3.",
+  "_metadata": {
+    "task_id": "SUMMARY_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "54330c9eb35d4f2c142ea4143fd419f1ac439714a24d199d2f6f6b1f5c4f9705",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:39:15.719431+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "09c92d91551753b1fb9937d800979f7ff27cb044d7e9db48b5fdad02580ec206",
+    "input_tokens": 4386,
+    "output_tokens": 3687,
+    "thoughts_tokens": 2918,
+    "cost_usd": 0.010533,
+    "latency_ms": 22593,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4386,
+        "output_tokens": 3687,
+        "thoughts_tokens": 2918,
+        "cost_usd": 0.010533,
+        "latency_ms": 22593,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

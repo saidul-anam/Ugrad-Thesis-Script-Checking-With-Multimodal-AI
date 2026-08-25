@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt, clearly stating the purpose of the letter and outlining specific future plans (engineering, military, gym, English skills).",
+      "evidence": "In your last letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components (Address, Date, Salutation, Body, Close, Signature) are present, although there is some redundant layout repetition at the end.",
+      "evidence": "Road-6, Avenue-7, Mirpur-DOHS, Dhaka 27 June, 2026 Dear Abrar... Yours dearly, Azwad"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent minor mechanical errors, including lowercase first-person pronouns ('i'), missing infinitives ('trying improve'), and a blatant typo ('abort' instead of 'about').",
+      "evidence": "write abort it to you... from where i will prepare... trying improve my conversational english"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing feels authentic and personal rather than copied from a textbook template, showing a logical progression of thoughts.",
+      "evidence": "I'm planning to crack one of the many engineering universities in the country."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Case sensitivity (lowercase 'i')",
+      "Spelling typos ('abort' for 'about')",
+      "Missing preposition/particle ('trying improve')"
+    ],
+    "positive_aspects": [
+      "Complete structural layout",
+      "Direct and relevant content",
+      "Authentic, non-formulaic voice"
+    ]
+  },
+  "feedback_summary": "The candidate successfully fulfills the prompt and follows the structural requirements of an informal letter. The content is original and logically organized. However, the score is slightly tempered by inconsistent language mechanics, specifically regarding capitalization and basic syntax. Despite these slips, the script remains highly readable and fits within Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "748c3de50ecdc1dcbd9a1f82f7553d9fd834f19a31e0d792ec47af6d348352e9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:56:25.898184+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "411d0896c0e257f252cd81ace92b5924a147c3ad58238d75981a98f8efa90996",
+    "input_tokens": 4453,
+    "output_tokens": 1870,
+    "thoughts_tokens": 1107,
+    "cost_usd": 0.001006,
+    "latency_ms": 52437,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4453,
+        "output_tokens": 1870,
+        "thoughts_tokens": 1107,
+        "cost_usd": 0.001006,
+        "latency_ms": 52437,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

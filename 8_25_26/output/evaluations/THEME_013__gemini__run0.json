@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core contrast between passive daydreamers and active realists, but approaches the task as a surface-level paraphrase rather than identifying an abstract thematic statement.",
+      "evidence": "Their are some dreamers who see dreams in night, don't want to make their dreams in reality. But real dreamers are very  dangerous people."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is kept to a single short block, but lacks a well-defined thematic topic sentence and structured interpretation.",
+      "evidence": "Every people have dream. But every dream and every dreamers are not equal."
+    },
+    "language_mechanics": {
+      "rationale": "Demonstrates high error density across multiple mechanical areas: quantifier/agreement issues ('Every people have', 'every dreamers'), homophone confusion ('Their are', 'there dreams'), and unidiomatic phrasing ('make their dreams in reality').",
+      "evidence": "Their are some dreamers who see dreams in night, don't want to make their dreams in reality."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate rephrases the poem using their own words rather than copying directly, though the sentence structure closely tracks the original text line by line.",
+      "evidence": "They can do any thing to make there dreams true."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb and determiner disagreement ('Every people have', 'every dreamers')",
+      "Homophone confusion ('Their are' for 'There are', 'there dreams' for 'their dreams')",
+      "Unidiomatic phrasing and preposition errors ('see dreams in night', 'make their dreams in reality')"
+    ],
+    "positive_aspects": [
+      "Understands the fundamental contrast between passive and active dreamers",
+      "Zero direct verbatim copying from the source poem",
+      "Maintains conciseness in a single unified block"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the poem's premise, contrasting those who only dream at night with those who act upon their dreams, and writes entirely in their own words without copying lines directly. However, the response treats the prompt as a literal summary rather than articulating an abstract thematic insight. Frequent mechanical lapses—including homophone mix-ups ('Their'/'there') and subject-verb/determiner errors ('Every people have')—keep the script in Band 2.",
+  "_metadata": {
+    "task_id": "THEME_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de42167462f987f331573c0127594e8c1a5cf4a3116ef27648bec63579bce539",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:29:06.903423+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9eee13de78dcd692b7083e107530d0285266199f20a3d53f2e87ae7e663110e1",
+    "input_tokens": 4281,
+    "output_tokens": 4387,
+    "thoughts_tokens": 3544,
+    "cost_usd": 0.012252,
+    "latency_ms": 26077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4281,
+        "output_tokens": 4387,
+        "thoughts_tokens": 3544,
+        "cost_usd": 0.012252,
+        "latency_ms": 26077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

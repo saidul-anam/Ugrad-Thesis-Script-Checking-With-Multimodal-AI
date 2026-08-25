@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the dominant source (Coal) and most percentages, but misidentifies Oil as 2% instead of 12%. The inclusion of calculated degree values (e.g., 165.6) shows effort but is not requested and slightly clutters the data presentation.",
+      "evidence": "most numb of electricity come from coal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows a logical progression with a clear lead-in sentence, a grouped body, and a concluding summary. No external opinions were added.",
+      "evidence": "The chart hilight the data of the sources of the USA electricity in the year of 1980."
+    },
+    "language_mechanics": {
+      "rationale": "High density of grammatical errors, including subject-verb agreement, incorrect verb forms, and spelling mistakes that hinder fluency.",
+      "evidence": "We can clearly seen fra the pie chart that a hage numbe of electricity is come from natura gas"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative vocabulary is very basic and non-standard ('big more portion', 'short number of').",
+      "evidence": "coal has big more portion than natural gas"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Spelling (hage, natura, hilight)",
+      "Data inaccuracy (Oil %)",
+      "Incorrect verb conjugation (can told, can seen)"
+    ],
+    "positive_aspects": [
+      "Correct identification of the primary energy source",
+      "Adherence to the overall structural requirements (Intro/Body/Conclusion)"
+    ]
+  },
+  "feedback_summary": "The student demonstrates a basic understanding of the chart and successfully identifies the main trend (Coal as the primary source). The structure is sound, including an introduction and conclusion. However, the script is heavily penalized for linguistic weakness, with pervasive errors in spelling and syntax. There is also a factual error regarding the percentage of Oil. The attempt to calculate the degrees of the pie chart is noted but does not compensate for the grammatical failures.",
+  "_metadata": {
+    "task_id": "CHART_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "dcd497d19b949348b3c65a963b06ff0b5ad7950bb912cb2d3bda6c5a3e9afbe4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:23:18.122567+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "832b04eeaacbb0ad7e69d810c0e8917b4f386552d8b6b358631a1300e7d5df17",
+    "input_tokens": 4443,
+    "output_tokens": 3300,
+    "thoughts_tokens": 2512,
+    "cost_usd": 0.001434,
+    "latency_ms": 93875,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4443,
+        "output_tokens": 3300,
+        "thoughts_tokens": 2512,
+        "cost_usd": 0.001434,
+        "latency_ms": 93875,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

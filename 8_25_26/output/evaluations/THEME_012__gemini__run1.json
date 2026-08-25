@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately grasps the central contrast of the poem—distinguishing idle nighttime dreaming from purposeful daytime action—though it is formulated somewhat simply and misidentifies the poem as a 'passage'.",
+      "evidence": "The main theme of the passage is everyone can see dreams. But the people who work for it can make it come true."
+    },
+    "structure_format_brevity": {
+      "rationale": "Presented in a single unified paragraph that begins with a clear thematic statement and sustains focus without unnecessary padding.",
+      "evidence": "The main theme of the passage is everyone can see dreams."
+    },
+    "language_mechanics": {
+      "rationale": "Demonstrates several grammatical errors in a short text, including a double verb ('is can be'), omission of a plural noun ending ('Both are called dream'), and a subject-verb agreement failure ('each of them bear').",
+      "evidence": "is can be sweet enough to memorize, but the dream we see with our open eyes is the purpose of our life. Both are called dream. But each of them bear different value."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Relies entirely on original paraphrasing with zero verbatim reproduction of the source lines, though the vocabulary and syntax remain fairly basic.",
+      "evidence": "the dream we see with our open eyes is the purpose of our life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Double verb construction ('is can be')",
+      "Plural noun omission ('called dream')",
+      "Subject-verb agreement error ('each of them bear')"
+    ],
+    "positive_aspects": [
+      "Accurate thematic interpretation of active vs passive dreaming",
+      "100% original paraphrasing with zero verbatim copying",
+      "Concise single-block format"
+    ]
+  },
+  "feedback_summary": "The candidate understands the abstract message of the poem well and expresses it in their own words within a single concise block. However, frequent mechanical and grammatical slips ('is can be', 'each of them bear') and basic syntax keep the script at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ebe0ff2b14f6b0d79fbac3c557aff0b32cdfcaa2fd5821c5cce2979c235936a4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:19:36.324258+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ca654ed254aa6a38637be0b64121c2a89efb174492b48165cd6edc6a6f0b80e3",
+    "input_tokens": 4290,
+    "output_tokens": 3049,
+    "thoughts_tokens": 2276,
+    "cost_usd": 0.00891,
+    "latency_ms": 18141,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4290,
+        "output_tokens": 3049,
+        "thoughts_tokens": 2276,
+        "cost_usd": 0.00891,
+        "latency_ms": 18141,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

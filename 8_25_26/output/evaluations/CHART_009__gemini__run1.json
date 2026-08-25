@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script covers all major data points from the chart and correctly identifies the highest and lowest sources. However, the exact percentage for Nuclear (2%) is omitted, and there is a minor arithmetic inaccuracy when calculating the difference between Coal and Oil (stated 36% instead of 34%).",
+      "evidence": "Coal produces 46% of the USA electricity in 1980. Natural gas produces 2'4%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response features an introductory sentence, grouped comparative analysis, and a concluding remark without introducing external facts. However, the closing section is overly repetitive and redundant.",
+      "evidence": "The chart indicates the sources of USA electricity in 1980, Where coal produces excessive excessive amount of electricity and nuclear produces least least amount of electricity."
+    },
+    "language_mechanics": {
+      "rationale": "There are noticeable mechanical issues, including tense inconsistency (using present tense for 1980 historical data), sentence fragments beginning with relative pronouns, spelling slips ('dividition', 'proudes', 'Goal' for Coal), and word duplication.",
+      "evidence": "Which almost half of the amount what coals produces. Goal produces 22% more electricity than natural gas. 16% of the USA electricity is produced by Hydro- electric power. Which Which is 30% less than coal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate makes a commendable effort to use comparative language and compute percentage differences rather than simply listing raw figures line-by-line, though sentence structures remain basic and somewhat clumsy.",
+      "evidence": "Which almost half of the amount what coals produces. Goal produces 22% more electricity than natural gas."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (using present tense instead of past tense for 1980 data)",
+      "Sentence fragments (beginning dependent clauses with 'Which')",
+      "Spelling errors and typographical slips ('dividition', 'proudes', 'Goal')",
+      "Duplication of words ('Which Which', 'excessive excessive', 'least least')"
+    ],
+    "positive_aspects": [
+      "Active attempt at analytical comparison rather than rote data listing",
+      "Clear identification of maximum (Coal) and minimum (Nuclear) contributors",
+      "Zero intrusion of external facts or irrelevant personal opinions"
+    ]
+  },
+  "feedback_summary": "The candidate successfully analyses the chart by highlighting the primary trends, calculating comparative margins, and identifying the highest and lowest sources of electricity. The score is placed at the lower end of Band 3 (6/10) due to frequent mechanical errors, tense inconsistencies regarding historical data, sentence fragments, and minor arithmetic slips.",
+  "_metadata": {
+    "task_id": "CHART_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b4d1a4bf259423ea045bc9ae381c0dee59cd689102f285ccdc8fd13466a11170",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:27:12.041590+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9c3d46bf665f85a272aac2af3ba8e81ed37a7e8564a16d97faa2161fab179b7a",
+    "input_tokens": 4436,
+    "output_tokens": 3327,
+    "thoughts_tokens": 2411,
+    "cost_usd": 0.009648,
+    "latency_ms": 21765,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4436,
+        "output_tokens": 3327,
+        "thoughts_tokens": 2411,
+        "cost_usd": 0.009648,
+        "latency_ms": 21765,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

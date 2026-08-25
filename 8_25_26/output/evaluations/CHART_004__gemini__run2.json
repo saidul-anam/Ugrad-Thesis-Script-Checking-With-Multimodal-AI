@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate misreads key data points (stating Coal at 49% instead of 46%, and Hydro-electric at 18% instead of 16%) and includes extraneous outside speculation not in the chart.",
+      "evidence": "In 1980, we see the largest electrycity source is Coal which hold 49%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response lists items point-by-point without logical grouping, finishes with a redundant circular concluding paragraph repeating the introduction, and lacks analytical cohesion.",
+      "evidence": "The pie chart shows the USA electricity source in 1980. There are hold the lion Pencantage of source is coal which is 49%."
+    },
+    "language_mechanics": {
+      "rationale": "High density of spelling mistakes, subject-verb agreement errors, and multiple dependent clauses incorrectly punctuated as standalone sentence fragments.",
+      "evidence": "The secound largest sounce is Natural gas. Which hold the 24% of this Chart."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative efforts are attempted (identifying largest/lowest and attempting difference calculation) but use awkward and unrefined expressions.",
+      "evidence": "We can compare the hiegst and lowwest between there. difference is 47%."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data inaccuracy (misquoting chart percentages as 49% and 18%)",
+      "Sentence fragments starting with 'Which'",
+      "Spelling errors ('sounce', 'electrycity', 'diffrence', 'secound', 'empact', 'Nuclean', 'genarate', 'hiegst', 'Pencantage')",
+      "Inclusion of extraneous outside opinions ('expensive to make on genarate')"
+    ],
+    "positive_aspects": [
+      "Attempts to cover all five sources of electricity mentioned in the chart",
+      "Attempts comparative analysis by calculating the gap between the highest and lowest sources"
+    ]
+  },
+  "feedback_summary": "The response identifies all five electricity sources and attempts basic comparisons between the highest and lowest categories. However, it suffers from inaccurate data extraction (recording 49% and 18% instead of 46% and 16%), severe spelling and punctuation errors, sentence fragments, redundant repetition in the final paragraph, and the inclusion of external speculative commentary.",
+  "_metadata": {
+    "task_id": "CHART_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ff85287f6ade61e119d6d1721fe03d5e8fca88ebdfa86af1e2c3dab3c00f8287",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:12:38.506222+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ccaa310b8a3414348b2d004b9f61e387d1bf53ca9e8509dda8b808f746e7f163",
+    "input_tokens": 4555,
+    "output_tokens": 3477,
+    "thoughts_tokens": 2626,
+    "cost_usd": 0.010059,
+    "latency_ms": 22422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4555,
+        "output_tokens": 3477,
+        "thoughts_tokens": 2626,
+        "cost_usd": 0.010059,
+        "latency_ms": 22422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

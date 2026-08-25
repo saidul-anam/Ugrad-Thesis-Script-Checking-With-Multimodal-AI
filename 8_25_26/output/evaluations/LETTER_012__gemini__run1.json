@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student states the purpose of the letter early and directly addresses future plans regarding post-HSC higher studies abroad and starting a business.",
+      "evidence": "In your letter you have wanted to know about my future planning after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout elements of an informal letter are included in the correct order: address, date, salutation, body paragraphs, complimentary close, signature, and postal address block.",
+      "evidence": "27/06/26\nTatibazer, Dhaka\nDear, Arnob"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains a high density of spelling and word-form errors that hinder mechanical accuracy across a short text.",
+      "evidence": "Now I am wrutting about it. After HSC I am willing to move abroad for educational purpose. I want to go there for higher study. So beside the academic syllebus, I am taking a litle preparation for this. Perhaps I am also thing about starding a small - bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter relies heavily on standard memorised introductory and closing formulas, with simple syntax and limited lexical range.",
+      "evidence": "I hope you are well. I am also fine. I got your letter yesterday."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors: 'wrutting', 'syllebus', 'litle', 'starding', 'bussiness', 'youres'",
+      "Lexical/grammatical slips: 'thing about' instead of 'thinking about'",
+      "Punctuation error in salutation: 'Dear, Arnob'"
+    ],
+    "positive_aspects": [
+      "Complete informal letter layout including sender/receiver envelope details",
+      "Direct relevance to the prompt topic"
+    ]
+  },
+  "feedback_summary": "The candidate successfully provides a complete informal letter format and addresses the prompt directly by outlining plans for higher studies and entrepreneurship. However, the response is marred by frequent spelling mistakes and reliance on formulaic letter openings, placing it squarely in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1023ff9c2066afb1efcfc25a34f3a345611b201f662f28f6e83e9160de989774",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:18:00.504837+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "e44141a60a9fabb7cd1d2e3147dc7601ce506ab7e21c2f7eac29839b145641f2",
+    "input_tokens": 4375,
+    "output_tokens": 3453,
+    "thoughts_tokens": 2661,
+    "cost_usd": 0.009945,
+    "latency_ms": 20359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4375,
+        "output_tokens": 3453,
+        "thoughts_tokens": 2661,
+        "cost_usd": 0.009945,
+        "latency_ms": 20359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

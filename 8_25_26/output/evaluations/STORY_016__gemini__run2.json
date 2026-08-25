@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative smoothly continues from the given stem with coherent, sequential plot development following the classic lion and mouse tale.",
+      "evidence": "While running, it accidentally fell on th lion. This woke the lion up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a satisfying positive conclusion and includes an explicit moral, but it completely omits the required story title.",
+      "evidence": "Moral of the story: Size doesn't matter. Help can come from unexpected sources."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling mistakes (e.g., 'monse', 'lite', 'langhed', 'dowards', 'th') and sudden tense inconsistency (shifting between past and simple present) undermine grammatical precision.",
+      "evidence": "Then, the lion catches the monse and holds him in his palm. The monse pb pleads for his life and says"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story follows a predictable, well-known fable plot with basic narrative phrasing, though it incorporates a few expressive turns of phrase.",
+      "evidence": "After that, they became allies and went on living a happy life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Repeated spelling errors ('monse' for mouse, 'lite' for life, 'langhed' for laughed, 'dowards' for towards)",
+      "Tense inconsistency (shifting erratically from past tense to simple present tense in narrative narration)",
+      "Omission of a proper story title"
+    ],
+    "positive_aspects": [
+      "Logical and sequential story progression from the prompt stem",
+      "Inclusion of a clear, constructive moral and positive resolution"
+    ]
+  },
+  "feedback_summary": "The response provides a coherent continuation of the prompt with a satisfying conclusion and an appropriate moral lesson. However, the score is constrained to Band 3 due to the omission of a story title, repetitive spelling errors, and unwarranted shifts between past and present tense.",
+  "_metadata": {
+    "task_id": "STORY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c3d14c5df9ddab57739025a19caf8181a1a60831836298dccf8236e8fc1208f4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:54:06.599458+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5c5169e3319141a9f6dfcd3156705230f345adbec83a95ad4c7b426cb80617fc",
+    "input_tokens": 4464,
+    "output_tokens": 2870,
+    "thoughts_tokens": 2114,
+    "cost_usd": 0.008514,
+    "latency_ms": 18859,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4464,
+        "output_tokens": 2870,
+        "thoughts_tokens": 2114,
+        "cost_usd": 0.008514,
+        "latency_ms": 18859,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

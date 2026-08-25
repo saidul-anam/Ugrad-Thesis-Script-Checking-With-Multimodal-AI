@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate includes all raw percentage values from the chart (Coal 46%, Natural Gas 24%, Hydro 16%, Oil 12%, Nuclear 2%) and correctly identifies the highest contributor. However, reporting is purely mechanical and compromised by extensive external commentary.",
+      "evidence": "It was used 46% and it is the hieghost amount. Natural gas nits also used largely in USA electricity. It was used 24%. Hydrotelectric power used 16%, oil used 12%. Nuclearz used 2%."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory sentence is provided, but analytical grouping is absent. The second paragraph deviates entirely into extraneous environmental details and moralizing statements regarding acid rain, renewable energy, and animal safety.",
+      "evidence": "we know if we bearn coal it reduce carbon dy oxide whitch is harmful for atmosphere and it is cause of acid rain."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains persistent spelling mistakes, subject-verb agreement issues, fragmented clauses, and awkward phrasing throughout.",
+      "evidence": "Natural gas are was good for atmos phan e. Hydro-electric is the renewable energy source. That's why it's good for human being and it's not harmful for human animal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative expression is extremely basic and grammatically flawed. The candidate attempts minimal comparative phrasing without using formal analytical vocabulary.",
+      "evidence": "There we can see that coal are was use largely than natural gas."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Extensive external knowledge/opinion insertion (acid rain, carbon dioxide, environmental harm)",
+      "Pervasive spelling errors ('hieghost', 'Hydrotelectric', 'Nuclearz', 'bearn', 'whitch', 'atmos phan e', 'Nucleon')",
+      "Faulty verb phrase construction and tense shifts ('are was use', 'are was good')"
+    ],
+    "positive_aspects": [
+      "All five statistical values from the chart are cited accurately",
+      "Correctly identifies coal as the highest energy source"
+    ]
+  },
+  "feedback_summary": "The candidate successfully reports all figures from the chart and identifies the peak energy source. However, the response heavily violates the graph description task constraints by devoting an entire paragraph to external environmental facts and opinions about pollution and acid rain. Coupled with frequent grammatical, tense, and spelling errors, the writing remains at a basic level, placing it in Band 2 with a total score of 5/10.",
+  "_metadata": {
+    "task_id": "CHART_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "0e949a561cb5867d242551888845719227c8cd7cd74bbd6c74aad8bfb6878879",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:24:01.840698+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "fd8bfa59ae69aed1fabce97fe11933feba81f4570694357dcad52420d984d6bb",
+    "input_tokens": 4469,
+    "output_tokens": 3491,
+    "thoughts_tokens": 2600,
+    "cost_usd": 0.010068,
+    "latency_ms": 19312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4469,
+        "output_tokens": 3491,
+        "thoughts_tokens": 2600,
+        "cost_usd": 0.010068,
+        "latency_ms": 19312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the letter and describes a concrete future plan (social work in the village), fully satisfying the prompt.",
+      "evidence": "From your last letter you wanted to know the future plan after passing H.S.c Exam. Noae I'm describing it."
+    },
+    "structure_format_brevity": {
+      "rationale": "The layout is largely correct, containing the address, salutation, body, closing, and signature. Only the date is missing, which is insufficient to trigger a hard cap (requires 3+ missing).",
+      "evidence": "1231 Joynag Road, Dhaka... Dear Toufa... yours ever Talha"
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling errors and grammatical slips that significantly disrupt the reading flow, including basic word confusion.",
+      "evidence": "zeno knowledge about hygiene and balance food. They lead unhealthy life most of them suffer many dieses."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The opening uses a standard memorized template, although the described plan is an authentic, if simple, narrative.",
+      "evidence": "Hope your are well by the grace of Almighty. I'm also well by his grace."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (e.g., 'zeno', 'dieses', 'cuith', 'knoculedge')",
+      "Subject-verb agreement and tense inconsistencies",
+      "Punctuation errors (run-on sentences)"
+    ],
+    "positive_aspects": [
+      "Strict adherence to the prompt's objective",
+      "Correct basic letter layout"
+    ]
+  },
+  "feedback_summary": "The student successfully communicated their future plans and maintained the formal structure of a letter, though the date was omitted. The score is limited by a high density of linguistic errors, particularly in spelling and basic syntax, which place the script firmly in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "14635fae7008c34e7a50cc90cb6470d59364bdabd5e499a14b46c9b453199387",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:06:35.934212+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8de3fe8b12da176a3c28cab239e66dd101ffa8625cd2fa2acdc8be51959a0188",
+    "input_tokens": 4378,
+    "output_tokens": 2156,
+    "thoughts_tokens": 1401,
+    "cost_usd": 0.001085,
+    "latency_ms": 61827,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4378,
+        "output_tokens": 2156,
+        "thoughts_tokens": 1401,
+        "cost_usd": 0.001085,
+        "latency_ms": 61827,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

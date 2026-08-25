@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, stating the purpose of the email and outlining a clear future plan to become a doctor.",
+      "evidence": "You send me a email and wanted to know aboud my future plan after passing HSC Exam. Now, I am telling you about that."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate chose an email format. While the To, Subject, Salutation, Body, and Sign-off are present, the 'From' field is missing.",
+      "evidence": "To : sawda25671@gmail.com. Subject : Describing the future plan after HSC Exam."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains frequent spelling errors and grammatical mistakes that affect the quality, although the meaning remains clear.",
+      "evidence": "hope you are will by the grace of Almighty Allah... admited in Admission couching center... madical exam... grammare skill"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The introduction and conclusion follow a highly memorized, formulaic template, though the specific details about the medical exam show some personal input.",
+      "evidence": "I hope you are will by the grace of Almighty Allah. I am also well."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (aboud, poore, couching, madical, knowledg, grammare)",
+      "Grammatical slips (hope you are will, You send me a email)",
+      "Incorrect possessive/adjective use (Yours friend)"
+    ],
+    "positive_aspects": [
+      "Prompt adherence",
+      "Logical flow of ideas",
+      "Correct usage of email subject line"
+    ]
+  },
+  "feedback_summary": "The candidate successfully fulfills the task by describing their ambition to become a doctor and the steps they plan to take. The email format is mostly correct, missing only the 'From' address. However, the score is limited by significant linguistic errors, specifically frequent spelling mistakes and the use of common memorized templates for the opening and closing.",
+  "_metadata": {
+    "task_id": "LETTER_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "86638f9b3411232f69f22a70fce6530414f5e28b22b5cdf93d1235ad7077e6e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:28:54.230249+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0aabde5e62f18ae7c42dfe09fe76bf049f3c4c1ee44b3ac4626dec9ef1a953c4",
+    "input_tokens": 4416,
+    "output_tokens": 3251,
+    "thoughts_tokens": 2468,
+    "cost_usd": 0.001417,
+    "latency_ms": 91140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4416,
+        "output_tokens": 3251,
+        "thoughts_tokens": 2468,
+        "cost_usd": 0.001417,
+        "latency_ms": 91140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

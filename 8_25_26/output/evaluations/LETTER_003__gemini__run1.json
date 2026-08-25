@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt requirement by detailing concrete future plans after the HSC examination, including computer learning, business, and tutoring.",
+      "evidence": "I've decided to do a loth of things in this time. First of all, I'll learn the computer programes properly"
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural parts of an informal letter are present and correctly positioned (heading with date/address, salutation, body paragraphs, complimentary close, signature, and envelope block).",
+      "evidence": "27 June , 2026\nAzimpure , Dhaka\n\nDear fried,"
+    },
+    "language_mechanics": {
+      "rationale": "Significant frequency of spelling errors ('fried', 'condial', 'yeasted', 'penferect', 'loth', 'programes') and grammatical slips ('it's will be', 'in depended on', 'make ensure').",
+      "evidence": "At first take my condial love and good wishes to you. Hope that you are all well by the grace of Allah. I'm also well. I received your letter yeasted."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script heavily relies on stock, memorized introductory and concluding formulas, showing limited authentic syntactic variation.",
+      "evidence": "No more to today. Convey my salam to your parents and love to the younger"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling mistakes (e.g., 'fried' for 'friend', 'yeasted' for 'yesterday', 'condial' for 'cordial', 'penferect' for 'perfect')",
+      "Redundant auxiliary and modal verb usage ('it's will be', 'it'll will be')",
+      "Prepositional and grammatical errors ('in depended on', 'make ensure', 'from the junior student's')"
+    ],
+    "positive_aspects": [
+      "Complete structural layout adhering to the informal letter format with an envelope block",
+      "Direct response to the prompt with relevant details about post-exam plans"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the standard informal letter format and includes all six requisite structural elements. The topic is addressed relevantly with several distinct plans mentioned for after the exam. However, the score is constrained to Band 3 due to a high density of spelling errors and reliance on clichéd template formulas in the opening and closing.",
+  "_metadata": {
+    "task_id": "LETTER_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "979443a216a6382e2c776d1dc7d85f4ac53a6aaf075c5ba2d093d4bdc0d75f89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:10:18.585706+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "79892c87a02c5897ae8d22561fa33832ad370fde0b35f491978528b99f0b2e43",
+    "input_tokens": 4465,
+    "output_tokens": 3022,
+    "thoughts_tokens": 2156,
+    "cost_usd": 0.008894,
+    "latency_ms": 18656,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4465,
+        "output_tokens": 3022,
+        "thoughts_tokens": 2156,
+        "cost_usd": 0.008894,
+        "latency_ms": 18656,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

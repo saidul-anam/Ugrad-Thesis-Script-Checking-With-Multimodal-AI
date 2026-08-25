@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt and clearly outlines two distinct future plans: studying abroad and starting a small business.",
+      "evidence": "In your letter you have wanted to know about my future planning after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "All necessary components (Date, Address, Salutation, Body, Close, Signature) are present, though the layout is non-standard due to the inclusion of a separate 'To/From' section at the bottom.",
+      "evidence": "From Sneha 91No Tatibazer Dhaka To Arnob Murael nagan, Cumilla."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and a significant grammatical error ('thing about starding').",
+      "evidence": "wrutting... syllebus... litle... thing about starding... bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing avoids generic guide-book templates and provides an authentic justification for the business plan based on the local job market.",
+      "evidence": "You know the current situation of the job market of our country. We all should generate new opportunities."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors",
+      "Verb form inaccuracies"
+    ],
+    "positive_aspects": [
+      "Strong contextual relevance",
+      "Authentic voice and logical progression"
+    ]
+  },
+  "feedback_summary": "The student has successfully communicated their future plans in a coherent and authentic manner. The content is well-developed and on-topic. However, the script is marred by frequent spelling mistakes and a slightly irregular structural layout. Following the tiebreaker for Band 4, the lowest value is awarded due to the multiple mechanical errors.",
+  "_metadata": {
+    "task_id": "LETTER_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1023ff9c2066afb1efcfc25a34f3a345611b201f662f28f6e83e9160de989774",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:19:18.179367+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "deb45f5903152339df139c51f2bd212c0f4c9645c0518302d6f9941c419c28e8",
+    "input_tokens": 4376,
+    "output_tokens": 2972,
+    "thoughts_tokens": 2253,
+    "cost_usd": 0.001329,
+    "latency_ms": 82937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4376,
+        "output_tokens": 2972,
+        "thoughts_tokens": 2253,
+        "cost_usd": 0.001329,
+        "latency_ms": 82937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

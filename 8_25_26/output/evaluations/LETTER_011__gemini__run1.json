@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by outlining a specific, meaningful future plan to educate illiterate villagers after the HSC examination.",
+      "evidence": "After the HSC Exam, I will go to my village. In my village, there are many illiterate people. They don't know how to live, a happy and healthy life. I want to educate them."
+    },
+    "structure_format_brevity": {
+      "rationale": "All core structural components of an informal letter are intact and properly placed: date, address, salutation, body paragraphs, subscription, signature, and postal envelope layout.",
+      "evidence": "28 June, 2026,\nDonia, Dhaka. 1236\n\nDear Lamia,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains persistent mechanical and grammatical errors, including irregular plural errors, gerund/infinitive misuse, faulty punctuation, and incorrect possessive forms.",
+      "evidence": "Their childs also don't get education. Because of this they also do many works to live a happy life. If they educated well, they will do work."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter moves beyond generic template statements in the core body, logically developing the candidate's personal social work ambition and extending an authentic invitation to the friend.",
+      "evidence": "If you don't have any plan after the HSC Exam, you can join with me. You will also help me to educate the people of my village."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect noun pluralization ('childs' instead of 'children', 'many works')",
+      "Faulty preposition and verb construction ('how to farming', 'for live')",
+      "Punctuation anomalies ('Now. I am going to describe')",
+      "Incorrect possessive pronoun form ('yours parents')"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout adhering to all NCTB informal letter conventions",
+      "Clear, focused narrative on post-exam community service plans",
+      "Coherent progression of ideas with an appropriate informal closing"
+    ]
+  },
+  "feedback_summary": "The candidate delivers a fully structured informal letter with all necessary components present. The purpose is clearly communicated with a constructive and positive post-HSC plan. While grammatical errors and non-standard phrasing prevent full marks in language mechanics, the script merits the lower end of Band 4 (4/5) due to its structural completeness and contextual clarity.",
+  "_metadata": {
+    "task_id": "LETTER_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a9e1915ba2112b96016e011faa9fca9dc9aaa7cb33ef58f0852003973c1bee36",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:10:07.757803+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "82f90ad470ce188757cd070d3971d4ff1cc721821580815b61c10fce3ce08f15",
+    "input_tokens": 4529,
+    "output_tokens": 3309,
+    "thoughts_tokens": 2445,
+    "cost_usd": 0.009631,
+    "latency_ms": 20187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4529,
+        "output_tokens": 3309,
+        "thoughts_tokens": 2445,
+        "cost_usd": 0.009631,
+        "latency_ms": 20187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

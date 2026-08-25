@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central contrast between passive (night) and active (day) dreaming, though the explanation is brief and lacks a deeper exploration of the poem's 'danger' nuance.",
+      "evidence": "explore the difference between active and passive dream"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a coherent single block that states the theme immediately without unnecessary padding.",
+      "evidence": "Theme: The poem 'Dream' explore..."
+    },
+    "language_mechanics": {
+      "rationale": "There are several grammatical issues: subject-verb agreement error ('explore' instead of 'explores'), noun number inconsistency ('passive dream'), and a sentence fragment starting with 'emphasizing'.",
+      "evidence": "The poem 'Dream' explore"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and provides a good interpretation by categorizing the dreams as 'active and passive' rather than copying the text.",
+      "evidence": "active and passive dream"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Sentence fragmentation",
+      "Noun number precision"
+    ],
+    "positive_aspects": [
+      "Strong paraphrasing",
+      "Clear identification of central theme",
+      "Adherence to structural constraints"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the abstract theme of the poem, contrasting active and passive dreaming without relying on verbatim copying. The structure is correct and concise. However, the score is tempered by noticeable linguistic errors, specifically in subject-verb agreement and sentence construction.",
+  "_metadata": {
+    "task_id": "THEME_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3ba4c547e178ff15bee9c8b311b7684d392a8660c9ec919b6799a425362ecd04",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:37:57.222144+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "95399ade7e3209049457c7bf61711f3270cddb24b39ef08e78002462a6e605c0",
+    "input_tokens": 4256,
+    "output_tokens": 2334,
+    "thoughts_tokens": 1655,
+    "cost_usd": 0.001126,
+    "latency_ms": 65265,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4256,
+        "output_tokens": 2334,
+        "thoughts_tokens": 1655,
+        "cost_usd": 0.001126,
+        "latency_ms": 65265,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

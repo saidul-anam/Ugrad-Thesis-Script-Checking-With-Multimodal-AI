@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the hierarchy of sources and the extremes, but misreports two key data points: Coal is 46% (not 49%) and Hydro-electric is 16% (not 18%).",
+      "evidence": "largest electrycity source is Coal which hold 49%"
+    },
+    "structure_format_brevity": {
+      "rationale": "An overview sentence is provided and data is grouped sequentially. However, the candidate includes an external judgment about the cost of nuclear power, violating the rule against external facts.",
+      "evidence": "Which is so much expensive to make on genarate the electricity."
+    },
+    "language_mechanics": {
+      "rationale": "Extremely high error density in spelling ('sounces', 'Nuclean', 'Pencantage') and grammatical inconsistencies in tense and subject-verb agreement.",
+      "evidence": "The oil percantage is only 12%. Which is not high empact of 1980 USA electricity."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Uses basic ordinal comparisons ('largest', 'second largest'). The phrasing is formulaic and repetitive, particularly in the concluding paragraph which mirrors the introduction.",
+      "evidence": "The secound largest sounce is Natural gas."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling inaccuracies (e.g., 'Nuclean', 'sounces', 'empact')",
+      "Data transcription errors (Coal 49% instead of 46%)",
+      "Incorrect use of external knowledge/opinions"
+    ],
+    "positive_aspects": [
+      "Correct identification of highest and lowest data points",
+      "Presence of a clear introductory statement"
+    ]
+  },
+  "feedback_summary": "The student successfully identified the general trends and the relative ranking of energy sources. However, the response is marred by significant linguistic failures, specifically frequent spelling errors and poor syntax. Data accuracy was also compromised by misreading the percentages for Coal and Hydro-electric power. Crucially, the inclusion of an external opinion regarding the cost of nuclear energy triggered the structural cap for Graph/Chart tasks, limiting the total score to 6.",
+  "_metadata": {
+    "task_id": "CHART_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ff85287f6ade61e119d6d1721fe03d5e8fca88ebdfa86af1e2c3dab3c00f8287",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:56.789434+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c1be37af52c4f8c493d0aa8ac321f82f9c0e4e92fac32ab1ca1f082e20c1ff56",
+    "input_tokens": 4556,
+    "output_tokens": 2994,
+    "thoughts_tokens": 2200,
+    "cost_usd": 0.001354,
+    "latency_ms": 86718,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4556,
+        "output_tokens": 2994,
+        "thoughts_tokens": 2200,
+        "cost_usd": 0.001354,
+        "latency_ms": 86718,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

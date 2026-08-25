@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate grasps the essential contrast of the poem between passive night dreaming and active day dreaming to achieve goals, but the analysis remains rudimentary and lacks analytical depth.",
+      "evidence": "Night dream is not real dream this are only subconsus activity. Day dream is real dream. Day dream can reache help people to reach goal."
+    },
+    "structure_format_brevity": {
+      "rationale": "While the core theme explanation is brief and direct, the script errantly includes an informal letter heading (address and date), displaying format confusion.",
+      "evidence": "Nazipur, Naogaon,\nDate: 27-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical errors are present in a very short response, including spelling errors ('subconsus', 'reache'), subject-verb/demonstrative agreement errors ('this are'), and missing articles.",
+      "evidence": "Night dream is not real dream this are only subconsus activity."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying from the poem and attempts to interpret the text in their own words, though the syntax and expression remain basic.",
+      "evidence": "The poem is about the power of dream. Dream can make us strong."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inappropriate inclusion of letter-writing heading (address and date) in a theme task",
+      "Demonstrative and plural mismatch ('this are')",
+      "Spelling errors ('subconsus', 'reache')",
+      "Missing articles and determiners ('reach goal', 'power of dream')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source poem",
+      "Correctly identifies the core concept distinguishing night dreams from actionable day dreams"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an understanding of the poem's core dichotomy (passive night dreaming vs. goal-oriented day dreaming) and writes entirely in their own words without copying verbatim text. However, the response is marred by formatting confusion (incorporating a letter address and date) and high grammatical error density across limited text.",
+  "_metadata": {
+    "task_id": "THEME_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "626f017fdef24047c80e7cbe5432b263c7dd8123349227121f740ccdbe8fe2d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:37:50.678230+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6bb3704a003117da1301668405aa76f51ce54450690bfac845342926c2f2a181",
+    "input_tokens": 4290,
+    "output_tokens": 2842,
+    "thoughts_tokens": 2054,
+    "cost_usd": 0.008392,
+    "latency_ms": 18093,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4290,
+        "output_tokens": 2842,
+        "thoughts_tokens": 2054,
+        "cost_usd": 0.008392,
+        "latency_ms": 18093,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

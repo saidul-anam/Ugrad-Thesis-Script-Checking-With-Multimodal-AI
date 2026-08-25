@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate references all five energy sources but commits a severe data error by recording 4650% instead of 46% for coal, and provides minimal data interpretation.",
+      "evidence": "USA produce 4650% of electricity by burning Coal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script provides a basic introductory sentence but proceeds to list data line-by-line without grouping, analytical progression, or a concluding summary.",
+      "evidence": "In the chart it shows the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "The candidate consistently uses present tense ('produce', 'get', 'create') to describe historical data from 1980, alongside capitalization errors and a missing terminal period.",
+      "evidence": "In 1980, USA produce 4650% of electricity by burning Coal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Aside from noting the 'second biggest source', the response relies on repetitive phrasing ('They get...', 'From... they get...') with no advanced comparative language.",
+      "evidence": "which is the second biggest source of their electricity."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (using present tense for historical 1980 data)",
+      "Severe numerical transcription error (4650% instead of 46%)",
+      "Repetitive, basic sentence structures with minimal comparative analysis",
+      "Minor punctuation and capitalization errors"
+    ],
+    "positive_aspects": [
+      "Mentions all five electricity sources from the chart",
+      "Correctly identifies natural gas as the second largest source"
+    ]
+  },
+  "feedback_summary": "The candidate captures the general topic and mentions each data point from the chart, correctly identifying the second largest source. However, the response remains in Band 2 due to a mechanical line-by-line listing format, a major numerical inaccuracy (4650%), consistent use of the present tense for historical 1980 data, and repetitive sentence structures lacking comparative depth.",
+  "_metadata": {
+    "task_id": "CHART_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "74d4ea978bcefe07adfd40f190e8d1be7fa162315965c8c8b268d7df044f4c43",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:15:20.552730+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "58ff4d0d1711bbccbeb149bd7507f71e05ab298f9c798ad64a58b0fe3e665c58",
+    "input_tokens": 4334,
+    "output_tokens": 2818,
+    "thoughts_tokens": 2032,
+    "cost_usd": 0.008345,
+    "latency_ms": 28452,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4334,
+        "output_tokens": 2818,
+        "thoughts_tokens": 2032,
+        "cost_usd": 0.008345,
+        "latency_ms": 28452,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

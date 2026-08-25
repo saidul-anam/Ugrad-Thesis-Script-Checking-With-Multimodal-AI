@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative smoothly continues from the prompt stem and maintains logical, sequential plot progression following the classic fable, culminating in the lion's rescue.",
+      "evidence": "The mouse notice that and cut the net with it's sharp  teeth . By this the lion can get rid from the net."
+    },
+    "structure_format_brevity": {
+      "rationale": "A title and an explicit constructive moral are included, and the plot reaches a positive resolution; however, the title suffers from severe spelling errors and phrasing issues, preventing full marks in structural presentation.",
+      "evidence": "Marcy is a great virtud"
+    },
+    "language_mechanics": {
+      "rationale": "There is pervasive tense inconsistency (frequent shifts to present tense in past narrative), incorrect prepositions ('in rain' instead of 'in vain'), malformed dialogue punctuation, and multiple spelling errors.",
+      "evidence": "Being ferocious the lion groaning and tell \"who is here? I can kill you now\"."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a highly predictable, standard retelling with basic sentence structures and awkward phrasing throughout.",
+      "evidence": "The lion smile loudly and say you will help me : you are very little creation I don't need your help any day"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive past/present tense inconsistency ('groaning and tell', 'lion smile', 'lion forgive', 'mouse notice')",
+      "Spelling and malapropisms ('Marcy' for Mercy, 'virtud' for virtue, 'slepping' for sleeping, 'in rain' for in vain)",
+      "Punctuation and capitalization faults with direct speech and conjunctions (use of '&', missing quotation marks, improper colon use)"
+    ],
+    "positive_aspects": [
+      "Logically completes the narrative arc from the provided stem",
+      "Explicit inclusion of a title and a clear, constructive moral message at the end"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a complete and coherent story progression based on the provided prompt, reaching a positive resolution with an explicit moral. However, the score is limited to the lower end of Band 3 due to pervasive grammatical errors, tense shifting, dialogue punctuation issues, and spelling mistakes (including in the title).",
+  "_metadata": {
+    "task_id": "STORY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "849b1b43cd884b3fbbaa24055e205009cfd8bd88b89aec2c18617c0e6011512a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:24:14.880299+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5232e44513c9dde77a23de09bc670a4eb0d76766a81d051f91ddd7677d1aeb3b",
+    "input_tokens": 4479,
+    "output_tokens": 3503,
+    "thoughts_tokens": 2686,
+    "cost_usd": 0.010101,
+    "latency_ms": 35047,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4479,
+        "output_tokens": 3503,
+        "thoughts_tokens": 2686,
+        "cost_usd": 0.010101,
+        "latency_ms": 35047,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, clearly outlining a timeline of visiting the village, applying for Japanese universities, and studying AI/Software technology.",
+      "evidence": "After HSC exam, I want to spend a month in my village. Then I want to prepare for a foreign student visa."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required components of an informal letter (address, date, salutation, body, close, and signature) are present and correctly placed.",
+      "evidence": "27 June, 2026\nDonia, Dhaka-1236\n\nDear Habib,"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent grammatical errors, including missing verbs/infinitives and several spelling mistakes. Syntax is occasionally awkward.",
+      "evidence": "you want to about my after Hsc plans... don't want participate... Japanesse national universitys... settle their... bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The opening and closing are highly formulaic and template-based, although the specific mention of 'admission hell' and AI studies adds a touch of personal authenticity.",
+      "evidence": "How are you? I hope you are well by the grace of almighty Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Japanesse, universitys, bussiness)",
+      "Omission of infinitive 'to' (want participate)",
+      "Homophone confusion (their vs there)",
+      "Missing main verb in introductory sentence"
+    ],
+    "positive_aspects": [
+      "Full adherence to structural layout",
+      "Specific and logical progression of future plans",
+      "Clear purpose"
+    ]
+  },
+  "feedback_summary": "The script is structurally perfect, containing all necessary letter components. The content is relevant and provides specific goals rather than generic statements. However, the linguistic quality is weak, with frequent spelling and grammatical errors. According to the tiebreaker rules for Band 4, the lowest value (4) is awarded because the mechanics show multiple errors despite the structural and contextual success.",
+  "_metadata": {
+    "task_id": "LETTER_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "50e76c73e1093f8f7102087f4038383a4d402bcbcb70edb483f1548885973793",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:36:16.162902+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "864d57fe68a5291699054866d1b2349adf9e318c12222b84cf3ae77f595c620b",
+    "input_tokens": 4402,
+    "output_tokens": 2529,
+    "thoughts_tokens": 1738,
+    "cost_usd": 0.001199,
+    "latency_ms": 71562,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4402,
+        "output_tokens": 2529,
+        "thoughts_tokens": 1738,
+        "cost_usd": 0.001199,
+        "latency_ms": 71562,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

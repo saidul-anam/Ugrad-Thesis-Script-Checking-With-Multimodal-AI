@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script largely misses the core metaphorical meaning of the poem, drifting into personal, generic moral advice about dreams and problem-solving instead of summarizing the text objectively.",
+      "evidence": "In this time every person should have a dream, and alway focus on your dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate divides the summary into two separate fragmented paragraphs instead of a unified single block.",
+      "evidence": "Hope is everything in our life."
+    },
+    "language_mechanics": {
+      "rationale": "Shows severe grammatical breakdowns, incomplete clauses, faulty coordination, and multiple spelling errors ('alway', 'fward', 'warmm').",
+      "evidence": "and her And that kept so many warmm. It was very nice and we should enjoy."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While verbatim overlap is low, the expression is clumsy, combining fragmented lines from the poem with superficial and disjointed filler.",
+      "evidence": "A bird sings the tune without words and her And that kept so many warmm."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of subjective opinions and irrelevant moralizing",
+      "Sentence fragments and missing grammatical subjects",
+      "Spelling mistakes ('alway', 'fward', 'warmm')",
+      "Splitting summary into multiple paragraphs"
+    ],
+    "positive_aspects": [
+      "Identifies 'Hope' as the central subject",
+      "Attempts to formulate sentences in own words rather than purely copying the poem"
+    ]
+  },
+  "feedback_summary": "The candidate attempts to engage with the theme of hope, but the response deviates into irrelevant personal advice about dreams and challenges. The writing suffers from broken sentence structures, spelling errors, and unnecessary paragraph splitting, falling into Band 1.",
+  "_metadata": {
+    "task_id": "SUMMARY_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "519b736122236b09d00a5fe4b5500f805fc24d1c0bb48a1245d7b919c911c3c3",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:00:44.058448+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "bc784c36e10325980cd9b53bca49b0fecf60717baea4ecb68b30da8335f35ff3",
+    "input_tokens": 4400,
+    "output_tokens": 3094,
+    "thoughts_tokens": 2380,
+    "cost_usd": 0.009055,
+    "latency_ms": 21640,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4400,
+        "output_tokens": 3094,
+        "thoughts_tokens": 2380,
+        "cost_usd": 0.009055,
+        "latency_ms": 21640,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

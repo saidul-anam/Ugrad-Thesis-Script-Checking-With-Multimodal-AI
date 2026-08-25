@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all five energy sources accurately without omitting any data points or introducing outside speculative facts. The data is logically ordered from the largest contributor (Coal at 46%) to the smallest (Nuclear at 2%).",
+      "evidence": "burning coal. which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity which is 24%, Moreover, hydro electric power plant produce 16% percent electricity in USA. Oil and Nuclear power plants also a important sector to supply electricity. which rate is respectively 12% and 2%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a clear introductory statement, a grouped analytical body, and a summary conclusion. However, structural fluency is hindered by several dependent-clause sentence fragments.",
+      "evidence": "The pie chart illustrates the sources of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical defects are present, including sentence fragments beginning with 'which', inconsistent tense shifting between past and present ('was', 'is', 'produce'), spelling errors ('Accroding'), missing articles/linking verbs ('also a important sector'), and missing terminal punctuation.",
+      "evidence": "which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity which is 24%, Moreover, hydro electric power plant produce 16% percent electricity in USA. Oil and Nuclear power plants also a important sector to supply electricity. which rate is respectively 12% and 2% From the chart"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script attempts useful comparative language (e.g., 'nearly half of the chart', 'second highest source', 'respectively'), but relies on basic syntax and awkward phrasing rather than varied analytical transitions.",
+      "evidence": "Natural gas consumption gives second highest source for produce electricity which is 24%"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragments beginning with relative clauses ('which rate was...', 'which rate is...')",
+      "Tense inconsistency (shifting arbitrarily between past and simple present)",
+      "Subject-verb agreement and article errors ('plant produce', 'a important sector')",
+      "Punctuation faults (missing period before 'From', redundant '16% percent')"
+    ],
+    "positive_aspects": [
+      "Complete and accurate representation of all 5 data values from the chart",
+      "Good sequencing from most significant to least significant electricity source",
+      "Appropriate introductory sentence and final concluding remark"
+    ]
+  },
+  "feedback_summary": "The script demonstrates sound data comprehension by accurately extracting and reporting all statistics from the pie chart with a logical hierarchical flow. However, mechanical weaknesses—specifically recurring sentence fragments, punctuation lapses, and inconsistent tense usage—prevent it from reaching Band 4.",
+  "_metadata": {
+    "task_id": "CHART_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d36cc554d456e7526143afd7dc68af87460b09b4b133378dd0a48c701d902d0a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:06:21.598768+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "94dcdcba0900994536bb0a7f7a739a5aeee5b25d696dd024d6a9e2982c783268",
+    "input_tokens": 4381,
+    "output_tokens": 3741,
+    "thoughts_tokens": 2798,
+    "cost_usd": 0.010667,
+    "latency_ms": 25234,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4381,
+        "output_tokens": 3741,
+        "thoughts_tokens": 2798,
+        "cost_usd": 0.010667,
+        "latency_ms": 25234,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

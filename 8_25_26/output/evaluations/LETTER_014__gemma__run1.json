@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student immediately states the purpose of the letter and describes a clear future plan (university admission and preparation).",
+      "evidence": "Today I want to tell you about my plan after HSC exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "Most structural elements are present (address, date, salutation, body, close, signature), but computed metrics indicate one component is technically missing or improperly formatted.",
+      "evidence": "Azimpur, Dhaka\nDate: 26-06-26\nDear friend,"
+    },
+    "language_mechanics": {
+      "rationale": "There are several significant mechanical errors including spelling ('bettle', 'Convergi'), spacing ('pre paration'), and incorrect verb phrasing ('admit in').",
+      "evidence": "admission bettle. No more today. Convergi my regards to all."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is authentic and not a memorized template, but the vocabulary and sentence structure are very basic.",
+      "evidence": "After completing this I want to admit in well known university."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (bettle, Convergi)",
+      "Article omission (significant exam -> a significant exam)",
+      "Incorrect preposition/verb usage (admit in -> get admitted to)"
+    ],
+    "positive_aspects": [
+      "Direct adherence to prompt",
+      "Appropriate informal tone for a friend"
+    ]
+  },
+  "feedback_summary": "The candidate successfully addressed the prompt with a clear purpose and appropriate register. However, the script is marred by several spelling and grammatical errors. While the structure is largely intact, the linguistic mechanics are basic and lack precision, placing the script firmly in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "17956f5c0ac921cfbc83d2872babe7528f9b39c146c6a52e8710496eab212f86",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:37:32.573786+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6cde50d829c44d83fab32869a7b52ad45cb6aecf80ebba675d8098e692fd4620",
+    "input_tokens": 4302,
+    "output_tokens": 2393,
+    "thoughts_tokens": 1675,
+    "cost_usd": 0.001148,
+    "latency_ms": 66890,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4302,
+        "output_tokens": 2393,
+        "thoughts_tokens": 1675,
+        "cost_usd": 0.001148,
+        "latency_ms": 66890,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies all primary points: the nature of hope, its persistence during adversity, and its selfless quality.",
+      "evidence": "Hope is a feathery thing which perches the soul... And hope never asks for a crump even in extremity."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block. While the length cap was waived for the poem, the writing fails to condense the text effectively, acting more as a line-by-line paraphrase than a summary.",
+      "evidence": "Hope is a feathery thing which perches the soul. It hardly even stops and continues singing without any words."
+    },
+    "language_mechanics": {
+      "rationale": "There are noticeable linguistic errors, including a prepositional error and a clear misspelling/malapropism ('crump' instead of 'crumb').",
+      "evidence": "perches the soul... asks for a crump"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies far too heavily on the original poem's structure and phrasing, essentially swapping a few adjectives rather than synthesizing the theme into original prose.",
+      "evidence": "heard the sweetest in the Gale. Hope can be heard in the chillest land and on the strangest Sea."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary misspelling (crump)",
+      "Preposition omission (perches [in] the soul)",
+      "Over-reliance on source text structure"
+    ],
+    "positive_aspects": [
+      "Full coverage of the poem's narrative points",
+      "Maintained a single-block paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate captures the core content of the poem but fails to produce a true summary. The response is essentially a mirror of the poem's original structure with minor word substitutions, which indicates a lack of original paraphrasing. Mechanical errors like 'crump' and 'perches the soul' further lower the score. It falls into Band 2 due to the formulaic nature of the paraphrase.",
+  "_metadata": {
+    "task_id": "SUMMARY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "4c4be18ed66d41e7b74a28006537c6d5303107f92425ddd318f16f224eaa6596",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:50:32.220004+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6b9ef3c2290c1a287b777526295d7f83af5fc4538cd01ef00d20771d47652e93",
+    "input_tokens": 4380,
+    "output_tokens": 2224,
+    "thoughts_tokens": 1453,
+    "cost_usd": 0.001105,
+    "latency_ms": 63297,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4380,
+        "output_tokens": 2224,
+        "thoughts_tokens": 1453,
+        "cost_usd": 0.001105,
+        "latency_ms": 63297,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

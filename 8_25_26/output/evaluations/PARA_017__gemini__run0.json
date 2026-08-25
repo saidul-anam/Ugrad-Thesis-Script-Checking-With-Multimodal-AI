@@ -1,0 +1,101 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all the guiding questions in the prompt, covering the definition, applications in business/education, assistance in student learning, and potential threats like job loss and loss of human creativity.",
+      "evidence": "In Factory and company owner owner Fully depend on AI as a result many people don't get job. Fully pelience on AI people lose their creativity and become lazy."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single continuous paragraph with a recognizable introductory sentence, developmental arguments (benefits and drawbacks), and a concluding takeaway.",
+      "evidence": "Artificial Intelligence is a sophisticated com technology of a modern modern computer science performing various task of human requine like Business."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains pervasive spelling, punctuation, and grammatical errors throughout nearly every sentence, including faulty word forms, duplicate words, subject-verb agreement errors, and garbled vocabulary.",
+      "evidence": "AI solve accurately any math and physies question so student's can assupoe that their answer cuas high or armyong."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts authentic personal phrasing and reasoning rather than relying on memorized guide templates, offering thoughtful perspectives on AI bias and ethical use.",
+      "evidence": "Sometime AI give answer uhich is not fair and kind because AI work based on data, history, logie. So, we must be responsible to use AI."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('requine', 'Noae a days', 'seach', 'physies', 'assupoe', 'pelience', 'logie', 'uhich')",
+      "Faulty punctuation and mid-sentence capitalization ('Business. education', 'Factory us AI', 'student's')",
+      "Word repetition ('modern modern', 'owner owner')",
+      "Subject-verb agreement and tense errors ('AI become popular', 'AI solve', 'AI give answer')"
+    ],
+    "positive_aspects": [
+      "Maintains single-paragraph discipline without structural splits",
+      "Directly addresses all prompt questions, including ethical risks and educational applications",
+      "Demonstrates authentic critical thinking regarding AI dependency and algorithmic bias"
+    ]
+  },
+  "feedback_summary": "The script demonstrates good thematic coverage and adheres to the single-paragraph format, addressing benefits, educational uses, and ethical risks of AI. However, significant weaknesses in language mechanics—including heavy spelling distortions, punctuation flaws, and subject-verb agreement issues—place the script at the top of Band 2 (5/10).",
+  "_metadata": {
+    "task_id": "PARA_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b257563db8d7e7c68ea26f36a91fb5a2027fa5bed209215f94b8dab69e325182",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:59:37.946534+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d0f0260300dd3ef9146c34046c479a39f2f5e075a21b93afed6c9ef6a3fb93d6",
+    "input_tokens": 4481,
+    "output_tokens": 4215,
+    "thoughts_tokens": 3330,
+    "cost_usd": 0.011882,
+    "latency_ms": 26937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4481,
+        "output_tokens": 4215,
+        "thoughts_tokens": 3330,
+        "cost_usd": 0.011882,
+        "latency_ms": 26937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

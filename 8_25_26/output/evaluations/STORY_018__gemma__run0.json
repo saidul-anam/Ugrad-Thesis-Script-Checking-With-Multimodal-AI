@@ -1,0 +1,102 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate follows the classic fable plot perfectly, ensuring a logical sequence of events from the lion's anger to the mouse's eventual rescue of the lion.",
+      "evidence": "The mouse cut the trap by its teeth and freed the lion from the cage."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion with a clear moral lesson, but the candidate completely failed to provide a title as explicitly required by the prompt.",
+      "evidence": "we should not uderestimate little thing."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of mechanical errors, including severe spelling mistakes, incorrect verb forms, and a breakdown in syntax toward the end of the script.",
+      "evidence": "playi on a race... accidentally beated the lion... came do understa uderstan- d"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, memorized retelling of a common fable. There is no creative expansion, vivid description, or original narrative turn.",
+      "evidence": "Once lion was sleeping in a forest. Suddenly a mouse came there."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (playi, uderestimate, uderstan- d)",
+      "Incorrect verb forms (beated)",
+      "Missing articles (Once lion)",
+      "Syntax breakdown in concluding sentences"
+    ],
+    "positive_aspects": [
+      "Clear plot progression",
+      "Appropriate moral lesson",
+      "Maintained past tense throughout most of the narrative"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the story's plot and provides a fitting moral conclusion. However, the score is significantly hampered by the omission of a required title and pervasive linguistic errors. While the story is coherent, the spelling and grammatical inaccuracies—particularly in the final sentences—prevent it from reaching a higher band. The content is a basic retelling of a memorized fable with little originality.",
+  "_metadata": {
+    "task_id": "STORY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "60fb43a11dab9a851f079e80c94b7c8e710fc2e4ab3e0b473aed038bcb73e2d7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:14:31.985896+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fc1d75305697bfb695f6d4c8a1bcb864086c23f457890f2534c7745673dd972e",
+    "input_tokens": 4412,
+    "output_tokens": 2297,
+    "thoughts_tokens": 1539,
+    "cost_usd": 0.00113,
+    "latency_ms": 64500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4412,
+        "output_tokens": 2297,
+        "thoughts_tokens": 1539,
+        "cost_usd": 0.00113,
+        "latency_ms": 64500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

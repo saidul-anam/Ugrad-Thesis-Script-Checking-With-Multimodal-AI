@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose and provides specific, relevant plans (vacation to Sundarbans, BUET admission, and social work).",
+      "evidence": "Now, I will share my future Plan after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "Most structural components are present (Address, Date, Salutation, Body, Close, Signature), but the computed metrics indicate one missing component, and the addition of a formal 'From/To' block at the end of an informal letter is non-standard.",
+      "evidence": "From: Azmain Mahtab, Bhuighan-107 Road-2 house-325 Dhaka To: MD. AUF Cumilla City-1200"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and awkward syntax that hinder fluency, although the meaning remains intelligible.",
+      "evidence": "Howmany days we don't meet each an other. In few days laten we will compliting our HSC Examination"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content is authentic and avoids memorized templates, though the phrasing is simplistic and repetitive.",
+      "evidence": "I will go to the sundanban... I'll admitted in a engeoneiering based addmission coaching center."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors (compliting, engeoneiering, myshelf, plane)",
+      "Syntactic errors (Howmany days we don't meet each an other)"
+    ],
+    "positive_aspects": [
+      "Direct and clear adherence to the prompt",
+      "Authentic and specific personal goal setting"
+    ]
+  },
+  "feedback_summary": "The candidate successfully fulfills the prompt's requirements by outlining a clear set of post-HSC goals. The response is authentic and avoids generic templates. However, it is significantly weakened by pervasive spelling errors and poor sentence construction. While structural components are largely present, the redundant inclusion of a 'From/To' block at the bottom is an unconventional layout choice for an informal letter.",
+  "_metadata": {
+    "task_id": "LETTER_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d9e382573f2e56a9e366272a99d828aac1d4a86f9a9935ddaba9f041341ddfeb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:45:39.576722+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ea4a37c989fb1371fbd9a975e131936d41852ba5272f352ac68982f88d1d3025",
+    "input_tokens": 4463,
+    "output_tokens": 3158,
+    "thoughts_tokens": 2356,
+    "cost_usd": 0.001394,
+    "latency_ms": 89734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4463,
+        "output_tokens": 3158,
+        "thoughts_tokens": 2356,
+        "cost_usd": 0.001394,
+        "latency_ms": 89734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

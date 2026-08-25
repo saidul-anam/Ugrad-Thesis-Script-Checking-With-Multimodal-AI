@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a seamless continuation from the stem, following a logical and sequential plot development that aligns with the prompt.",
+      "evidence": "the mouse collied with the lion. Since the lion's sleep was disturbed by the mouse, the lion got angry."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a satisfying positive ending with a clear moral outcome (friendship), but the candidate completely failed to provide a title as explicitly requested in the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors and a notable shift from past tense to present tense in the final paragraph, disrupting the narrative flow.",
+      "evidence": "catched him... cuill save him... The mouse goes to help the lion... they become very good friends."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a standard reproduction of a well-known fable (The Lion and the Mouse). While it fulfills the plot requirements, it lacks creative descriptive detail or authentic narrative turns.",
+      "evidence": "The lion was about to eat the mouse as a punishment."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies (collied, catched, cuill, traped, sharpp)",
+      "Tense inconsistency (shifting from past to present in the conclusion)"
+    ],
+    "positive_aspects": [
+      "Clear and logical plot progression",
+      "Adherence to the required positive ending"
+    ]
+  },
+  "feedback_summary": "The candidate successfully developed the plot from the provided stem, maintaining logical coherence and providing a positive conclusion. However, the score is reduced due to the omission of a required title and several linguistic failures, specifically frequent spelling errors and unstable tense control in the final segment. The narrative is a standard memorized fable rather than a creative original piece.",
+  "_metadata": {
+    "task_id": "STORY_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8522eb0331f9d14bf9631fd125dfd0b2c9f7d5962fdcd34c2b2887362abd68fe",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:29:56.722557+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d3a4665ce61387875ad069b624fc584c8747b67808080344dd70b7ffd2e48c43",
+    "input_tokens": 4408,
+    "output_tokens": 2731,
+    "thoughts_tokens": 1996,
+    "cost_usd": 0.00126,
+    "latency_ms": 75359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4408,
+        "output_tokens": 2731,
+        "thoughts_tokens": 1996,
+        "cost_usd": 0.00126,
+        "latency_ms": 75359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

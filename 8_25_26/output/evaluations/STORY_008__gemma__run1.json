@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem and develops a complete, logical plot sequence that leads to a resolution.",
+      "evidence": "The sleeping lion woke up and grabbed the mouse... He rushed towards him and cutted the net using his sharp teeths."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story ends on a positive note with a clear moral lesson, but it fails the structural requirement of providing a proper title.",
+      "evidence": "He got the reward of his forgiveness."
+    },
+    "language_mechanics": {
+      "rationale": "There are significant errors in spelling, verb conjugation, and noun pluralization, as well as inconsistent tense usage.",
+      "evidence": "cutted the net using his sharp teeths."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a verbatim reproduction of a common memorized fable with no original twists or creative descriptions.",
+      "evidence": "finally saw the lion whom he disturbed while sleeping is now hanging on a tree on a hunters net."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (taile, pitty, iscreaming)",
+      "Non-standard verb forms (cutted)",
+      "Incorrect pluralization (teeths)"
+    ],
+    "positive_aspects": [
+      "Coherent plot development",
+      "Clear positive resolution and moral"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a clear understanding of the plot requirements and provided a logical continuation of the stem with a constructive ending. However, the script fails to provide a required title. The linguistic quality is basic and contains frequent mechanical errors. Additionally, the content is a standard memorized fable, lacking original creative expression.",
+  "_metadata": {
+    "task_id": "STORY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1f7656b5bb782bb0bbc24a9645a5182a97a77f8f546c8b3414ec40d58312cd89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:21:23.679277+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "86a3e5fc35c4c25e4d3af7832cd3bbba796e20ca5ea5a310b82d930ce28fcbdd",
+    "input_tokens": 4477,
+    "output_tokens": 2707,
+    "thoughts_tokens": 2008,
+    "cost_usd": 0.00126,
+    "latency_ms": 75937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4477,
+        "output_tokens": 2707,
+        "thoughts_tokens": 2008,
+        "cost_usd": 0.00126,
+        "latency_ms": 75937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

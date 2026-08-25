@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly extends the provided prompt and maintains logical, sequential plot development from the lion's capture to its rescue by the mouse.",
+      "evidence": "While running suddenly the mouse enter into the nose of lion . Being ferocious the lion groaning and tell"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a recognizable title, an established narrative arc, and a clear moral lesson, though the title itself is heavily marred by spelling errors.",
+      "evidence": "Moral: Every creature need other's help to live"
+    },
+    "language_mechanics": {
+      "rationale": "Language control is weak, characterized by frequent shifts between past and present tense, subject-verb agreement errors, faulty punctuation, and spelling confusions (e.g., 'in rain' for 'in vain').",
+      "evidence": "The lion smile loudly and say you will help me : you are very little creation I don't need your help any day cause I'm more strong than you."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a highly conventional and predictable Aesop fable pattern using basic, formulaic phrasing without creative elevation.",
+      "evidence": "The mouse notice that and cut the net with it's sharp  teeth . By this the lion can get rid from the net."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inconsistent verb tenses (shifting between past and simple present: 'enter', 'tell', 'say', 'forgive')",
+      "Spelling and word-choice errors ('Marcy', 'virtud', 'slepping', 'in rain' instead of 'in vain')",
+      "Subject-verb agreement issues ('Every creature need', 'everyone need')",
+      "Informal phrasing and punctuation lapses ('cause', improper capitalization)"
+    ],
+    "positive_aspects": [
+      "Logically develops the narrative stem into a complete, coherent fable",
+      "Supplies a relevant title and a well-articulated constructive moral lesson",
+      "Maintains a clear narrative sequence from complication to resolution"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid grasp of story structure by successfully completing the classic fable with a logical sequence, an apt title, and a clear moral lesson. However, the score is constrained by basic phrasing and pervasive mechanical issues, particularly inconsistent narrative tenses, subject-verb agreement errors, and multiple spelling mistakes.",
+  "_metadata": {
+    "task_id": "STORY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "849b1b43cd884b3fbbaa24055e205009cfd8bd88b89aec2c18617c0e6011512a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:42:50.227028+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "93d422f78af8a65fd80b3b4913f2c63ff9862811feed44899c7eb0d1f6dbbd45",
+    "input_tokens": 4479,
+    "output_tokens": 3209,
+    "thoughts_tokens": 2368,
+    "cost_usd": 0.009366,
+    "latency_ms": 137047,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4479,
+        "output_tokens": 3209,
+        "thoughts_tokens": 2368,
+        "cost_usd": 0.009366,
+        "latency_ms": 137047,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

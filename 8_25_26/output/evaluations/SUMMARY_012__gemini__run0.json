@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the broad central message that hope sustains human life, but drifts into generic moralizing rather than summarizing the poem's specific imagery of hope as an enduring bird weathering storms.",
+      "evidence": "Hope is the power that keeps us alive."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented in a single, well-proportioned block of text with acceptable brevity.",
+      "evidence": "Hope is the direction of our life. It show us the path, where should we go. Hope is the power that keeps us alive. Whitout hope we all are like the dead fish in the sea."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple mechanical flaws in a very short response, including a subject-verb agreement error, incorrect word order in an indirect clause, and a spelling mistake.",
+      "evidence": "It show us the path, where should we go. Hope is the power that keeps us alive. Whitout hope"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student uses entirely authentic phrasing with zero verbatim copying, though they substitute the poem's imagery with an invented, simplistic external simile.",
+      "evidence": "Whitout hope we all are like the dead fish in the sea."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement error ('It show' instead of 'It shows')",
+      "Indirect clause syntax error ('where should we go' instead of 'where we should go')",
+      "Spelling error ('Whitout' instead of 'Without')"
+    ],
+    "positive_aspects": [
+      "Composed entirely in the candidate's own words with zero verbatim overlap",
+      "Maintained a single coherent paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate grasps the essential philosophical value of hope and writes entirely in their own words without copying from the source text. However, the summary introduces extraneous commentary and similes ('dead fish in the sea') rather than summarizing the core poetic elements of the bird in the soul. The score defaults to the lower value of Band 3 due to basic syntax and mechanical errors.",
+  "_metadata": {
+    "task_id": "SUMMARY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3d59c6a9436c7f899da9d05129944a73d6df18c696e57a5a2c6ee4b70a4772a9",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:11:29.805550+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "55073ab630ed73c622a05eb5314480a232d39af3a3987ed011810ec6b31d330d",
+    "input_tokens": 4360,
+    "output_tokens": 3323,
+    "thoughts_tokens": 2537,
+    "cost_usd": 0.009616,
+    "latency_ms": 22593,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4360,
+        "output_tokens": 3323,
+        "thoughts_tokens": 2537,
+        "cost_usd": 0.009616,
+        "latency_ms": 22593,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

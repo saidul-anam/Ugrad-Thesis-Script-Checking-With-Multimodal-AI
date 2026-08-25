@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the contrast between the two types of dreamers described in the poem. However, it describes the plot/contrast rather than articulating an abstract theme (e.g., the power of will or ambition).",
+      "evidence": "The poem reppresents two types of dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows the requirement of being a single coherent block and is concise without unnecessary padding.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in spelling ('reppresents', 'meningless'), syntax ('another those one is who'), and punctuation/possessives ('dreamers's', 'dream's').",
+      "evidence": "another those one is who actively dream at day"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student successfully avoided verbatim copying (0% overlap), but the interpretation is a literal paraphrase of the poem's events rather than a mature interpretation of its imagery.",
+      "evidence": "make their dream successful"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (reppresents, meningless)",
+      "Syntax (those one is who)",
+      "Apostrophe misuse (dreamers's, dream's)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct structural format",
+      "Clear identification of the poem's core contrast"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identifies the core contrast of the poem and maintains the required structural format. While the response is entirely original in phrasing (avoiding direct copying), it is heavily marred by grammatical and spelling errors. Additionally, the response functions more as a summary than a thematic analysis. Because the score falls within Band 3 and syntax is basic/erroneous, the lower value of the band is awarded.",
+  "_metadata": {
+    "task_id": "THEME_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "5a2c7ad3443e8b106d88bf558cad17e6b310e13e3641dd4d7281cc86f1f656b8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:08:10.207185+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6620ad59c7f09a517d740352267c4c150c37e41730f93f59bd81e733de6a9a7d",
+    "input_tokens": 4286,
+    "output_tokens": 2499,
+    "thoughts_tokens": 1763,
+    "cost_usd": 0.001178,
+    "latency_ms": 72281,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4286,
+        "output_tokens": 2499,
+        "thoughts_tokens": 1763,
+        "cost_usd": 0.001178,
+        "latency_ms": 72281,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

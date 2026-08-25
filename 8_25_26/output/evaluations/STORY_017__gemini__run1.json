@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate attempts a logical continuation of the stem following the familiar 'Lion and the Mouse' fable, but the narrative progression is sparsely detailed and rushed.",
+      "evidence": "One day the lion cealking in the forest at once he trapped in a net he tried and tried but failed."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script completely omits the mandatory title. While the story reaches a resolution, it ends abruptly without a clearly stated constructive moral or theme.",
+      "evidence": "The lion ashamed because because one he wanted to kill the mouse."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling distortions ('cuas', 'acent', 'cealking', 'goarning', 'cuith'), run-on constructions, erratic capitalization, and incorrect tense shifting undermine grammatical accuracy.",
+      "evidence": "he Fastly acent to the lion cuith his sharp teeth he cut the net and save the lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies heavily on a standard, predictable retelling of a classic fable without creative details, vivid descriptions, or authentic vocabulary.",
+      "evidence": "Mouse begged his life and said one day he will help the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors and non-standard orthography (e.g., 'cuas' for was, 'cealking' for walking, 'cuith' for with)",
+      "Run-on sentences lacking punctuation and conjunctions",
+      "Inconsistent past-tense control and missing auxiliary verbs (e.g., 'he trapped', 'save the lion')"
+    ],
+    "positive_aspects": [
+      "Follows the core narrative sequence and completes the plot arc",
+      "Successfully maintains basic narrative continuity from the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate completes the narrative sequence of the stem by recalling the classic fable, but the script is severely hampered by pervasive spelling mistakes, run-on sentences, and tense inconsistencies. Additionally, no title is provided, and the story concludes abruptly without an explicit moral lesson, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "STORY_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c4c55dee58756769cdefa1c7f423e3773e183ddf44364e161304e2efdaea8f10",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:03:41.410349+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "eb12a9f07a0b2544bab30e6a639970a49fcc8e22abcf08fdb11c52b52c89f2c6",
+    "input_tokens": 4392,
+    "output_tokens": 3572,
+    "thoughts_tokens": 2783,
+    "cost_usd": 0.010248,
+    "latency_ms": 22202,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4392,
+        "output_tokens": 3572,
+        "thoughts_tokens": 2783,
+        "cost_usd": 0.010248,
+        "latency_ms": 22202,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

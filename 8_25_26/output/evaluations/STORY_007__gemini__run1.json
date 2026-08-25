@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly extends the provided prompt and completes the narrative arc of the classic fable with logical plot progression and clear cause-and-effect sequencing.",
+      "evidence": "Somedays later while the mouse was running here and there it happens to hear the lion's roar from a distance and decides to go and look."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear and positive resolution where the characters become friends; however, the candidate completely failed to provide a title as required by the prompt.",
+      "evidence": "That's how the mouse helped the king of jungle the lion and they becomes best friends."
+    },
+    "language_mechanics": {
+      "rationale": "There is pervasive tense inconsistency, erratically switching between simple present and past narrative tenses, along with several spelling mistakes and awkward phrasing.",
+      "evidence": "While running it accidentally bumps onto the lion which leads to the lion waking up. After seeing the mouse the lion  roars with the irritation and rage and  told the mouse"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story follows the standard, predictable plot of Aesop's fable using basic vocabulary and simple dialogue without notable descriptive depth or creative turns.",
+      "evidence": "What can a pathetie little mouse even help me with?"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Unstable narrative tense switching between past and present (e.g., 'bumps', 'leads', 'told', 'starts', 'bursts', 'happens', 'sees', 'thanked', 'becomes')",
+      "Missing mandatory story title",
+      "Spelling and prepositional errors ('pathetie', 'migh', 'cut of', 'let the mouse of the hook', 'real releasing')"
+    ],
+    "positive_aspects": [
+      "Maintains continuous narrative flow from the prompt stem to the end",
+      "Achieves a clear, positive resolution highlighting mutual help and friendship"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete and coherent continuation of the story stem, bringing the narrative to a positive and constructive resolution. However, the script loses marks due to the complete omission of a title and pervasive grammatical slips, specifically erratic switching between present and past tense alongside minor spelling errors.",
+  "_metadata": {
+    "task_id": "STORY_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3130fce00120ed9008a0472fd0d9e4a35af1940945b37a8b5d7a63e890617b77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:11:01.280993+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "dc8ea0b4d1046293fe0d45e64c1d05e5c54acfbf0c33d1f9b53fbe545c17b6c4",
+    "input_tokens": 4498,
+    "output_tokens": 3589,
+    "thoughts_tokens": 2776,
+    "cost_usd": 0.010322,
+    "latency_ms": 21672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4498,
+        "output_tokens": 3589,
+        "thoughts_tokens": 2776,
+        "cost_usd": 0.010322,
+        "latency_ms": 21672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}
