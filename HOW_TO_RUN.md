@@ -21,39 +21,46 @@ pip install -r requirements.txt
 
 ---
 
-## 💻 2. Running on Your Current PC (Development / Mock Mode)
+## 📂 2. Separate Extraction and Evaluation Workflows (Recommended)
 
-> [!NOTE]
-> Use the `--mock` flag to run the full 4-stage pipeline locally without downloading model weights or requiring a GPU.
+To keep extraction (multimodal vision processing) and evaluation (rubric grading & feedback) separate:
 
-### Scenario A: Process Top 3 PDFs from Google Drive
-```bash
-python scripts/process_scripts.py --top 3 --mock
-```
+### 🔍 Step 2.1: Run Extraction (Stages 1 to 3)
+Extracts handwriting verbatim, verifies against visual images, audits silent corrections, extracts spelling/grammar errors, and saves artifacts to `outputs/extracted/<lang>/<script_id>/`.
 
-### Scenario B: Download Script PDFs from Drive Only (No Evaluation)
-```bash
-python scripts/process_scripts.py --download-only
-```
+```powershell
+# Interactive Wizard (select language, top limit, GPU mode):
+python scripts/extract_scripts.py
 
-### Scenario C: Process a Single PDF or Image File
-```bash
-python scripts/run_pipeline.py --image data/raw_pdfs/sample_script.pdf --mock
-```
+# Extract Top 5 Bangla scripts on GPU:
+python scripts/extract_scripts.py --lang bangla --top 5 --quant 4bit
 
-### Scenario D: Run with Thinking Mode Ablation (Reasoning ON)
-```bash
-python scripts/process_scripts.py --top 3 --mock --thinking
-```
-
-### Scenario E: Run Unit Tests
-```bash
-pytest
+# Extract on Development PC (Mock mode):
+python scripts/extract_scripts.py --lang bangla --top 3 --mock
 ```
 
 ---
 
-## 🚀 3. Running on the Target NVIDIA RTX 5090 (32GB VRAM)
+### ⚖️ Step 2.2: Run Evaluation (Stage 4)
+Loads pre-extracted scripts and evaluates them against rubrics. Accepts **either** a specific script name/ID **or** a count (`--top N`).
+
+```powershell
+# Option A: Evaluate by specific script name:
+python scripts/evaluate_scripts.py --script-name sample_bangla_01 --lang bangla --quant 4bit
+
+# Option B: Evaluate Top N scripts from the extraction directory:
+python scripts/evaluate_scripts.py --top 5 --lang bangla --quant 4bit
+
+# Option C: Evaluate all extracted scripts in directory:
+python scripts/evaluate_scripts.py --lang bangla --quant 4bit
+
+# Option D: Development PC (Mock mode):
+python scripts/evaluate_scripts.py --script-name sample_bangla_01 --lang bangla --mock
+```
+
+---
+
+## 🚀 3. Running Unified Controller on Target NVIDIA RTX 5090 (32GB VRAM)
 
 > [!IMPORTANT]
 > On the RTX 5090 machine, the pipeline uses **Gemma 4 31B IT** with **4-bit NF4 Quantization** (~18–20 GB VRAM footprint), running in bfloat16 precision with CUDA acceleration.
@@ -66,68 +73,65 @@ python scripts/setup_env.py
 
 ### Step 2: Interactive Terminal Mode (Wizard)
 ```bash
-# Simply run the script - it will ask whether you are processing Bangla or English, how many scripts, rubric, etc.:
+# Unified end-to-end runner (Stages 1–4 together):
 python scripts/process_scripts.py
 ```
 
 ### Step 3: Run Bangla Exam Scripts Directly
 ```bash
-# Top 5 Bangla scripts with Creative Question rubric (PDFs stored in data/raw_pdfs/bangla, outputs in outputs/runs/bangla)
+# Top 5 Bangla scripts with Creative Question rubric
 python scripts/process_scripts.py --lang bangla --top 5 --quant 4bit
-
-# All available Bangla scripts:
-python scripts/process_scripts.py --lang bangla --quant 4bit
-```
-
-### Step 4: Run English Writing Exam Scripts Directly
-```bash
-# Top 5 English scripts with Essay Writing rubric (PDFs stored in data/raw_pdfs/english, outputs in outputs/runs/english)
-python scripts/process_scripts.py --lang english --top 5 --quant 4bit
-```
-
-### Step 5: Run Thinking Mode Benchmark / Ablation Study
-```bash
-python scripts/evaluate_benchmark.py --image-dir data/samples/
 ```
 
 ---
 
 ## 📊 4. How to Inspect Output Results
 
-Evaluated scripts are stored separately by language under `outputs/runs/<lang>/<script_id>/`:
+Extracted artifacts and evaluation reports are stored per script:
 
 ```
-outputs/runs/bangla/<script_id>/  (or outputs/runs/english/<script_id>/)
+outputs/extracted/<lang>/<script_id>/
   ├── stage1_transcription.json        # Stage 1 metrics & character stats
   ├── stage1_raw_transcript.txt        # Raw verbatim transcription
   ├── stage2_verification.json         # Silent autocorrection audit diffs
   ├── stage2_verified_transcript.txt   # Verified canonical text
   ├── stage3_errors.json               # Extracted linguistic error catalog
-  ├── stage3_errors.csv                # Tabular error list (spelling/grammar)
+  ├── stage3_errors.csv                # Tabular error list (spelling/grammar/syntax)
+  ├── extraction_result.json           # Consolidated extraction package
+  ├── extraction_summary.md            # Human-readable extraction summary
   ├── stage4_evaluation.json           # Rubric marks & penalty deductions
   ├── complete_report.json             # Consolidated 4-stage report
-  └── evaluation_report.md             # Human-readable Markdown report
+  └── evaluation_report.md             # Teacher evaluation & pedagogical report
 ```
 
-To quickly view the summary markdown report of a script:
-```bash
-# On Windows PowerShell
-cat outputs/runs/bangla/<script_id>/evaluation_report.md
+To quickly view the summary markdown report of an evaluated script:
+```powershell
+cat outputs/extracted/bangla/<script_id>/evaluation_report.md
 ```
 
 ---
 
-## 🛠️ 5. Command-Line Options Reference (`scripts/process_scripts.py`)
+## 🛠️ 5. Command-Line Options Reference
 
+### Extraction Options (`scripts/extract_scripts.py`)
 | Argument | Example | Purpose |
 | :--- | :--- | :--- |
-| `--lang` | `--lang bangla` or `--lang english` | Select subject/language (`bangla` or `english`). |
-| `--top N` | `--top 5` | Limit download and processing to the first `N` scripts. |
-| `--mock` | `--mock` | Use simulated CPU engine (no GPU / no model download). |
-| `--model` | `--model google/gemma-4-31b-it` | Model checkpoint identifier or local directory. |
+| `--lang` | `--lang bangla` or `--lang english` | Select subject/language. |
+| `--top N` | `--top 5` | Limit extraction to first `N` scripts. |
+| `--image` | `--image path/to/script.pdf` | Extract a single PDF or image file. |
+| `--pdf-dir` | `--pdf-dir data/raw_pdfs/bangla` | Source directory containing script PDFs. |
+| `--output-dir` | `--output-dir outputs/extracted/bangla` | Target directory for extraction artifacts. |
+| `--mock` | `--mock` | Run simulated CPU engine for development. |
 | `--quant` | `--quant 4bit` | `4bit` (recommended for RTX 5090), `8bit`, or `none`. |
 | `--thinking` | `--thinking` | Enable reasoning/thinking mode ablation. |
-| `--rubric` | `--rubric path/to/rubric.yaml` | Select grading rubric. |
-| `--download-only` | `--download-only` | Download PDFs from Google Drive without evaluating. |
-| `--local-only` | `--local-only` (or `--skip-download`) | Skip Google Drive download and use local PDFs only. |
-| `--force-download`| `--force-download` | Force re-download even if PDFs already exist locally. |
+| `--force-extract` | `--force-extract` | Re-extract even if artifacts already exist. |
+
+### Evaluation Options (`scripts/evaluate_scripts.py`)
+| Argument | Example | Purpose |
+| :--- | :--- | :--- |
+| `--script-name` | `--script-name script_01` | Evaluate a specific script by name/ID. |
+| `--top N` | `--top 5` | Evaluate first `N` extracted scripts in directory. |
+| `--extraction-dir` | `--extraction-dir outputs/extracted/bangla` | Directory containing extracted script folders. |
+| `--lang` | `--lang bangla` or `--lang english` | Select subject/language rubric default. |
+| `--rubric` | `--rubric path/to/rubric.yaml` | Select custom grading rubric. |
+| `--force-evaluate` | `--force-evaluate` | Force re-evaluation even if report exists. |

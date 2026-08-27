@@ -1,5 +1,15 @@
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Union
 from pydantic import BaseModel, Field
+
+
+# ---------------------------------------------------------------------------
+# Stage 0: Red-Ink Detection & Stage 0b: Teacher Mark Schemas
+# ---------------------------------------------------------------------------
+class TeacherMarkItem(BaseModel):
+    """An individual red-ink numeric mark extracted from a script page."""
+    question_no: Optional[str] = Field(None, description="The question number this mark belongs to, if identifiable, otherwise null.")
+    mark_value: str = Field(..., description="Exact value as written, e.g. '7/10', '4', 'VII'.")
+    location: str = Field("", description="Brief description, e.g. 'margin next to answer 3'.")
 
 
 # ---------------------------------------------------------------------------
@@ -10,6 +20,7 @@ class Stage1TranscriptionResult(BaseModel):
     raw_transcript: str = Field(..., description="Exact verbatim transcript preserving all errors, layout, and tags.")
     illegible_count: int = Field(0, description="Count of [illegible] occurrences.")
     unclear_count: int = Field(0, description="Count of [unclear: ...] annotations.")
+    struck_count: int = Field(0, description="Count of [struck: ...] annotations.")
     character_count: int = Field(0, description="Total characters transcribed.")
     word_count: int = Field(0, description="Total words transcribed.")
     detected_script: str = Field("unknown", description="Bangla, English, or Mixed script detected.")
@@ -58,6 +69,59 @@ class Stage3ErrorResult(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Per-Page Extraction Container
+# ---------------------------------------------------------------------------
+class PageExtractionResult(BaseModel):
+    """Extraction results for a single page of an exam script."""
+    page_no: int = Field(1, description="1-indexed page number in the exam script.")
+    image_path: str = Field("")
+    has_red_ink: bool = Field(False, description="Stage 0: Whether red ink was detected on this page.")
+    red_pixel_count: int = Field(0)
+    stage1_transcription: Stage1TranscriptionResult
+    stage2_verification: Stage2VerificationResult
+    stage3_errors: Stage3ErrorResult
+    teacher_marks: List[TeacherMarkItem] = Field(default_factory=list, description="Stage 0b: Extracted red-ink teacher marks.")
+
+
+# ---------------------------------------------------------------------------
+# Script-Level Extraction Stage Output (Stages 0, 0b, 1 - 3)
+# ---------------------------------------------------------------------------
+class ExtractionResult(BaseModel):
+    """Output of Stages 0 to 3: Verified transcript, errors, and teacher marks across all pages."""
+    script_id: str
+    image_path: str
+    model_id: str = "google/gemma-4-31b-it"
+    timestamp: str
+    has_red_ink: bool = Field(False, description="Whether any page in the script contained red ink.")
+    stage1_transcription: Stage1TranscriptionResult
+    stage2_verification: Stage2VerificationResult
+    stage3_errors: Stage3ErrorResult
+    teacher_marks: List[TeacherMarkItem] = Field(default_factory=list)
+    pages: List[PageExtractionResult] = Field(default_factory=list)
+    metadata: Dict[str, Any] = Field(default_factory=dict)
+
+
+# ---------------------------------------------------------------------------
+# Raw-Tier Research Dataset Record Schema
+# ---------------------------------------------------------------------------
+class RawTierRecord(BaseModel):
+    """Single row representing a script/page/question in the raw-tier research CSV."""
+    script_id: str
+    page_no: int = 1
+    question_no: Optional[str] = None
+    paper: str = "bangla"  # bangla / english
+    task_type: str = "creative_question"
+    transcript_text: str
+    ocr_flags: str = "none"  # e.g. illegible: 0, unclear: 1
+    error_list: str = "[]"  # JSON string of errors
+    teacher_mark: str = ""  # isolated teacher mark
+    has_red_ink: bool = False
+    original_marker_id: str = "unknown"
+    school_id: str = "default"
+    region: str = "default"
+
+
+# ---------------------------------------------------------------------------
 # Stage 4: Rubric Evaluation Schemas
 # ---------------------------------------------------------------------------
 class CriterionScore(BaseModel):
@@ -89,13 +153,15 @@ class Stage4EvaluationResult(BaseModel):
 # End-to-End Complete Evaluation Report
 # ---------------------------------------------------------------------------
 class CompleteEvaluationReport(BaseModel):
-    """Comprehensive artifact containing outputs from all 4 pipeline stages."""
+    """Comprehensive artifact containing outputs from all pipeline stages."""
     script_id: str
     image_path: str
     model_id: str = "google/gemma-4-31b-it"
     timestamp: str
+    has_red_ink: bool = False
     stage1_transcription: Stage1TranscriptionResult
     stage2_verification: Stage2VerificationResult
     stage3_errors: Stage3ErrorResult
+    teacher_marks: List[TeacherMarkItem] = Field(default_factory=list)
     stage4_evaluation: Stage4EvaluationResult
     metadata: Dict[str, Any] = Field(default_factory=dict)

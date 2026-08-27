@@ -2,6 +2,7 @@ import os
 import gc
 from typing import Optional, Dict, Any, List
 from PIL import Image
+from src.core.config import load_config
 from src.engine.base_engine import BaseVLMEngine
 
 
@@ -65,27 +66,57 @@ class GemmaCudaEngine(BaseVLMEngine):
                 load_in_8bit=True
             )
 
+        # Extract Hugging Face token from environment or .env file
+        hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")
+        if not hf_token:
+            from pathlib import Path
+            candidate_env_paths = [
+                ".env",
+                "../.env",
+                str(Path(__file__).resolve().parent.parent.parent / ".env")
+            ]
+            for env_path in candidate_env_paths:
+                if os.path.exists(env_path):
+                    with open(env_path, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line = line.strip()
+                            if line.startswith("HF_TOKEN=") or line.startswith("HUGGING_FACE_HUB_TOKEN="):
+                                val = line.split("=", 1)[1].strip().strip("'\"")
+                                if val:
+                                    hf_token = val
+                                    os.environ["HF_TOKEN"] = val
+                                    break
+                if hf_token:
+                    break
+        hf_token = hf_token or None
+
+        if hf_token:
+            masked = hf_token[:6] + "..." + hf_token[-4:] if len(hf_token) > 10 else "***"
+            print(f"[GemmaCudaEngine] Using Hugging Face token: {masked}")
+        else:
+            print("[GemmaCudaEngine] Warning: No HF_TOKEN detected. If downloading gated models, set HF_TOKEN in .env or run 'huggingface-cli login'.")
+
         print(f"[GemmaCudaEngine] Initializing Processor for '{self.model_id}'...")
         try:
             self.processor = AutoProcessor.from_pretrained(
                 self.model_id,
-                trust_remote_code=self.trust_remote_code
+                trust_remote_code=self.trust_remote_code,
+                token=hf_token
             )
         except Exception as e:
             print(f"[GemmaCudaEngine] Fallback to AutoTokenizer: {e}")
             self.tokenizer = AutoTokenizer.from_pretrained(
                 self.model_id,
-                trust_remote_code=self.trust_remote_code
+                trust_remote_code=self.trust_remote_code,
+                token=hf_token
             )
 
         print(f"[GemmaCudaEngine] Loading '{self.model_id}' (quantization: {self.quantization}, dtype: {self.torch_dtype_str})...")
         
-        # Load multimodal model
-        from transformers import AutoModelForImageTextToText, AutoModelForVision2Seq, AutoModelForCausalLM
-
         model_kwargs: Dict[str, Any] = {
             "device_map": self.device_map,
             "trust_remote_code": self.trust_remote_code,
+            "token": hf_token,
         }
         if quantization_config is not None:
             model_kwargs["quantization_config"] = quantization_config
@@ -95,17 +126,52 @@ class GemmaCudaEngine(BaseVLMEngine):
         if self.use_flash_attention_2:
             model_kwargs["attn_implementation"] = "flash_attention_2"
 
-        # Try AutoModelForImageTextToText first, then fallback to Vision2Seq or CausalLM
+        # Safe dynamic model loaders (prevents ImportError on missing classes in various transformers versions)
+        loaders = []
         try:
-            self.model = AutoModelForImageTextToText.from_pretrained(self.model_id, **model_kwargs)
-        except Exception as e1:
+            from transformers import AutoModelForImageTextToText
+            loaders.append(("AutoModelForImageTextToText", AutoModelForImageTextToText))
+        except ImportError:
+            pass
+
+        try:
+            from transformers import AutoModelForVision2Seq
+            loaders.append(("AutoModelForVision2Seq", AutoModelForVision2Seq))
+        except ImportError:
+            pass
+
+        try:
+            from transformers import AutoModelForCausalLM
+            loaders.append(("AutoModelForCausalLM", AutoModelForCausalLM))
+        except ImportError:
+            pass
+
+        try:
+            from transformers import AutoModel
+            loaders.append(("AutoModel", AutoModel))
+        except ImportError:
+            pass
+
+        loaded = False
+        last_error = None
+        for loader_name, loader_cls in loaders:
             try:
-                self.model = AutoModelForVision2Seq.from_pretrained(self.model_id, **model_kwargs)
-            except Exception as e2:
-                self.model = AutoModelForCausalLM.from_pretrained(self.model_id, **model_kwargs)
+                self.model = loader_cls.from_pretrained(self.model_id, **model_kwargs)
+                print(f"[GemmaCudaEngine] Model successfully loaded via {loader_name}.")
+                loaded = True
+                break
+            except Exception as e:
+                last_error = e
+                continue
+
+        if not loaded:
+            raise RuntimeError(
+                f"Failed to load '{self.model_id}' across all candidate loaders ({[n for n, _ in loaders]}). "
+                f"Error details: {last_error}"
+            )
 
         self.model.eval()
-        print(f"[GemmaCudaEngine] Model successfully loaded on CUDA.")
+        print(f"[GemmaCudaEngine] Model successfully initialized on CUDA.")
 
     def generate_multimodal(
         self,

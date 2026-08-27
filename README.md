@@ -44,30 +44,50 @@ outputs/runs/<script_id>/
 
 ---
 
-## 💻 Top Controller Usage (`scripts/process_scripts.py`)
+## 💻 Modular Workflow: Separate Extraction & Evaluation
 
-### 1. Fast Local Development (Mock Engine on Your Current PC)
+To decouple the vision-heavy extraction from rubric evaluation:
+
+### 1. Step 1: Run Extraction (`scripts/extract_scripts.py`)
+Runs Stages 1 to 3: verbatim transcription, visual cross-verification to audit silent autocorrection, and linguistic error extraction. Saves all writing and error tables to disk.
+
 ```bash
-# Process top 3 PDFs from Google Drive with Mock simulation engine:
-python scripts/process_scripts.py --top 3 --mock
+# Interactive setup:
+python scripts/extract_scripts.py
 
-# Download all PDFs only (without evaluating):
-python scripts/process_scripts.py --download-only
+# Extract top 5 scripts on GPU:
+python scripts/extract_scripts.py --lang bangla --top 5 --quant 4bit
 
-# Process top 5 PDFs with Thinking Mode ablation:
-python scripts/process_scripts.py --top 5 --mock --thinking
+# Fast Mock mode on development PC:
+python scripts/extract_scripts.py --lang bangla --top 3 --mock
 ```
 
-### 2. Production Run on NVIDIA RTX 5090 (32GB VRAM)
+### 2. Step 2: Run Evaluation (`scripts/evaluate_scripts.py`)
+Runs Stage 4: loads pre-extracted writing and error catalogs, scores criteria against subject rubrics, applies linguistic error penalties, and generates pedagogical reports.
+
 ```bash
-# Verify GPU environment and VRAM
-python scripts/setup_env.py
+# Evaluate a specific script by name:
+python scripts/evaluate_scripts.py --script-name sample_bangla_01 --lang bangla
 
-# Process top 10 PDF scripts on CUDA with Gemma 4 31B IT (4-bit NF4)
-python scripts/process_scripts.py --top 10 --model google/gemma-4-31b-it --quant 4bit
+# Evaluate top N extracted scripts from directory:
+python scripts/evaluate_scripts.py --top 5 --lang bangla
 
-# Process all available PDFs from Google Drive
-python scripts/process_scripts.py --quant 4bit
+# Re-grade with a custom rubric without re-running vision extraction:
+python scripts/evaluate_scripts.py --rubric configs/rubrics/bangla_creative_question.yaml --force-evaluate
+```
+
+---
+
+## 🚀 Unified Controller Usage (`scripts/process_scripts.py`)
+
+For end-to-end processing of all 4 stages in a single command:
+
+```bash
+# Run interactive wizard:
+python scripts/process_scripts.py
+
+# Top 10 scripts with 4-bit quantization on RTX 5090:
+python scripts/process_scripts.py --lang bangla --top 10 --quant 4bit
 ```
 
 ---

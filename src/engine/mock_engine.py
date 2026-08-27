@@ -65,6 +65,16 @@ class MockGemmaEngine(BaseVLMEngine):
                 "verification_notes": "Identified and reverted 2 silent spelling normalizations made during initial VLM transcription pass."
             }, ensure_ascii=False, indent=2)
 
+        # Stage 0b: Teacher Mark Extraction Simulation
+        if "red-ink numeric marks" in prompt_lower or "teacher mark" in prompt_lower or "stage 0b" in prompt_lower or "numeric marks written in red ink" in prompt_lower:
+            return json.dumps([
+                {
+                    "question_no": "1",
+                    "mark_value": "7/10",
+                    "location": "margin next to answer 1"
+                }
+            ], ensure_ascii=False, indent=2)
+
         return "Mock multimodal response for Gemma 4 31B IT."
 
     def generate_text(
