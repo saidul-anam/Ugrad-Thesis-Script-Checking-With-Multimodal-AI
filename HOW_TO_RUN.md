@@ -1,6 +1,6 @@
 # Quickstart: How to Run the Pipeline Overall
 
-This cheatsheet provides all copy-pasteable commands to run the **4-Stage Multimodal Gemma 4 31B IT Script Checking Pipeline** across development and production environments.
+This cheatsheet provides all copy-pasteable commands to run the **Multimodal Gemma 4 31B IT Script Checking Pipeline** across development and production environments.
 
 ---
 
@@ -23,10 +23,15 @@ pip install -r requirements.txt
 
 ## 📂 2. Separate Extraction and Evaluation Workflows (Recommended)
 
-To keep extraction (multimodal vision processing) and evaluation (rubric grading & feedback) separate:
+To keep extraction (heavy vision processing, OpenCV red-ink detection, error extraction) and evaluation (rubric grading & feedback) separate:
 
-### 🔍 Step 2.1: Run Extraction (Stages 1 to 3)
-Extracts handwriting verbatim, verifies against visual images, audits silent corrections, extracts spelling/grammar errors, and saves artifacts to `outputs/extracted/<lang>/<script_id>/`.
+### 🔍 Step 2.1: Run Extraction (Stages 0 to 3 & Stage 0b)
+- **Stage 0**: Fast OpenCV HSV red-ink detection (filters noise).
+- **Stage 1**: Verbatim handwriting transcription (ignoring teacher red ink, preserving student errors, `[struck: text]`, `[illegible]`, `[unclear: text]`).
+- **Stage 2**: Visual cross-check against handwriting image to revert silent LLM corrections.
+- **Stage 3**: Text-only linguistic error extraction (spelling, grammar, syntax, punctuation).
+- **Stage 0b**: Red-ink teacher mark extraction (runs conditionally *only* if red ink is present).
+- **Raw-Tier Dataset**: Appends records to `outputs/extracted/<lang>/raw_tier_dataset.csv`.
 
 ```powershell
 # Interactive Wizard (select language, top limit, GPU mode):
@@ -42,7 +47,7 @@ python scripts/extract_scripts.py --lang bangla --top 3 --mock
 ---
 
 ### ⚖️ Step 2.2: Run Evaluation (Stage 4)
-Loads pre-extracted scripts and evaluates them against rubrics. Accepts **either** a specific script name/ID **or** a count (`--top N`).
+Loads pre-extracted scripts and evaluates them against rubrics. Accepts **either** a specific script name/ID **or** a count (`--top N`). Teacher marks remain isolated from grading inputs.
 
 ```powershell
 # Option A: Evaluate by specific script name:
@@ -66,19 +71,19 @@ python scripts/evaluate_scripts.py --script-name sample_bangla_01 --lang bangla 
 > On the RTX 5090 machine, the pipeline uses **Gemma 4 31B IT** with **4-bit NF4 Quantization** (~18–20 GB VRAM footprint), running in bfloat16 precision with CUDA acceleration.
 
 ### Step 1: Verify CUDA & GPU Environment
-```bash
+```powershell
 python scripts/setup_env.py
 ```
 *(Check that CUDA is available and that total VRAM shows ~32 GB)*
 
 ### Step 2: Interactive Terminal Mode (Wizard)
-```bash
-# Unified end-to-end runner (Stages 1–4 together):
+```powershell
+# Unified end-to-end runner (Stages 0–4 together):
 python scripts/process_scripts.py
 ```
 
 ### Step 3: Run Bangla Exam Scripts Directly
-```bash
+```powershell
 # Top 5 Bangla scripts with Creative Question rubric
 python scripts/process_scripts.py --lang bangla --top 5 --quant 4bit
 ```
@@ -87,26 +92,37 @@ python scripts/process_scripts.py --lang bangla --top 5 --quant 4bit
 
 ## 📊 4. How to Inspect Output Results
 
-Extracted artifacts and evaluation reports are stored per script:
+Extracted artifacts, dataset CSVs, and evaluation reports are stored per script:
 
 ```
-outputs/extracted/<lang>/<script_id>/
-  ├── stage1_transcription.json        # Stage 1 metrics & character stats
-  ├── stage1_raw_transcript.txt        # Raw verbatim transcription
-  ├── stage2_verification.json         # Silent autocorrection audit diffs
-  ├── stage2_verified_transcript.txt   # Verified canonical text
-  ├── stage3_errors.json               # Extracted linguistic error catalog
-  ├── stage3_errors.csv                # Tabular error list (spelling/grammar/syntax)
-  ├── extraction_result.json           # Consolidated extraction package
-  ├── extraction_summary.md            # Human-readable extraction summary
-  ├── stage4_evaluation.json           # Rubric marks & penalty deductions
-  ├── complete_report.json             # Consolidated 4-stage report
-  └── evaluation_report.md             # Teacher evaluation & pedagogical report
+outputs/extracted/<lang>/
+  ├── raw_tier_dataset.csv             # 13-column consolidated research dataset CSV
+  └── <script_id>/
+      ├── stage0b_teacher_marks.json   # Extracted red-ink teacher marks (Stage 0b)
+      ├── stage1_transcription.json    # Stage 1 metrics, tags & character stats
+      ├── stage1_raw_transcript.txt    # Raw verbatim transcription
+      ├── stage2_verification.json     # Silent autocorrection audit diffs
+      ├── stage2_verified_transcript.txt # Verified canonical text
+      ├── stage3_errors.json           # Extracted linguistic error catalog
+      ├── stage3_errors.csv            # Tabular error list (spelling/grammar/syntax)
+      ├── extraction_result.json       # Consolidated extraction package
+      ├── extraction_summary.md        # Human-readable extraction summary
+      ├── raw_tier_records.csv         # Script raw-tier CSV records
+      ├── stage4_evaluation.json       # Rubric marks & penalty deductions
+      ├── complete_report.json         # Consolidated evaluation report
+      └── evaluation_report.md         # Teacher evaluation & pedagogical report
 ```
 
-To quickly view the summary markdown report of an evaluated script:
+### Quick Commands to View Outputs:
 ```powershell
+# View extraction summary:
+cat outputs/extracted/bangla/<script_id>/extraction_summary.md
+
+# View full evaluation report:
 cat outputs/extracted/bangla/<script_id>/evaluation_report.md
+
+# View raw-tier research dataset CSV:
+cat outputs/extracted/bangla/raw_tier_dataset.csv
 ```
 
 ---
