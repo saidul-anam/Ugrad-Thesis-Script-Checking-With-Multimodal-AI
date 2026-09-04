@@ -17,7 +17,7 @@ class Stage3ErrorAnalyzer:
         verified_transcript: str,
         temperature: float = 0.0,
         top_p: float = 0.1,
-        max_new_tokens: int = 4096,
+        max_new_tokens: int = 3072,
         thinking_mode: bool = False
     ) -> Stage3ErrorResult:
         prompt = build_stage3_prompt(verified_transcript=verified_transcript)

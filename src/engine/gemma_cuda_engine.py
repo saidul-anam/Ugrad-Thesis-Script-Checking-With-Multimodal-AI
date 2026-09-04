@@ -2,7 +2,6 @@ import os
 import gc
 from typing import Optional, Dict, Any, List
 from PIL import Image
-from src.core.config import load_config
 from src.engine.base_engine import BaseVLMEngine
 
 
@@ -22,6 +21,7 @@ class GemmaCudaEngine(BaseVLMEngine):
         trust_remote_code: bool = True,
         use_flash_attention_2: bool = False
     ):
+        self._configure_cuda_allocator()
         self.model_id = model_id
         self.quantization = quantization
         self.torch_dtype_str = torch_dtype
@@ -33,6 +33,69 @@ class GemmaCudaEngine(BaseVLMEngine):
         self.processor = None
         self.tokenizer = None
         self._init_model()
+
+    def _configure_cuda_allocator(self) -> None:
+        """Reduce CUDA memory fragmentation for long-generation workloads."""
+        if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+            os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
+    def clear_cuda_cache(self) -> None:
+        """Release unreferenced CUDA memory back to the allocator."""
+        try:
+            import torch
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+                torch.cuda.ipc_collect()
+        except Exception:
+            # Best-effort cleanup only.
+            pass
+
+    @staticmethod
+    def _is_cuda_oom_error(exc: Exception) -> bool:
+        return "cuda out of memory" in str(exc).lower()
+
+    def _generate_with_oom_retry(
+        self,
+        inputs: Dict[str, Any],
+        gen_kwargs: Dict[str, Any]
+    ):
+        import torch
+
+        max_tokens = int(gen_kwargs.get("max_new_tokens", 512))
+        attempts = [
+            {"max_new_tokens": max_tokens, "use_cache": True},
+            {"max_new_tokens": max(256, max_tokens // 2), "use_cache": True},
+            {"max_new_tokens": max(128, max_tokens // 4), "use_cache": False},
+        ]
+
+        last_error: Optional[RuntimeError] = None
+        for idx, candidate in enumerate(attempts, start=1):
+            local_kwargs = dict(gen_kwargs)
+            local_kwargs.update(candidate)
+            try:
+                with torch.inference_mode():
+                    return self.model.generate(**inputs, **local_kwargs)
+            except RuntimeError as exc:
+                last_error = exc
+                if not self._is_cuda_oom_error(exc):
+                    raise
+
+                is_last_attempt = idx >= len(attempts)
+                if is_last_attempt:
+                    raise
+
+                next_candidate = attempts[idx]
+                print(
+                    "[GemmaCudaEngine] CUDA OOM during generation; retrying with "
+                    f"max_new_tokens={next_candidate['max_new_tokens']} "
+                    f"and use_cache={next_candidate['use_cache']}"
+                )
+                self.clear_cuda_cache()
+
+        if last_error is not None:
+            raise last_error
+        raise RuntimeError("Generation failed before producing output.")
 
     def _init_model(self):
         import torch
@@ -117,6 +180,10 @@ class GemmaCudaEngine(BaseVLMEngine):
             "device_map": self.device_map,
             "trust_remote_code": self.trust_remote_code,
             "token": hf_token,
+            "max_memory": {
+                0: "30GiB",
+                "cpu": "50GiB",
+            },
         }
         if quantization_config is not None:
             model_kwargs["quantization_config"] = quantization_config
@@ -154,15 +221,43 @@ class GemmaCudaEngine(BaseVLMEngine):
 
         loaded = False
         last_error = None
+
         for loader_name, loader_cls in loaders:
             try:
-                self.model = loader_cls.from_pretrained(self.model_id, **model_kwargs)
-                print(f"[GemmaCudaEngine] Model successfully loaded via {loader_name}.")
+                print(f"[GemmaCudaEngine] Trying loader: {loader_name}...")
+
+                self.model = loader_cls.from_pretrained(
+                    self.model_id,
+                    **model_kwargs
+                )
+
+                print(
+                    f"[GemmaCudaEngine] Model successfully loaded via "
+                    f"{loader_name}."
+                )
+
+                if hasattr(self.model, "hf_device_map"):
+                    print("[GemmaCudaEngine] Model device map:")
+                    print(self.model.hf_device_map)
+
                 loaded = True
                 break
+
             except Exception as e:
+                print(
+                    f"[GemmaCudaEngine] {loader_name} failed: "
+                    f"{type(e).__name__}: {e}"
+                )
                 last_error = e
                 continue
+
+        if not loaded:
+            raise RuntimeError(
+                f"Failed to load '{self.model_id}' across all candidate "
+                f"loaders ({[n for n, _ in loaders]}). "
+                f"Error details: {last_error}"
+            )
+
 
         if not loaded:
             raise RuntimeError(
@@ -180,7 +275,7 @@ class GemmaCudaEngine(BaseVLMEngine):
         system_prompt: Optional[str] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
-        max_new_tokens: int = 4096,
+        max_new_tokens: int = 3072,
         thinking_mode: bool = False,
         **kwargs: Any
     ) -> str:
@@ -228,25 +323,35 @@ class GemmaCudaEngine(BaseVLMEngine):
         gen_kwargs: Dict[str, Any] = {
             "max_new_tokens": max_new_tokens,
             "do_sample": temperature > 0.0,
+            "use_cache": kwargs.get("use_cache", True),
         }
+        max_time = kwargs.get("max_time")
+        if max_time is not None:
+            gen_kwargs["max_time"] = float(max_time)
         if temperature > 0.0:
             gen_kwargs["temperature"] = temperature
             gen_kwargs["top_p"] = top_p
 
-        with torch.no_grad():
-            output_tokens = self.model.generate(**inputs, **gen_kwargs)
+        output_tokens = None
+        try:
+            output_tokens = self._generate_with_oom_retry(inputs, gen_kwargs)
 
-        input_len = inputs["input_ids"].shape[1] if "input_ids" in inputs else 0
-        generated_tokens = output_tokens[0][input_len:]
-        
-        if self.processor and hasattr(self.processor, "decode"):
-            response = self.processor.decode(generated_tokens, skip_special_tokens=True)
-        elif self.tokenizer:
-            response = self.tokenizer.decode(generated_tokens, skip_special_tokens=True)
-        else:
-            response = str(generated_tokens)
+            input_len = inputs["input_ids"].shape[1] if "input_ids" in inputs else 0
+            generated_tokens = output_tokens[0][input_len:]
 
-        return response.strip()
+            if self.processor and hasattr(self.processor, "decode"):
+                response = self.processor.decode(generated_tokens, skip_special_tokens=True)
+            elif self.tokenizer:
+                response = self.tokenizer.decode(generated_tokens, skip_special_tokens=True)
+            else:
+                response = str(generated_tokens)
+
+            return response.strip()
+        finally:
+            if output_tokens is not None:
+                del output_tokens
+            del inputs
+            self.clear_cuda_cache()
 
     def generate_text(
         self,
@@ -254,7 +359,7 @@ class GemmaCudaEngine(BaseVLMEngine):
         system_prompt: Optional[str] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
-        max_new_tokens: int = 4096,
+        max_new_tokens: int = 3072,
         thinking_mode: bool = False,
         **kwargs: Any
     ) -> str:
@@ -286,19 +391,29 @@ class GemmaCudaEngine(BaseVLMEngine):
         gen_kwargs: Dict[str, Any] = {
             "max_new_tokens": max_new_tokens,
             "do_sample": temperature > 0.0,
+            "use_cache": kwargs.get("use_cache", True),
         }
+        max_time = kwargs.get("max_time")
+        if max_time is not None:
+            gen_kwargs["max_time"] = float(max_time)
         if temperature > 0.0:
             gen_kwargs["temperature"] = temperature
             gen_kwargs["top_p"] = top_p
 
-        with torch.no_grad():
-            output_tokens = self.model.generate(**inputs, **gen_kwargs)
+        output_tokens = None
+        try:
+            output_tokens = self._generate_with_oom_retry(inputs, gen_kwargs)
 
-        input_len = inputs["input_ids"].shape[1] if "input_ids" in inputs else 0
-        generated_tokens = output_tokens[0][input_len:]
-        response = tokenizer.decode(generated_tokens, skip_special_tokens=True)
+            input_len = inputs["input_ids"].shape[1] if "input_ids" in inputs else 0
+            generated_tokens = output_tokens[0][input_len:]
+            response = tokenizer.decode(generated_tokens, skip_special_tokens=True)
 
-        return response.strip()
+            return response.strip()
+        finally:
+            if output_tokens is not None:
+                del output_tokens
+            del inputs
+            self.clear_cuda_cache()
 
     def get_engine_info(self) -> Dict[str, Any]:
         import torch

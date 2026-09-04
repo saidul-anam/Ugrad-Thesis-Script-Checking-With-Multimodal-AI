@@ -35,7 +35,7 @@ class ModelConfig(BaseModel):
 class DecodingConfig(BaseModel):
     temperature: float = Field(0.0, description="Sampling temperature (0.0 for greedy)")
     top_p: float = Field(0.1, description="Nucleus sampling cutoff")
-    max_new_tokens: int = Field(4096, description="Maximum new generation tokens")
+    max_new_tokens: int = Field(3072, description="Maximum new generation tokens")
     do_sample: bool = Field(False, description="Whether sampling is active (False for greedy)")
     thinking_mode: bool = Field(False, description="Ablation flag for reasoning/thinking mode")
 
@@ -50,6 +50,8 @@ class PipelineStageConfig(BaseModel):
     stage2_verification: bool = True
     stage3_error_extraction: bool = True
     stage4_rubric_evaluation: bool = True
+    stage4_max_new_tokens: int = Field(768, description="Upper token budget for Stage 4 rubric generation")
+    stage4_generation_timeout_sec: float = Field(180.0, description="Hard timeout for Stage 4 generation in seconds")
     rag: RagConfig = Field(default_factory=RagConfig)
     cache_intermediate_stages: bool = True
     output_dir: str = "outputs/runs"

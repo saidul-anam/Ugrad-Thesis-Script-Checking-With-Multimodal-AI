@@ -388,6 +388,10 @@ class ScriptCheckingPipeline:
         print(f"\n[Evaluation] === Starting Rubric Evaluation for '{script_id}' ===")
         print(f"[Evaluation] Output directory: {script_output_dir}")
         print(f"[Evaluation] Rubric: {active_rubric_path}")
+        stage4_max_tokens = max(256, min(decoding.max_new_tokens, self.config.pipeline.stage4_max_new_tokens))
+        stage4_timeout_sec = max(30.0, float(self.config.pipeline.stage4_generation_timeout_sec))
+        print(f"[Evaluation] Stage 4 Token Budget: max_new_tokens={stage4_max_tokens}")
+        print(f"[Evaluation] Stage 4 Timeout: {stage4_timeout_sec:.0f}s")
 
         # -------------------------------------------------------------
         # STAGE 4: Rubric Evaluation (Verified text + errors only)
@@ -398,6 +402,9 @@ class ScriptCheckingPipeline:
             lookup_topic = thematic_topic or rubric_data.get("subject", "bangla")
             thematic_context = self.rag_provider.get_context(lookup_topic)
 
+        if hasattr(self.engine, "clear_cuda_cache"):
+            self.engine.clear_cuda_cache()
+
         stage4_result = self.stage4.run(
             verified_transcript=extraction.stage2_verification.verified_transcript,
             stage3_errors=extraction.stage3_errors,
@@ -405,8 +412,9 @@ class ScriptCheckingPipeline:
             thematic_context=thematic_context,
             temperature=decoding.temperature,
             top_p=decoding.top_p,
-            max_new_tokens=decoding.max_new_tokens,
-            thinking_mode=active_thinking
+            max_new_tokens=stage4_max_tokens,
+            thinking_mode=active_thinking,
+            generation_max_time=stage4_timeout_sec
         )
         export_stage4_artifacts(stage4_result, script_output_dir)
         print(f"[Evaluation] [4/4] Stage 4 Saved -> {script_output_dir}/stage4_evaluation.json")

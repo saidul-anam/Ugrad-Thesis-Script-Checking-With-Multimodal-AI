@@ -20,8 +20,9 @@ class Stage4Evaluator:
         thematic_context: Optional[str] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
-        max_new_tokens: int = 4096,
-        thinking_mode: bool = False
+        max_new_tokens: int = 3072,
+        thinking_mode: bool = False,
+        generation_max_time: Optional[float] = None
     ) -> Stage4EvaluationResult:
         error_dict = stage3_errors.model_dump()
         prompt = build_stage4_prompt(
@@ -37,7 +38,8 @@ class Stage4Evaluator:
             temperature=temperature,
             top_p=top_p,
             max_new_tokens=max_new_tokens,
-            thinking_mode=thinking_mode
+            thinking_mode=thinking_mode,
+            max_time=generation_max_time
         )
 
         parsed_data = _extract_json_from_text(response)

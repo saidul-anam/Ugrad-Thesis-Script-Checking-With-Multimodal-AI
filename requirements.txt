@@ -1,6 +1,23 @@
-# Core PyTorch & CUDA Dependencies (install matching CUDA version on RTX 5090 machine)
-torch>=2.2.0
-torchvision>=0.17.0
+# ============================================================
+# Core PyTorch & CUDA Dependencies
+#
+# IMPORTANT:
+# Install PyTorch separately using the official PyTorch
+# CUDA wheel index matching your system/driver.
+#
+# RTX 5090 detected:
+#   NVIDIA Driver: 580.159.03
+#   Driver CUDA support: 13.0
+#
+# Official PyTorch installation instructions:
+# https://pytorch.org/get-started/locally/
+#
+# Example (CUDA 12.8 wheels, if supported by the PyTorch
+# release you choose):
+#   python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+#
+# Do NOT install torch/torchvision from this requirements.txt.
+# ============================================================
 accelerate>=0.28.0
 bitsandbytes>=0.43.0
 

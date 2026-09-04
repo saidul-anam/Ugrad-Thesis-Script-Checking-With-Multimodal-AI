@@ -58,8 +58,7 @@ def download_drive_pdfs(
             url=gdrive_url,
             output=str(target_path),
             quiet=False,
-            use_cookies=False,
-            remaining_ok=True
+            use_cookies=False
         )
     except ImportError:
         print("\n[WARN] 'gdown' package is not installed. Install with: pip install gdown")

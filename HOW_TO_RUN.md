@@ -8,7 +8,7 @@ This cheatsheet provides all copy-pasteable commands to run the **Multimodal Gem
 
 ```powershell
 # 1. Activate your virtual environment (e.g. on Windows PowerShell)
-D:\environments\myenv\scripts\Activate.ps1
+source /mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/script_checking/bin/activate
 
 # 2. Ensure dependencies are installed
 pip install -r requirements.txt
@@ -38,7 +38,7 @@ To keep extraction (heavy vision processing, OpenCV red-ink detection, error ext
 python scripts/extract_scripts.py
 
 # Extract Top 5 Bangla scripts on GPU:
-python scripts/extract_scripts.py --lang bangla --top 5 --quant 4bit
+python3 scripts/extract_scripts.py --lang bangla --top 5 --quant 4bit
 
 # Extract on Development PC (Mock mode):
 python scripts/extract_scripts.py --lang bangla --top 3 --mock
@@ -51,7 +51,7 @@ Loads pre-extracted scripts and evaluates them against rubrics. Accepts **either
 
 ```powershell
 # Option A: Evaluate by specific script name:
-python scripts/evaluate_scripts.py --script-name sample_bangla_01 --lang bangla --quant 4bit
+python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0001 --lang english --quant 4bit
 
 # Option B: Evaluate Top N scripts from the extraction directory:
 python scripts/evaluate_scripts.py --top 5 --lang bangla --quant 4bit
@@ -72,7 +72,7 @@ python scripts/evaluate_scripts.py --script-name sample_bangla_01 --lang bangla 
 
 ### Step 1: Verify CUDA & GPU Environment
 ```powershell
-python scripts/setup_env.py
+python3 scripts/setup_env.py
 ```
 *(Check that CUDA is available and that total VRAM shows ~32 GB)*
 

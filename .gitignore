@@ -57,6 +57,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+script_checking/
 
 # Deep Learning / OCR Caches & Model Weights
 .easyocr/
