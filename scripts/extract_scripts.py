@@ -18,10 +18,16 @@ Saves all artifacts per script into:
 
 import os
 import sys
+
+# Configure PyTorch CUDA Allocator early to prevent memory fragmentation
+if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import glob
 import argparse
 from pathlib import Path
 from typing import List
+
 
 # Ensure repository root is on sys.path
 REPO_ROOT = Path(__file__).resolve().parent.parent

@@ -5,8 +5,9 @@ from typing import Union, Tuple
 
 def load_and_preprocess_image(
     image_input: Union[str, Image.Image],
-    max_dimension: int = 2048
+    max_dimension: int = 1536
 ) -> Image.Image:
+
     """
     Load an image from filepath or PIL Image, convert to RGB, and resize if larger than max_dimension.
     """

@@ -5,11 +5,17 @@ from PIL import Image
 from src.engine.base_engine import BaseVLMEngine
 
 
+# Ensure PyTorch CUDA Allocator uses expandable segments before any CUDA operations
+if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
+
 class GemmaCudaEngine(BaseVLMEngine):
     """
     Local CUDA Inference Engine for Gemma 4 31B IT.
     Optimized for NVIDIA RTX 5090 (32GB VRAM) and 32GB RAM using
-    bitsandbytes 4-bit NF4 / 8-bit quantization or bfloat16.
+    bitsandbytes 4-bit NF4 / 8-bit quantization or bfloat16, with
+    PyTorch native SDPA attention and expandable CUDA memory segments.
     """
 
     def __init__(
@@ -19,25 +25,21 @@ class GemmaCudaEngine(BaseVLMEngine):
         torch_dtype: str = "bfloat16",
         device_map: str = "auto",
         trust_remote_code: bool = True,
-        use_flash_attention_2: bool = False
+        use_flash_attention_2: bool = False,
+        attn_implementation: str = "sdpa"
     ):
-        self._configure_cuda_allocator()
         self.model_id = model_id
         self.quantization = quantization
         self.torch_dtype_str = torch_dtype
         self.device_map = device_map
         self.trust_remote_code = trust_remote_code
         self.use_flash_attention_2 = use_flash_attention_2
+        self.attn_implementation = attn_implementation
         
         self.model = None
         self.processor = None
         self.tokenizer = None
         self._init_model()
-
-    def _configure_cuda_allocator(self) -> None:
-        """Reduce CUDA memory fragmentation for long-generation workloads."""
-        if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
-            os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 
     def clear_cuda_cache(self) -> None:
         """Release unreferenced CUDA memory back to the allocator."""
@@ -63,10 +65,12 @@ class GemmaCudaEngine(BaseVLMEngine):
         import torch
 
         max_tokens = int(gen_kwargs.get("max_new_tokens", 512))
+        # 2-stage defense:
+        # 1. Full requested tokens with KV cache
+        # 2. If OOM, purge CUDA cache and retry with safe viable token budget (min 512 tokens to preserve JSON completeness)
         attempts = [
             {"max_new_tokens": max_tokens, "use_cache": True},
-            {"max_new_tokens": max(256, max_tokens // 2), "use_cache": True},
-            {"max_new_tokens": max(128, max_tokens // 4), "use_cache": False},
+            {"max_new_tokens": max(512, int(max_tokens * 0.75)), "use_cache": True},
         ]
 
         last_error: Optional[RuntimeError] = None
@@ -87,15 +91,15 @@ class GemmaCudaEngine(BaseVLMEngine):
 
                 next_candidate = attempts[idx]
                 print(
-                    "[GemmaCudaEngine] CUDA OOM during generation; retrying with "
-                    f"max_new_tokens={next_candidate['max_new_tokens']} "
-                    f"and use_cache={next_candidate['use_cache']}"
+                    "[GemmaCudaEngine] CUDA OOM during generation; clearing cache and retrying with "
+                    f"max_new_tokens={next_candidate['max_new_tokens']}..."
                 )
                 self.clear_cuda_cache()
 
         if last_error is not None:
             raise last_error
         raise RuntimeError("Generation failed before producing output.")
+
 
     def _init_model(self):
         import torch
@@ -176,22 +180,27 @@ class GemmaCudaEngine(BaseVLMEngine):
 
         print(f"[GemmaCudaEngine] Loading '{self.model_id}' (quantization: {self.quantization}, dtype: {self.torch_dtype_str})...")
         
+        # Determine Attention Implementation (flash_attention_2 -> sdpa -> eager fallback)
+        if self.use_flash_attention_2:
+            attn_backend = "flash_attention_2"
+        elif self.attn_implementation:
+            attn_backend = self.attn_implementation
+        else:
+            attn_backend = "sdpa"
+
         model_kwargs: Dict[str, Any] = {
             "device_map": self.device_map,
             "trust_remote_code": self.trust_remote_code,
             "token": hf_token,
-            "max_memory": {
-                0: "30GiB",
-                "cpu": "50GiB",
-            },
         }
         if quantization_config is not None:
             model_kwargs["quantization_config"] = quantization_config
         else:
             model_kwargs["torch_dtype"] = resolved_dtype
 
-        if self.use_flash_attention_2:
-            model_kwargs["attn_implementation"] = "flash_attention_2"
+        if attn_backend and attn_backend.lower() != "eager":
+            model_kwargs["attn_implementation"] = attn_backend
+            print(f"[GemmaCudaEngine] Using attention implementation: '{attn_backend}'")
 
         # Safe dynamic model loaders (prevents ImportError on missing classes in various transformers versions)
         loaders = []
@@ -244,6 +253,21 @@ class GemmaCudaEngine(BaseVLMEngine):
                 break
 
             except Exception as e:
+                # If failed due to attention implementation, try falling back to standard eager attention
+                if "attn_implementation" in model_kwargs and (
+                    "attn_implementation" in str(e).lower() or "flash" in str(e).lower() or "sdpa" in str(e).lower()
+                ):
+                    print(f"[GemmaCudaEngine] {loader_name} failed with attn_implementation='{model_kwargs.get('attn_implementation')}'; falling back to eager...")
+                    fallback_kwargs = dict(model_kwargs)
+                    fallback_kwargs.pop("attn_implementation", None)
+                    try:
+                        self.model = loader_cls.from_pretrained(self.model_id, **fallback_kwargs)
+                        print(f"[GemmaCudaEngine] Model successfully loaded via {loader_name} (eager fallback).")
+                        loaded = True
+                        break
+                    except Exception as fallback_e:
+                        e = fallback_e
+
                 print(
                     f"[GemmaCudaEngine] {loader_name} failed: "
                     f"{type(e).__name__}: {e}"
@@ -258,15 +282,9 @@ class GemmaCudaEngine(BaseVLMEngine):
                 f"Error details: {last_error}"
             )
 
-
-        if not loaded:
-            raise RuntimeError(
-                f"Failed to load '{self.model_id}' across all candidate loaders ({[n for n, _ in loaders]}). "
-                f"Error details: {last_error}"
-            )
-
         self.model.eval()
         print(f"[GemmaCudaEngine] Model successfully initialized on CUDA.")
+
 
     def generate_multimodal(
         self,
@@ -318,7 +336,8 @@ class GemmaCudaEngine(BaseVLMEngine):
                 return_tensors="pt"
             )
 
-        inputs = {k: v.to("cuda") if hasattr(v, "to") else v for k, v in inputs.items()}
+        target_device = self.model.device if hasattr(self.model, "device") else "cuda"
+        inputs = {k: v.to(target_device) if hasattr(v, "to") else v for k, v in inputs.items()}
 
         gen_kwargs: Dict[str, Any] = {
             "max_new_tokens": max_new_tokens,
@@ -386,7 +405,8 @@ class GemmaCudaEngine(BaseVLMEngine):
             full_prompt = f"{system_prompt}\n\n{user_text}" if system_prompt else user_text
             inputs = tokenizer(full_prompt, return_tensors="pt")
 
-        inputs = {k: v.to("cuda") if hasattr(v, "to") else v for k, v in inputs.items()}
+        target_device = self.model.device if hasattr(self.model, "device") else "cuda"
+        inputs = {k: v.to(target_device) if hasattr(v, "to") else v for k, v in inputs.items()}
 
         gen_kwargs: Dict[str, Any] = {
             "max_new_tokens": max_new_tokens,

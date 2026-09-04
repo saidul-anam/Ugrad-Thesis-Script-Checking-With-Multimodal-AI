@@ -4,6 +4,10 @@ from pathlib import Path
 from typing import Dict, Any, Optional
 from pydantic import BaseModel, Field
 
+# Configure PyTorch CUDA Allocator early to prevent memory fragmentation
+if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 # Auto-load .env file if available
 try:
     from dotenv import load_dotenv
@@ -30,6 +34,8 @@ class ModelConfig(BaseModel):
     device_map: str = Field("auto", description="Device placement strategy")
     trust_remote_code: bool = Field(True, description="Whether to allow remote code execution for custom models")
     use_flash_attention_2: bool = Field(False, description="Enable flash attention 2 if supported")
+    attn_implementation: str = Field("sdpa", description="Attention implementation ('sdpa', 'flash_attention_2', 'eager')")
+
 
 
 class DecodingConfig(BaseModel):

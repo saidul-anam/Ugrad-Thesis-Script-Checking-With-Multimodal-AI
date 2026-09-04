@@ -20,9 +20,15 @@ Outputs per script:
 
 import os
 import sys
+
+# Configure PyTorch CUDA Allocator early to prevent memory fragmentation
+if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import glob
 import argparse
 from pathlib import Path
+
 from typing import List, Optional
 
 # Ensure repository root is on sys.path

@@ -23,5 +23,7 @@ def create_engine(config: PipelineConfig, force_mock: bool = False) -> BaseVLMEn
         torch_dtype=config.model.torch_dtype,
         device_map=config.model.device_map,
         trust_remote_code=config.model.trust_remote_code,
-        use_flash_attention_2=config.model.use_flash_attention_2
+        use_flash_attention_2=config.model.use_flash_attention_2,
+        attn_implementation=getattr(config.model, "attn_implementation", "sdpa")
     )
+

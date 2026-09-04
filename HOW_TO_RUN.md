@@ -6,18 +6,22 @@ This cheatsheet provides all copy-pasteable commands to run the **Multimodal Gem
 
 ## ⚡ 1. Setup & Environment Activation
 
-```powershell
-# 1. Activate your virtual environment (e.g. on Windows PowerShell)
+```bash
+# 1. Activate your virtual environment
 source /mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/script_checking/bin/activate
 
-# 2. Ensure dependencies are installed
+# 2. Prevent CUDA virtual memory fragmentation (PyTorch 2.1+)
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
+# 3. Ensure dependencies are installed
 pip install -r requirements.txt
 
-# 3. Configure Hugging Face Token in .env
+# 4. Configure Hugging Face Token in .env
 # Gemma models are gated: accept terms at https://huggingface.co/google/gemma-4-31b-it
 # Create a token at https://huggingface.co/settings/tokens and add to .env:
 # HF_TOKEN=hf_your_token_here
 ```
+
 
 ---
 

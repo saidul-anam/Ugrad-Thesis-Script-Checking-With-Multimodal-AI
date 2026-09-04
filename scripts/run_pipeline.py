@@ -5,9 +5,15 @@ CLI Runner for Gemma 4 31B IT 4-Stage Multimodal Script Evaluation Pipeline.
 
 import os
 import sys
+
+# Configure PyTorch CUDA Allocator early to prevent memory fragmentation
+if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import glob
 import argparse
 from pathlib import Path
+
 
 # Ensure repository root is on sys.path when running as a standalone script
 REPO_ROOT = Path(__file__).resolve().parent.parent
