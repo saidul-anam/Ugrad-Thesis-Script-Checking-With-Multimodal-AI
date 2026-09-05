@@ -12,7 +12,7 @@ Takes either:
   2. Count of scripts to evaluate from directory: --top <N> (or all)
 
 Outputs per script:
-  outputs/extracted/<lang>/<script_id>/  (or custom --output-dir)
+  outputs/evaluated/<lang>/<script_id>/  (or custom --output-dir)
     ├── stage4_evaluation.json
     ├── complete_report.json
     └── evaluation_report.md
@@ -93,6 +93,9 @@ def interactive_wizard(args, available_scripts: List[Path]):
         fallback_dir = f"outputs/runs/{args.lang}"
         args.extraction_dir = primary_dir if (os.path.exists(primary_dir) and find_extracted_scripts(primary_dir)) else fallback_dir
 
+    if args.output_dir in [None, "outputs/evaluated", "outputs/evaluated/bangla", "outputs/evaluated/english"]:
+        args.output_dir = f"outputs/evaluated/{args.lang}"
+
     # Refresh available scripts
     available = find_extracted_scripts(args.extraction_dir)
 
@@ -157,8 +160,11 @@ def interactive_wizard(args, available_scripts: List[Path]):
     console.print("\n[bold green]4. Execution Engine:[/bold green]")
     console.print("   [1] Real GPU (CUDA Gemma 4 31B IT)")
     console.print("   [2] Mock Dev Mode (Fast CPU simulation without GPU/weights)")
-    mode_default = "2" if args.mock else "1"
-    args.mock = (Prompt.ask("[bold green]   Select Execution Mode[/bold green]", choices=["1", "2"], default=mode_default) == "2")
+    console.print("   [3] Local API Engine (LM Studio / vLLM on port 1234 - Zero Extra VRAM)")
+    mode_default = "3" if getattr(args, "api", False) else ("2" if args.mock else "1")
+    engine_choice = Prompt.ask("[bold green]   Select Execution Mode[/bold green]", choices=["1", "2", "3"], default=mode_default)
+    args.mock = (engine_choice == "2")
+    args.api = (engine_choice == "3")
 
     # 5. Skip already evaluated
     args.skip_evaluated = Confirm.ask(
@@ -168,15 +174,21 @@ def interactive_wizard(args, available_scripts: List[Path]):
 
     # Summary
     console.print("\n" + "="*50)
-    engine_label = "[bold yellow]Mock Dev Mode (CPU simulation)[/bold yellow]" if args.mock else "[bold green]CUDA RTX 5090 (Gemma 4 31B IT)[/bold green]"
+    if args.mock:
+        engine_label = "[bold yellow]Mock Dev Mode (CPU simulation)[/bold yellow]"
+    elif getattr(args, "api", False):
+        engine_label = f"[bold green]Local API Engine ({getattr(args, 'api_url', 'http://localhost:1234/v1')})[/bold green]"
+    else:
+        engine_label = "[bold green]CUDA RTX 5090 (Gemma 4 31B IT)[/bold green]"
     target_label = f"Specific Script: [yellow]{args.script_name}[/yellow]" if args.script_name else (f"Top [white]{args.top}[/white] scripts" if args.top else "All available in directory")
 
     console.print(Panel(
         f"• [cyan]Language / Subject (--lang):[/cyan] [bold yellow]{args.lang.capitalize()}[/bold yellow]\n"
         f"• [cyan]Evaluation Target:[/cyan] [bold white]{target_label}[/bold white]\n"
         f"• [cyan]Extraction Source Directory:[/cyan] [bold white]{args.extraction_dir}[/bold white]\n"
+        f"• [cyan]Evaluation Output Directory:[/cyan] [bold white]{args.output_dir or f'outputs/evaluated/{args.lang}'}[/bold white]\n"
         f"• [cyan]Rubric (--rubric):[/cyan] [bold white]{args.rubric}[/bold white]\n"
-        f"• [cyan]Engine Mode (--mock):[/cyan] {engine_label}\n"
+        f"• [cyan]Engine Mode:[/cyan] {engine_label}\n"
         f"• [cyan]Skip Evaluated:[/cyan] {'Yes' if args.skip_evaluated else 'No'}",
         title="[bold green]Evaluation Configuration Summary[/bold green]",
         border_style="green"
@@ -237,13 +249,27 @@ def main():
         "--output-dir",
         type=str,
         default=None,
-        help="Directory to save evaluation reports (defaults to the extracted script directory)"
+        help="Directory to save evaluation reports (defaults to outputs/evaluated/<lang>)"
     )
     parser.add_argument(
         "--config",
         type=str,
         default="configs/pipeline_config.yaml",
         help="Pipeline config YAML"
+    )
+    parser.add_argument(
+        "--question",
+        "--question-id",
+        dest="question",
+        type=str,
+        default=None,
+        help="Explicit question ID (e.g. 'SE_11_Q1' or 'SB_11_Q1') or path to question JSON to evaluate against (auto-matched by default)"
+    )
+    parser.add_argument(
+        "--questions-dir",
+        type=str,
+        default="outputs/questions",
+        help="Root directory containing extracted question artifacts (default: outputs/questions)"
     )
     parser.add_argument(
         "--model",
@@ -267,6 +293,17 @@ def main():
         "--mock",
         action="store_true",
         help="Run in Mock development mode without GPU or model weights"
+    )
+    parser.add_argument(
+        "--api",
+        action="store_true",
+        help="Use local OpenAI-compatible API endpoint (e.g. LM Studio on port 1234) without allocating extra VRAM"
+    )
+    parser.add_argument(
+        "--api-url",
+        type=str,
+        default="http://localhost:1234/v1",
+        help="URL of OpenAI-compatible API endpoint (default: http://localhost:1234/v1)"
     )
     parser.add_argument(
         "--skip-evaluated",
@@ -305,6 +342,8 @@ def main():
         fallback_dir = f"outputs/runs/{args.lang}"
         args.extraction_dir = primary_dir if (os.path.exists(primary_dir) and find_extracted_scripts(primary_dir)) else (fallback_dir if os.path.exists(fallback_dir) else primary_dir)
 
+    eval_output_base = args.output_dir or f"outputs/evaluated/{args.lang}"
+
     if not args.rubric:
         args.rubric = (
             "configs/rubrics/bangla_creative_question.yaml"
@@ -315,8 +354,9 @@ def main():
     # Check available scripts in directory
     discovered_scripts = find_extracted_scripts(args.extraction_dir)
 
-    # Launch wizard if interactive terminal and not bypassed
-    if not args.non_interactive and sys.stdin.isatty():
+    # Launch wizard only if interactive terminal, not bypassed, and no explicit target script provided
+    has_explicit_target = bool(args.script_name or args.top)
+    if not args.non_interactive and not has_explicit_target and sys.stdin.isatty():
         args = interactive_wizard(args, discovered_scripts)
 
     # 1. Resolve Target Scripts to Evaluate
@@ -352,13 +392,21 @@ def main():
         console.print("[yellow]Tip: Run extraction first with `python scripts/extract_scripts.py`[/yellow]")
         return
 
+    if args.mock:
+        exec_mode_label = "Mock (Dev PC)"
+    elif args.api:
+        exec_mode_label = f"Local API ({args.api_url})"
+    else:
+        exec_mode_label = "CUDA RTX 5090 (Gemma 4 31B IT)"
+
     console.print(Panel.fit(
         f"[bold cyan]Gemma 4 31B IT Multimodal Script Evaluation Controller[/bold cyan]\n"
         f"[green]Language / Subject:[/green] {args.lang.capitalize()}\n"
-        f"[green]Extraction Directory:[/green] {args.extraction_dir}\n"
+        f"[green]Extraction Source:[/green] {args.extraction_dir}\n"
+        f"[green]Evaluation Output Root:[/green] {eval_output_base}\n"
         f"[green]Target Count:[/green] {len(target_script_paths)} script(s)\n"
         f"[green]Rubric:[/green] {args.rubric}\n"
-        f"[yellow]Execution Mode:[/yellow] {'Mock (Dev PC)' if args.mock else 'CUDA RTX 5090 (Gemma 4 31B IT)'}",
+        f"[yellow]Execution Mode:[/yellow] {exec_mode_label}",
         title="Evaluation Initialized"
     ))
 
@@ -376,7 +424,12 @@ def main():
         cfg.decoding.thinking_mode = True
 
     console.print("\n[bold]Step 1: Initializing Inference Engine & Evaluator...[/bold]")
-    engine = create_engine(cfg, force_mock=args.mock)
+    engine = create_engine(
+        cfg,
+        force_mock=args.mock,
+        force_api=args.api,
+        api_url=args.api_url if args.api else None
+    )
     pipeline = ScriptCheckingPipeline(
         engine=engine,
         config=cfg,
@@ -389,8 +442,8 @@ def main():
 
     for idx, script_path in enumerate(target_script_paths, 1):
         script_id = script_path.name if script_path.is_dir() else script_path.stem
-        report_out_dir = args.output_dir or (str(script_path) if script_path.is_dir() else os.path.dirname(str(script_path)))
-        completed_report = os.path.join(report_out_dir, "complete_report.json")
+        script_eval_dir = os.path.join(eval_output_base, script_id)
+        completed_report = os.path.join(script_eval_dir, "complete_report.json")
 
         if args.skip_evaluated and os.path.exists(completed_report):
             console.print(f"\n[{idx}/{len(target_script_paths)}] Skipping already evaluated: [cyan]{script_id}[/cyan]")
@@ -398,6 +451,8 @@ def main():
 
         console.print(f"\n{'='*60}")
         console.print(f"[{idx}/{len(target_script_paths)}] Evaluating Script: [bold cyan]{script_id}[/bold cyan]")
+        console.print(f"  [dim]Extraction Source:[/dim]  {script_path}")
+        console.print(f"  [dim]Evaluation Output:[/dim]  {script_eval_dir}")
         console.print(f"{'='*60}")
 
         try:
@@ -405,11 +460,14 @@ def main():
                 extraction_input=str(script_path),
                 rubric_path=args.rubric,
                 thinking_mode=cfg.decoding.thinking_mode,
-                output_dir=args.output_dir
+                output_dir=script_eval_dir,
+                question_input=args.question,
+                questions_root=args.questions_dir
             )
 
             summary_records.append({
                 "script_id": script_id,
+                "question_id": report.question_id or "General",
                 "content_score": f"{report.stage4_evaluation.content_raw_score:.2f}",
                 "penalty": f"-{report.stage4_evaluation.linguistic_penalty:.2f}",
                 "final_score": f"{report.stage4_evaluation.final_score:.2f} / {report.stage4_evaluation.total_max_marks:.2f}",
@@ -422,6 +480,7 @@ def main():
             console.print(f"[bold red]Failed evaluating {script_id}: {e}[/bold red]")
             summary_records.append({
                 "script_id": script_id,
+                "question_id": "N/A",
                 "content_score": "N/A",
                 "penalty": "N/A",
                 "final_score": "N/A",
@@ -434,6 +493,7 @@ def main():
     if summary_records:
         table = Table(title=f"Evaluation Phase Summary ({len(summary_records)} scripts)")
         table.add_column("Script ID", style="cyan")
+        table.add_column("Question", style="yellow")
         table.add_column("Content Score", style="white")
         table.add_column("Penalty", style="red")
         table.add_column("Final Score", style="bold green")
@@ -444,6 +504,7 @@ def main():
         for r in summary_records:
             table.add_row(
                 r["script_id"],
+                r["question_id"],
                 r["content_score"],
                 r["penalty"],
                 r["final_score"],
@@ -454,7 +515,7 @@ def main():
 
         console.print("\n")
         console.print(table)
-        console.print(f"\n[green]All evaluation reports saved in: [bold]{args.extraction_dir}/<script_id>/[/bold][/green]\n")
+        console.print(f"\n[green]All evaluation reports saved in: [bold]{eval_output_base}/<script_id>/[/bold][/green]\n")
 
 
 if __name__ == "__main__":

@@ -145,9 +145,125 @@ def test_separate_extraction_and_evaluation():
         assert os.path.exists(os.path.join(cfg.pipeline.output_dir, "raw_tier_dataset.csv"))
 
         # 2. Step 2: Standalone Evaluation (Stage 4) loading from extracted directory
-        report = pipeline.evaluate_extracted_script(extraction_input=script_dir)
+        eval_dir = os.path.join(tmpdir, "evaluated", "isolated_script")
+        report = pipeline.evaluate_extracted_script(extraction_input=script_dir, output_dir=eval_dir)
         assert report.script_id == "isolated_script"
         assert report.stage4_evaluation.final_score > 0
-        assert os.path.exists(os.path.join(script_dir, "stage4_evaluation.json"))
-        assert os.path.exists(os.path.join(script_dir, "complete_report.json"))
-        assert os.path.exists(os.path.join(script_dir, "evaluation_report.md"))
+        # Evaluation files saved in evaluation directory
+        assert os.path.exists(os.path.join(eval_dir, "stage4_evaluation.json"))
+        assert os.path.exists(os.path.join(eval_dir, "complete_report.json"))
+        assert os.path.exists(os.path.join(eval_dir, "evaluation_report.md"))
+        # Extraction directory has NO stage4 or report files (clean separation)
+        assert not os.path.exists(os.path.join(script_dir, "stage4_evaluation.json"))
+        assert not os.path.exists(os.path.join(script_dir, "complete_report.json"))
+        assert not os.path.exists(os.path.join(script_dir, "evaluation_report.md"))
+
+
+def test_pipeline_fast_mode_and_checkpointing():
+    img = Image.new("RGB", (200, 200), color=(255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    draw.text((10, 10), "Fast Mode Test Script", fill=(0, 0, 0))
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        img_path = os.path.join(tmpdir, "fast_script.png")
+        img.save(img_path)
+
+        cfg = PipelineConfig()
+        cfg.pipeline.output_dir = os.path.join(tmpdir, "outputs")
+        engine = MockGemmaEngine(model_id=cfg.model.model_id)
+        pipeline = ScriptCheckingPipeline(engine=engine, config=cfg)
+
+        # 1. Run in Fast Mode (skip_stage2=True)
+        extraction = pipeline.extract_script(
+            input_source=img_path,
+            skip_stage2=True
+        )
+
+        assert extraction.stage2_verification.total_corrections_count == 0
+        assert "Fast mode" in extraction.stage2_verification.verification_notes
+        assert len(extraction.pages) == 1
+
+        script_dir = os.path.join(cfg.pipeline.output_dir, "fast_script")
+        ckpt_file = os.path.join(script_dir, "checkpoints", "page_1.json")
+        assert os.path.exists(ckpt_file)
+
+        # 2. Re-run without force_extract to verify checkpoint loading
+        resumed_extraction = pipeline.extract_script(
+            input_source=img_path,
+            skip_stage2=True,
+            force_extract=False
+        )
+        assert resumed_extraction.script_id == "fast_script"
+        assert len(resumed_extraction.pages) == 1
+        assert resumed_extraction.stage3_errors.total_error_count >= 0
+
+
+def test_token_usage_persistence_in_reports_and_csv():
+    import csv
+    import json
+    img = Image.new("RGB", (200, 200), color=(255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    draw.text((10, 10), "Token Usage Persistence Test", fill=(0, 0, 0))
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        img_path = os.path.join(tmpdir, "tok_script.png")
+        img.save(img_path)
+
+        cfg = PipelineConfig()
+        cfg.pipeline.output_dir = os.path.join(tmpdir, "outputs")
+        engine = MockGemmaEngine(model_id=cfg.model.model_id)
+        pipeline = ScriptCheckingPipeline(engine=engine, config=cfg)
+
+        report = pipeline.evaluate_script(input_source=img_path)
+        script_dir = os.path.join(cfg.pipeline.output_dir, report.script_id)
+
+        # 1. Check extraction_result.json metadata
+        ext_json_path = os.path.join(script_dir, "extraction_result.json")
+        with open(ext_json_path, "r", encoding="utf-8") as f:
+            ext_data = json.load(f)
+        assert "token_usage" in ext_data["metadata"]
+        ext_tok = ext_data["metadata"]["token_usage"]
+        assert ext_tok["total_tokens"] > 0
+        assert "pages" in ext_tok
+        assert "page_1" in ext_tok["pages"]
+
+        # 2. Check page checkpoint json
+        ckpt_path = os.path.join(script_dir, "checkpoints", "page_1.json")
+        with open(ckpt_path, "r", encoding="utf-8") as f:
+            ckpt_data = json.load(f)
+        assert "token_usage" in ckpt_data
+        assert ckpt_data["token_usage"]["total_tokens"] > 0
+
+        # 3. Check extraction_summary.md
+        summary_md_path = os.path.join(script_dir, "extraction_summary.md")
+        with open(summary_md_path, "r", encoding="utf-8") as f:
+            summary_md = f.read()
+        assert "## Context & Token Usage Breakdown" in summary_md
+        assert "Cumulative Extraction Tokens" in summary_md
+
+        # 4. Check complete_report.json metadata
+        comp_json_path = os.path.join(script_dir, "complete_report.json")
+        with open(comp_json_path, "r", encoding="utf-8") as f:
+            comp_data = json.load(f)
+        assert "stage4_token_usage" in comp_data["metadata"]
+        assert comp_data["metadata"]["stage4_token_usage"]["total_tokens"] > 0
+        assert "extraction_token_usage" in comp_data["metadata"]
+
+        # 5. Check evaluation_report.md
+        eval_md_path = os.path.join(script_dir, "evaluation_report.md")
+        with open(eval_md_path, "r", encoding="utf-8") as f:
+            eval_md = f.read()
+        assert "Stage 4 Token Usage" in eval_md
+        assert "## Pipeline Context & Token Usage Breakdown" in eval_md
+
+        # 6. Check raw_tier_dataset.csv (13 columns, tokens in ocr_flags)
+        csv_path = os.path.join(cfg.pipeline.output_dir, "raw_tier_dataset.csv")
+        with open(csv_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            rows = list(reader)
+        assert len(rows) == 1
+        row = rows[0]
+        assert len(row) == 13
+        assert "tokens:" in row["ocr_flags"]
+        assert "4096" in row["ocr_flags"]
+

@@ -21,11 +21,14 @@ def extract_images_from_pdf(
     Returns a list of tuples: (page_number_1_indexed, PIL_Image, saved_image_path)
     """
     try:
-        import fitz  # PyMuPDF
+        import pymupdf as fitz
     except ImportError:
-        raise ImportError(
-            "PyMuPDF (fitz) is required for PDF processing. Install via: pip install pymupdf"
-        )
+        try:
+            import fitz  # fallback
+        except ImportError:
+            raise ImportError(
+                "PyMuPDF (pymupdf) is required for PDF processing. Install via: pip install pymupdf"
+            )
 
     pdf_file = Path(pdf_path)
     if not pdf_file.exists():
@@ -65,3 +68,34 @@ def extract_images_from_pdf(
 
     doc.close()
     return results
+
+
+def extract_text_from_pdf(pdf_path: str) -> str:
+    """
+    Extracts embedded digital text from PDF pages using PyMuPDF.
+    Returns empty string if the PDF is scanned or contains no digital text layer.
+    """
+    try:
+        import pymupdf as fitz
+    except ImportError:
+        try:
+            import fitz
+        except ImportError:
+            return ""
+
+    if not os.path.exists(pdf_path):
+        return ""
+
+    text_parts = []
+    try:
+        doc = fitz.open(pdf_path)
+        for page in doc:
+            t = page.get_text().strip()
+            if t:
+                text_parts.append(t)
+        doc.close()
+    except Exception:
+        return ""
+
+    return "\n\n".join(text_parts)
+

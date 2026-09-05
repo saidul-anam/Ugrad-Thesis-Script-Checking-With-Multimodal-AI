@@ -13,6 +13,20 @@ class MockGemmaEngine(BaseVLMEngine):
 
     def __init__(self, model_id: str = "mock-google/gemma-4-31b-it"):
         self.model_id = model_id
+        self.context_window = 4096
+        self.max_context_window = 4096
+        self.last_usage = {}
+
+    def _update_mock_usage(self, prompt: str, response: str):
+        prompt_tokens = max(120, len(prompt.split()) * 2 + 256)
+        comp_tokens = max(45, len(response.split()) * 2)
+        total_tokens = prompt_tokens + comp_tokens
+        self.last_usage = {
+            "prompt_tokens": prompt_tokens,
+            "completion_tokens": comp_tokens,
+            "total_tokens": total_tokens,
+            "context_window": self.context_window
+        }
 
     def generate_multimodal(
         self,
@@ -29,17 +43,19 @@ class MockGemmaEngine(BaseVLMEngine):
         
         # Stage 1: Verbatim Transcription Simulation
         if "transcribe every word exactly as written" in prompt_lower or "stage 1" in prompt_lower or "verbatim" in prompt_lower:
-            return (
+            resp = (
                 "১. উদ্দীপকে বর্নিত বিষয়টি আমাদের সমাজের একটি গুরুত্বপূর্ন সমস্যাকে তুলে ধরে।\n"
                 "লেখক এখানে সমাজ সংস্কারের প্রয়োজনীয়তার কথা উল্লেখ করেছেন।\n"
                 "তিনি বলেন, কুসংস্কার দূর না হলে জাতি [unclear: উন্নতি] করতে পারবে না।\n"
                 "কিন্তু আধুনিক যুগে মানুষ এখনো [illegible] রীতিনীতি মেনে চলছে।\n"
                 "পরিশেষে বলা যায় যে, সমাজ পরিবর্তনের জন্য যুব সমাজের অবদান অপরিসিম।"
             )
+            self._update_mock_usage(prompt, resp)
+            return resp
 
         # Stage 2: Autocorrection Verification Simulation
         if "autocorrection" in prompt_lower or "cross-check" in prompt_lower or "stage 2" in prompt_lower:
-            return json.dumps({
+            resp = json.dumps({
                 "verified_transcript": (
                     "১. উদ্দীপকে বর্নিত বিষয়টি আমাদের সমাজের একটি গুরুত্বপূর্ন সমস্যাকে তুলে ধরে।\n"
                     "লেখক এখানে সমাজ সংস্কারের প্রয়োজনীয়তার কথা উল্লেখ করেছেন।\n"
@@ -64,18 +80,24 @@ class MockGemmaEngine(BaseVLMEngine):
                 "total_corrections_count": 2,
                 "verification_notes": "Identified and reverted 2 silent spelling normalizations made during initial VLM transcription pass."
             }, ensure_ascii=False, indent=2)
+            self._update_mock_usage(prompt, resp)
+            return resp
 
         # Stage 0b: Teacher Mark Extraction Simulation
         if "red-ink numeric marks" in prompt_lower or "teacher mark" in prompt_lower or "stage 0b" in prompt_lower or "numeric marks written in red ink" in prompt_lower:
-            return json.dumps([
+            resp = json.dumps([
                 {
                     "question_no": "1",
                     "mark_value": "7/10",
                     "location": "margin next to answer 1"
                 }
             ], ensure_ascii=False, indent=2)
+            self._update_mock_usage(prompt, resp)
+            return resp
 
-        return "Mock multimodal response for Gemma 4 31B IT."
+        resp = "Mock multimodal response for Gemma 4 31B IT."
+        self._update_mock_usage(prompt, resp)
+        return resp
 
     def generate_text(
         self,
@@ -91,7 +113,7 @@ class MockGemmaEngine(BaseVLMEngine):
 
         # Stage 3: Error Extraction Simulation
         if "error extraction" in prompt_lower or "linguistic errors" in prompt_lower or "stage 3" in prompt_lower:
-            return json.dumps({
+            resp = json.dumps({
                 "errors": [
                     {
                         "error_type": "spelling",
@@ -122,10 +144,12 @@ class MockGemmaEngine(BaseVLMEngine):
                 "total_error_count": 3,
                 "linguistic_summary": "The student shows good structural sentence formation but struggles with Bangla Natwa-Bidhan and vowel length (ঈ-কার/ঊ-কার) spellings."
             }, ensure_ascii=False, indent=2)
+            self._update_mock_usage(prompt, resp)
+            return resp
 
         # Stage 4: Rubric Evaluation Simulation
         if "rubric" in prompt_lower or "grading" in prompt_lower or "stage 4" in prompt_lower:
-            return json.dumps({
+            resp = json.dumps({
                 "subject": "Bangla",
                 "question_type": "Creative Question (সৃজনশীল প্রশ্ন - গ/ঘ)",
                 "criteria_scores": [
@@ -177,8 +201,12 @@ class MockGemmaEngine(BaseVLMEngine):
                     "বাক্যের ধারাবাহিকতা বজায় রেখে বিশ্লেষণ আরও সমৃদ্ধ করুন।"
                 ]
             }, ensure_ascii=False, indent=2)
+            self._update_mock_usage(prompt, resp)
+            return resp
 
-        return "Mock text response for Gemma 4 31B IT."
+        resp = "Mock text response for Gemma 4 31B IT."
+        self._update_mock_usage(prompt, resp)
+        return resp
 
     def get_engine_info(self) -> Dict[str, Any]:
         return {

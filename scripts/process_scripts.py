@@ -142,17 +142,19 @@ def interactive_wizard(args):
         default=default_quant
     )
 
-    # 5. Execution Mode (--mock vs Real GPU)
+    # 5. Execution Mode (--mock vs Real GPU vs Local API)
     console.print("\n[bold green]5. Execution Engine:[/bold green]")
     console.print("   [1] Real GPU (CUDA Gemma 4 31B IT)")
     console.print("   [2] Mock Dev Mode (Fast CPU simulation without GPU/weights)")
-    mode_default = "2" if args.mock else "1"
+    console.print("   [3] Local API Engine (LM Studio / vLLM on port 1234 - Zero Extra VRAM)")
+    mode_default = "3" if getattr(args, "api", False) else ("2" if args.mock else "1")
     mode_choice = Prompt.ask(
         "[bold green]   Select Execution Mode[/bold green]",
-        choices=["1", "2"],
+        choices=["1", "2", "3"],
         default=mode_default
     )
     args.mock = (mode_choice == "2")
+    args.api = (mode_choice == "3")
 
     # 6. Reasoning / Thinking Mode (--thinking)
     args.thinking = Confirm.ask(
@@ -160,31 +162,23 @@ def interactive_wizard(args):
         default=args.thinking
     )
 
-    # 7. Google Drive Sync / Download Action
-    console.print("\n[bold green]7. Google Drive Download Action:[/bold green]")
-    console.print("   [1] Smart Sync (Download if missing, skip if already present) [yellow](default)[/yellow]")
-    console.print("   [2] Local Only (Do NOT download from GDrive, use local PDFs only)")
-    console.print("   [3] Force Re-download (Re-download from GDrive even if files exist)")
-    console.print("   [4] Download Only (Download PDFs from GDrive and exit without evaluating)")
+    # 7. Google Drive Sync / Input Source
+    console.print("\n[bold green]7. Input PDF Source:[/bold green]")
+    console.print("   [1] Local PDFs Only (Scan data/raw_pdfs without checking GDrive) [yellow](default)[/yellow]")
+    console.print("   [2] Sync from Google Drive (Download missing PDFs)")
+    console.print("   [3] Force Re-download from Google Drive")
 
-    dl_default = "2" if args.skip_download else ("3" if args.force_download else ("4" if args.download_only else "1"))
-    dl_choice = Prompt.ask("[bold green]   Select Download Action[/bold green]", choices=["1", "2", "3", "4"], default=dl_default)
+    dl_default = "3" if getattr(args, "force_download", False) else ("2" if getattr(args, "sync_drive", False) else "1")
+    dl_choice = Prompt.ask("[bold green]   Select Input Source[/bold green]", choices=["1", "2", "3"], default=dl_default)
     if dl_choice == "1":
-        args.skip_download = False
+        args.sync_drive = False
         args.force_download = False
-        args.download_only = False
     elif dl_choice == "2":
-        args.skip_download = True
+        args.sync_drive = True
         args.force_download = False
-        args.download_only = False
     elif dl_choice == "3":
-        args.skip_download = False
+        args.sync_drive = True
         args.force_download = True
-        args.download_only = False
-    elif dl_choice == "4":
-        args.skip_download = False
-        args.force_download = False
-        args.download_only = True
 
     # 8. Skip already evaluated scripts (--skip-evaluated)
     if not args.download_only:
@@ -305,10 +299,17 @@ def main():
         help="Only download PDFs without running evaluation"
     )
     parser.add_argument(
+        "--sync-drive",
+        action="store_true",
+        default=False,
+        help="Check and download missing PDFs from Google Drive before running (default: False; local only)"
+    )
+    parser.add_argument(
         "--skip-download",
         "--local-only",
         action="store_true",
-        help="Do not download from Google Drive; use existing local PDFs only"
+        default=True,
+        help="Do not download from Google Drive; use existing local PDFs only (default: True, GDrive is not checked)"
     )
     parser.add_argument(
         "--skip-evaluated",
@@ -320,6 +321,25 @@ def main():
         "--force-download",
         action="store_true",
         help="Re-download PDFs from Google Drive even if already present locally"
+    )
+    parser.add_argument(
+        "--fast",
+        "--skip-stage2",
+        dest="fast",
+        action="store_true",
+        default=False,
+        help="Fast single-pass extraction mode: skip Stage 2 visual verification to cut runtime in half"
+    )
+    parser.add_argument(
+        "--api",
+        action="store_true",
+        help="Use local OpenAI-compatible API endpoint (e.g. LM Studio on port 1234) without allocating extra VRAM"
+    )
+    parser.add_argument(
+        "--api-url",
+        type=str,
+        default="http://localhost:1234/v1",
+        help="URL of OpenAI-compatible API endpoint (default: http://localhost:1234/v1)"
     )
     parser.add_argument(
         "--interactive",
@@ -372,19 +392,31 @@ def main():
         title="Top Controller Initialized"
     ))
 
-    # 1. Download / Discover PDFs from Google Drive
-    console.print("\n[bold]Step 1: Checking & Downloading Exam Script PDFs...[/bold]")
-    pdf_paths = download_drive_pdfs(
-        gdrive_url=args.gdrive_url,
-        target_dir=args.pdf_dir,
-        top_limit=args.top,
-        skip_existing=not args.force_download,
-        skip_download=args.skip_download
-    )
+    # 1. Discover PDFs Locally (or Sync from Google Drive if requested)
+    if getattr(args, "sync_drive", False) or getattr(args, "download_only", False):
+        console.print("\n[bold]Step 1: Checking & Downloading Exam Script PDFs from Google Drive...[/bold]")
+        pdf_paths = download_drive_pdfs(
+            gdrive_url=args.gdrive_url,
+            target_dir=args.pdf_dir,
+            top_limit=args.top,
+            skip_existing=not args.force_download,
+            skip_download=False
+        )
+        if getattr(args, "download_only", False):
+            console.print("\n[green]--download-only flag active. Download complete![/green]")
+            return
+    else:
+        console.print(f"\n[bold]Step 1: Discovering Local Exam Script PDFs in '{args.pdf_dir}'...[/bold]")
+        if os.path.exists(args.pdf_dir):
+            found = list(Path(args.pdf_dir).glob("*.pdf")) + list(Path(args.pdf_dir).glob("*.PDF"))
+            pdf_paths = sorted(list(set(str(p) for p in found)))
+        else:
+            pdf_paths = []
 
     if not pdf_paths:
         console.print(f"[red]No PDF scripts found in '{args.pdf_dir}'.[/red]")
-        console.print(f"Place your PDF files into '{args.pdf_dir}/' or check Google Drive connection.")
+        console.print(f"[yellow]To download scripts first, run:[/yellow]")
+        console.print(f"  python3 scripts/download_drive_pdfs.py --lang {args.lang} --top 5\n")
         return
 
     console.print(f"[green]Total PDFs ready for processing: {len(pdf_paths)}[/green]")
@@ -408,7 +440,12 @@ def main():
 
     # 3. Instantiate Engine & Pipeline
     console.print("\n[bold]Step 2: Initializing Inference Engine & Pipeline...[/bold]")
-    engine = create_engine(cfg, force_mock=args.mock)
+    engine = create_engine(
+        cfg,
+        force_mock=args.mock,
+        force_api=args.api,
+        api_url=args.api_url if args.api else None
+    )
     pipeline = ScriptCheckingPipeline(
         engine=engine,
         config=cfg,
@@ -437,7 +474,9 @@ def main():
             report = pipeline.evaluate_script(
                 input_source=pdf_path,
                 script_id=script_id,
-                thinking_mode=cfg.decoding.thinking_mode
+                thinking_mode=cfg.decoding.thinking_mode,
+                skip_stage2=args.fast,
+                force_extract=not args.skip_evaluated
             )
 
             summary_records.append({

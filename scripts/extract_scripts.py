@@ -105,38 +105,32 @@ def interactive_wizard(args):
     console.print("\n[bold green]4. Execution Engine:[/bold green]")
     console.print("   [1] Real GPU (CUDA Gemma 4 31B IT)")
     console.print("   [2] Mock Dev Mode (Fast CPU simulation without GPU/weights)")
-    mode_default = "2" if args.mock else "1"
-    mode_choice = Prompt.ask("[bold green]   Select Execution Mode[/bold green]", choices=["1", "2"], default=mode_default)
+    console.print("   [3] Local API Engine (LM Studio / vLLM on port 1234 - Zero Extra VRAM)")
+    mode_default = "3" if getattr(args, "api", False) else ("2" if args.mock else "1")
+    mode_choice = Prompt.ask("[bold green]   Select Execution Mode[/bold green]", choices=["1", "2", "3"], default=mode_default)
     args.mock = (mode_choice == "2")
+    args.api = (mode_choice == "3")
 
     # 5. Thinking Mode
     args.thinking = Confirm.ask("\n[bold green]5. Enable Reasoning / Thinking Mode ablation?[/bold green]", default=args.thinking)
 
-    # 6. GDrive Download action
-    console.print("\n[bold green]6. Google Drive Sync / Download Action:[/bold green]")
-    console.print("   [1] Smart Sync (Download missing, skip existing) [yellow](default)[/yellow]")
-    console.print("   [2] Local Only (Use local files only, no GDrive check)")
-    console.print("   [3] Force Re-download (Re-download from GDrive)")
-    console.print("   [4] Download Only (Download and exit without extracting)")
+    # 6. GDrive Download action (Optional)
+    console.print("\n[bold green]6. Input Script Source:[/bold green]")
+    console.print("   [1] Local Scripts Only (Scan data/raw_pdfs without checking GDrive) [yellow](default)[/yellow]")
+    console.print("   [2] Sync from Google Drive (Download missing scripts)")
+    console.print("   [3] Force Re-download from Google Drive")
 
-    dl_default = "2" if args.skip_download else ("3" if args.force_download else ("4" if args.download_only else "1"))
-    dl_choice = Prompt.ask("[bold green]   Select Download Action[/bold green]", choices=["1", "2", "3", "4"], default=dl_default)
+    dl_default = "3" if getattr(args, "force_download", False) else ("2" if getattr(args, "sync_drive", False) else "1")
+    dl_choice = Prompt.ask("[bold green]   Select Input Source[/bold green]", choices=["1", "2", "3"], default=dl_default)
     if dl_choice == "1":
-        args.skip_download = False
+        args.sync_drive = False
         args.force_download = False
-        args.download_only = False
     elif dl_choice == "2":
-        args.skip_download = True
+        args.sync_drive = True
         args.force_download = False
-        args.download_only = False
     elif dl_choice == "3":
-        args.skip_download = False
+        args.sync_drive = True
         args.force_download = True
-        args.download_only = False
-    elif dl_choice == "4":
-        args.skip_download = False
-        args.force_download = False
-        args.download_only = True
 
     # 7. Skip already extracted
     if not args.download_only:
@@ -147,7 +141,12 @@ def interactive_wizard(args):
 
     # Summary
     console.print("\n" + "="*50)
-    engine_label = "[bold yellow]Mock Dev Mode (CPU simulation)[/bold yellow]" if args.mock else "[bold green]CUDA RTX 5090 (Gemma 4 31B IT)[/bold green]"
+    if args.mock:
+        engine_label = "[bold yellow]Mock Dev Mode (CPU simulation)[/bold yellow]"
+    elif getattr(args, "api", False):
+        engine_label = f"[bold green]Local API Engine ({getattr(args, 'api_url', 'http://localhost:1234/v1')})[/bold green]"
+    else:
+        engine_label = "[bold green]CUDA RTX 5090 (Gemma 4 31B IT)[/bold green]"
     top_label = str(args.top) if args.top else "All available"
     thinking_label = "[green]Enabled[/green]" if args.thinking else "[dim]Disabled[/dim]"
     skip_label = "[green]Yes[/green]" if args.skip_extracted else "[yellow]No[/yellow]"
@@ -156,7 +155,7 @@ def interactive_wizard(args):
         f"• [cyan]Language / Subject (--lang):[/cyan] [bold yellow]{args.lang.capitalize()}[/bold yellow]\n"
         f"• [cyan]Scripts to Extract (--top):[/cyan] [bold white]{top_label}[/bold white]\n"
         f"• [cyan]Quantization (--quant):[/cyan] [bold white]{args.quant}[/bold white]\n"
-        f"• [cyan]Engine Mode (--mock):[/cyan] {engine_label}\n"
+        f"• [cyan]Engine Mode:[/cyan] {engine_label}\n"
         f"• [cyan]Thinking Mode (--thinking):[/cyan] {thinking_label}\n"
         f"• [cyan]Skip Already Extracted:[/cyan] {skip_label}\n"
         f"• [cyan]Raw Scripts Directory:[/cyan] [bold white]{args.pdf_dir}[/bold white]\n"
@@ -246,6 +245,12 @@ def main():
         help="Run in Mock development mode without GPU or model weights"
     )
     parser.add_argument(
+        "--sync-drive",
+        action="store_true",
+        default=False,
+        help="Check and download missing PDFs from Google Drive before extracting (default: False; extraction is strictly local)"
+    )
+    parser.add_argument(
         "--download-only",
         action="store_true",
         help="Only download PDFs without running extraction"
@@ -254,7 +259,8 @@ def main():
         "--skip-download",
         "--local-only",
         action="store_true",
-        help="Do not download from Google Drive; use existing local scripts only"
+        default=True,
+        help="Use existing local scripts only (default: True, GDrive is never contacted)"
     )
     parser.add_argument(
         "--skip-extracted",
@@ -274,6 +280,25 @@ def main():
         "--force-download",
         action="store_true",
         help="Re-download PDFs from Google Drive even if already present locally"
+    )
+    parser.add_argument(
+        "--fast",
+        "--skip-stage2",
+        dest="fast",
+        action="store_true",
+        default=False,
+        help="Fast single-pass extraction mode: skip Stage 2 visual verification to cut extraction time in half"
+    )
+    parser.add_argument(
+        "--api",
+        action="store_true",
+        help="Use local OpenAI-compatible API endpoint (e.g. LM Studio on port 1234) without allocating extra VRAM"
+    )
+    parser.add_argument(
+        "--api-url",
+        type=str,
+        default="http://localhost:1234/v1",
+        help="URL of OpenAI-compatible API endpoint (default: http://localhost:1234/v1)"
     )
     parser.add_argument(
         "--interactive",
@@ -300,12 +325,20 @@ def main():
     if not args.gdrive_url:
         args.gdrive_url = GDRIVE_FOLDERS.get(args.lang, DEFAULT_GDRIVE_FOLDER_BANGLA)
 
-    # Launch wizard if interactive terminal and not disabled
-    if not args.non_interactive and not args.image and sys.stdin.isatty():
+    # Launch wizard only if interactive terminal, not bypassed, and no explicit arguments provided
+    has_explicit_args = bool(args.top or args.image)
+    if not args.non_interactive and not has_explicit_args and sys.stdin.isatty():
         args = interactive_wizard(args)
 
     if not args.quant:
         args.quant = "4bit"
+
+    if args.mock:
+        exec_mode_label = "Mock (Dev PC)"
+    elif args.api:
+        exec_mode_label = f"Local API ({args.api_url})"
+    else:
+        exec_mode_label = "CUDA RTX 5090 (Gemma 4 31B IT)"
 
     console.print(Panel.fit(
         f"[bold cyan]Gemma 4 31B IT Multimodal Script Extraction Controller[/bold cyan]\n"
@@ -313,12 +346,13 @@ def main():
         f"[green]Source Directory:[/green] {args.image or args.pdf_dir}\n"
         f"[green]Top Limit (--top):[/green] {args.top or 'All available'}\n"
         f"[green]Quantization (--quant):[/green] {args.quant}\n"
-        f"[yellow]Execution Mode:[/yellow] {'Mock (Dev PC)' if args.mock else 'CUDA RTX 5090 (Gemma 4 31B IT)'}\n"
+        f"[green]Fast Mode (--fast):[/green] {'Enabled (single-pass)' if args.fast else 'Disabled (full 2-pass verification)'}\n"
+        f"[yellow]Execution Mode:[/yellow] {exec_mode_label}\n"
         f"[yellow]Extraction Output Root:[/yellow] {args.output_dir}",
         title="Extraction Initialized"
     ))
 
-    # 1. Discover or Download Script Files
+    # 1. Discover Script Files (Strictly Local by Default)
     input_files = []
     if args.image:
         if os.path.exists(args.image):
@@ -326,29 +360,41 @@ def main():
         else:
             console.print(f"[red]Specified image/PDF file does not exist: {args.image}[/red]")
             return
-    else:
-        console.print("\n[bold]Step 1: Checking & Downloading Exam Script PDFs...[/bold]")
+    elif getattr(args, "sync_drive", False) or getattr(args, "download_only", False):
+        console.print("\n[bold]Step 1: Checking & Downloading Exam Script PDFs from Google Drive...[/bold]")
         input_files = download_drive_pdfs(
             gdrive_url=args.gdrive_url,
             target_dir=args.pdf_dir,
             top_limit=args.top,
             skip_existing=not args.force_download,
-            skip_download=args.skip_download
+            skip_download=False
         )
-
-        # Also search for images in directory
+        if getattr(args, "download_only", False):
+            console.print("\n[green]--download-only flag active. Download complete![/green]")
+            return
+    else:
+        console.print(f"\n[bold]Step 1: Discovering Local Exam Script Files in '{args.pdf_dir}'...[/bold]")
         if os.path.exists(args.pdf_dir):
-            for ext in ("*.png", "*.jpg", "*.jpeg", "*.webp"):
-                for img_f in glob.glob(os.path.join(args.pdf_dir, ext)):
-                    if img_f not in input_files:
-                        input_files.append(img_f)
-
-    if args.top and len(input_files) > args.top:
-        input_files = input_files[:args.top]
+            target_path = Path(args.pdf_dir)
+            found = (
+                list(target_path.glob("*.pdf")) +
+                list(target_path.glob("*.PDF")) +
+                list(target_path.glob("*.jpg")) +
+                list(target_path.glob("*.jpeg")) +
+                list(target_path.glob("*.png")) +
+                list(target_path.glob("*.bmp"))
+            )
+            input_files = sorted(list(set(str(p) for p in found)))
 
     if not input_files:
-        console.print(f"[red]No PDF/image scripts found in '{args.pdf_dir}'.[/red]")
+        console.print(f"[red]No exam script files found in '{args.pdf_dir}'.[/red]")
+        console.print(f"[yellow]To download scripts from Google Drive first, run:[/yellow]")
+        console.print(f"  python3 scripts/download_drive_pdfs.py --lang {args.lang} --top 5\n")
         return
+
+    # Limit to top N if requested
+    if args.top and len(input_files) > args.top:
+        input_files = input_files[:args.top]
 
     console.print(f"[green]Total scripts ready for extraction: {len(input_files)}[/green]")
     for idx, p in enumerate(input_files, 1):
@@ -369,7 +415,12 @@ def main():
     cfg.pipeline.output_dir = args.output_dir
 
     console.print("\n[bold]Step 2: Initializing Inference Engine & Pipeline...[/bold]")
-    engine = create_engine(cfg, force_mock=args.mock)
+    engine = create_engine(
+        cfg,
+        force_mock=args.mock,
+        force_api=args.api,
+        api_url=args.api_url if args.api else None
+    )
     pipeline = ScriptCheckingPipeline(
         engine=engine,
         config=cfg
@@ -398,7 +449,9 @@ def main():
                 script_id=script_id,
                 thinking_mode=cfg.decoding.thinking_mode,
                 output_dir=args.output_dir,
-                paper=args.lang
+                paper=args.lang,
+                skip_stage2=args.fast,
+                force_extract=not args.skip_extracted
             )
 
             summary_records.append({

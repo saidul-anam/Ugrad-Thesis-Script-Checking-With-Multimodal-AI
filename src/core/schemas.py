@@ -81,6 +81,7 @@ class PageExtractionResult(BaseModel):
     stage2_verification: Stage2VerificationResult
     stage3_errors: Stage3ErrorResult
     teacher_marks: List[TeacherMarkItem] = Field(default_factory=list, description="Stage 0b: Extracted red-ink teacher marks.")
+    token_usage: Dict[str, Any] = Field(default_factory=dict, description="Context tokens consumed by this page (in, out, total).")
 
 
 # ---------------------------------------------------------------------------
@@ -135,10 +136,27 @@ class CriterionScore(BaseModel):
     weaknesses: List[str] = Field(default_factory=list)
 
 
+# ---------------------------------------------------------------------------
+# Question Paper Schemas
+# ---------------------------------------------------------------------------
+class ExtractedQuestion(BaseModel):
+    """Structured question paper artifact extracted from question PDF/image."""
+    question_id: str = Field(..., description="Unique question identifier, e.g. 'SE_11_Q1' or 'SB_11_Q1'")
+    language: str = Field("english", description="Language/subject: 'english' or 'bangla'")
+    title: Optional[str] = Field(None, description="Title or header of the question paper")
+    question_text: str = Field(..., description="Full text and prompt instructions of the question")
+    total_marks: Optional[float] = Field(None, description="Total marks allocated to this question")
+    sub_questions: List[Dict[str, Any]] = Field(default_factory=list, description="Sub-questions or criteria breakdown")
+    source_file: Optional[str] = Field(None, description="Path to original question PDF or image")
+    extracted_at: Optional[str] = Field(None, description="ISO timestamp of extraction")
+
+
 class Stage4EvaluationResult(BaseModel):
     """Output of Stage 4: Rubric-based marks, deductions, and pedagogical feedback."""
     subject: str = Field(...)
     question_type: str = Field(...)
+    question_id: Optional[str] = Field(None, description="Matched question identifier, e.g. 'SE_11_Q1' or 'SB_11_Q1'")
+    question_text: Optional[str] = Field(None, description="Prompt text of the matched question")
     criteria_scores: List[CriterionScore] = Field(default_factory=list)
     content_raw_score: float = Field(..., description="Sum of criterion marks before penalties.")
     linguistic_penalty: float = Field(0.0, description="Deductions based on Stage 3 errors.")
@@ -159,6 +177,8 @@ class CompleteEvaluationReport(BaseModel):
     model_id: str = "google/gemma-4-31b-it"
     timestamp: str
     has_red_ink: bool = False
+    question_id: Optional[str] = Field(None, description="Matched question identifier, e.g. 'SE_11_Q1' or 'SB_11_Q1'")
+    question_text: Optional[str] = Field(None, description="Prompt text of the matched question")
     stage1_transcription: Stage1TranscriptionResult
     stage2_verification: Stage2VerificationResult
     stage3_errors: Stage3ErrorResult

@@ -165,6 +165,51 @@ def export_extraction_summary_markdown(result: ExtractionResult, output_path: st
             md_lines.append(f"| **{err.error_type}** | `{err.erroneous_text}` | `{err.suggested_correction}` | {err.explanation} |")
         md_lines.append("")
 
+    tok_usage = result.metadata.get("token_usage", {})
+    if tok_usage:
+        max_ctx = tok_usage.get("max_context_window", 4096)
+        tot_all = tok_usage.get("total_tokens", 0)
+        tot_pct = tok_usage.get("pct_context", (tot_all / max_ctx * 100) if max_ctx > 0 else 0)
+        tot_in = tok_usage.get("total_prompt_tokens", 0)
+        tot_out = tok_usage.get("total_completion_tokens", 0)
+
+        md_lines.extend([
+            "---",
+            "",
+            "## Context & Token Usage Breakdown",
+            f"- **Context Window Limit**: `{max_ctx:,}` tokens",
+            f"- **Cumulative Extraction Tokens**: **{tot_all:,}** ({tot_pct:.1f}% of window)",
+            f"- **Prompt Tokens (In)**: {tot_in:,} | **Completion Tokens (Out)**: {tot_out:,}",
+            "",
+            "| Component / Stage | Prompt (In) | Completion (Out) | Total Tokens | Context Window | Usage % |",
+            "| --- | --- | --- | --- | --- | --- |"
+        ])
+        pages_dict = tok_usage.get("pages", {})
+        for page_key, p_data in pages_dict.items():
+            p_label = page_key.replace("page_", "Page ")
+            s1 = p_data.get("stage1", {})
+            if s1 and s1.get("total_tokens"):
+                p1_pct = (s1["total_tokens"] / max_ctx * 100) if max_ctx > 0 else 0
+                md_lines.append(f"| {p_label}: Stage 1 (Verbatim OCR) | {s1.get('prompt_tokens', 0):,} | {s1.get('completion_tokens', 0):,} | {s1.get('total_tokens', 0):,} | {max_ctx:,} | {p1_pct:.1f}% |")
+            s2 = p_data.get("stage2", {})
+            if s2 and s2.get("total_tokens"):
+                p2_pct = (s2["total_tokens"] / max_ctx * 100) if max_ctx > 0 else 0
+                md_lines.append(f"| {p_label}: Stage 2 (Verification) | {s2.get('prompt_tokens', 0):,} | {s2.get('completion_tokens', 0):,} | {s2.get('total_tokens', 0):,} | {max_ctx:,} | {p2_pct:.1f}% |")
+            s0b = p_data.get("stage0b", {})
+            if s0b and s0b.get("total_tokens"):
+                p0b_pct = (s0b["total_tokens"] / max_ctx * 100) if max_ctx > 0 else 0
+                md_lines.append(f"| {p_label}: Stage 0b (Teacher Marks) | {s0b.get('prompt_tokens', 0):,} | {s0b.get('completion_tokens', 0):,} | {s0b.get('total_tokens', 0):,} | {max_ctx:,} | {p0b_pct:.1f}% |")
+
+        s3 = tok_usage.get("stage3", {})
+        if s3 and s3.get("total_tokens"):
+            p3_pct = (s3["total_tokens"] / max_ctx * 100) if max_ctx > 0 else 0
+            md_lines.append(f"| Script: Stage 3 (Linguistic Errors) | {s3.get('prompt_tokens', 0):,} | {s3.get('completion_tokens', 0):,} | {s3.get('total_tokens', 0):,} | {max_ctx:,} | {p3_pct:.1f}% |")
+
+        md_lines.extend([
+            f"| **Cumulative Extraction Context** | **{tot_in:,}** | **{tot_out:,}** | **{tot_all:,}** | **{max_ctx:,}** | **{tot_pct:.1f}%** |",
+            ""
+        ])
+
     content = "\n".join(md_lines)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -317,13 +362,31 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         "## Executive Summary",
         f"- **Subject**: {report.stage4_evaluation.subject}",
         f"- **Question Type**: {report.stage4_evaluation.question_type}",
+        f"- **Matched Question**: `{report.question_id or 'General'}`",
         f"- **Final Score**: **{report.stage4_evaluation.final_score:.2f} / {report.stage4_evaluation.total_max_marks:.2f}** ({report.stage4_evaluation.percentage:.1f}%)",
         f"- **Raw Content Score**: {report.stage4_evaluation.content_raw_score:.2f}",
         f"- **Linguistic Penalty**: -{report.stage4_evaluation.linguistic_penalty:.2f}",
         f"- **Red Ink Detected (Stage 0)**: `{'Yes' if report.has_red_ink else 'No'}`",
         f"- **Extracted Teacher Marks (Stage 0b)**: {len(report.teacher_marks)} mark(s)",
         f"- **Silent Autocorrections Reverted (Stage 2)**: {report.stage2_verification.total_corrections_count}",
-        f"- **Linguistic Errors Found (Stage 3)**: {report.stage3_errors.total_error_count}",
+        f"- **Linguistic Errors Found (Stage 3)**: {report.stage3_errors.total_error_count}"
+    ]
+
+    if report.question_text:
+        md_lines.extend([
+            f"- **Question Prompt Preview**: {report.question_text.strip()[:120]}..."
+        ])
+
+    stage4_tok = report.metadata.get("stage4_token_usage", {})
+    if stage4_tok and stage4_tok.get("total_tokens"):
+        s4_max = stage4_tok.get("context_window", 4096)
+        s4_tot = stage4_tok.get("total_tokens", 0)
+        s4_pct = (s4_tot / s4_max * 100) if s4_max > 0 else 0
+        s4_in = stage4_tok.get("prompt_tokens", 0)
+        s4_out = stage4_tok.get("completion_tokens", 0)
+        md_lines.append(f"- **Stage 4 Token Usage**: **{s4_tot:,} / {s4_max:,} tokens** ({s4_pct:.1f}%) [In: {s4_in:,}, Out: {s4_out:,}]")
+
+    md_lines.extend([
         "",
         "---",
         "",
@@ -334,7 +397,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         report.stage2_verification.verified_transcript,
         "```",
         ""
-    ]
+    ])
 
     if report.teacher_marks:
         md_lines.extend([
@@ -398,6 +461,39 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         md_lines.append(f"- {rec}")
 
     md_lines.append("")
+
+    # Context & Token Usage Summary across Extraction and Stage 4
+    ext_tok = report.metadata.get("extraction_token_usage", {})
+    if stage4_tok or ext_tok:
+        max_ctx = stage4_tok.get("context_window") or ext_tok.get("max_context_window", 4096)
+        ext_in = ext_tok.get("total_prompt_tokens", 0)
+        ext_out = ext_tok.get("total_completion_tokens", 0)
+        ext_total = ext_tok.get("total_tokens", 0)
+        ext_pct = (ext_total / max_ctx * 100) if max_ctx > 0 else 0
+
+        s4_in = stage4_tok.get("prompt_tokens", 0)
+        s4_out = stage4_tok.get("completion_tokens", 0)
+        s4_total = stage4_tok.get("total_tokens", 0)
+        s4_pct = (s4_total / max_ctx * 100) if max_ctx > 0 else 0
+
+        pipe_in = ext_in + s4_in
+        pipe_out = ext_out + s4_out
+        pipe_total = ext_total + s4_total
+
+        md_lines.extend([
+            "---",
+            "",
+            "## Pipeline Context & Token Usage Breakdown",
+            f"- **Context Window Limit**: `{max_ctx:,}` tokens",
+            f"- **Total End-to-End Tokens**: **{pipe_total:,}** (Prompt: {pipe_in:,}, Completion: {pipe_out:,})",
+            "",
+            "| Pipeline Phase | Prompt (In) | Completion (Out) | Total Tokens | Context Window | Phase Usage % |",
+            "| --- | --- | --- | --- | --- | --- |",
+            f"| Extraction (Stages 0-3) | {ext_in:,} | {ext_out:,} | {ext_total:,} | {max_ctx:,} | {ext_pct:.1f}% |",
+            f"| Evaluation (Stage 4 Rubric) | {s4_in:,} | {s4_out:,} | {s4_total:,} | {max_ctx:,} | {s4_pct:.1f}% |",
+            f"| **Full Pipeline Total** | **{pipe_in:,}** | **{pipe_out:,}** | **{pipe_total:,}** | **{max_ctx:,}** | - |",
+            ""
+        ])
 
     content = "\n".join(md_lines)
     with open(output_path, "w", encoding="utf-8") as f:

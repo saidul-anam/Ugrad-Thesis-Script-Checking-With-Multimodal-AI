@@ -18,6 +18,8 @@ class Stage4Evaluator:
         stage3_errors: Stage3ErrorResult,
         rubric_data: Dict[str, Any],
         thematic_context: Optional[str] = None,
+        question_text: Optional[str] = None,
+        question_id: Optional[str] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
@@ -29,7 +31,9 @@ class Stage4Evaluator:
             verified_transcript=verified_transcript,
             error_list=error_dict,
             rubric_data=rubric_data,
-            thematic_context=thematic_context
+            thematic_context=thematic_context,
+            question_text=question_text,
+            question_id=question_id
         )
 
         response = self.engine.generate_text(
@@ -70,6 +74,8 @@ class Stage4Evaluator:
             return Stage4EvaluationResult(
                 subject=parsed_data.get("subject", rubric_data.get("subject", "General")),
                 question_type=parsed_data.get("question_type", rubric_data.get("question_type", "Standard")),
+                question_id=question_id or parsed_data.get("question_id"),
+                question_text=question_text,
                 criteria_scores=criteria_scores,
                 content_raw_score=content_raw_score,
                 linguistic_penalty=penalty,
@@ -81,9 +87,12 @@ class Stage4Evaluator:
             )
 
         # Fallback default if model returned unformatted text
+        print(f"[Stage4Evaluator] Warning: Falling back to default scoring. Raw response (len={len(response)}). End of response:\n{response[-500:]}")
         return Stage4EvaluationResult(
             subject=rubric_data.get("subject", "General"),
             question_type=rubric_data.get("question_type", "Standard"),
+            question_id=question_id,
+            question_text=question_text,
             criteria_scores=[],
             content_raw_score=5.0,
             linguistic_penalty=0.0,

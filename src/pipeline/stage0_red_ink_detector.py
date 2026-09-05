@@ -21,7 +21,7 @@ class RedInkDetector:
 
     def __init__(
         self,
-        min_pixel_threshold: int = 150,
+        min_pixel_threshold: int = 1200,
         min_saturation: int = 60,
         min_value: int = 60
     ):
@@ -68,7 +68,7 @@ class RedInkDetector:
         red_mask = cv2.bitwise_or(mask1, mask2)
 
         # 4. Morphological opening to filter isolated 1-2px compression noise
-        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
         filtered_mask = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN, kernel)
 
         # 5. Count positive red pixels

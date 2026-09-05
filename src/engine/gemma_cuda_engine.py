@@ -39,6 +39,9 @@ class GemmaCudaEngine(BaseVLMEngine):
         self.model = None
         self.processor = None
         self.tokenizer = None
+        self.context_window = 4096
+        self.max_context_window = 4096
+        self.last_usage = {}
         self._init_model()
 
     def clear_cuda_cache(self) -> None:
@@ -357,6 +360,13 @@ class GemmaCudaEngine(BaseVLMEngine):
 
             input_len = inputs["input_ids"].shape[1] if "input_ids" in inputs else 0
             generated_tokens = output_tokens[0][input_len:]
+            comp_len = len(generated_tokens)
+            self.last_usage = {
+                "prompt_tokens": input_len,
+                "completion_tokens": comp_len,
+                "total_tokens": input_len + comp_len,
+                "context_window": self.context_window
+            }
 
             if self.processor and hasattr(self.processor, "decode"):
                 response = self.processor.decode(generated_tokens, skip_special_tokens=True)
@@ -426,6 +436,13 @@ class GemmaCudaEngine(BaseVLMEngine):
 
             input_len = inputs["input_ids"].shape[1] if "input_ids" in inputs else 0
             generated_tokens = output_tokens[0][input_len:]
+            comp_len = len(generated_tokens)
+            self.last_usage = {
+                "prompt_tokens": input_len,
+                "completion_tokens": comp_len,
+                "total_tokens": input_len + comp_len,
+                "context_window": self.context_window
+            }
             response = tokenizer.decode(generated_tokens, skip_special_tokens=True)
 
             return response.strip()

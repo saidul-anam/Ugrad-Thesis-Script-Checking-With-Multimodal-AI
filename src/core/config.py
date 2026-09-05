@@ -31,6 +31,8 @@ class ModelConfig(BaseModel):
     model_id: str = Field("google/gemma-4-31b-it", description="Hugging Face model ID or local directory")
     torch_dtype: str = Field("bfloat16", description="Weight precision (bfloat16 / float16 / float32)")
     quantization: str = Field("4bit", description="Quantization mode ('4bit', '8bit', or 'none')")
+    engine_type: str = Field("cuda", description="Engine type: 'cuda', 'api', or 'mock'")
+    api_url: Optional[str] = Field(None, description="Local or remote OpenAI-compatible API endpoint URL")
     device_map: str = Field("auto", description="Device placement strategy")
     trust_remote_code: bool = Field(True, description="Whether to allow remote code execution for custom models")
     use_flash_attention_2: bool = Field(False, description="Enable flash attention 2 if supported")
@@ -56,7 +58,7 @@ class PipelineStageConfig(BaseModel):
     stage2_verification: bool = True
     stage3_error_extraction: bool = True
     stage4_rubric_evaluation: bool = True
-    stage4_max_new_tokens: int = Field(768, description="Upper token budget for Stage 4 rubric generation")
+    stage4_max_new_tokens: int = Field(2048, description="Upper token budget for Stage 4 rubric generation")
     stage4_generation_timeout_sec: float = Field(180.0, description="Hard timeout for Stage 4 generation in seconds")
     rag: RagConfig = Field(default_factory=RagConfig)
     cache_intermediate_stages: bool = True

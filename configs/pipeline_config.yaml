@@ -29,8 +29,8 @@ pipeline:
   stage2_verification: true
   stage3_error_extraction: true
   stage4_rubric_evaluation: true
-  # Separate cap for stage 4 to reduce GPU KV-cache pressure during rubric generation
-  stage4_max_new_tokens: 768
+  # Separate cap for stage 4: 2048 tokens gives thinking models enough budget for reasoning + full JSON
+  stage4_max_new_tokens: 2048
   # Hard cutoff so generation cannot appear stuck indefinitely
   stage4_generation_timeout_sec: 180
 

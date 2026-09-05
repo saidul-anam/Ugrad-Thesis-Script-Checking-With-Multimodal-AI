@@ -77,16 +77,23 @@ def download_drive_pdfs(
 def main():
     parser = argparse.ArgumentParser(description="Download Exam Script PDFs from Google Drive")
     parser.add_argument(
+        "--lang",
+        type=str,
+        choices=["bangla", "english"],
+        default="bangla",
+        help="Language / Subject dataset to download ('bangla' or 'english')"
+    )
+    parser.add_argument(
         "--url",
         type=str,
-        default=DEFAULT_GDRIVE_FOLDER,
-        help="Google Drive folder URL"
+        default=None,
+        help="Google Drive folder URL (overrides language default)"
     )
     parser.add_argument(
         "--target-dir",
         type=str,
-        default="data/raw_pdfs",
-        help="Local directory to store PDFs"
+        default=None,
+        help="Local directory to store PDFs (defaults to data/raw_pdfs/<lang>)"
     )
     parser.add_argument(
         "--top",
@@ -99,17 +106,27 @@ def main():
         action="store_true",
         help="Re-download even if PDFs already exist"
     )
+    parser.add_argument(
+        "--skip-download",
+        "--local-only",
+        action="store_true",
+        help="List existing local scripts without downloading from Google Drive"
+    )
 
     args = parser.parse_args()
+    target_dir = args.target_dir or f"data/raw_pdfs/{args.lang}"
+    gdrive_url = args.url or GDRIVE_FOLDERS.get(args.lang, DEFAULT_GDRIVE_FOLDER_BANGLA)
+
     pdfs = download_drive_pdfs(
-        gdrive_url=args.url,
-        target_dir=args.target_dir,
+        gdrive_url=gdrive_url,
+        target_dir=target_dir,
         top_limit=args.top,
-        skip_existing=not args.force_download
+        skip_existing=not args.force_download,
+        skip_download=args.skip_download
     )
-    print(f"\nTotal PDF scripts available: {len(pdfs)}")
-    for p in pdfs:
-        print(f" - {p}")
+    print(f"\nTotal PDF scripts available in '{target_dir}': {len(pdfs)}")
+    for idx, p in enumerate(pdfs, 1):
+        print(f"  [{idx}] {p}")
 
 
 if __name__ == "__main__":
