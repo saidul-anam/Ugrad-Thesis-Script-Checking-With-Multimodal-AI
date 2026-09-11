@@ -42,7 +42,17 @@ from src.pipeline.stage1_transcriber import Stage1Transcriber
 from src.pipeline.stage2_verifier import Stage2Verifier
 from src.pipeline.stage3_error_analyzer import Stage3ErrorAnalyzer
 from src.pipeline.stage4_evaluator import Stage4Evaluator
-from src.utils.question_utils import load_question_for_script, ExtractedQuestion
+from src.utils.question_utils import (
+    load_question_for_script,
+    ExtractedQuestion,
+    extract_question_vocab
+)
+from src.utils.ground_truth import (
+    get_ground_truth_for_script,
+    ground_truth_to_teacher_marks,
+    extract_candidate_questions,
+    canonicalize_question_key
+)
 
 
 def _attribute_errors_to_pages(
@@ -155,11 +165,15 @@ class ScriptCheckingPipeline:
         school_id: str = "default",
         region: str = "default",
         skip_stage2: bool = False,
-        force_extract: bool = False
+        force_extract: bool = False,
+        question_input: Optional[Union[str, ExtractedQuestion]] = None,
+        questions_root: str = "outputs/questions",
+        extract_teacher_marks: Optional[bool] = None
     ) -> ExtractionResult:
         """
         Execute optimized multimodal extraction on all pages of an exam script:
         - Page-level checkpoint caching & instant resume
+        - Question Paper Grounding (contextual vocabulary & candidate question marks)
         - Stage 0: OpenCV Red-Ink Detection (with noise suppression)
         - Stage 1: Verbatim Transcription (ignoring red-ink teacher notes)
         - Stage 2: Autocorrection Verification (or fast bypass when skip_stage2=True)
@@ -174,6 +188,47 @@ class ScriptCheckingPipeline:
         if not script_id:
             base = os.path.splitext(os.path.basename(source_str))[0]
             script_id = base
+
+        # Resolve Question Paper Context
+        question_obj: Optional[ExtractedQuestion] = None
+        if isinstance(question_input, ExtractedQuestion):
+            question_obj = question_input
+        elif isinstance(question_input, str):
+            question_obj = load_question_for_script(
+                script_id_or_path=script_id,
+                lang=paper,
+                question_override=question_input,
+                questions_root=questions_root
+            )
+        else:
+            question_obj = load_question_for_script(
+                script_id_or_path=script_id,
+                lang=paper,
+                questions_root=questions_root
+            )
+
+        valid_paper_questions: List[str] = []
+        question_max_marks: Dict[str, float] = {}
+        question_vocab: List[str] = []
+
+        if question_obj:
+            question_vocab = extract_question_vocab(question_obj)
+            for sq in question_obj.sub_questions:
+                q_num = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
+                if q_num:
+                    valid_paper_questions.append(q_num)
+                    max_m = sq.get("max_marks") or sq.get("marks")
+                    if max_m is not None:
+                        try:
+                            question_max_marks[q_num] = float(max_m)
+                        except (ValueError, TypeError):
+                            pass
+            print(f"[Extraction] 📘 Matched Question Context: '{question_obj.question_id}' ({len(valid_paper_questions)} sub-questions, {len(question_vocab)} vocab tokens)")
+        else:
+            print(f"[Extraction] ℹ️ No question context matched for '{script_id}'. Proceeding with standard visual extraction.")
+
+        # Ground truth is strictly an evaluation benchmark (never fed to extraction VLM)
+        ground_truth_marks = get_ground_truth_for_script(script_id)
 
         # 2. Extract or Load Pages
         page_images: List[tuple[int, Image.Image, str]] = []  # (page_no, PIL Image, image_path)
@@ -197,6 +252,10 @@ class ScriptCheckingPipeline:
         decoding = self.config.decoding
         active_thinking = decoding.thinking_mode if thinking_mode is None else thinking_mode
 
+        # Resolve teacher marks extraction toggle
+        if extract_teacher_marks is None:
+            extract_teacher_marks = getattr(self.config.pipeline, "stage0b_teacher_marks", True)
+
         # Dedicated output directory for this script
         base_out = output_dir or self.config.pipeline.output_dir
         script_output_dir = os.path.join(base_out, script_id)
@@ -205,7 +264,7 @@ class ScriptCheckingPipeline:
 
         print(f"\n[Extraction] === Starting Extraction for '{script_id}' ({len(page_images)} page(s)) ===")
         print(f"[Extraction] Output directory: {script_output_dir}")
-        print(f"[Extraction] Fast Mode (skip Stage 2): {skip_stage2} | Thinking Mode: {active_thinking}")
+        print(f"[Extraction] Fast Mode (skip Stage 2): {skip_stage2} | Thinking Mode: {active_thinking} | Teacher Marks (Stage 0b): {extract_teacher_marks}")
 
         page_results: List[PageExtractionResult] = []
         all_teacher_marks: List[TeacherMarkItem] = []
@@ -224,7 +283,8 @@ class ScriptCheckingPipeline:
                     page_results.append(cached_p)
                     if cached_p.has_red_ink:
                         any_red_ink = True
-                    all_teacher_marks.extend(cached_p.teacher_marks)
+                    if extract_teacher_marks:
+                        all_teacher_marks.extend(cached_p.teacher_marks)
                     continue
                 except Exception as e:
                     print(f"[Extraction] Note: Checkpoint for page {page_no} invalid ({e}). Re-extracting.")
@@ -246,6 +306,7 @@ class ScriptCheckingPipeline:
             print(f"[Extraction] [1/3] Stage 1: Verbatim Transcription (Page {page_no})...")
             stage1_result = self.stage1.run(
                 image=p_img,
+                question_reference_vocab=question_vocab if question_obj else None,
                 temperature=decoding.temperature,
                 top_p=decoding.top_p,
                 max_new_tokens=decoding.max_new_tokens,
@@ -282,14 +343,21 @@ class ScriptCheckingPipeline:
                 print(f"[Extraction] [2/3] Stage 2 Verified -> {stage2_result.total_corrections_count} silent corrections reverted {ctx2}")
 
             # ---------------------------------------------------------
-            # STAGE 0b: Teacher Mark Extraction (Conditional on Stage 0)
+            # STAGE 0b: Teacher Mark Extraction (Conditional on Stage 0 & flag)
             # ---------------------------------------------------------
             page_marks: List[TeacherMarkItem] = []
             u0b = {}
-            if stage0_res.has_red_ink:
-                print(f"[Extraction] [0b/3] Stage 0b: Red ink detected -> Running Gemma 4 Teacher Mark Extraction (Page {page_no})...")
+            if not extract_teacher_marks:
+                print(f"[Extraction] [0b/3] Stage 0b: extract_teacher_marks=False -> Skipping teacher mark extraction for Page {page_no}.")
+            elif stage0_res.has_red_ink:
+                page_candidates = extract_candidate_questions(stage1_result.raw_transcript)
+                cand_info = f" (Candidate questions: {page_candidates})" if page_candidates else ""
+                print(f"[Extraction] [0b/3] Stage 0b: Red ink detected -> Running Gemma 4 Teacher Mark Extraction (Page {page_no}){cand_info}...")
                 stage0b_res = self.stage0b.run(
                     image=p_img,
+                    candidate_questions=page_candidates,
+                    question_max_marks=question_max_marks if question_obj else None,
+                    valid_paper_questions=valid_paper_questions if question_obj else None,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=1024,
@@ -413,6 +481,14 @@ class ScriptCheckingPipeline:
             "pages": {f"page_{p.page_no}": p.token_usage for p in page_results}
         }
 
+        vlm_detected_marks = [m.model_dump() for m in all_teacher_marks]
+        final_teacher_marks = all_teacher_marks
+        has_gt = bool(ground_truth_marks)
+        is_verified_gt = has_gt
+
+        if has_gt:
+            print(f"[Extraction] 🎯 Autonomous VLM extracted {len(final_teacher_marks)} teacher marks. Verified against gt.txt benchmark ({len(ground_truth_marks)} ground truth marks).")
+
         extraction_result = ExtractionResult(
             script_id=script_id,
             image_path=source_str,
@@ -422,7 +498,7 @@ class ScriptCheckingPipeline:
             stage1_transcription=aggregated_stage1,
             stage2_verification=aggregated_stage2,
             stage3_errors=aggregated_stage3,
-            teacher_marks=all_teacher_marks,
+            teacher_marks=final_teacher_marks,
             pages=page_results,
             metadata={
                 "elapsed_seconds": elapsed,
@@ -434,9 +510,13 @@ class ScriptCheckingPipeline:
                 "output_dir": script_output_dir,
                 "paper": paper,
                 "task_type": task_type,
-                "original_marker_id": original_marker_id,
+                "question_id": question_obj.question_id if question_obj else None,
+                "original_marker_id": original_marker_id if not is_verified_gt else "human_examiner_gt",
                 "school_id": school_id,
-                "region": region
+                "region": region,
+                "verified_by_human": is_verified_gt,
+                "ground_truth_marks": ground_truth_marks,
+                "vlm_detected_teacher_marks": vlm_detected_marks
             }
         )
 
@@ -458,12 +538,17 @@ class ScriptCheckingPipeline:
                 ocr_flag_str = base_ocr
 
             error_json_str = json.dumps([e.model_dump() for e in p.stage3_errors.errors], ensure_ascii=False)
+            
             marks_str = "; ".join(f"Q{m.question_no or '?'}:{m.mark_value} ({m.location})" for m in p.teacher_marks) if p.teacher_marks else ""
+            q_no_field = p.teacher_marks[0].question_no if p.teacher_marks else None
+            if not q_no_field:
+                page_cands = extract_candidate_questions(p.stage1_transcription.raw_transcript)
+                q_no_field = page_cands[0] if page_cands else None
 
             raw_tier_records.append(RawTierRecord(
                 script_id=script_id,
                 page_no=p.page_no,
-                question_no=p.teacher_marks[0].question_no if p.teacher_marks else None,
+                question_no=q_no_field,
                 paper=paper,
                 task_type=task_type,
                 transcript_text=p.stage2_verification.verified_transcript,
@@ -471,7 +556,7 @@ class ScriptCheckingPipeline:
                 error_list=error_json_str,
                 teacher_mark=marks_str,
                 has_red_ink=p.has_red_ink,
-                original_marker_id=original_marker_id,
+                original_marker_id=original_marker_id if not is_verified_gt else "human_examiner_gt",
                 school_id=school_id,
                 region=region
             ))
@@ -606,6 +691,13 @@ class ScriptCheckingPipeline:
         elapsed = round(time.time() - start_time, 2)
         print(f"\n[Evaluation] Evaluation Complete for '{script_id}' in {elapsed}s | Final Marks: {stage4_result.final_score}/{stage4_result.total_max_marks} ({stage4_result.percentage:.1f}%) {ctx4}")
 
+        # Check for verified human ground truth marks
+        gt_dict = extraction.metadata.get("ground_truth_marks")
+        if not gt_dict:
+            gt_dict = get_ground_truth_for_script(script_id)
+
+        is_verified_gt = extraction.metadata.get("verified_by_human", False) or (gt_dict is not None)
+
         report = CompleteEvaluationReport(
             script_id=script_id,
             image_path=extraction.image_path,
@@ -630,7 +722,9 @@ class ScriptCheckingPipeline:
                 "engine_info": self.engine.get_engine_info(),
                 "stage4_token_usage": u4,
                 "extraction_token_usage": extraction.metadata.get("token_usage", {}),
-                "output_dir": script_output_dir
+                "output_dir": script_output_dir,
+                "verified_by_human": is_verified_gt,
+                "ground_truth_marks": gt_dict
             }
         )
 
@@ -652,7 +746,8 @@ class ScriptCheckingPipeline:
         output_dir: Optional[str] = None,
         skip_stage2: bool = False,
         force_extract: bool = False,
-        question_input: Optional[Union[str, ExtractedQuestion]] = None
+        question_input: Optional[Union[str, ExtractedQuestion]] = None,
+        extract_teacher_marks: Optional[bool] = None
     ) -> CompleteEvaluationReport:
         """
         Execute full end-to-end pipeline (Extraction Stages 0, 0b, 1-3 -> Evaluation Stage 4).
@@ -665,7 +760,9 @@ class ScriptCheckingPipeline:
             pdf_samples_dir=pdf_samples_dir,
             output_dir=output_dir,
             skip_stage2=skip_stage2,
-            force_extract=force_extract
+            force_extract=force_extract,
+            question_input=question_input,
+            extract_teacher_marks=extract_teacher_marks
         )
 
         # Step 2: Evaluation

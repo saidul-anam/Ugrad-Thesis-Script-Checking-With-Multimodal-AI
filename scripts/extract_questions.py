@@ -34,9 +34,9 @@ console = Console()
 def parse_marks_from_text(text: str) -> Optional[float]:
     """Extract total marks from question prompt text if present (e.g. '[10 marks]', 'Total: 10')."""
     patterns = [
-        r'\[\s*(?:marks?|পূর্ণমান)?\s*[:=]?\s*([0-9]+(?:\.[0-9]+)?)\s*(?:marks?|নম্বর)?\s*\]',
-        r'(?:total|full)\s*marks?\s*[:=]?\s*([0-9]+(?:\.[0-9]+)?)',
-        r'পূর্ণমান\s*[:=]?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'\[\s*(?:marks?|পূর্ণমান)?\s*[:=—–-]?\s*([0-9]+(?:\.[0-9]+)?)\s*(?:marks?|নম্বর)?\s*\]',
+        r'(?:total|full)\s*marks?\s*[:=—–-]?\s*([0-9]+(?:\.[0-9]+)?)',
+        r'পূর্ণমান\s*[:=—–-]?\s*([0-9]+(?:\.[0-9]+)?)',
         r'\(([0-9]+(?:\.[0-9]+)?)\s*marks?\)'
     ]
     for pat in patterns:

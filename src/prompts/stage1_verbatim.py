@@ -24,11 +24,26 @@ Rules:
 Now transcribe the attached image."""
 
 
-def build_stage1_prompt(few_shot_examples: Optional[List[Dict[str, str]]] = None) -> str:
+def build_stage1_prompt(
+    few_shot_examples: Optional[List[Dict[str, str]]] = None,
+    question_reference_vocab: Optional[List[str]] = None
+) -> str:
     """
-    Construct Stage 1 verbatim prompt incorporating strict rules and optional few-shot examples.
+    Construct Stage 1 verbatim prompt incorporating strict rules, optional few-shot examples,
+    and optional question reference vocabulary with anti-autocorrection guardrails.
     """
     prompt = STAGE1_BASE_PROMPT
+
+    if question_reference_vocab:
+        vocab_preview = ", ".join(f"'{w}'" for w in question_reference_vocab[:40])
+        prompt += (
+            f"\n\n--- EXAM QUESTION REFERENCE VOCABULARY (STRICTLY NO AUTOCORRECTION) ---\n"
+            f"Target exam question vocabulary: [{vocab_preview}].\n"
+            f"CRITICAL DIRECTIVE: Use this reference vocabulary ONLY to help decipher ambiguous cursive strokes or messy pen marks. "
+            f"If the student made an actual spelling, grammatical, or word-choice error (e.g. wrote 'disasterre', 'succeded', 'corage'), "
+            f"YOU MUST TRANSCRIBE THEIR EXACT MISSPELLING character-for-character so Stage 3 can penalize it. "
+            f"Under no circumstances should you silently normalize or autocorrect student handwriting."
+        )
 
     if few_shot_examples:
         prompt += "\n\n--- Few-Shot Demonstration Examples ---\n"
@@ -38,3 +53,4 @@ def build_stage1_prompt(few_shot_examples: Optional[List[Dict[str, str]]] = None
             prompt += f"Ground Truth Verbatim Output:\n{eg.get('transcription', '')}\n"
 
     return prompt
+

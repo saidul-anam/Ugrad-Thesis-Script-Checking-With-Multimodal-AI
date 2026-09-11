@@ -267,3 +267,38 @@ def test_token_usage_persistence_in_reports_and_csv():
         assert "tokens:" in row["ocr_flags"]
         assert "4096" in row["ocr_flags"]
 
+
+def test_toggle_teacher_marks():
+    img = Image.new("RGB", (300, 300), color=(255, 255, 255))
+    draw = ImageDraw.Draw(img)
+    draw.text((10, 10), "Sample Exam Script Text", fill=(0, 0, 0))
+    draw.rectangle([200, 200, 240, 240], fill=(220, 20, 20))  # Red ink
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        img_path = os.path.join(tmpdir, "test_toggle.png")
+        img.save(img_path)
+
+        cfg = PipelineConfig()
+        cfg.pipeline.output_dir = os.path.join(tmpdir, "outputs")
+        engine = MockGemmaEngine(model_id=cfg.model.model_id)
+        pipeline = ScriptCheckingPipeline(engine=engine, config=cfg)
+
+        # 1. Extraction with teacher marks disabled
+        res_disabled = pipeline.extract_script(
+            input_source=img_path,
+            script_id="test_disabled",
+            force_extract=True,
+            extract_teacher_marks=False
+        )
+        assert len(res_disabled.teacher_marks) == 0
+
+        # 2. Extraction with teacher marks enabled
+        res_enabled = pipeline.extract_script(
+            input_source=img_path,
+            script_id="test_enabled",
+            force_extract=True,
+            extract_teacher_marks=True
+        )
+        assert len(res_enabled.teacher_marks) > 0
+
+

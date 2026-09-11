@@ -116,7 +116,7 @@ python3 scripts/extract_scripts.py --lang english --top 2 --api -y
 python3 scripts/extract_scripts.py --lang english --top 2 --quant 4bit --fast -y
 
 # Single PDF or Image File
-python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0001.pdf --lang english --api --fast -y
+python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english --api --fast -y
 
 # Fast CPU Mock Mode (Development & testing)
 python3 scripts/extract_scripts.py --lang bangla --top 3 --mock -y
@@ -144,11 +144,55 @@ python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0001 --question SE_11
 
 # Evaluate using a custom rubric file
 python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0001 --rubric configs/rubrics/english_writing.yaml --api -y
+
+# Force re-evaluation and generate AI vs. Human Ground Truth Alignment Table
+python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0010 --lang english --api --force-evaluate -y
 ```
 
 ---
 
-## 🚀 3. Unified Controller (Stages 0–4 End-to-End)
+## 🎯 3. Human Ground Truth & AI Alignment (`gt.txt`)
+
+The pipeline supports verifying AI evaluation against actual **human examiner marks** recorded in [`gt.txt`](gt.txt).
+
+### ✍️ Step 3.1: Add / Edit Marks in `gt.txt`
+Add examiner scores using the simple format:
+```text
+SE_11_Q1_0002 marks
+1(A)-5
+1(B)-6
+2-10
+3-5
+4-3
+5-6
+6-10
+11-6
+10-3
+8-5
+9-5
+7-6
+```
+
+### 🔄 Step 3.2: Synchronize Marks to Datasets
+Sync `gt.txt` marks into all extracted directories, JSON artifacts, and raw-tier CSV datasets without re-extracting:
+```bash
+python3 scripts/sync_ground_truth.py
+```
+
+### ⚖️ Step 3.3: Evaluate & View Alignment
+Run evaluation on the script. The report automatically includes the **🎯 AI vs. Human Ground Truth Alignment** comparison table (reporting exact match rate, $\Delta$, and MAE):
+```bash
+python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0002 --lang english --api --force-evaluate -y
+```
+
+Inspect the resulting markdown report:
+```bash
+cat outputs/evaluated/english/SE_11_Q1_0002/evaluation_report.md
+```
+
+---
+
+## 🚀 4. Unified Controller (Stages 0–4 End-to-End)
 
 To run the entire pipeline (Extraction + Evaluation) in a single command:
 
@@ -165,7 +209,7 @@ python3 scripts/process_scripts.py
 
 ---
 
-## 📊 4. Inspecting Outputs & Datasets
+## 📊 5. Inspecting Outputs & Datasets
 
 Extraction artifacts and Evaluation reports are kept in completely separate directory trees:
 
@@ -281,9 +325,14 @@ Below is the exact input/output token breakdown for each stage across **Extracti
 ### Script Extraction Flags (`scripts/extract_scripts.py`)
 | Flag | Description | Default |
 | :--- | :--- | :--- |
+| `--script-name ID` / `--script ID` | Name/ID of script to extract (e.g. `SE_11_Q1_0009`) | `None` |
+| `--question ID` | Question ID (`SE_11_Q1`) or path to JSON override for context | Auto-matched by script ID |
+| `--questions-dir PATH` | Directory containing extracted question JSONs | `outputs/questions` |
 | `--api` | Use local OpenAI-compatible API (LM Studio on port 1234, 0 extra VRAM) | `False` |
 | `--api-url` | URL for local API server | `http://localhost:1234/v1` |
 | `--fast` / `--skip-stage2` | Fast single-pass mode; skips duplicate Stage 2 visual pass | `False` |
+| `--extract-teacher-marks` | Explicitly enable Stage 0b red-ink teacher mark extraction | `True` (or from config) |
+| `--no-teacher-marks` / `--skip-teacher-marks` | Disable Stage 0b teacher mark extraction (saves VLM compute) | `False` |
 | `--lang` | Exam subject: `english` or `bangla` | `bangla` |
 | `--top N` | Limit processing to the first `N` PDFs in local directory | All available |
 | `--image PATH` | Path to a single PDF or image to extract | `None` |

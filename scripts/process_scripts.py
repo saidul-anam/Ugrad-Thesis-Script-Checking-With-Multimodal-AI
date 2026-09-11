@@ -342,6 +342,21 @@ def main():
         help="URL of OpenAI-compatible API endpoint (default: http://localhost:1234/v1)"
     )
     parser.add_argument(
+        "--extract-teacher-marks",
+        dest="extract_teacher_marks",
+        action="store_true",
+        default=None,
+        help="Enable Stage 0b red-ink teacher mark extraction (default: True or from config)"
+    )
+    parser.add_argument(
+        "--no-teacher-marks",
+        "--skip-teacher-marks",
+        "--no-marks",
+        dest="extract_teacher_marks",
+        action="store_false",
+        help="Disable Stage 0b teacher mark extraction (saves VLM compute)"
+    )
+    parser.add_argument(
         "--interactive",
         "-i",
         action="store_true",
@@ -471,12 +486,14 @@ def main():
         console.print(f"{'='*60}")
 
         try:
+            extract_marks = args.extract_teacher_marks if args.extract_teacher_marks is not None else getattr(cfg.pipeline, "stage0b_teacher_marks", True)
             report = pipeline.evaluate_script(
                 input_source=pdf_path,
                 script_id=script_id,
                 thinking_mode=cfg.decoding.thinking_mode,
                 skip_stage2=args.fast,
-                force_extract=not args.skip_evaluated
+                force_extract=not args.skip_evaluated,
+                extract_teacher_marks=extract_marks
             )
 
             summary_records.append({

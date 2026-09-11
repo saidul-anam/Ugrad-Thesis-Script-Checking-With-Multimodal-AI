@@ -25,6 +25,7 @@ decoding:
 
 pipeline:
   # Active stages (can toggle off specific stages for debugging)
+  stage0b_teacher_marks: true  # Toggle Stage 0b red-ink teacher mark extraction on/off
   stage1_verbatim: true
   stage2_verification: true
   stage3_error_extraction: true
@@ -41,4 +42,4 @@ pipeline:
 
   # Checkpointing / Caching of intermediate stage outputs
   cache_intermediate_stages: true
-  output_dir: "outputs/runs"
+  output_dir: "outputs/extracted"

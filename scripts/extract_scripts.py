@@ -132,6 +132,10 @@ def interactive_wizard(args):
         args.sync_drive = True
         args.force_download = True
 
+    # 7. Teacher Marks Extraction (Stage 0b)
+    default_marks = True if getattr(args, "extract_teacher_marks", None) is None else args.extract_teacher_marks
+    args.extract_teacher_marks = Confirm.ask("\n[bold green]7. Enable Stage 0b Teacher Mark Extraction?[/bold green]", default=default_marks)
+
     # 7. Skip already extracted
     if not args.download_only:
         args.skip_extracted = Confirm.ask(
@@ -199,9 +203,13 @@ def main():
     )
     parser.add_argument(
         "--image",
+        "--script-name",
+        "--script",
+        "--script-id",
+        dest="image",
         type=str,
         default=None,
-        help="Path to a single PDF or image file"
+        help="Path or name/ID of a single PDF or image file (e.g. --script-name SE_11_Q1_0009)"
     )
     parser.add_argument(
         "--output-dir",
@@ -301,6 +309,34 @@ def main():
         help="URL of OpenAI-compatible API endpoint (default: http://localhost:1234/v1)"
     )
     parser.add_argument(
+        "--question",
+        "--question-id",
+        type=str,
+        default=None,
+        help="Optional question ID (e.g. 'SE_11_Q1') or path to question JSON to use as context for extraction (default: auto-matched from script ID)"
+    )
+    parser.add_argument(
+        "--questions-dir",
+        type=str,
+        default="outputs/questions",
+        help="Root directory containing extracted question JSON files (default: outputs/questions)"
+    )
+    parser.add_argument(
+        "--extract-teacher-marks",
+        dest="extract_teacher_marks",
+        action="store_true",
+        default=None,
+        help="Enable Stage 0b red-ink teacher mark extraction (default: True or from config)"
+    )
+    parser.add_argument(
+        "--no-teacher-marks",
+        "--skip-teacher-marks",
+        "--no-marks",
+        dest="extract_teacher_marks",
+        action="store_false",
+        help="Disable Stage 0b teacher mark extraction (saves VLM compute)"
+    )
+    parser.add_argument(
         "--interactive",
         "-i",
         action="store_true",
@@ -340,6 +376,8 @@ def main():
     else:
         exec_mode_label = "CUDA RTX 5090 (Gemma 4 31B IT)"
 
+    extract_marks = args.extract_teacher_marks if args.extract_teacher_marks is not None else getattr(cfg.pipeline, "stage0b_teacher_marks", True)
+
     console.print(Panel.fit(
         f"[bold cyan]Gemma 4 31B IT Multimodal Script Extraction Controller[/bold cyan]\n"
         f"[green]Language / Subject:[/green] {args.lang.capitalize()}\n"
@@ -347,18 +385,26 @@ def main():
         f"[green]Top Limit (--top):[/green] {args.top or 'All available'}\n"
         f"[green]Quantization (--quant):[/green] {args.quant}\n"
         f"[green]Fast Mode (--fast):[/green] {'Enabled (single-pass)' if args.fast else 'Disabled (full 2-pass verification)'}\n"
+        f"[green]Teacher Marks (Stage 0b):[/green] {'Enabled' if extract_marks else 'Disabled (Skipped)'}\n"
         f"[yellow]Execution Mode:[/yellow] {exec_mode_label}\n"
         f"[yellow]Extraction Output Root:[/yellow] {args.output_dir}",
         title="Extraction Initialized"
     ))
 
     # 1. Discover Script Files (Strictly Local by Default)
-    input_files = []
     if args.image:
-        if os.path.exists(args.image):
-            input_files = [args.image]
+        target = args.image
+        if os.path.exists(target):
+            input_files = [target]
         else:
-            console.print(f"[red]Specified image/PDF file does not exist: {args.image}[/red]")
+            # Look inside args.pdf_dir (e.g. data/raw_pdfs/<lang>)
+            for ext in [".pdf", ".PDF", ".png", ".jpg", ".jpeg", ""]:
+                cand = os.path.join(args.pdf_dir, f"{target}{ext}")
+                if os.path.exists(cand):
+                    input_files = [cand]
+                    break
+        if not input_files:
+            console.print(f"[red]Specified image/PDF file does not exist: {target} (searched in '{args.pdf_dir}')[/red]")
             return
     elif getattr(args, "sync_drive", False) or getattr(args, "download_only", False):
         console.print("\n[bold]Step 1: Checking & Downloading Exam Script PDFs from Google Drive...[/bold]")
@@ -451,7 +497,10 @@ def main():
                 output_dir=args.output_dir,
                 paper=args.lang,
                 skip_stage2=args.fast,
-                force_extract=not args.skip_extracted
+                force_extract=not args.skip_extracted,
+                question_input=getattr(args, "question", None),
+                questions_root=getattr(args, "questions_dir", "outputs/questions"),
+                extract_teacher_marks=extract_marks
             )
 
             summary_records.append({

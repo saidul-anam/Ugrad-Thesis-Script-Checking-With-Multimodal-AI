@@ -1,27 +1,78 @@
-# English Descriptive / Essay / Long Answer Rubric
+# English 1st Paper Examination Rubric (Class XI / HSC)
+# Aligned with Official NCTB Curriculum & Question Paper SE_11_Q1
 subject: "English"
-question_type: "Descriptive Writing / Essay / Comprehension"
-total_marks: 10.0
+question_type: "HSC English 1st Paper (Reading & Guided Writing)"
+total_marks: 100.0
 
 criteria:
-  - id: "content_relevance"
-    name: "Content & Relevance"
-    max_marks: 3.0
-    description: "Completeness of answer, direct addressing of prompt, and depth of explanation."
-  - id: "organization_structure"
-    name: "Organization & Structure"
-    max_marks: 2.5
-    description: "Logical paragraph sequencing, coherent transitions, and clear introduction/conclusion."
-  - id: "vocabulary_expression"
-    name: "Vocabulary & Expression"
-    max_marks: 2.5
-    description: "Appropriate academic vocabulary, varied sentence structures, and lexical clarity."
-  - id: "linguistic_accuracy"
-    name: "Grammar, Spelling & Mechanics"
-    max_marks: 2.0
-    description: "Grammatical precision, spelling accuracy, and correct punctuation."
+  # =========================================================================
+  # PART-A: READING (60 MARKS)
+  # =========================================================================
+  - id: "q1_a_mcq"
+    name: "Q1(A): Multiple Choice Questions (Gaza Passage)"
+    max_marks: 5.0
+    description: "Multiple Choice Questions on Gaza passage (items a-e). Award 1.0 mark per correctly identified option (up to 5.0 full marks for all 5 correct)."
+
+  - id: "q1_b_short_answers"
+    name: "Q1(B): Short Answer Questions (Gaza Passage)"
+    max_marks: 10.0
+    description: "5 open comprehension questions (2 marks each) evaluating: (a) poverty/siege reasons, (b) author awareness, (c) imagination via sea, (d) returning to refugee camp reality, (e) fear of flies/war trauma. Award marks for factual accuracy, relevance, and coherent English sentences."
+
+  - id: "q2_flow_chart"
+    name: "Q2: Flow Chart (Adolescent Bride Miseries)"
+    max_marks: 10.0
+    description: "Completion of 5 subsequent flowchart boxes (2 marks each) detailing consequences of adolescent marriage in Bangladesh (e.g. abuse/dowry violence, health risks in pregnancy, maternal mortality, loss of mobility/social status, curtailed opportunities). Deduct for incomplete or non-sequential notes."
+
+  - id: "q3_poem_summary"
+    name: "Q3: Poem Summary ('Hope is the thing with feathers')"
+    max_marks: 10.0
+    description: "Summarizing Emily Dickinson's poem into a concise paragraph (around 50-80 words). Evaluate understanding of the central metaphor (hope as an untiring bird singing in adversity), conciseness, originality of expression, and absence of external irrelevancies."
+
+  - id: "q4_cloze_with_clues"
+    name: "Q4: Cloze Test with Clues (Success and Risk)"
+    max_marks: 5.0
+    description: "10 blanks (0.5 marks each) using words from the clue box with necessary grammatical/form changes (e.g. attain, why, that, overcome, courageous, result, discouraged, inspire, successful, disaster). Award 0.5 per contextually and grammatically correct answer."
+
+  - id: "q5_cloze_without_clues"
+    name: "Q5: Cloze Test without Clues (Education)"
+    max_marks: 10.0
+    description: "10 contextual blanks (1.0 mark each) on the importance of education for health, mental growth, and life choices. Award 1.0 mark per contextually suitable, grammatically accurate word choice."
+
+  - id: "q6_rearranging"
+    name: "Q6: Rearranging Sentences (Louis Pasteur)"
+    max_marks: 10.0
+    description: "Rearranging 10 scrambled sentences (1.0 mark each) recounting Louis Pasteur's discovery of the rabies cure and treating Joseph Meister into correct chronological narrative sequence."
+
+  # =========================================================================
+  # PART-B: GUIDED WRITING (40 MARKS)
+  # =========================================================================
+  - id: "q7_paragraph_ai"
+    name: "Q7: Paragraph on Artificial Intelligence"
+    max_marks: 10.0
+    description: "Well-structured paragraph answering the 5 guided questions: definition of AI, key features, real-world applications, impact on teaching and learning, and potential threats/challenges. Assess thematic depth, coherence, and paragraph structure."
+
+  - id: "q8_chart_analysis"
+    name: "Q8: Chart Analysis (USA Electricity Sources 1980)"
+    max_marks: 10.0
+    description: "Data commentary (at least 80 words) describing and comparing electricity generation shares (Coal 46%, Natural gas 24%, Hydro 15%, Oil 12%, Nuclear 2%). Evaluate data accuracy, comparative connectors, and clear analytical overview."
+
+  - id: "q9_story_completion"
+    name: "Q9: Story Completion (Lion and Mouse)"
+    max_marks: 7.0
+    description: "Creative story completion following the prompt of the sleeping lion and mouse. Evaluate: suitable title (1 mark), logical narrative progression and climax (4 marks), and appropriate moral resolution / friendship conclusion (2 marks)."
+
+  - id: "q10_informal_letter"
+    name: "Q10: Informal Letter (Future Plan after HSC)"
+    max_marks: 5.0
+    description: "Letter to a friend outlining future academic or career aspirations after the HSC examination. Evaluate correct letter layout (heading, salutation, body, subscription) and natural personal tone."
+
+  - id: "q11_poem_theme"
+    name: "Q11: Theme of Poem ('All people dream...')"
+    max_marks: 8.0
+    description: "Extracting and explaining the philosophical theme of T.E. Lawrence's poem (contrast between passive night-dreamers whose dreams are vanity vs. active day-dreamers who make their dreams reality). Evaluate analytical insight and concise articulation."
 
 penalties:
   spelling_error_deduction: 0.25
   grammar_error_deduction: 0.5
-  max_linguistic_deduction: 2.0
+  max_linguistic_deduction: 5.0
+

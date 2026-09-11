@@ -352,6 +352,13 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
     """Save complete evaluation report as formatted GitHub Markdown document."""
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     
+    gt_dict = report.metadata.get("ground_truth_marks")
+    if not gt_dict:
+        from src.utils.ground_truth import get_ground_truth_for_script
+        gt_dict = get_ground_truth_for_script(report.script_id)
+    is_verified = report.metadata.get("verified_by_human", False) or (gt_dict is not None)
+    verifier_tag = " (✅ Verified with Ground Truth gt.txt)" if is_verified else ""
+
     md_lines = [
         f"# Exam Script Evaluation Report: `{report.script_id}`",
         f"**Evaluated At**: {report.timestamp} | **Engine**: `{report.model_id}`",
@@ -367,7 +374,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         f"- **Raw Content Score**: {report.stage4_evaluation.content_raw_score:.2f}",
         f"- **Linguistic Penalty**: -{report.stage4_evaluation.linguistic_penalty:.2f}",
         f"- **Red Ink Detected (Stage 0)**: `{'Yes' if report.has_red_ink else 'No'}`",
-        f"- **Extracted Teacher Marks (Stage 0b)**: {len(report.teacher_marks)} mark(s)",
+        f"- **Extracted Teacher Marks (Stage 0b)**: {len(report.teacher_marks)} mark(s){verifier_tag}",
         f"- **Silent Autocorrections Reverted (Stage 2)**: {report.stage2_verification.total_corrections_count}",
         f"- **Linguistic Errors Found (Stage 3)**: {report.stage3_errors.total_error_count}"
     ]
@@ -461,6 +468,83 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         md_lines.append(f"- {rec}")
 
     md_lines.append("")
+
+    # AI vs. Human Ground Truth Alignment Table
+    if gt_dict:
+        from src.utils.ground_truth import canonicalize_question_key, extract_candidate_questions
+
+        alignment_rows = []
+        total_ai = 0.0
+        total_human = 0.0
+        matched_count = 0
+        exact_matches = 0
+        within_one_mark = 0
+        total_abs_diff = 0.0
+
+        for c in report.stage4_evaluation.criteria_scores:
+            matched_q = None
+            human_val = None
+
+            cands = extract_candidate_questions(c.criterion_name)
+            if cands and cands[0] in gt_dict:
+                matched_q = cands[0]
+                human_val = gt_dict[matched_q]
+            else:
+                c_id_norm = canonicalize_question_key(c.criterion_id.replace("q", "").replace("_", ""))
+                for k, v in gt_dict.items():
+                    k_norm = canonicalize_question_key(k)
+                    if c_id_norm == k_norm or k.lower() in c.criterion_name.lower():
+                        matched_q = k
+                        human_val = v
+                        break
+
+            if matched_q and human_val is not None:
+                ai_val = float(c.awarded_marks)
+                diff = ai_val - human_val
+                abs_diff = abs(diff)
+                total_abs_diff += abs_diff
+                matched_count += 1
+                total_ai += ai_val
+                total_human += human_val
+
+                if abs_diff < 0.01:
+                    exact_matches += 1
+                    status = "✅ Exact Match"
+                elif abs_diff <= 1.0:
+                    within_one_mark += 1
+                    status = f"🟡 Close (Δ {diff:+.1f})"
+                else:
+                    status = f"⚠️ Delta {diff:+.1f}"
+
+                alignment_rows.append(
+                    f"| Q{matched_q} | {c.criterion_name} | {c.max_marks:.1f} | **{ai_val:.1f}** | **{human_val:.1f}** | {diff:+.1f} | {status} |"
+                )
+
+        if alignment_rows:
+            overall_diff = report.stage4_evaluation.final_score - sum(gt_dict.values())
+            overall_agreement = max(0.0, 100.0 - (abs(overall_diff) / max(sum(gt_dict.values()), 1.0) * 100.0))
+            mae = total_abs_diff / matched_count if matched_count > 0 else 0.0
+            exact_pct = (exact_matches / matched_count * 100.0) if matched_count > 0 else 0.0
+            within_one_pct = ((exact_matches + within_one_mark) / matched_count * 100.0) if matched_count > 0 else 0.0
+
+            md_lines.extend([
+                "---",
+                "",
+                "## 🎯 AI vs. Human Ground Truth Alignment",
+                f"- **Ground Truth Source**: Verified Examiner Marks (`gt.txt`)",
+                f"- **Overall Alignment**: **{overall_agreement:.1f}% Agreement** (Human Total: `{sum(gt_dict.values()):.1f}`, AI Total: `{report.stage4_evaluation.final_score:.1f}`, Net Δ: `{overall_diff:+.1f}`)",
+                f"- **Mean Absolute Error (MAE)**: **{mae:.2f} marks** across {matched_count} questions",
+                f"- **Exact Match Rate**: **{exact_pct:.1f}%** ({exact_matches}/{matched_count})",
+                f"- **Within ±1.0 Mark Rate**: **{within_one_pct:.1f}%** ({exact_matches + within_one_mark}/{matched_count})",
+                "",
+                "| Question | Criterion | Max Marks | AI Awarded | Human Mark | Δ (AI - Human) | Status |",
+                "| --- | --- | --- | --- | --- | --- | --- |"
+            ])
+            md_lines.extend(alignment_rows)
+            md_lines.extend([
+                f"| **TOTAL** | **All Questions** | **{report.stage4_evaluation.total_max_marks:.1f}** | **{report.stage4_evaluation.final_score:.1f}** | **{sum(gt_dict.values()):.1f}** | **{overall_diff:+.1f}** | **{overall_agreement:.1f}% Match** |",
+                ""
+            ])
 
     # Context & Token Usage Summary across Extraction and Stage 4
     ext_tok = report.metadata.get("extraction_token_usage", {})

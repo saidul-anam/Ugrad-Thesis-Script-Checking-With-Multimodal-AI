@@ -54,6 +54,7 @@ class RagConfig(BaseModel):
 
 
 class PipelineStageConfig(BaseModel):
+    stage0b_teacher_marks: bool = Field(True, description="Whether to execute Stage 0b red-ink teacher mark extraction")
     stage1_verbatim: bool = True
     stage2_verification: bool = True
     stage3_error_extraction: bool = True
@@ -62,7 +63,7 @@ class PipelineStageConfig(BaseModel):
     stage4_generation_timeout_sec: float = Field(180.0, description="Hard timeout for Stage 4 generation in seconds")
     rag: RagConfig = Field(default_factory=RagConfig)
     cache_intermediate_stages: bool = True
-    output_dir: str = "outputs/runs"
+    output_dir: str = "outputs/extracted"
 
 
 class PipelineConfig(BaseModel):

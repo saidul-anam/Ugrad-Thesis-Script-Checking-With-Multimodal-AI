@@ -16,12 +16,16 @@ class Stage1Transcriber:
         self,
         image: Image.Image,
         few_shot_examples: Optional[List[Dict[str, str]]] = None,
+        question_reference_vocab: Optional[List[str]] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
         thinking_mode: bool = False
     ) -> Stage1TranscriptionResult:
-        prompt = build_stage1_prompt(few_shot_examples=few_shot_examples)
+        prompt = build_stage1_prompt(
+            few_shot_examples=few_shot_examples,
+            question_reference_vocab=question_reference_vocab
+        )
         
         raw_text = self.engine.generate_multimodal(
             image=image,

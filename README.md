@@ -27,19 +27,25 @@ graph TD
     E --> F[Complete JSON & Markdown Evaluation Report]
 ```
 
-### Stage-by-Stage Output Hierarchy:
-Every script run creates a dedicated folder with intermediate artifacts at every stage:
+### Output Hierarchy:
+Extraction artifacts and Evaluation reports are kept in completely separate, clean directory trees:
 ```
-outputs/runs/<script_id>/
-  ├── stage1_transcription.json        # Stage 1 metrics, tags & character stats
-  ├── stage1_raw_transcript.txt        # Exact raw verbatim text
+outputs/extracted/<lang>/<script_id>/
+  ├── stage0b_teacher_marks.json       # Extracted teacher marks (question, mark, location)
+  ├── stage1_transcription.json        # Stage 1 metrics & character stats
+  ├── stage1_raw_transcript.txt        # Exact raw verbatim text preserving errors
   ├── stage2_verification.json         # Reverted silent autocorrection diffs
   ├── stage2_verified_transcript.txt   # Canonical verified transcript
-  ├── stage3_errors.json               # Structured error catalog
-  ├── stage3_errors.csv                # Tabular error list (spelling, grammar, syntax)
+  ├── stage3_errors.json               # Structured error catalog (spelling, grammar, syntax)
+  ├── stage3_errors.csv                # Tabular error list
+  ├── extraction_result.json           # Consolidated extraction package
+  ├── extraction_summary.md            # Human-readable extraction summary
+  └── raw_tier_records.csv             # Per-page raw tier research records
+
+outputs/evaluated/<lang>/<script_id>/
   ├── stage4_evaluation.json           # Rubric marks breakdown & deductions
-  ├── complete_report.json             # Consolidated 4-stage report
-  └── evaluation_report.md             # Human-readable GitHub Markdown report
+  ├── complete_report.json             # Consolidated complete evaluation artifact
+  └── evaluation_report.md             # Human-readable pedagogical report & feedback
 ```
 
 ---

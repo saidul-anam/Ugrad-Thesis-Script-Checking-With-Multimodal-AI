@@ -188,3 +188,61 @@ def save_extracted_question(
         f.write("\n".join(md_content))
 
     return json_path
+
+
+def extract_question_vocab(
+    question: ExtractedQuestion,
+    max_tokens: int = 150
+) -> List[str]:
+    """
+    Extract domain vocabulary terms from an ExtractedQuestion artifact.
+    These terms serve as reference vocabulary for Stage 1 handwriting transcription
+    to help decipher difficult cursive strokes without autocorrecting student errors.
+    """
+    if not question or not question.question_text:
+        return []
+
+    combined_text = question.question_text
+    for sq in question.sub_questions:
+        combined_text += " " + str(sq.get("name", "")) + " " + str(sq.get("text", ""))
+
+    tokens = re.findall(r'[A-Za-z\u0980-\u09FF]+(?:-[A-Za-z\u0980-\u09FF]+)*', combined_text)
+
+    stop_words = {
+        "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for", "of", "with",
+        "by", "from", "up", "about", "into", "over", "after", "is", "are", "was", "were",
+        "be", "been", "being", "have", "has", "had", "do", "does", "did", "can", "could",
+        "shall", "should", "will", "would", "may", "might", "must", "that", "which", "who",
+        "whom", "this", "these", "those", "am", "it", "its", "they", "them", "their",
+        "theirs", "we", "us", "our", "ours", "you", "your", "yours", "he", "him", "his",
+        "she", "her", "hers", "what", "when", "where", "why", "how", "all", "any", "both",
+        "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only",
+        "own", "same", "so", "than", "too", "very", "just", "now", "read", "following",
+        "text", "passage", "answer", "questions", "write", "down", "give", "make", "fill",
+        "blanks", "suitable", "word", "words", "box", "needed", "grammatical", "changes",
+        "necessary", "appropriate", "gap", "sentences", "jumbled", "rearrange", "proper",
+        "sequence", "marks", "time", "hours", "subject", "class", "annual", "examination",
+        "full", "margin", "indicate", "part", "reading", "writing", "code", "true", "false",
+        "correct", "alternatives", "table", "chart", "diagram", "story", "theme", "paragraph"
+    }
+
+    seen = set()
+    vocab: List[str] = []
+
+    for tok in tokens:
+        clean_tok = tok.strip()
+        low = clean_tok.lower()
+        if low in stop_words:
+            continue
+        if len(clean_tok) < 3:
+            continue
+        if len(clean_tok) == 3 and not clean_tok.isupper():
+            continue
+        if low in seen:
+            continue
+        seen.add(low)
+        vocab.append(clean_tok)
+        if len(vocab) >= max_tokens:
+            break
+
+    return vocab
