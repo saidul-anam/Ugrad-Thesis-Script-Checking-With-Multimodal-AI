@@ -109,18 +109,23 @@ def extract_single_question(
     lines = [line.strip() for line in extracted_text.split("\n") if line.strip()]
     title = lines[0][:100] if lines else f"Question {q_id}"
 
+    # Parse sub-questions and criteria
+    from src.utils.question_utils import parse_sub_questions_from_text
+    sub_questions = parse_sub_questions_from_text(extracted_text, lang=lang)
+
     question_obj = ExtractedQuestion(
         question_id=q_id,
         language=lang,
         title=title,
         question_text=extracted_text,
         total_marks=total_marks,
+        sub_questions=sub_questions,
         source_file=str(file_path),
         extracted_at=datetime.now().isoformat()
     )
 
     saved_json = save_extracted_question(question_obj, output_dir=output_dir)
-    console.print(f"  [bold green]✓ Saved Question Artifact:[/bold green] {saved_json}")
+    console.print(f"  [bold green]✓ Saved Question Artifact:[/bold green] {saved_json} ({len(sub_questions)} sub-questions)")
     console.print(f"  [dim]Total Marks:[/dim] {total_marks or 'N/A'}")
 
     return question_obj

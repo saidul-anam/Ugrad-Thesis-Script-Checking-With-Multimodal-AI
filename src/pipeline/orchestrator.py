@@ -17,7 +17,8 @@ from src.core.schemas import (
     Stage1TranscriptionResult,
     Stage2VerificationResult,
     Stage3ErrorResult,
-    Stage4EvaluationResult
+    Stage4EvaluationResult,
+    AlignedAnswerItem
 )
 from src.engine.base_engine import BaseVLMEngine
 from src.utils.image_loader import load_and_preprocess_image
@@ -42,6 +43,8 @@ from src.pipeline.stage1_transcriber import Stage1Transcriber
 from src.pipeline.stage2_verifier import Stage2Verifier
 from src.pipeline.stage3_error_analyzer import Stage3ErrorAnalyzer
 from src.pipeline.stage4_evaluator import Stage4Evaluator
+from src.pipeline.answer_segmenter import segment_script_into_questions, extract_header_qno
+from src.prompts.stage4_modular import is_objective_question
 from src.utils.question_utils import (
     load_question_for_script,
     ExtractedQuestion,
@@ -69,7 +72,7 @@ def _attribute_errors_to_pages(
             spelling_error_count=sum(1 for e in errors if "spell" in getattr(e, "error_type", "").lower()),
             grammar_error_count=sum(1 for e in errors if "gram" in getattr(e, "error_type", "").lower()),
             syntax_error_count=sum(1 for e in errors if "synt" in getattr(e, "error_type", "").lower()),
-            punctuation_error_count=sum(1 for e in errors if "punct" in getattr(e, "error_type", "").lower()),
+            punctuation_error_count=0,
             total_error_count=len(errors),
             linguistic_summary=""
         )
@@ -99,7 +102,7 @@ def _attribute_errors_to_pages(
             spelling_error_count=sum(1 for e in p_errs if "spell" in getattr(e, "error_type", "").lower()),
             grammar_error_count=sum(1 for e in p_errs if "gram" in getattr(e, "error_type", "").lower()),
             syntax_error_count=sum(1 for e in p_errs if "synt" in getattr(e, "error_type", "").lower()),
-            punctuation_error_count=sum(1 for e in p_errs if "punct" in getattr(e, "error_type", "").lower()),
+            punctuation_error_count=0,
             total_error_count=len(p_errs),
             linguistic_summary=""
         )
@@ -304,9 +307,11 @@ class ScriptCheckingPipeline:
             # STAGE 1: Verbatim Transcription (Ignoring Teacher Red Ink)
             # ---------------------------------------------------------
             print(f"[Extraction] [1/3] Stage 1: Verbatim Transcription (Page {page_no})...")
+            stage1_input_img = stage0_res.clean_image if getattr(stage0_res, "clean_image", None) is not None else p_img
             stage1_result = self.stage1.run(
-                image=p_img,
+                image=stage1_input_img,
                 question_reference_vocab=question_vocab if question_obj else None,
+                question_syllabus=question_obj.sub_questions if question_obj else None,
                 temperature=decoding.temperature,
                 top_p=decoding.top_p,
                 max_new_tokens=decoding.max_new_tokens,
@@ -333,6 +338,7 @@ class ScriptCheckingPipeline:
                 stage2_result = self.stage2.run(
                     image=p_img,
                     stage1_transcript=stage1_result.raw_transcript,
+                    question_syllabus=question_obj.sub_questions if question_obj else None,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=decoding.max_new_tokens,
@@ -343,16 +349,25 @@ class ScriptCheckingPipeline:
                 print(f"[Extraction] [2/3] Stage 2 Verified -> {stage2_result.total_corrections_count} silent corrections reverted {ctx2}")
 
             # ---------------------------------------------------------
-            # STAGE 0b: Teacher Mark Extraction (Conditional on Stage 0 & flag)
+            # STAGE 0b: Teacher Mark Extraction (Conditional on Margin Red Ink)
             # ---------------------------------------------------------
             page_marks: List[TeacherMarkItem] = []
             u0b = {}
+            has_margin_scores = getattr(stage0_res, "margin_has_red_ink", stage0_res.has_red_ink)
+
             if not extract_teacher_marks:
                 print(f"[Extraction] [0b/3] Stage 0b: extract_teacher_marks=False -> Skipping teacher mark extraction for Page {page_no}.")
-            elif stage0_res.has_red_ink:
-                page_candidates = extract_candidate_questions(stage1_result.raw_transcript)
+            elif has_margin_scores:
+                active_page_text = stage2_result.verified_transcript or stage1_result.raw_transcript
+                page_candidates = extract_candidate_questions(active_page_text)
+                detected_topic_q = extract_header_qno(active_page_text, question_obj=question_obj)
+                if detected_topic_q:
+                    if detected_topic_q not in page_candidates:
+                        page_candidates = [detected_topic_q] + page_candidates
+                    else:
+                        page_candidates = [detected_topic_q] + [c for c in page_candidates if c != detected_topic_q]
                 cand_info = f" (Candidate questions: {page_candidates})" if page_candidates else ""
-                print(f"[Extraction] [0b/3] Stage 0b: Red ink detected -> Running Gemma 4 Teacher Mark Extraction (Page {page_no}){cand_info}...")
+                print(f"[Extraction] [0b/3] Stage 0b: Red margin ink detected -> Running Gemma 4 Teacher Mark Extraction (Page {page_no}){cand_info}...")
                 stage0b_res = self.stage0b.run(
                     image=p_img,
                     candidate_questions=page_candidates,
@@ -368,6 +383,8 @@ class ScriptCheckingPipeline:
                 u0b = self.engine.get_last_usage()
                 ctx0b = self.engine.format_last_usage()
                 print(f"[Extraction] [0b/3] Stage 0b Found -> {len(page_marks)} numeric teacher mark(s) on Page {page_no} {ctx0b}")
+            elif stage0_res.has_red_ink:
+                print(f"[Extraction] [0b/3] Stage 0b: Page {page_no} has checkmarks/ticks only (no margin scores) -> Skipping mark extraction.")
             else:
                 print(f"[Extraction] [0b/3] Stage 0b: has_red_ink=False -> Skipping teacher mark extraction for Page {page_no}.")
 
@@ -439,19 +456,103 @@ class ScriptCheckingPipeline:
             )
 
         # ---------------------------------------------------------
-        # STAGE 3: Script-Level Linguistic Error Extraction (Single Global Call)
+        # Question-Aware Stage 3: Alignment & Targeted Error Extraction
         # ---------------------------------------------------------
-        print(f"\n[Extraction] [3/3] Stage 3: Script-Level Linguistic Error Extraction ({len(combined_verified)} chars, {aggregated_stage1.word_count} words)...")
-        aggregated_stage3 = self.stage3.run(
-            verified_transcript=combined_verified,
-            temperature=decoding.temperature,
-            top_p=decoding.top_p,
-            max_new_tokens=decoding.max_new_tokens,
-            thinking_mode=active_thinking
+        print(f"\n[Extraction] [3/3] Question-Aware Alignment & Error Extraction ({len(combined_verified)} chars, {aggregated_stage1.word_count} words)...")
+
+        # Partition transcript into canonical question answers
+        interim_res = ExtractionResult(
+            script_id=script_id,
+            image_path=source_str,
+            model_id=self.config.model.model_id,
+            timestamp=datetime.now().isoformat(),
+            has_red_ink=any_red_ink,
+            stage1_transcription=aggregated_stage1,
+            stage2_verification=aggregated_stage2,
+            stage3_errors=Stage3ErrorResult(),
+            teacher_marks=final_teacher_marks if 'final_teacher_marks' in locals() else all_teacher_marks,
+            pages=page_results,
+            metadata={"paper": paper}
         )
-        u3 = self.engine.get_last_usage()
-        ctx3 = self.engine.format_last_usage()
-        print(f"[Extraction] [3/3] Stage 3 Errors -> {aggregated_stage3.total_error_count} errors (spelling: {aggregated_stage3.spelling_error_count}, grammar: {aggregated_stage3.grammar_error_count}, syntax: {aggregated_stage3.syntax_error_count}, punctuation: {aggregated_stage3.punctuation_error_count}) {ctx3}")
+        aligned_answers = segment_script_into_questions(interim_res, question_obj)
+        print(f"[Extraction] Segmented transcript into {len(aligned_answers)} distinct question answers.")
+
+        all_extracted_errors: List[Any] = []
+        u3_prompt = 0
+        u3_comp = 0
+        u3_total = 0
+
+        # Run Stage 3 targeted per question
+        if aligned_answers and len(aligned_answers) > 1:
+            for ans in aligned_answers:
+                is_obj = is_objective_question(ans.q_no, ans.q_name, "")
+                if is_obj:
+                    # Objective question (Flowchart, MCQ, Cloze, Rearranging)
+                    # Graded against factual answer key; 0 essay linguistic deductions
+                    ans.errors = []
+                    continue
+
+                ans_text = ans.answer_text.strip()
+                if len(ans_text.split()) < 3:
+                    ans.errors = []
+                    continue
+
+                q_err_res = self.stage3.run(
+                    verified_transcript=ans_text,
+                    question_vocab=set(question_vocab) if question_vocab else None,
+                    subject="Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English",
+                    temperature=decoding.temperature,
+                    top_p=decoding.top_p,
+                    max_new_tokens=min(decoding.max_new_tokens, 1536),
+                    thinking_mode=active_thinking
+                )
+                usage = self.engine.get_last_usage()
+                u3_prompt += usage.get("prompt_tokens", 0)
+                u3_comp += usage.get("completion_tokens", 0)
+                u3_total += usage.get("total_tokens", 0)
+
+                for e in q_err_res.errors:
+                    e.question_no = ans.q_no
+                    all_extracted_errors.append(e)
+
+                ans.errors = [e.model_dump() for e in q_err_res.errors]
+        else:
+            # Fallback if segmentation yielded no distinct sections
+            q_err_res = self.stage3.run(
+                verified_transcript=combined_verified,
+                question_vocab=set(question_vocab) if question_vocab else None,
+                subject="Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English",
+                temperature=decoding.temperature,
+                top_p=decoding.top_p,
+                max_new_tokens=decoding.max_new_tokens,
+                thinking_mode=active_thinking
+            )
+            usage = self.engine.get_last_usage()
+            u3_prompt = usage.get("prompt_tokens", 0)
+            u3_comp = usage.get("completion_tokens", 0)
+            u3_total = usage.get("total_tokens", 0)
+            all_extracted_errors = q_err_res.errors
+
+        spelling_cnt = sum(1 for e in all_extracted_errors if "spell" in e.error_type.lower())
+        grammar_cnt = sum(1 for e in all_extracted_errors if "gram" in e.error_type.lower())
+        syntax_cnt = sum(1 for e in all_extracted_errors if "synt" in e.error_type.lower())
+
+        aggregated_stage3 = Stage3ErrorResult(
+            errors=all_extracted_errors,
+            spelling_error_count=spelling_cnt,
+            grammar_error_count=grammar_cnt,
+            syntax_error_count=syntax_cnt,
+            punctuation_error_count=0,
+            total_error_count=len(all_extracted_errors),
+            linguistic_summary=f"Cataloged {len(all_extracted_errors)} linguistic errors across {len(aligned_answers)} questions."
+        )
+
+        u3 = {
+            "prompt_tokens": u3_prompt,
+            "completion_tokens": u3_comp,
+            "total_tokens": u3_total
+        }
+        print(f"[Extraction] [3/3] Stage 3 Errors -> {aggregated_stage3.total_error_count} verified errors (spelling: {aggregated_stage3.spelling_error_count}, grammar: {aggregated_stage3.grammar_error_count}, syntax: {aggregated_stage3.syntax_error_count})")
 
         # Attribute errors to pages and sync checkpoints
         _attribute_errors_to_pages(aggregated_stage3.errors, page_results)
@@ -516,7 +617,8 @@ class ScriptCheckingPipeline:
                 "region": region,
                 "verified_by_human": is_verified_gt,
                 "ground_truth_marks": ground_truth_marks,
-                "vlm_detected_teacher_marks": vlm_detected_marks
+                "vlm_detected_teacher_marks": vlm_detected_marks,
+                "aligned_answers": [a.model_dump() for a in aligned_answers] if aligned_answers else []
             }
         )
 
@@ -580,12 +682,14 @@ class ScriptCheckingPipeline:
         thinking_mode: Optional[bool] = None,
         output_dir: Optional[str] = None,
         question_input: Optional[Union[str, ExtractedQuestion]] = None,
-        questions_root: str = "outputs/questions"
+        questions_root: str = "outputs/questions",
+        eval_mode: str = "modular"
     ) -> CompleteEvaluationReport:
         """
         Execute Stage 4 Rubric Evaluation on pre-extracted script transcripts and errors.
         Teacher marks and original marker IDs remain strictly isolated from grading inputs.
         Matches the extracted script to its corresponding question prompt.
+        Supports both 'modular' (question-by-question mapping) and 'monolithic' (single-pass baseline) modes.
         """
         start_time = time.time()
 
@@ -643,6 +747,7 @@ class ScriptCheckingPipeline:
         os.makedirs(script_output_dir, exist_ok=True)
 
         print(f"\n[Evaluation] === Starting Rubric Evaluation for '{script_id}' ===")
+        print(f"[Evaluation] Mode: {eval_mode.upper()} ({'Question-by-Question Isolated Calls' if eval_mode == 'modular' else 'Monolithic Single-Pass'})")
         print(f"[Evaluation] Output directory: {script_output_dir}")
         print(f"[Evaluation] Rubric: {active_rubric_path}")
         if question_obj:
@@ -655,31 +760,59 @@ class ScriptCheckingPipeline:
         print(f"[Evaluation] Stage 4 Token Budget: max_new_tokens={stage4_max_tokens}")
         print(f"[Evaluation] Stage 4 Timeout: {stage4_timeout_sec:.0f}s")
 
+        # Check for verified human ground truth marks (strictly for evaluation metrics, isolated from grading)
+        gt_dict = extraction.metadata.get("ground_truth_marks")
+        if not gt_dict:
+            gt_dict = get_ground_truth_for_script(script_id)
+        is_verified_gt = extraction.metadata.get("verified_by_human", False) or (gt_dict is not None)
+
         # -------------------------------------------------------------
         # STAGE 4: Rubric Evaluation (Verified text + errors only)
         # -------------------------------------------------------------
-        print("\n[Evaluation] [4/4] Executing Stage 4: Rubric Evaluation & Pedagogical Feedback...")
-        thematic_context = None
-        if self.rag_provider:
-            lookup_topic = thematic_topic or rubric_data.get("subject", "bangla")
-            thematic_context = self.rag_provider.get_context(lookup_topic)
-
         if hasattr(self.engine, "clear_cuda_cache"):
             self.engine.clear_cuda_cache()
 
-        stage4_result = self.stage4.run(
-            verified_transcript=extraction.stage2_verification.verified_transcript,
-            stage3_errors=extraction.stage3_errors,
-            rubric_data=rubric_data,
-            thematic_context=thematic_context,
-            question_text=question_obj.question_text if question_obj else None,
-            question_id=question_obj.question_id if question_obj else None,
-            temperature=decoding.temperature,
-            top_p=decoding.top_p,
-            max_new_tokens=stage4_max_tokens,
-            thinking_mode=active_thinking,
-            generation_max_time=stage4_timeout_sec
-        )
+        if eval_mode == "modular":
+            print("\n[Evaluation] [4/4] Executing Stage 4: Modular Question-by-Question Evaluation...")
+            aligned_answers = []
+            if extraction.metadata.get("aligned_answers"):
+                aligned_answers = [AlignedAnswerItem.model_validate(a) for a in extraction.metadata["aligned_answers"]]
+            if not aligned_answers:
+                aligned_answers = segment_script_into_questions(extraction, question_obj)
+            print(f"[Evaluation] Loaded {len(aligned_answers)} distinct question answers.")
+
+            stage4_result = self.stage4.evaluate_modular(
+                answers=aligned_answers,
+                question_obj=question_obj,
+                rubric_data=rubric_data,
+                ground_truth_marks=gt_dict,
+                temperature=decoding.temperature,
+                top_p=decoding.top_p,
+                max_new_tokens=stage4_max_tokens,
+                thinking_mode=active_thinking,
+                generation_max_time=stage4_timeout_sec
+            )
+        else:
+            print("\n[Evaluation] [4/4] Executing Stage 4: Monolithic Rubric Evaluation & Pedagogical Feedback...")
+            thematic_context = None
+            if self.rag_provider:
+                lookup_topic = thematic_topic or rubric_data.get("subject", "bangla")
+                thematic_context = self.rag_provider.get_context(lookup_topic)
+
+            stage4_result = self.stage4.run(
+                verified_transcript=extraction.stage2_verification.verified_transcript,
+                stage3_errors=extraction.stage3_errors,
+                rubric_data=rubric_data,
+                thematic_context=thematic_context,
+                question_text=question_obj.question_text if question_obj else None,
+                question_id=question_obj.question_id if question_obj else None,
+                temperature=decoding.temperature,
+                top_p=decoding.top_p,
+                max_new_tokens=stage4_max_tokens,
+                thinking_mode=active_thinking,
+                generation_max_time=stage4_timeout_sec
+            )
+
         export_stage4_artifacts(stage4_result, script_output_dir)
         u4 = self.engine.get_last_usage()
         ctx4 = self.engine.format_last_usage()
@@ -690,13 +823,6 @@ class ScriptCheckingPipeline:
         # -------------------------------------------------------------
         elapsed = round(time.time() - start_time, 2)
         print(f"\n[Evaluation] Evaluation Complete for '{script_id}' in {elapsed}s | Final Marks: {stage4_result.final_score}/{stage4_result.total_max_marks} ({stage4_result.percentage:.1f}%) {ctx4}")
-
-        # Check for verified human ground truth marks
-        gt_dict = extraction.metadata.get("ground_truth_marks")
-        if not gt_dict:
-            gt_dict = get_ground_truth_for_script(script_id)
-
-        is_verified_gt = extraction.metadata.get("verified_by_human", False) or (gt_dict is not None)
 
         report = CompleteEvaluationReport(
             script_id=script_id,
@@ -715,6 +841,7 @@ class ScriptCheckingPipeline:
                 "extraction_elapsed": extraction.metadata.get("elapsed_seconds", 0),
                 "evaluation_elapsed": elapsed,
                 "total_pages": len(extraction.pages),
+                "eval_mode": eval_mode,
                 "thinking_mode": active_thinking,
                 "temperature": decoding.temperature,
                 "rubric_used": active_rubric_path,
@@ -724,7 +851,8 @@ class ScriptCheckingPipeline:
                 "extraction_token_usage": extraction.metadata.get("token_usage", {}),
                 "output_dir": script_output_dir,
                 "verified_by_human": is_verified_gt,
-                "ground_truth_marks": gt_dict
+                "ground_truth_marks": gt_dict,
+                "mae_vs_human": stage4_result.mae_vs_human
             }
         )
 
@@ -747,10 +875,12 @@ class ScriptCheckingPipeline:
         skip_stage2: bool = False,
         force_extract: bool = False,
         question_input: Optional[Union[str, ExtractedQuestion]] = None,
-        extract_teacher_marks: Optional[bool] = None
+        extract_teacher_marks: Optional[bool] = None,
+        eval_mode: str = "modular"
     ) -> CompleteEvaluationReport:
         """
         Execute full end-to-end pipeline (Extraction Stages 0, 0b, 1-3 -> Evaluation Stage 4).
+        Supports both 'modular' (question-by-question mapping) and 'monolithic' modes.
         """
         # Step 1: Extraction
         extraction = self.extract_script(
@@ -772,5 +902,6 @@ class ScriptCheckingPipeline:
             thematic_topic=thematic_topic,
             thinking_mode=thinking_mode,
             output_dir=output_dir,
-            question_input=question_input
+            question_input=question_input,
+            eval_mode=eval_mode
         )

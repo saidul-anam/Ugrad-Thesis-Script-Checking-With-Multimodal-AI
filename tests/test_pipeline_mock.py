@@ -58,7 +58,7 @@ def test_full_pipeline_mock_image():
     img = Image.new("RGB", (300, 300), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
     draw.text((10, 10), "Sample Bangla Exam Text", fill=(0, 0, 0))
-    draw.rectangle([200, 200, 240, 240], fill=(220, 20, 20))  # Red teacher mark area
+    draw.rectangle([5, 50, 45, 90], fill=(220, 20, 20))  # Left margin red teacher mark area
 
     with tempfile.TemporaryDirectory() as tmpdir:
         img_path = os.path.join(tmpdir, "sample_script.png")
@@ -272,7 +272,7 @@ def test_toggle_teacher_marks():
     img = Image.new("RGB", (300, 300), color=(255, 255, 255))
     draw = ImageDraw.Draw(img)
     draw.text((10, 10), "Sample Exam Script Text", fill=(0, 0, 0))
-    draw.rectangle([200, 200, 240, 240], fill=(220, 20, 20))  # Red ink
+    draw.rectangle([5, 50, 45, 90], fill=(220, 20, 20))  # Left margin red ink
 
     with tempfile.TemporaryDirectory() as tmpdir:
         img_path = os.path.join(tmpdir, "test_toggle.png")

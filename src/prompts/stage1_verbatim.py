@@ -1,4 +1,4 @@
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Any
 
 STAGE1_SYSTEM_PROMPT = (
     "You are a strict, precise transcriber for handwritten exam scripts. "
@@ -20,19 +20,40 @@ Rules:
 7. Do not add punctuation, capitalization, or spacing not present in the original.
 8. Do not translate — transcribe in the original script (Bangla or English).
 9. Do not summarize, paraphrase, or omit any part.
+10. Do not misinterpret normal cursive letterforms or minims:
+    - Handwritten 'm' has 3 downward legs/humps: transcribe as single 'm', NOT double 'mm' (e.g., 'Storm', NOT 'Stormm').
+    - Terminal horizontal/upward flourish on 'r' or 'w' is a pen exit stroke, NOT an added letter 'e' (e.g., 'over', NOT 'overe'; 'Dear', NOT 'Deare').
+    - Rounded cursive 'v' in common words ('have', 'over', 'never', 'remove') is the letter 'v', NOT 'r' ('have', NOT 'hare'; 'remove', NOT 'remore').
 
 Now transcribe the attached image."""
 
 
 def build_stage1_prompt(
     few_shot_examples: Optional[List[Dict[str, str]]] = None,
-    question_reference_vocab: Optional[List[str]] = None
+    question_reference_vocab: Optional[List[str]] = None,
+    question_syllabus: Optional[List[Dict[str, Any]]] = None
 ) -> str:
     """
     Construct Stage 1 verbatim prompt incorporating strict rules, optional few-shot examples,
-    and optional question reference vocabulary with anti-autocorrection guardrails.
+    question syllabus context for header digit disambiguation, and reference vocabulary.
     """
     prompt = STAGE1_BASE_PROMPT
+
+    if question_syllabus:
+        syllabus_lines = []
+        for sq in question_syllabus[:15]:
+            q_num = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
+            q_title = str(sq.get("name") or sq.get("title") or "").strip()
+            if q_num and q_title:
+                syllabus_lines.append(f"- Q{q_num}: {q_title}")
+        if syllabus_lines:
+            prompt += (
+                f"\n\n--- EXAM QUESTION SYLLABUS & HEADER DISAMBIGUATION ---\n"
+                f"The target exam consists of the following questions:\n"
+                + "\n".join(syllabus_lines)
+                + "\nCRITICAL DIRECTIVE ON QUESTION HEADERS: When transcribing question headers (e.g. 'Ans to the Question No - ...'), "
+                f"cross-reference ambiguous handwritten digits with the answer topic and syllabus (e.g., distinguishing a curved '09' for a story from '05' for a cloze test)."
+            )
 
     if question_reference_vocab:
         vocab_preview = ", ".join(f"'{w}'" for w in question_reference_vocab[:40])

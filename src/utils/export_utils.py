@@ -116,7 +116,6 @@ def export_extraction_summary_markdown(result: ExtractionResult, output_path: st
         f"  - Spelling: {result.stage3_errors.spelling_error_count}",
         f"  - Grammar: {result.stage3_errors.grammar_error_count}",
         f"  - Syntax: {result.stage3_errors.syntax_error_count}",
-        f"  - Punctuation: {result.stage3_errors.punctuation_error_count}",
         f"- **Teacher Marks Extracted (Stage 0b)**: {len(result.teacher_marks)} mark(s)",
         "",
         "---",
@@ -151,18 +150,72 @@ def export_extraction_summary_markdown(result: ExtractionResult, output_path: st
     md_lines.extend([
         "---",
         "",
-        "## Cataloged Linguistic & Structural Errors",
+        "## Cataloged Linguistic & Structural Errors (Question-Aligned)",
         f"> {result.stage3_errors.linguistic_summary}",
         ""
     ])
 
-    if result.stage3_errors.errors:
+    aligned_answers = result.metadata.get("aligned_answers", [])
+    if aligned_answers:
+        from src.prompts.stage4_modular import is_objective_question
+        for a in aligned_answers:
+            q_no = a.get("q_no", "")
+            q_name = a.get("q_name", f"Question {q_no}")
+            q_errors = a.get("errors", [])
+            is_obj = is_objective_question(q_no, q_name, "")
+
+            if is_obj:
+                md_lines.extend([
+                    f"### Question {q_no}: {q_name} `[Objective]`",
+                    "> *Objective Question: Student answer is evaluated on factual content against the answer key. Subjective linguistic deductions are bypassed.*",
+                    ""
+                ])
+            else:
+                md_lines.append(f"### Question {q_no}: {q_name} `[Subjective Writing]`")
+                if q_errors:
+                    md_lines.extend([
+                        "| Type | Erroneous Text | Suggested Correction | Context Sentence | Explanation |",
+                        "| --- | --- | --- | --- | --- |"
+                    ])
+                    for err in q_errors:
+                        etype = err.get("error_type", "grammar")
+                        etext = err.get("erroneous_text", "")
+                        ecorr = err.get("suggested_correction", "")
+                        ectx = err.get("context_sentence", "")
+                        eexpl = err.get("explanation", "")
+                        md_lines.append(f"| **{etype}** | `{etext}` | `{ecorr}` | *\"{ectx}\"* | {eexpl} |")
+                    md_lines.append("")
+                else:
+                    md_lines.extend([
+                        "> *No linguistic errors detected in this answer.*",
+                        ""
+                    ])
+    elif result.stage3_errors.errors:
+        error_page_map = {}
+        if result.pages:
+            for p in result.pages:
+                for e in (p.stage3_errors.errors if p.stage3_errors else []):
+                    error_page_map[(e.erroneous_text, e.context_sentence)] = p.page_no
+
         md_lines.extend([
-            "| Type | Erroneous Text | Suggested Correction | Explanation |",
-            "| --- | --- | --- | --- |"
+            "| Page | Type | Erroneous Text | Suggested Correction | Explanation |",
+            "| --- | --- | --- | --- | --- |"
         ])
         for err in result.stage3_errors.errors:
-            md_lines.append(f"| **{err.error_type}** | `{err.erroneous_text}` | `{err.suggested_correction}` | {err.explanation} |")
+            p_no = error_page_map.get((err.erroneous_text, err.context_sentence))
+            if p_no is None and result.pages:
+                needle = err.erroneous_text.lower().strip()
+                ctx = err.context_sentence.lower().strip()
+                for p in result.pages:
+                    p_text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").lower()
+                    if needle and needle in p_text:
+                        p_no = p.page_no
+                        break
+                    elif ctx and len(ctx) > 8 and ctx[:20] in p_text:
+                        p_no = p.page_no
+                        break
+            page_str = f"Page {p_no}" if p_no is not None else "Page 1"
+            md_lines.append(f"| `{page_str}` | **{err.error_type}** | `{err.erroneous_text}` | `{err.suggested_correction}` | {err.explanation} |")
         md_lines.append("")
 
     tok_usage = result.metadata.get("token_usage", {})
@@ -369,6 +422,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         "## Executive Summary",
         f"- **Subject**: {report.stage4_evaluation.subject}",
         f"- **Question Type**: {report.stage4_evaluation.question_type}",
+        f"- **Evaluation Architecture**: `{'Modular (Question-Mapped)' if getattr(report.stage4_evaluation, 'eval_mode', None) == 'modular' else 'Monolithic (Single-Pass)'}`",
         f"- **Matched Question**: `{report.question_id or 'General'}`",
         f"- **Final Score**: **{report.stage4_evaluation.final_score:.2f} / {report.stage4_evaluation.total_max_marks:.2f}** ({report.stage4_evaluation.percentage:.1f}%)",
         f"- **Raw Content Score**: {report.stage4_evaluation.content_raw_score:.2f}",
@@ -378,6 +432,9 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         f"- **Silent Autocorrections Reverted (Stage 2)**: {report.stage2_verification.total_corrections_count}",
         f"- **Linguistic Errors Found (Stage 3)**: {report.stage3_errors.total_error_count}"
     ]
+
+    if getattr(report.stage4_evaluation, "mae_vs_human", None) is not None:
+        md_lines.append(f"- **MAE vs. Examiner Ground Truth (`gt.txt`)**: **{report.stage4_evaluation.mae_vs_human:.2f} marks**")
 
     if report.question_text:
         md_lines.extend([
@@ -430,34 +487,73 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         "---",
         "",
         "## Stage 3: Linguistic & Structural Errors",
-        f"**Total Errors**: {report.stage3_errors.total_error_count} (Spelling: {report.stage3_errors.spelling_error_count}, Grammar: {report.stage3_errors.grammar_error_count}, Syntax: {report.stage3_errors.syntax_error_count}, Punctuation: {report.stage3_errors.punctuation_error_count})",
+        f"**Total Errors**: {report.stage3_errors.total_error_count} (Spelling: {report.stage3_errors.spelling_error_count}, Grammar: {report.stage3_errors.grammar_error_count}, Syntax: {report.stage3_errors.syntax_error_count})",
         "",
         f"> {report.stage3_errors.linguistic_summary}",
         ""
     ])
 
     if report.stage3_errors.errors:
+        error_page_map = {}
+        pages_list = getattr(report, "pages", None)
+        if pages_list:
+            for p in pages_list:
+                for e in (p.stage3_errors.errors if p.stage3_errors else []):
+                    error_page_map[(e.erroneous_text, e.context_sentence)] = p.page_no
+
         md_lines.extend([
-            "| Type | Written Text | Correct Form | Explanation |",
-            "| --- | --- | --- | --- |"
+            "| Page | Type | Written Text | Correct Form | Explanation |",
+            "| --- | --- | --- | --- | --- |"
         ])
         for err in report.stage3_errors.errors:
-            md_lines.append(f"| **{err.error_type}** | `{err.erroneous_text}` | `{err.suggested_correction}` | {err.explanation} |")
+            p_no = error_page_map.get((err.erroneous_text, err.context_sentence))
+            if p_no is None and pages_list:
+                needle = err.erroneous_text.lower().strip()
+                ctx = err.context_sentence.lower().strip()
+                for p in pages_list:
+                    p_text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").lower()
+                    if needle and needle in p_text:
+                        p_no = p.page_no
+                        break
+                    elif ctx and len(ctx) > 8 and ctx[:20] in p_text:
+                        p_no = p.page_no
+                        break
+            page_str = f"Page {p_no}" if p_no is not None else "Page 1"
+            md_lines.append(f"| `{page_str}` | **{err.error_type}** | `{err.erroneous_text}` | `{err.suggested_correction}` | {err.explanation} |")
+        md_lines.append("")
+
+    md_lines.append("---")
+    md_lines.append("")
+
+    # Stage 4 Rubric Evaluation Table: Modular vs Monolithic
+    if getattr(report.stage4_evaluation, "question_evaluations", None):
+        md_lines.extend([
+            "## Stage 4: Question-by-Question Rubric Marks Breakdown",
+            "| Question | Topic / Part | Pages | Max | Content Raw | Ling. Ded. | Awarded | Human GT | Δ (AI - Human) | Feedback |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"
+        ])
+        for qe in report.stage4_evaluation.question_evaluations:
+            pages_str = ", ".join(str(p) for p in qe.page_numbers) if qe.page_numbers else "1"
+            gt_str = f"{qe.human_gt:.1f}" if qe.human_gt is not None else "N/A"
+            delta_str = f"{qe.delta:+.1f}" if qe.delta is not None else "N/A"
+            md_lines.append(
+                f"| **Q{qe.q_no}** | {qe.q_name} | {pages_str} | {qe.max_marks:.1f} | {qe.content_raw_score:.1f} | -{qe.linguistic_deductions:.1f} | **{qe.awarded_marks:.1f}** | {gt_str} | {delta_str} | {qe.feedback} |"
+            )
+        md_lines.extend([
+            f"| **TOTAL** | **All Segmented Questions** | - | **{report.stage4_evaluation.total_max_marks:.1f}** | **{report.stage4_evaluation.content_raw_score:.1f}** | **-{report.stage4_evaluation.linguistic_penalty:.1f}** | **{report.stage4_evaluation.final_score:.1f}** | - | - | - |",
+            ""
+        ])
+    else:
+        md_lines.extend([
+            "## Stage 4: Rubric Marks Breakdown",
+            "| Criterion | Max Marks | Awarded | Justification |",
+            "| --- | --- | --- | --- |"
+        ])
+        for c in report.stage4_evaluation.criteria_scores:
+            md_lines.append(f"| **{c.criterion_name}** | {c.max_marks:.2f} | **{c.awarded_marks:.2f}** | {c.justification} |")
         md_lines.append("")
 
     md_lines.extend([
-        "---",
-        "",
-        "## Stage 4: Rubric Marks Breakdown",
-        "| Criterion | Max Marks | Awarded | Justification |",
-        "| --- | --- | --- | --- |"
-    ])
-
-    for c in report.stage4_evaluation.criteria_scores:
-        md_lines.append(f"| **{c.criterion_name}** | {c.max_marks:.2f} | **{c.awarded_marks:.2f}** | {c.justification} |")
-
-    md_lines.extend([
-        "",
         "### Teacher Feedback & Recommendations",
         f"> {report.stage4_evaluation.overall_feedback}",
         "",
@@ -481,44 +577,69 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         within_one_mark = 0
         total_abs_diff = 0.0
 
-        for c in report.stage4_evaluation.criteria_scores:
-            matched_q = None
-            human_val = None
+        if getattr(report.stage4_evaluation, "question_evaluations", None):
+            for qe in report.stage4_evaluation.question_evaluations:
+                if qe.human_gt is not None:
+                    ai_val = float(qe.awarded_marks)
+                    human_val = float(qe.human_gt)
+                    diff = ai_val - human_val
+                    abs_diff = abs(diff)
+                    total_abs_diff += abs_diff
+                    matched_count += 1
+                    total_ai += ai_val
+                    total_human += human_val
 
-            cands = extract_candidate_questions(c.criterion_name)
-            if cands and cands[0] in gt_dict:
-                matched_q = cands[0]
-                human_val = gt_dict[matched_q]
-            else:
-                c_id_norm = canonicalize_question_key(c.criterion_id.replace("q", "").replace("_", ""))
-                for k, v in gt_dict.items():
-                    k_norm = canonicalize_question_key(k)
-                    if c_id_norm == k_norm or k.lower() in c.criterion_name.lower():
-                        matched_q = k
-                        human_val = v
-                        break
+                    if abs_diff < 0.01:
+                        exact_matches += 1
+                        status = "✅ Exact Match"
+                    elif abs_diff <= 1.0:
+                        within_one_mark += 1
+                        status = f"🟡 Close (Δ {diff:+.1f})"
+                    else:
+                        status = f"⚠️ Delta {diff:+.1f}"
 
-            if matched_q and human_val is not None:
-                ai_val = float(c.awarded_marks)
-                diff = ai_val - human_val
-                abs_diff = abs(diff)
-                total_abs_diff += abs_diff
-                matched_count += 1
-                total_ai += ai_val
-                total_human += human_val
+                    alignment_rows.append(
+                        f"| Q{qe.q_no} | {qe.q_name} | {qe.max_marks:.1f} | **{ai_val:.1f}** | **{human_val:.1f}** | {diff:+.1f} | {status} |"
+                    )
+        else:
+            for c in report.stage4_evaluation.criteria_scores:
+                matched_q = None
+                human_val = None
 
-                if abs_diff < 0.01:
-                    exact_matches += 1
-                    status = "✅ Exact Match"
-                elif abs_diff <= 1.0:
-                    within_one_mark += 1
-                    status = f"🟡 Close (Δ {diff:+.1f})"
+                cands = extract_candidate_questions(c.criterion_name)
+                if cands and cands[0] in gt_dict:
+                    matched_q = cands[0]
+                    human_val = gt_dict[matched_q]
                 else:
-                    status = f"⚠️ Delta {diff:+.1f}"
+                    c_id_norm = canonicalize_question_key(c.criterion_id.replace("q", "").replace("_", ""))
+                    for k, v in gt_dict.items():
+                        k_norm = canonicalize_question_key(k)
+                        if c_id_norm == k_norm or k.lower() in c.criterion_name.lower():
+                            matched_q = k
+                            human_val = v
+                            break
 
-                alignment_rows.append(
-                    f"| Q{matched_q} | {c.criterion_name} | {c.max_marks:.1f} | **{ai_val:.1f}** | **{human_val:.1f}** | {diff:+.1f} | {status} |"
-                )
+                if matched_q and human_val is not None:
+                    ai_val = float(c.awarded_marks)
+                    diff = ai_val - human_val
+                    abs_diff = abs(diff)
+                    total_abs_diff += abs_diff
+                    matched_count += 1
+                    total_ai += ai_val
+                    total_human += human_val
+
+                    if abs_diff < 0.01:
+                        exact_matches += 1
+                        status = "✅ Exact Match"
+                    elif abs_diff <= 1.0:
+                        within_one_mark += 1
+                        status = f"🟡 Close (Δ {diff:+.1f})"
+                    else:
+                        status = f"⚠️ Delta {diff:+.1f}"
+
+                    alignment_rows.append(
+                        f"| Q{matched_q} | {c.criterion_name} | {c.max_marks:.1f} | **{ai_val:.1f}** | **{human_val:.1f}** | {diff:+.1f} | {status} |"
+                    )
 
         if alignment_rows:
             overall_diff = report.stage4_evaluation.final_score - sum(gt_dict.values())

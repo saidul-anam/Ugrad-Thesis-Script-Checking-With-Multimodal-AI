@@ -166,9 +166,17 @@ def interactive_wizard(args, available_scripts: List[Path]):
     args.mock = (engine_choice == "2")
     args.api = (engine_choice == "3")
 
-    # 5. Skip already evaluated
+    # 5. Evaluation Mode
+    console.print("\n[bold green]5. Stage 4 Evaluation Architecture:[/bold green]")
+    console.print("   [[bold cyan]1[/bold cyan]] [bold white]Modular[/bold white] (Question-by-Question Mapping, isolated prompts, highest accuracy)")
+    console.print("   [[bold cyan]2[/bold cyan]] [bold white]Monolithic[/bold white] (Single-Pass whole script baseline for thesis ablation)")
+    mode_def = "1" if getattr(args, "eval_mode", "modular") == "modular" else "2"
+    eval_mode_choice = Prompt.ask("[bold green]   Select Mode[/bold green]", choices=["1", "2"], default=mode_def)
+    args.eval_mode = "modular" if eval_mode_choice == "1" else "monolithic"
+
+    # 6. Skip already evaluated
     args.skip_evaluated = Confirm.ask(
-        "\n[bold green]5. Skip scripts that already have completed evaluation reports?[/bold green]",
+        "\n[bold green]6. Skip scripts that already have completed evaluation reports?[/bold green]",
         default=args.skip_evaluated
     )
 
@@ -185,6 +193,7 @@ def interactive_wizard(args, available_scripts: List[Path]):
     console.print(Panel(
         f"• [cyan]Language / Subject (--lang):[/cyan] [bold yellow]{args.lang.capitalize()}[/bold yellow]\n"
         f"• [cyan]Evaluation Target:[/cyan] [bold white]{target_label}[/bold white]\n"
+        f"• [cyan]Eval Architecture (--eval-mode):[/cyan] [bold yellow]{args.eval_mode.upper()}[/bold yellow]\n"
         f"• [cyan]Extraction Source Directory:[/cyan] [bold white]{args.extraction_dir}[/bold white]\n"
         f"• [cyan]Evaluation Output Directory:[/cyan] [bold white]{args.output_dir or f'outputs/evaluated/{args.lang}'}[/bold white]\n"
         f"• [cyan]Rubric (--rubric):[/cyan] [bold white]{args.rubric}[/bold white]\n"
@@ -304,6 +313,14 @@ def main():
         type=str,
         default="http://localhost:1234/v1",
         help="URL of OpenAI-compatible API endpoint (default: http://localhost:1234/v1)"
+    )
+    parser.add_argument(
+        "--eval-mode",
+        dest="eval_mode",
+        type=str,
+        choices=["modular", "monolithic"],
+        default="modular",
+        help="Stage 4 evaluation architecture: 'modular' (Question-by-Question mapping, default) or 'monolithic' (Single-pass whole script baseline)"
     )
     parser.add_argument(
         "--skip-evaluated",
@@ -462,7 +479,8 @@ def main():
                 thinking_mode=cfg.decoding.thinking_mode,
                 output_dir=script_eval_dir,
                 question_input=args.question,
-                questions_root=args.questions_dir
+                questions_root=args.questions_dir,
+                eval_mode=getattr(args, "eval_mode", "modular")
             )
 
             summary_records.append({
@@ -472,6 +490,7 @@ def main():
                 "penalty": f"-{report.stage4_evaluation.linguistic_penalty:.2f}",
                 "final_score": f"{report.stage4_evaluation.final_score:.2f} / {report.stage4_evaluation.total_max_marks:.2f}",
                 "pct": f"{report.stage4_evaluation.percentage:.1f}%",
+                "mae": f"{report.stage4_evaluation.mae_vs_human:.2f}" if getattr(report.stage4_evaluation, "mae_vs_human", None) is not None else "N/A",
                 "feedback": report.stage4_evaluation.overall_feedback[:60] + "..." if len(report.stage4_evaluation.overall_feedback) > 60 else report.stage4_evaluation.overall_feedback,
                 "status": "Success"
             })
@@ -485,6 +504,7 @@ def main():
                 "penalty": "N/A",
                 "final_score": "N/A",
                 "pct": "0%",
+                "mae": "N/A",
                 "feedback": f"Error: {e}",
                 "status": f"Error: {e}"
             })
@@ -498,6 +518,7 @@ def main():
         table.add_column("Penalty", style="red")
         table.add_column("Final Score", style="bold green")
         table.add_column("Percentage", style="bold yellow")
+        table.add_column("MAE vs GT", style="green")
         table.add_column("Teacher Feedback", style="white")
         table.add_column("Status", style="magenta")
 
@@ -509,6 +530,7 @@ def main():
                 r["penalty"],
                 r["final_score"],
                 r["pct"],
+                r["mae"],
                 r["feedback"],
                 r["status"]
             )

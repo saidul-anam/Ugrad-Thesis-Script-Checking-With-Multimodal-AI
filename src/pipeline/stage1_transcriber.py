@@ -1,5 +1,5 @@
 import re
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Any
 from PIL import Image
 from src.engine.base_engine import BaseVLMEngine
 from src.core.schemas import Stage1TranscriptionResult
@@ -17,6 +17,7 @@ class Stage1Transcriber:
         image: Image.Image,
         few_shot_examples: Optional[List[Dict[str, str]]] = None,
         question_reference_vocab: Optional[List[str]] = None,
+        question_syllabus: Optional[List[Dict[str, Any]]] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
@@ -24,7 +25,8 @@ class Stage1Transcriber:
     ) -> Stage1TranscriptionResult:
         prompt = build_stage1_prompt(
             few_shot_examples=few_shot_examples,
-            question_reference_vocab=question_reference_vocab
+            question_reference_vocab=question_reference_vocab,
+            question_syllabus=question_syllabus
         )
         
         raw_text = self.engine.generate_multimodal(

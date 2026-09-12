@@ -105,6 +105,125 @@ def find_question_artifact(
     return None
 
 
+def parse_sub_questions_from_text(question_text: str, lang: str = "english") -> List[Dict[str, Any]]:
+    """
+    Parse individual sub-questions and criteria from raw question text or rubric definitions.
+    Enriches with canonical question IDs (e.g. '1(A)', '1(B)', '2', ..., '11'), topics, and marks.
+    """
+    import yaml
+
+    # 1. Try aligning with official rubric YAML if available
+    lang_lower = (lang or "english").lower()
+    rubric_file = "configs/rubrics/english_writing.yaml" if "english" in lang_lower else "configs/rubrics/bangla_creative_question.yaml"
+    rubric_path = Path(rubric_file)
+
+    rubric_sub_qs: List[Dict[str, Any]] = []
+    if rubric_path.exists():
+        try:
+            with open(rubric_path, "r", encoding="utf-8") as rf:
+                rdata = yaml.safe_load(rf)
+            for c in rdata.get("criteria", []):
+                cid = c.get("id", "")
+                cname = c.get("name", "")
+                m = re.search(r'Q\s*([0-9]{1,2}(?:\([A-Za-z0-9\u0980-\u09FF]\))?)', cname, re.IGNORECASE)
+                q_no = m.group(1) if m else cid
+                rubric_sub_qs.append({
+                    "q_no": q_no,
+                    "name": cname,
+                    "title": cname,
+                    "marks": float(c.get("max_marks", 10.0)),
+                    "max_marks": float(c.get("max_marks", 10.0)),
+                    "text": c.get("description", "")
+                })
+        except Exception:
+            pass
+
+    if rubric_sub_qs:
+        return rubric_sub_qs
+
+    # 2. Fallback: Parse question text using numbered patterns
+    parsed: List[Dict[str, Any]] = []
+    lines = question_text.split("\n")
+    cur_q: Optional[str] = None
+    cur_title: str = ""
+    cur_lines: List[str] = []
+
+    pattern = re.compile(r'^(?:Part-[A-Z]\s*:.*|(?:([0-9]{1,2})\.\s*|([A-B])\.\s*)(.*))', re.IGNORECASE)
+    for line in lines:
+        m = pattern.match(line.strip())
+        if m and (m.group(1) or m.group(2)):
+            if cur_q:
+                parsed.append({
+                    "q_no": cur_q,
+                    "name": cur_title or f"Question {cur_q}",
+                    "title": cur_title or f"Question {cur_q}",
+                    "text": "\n".join(cur_lines).strip()
+                })
+            cur_q = m.group(1) or m.group(2)
+            cur_title = (m.group(3) or "").strip()
+            cur_lines = [cur_title]
+        elif cur_q:
+            cur_lines.append(line)
+
+    if cur_q:
+        parsed.append({
+            "q_no": cur_q,
+            "name": cur_title or f"Question {cur_q}",
+            "title": cur_title or f"Question {cur_q}",
+            "text": "\n".join(cur_lines).strip()
+        })
+
+    return parsed
+
+
+def load_question_from_rubric(
+    lang: str = "english",
+    rubric_path: Optional[str] = None
+) -> Optional[ExtractedQuestion]:
+    """
+    Construct an ExtractedQuestion artifact from rubric YAML configurations
+    when pre-extracted question JSON artifacts are not found on disk.
+    """
+    import yaml
+
+    if not rubric_path:
+        lang_lower = (lang or "english").lower()
+        if "bangla" in lang_lower:
+            rubric_path = "configs/rubrics/bangla_creative_question.yaml"
+            default_qid = "SB_11_Q1"
+        else:
+            rubric_path = "configs/rubrics/english_writing.yaml"
+            default_qid = "SE_11_Q1"
+    else:
+        default_qid = Path(rubric_path).stem
+
+    p = Path(rubric_path)
+    if not p.exists():
+        return None
+
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+
+        sub_qs = parse_sub_questions_from_text("", lang=lang)
+        q_text = "\n".join(f"{sq['title']}: {sq['text']}" for sq in sub_qs)
+
+        q_obj = ExtractedQuestion(
+            question_id=default_qid,
+            language=data.get("subject", lang).lower(),
+            title=data.get("question_type", f"{lang.capitalize()} Exam"),
+            question_text=q_text,
+            total_marks=float(data.get("total_marks", 100.0)),
+            sub_questions=sub_qs,
+            source_file=str(p),
+            extracted_at=datetime.now().isoformat()
+        )
+        return q_obj
+    except Exception as e:
+        print(f"[QuestionUtils] Warning: Failed creating ExtractedQuestion from rubric {p}: {e}")
+        return None
+
+
 def load_question_for_script(
     script_id_or_path: str,
     lang: str = "english",
@@ -113,6 +232,7 @@ def load_question_for_script(
 ) -> Optional[ExtractedQuestion]:
     """
     Loads the ExtractedQuestion corresponding to a script ID or question override.
+    Falls back to rubric-defined question context if pre-extracted JSON is absent.
     
     Args:
         script_id_or_path: e.g. "SE_11_Q1_0001" or path to script
@@ -139,10 +259,27 @@ def load_question_for_script(
         try:
             with open(target_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            return ExtractedQuestion.model_validate(data)
+            q_obj = ExtractedQuestion.model_validate(data)
+            if not q_obj.sub_questions:
+                q_obj.sub_questions = parse_sub_questions_from_text(q_obj.question_text, lang=q_obj.language)
+                try:
+                    save_extracted_question(q_obj, output_dir=questions_root)
+                except Exception:
+                    pass
+            return q_obj
         except Exception as e:
             print(f"[QuestionUtils] Warning: Failed parsing question artifact {target_path}: {e}")
-            return None
+
+    # Fallback to rubric-defined question context
+    rubric_q = load_question_from_rubric(lang=lang)
+    if rubric_q:
+        if target_q_id:
+            rubric_q.question_id = target_q_id
+        try:
+            save_extracted_question(rubric_q, output_dir=questions_root)
+        except Exception:
+            pass
+        return rubric_q
 
     return None
 

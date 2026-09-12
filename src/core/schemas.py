@@ -10,6 +10,7 @@ class TeacherMarkItem(BaseModel):
     question_no: Optional[str] = Field(None, description="The question number this mark belongs to, if identifiable, otherwise null.")
     mark_value: str = Field(..., description="Exact value as written, e.g. '7/10', '4', 'VII'.")
     location: str = Field("", description="Brief description, e.g. 'margin next to answer 3'.")
+    y_position: Optional[str] = Field(None, description="Vertical position on page: 'top', 'mid', 'bottom'.")
 
 
 # ---------------------------------------------------------------------------
@@ -50,11 +51,12 @@ class Stage2VerificationResult(BaseModel):
 # ---------------------------------------------------------------------------
 class LinguisticErrorItem(BaseModel):
     """A linguistic or structural error extracted from the verified transcript."""
-    error_type: str = Field(..., description="spelling, grammar, syntax, punctuation, or word_choice")
+    error_type: str = Field(..., description="spelling, grammar, or syntax")
     erroneous_text: str = Field(..., description="Exact word or phrase containing the error.")
     suggested_correction: str = Field(..., description="Standard or grammatically correct form.")
     context_sentence: str = Field(..., description="Full sentence where error occurred.")
     explanation: str = Field(..., description="Linguistic explanation of the rule violated.")
+    question_no: Optional[str] = Field(None, description="Exam question number where error occurred.")
 
 
 class Stage3ErrorResult(BaseModel):
@@ -63,7 +65,7 @@ class Stage3ErrorResult(BaseModel):
     spelling_error_count: int = Field(0)
     grammar_error_count: int = Field(0)
     syntax_error_count: int = Field(0)
-    punctuation_error_count: int = Field(0)
+    punctuation_error_count: Optional[int] = Field(0)
     total_error_count: int = Field(0)
     linguistic_summary: str = Field("", description="Summary analysis of student's language proficiency.")
 
@@ -151,18 +153,61 @@ class ExtractedQuestion(BaseModel):
     extracted_at: Optional[str] = Field(None, description="ISO timestamp of extraction")
 
 
+class AlignedAnswerItem(BaseModel):
+    """An individual answer segment matched to a specific question on the paper."""
+    q_no: str = Field(..., description="Canonical question identifier (e.g. '1(A)', '2', '7')")
+    q_name: Optional[str] = Field(None, description="Name or topic of question (e.g. 'Paragraph on Artificial Intelligence')")
+    answer_text: str = Field(..., description="Student handwritten answer text for this question")
+    page_numbers: List[int] = Field(default_factory=list, description="Script page numbers where this answer appears")
+    errors: List[Dict[str, Any]] = Field(default_factory=list, description="Linguistic errors located within this answer")
+    word_count: int = 0
+    character_count: int = 0
+
+
+class QuestionEvaluationItem(BaseModel):
+    """Grading breakdown and feedback for an individual question answer."""
+    q_no: str = Field(..., description="Question number, e.g. '1(A)', '2', '7'")
+    q_name: Optional[str] = Field(None, description="Question topic / title")
+    page_numbers: List[int] = Field(default_factory=list, description="Page numbers where this answer is located")
+    max_marks: float = Field(..., description="Maximum marks for this question")
+    awarded_marks: float = Field(..., description="Predicted marks awarded by AI")
+    human_ground_truth: Optional[float] = Field(None, description="Verified human examiner mark (from gt.txt)")
+    delta: Optional[float] = Field(None, description="Absolute difference |awarded - human|")
+    criteria_scores: List[CriterionScore] = Field(default_factory=list)
+    content_raw_score: float = 0.0
+    linguistic_penalty: float = 0.0
+    examiner_feedback: str = ""
+    strengths: List[str] = Field(default_factory=list)
+    weaknesses: List[str] = Field(default_factory=list)
+
+    @property
+    def human_gt(self) -> Optional[float]:
+        return self.human_ground_truth
+
+    @property
+    def feedback(self) -> str:
+        return self.examiner_feedback
+
+    @property
+    def linguistic_deductions(self) -> float:
+        return self.linguistic_penalty
+
+
 class Stage4EvaluationResult(BaseModel):
     """Output of Stage 4: Rubric-based marks, deductions, and pedagogical feedback."""
     subject: str = Field(...)
     question_type: str = Field(...)
     question_id: Optional[str] = Field(None, description="Matched question identifier, e.g. 'SE_11_Q1' or 'SB_11_Q1'")
     question_text: Optional[str] = Field(None, description="Prompt text of the matched question")
+    eval_mode: str = Field("modular", description="'modular' (per-question) or 'monolithic' (single-pass)")
     criteria_scores: List[CriterionScore] = Field(default_factory=list)
+    question_evaluations: List[QuestionEvaluationItem] = Field(default_factory=list, description="Per-question evaluation breakdown")
     content_raw_score: float = Field(..., description="Sum of criterion marks before penalties.")
     linguistic_penalty: float = Field(0.0, description="Deductions based on Stage 3 errors.")
     final_score: float = Field(..., description="Final marks awarded (content_raw_score - penalty).")
     total_max_marks: float = Field(10.0, description="Maximum total marks.")
     percentage: float = Field(0.0, description="Final score percentage.")
+    mae_vs_human: Optional[float] = Field(None, description="Mean Absolute Error compared to human ground truth marks")
     overall_feedback: str = Field(..., description="Constructive teacher-level feedback.")
     actionable_recommendations: List[str] = Field(default_factory=list)
 

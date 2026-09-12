@@ -133,21 +133,28 @@ python3 scripts/extract_scripts.py --lang bangla --top 3 --mock -y
 Grades the pre-extracted transcripts against official rubrics, matching the student's answer to the exact extracted question paper (e.g. script `SE_11_Q1_0001` matches question `SE_11_Q1`). Teacher marks remain strictly isolated from grading inputs to prevent evaluation bias.
 
 ```bash
-# Auto-matches script SE_11_Q1_0001 to question SE_11_Q1 (~12-15 seconds)
-python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0001 --lang english --api -y
+# 1. Modular Evaluation (Default & Recommended - Question-by-Question Mapping):
+# Segments transcripts by question, grades each in focused LLM calls, and outputs question-level MAE vs gt.txt
+python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0010 --lang english --api --eval-mode modular -y
 
-# Batch evaluate the top N extracted scripts (each script auto-matches its question)
-python3 scripts/evaluate_scripts.py --top 5 --lang english --api -y
+# 2. Monolithic Single-Pass Evaluation (Thesis Ablation Baseline):
+# Passes the entire multi-page transcript in a single pass
+python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0010 --lang english --api --eval-mode monolithic -y
+
+# Batch evaluate the top N extracted scripts in modular mode
+python3 scripts/evaluate_scripts.py --top 5 --lang english --api --eval-mode modular -y
 
 # Explicitly specify a question ID or question JSON override
 python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0001 --question SE_11_Q1 --lang english --api -y
 
-# Evaluate using a custom rubric file
-python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0001 --rubric configs/rubrics/english_writing.yaml --api -y
-
 # Force re-evaluation and generate AI vs. Human Ground Truth Alignment Table
 python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0010 --lang english --api --force-evaluate -y
 ```
+
+> [!TIP]
+> **Modular vs. Monolithic Evaluation**:
+> - **Modular (`--eval-mode modular`)**: Higher accuracy, zero generation truncation, isolated token headroom (<500 tokens per sub-question), and produces question-by-question marks & feedback directly comparable to examiner marks in `gt.txt`.
+> - **Monolithic (`--eval-mode monolithic`)**: Evaluates all questions in a single prompt. Kept for research ablation studies in the undergraduate thesis.
 
 ---
 

@@ -312,6 +312,14 @@ def main():
         help="Do not download from Google Drive; use existing local PDFs only (default: True, GDrive is not checked)"
     )
     parser.add_argument(
+        "--eval-mode",
+        dest="eval_mode",
+        type=str,
+        choices=["modular", "monolithic"],
+        default="modular",
+        help="Stage 4 evaluation architecture: 'modular' (Question-by-Question mapping, default) or 'monolithic' (Single-pass whole script baseline)"
+    )
+    parser.add_argument(
         "--skip-evaluated",
         action="store_true",
         default=True,
@@ -493,7 +501,8 @@ def main():
                 thinking_mode=cfg.decoding.thinking_mode,
                 skip_stage2=args.fast,
                 force_extract=not args.skip_evaluated,
-                extract_teacher_marks=extract_marks
+                extract_teacher_marks=extract_marks,
+                eval_mode=getattr(args, "eval_mode", "modular")
             )
 
             summary_records.append({

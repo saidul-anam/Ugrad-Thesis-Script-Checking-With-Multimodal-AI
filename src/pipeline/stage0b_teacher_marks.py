@@ -38,7 +38,7 @@ def extract_marks(model_output: str) -> Optional[List[Dict[str, Any]]]:
         for m in marks:
             if not isinstance(m, dict):
                 return None
-            if not set(m.keys()).issubset({"question_no", "mark_value", "location"}):
+            if not set(m.keys()).issubset({"question_no", "mark_value", "location", "y_position"}):
                 return None
             if "mark_value" not in m:
                 return None
@@ -175,11 +175,27 @@ class Stage0bTeacherMarkExtractor:
                 except ValueError:
                     pass
 
+            raw_y = str(m.get("y_position", "")).strip().lower() if m.get("y_position") else None
+            if raw_y and raw_y not in {"top", "mid", "bottom"}:
+                raw_y = "top" if "top" in raw_y or "upper" in raw_y else ("bottom" if "bottom" in raw_y or "lower" in raw_y else "mid")
+
+            unrecognized_q = {"unknown", "null", "none", "not specified", "t specified", "unspecified", "n/a", "undefined", ""}
+            if canon_q and canon_q.lower() in unrecognized_q:
+                canon_q = None
+
             items.append(TeacherMarkItem(
                 question_no=canon_q,
                 mark_value=clean_val,
-                location=str(m.get("location", "left margin"))
+                location=str(m.get("location", "left margin")),
+                y_position=raw_y
             ))
+
+        # Align orphan marks using spatial vertical ordering
+        items = align_orphan_marks(
+            marks=items,
+            candidate_questions=candidate_questions,
+            valid_paper_questions=valid_paper_questions
+        )
 
         return Stage0bResult(
             teacher_marks=items,
@@ -188,4 +204,75 @@ class Stage0bTeacherMarkExtractor:
             needs_manual_review=False,
             total_marks_found=len(items)
         )
+
+
+def align_orphan_marks(
+    marks: List[TeacherMarkItem],
+    candidate_questions: Optional[List[str]] = None,
+    valid_paper_questions: Optional[List[str]] = None
+) -> List[TeacherMarkItem]:
+    """
+    Align orphan teacher marks (missing or unknown question_no) using spatial vertical ordering.
+    
+    Resolves cases where the examiner wrote a score in the left margin without explicitly
+    writing the question label (e.g. wrote '10' next to Question 8).
+    """
+    if not marks or not candidate_questions:
+        return marks
+
+    unrecognized = {"unknown", "null", "none", "not specified", "t specified", "unspecified", "n/a", "undefined", ""}
+
+    # 1. Identify which candidate questions already have an assigned mark
+    assigned_cands = set()
+    for m in marks:
+        if m.question_no and m.question_no.lower() not in unrecognized:
+            if m.question_no in candidate_questions:
+                assigned_cands.add(m.question_no)
+
+    # 2. Determine remaining unassigned candidate questions in their natural vertical order
+    unassigned_cands = [q for q in candidate_questions if q not in assigned_cands]
+    if not unassigned_cands:
+        return marks
+
+    # 3. Partition marks into assigned and orphan marks
+    assigned_marks: List[TeacherMarkItem] = []
+    orphan_marks: List[TeacherMarkItem] = []
+    for m in marks:
+        is_orphan = (not m.question_no) or (m.question_no.lower() in unrecognized)
+        if not is_orphan and valid_paper_questions and m.question_no not in valid_paper_questions:
+            is_orphan = True
+
+        if is_orphan:
+            orphan_marks.append(m)
+        else:
+            assigned_marks.append(m)
+
+    if not orphan_marks:
+        return marks
+
+    # 4. Sort orphan marks vertically
+    def y_rank(item: TeacherMarkItem) -> int:
+        pos = (item.y_position or "").lower()
+        loc = (item.location or "").lower()
+        if "top" in pos or "top" in loc or "upper" in loc:
+            return 0
+        if "bottom" in pos or "bottom" in loc or "lower" in loc:
+            return 2
+        return 1  # mid
+
+    orphan_marks.sort(key=y_rank)
+
+    # 5. Align orphan marks to unassigned candidates
+    aligned_orphans: List[TeacherMarkItem] = []
+    for idx, orphan in enumerate(orphan_marks):
+        if idx < len(unassigned_cands):
+            matched_q = unassigned_cands[idx]
+            orphan.question_no = matched_q
+            if not orphan.location:
+                orphan.location = f"left margin (spatially aligned to {matched_q})"
+            else:
+                orphan.location += f" (aligned to {matched_q})"
+        aligned_orphans.append(orphan)
+
+    return assigned_marks + aligned_orphans
 

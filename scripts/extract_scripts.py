@@ -366,8 +366,18 @@ def main():
     if not args.non_interactive and not has_explicit_args and sys.stdin.isatty():
         args = interactive_wizard(args)
 
+    # Load pipeline configuration
+    cfg = load_config(args.config)
+    if args.model:
+        cfg.model.model_id = args.model
+    if args.quant:
+        cfg.model.quantization = args.quant
+    if args.thinking:
+        cfg.decoding.thinking_mode = True
+    cfg.pipeline.output_dir = args.output_dir
+
     if not args.quant:
-        args.quant = "4bit"
+        args.quant = cfg.model.quantization or "4bit"
 
     if args.mock:
         exec_mode_label = "Mock (Dev PC)"
@@ -451,15 +461,6 @@ def main():
         return
 
     # 2. Setup Pipeline Config & Engine
-    cfg = load_config(args.config)
-    if args.model:
-        cfg.model.model_id = args.model
-    if args.quant:
-        cfg.model.quantization = args.quant
-    if args.thinking:
-        cfg.decoding.thinking_mode = True
-    cfg.pipeline.output_dir = args.output_dir
-
     console.print("\n[bold]Step 2: Initializing Inference Engine & Pipeline...[/bold]")
     engine = create_engine(
         cfg,

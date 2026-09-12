@@ -22,7 +22,8 @@ Output as a JSON array, one object per mark found:
   {
     "question_no": "the question number this mark belongs to (e.g. '1(A)', '1(B)', '2', '3', '4', '5', '6', '8', '9', '10')",
     "mark_value": "exact numeric value as written, e.g. '5', '7', '10', '3', '1'",
-    "location": "left margin next to question X"
+    "location": "left margin next to question X",
+    "y_position": "vertical position on page: 'top', 'mid', or 'bottom'"
   }
 ]
 
@@ -78,9 +79,10 @@ The student has answered the following question(s) on this page: [{q_list_str}].
 Output as a JSON array, one object per mark found:
 [
   {{
-    "question_no": "one of [{q_list_str}]",
+    "question_no": "one of [{q_list_str}] (or null if unidentifiable)",
     "mark_value": "exact numeric value as written, e.g. '5', '7', '10', '3', '0.5', '1'",
-    "location": "left margin next to question X"
+    "location": "left margin next to question X",
+    "y_position": "vertical position on page: 'top', 'mid', or 'bottom'"
   }}
 ]
 

@@ -26,12 +26,15 @@ def test_stage2_prompt():
     prompt = build_stage2_prompt(stage1_transcript="student wrote text")
     assert "student wrote text" in prompt
     assert "silent_corrections_fixed" in prompt
+    assert "NORMALIZE VISUAL TRANSCRIPTION GLITCHES" in prompt
 
 
 def test_stage3_prompt():
     prompt = build_stage3_prompt(verified_transcript="student verified text")
     assert "student verified text" in prompt
-    assert "spelling | grammar | syntax | punctuation" in prompt
+    assert "spelling | grammar | syntax" in prompt
+    assert "BENEFIT OF THE DOUBT" in prompt
+    assert "ZERO PUNCTUATION MARKS" in prompt
 
 
 def test_stage4_prompt():
@@ -52,3 +55,26 @@ def test_stage4_prompt():
     assert "Bangla" in prompt
     assert "Creative Question" in prompt
     assert "Historical context" in prompt
+
+
+def test_stage1_prompt_with_syllabus():
+    syllabus = [
+        {"q_no": "5", "name": "Cloze Test without Clues (Education)"},
+        {"q_no": "9", "name": "Story Completion (Lion and Mouse)"}
+    ]
+    prompt = build_stage1_prompt(question_syllabus=syllabus)
+    assert "EXAM QUESTION SYLLABUS & HEADER DISAMBIGUATION" in prompt
+    assert "Q9: Story Completion (Lion and Mouse)" in prompt
+    assert "CRITICAL DIRECTIVE ON QUESTION HEADERS" in prompt
+
+
+def test_stage2_prompt_with_syllabus():
+    syllabus = [
+        {"q_no": "5", "name": "Cloze Test without Clues (Education)"},
+        {"q_no": "9", "name": "Story Completion (Lion and Mouse)"}
+    ]
+    prompt = build_stage2_prompt(stage1_transcript="Ans to the Question No-05\nA lion and a mouse", question_syllabus=syllabus)
+    assert "EXAM SYLLABUS REFERENCE:" in prompt
+    assert "Q9: Story Completion (Lion and Mouse)" in prompt
+    assert "Question Header Digits" in prompt
+

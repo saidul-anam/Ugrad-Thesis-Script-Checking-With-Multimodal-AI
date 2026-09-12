@@ -111,8 +111,50 @@ class MockGemmaEngine(BaseVLMEngine):
     ) -> str:
         prompt_lower = prompt.lower()
 
+        # Stage 4 Modular Question Evaluation Simulation
+        if "evaluating an individual question answer" in prompt_lower or "exam question context" in prompt_lower or "stage 4 modular" in prompt_lower:
+            resp = json.dumps({
+                "q_no": "1(A)",
+                "max_marks": 10.0,
+                "content_raw_score": 8.5,
+                "linguistic_deductions": 0.5,
+                "awarded_marks": 8.0,
+                "strengths": ["Direct and relevant answer", "Appropriate context provided"],
+                "weaknesses": ["Minor punctuation inconsistency"],
+                "examiner_feedback": "Well structured answer addressing the prompt clearly."
+            }, ensure_ascii=False, indent=2)
+            self._update_mock_usage(prompt, resp)
+            return resp
+
+        # Stage 4 Monolithic Rubric Evaluation Simulation
+        if "stage 4 rubric" in prompt_lower or "rubric-based evaluation" in prompt_lower or "evaluation rubric:" in prompt_lower:
+            resp = json.dumps({
+                "subject": "English" if "english" in prompt_lower else "Bangla",
+                "question_type": "HSC Reading & Writing" if "english" in prompt_lower else "Creative Question (সৃজনশীল প্রশ্ন - গ/ঘ)",
+                "criteria_scores": [
+                    {
+                        "criterion_id": "c1",
+                        "criterion_name": "Content & Relevance",
+                        "max_marks": 5.0,
+                        "awarded_marks": 4.5,
+                        "justification": "Good understanding and clear response.",
+                        "strengths": ["Direct answer"],
+                        "weaknesses": []
+                    }
+                ],
+                "content_raw_score": 4.5,
+                "linguistic_penalty": 0.5,
+                "final_score": 4.0,
+                "total_max_marks": 5.0,
+                "percentage": 80.0,
+                "overall_feedback": "Well written response.",
+                "actionable_recommendations": ["Maintain accuracy."]
+            }, ensure_ascii=False, indent=2)
+            self._update_mock_usage(prompt, resp)
+            return resp
+
         # Stage 3: Error Extraction Simulation
-        if "error extraction" in prompt_lower or "linguistic errors" in prompt_lower or "stage 3" in prompt_lower:
+        if "stage 3 error extraction" in prompt_lower or "error extraction" in prompt_lower or "error catalog" in prompt_lower:
             resp = json.dumps({
                 "errors": [
                     {
