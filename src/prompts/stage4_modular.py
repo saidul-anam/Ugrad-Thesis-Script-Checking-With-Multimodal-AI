@@ -72,10 +72,11 @@ def build_modular_question_prompt(
             f"Do not artificially depress marks for well-written answers.\n"
             f"   - MID BAND ({mid_min} - {mid_max:.1f} marks / 50-79%): Main ideas present but noticeable gaps in development, repetition, or weak organization.\n"
             f"   - LOW BAND (0.0 - {low_max:.1f} marks / 0-49%): Fails to address central prompt, severe omissions, off-topic, or fragmentary.\n"
-            f"3. LINGUISTIC DEDUCTION RULES:\n"
-            f"   - Deduct ONLY if confirmed errors severely impair comprehensibility or meaning.\n"
-            f"   - Strict maximum ceiling: {max_pen:.2f} marks.\n"
-            f"   - Zero deduction for minor phonetic slips, British/American spelling variations, or handwriting ambiguities."
+            f"3. COMMUNICATIVE INTELLIGIBILITY & DEDUCTION RULES:\n"
+            f"   - Deduct language marks ONLY if confirmed structural errors genuinely disrupt reading comprehension or distort meaning.\n"
+            f"   - If the sentence meaning and message are 100% clear to an examiner in context despite minor handwriting or orthographic variance, award full content marks and 0.0 linguistic penalty.\n"
+            f"   - Strict maximum linguistic deduction ceiling: {max_pen:.2f} marks.\n"
+            f"   - Zero deduction for minor phonetic slips, British/American spelling variations, or handwriting stroke ambiguities."
         )
 
     # Format errors compactly (omit errors entirely for objective questions to prevent bias)

@@ -511,6 +511,35 @@ class ScriptCheckingPipeline:
                 u3_comp += usage.get("completion_tokens", 0)
                 u3_total += usage.get("total_tokens", 0)
 
+                # -------------------------------------------------------------
+                # STAGE 3b: Multimodal Visual Arbitration (Benefit of the Doubt)
+                # -------------------------------------------------------------
+                spelling_cands = [e for e in q_err_res.errors if "spell" in (e.error_type or "").lower()]
+                if spelling_cands and page_images:
+                    ans_pno = ans.page_numbers[0] if ans.page_numbers else 1
+                    target_p_img = page_images[ans_pno - 1][1] if (1 <= ans_pno <= len(page_images)) else page_images[0][1]
+                    confirmed_errs, cleared_ambiguities = self.stage3.arbitrate_visual_errors(
+                        image=target_p_img,
+                        errors=q_err_res.errors,
+                        temperature=decoding.temperature,
+                        top_p=decoding.top_p,
+                        thinking_mode=active_thinking
+                    )
+                    usage_arb = self.engine.get_last_usage()
+                    u3_prompt += usage_arb.get("prompt_tokens", 0)
+                    u3_comp += usage_arb.get("completion_tokens", 0)
+                    u3_total += usage_arb.get("total_tokens", 0)
+
+                    if cleared_ambiguities:
+                        print(f"[Extraction] [3b/3] Visual Arbitration for Q{ans.q_no}: Awarded Benefit of the Doubt to {len(cleared_ambiguities)} ambiguous stroke(s).")
+                        # Normalize transcript tokens in the answer text so downstream Stage 4 evaluates clean text
+                        for amb in cleared_ambiguities:
+                            c_word = amb.get("candidate", "")
+                            i_word = amb.get("intended_word", "")
+                            if c_word and i_word and c_word.lower() != i_word.lower():
+                                ans.answer_text = re.sub(r'\b' + re.escape(c_word) + r'\b', i_word, ans.answer_text, flags=re.IGNORECASE)
+                        q_err_res.errors = confirmed_errs
+
                 for e in q_err_res.errors:
                     e.question_no = ans.q_no
                     all_extracted_errors.append(e)
@@ -531,6 +560,19 @@ class ScriptCheckingPipeline:
             u3_prompt = usage.get("prompt_tokens", 0)
             u3_comp = usage.get("completion_tokens", 0)
             u3_total = usage.get("total_tokens", 0)
+
+            spelling_cands = [e for e in q_err_res.errors if "spell" in (e.error_type or "").lower()]
+            if spelling_cands and page_images:
+                confirmed_errs, cleared_ambiguities = self.stage3.arbitrate_visual_errors(
+                    image=page_images[0][1],
+                    errors=q_err_res.errors,
+                    temperature=decoding.temperature,
+                    top_p=decoding.top_p,
+                    thinking_mode=active_thinking
+                )
+                if cleared_ambiguities:
+                    q_err_res.errors = confirmed_errs
+
             all_extracted_errors = q_err_res.errors
 
         spelling_cnt = sum(1 for e in all_extracted_errors if "spell" in e.error_type.lower())

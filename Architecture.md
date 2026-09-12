@@ -27,10 +27,11 @@ flowchart TD
     Stage2 --> DynamicSegmenter[Dynamic Question Schema Segmenter: Partitions by Question]
     
     DynamicSegmenter -->|Objective Questions: Flowchart, MCQ, Cloze, Rearranging| Stage3Obj[Bypass Linguistic Deductions: 0 Deductions]
-    DynamicSegmenter -->|Subjective Questions: Paragraph, Letter, Story, Theme| Stage3Subj[Stage 3: Examiner Benefit of the Doubt Evaluation]
+    DynamicSegmenter -->|Subjective Questions: Paragraph, Letter, Story, Theme| Stage3Subj[Stage 3: LLM Candidate Error Extraction]
     
-    Stage3Obj --> ExtractionSummary[Question-Aligned extraction_summary.md]
-    Stage3Subj --> ExtractionSummary
+    Stage3Subj --> Stage3b[Stage 3b: Multimodal Visual Arbitration Gate - Inspects Page Ink]
+    Stage3b -->|Handwriting Stroke Ambiguities Cleared| ExtractionSummary[Question-Aligned extraction_summary.md]
+    Stage3Obj --> ExtractionSummary
     
     ExtractionSummary --> Stage4[Stage 4: Modular Question-by-Question Rubric Evaluator]
 ```
@@ -74,10 +75,18 @@ flowchart TD
 - **Zero Punctuation Deductions**: Punctuation marks (periods, commas, semicolons, quotation marks, dari) are excluded from penalty catalogs.
 - **Targeted Penalization**: Confirmed structural failures (`he see` $\rightarrow$ `he sees`, `your are` $\rightarrow$ `you are`) and unambiguous spelling mistakes (`eingineer`, `familyes`, `decruise`, `inables`) are cataloged with page numbers and explanations.
 
+### Stage 3b: Multimodal Visual Arbitration Gate
+- **Objective**: Re-introduce the visual modality to audit candidate single-token spelling errors directly against the student's physical handwritten strokes on the original page image.
+- **Decoupling Cognitive Errors from Penmanship Slips**:
+  - Differentiates authentic student cognitive misspellings (`eingineer`, `familyes`, `accroding`) from graphemic OCR stroke ambiguities (e.g., uncrossed $f$ or $t$ resembling $d$ in `powerdul`, `illustrodes`, ligature connections in `electricidty`, or missing descender loops in `thouths`).
+  - Candidates classified as `HANDWRITING_AMBIGUITY` are awarded the Examiner Benefit of the Doubt, purged from the penalty catalog, and normalized in the answer transcript.
+- **Zero Hardcoded Word Lists**: Relies purely on the vision encoder inspecting the image pixels rather than brittle character-confusion tables.
+
 ### Stage 4: Modular Rubric Evaluation
 - **Objective**: Grade student answers question-by-question against official NCTB rubrics.
 - **Isolated Context Windows**: Each question is evaluated in its own VLM inference call. This prevents attention leakage and cross-question score contamination across 15-page scripts.
 - **NCTB Anchor Score Bands**: Prompt anchors enforce distribution across High ($80-100\%$), Mid ($50-79\%$), and Low ($0-49\%$) bands, eliminating central-tendency compression.
+- **Communicative Intelligibility Standard**: Linguistic penalties apply only when structural errors actively impede reading comprehension. Full content marks are awarded when sentence meaning is 100% clear in context.
 
 ---
 

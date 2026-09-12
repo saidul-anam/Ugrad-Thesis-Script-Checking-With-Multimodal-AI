@@ -18,8 +18,9 @@ Analyze the transcript above and extract confirmed student linguistic errors rep
 - syntax (word order distortion, fragment sentence, run-on sentence)
 
 OFFICIAL EXAMINER MARKING DOCTRINE (CRITICAL):
-1. BENEFIT OF THE DOUBT (HANDWRITING AMBIGUITY):
-   Handwritten exam scripts contain natural cursive stroke variations. When a word's intended standard form is clear in context and the transcript differs only by an ambiguous cursive stroke (e.g. an open cursive loop on 'v' that resembles 'r' in 'remove' vs 'remore', 'have' vs 'hare', minim humps on 'm' in 'Storm', terminal pen exit flicks on 'r'/'w' in 'over', or cursive penmanship variants of common words like 'decrease'), award the student the benefit of the doubt. Do NOT penalize handwriting stroke ambiguities as errors.
+1. BENEFIT OF THE DOUBT (HANDWRITING & COGNITIVE AMBIGUITY):
+   Handwritten exam scripts contain natural cursive stroke variations. When a word's intended standard form is clear in context and the transcript differs only by an ambiguous cursive stroke (e.g. uncrossed 'f' or 't' resembling 'd' in 'powerdul' / 'illustrodes', ligature stutters in 'electricidty', missing descender loops in 'thouths', an open cursive loop on 'v' that resembles 'r' in 'remove' vs 'remore', 'have' vs 'hare', minim humps on 'm' in 'Storm', or terminal pen exit flicks on 'r'/'w' in 'over'), award the student the benefit of the doubt. Do NOT penalize handwriting stroke ambiguities as errors.
+   - Distinguish Cognitive Spelling Errors from Graphemic Slips: Authentic student misspellings are phonologically or morphologically motivated (e.g. 'eingineer', 'familyes', 'accroding'). Phonetically absurd consonant substitutions in standard high-frequency vocabulary (e.g. /f/ -> /d/ in 'powerful' or /t/ -> /d/ in 'electricity') are handwriting stroke misreadings, NOT cognitive misspellings.
 2. GENUINE ERRORS ONLY:
    Only extract confirmed, unambiguous errors:
    - True spelling errors: Genuine orthographic misspellings (e.g. 'eingineer' for 'engineer', 'familyes' for 'families', 'inables' for 'enables', 'interduction' for 'introduction').
