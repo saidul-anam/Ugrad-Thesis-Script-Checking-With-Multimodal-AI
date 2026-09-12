@@ -43,3 +43,34 @@ pipeline:
   # Checkpointing / Caching of intermediate stage outputs
   cache_intermediate_stages: true
   output_dir: "outputs/extracted"
+
+# ---------------------------------------------------------------------------
+# Stage 3b: Evidence-Fused Handwriting Ambiguity Gate
+# Decides whether a Stage 3 "spelling/grammar" candidate is a genuine student error or a
+# perceptual misread of this writer's letter shapes. No hand-written letter rules: the
+# writer's confusions are learned from their own script, and the fusion weights below are
+# PROVISIONAL DEFAULTS meant to be overwritten by the values printed by
+#   python scripts/evaluate_arbitration.py --labels data/labels/arbitration_labels.csv --fit
+# ---------------------------------------------------------------------------
+arbitration:
+  mode: "evidence"                 # evidence | legacy (old single whole-page call, for ablation) | off
+  max_token_edits: 2               # read/intended token pairs within this many char edits are gated (any error_type)
+  use_bbox_localization: true      # ask Gemma for the line bbox first; projection-profile fallback if it fails validation
+  localization_min_ratio: 0.6      # fuzzy match between crop re-read and context required to trust a crop
+  projection_search_window: 3      # lines either side of the expected line position to try in fallback
+  crop_pad_px: 14
+  crop_min_height_px: 96
+  consensus_samples: 5             # augmented re-reads of the line crop
+  consensus_use_sampling_variant: true
+  consensus_temperature: 0.7
+  writer_profile_min_count: 2      # a confusion pair must be seen this often in the script before it counts
+  threshold_ambiguity: 0.65        # ambiguity_score >= this  -> HANDWRITING_AMBIGUITY (benefit of the doubt)
+  threshold_genuine: 0.35          # ambiguity_score <= this  -> GENUINE_ERROR ; in between -> UNCERTAIN (human review)
+  save_crops: true
+  lexicon_scan: true            # also gate non-dictionary tokens Stage 3 missed (dictionary lookup, no letter rules)
+  weights:                         # provisional; replace with fitted values (see above)
+    bias: -0.3
+    phonetic: 0.6
+    writer: 1.2
+    consensus: 2.0
+    forced_choice: 2.4

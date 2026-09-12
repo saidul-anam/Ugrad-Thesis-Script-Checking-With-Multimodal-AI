@@ -71,6 +71,67 @@ class Stage3ErrorResult(BaseModel):
 
 
 # ---------------------------------------------------------------------------
+# Stage 3b: Evidence-Fused Handwriting Ambiguity Arbitration Schemas
+# ---------------------------------------------------------------------------
+class ArbitrationCandidate(BaseModel):
+    """A single (read token, intended token) pair extracted from a Stage 3 error for arbitration."""
+    candidate_id: str = Field(..., description="Unique id: '<q_no>:<error_index>:<pair_index>'")
+    error_index: int = Field(..., description="Index into the question's Stage 3 error list")
+    error_type: str = Field("spelling")
+    erroneous_text: str = Field("", description="Full erroneous span from Stage 3")
+    suggested_correction: str = Field("", description="Full suggested correction from Stage 3")
+    candidate_token: str = Field(..., description="The differing token as transcribed, e.g. 'do'")
+    intended_token: str = Field(..., description="The differing token as intended, e.g. 'to'")
+    context_sentence: str = Field("")
+    question_no: Optional[str] = None
+    page_no: Optional[int] = None
+
+
+class ArbitrationEvidence(BaseModel):
+    """All raw signals gathered for one candidate. Every signal is in [0,1] where 1 = ambiguity (perceptual)."""
+    phonetic_plausibility: Optional[float] = Field(None, description="Similarity of phonetic codes (1 = sounds identical => cognitive error likely)")
+    phonetic_signal: Optional[float] = Field(None, description="1 - phonetic_plausibility")
+    edit_ops: List[str] = Field(default_factory=list, description="Character edit path, e.g. ['sub:f>d']")
+    writer_prior: Optional[float] = None
+    writer_pair_count: int = 0
+    consensus_signal: Optional[float] = None
+    consensus_agreement_candidate: Optional[float] = None
+    consensus_agreement_intended: Optional[float] = None
+    consensus_word_confidence: Optional[float] = None
+    consensus_samples: List[str] = Field(default_factory=list)
+    consensus_token: Optional[str] = None
+    consensus_token_agreement: Optional[float] = None
+    forced_choice_signal: Optional[float] = None
+    forced_choice: Optional[str] = Field(None, description="candidate | intended | neither | invalid")
+    forced_choice_confidence: Optional[float] = None
+    forced_choice_reason: str = ""
+    forced_choice_order: str = ""
+    localization_method: str = Field("none", description="bbox | projection | none")
+    localization_match_ratio: float = 0.0
+    crop_path: Optional[str] = None
+    model_calls: int = 0
+    notes: List[str] = Field(default_factory=list)
+
+
+class ArbitrationRecord(BaseModel):
+    candidate: ArbitrationCandidate
+    evidence: ArbitrationEvidence
+    ambiguity_score: float = 0.5
+    verdict: str = Field("UNCERTAIN", description="GENUINE_ERROR | HANDWRITING_AMBIGUITY | UNCERTAIN")
+    mode: str = "evidence"
+
+
+class Stage3bArbitrationResult(BaseModel):
+    mode: str = "evidence"
+    records: List[ArbitrationRecord] = Field(default_factory=list)
+    cleared: List[Dict[str, Any]] = Field(default_factory=list, description="Legacy-compatible cleared list")
+    uncertain: List[ArbitrationRecord] = Field(default_factory=list)
+    total_candidates: int = 0
+    total_model_calls: int = 0
+    token_usage: Dict[str, int] = Field(default_factory=dict)
+
+
+# ---------------------------------------------------------------------------
 # Per-Page Extraction Container
 # ---------------------------------------------------------------------------
 class PageExtractionResult(BaseModel):
@@ -179,6 +240,19 @@ class QuestionEvaluationItem(BaseModel):
     examiner_feedback: str = ""
     strengths: List[str] = Field(default_factory=list)
     weaknesses: List[str] = Field(default_factory=list)
+    # Rubric-driven scoring (mode-based rubrics)
+    task_mode: Optional[str] = Field(None, description="A_ITEM | B_POINT | C_BAND | generic")
+    task_type: Optional[str] = None
+    scoring_status: str = Field("scored", description="scored | unscored (model output unusable) | missing (no answer segment found)")
+    items: List[Dict[str, Any]] = Field(default_factory=list, description="Per-item results (Mode A/B)")
+    subscores: Dict[str, float] = Field(default_factory=dict, description="Criterion subscores (Mode C)")
+    raw_total: Optional[float] = None
+    cap_applied: bool = False
+    cap_reason: str = "None"
+    capped_from: Optional[float] = None
+    performance_band: Optional[str] = None
+    key_source: Optional[str] = Field(None, description="answer_key | none")
+    scoring_notes: List[str] = Field(default_factory=list)
 
     @property
     def human_gt(self) -> Optional[float]:
@@ -207,7 +281,12 @@ class Stage4EvaluationResult(BaseModel):
     final_score: float = Field(..., description="Final marks awarded (content_raw_score - penalty).")
     total_max_marks: float = Field(10.0, description="Maximum total marks.")
     percentage: float = Field(0.0, description="Final score percentage.")
-    mae_vs_human: Optional[float] = Field(None, description="Mean Absolute Error compared to human ground truth marks")
+    mae_vs_human: Optional[float] = Field(None, description="Mean Absolute Error over SCORED questions with ground truth")
+    mae_including_missing: Optional[float] = Field(None, description="MAE counting missing/unscored questions as 0 marks")
+    scored_with_gt: int = Field(0, description="Number of scored questions that had a ground-truth mark")
+    missing_questions: List[str] = Field(default_factory=list, description="Rubric/GT questions with no answer segment")
+    unscored_questions: List[str] = Field(default_factory=list, description="Questions whose model output could not be scored")
+    rubric_driven: bool = Field(False, description="True when marks were computed from the mode-based rubric")
     overall_feedback: str = Field(..., description="Constructive teacher-level feedback.")
     actionable_recommendations: List[str] = Field(default_factory=list)
 

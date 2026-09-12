@@ -1,0 +1,113 @@
+# Answer key for question paper SE_11_Q1 (English 1st Paper, Class XI, Annual Exam 2026)
+#
+# DRAFTED FROM THE QUESTION PAPER, NOT YET VERIFIED BY A TEACHER.
+# Set `verified: true` after checking. Mode A items are scored arithmetically against this key;
+# Mode B items use the key points as the reference for partial credit.
+#
+# Conventions:
+#   accepted: every string that earns the item (case-insensitive; option letters, roman numerals and
+#             option text are all accepted for MCQ). Minor spelling slips are tolerated by the grader
+#             when the word identity and grammatical form are intact (rubric Mode A rules).
+question_id: SE_11_Q1
+verified: false
+source: "outputs/questions/english/SE_11_Q1.md"
+
+mode_a:
+  "1(A)":
+    task_type: MCQ
+    mark_per_item: 1.0          # the paper prints 0.5x10 but has 5 items worth 5 marks -> 1.0 each
+    items:
+      - label: a
+        question: "A refugee is an individual who—"
+        accepted: ["iii", "3", "being displaced lives outside the country"]
+      - label: b
+        question: "What scares the author beside the clock?"
+        accepted: ["ii", "2", "flying objects"]
+      - label: c
+        question: "What does the word 'siege' refer to?"
+        accepted: ["iii", "3", "blockade"]
+      - label: d
+        question: "What does 'flooded into' indicate?"
+        accepted: ["i", "1", "rushed in large number", "rushed in large numbers"]
+      - label: e
+        question: "What does 'sissy' stand for?"
+        accepted: ["i", "1", "coward"]
+  "4":
+    task_type: Cloze_With_Clues
+    mark_per_item: 0.5
+    note: "Requires the correct word AND the correct grammatical form."
+    items:
+      - {label: a, accepted: ["attain"]}
+      - {label: b, accepted: ["why"]}
+      - {label: c, accepted: ["that", "perhaps"]}      # 'that' is the standard answer; 'perhaps' is the only box word that fits
+      - {label: d, accepted: ["overcome"]}
+      - {label: e, accepted: ["courageous"]}
+      - {label: f, accepted: ["result", "results"]}
+      - {label: g, accepted: ["discouraged"]}
+      - {label: h, accepted: ["inspire", "inspires"]}
+      - {label: i, accepted: ["successful"]}
+      - {label: j, accepted: ["disaster", "disasters"]}
+  "5":
+    task_type: Cloze_Without_Clues
+    mark_per_item: 1.0
+    note: "Any contextually suitable AND grammatically accurate word earns the mark; the list is indicative."
+    items:
+      - {label: a, accepted: ["needs", "rights", "necessities", "requirements"]}
+      - {label: b, accepted: ["development", "growth", "nourishment", "improvement"]}
+      - {label: c, accepted: ["health", "hygiene", "food", "diet"]}
+      - {label: d, accepted: ["hygiene", "sanitation", "health", "nutrition", "cleanliness", "food"]}
+      - {label: e, accepted: ["educated", "literate"]}
+      - {label: f, accepted: ["healthy", "better", "happy", "good", "sound"]}
+      - {label: g, accepted: ["teaches", "tells", "shows"]}
+      - {label: h, accepted: ["provides", "equips", "endows", "furnishes"]}
+      - {label: i, accepted: ["right", "best", "correct", "proper"]}
+      - {label: j, accepted: ["positive", "significant", "good", "important", "necessary"]}
+  "6":
+    task_type: Rearrangement
+    mark_per_item: 1.0
+    note: "Absolute-position scoring: 1 mark for every sentence letter in its exact correct slot."
+    correct_sequence: ["c", "h", "j", "a", "e", "d", "g", "i", "f", "b"]
+    sentences:
+      a: "He found a mad dog and injected some weak germs of its disease into its blood."
+      b: "Other doctors began to study his works."
+      c: "Pasteur was a French scientist."
+      d: "One day, a boy named Joseph Meister was brought to him."
+      e: "The dog was cured."
+      f: "The news of Pasteur's success spread all over the world."
+      g: "He had been bitten by a mad dog."
+      h: "He noticed that many diseases are caused by germs and he also found cures for several of them."
+      i: "Pasteur gave him some injections and the boy did not get the dog's disease."
+      j: "At first, he treated only animals because he didn't want to cause death of any human being."
+
+mode_b:
+  "1(B)":
+    task_type: Short_Answer
+    marks_available: 2.0
+    items:
+      - label: a
+        question: "Why can't the writer write beautiful words about Gaza?"
+        key_points: ["because he cannot help seeing poverty, siege and famine", "deprivation, fear and sickness in every house"]
+      - label: b
+        question: "What did the author become aware of?"
+        key_points: ["the suffering/sadness of everything in Gaza (kids, adults, women, animals, trees)", "everything in Gaza is crying"]
+      - label: c
+        question: "How can the author go around the world?"
+        key_points: ["by standing on the sea shore and imagining/dreaming", "the sea helps him dream: Cyprus, Paris, Rome"]
+      - label: d
+        question: "Where does the author go back and why?"
+        key_points: ["back to his bed in the refugee camp / the reality of Gaza", "because his imagination ends: dirty market, sewage, carts, smell"]
+      - label: e
+        question: "Why does the author feel fears?"
+        key_points: ["fear that the war has started again (clock at 11:55, heart beats faster)", "everything that flies scares him, even flies; fear for his brothers"]
+  "2":
+    task_type: Flow_Chart
+    marks_available: 2.0
+    note: "Box 1 is given (Dropping out of school). Any 5 of the following in passage order earn credit."
+    sequence_points:
+      - "begins full-time work in the in-laws' household"
+      - "marginalized in the in-laws' house"
+      - "vulnerable to all forms of abuse including dowry-related violence"
+      - "greater health risks in pregnancy and childbirth"
+      - "uninformed about reproductive health and contraception / maternal mortality double the national rate"
+      - "loses mobility, friends and social status"
+      - "curtailed economic and non-formal educational opportunities"

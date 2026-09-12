@@ -110,6 +110,33 @@ def test_full_pipeline_mock_image():
         assert os.path.exists(os.path.join(script_dir, "raw_tier_records.csv"))
         assert os.path.exists(os.path.join(cfg.pipeline.output_dir, "raw_tier_dataset.csv"))
 
+        # Stage 3b evidence gate artifacts + metadata
+        assert os.path.exists(os.path.join(script_dir, "stage3b_arbitration.json"))
+        assert os.path.exists(os.path.join(script_dir, "writer_profile.json"))
+        import json as _json
+        with open(os.path.join(script_dir, "extraction_result.json"), "r", encoding="utf-8") as f:
+            ext = _json.load(f)
+        assert ext["metadata"]["arbitration"]["mode"] == "evidence"
+        assert "total_candidates" in ext["metadata"]["arbitration"]
+        with open(os.path.join(script_dir, "extraction_summary.md"), "r", encoding="utf-8") as f:
+            assert "Stage 3b Handwriting Ambiguity Arbitration" in f.read()
+
+
+def test_arbitration_modes_legacy_and_off():
+    img = Image.new("RGB", (300, 300), color=(255, 255, 255))
+    ImageDraw.Draw(img).text((10, 10), "Mode toggle test", fill=(0, 0, 0))
+    with tempfile.TemporaryDirectory() as tmpdir:
+        img_path = os.path.join(tmpdir, "mode_script.png")
+        img.save(img_path)
+        for mode in ("legacy", "off"):
+            cfg = PipelineConfig()
+            cfg.pipeline.output_dir = os.path.join(tmpdir, "outputs_" + mode)
+            cfg.arbitration.mode = mode
+            pipeline = ScriptCheckingPipeline(engine=MockGemmaEngine(model_id=cfg.model.model_id), config=cfg)
+            res = pipeline.extract_script(input_source=img_path, script_id="mode_" + mode, force_extract=True)
+            assert res.metadata["arbitration"]["mode"] == mode
+            assert not os.path.exists(os.path.join(cfg.pipeline.output_dir, "mode_" + mode, "stage3b_arbitration.json"))
+
 
 def test_separate_extraction_and_evaluation():
     img = Image.new("RGB", (300, 300), color=(255, 255, 255))

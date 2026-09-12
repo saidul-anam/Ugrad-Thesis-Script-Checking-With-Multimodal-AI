@@ -52,18 +52,38 @@ class Stage3ErrorAnalyzer:
 
     def arbitrate_visual_errors(
         self,
-        image: Image.Image,
+        image: Optional[Image.Image],
+        errors: List[LinguisticErrorItem],
+        temperature: float = 0.0,
+        top_p: float = 0.1,
+        thinking_mode: bool = False,
+        gate: Optional[Any] = None,
+        q_no: Optional[str] = None,
+        answer_text: Optional[str] = None,
+    ) -> Tuple[List[LinguisticErrorItem], List[Dict[str, Any]]]:
+        """
+        Stage 3b: Handwriting Ambiguity Arbitration.
+
+        evidence mode (gate given): the EvidenceArbitrationGate scores every gate-able error
+        (any error_type) from crop re-reads, forced choice, the learned writer profile and phonetics,
+        plus non-dictionary tokens of `answer_text` that Stage 3 did not flag.
+        legacy mode (gate None): one whole-page VLM call over the spelling candidates only.
+        Returns (confirmed_errors, cleared_list).
+        """
+        if gate is not None:
+            confirmed, cleared, _records = gate.arbitrate(errors, q_no, answer_text=answer_text)
+            return confirmed, cleared
+        return self._arbitrate_legacy(image, errors, temperature, top_p, thinking_mode)
+
+    def _arbitrate_legacy(
+        self,
+        image: Optional[Image.Image],
         errors: List[LinguisticErrorItem],
         temperature: float = 0.0,
         top_p: float = 0.1,
         thinking_mode: bool = False
     ) -> Tuple[List[LinguisticErrorItem], List[Dict[str, Any]]]:
-        """
-        Stage 3b: Multimodal Visual Arbitration Gate.
-        Inspects physical handwritten strokes for candidate spelling errors on the page image.
-        Classifies as GENUINE_ERROR or HANDWRITING_AMBIGUITY (Benefit of the Doubt).
-        Returns (confirmed_errors, ambiguities_cleared).
-        """
+        """Legacy single-call whole-page arbitration (kept for ablation)."""
         spelling_candidates = [e for e in errors if "spell" in (e.error_type or "").lower()]
         if not spelling_candidates or image is None:
             return errors, []

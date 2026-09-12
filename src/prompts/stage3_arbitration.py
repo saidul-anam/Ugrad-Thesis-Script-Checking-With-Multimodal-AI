@@ -1,40 +1,38 @@
 """
-Stage 3b: Multimodal Visual Arbitration Prompts.
+Stage 3b (LEGACY mode): single whole-page Multimodal Visual Arbitration prompt.
 
-Instructs the VLM vision encoder to inspect the physical ink of candidate spelling errors
-and determine whether an error is a genuine student cognitive misspelling or an ambiguous
-cursive handwriting stroke (e.g. uncrossed 't'/'f', ascender curvature, ligature connection),
-awarding the student the Benefit of the Doubt where appropriate.
+Kept only for ablation (`arbitration.mode: legacy`). The evidence-based gate lives in
+`src/pipeline/arbitration/` and uses the prompts in `src/prompts/stage3b_arbitration.py`.
+
+NOTE: this prompt deliberately contains NO example words. Listing target words as examples is
+label leakage: the model then "recognises" those words instead of inspecting the ink.
 """
 
 from typing import List, Dict, Any
 
 STAGE3_ARBITRATION_SYSTEM_PROMPT = (
-    "You are a senior academic handwriting examiner applying official National Curriculum "
-    "and Cambridge marking doctrine. You inspect student handwriting on the attached image "
-    "to distinguish genuine student cognitive misspellings from natural cursive stroke variations, "
-    "uncrossed bars, and ligature ambiguities. You award the candidate the benefit of the doubt. "
+    "You are a senior academic handwriting examiner. You inspect student handwriting on the attached "
+    "image to distinguish genuine student misspellings from handwriting stroke ambiguities. "
+    "You award the candidate the benefit of the doubt only when the ink itself is ambiguous. "
     "Output valid JSON only."
 )
 
-STAGE3_ARBITRATION_PROMPT_TEMPLATE = """You are performing Stage 3b Multimodal Visual Arbitration on student handwriting.
+STAGE3_ARBITRATION_PROMPT_TEMPLATE = """You are performing Stage 3b Visual Arbitration on student handwriting.
 
-Below are candidate spelling discrepancies flagged during OCR transcription from the attached page image.
-For each candidate, inspect the physical handwritten ink strokes at its context location in the image.
+Below are candidate discrepancies flagged during transcription of the attached page image.
+For each candidate, find the word on the page and inspect the physical ink strokes.
 
 CANDIDATES TO AUDIT:
 {candidates_formatted}
 
 EXAMINER MARKING DOCTRINE:
-1. GENUINE COGNITIVE ERRORS:
-   - Classify as "GENUINE_ERROR" ONLY if the student clearly, deliberately wrote an incorrect letter sequence indicating ignorance of orthography (e.g., 'eingineer' for 'engineer', 'familyes' for 'families', 'indelligence' for 'intelligence').
-2. HANDWRITING STROKE AMBIGUITIES (BENEFIT OF THE DOUBT):
-   - Classify as "HANDWRITING_AMBIGUITY" if the ink stroke represents an ambiguous cursive penmanship variation, such as:
-     * Uncrossed or looped ascenders: cursive 'f' resembling 'd' in 'powerful' ('powerdul'), or 't' resembling 'd' in 'illustrates' ('illustrodes').
-     * Ligature connections / pen stutters: cursive pen joins misread as an added stroke (e.g. 'electricidty' for 'electricity').
-     * Missing descender loops: cursive 'g' resembling 'th' or 'h' (e.g. 'thouths' for 'thoughts').
-     * Uncrossed 't' resembling 'l', minim counts on 'm'/'n', or open loops on 'v'/'r'.
-   - When the student's intended word is obvious in context and the deviation is explainable by penmanship stroke ambiguity rather than phonological ignorance, award the Benefit of the Doubt.
+1. GENUINE_ERROR: the student clearly and deliberately wrote a letter sequence that differs from the
+   standard spelling, i.e. the letters are well formed and unambiguous as written, and the deviation is the
+   kind a learner produces from imperfect knowledge of the spelling (phonetically motivated substitutions,
+   doubled or dropped letters, vowel confusions).
+2. HANDWRITING_AMBIGUITY: the letters in question are ambiguous strokes (a faint or missing crossbar, a
+   closed or open loop on an ascender or descender, a ligature join, a minim miscount) such that the
+   intended standard word is an equally valid reading of the ink. Award the benefit of the doubt.
 
 OUTPUT FORMAT:
 Output ONLY a valid JSON array of objects matching this schema:
@@ -45,7 +43,7 @@ Output ONLY a valid JSON array of objects matching this schema:
     "intended_word": "the intended standard word",
     "verdict": "GENUINE_ERROR | HANDWRITING_AMBIGUITY",
     "confidence": 0.95,
-    "reason": "1 concise sentence explaining the physical ink observation"
+    "reason": "1 concise sentence describing the physical ink observation"
   }}
 ]
 ```
@@ -53,7 +51,7 @@ Output ONLY a valid JSON array of objects matching this schema:
 
 
 def build_stage3_arbitration_prompt(candidate_errors: List[Dict[str, Any]]) -> str:
-    """Build the Stage 3b Multimodal Visual Arbitration prompt."""
+    """Build the legacy Stage 3b whole-page arbitration prompt."""
     lines = []
     for idx, c in enumerate(candidate_errors, 1):
         err_w = c.get("erroneous_text", "")

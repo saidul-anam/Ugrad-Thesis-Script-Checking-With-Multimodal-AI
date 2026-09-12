@@ -66,10 +66,40 @@ class PipelineStageConfig(BaseModel):
     output_dir: str = "outputs/extracted"
 
 
+class ArbitrationWeights(BaseModel):
+    """Logistic fusion weights. Provisional defaults; overwrite with values fitted by scripts/evaluate_arbitration.py --fit."""
+    bias: float = Field(-0.3, description="Intercept (negative => default leans GENUINE when no evidence)")
+    phonetic: float = Field(0.6, description="Weight of (1 - phonetic plausibility)")
+    writer: float = Field(1.2, description="Weight of the per-writer learned confusion prior")
+    consensus: float = Field(2.0, description="Weight of augmented re-read agreement signal")
+    forced_choice: float = Field(2.4, description="Weight of the forced-choice crop verdict")
+
+
+class ArbitrationConfig(BaseModel):
+    """Stage 3b: evidence-fused handwriting ambiguity gate."""
+    mode: str = Field("evidence", description="'evidence' (new gate), 'legacy' (single whole-page VLM call), or 'off'")
+    max_token_edits: int = Field(2, description="Max character edits between read/intended token to be gated")
+    use_bbox_localization: bool = Field(True, description="Ask the VLM for the line bounding box before projection fallback")
+    localization_min_ratio: float = Field(0.6, description="Min fuzzy match between crop transcription and context to accept a crop")
+    projection_search_window: int = Field(3, description="Lines searched either side of the expected line position")
+    crop_pad_px: int = Field(14)
+    crop_min_height_px: int = Field(96, description="Crops shorter than this are upscaled 2x")
+    consensus_samples: int = Field(5, description="Number of augmented re-reads per crop")
+    consensus_use_sampling_variant: bool = Field(True, description="Use one temperature-sampled variant among the re-reads")
+    consensus_temperature: float = Field(0.7)
+    writer_profile_min_count: int = Field(2, description="Min observations of a confusion pair before it counts")
+    threshold_ambiguity: float = Field(0.65, description="score >= => HANDWRITING_AMBIGUITY")
+    threshold_genuine: float = Field(0.35, description="score <= => GENUINE_ERROR; between => UNCERTAIN")
+    save_crops: bool = Field(True)
+    lexicon_scan: bool = Field(True, description="Also gate non-dictionary tokens Stage 3 did not flag (dictionary lookup, no letter rules)")
+    weights: ArbitrationWeights = Field(default_factory=ArbitrationWeights)
+
+
 class PipelineConfig(BaseModel):
     model: ModelConfig = Field(default_factory=ModelConfig)
     decoding: DecodingConfig = Field(default_factory=DecodingConfig)
     pipeline: PipelineStageConfig = Field(default_factory=PipelineStageConfig)
+    arbitration: ArbitrationConfig = Field(default_factory=ArbitrationConfig)
 
     @classmethod
     def from_yaml(cls, path: str) -> "PipelineConfig":

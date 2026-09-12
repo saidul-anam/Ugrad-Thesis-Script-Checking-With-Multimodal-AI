@@ -22,6 +22,9 @@ HEADER_NORMALIZATION_RULES = [
     (re.compile(r'\bdo the [Qq]\b', re.IGNORECASE), 'to the Q'),
     (re.compile(r'Qhe o\.', re.IGNORECASE), 'Q. No.'),
     (re.compile(r'Anseve?r', re.IGNORECASE), 'Answer'),
+    (re.compile(r'\bAns(?:i?to|i\s*to)\b', re.IGNORECASE), 'Ans to'),
+    (re.compile(r'\bAnsi\b', re.IGNORECASE), 'Ans'),
+    (re.compile(r'\$?\s*\\?i?ghtarrow\s*\$?', re.IGNORECASE), ' -> '),
 ]
 
 # Bengali to Arabic numeral and subpart mappings
@@ -39,9 +42,9 @@ def to_arabic_digits(text: str) -> str:
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
     # English question headers
-    r'(?:\n|\A)\s*(?:Ans|Answer)[:\s]+(?:to\s+(?:the\s+)?)?Q(?:uestion)?[\s\.\,\-]+(?:No[\.\,\-]*)?\s*[0-9০-৯]{1,2}(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    r'(?:\n|\A)\s*(?:Ans(?:i?to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
     r'(?:\n|\A)\s*Ans[:\s]+(?:to\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
-    r'(?:\n|\A)\s*Q(?:uestion)?[\s\.\,\-]+(?:No[\.\,\-]*)?\s*[0-9০-৯]{1,2}(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    r'(?:\n|\A)\s*Q(?:uestion)?[\s\.\,\-]+(?:No[\s\.\,\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
     # Bengali question headers
     r'(?:\n|\A)\s*(?:[০-৯0-9]{1,2}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*প্রশ্নের?\s*উত্তর)|'
     r'(?:\n|\A)\s*(?:প্রশ্নের?\s*উত্তর\s*[:\-]?\s*[০-৯0-9]{1,2})|'
@@ -54,7 +57,7 @@ HEADER_SPLIT_REGEX = re.compile(
 )
 
 HEADER_EXTRACT_REGEX = re.compile(
-    r'(?:Ans|Answer)[:\s]+(?:to\s+(?:the\s+)?)?Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*([0-9]{1,2}(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'(?:Ans(?:i?to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*([0-9]{1,2}(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
     r'Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*([0-9]{1,2}(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
     r'^\s*\(([A-B])\)',
     re.IGNORECASE | re.MULTILINE
@@ -67,6 +70,37 @@ def normalize_header_text(text: str) -> str:
     for pat, repl in HEADER_NORMALIZATION_RULES:
         normalized = pat.sub(repl, normalized)
     return normalized
+
+
+_KEYWORD_STOPWORDS = {
+    "question", "questions", "write", "writing", "answer", "answers", "following", "paragraph",
+    "with", "that", "this", "from", "into", "those", "their", "thing", "there", "these", "about",
+    "which", "what", "when", "your", "have", "been", "were", "will", "than", "then", "them", "they",
+}
+
+
+def _extract_explicit_english_header(arabic_lines: str) -> Optional[str]:
+    """Canonical q_no from an explicit 'Ans to the Q No ...' style header, else None."""
+    match = HEADER_EXTRACT_REGEX.search(arabic_lines)
+    if not match:
+        return None
+    for g in match.groups():
+        if g:
+            val = g.strip().upper()
+            clean_val = re.sub(r'\b0+(\d+)', r'\1', val)
+            if clean_val in ["1", "1A", "1(A)", "A"]:
+                return "1(A)"
+            elif clean_val in ["1B", "1(B)", "B"]:
+                return "1(B)"
+            elif clean_val in ["Z", "N"]:
+                return "7"
+            elif clean_val in [str(i) for i in range(1, 25)]:
+                return clean_val
+            sub_m = re.match(r'^([0-9]{1,2})\s*\(([A-Za-z0-9])\)$', clean_val)
+            if sub_m:
+                return f"{sub_m.group(1)}({sub_m.group(2).upper()})"
+            return clean_val
+    return None
 
 
 def extract_header_qno(
@@ -84,8 +118,16 @@ def extract_header_qno(
     arabic_lines = to_arabic_digits(normalized)
     first_lines_lower = first_lines.lower()
 
-    # 1. Dynamic Keyword/Topic Matching from question_obj
+    # 1. Explicit numeric English header first (an explicit "Ans to the Q No 11" must never be
+    #    overridden by topic keywords). Keyword matching (below) only runs when no header is present.
+    explicit = _extract_explicit_english_header(arabic_lines)
+    if explicit:
+        return explicit
+
+    # 1b. Dynamic Keyword/Topic Matching from question_obj: best-matching sub-question wins,
+    #     stop words are ignored, and at least two distinctive words must match.
     if question_obj and question_obj.sub_questions:
+        best_q, best_score = None, 0.0
         for sq in question_obj.sub_questions:
             sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
             sq_name = str(sq.get("name") or sq.get("title") or "").strip()
@@ -93,12 +135,17 @@ def extract_header_qno(
                 continue
             words = [
                 w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', sq_name)
-                if w.lower() not in {"question", "write", "writing", "answer", "following", "paragraph"}
+                if w.lower() not in _KEYWORD_STOPWORDS
             ]
-            if words:
-                matches = sum(1 for w in words if w in first_lines_lower)
-                if matches >= min(2, len(words)) and any(h in first_lines_lower for h in ["ans", "q", "title", "theme", "paragraph", "topic", "no"]):
-                    return sq_no
+            if not words:
+                continue
+            matches = sum(1 for w in set(words) if w in first_lines_lower)
+            if matches >= 2 and any(h in first_lines_lower for h in ["ans", "q", "title", "theme", "paragraph", "topic", "no"]):
+                score = matches / len(set(words))
+                if score > best_score:
+                    best_q, best_score = sq_no, score
+        if best_q:
+            return best_q
 
     # 2. Bengali Question Header Matching (supports both '১(ক) নং' and '১ নং প্রশ্নের উত্তর (ক)')
     beng_m = re.search(
@@ -113,26 +160,7 @@ def extract_header_qno(
             return f"{q_num}({ascii_sub})"
         return q_num
 
-    # 3. Standard English Question Header Matching
-    match = HEADER_EXTRACT_REGEX.search(arabic_lines)
-    if match:
-        for g in match.groups():
-            if g:
-                val = g.strip().upper()
-                clean_val = re.sub(r'\b0+(\d+)', r'\1', val)
-
-                if clean_val in ["1", "1A", "1(A)", "A"]:
-                    return "1(A)"
-                elif clean_val in ["1B", "1(B)", "B"]:
-                    return "1(B)"
-                elif clean_val in ["Z", "N"]:
-                    return "7"
-                elif clean_val in [str(i) for i in range(1, 25)]:
-                    return clean_val
-                sub_m = re.match(r'^([0-9]{1,2})\s*\(([A-Za-z0-9])\)$', clean_val)
-                if sub_m:
-                    return f"{sub_m.group(1)}({sub_m.group(2).upper()})"
-                return clean_val
+    # 3. (explicit English header already handled in step 1)
 
     # 4. Subpart (B) following (A) or subpart (খ) following (ক)
     if current_parent in ["1", "1(A)", "1A"]:

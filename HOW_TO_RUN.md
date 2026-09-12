@@ -117,6 +117,7 @@ python3 scripts/extract_scripts.py --lang english --top 2 --quant 4bit --fast -y
 
 # Single PDF or Image File
 python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english --api --fast -y
+python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english -y
 
 # Fast CPU Mock Mode (Development & testing)
 python3 scripts/extract_scripts.py --lang bangla --top 3 --mock -y

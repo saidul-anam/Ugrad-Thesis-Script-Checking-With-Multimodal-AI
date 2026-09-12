@@ -1,0 +1,45 @@
+❯ now can i work with the without human transcribed? and what steps should i do for that
+
+Yes, with limits. The human-transcribed pages only feed the CER benchmark. Everything else already runs without them.
+
+What works with zero human input
+
+- The gate itself. It scores every candidate from the ink and the writer's own script, and writes the verdicts, the crops, and the "Flagged for Human Review" list. That run is in progress on script 0002 now.
+- Ablations by mode. Run the same script with arbitration.mode set to evidence, legacy, and off, then diff the error lists. This shows what changed, but not which version is right.
+- Downstream check against the marks you already have. Run Stage 4 on the evidence and legacy outputs and compare the mean absolute error against gt.txt for the two scripts with teacher marks. Stage 0b also harvests margin marks from the other scripts, so more ground-truth marks exist for a quick eyeball check.
+
+What you lose without any labels
+
+- The fusion weights stay at provisional defaults, so verdicts are uncalibrated and the thesis cannot report gate precision or recall.
+- No transcription accuracy number, so you cannot say whether Stage 2 helps or hurts.
+
+Recommended steps, cheapest first
+
+1. Let the current run finish, then run the remaining Englishhe arbitration tables in each extraction summary.
+2. Label crops, not pages. Run the labelling script, open the contact sheets, and mark each crop G, A, or U. About 100 crops takes roughly 30 to 45
+   minutes and is a glance-level judgment, not transcription.e evaluate script. This is the step that turns the gate into a
+   measurable result.
+3. Run Stage 4 on both modes and compare against gt.txt. That is your zero-effort downstream validation.
+4. Defer page transcription, or shrink it. Five corrected pages give a rough CER. Correcting a machine draft runs about 5 minutes per page.
+
+So the order is: crops before pages. The crop labels matter more for the thesis claim, and they are much cheaper.
+
+
+
+
+
+
+What "best approach" looks like for this layer
+
+1. Make the rubric drive the grading in code, not in prose. One prompt builder per mode. Mode A returns per-item verdicts against a key and the score is computed arithmetically. Mode B returns per-item points on the rubric's scale. Mode C returns the four criterion subscores plus a structural audit, and the code applies the ceilings, the hard caps and the band snapping. The model judges, the code scores.
+2. Build the answer keys once. Thirty-five objective items, drafted by the model and checked by you in ten minutes. This turns 30 marks per script from a judgment call into arithmetic.
+3. Replace the silent fallback with one retry, then an explicit unscored flag that is excluded from the MAE and listed in the report.
+4. Get ground truth for all ten English scripts. The teacher marks are already in the margins and Stage 0b reads them. Verifying them by eye is faster than any other route to a credible sample: ten scripts tim
+What "best approach" looks like for this layer
+
+1. Make the rubric drive the grading in code, not in prose. Oode A returns per-item verdicts against a key and the score iscomputed arithmetically. Mode B returns per-item points on the rubric's scale. Mode C returns the four criterion subscores plus a structural audit, and the code applies the ceilings, the hard caps and the band snapping. The model judges, the code scores.
+2. Build the answer keys once. Thirty-five objective items, ded by you in ten minutes. This turns 30 marks per script from a judgment call into arithmetic.
+3. Replace the silent fallback with one retry, then an explicit unscored flag that is excluded from the MAE and listed in the report.
+4. Get ground truth for all ten English scripts. The teacher ins and Stage 0b reads them. Verifying them by eye is fasterthan any other route to a credible sample: ten scripts times twelve questions.
+5. Rebuild the benchmark script to report MAE overall and per mode, quadratic weighted kappa, a median-prediction baseline, bootstrap intervals, and the count of missing questions. Run it for modular versus monogacy gate.
+6. Then, and only then, try calibration tricks: one or two human-scored exemplars from held-out scripts in the Mode C prompt, and a three-sample median as an ablation.

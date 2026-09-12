@@ -36,9 +36,11 @@ def get_english_lexicon() -> Set[str]:
             try:
                 with open(_SYSTEM_DICT_PATH, "r", encoding="utf-8", errors="ignore") as f:
                     for line in f:
-                        w = line.strip().lower()
-                        if w and len(w) > 1 and not w.endswith("'s"):
-                            words.add(w)
+                        raw = line.strip()
+                        if raw and len(raw) > 1 and not raw.endswith("'s"):
+                            # Filter out pure proper nouns/names (which only appear capitalized)
+                            if raw[0].islower():
+                                words.add(raw.lower())
             except Exception:
                 pass
         if not words:

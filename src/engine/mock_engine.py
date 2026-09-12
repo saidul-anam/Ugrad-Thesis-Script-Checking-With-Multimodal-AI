@@ -40,7 +40,21 @@ class MockGemmaEngine(BaseVLMEngine):
         **kwargs: Any
     ) -> str:
         prompt_lower = prompt.lower()
-        
+
+        # Stage 3b (evidence gate) simulations: must precede the Stage 1 branch
+        if "exactly one line of handwriting" in prompt_lower:
+            resp = "mock line of handwriting text"
+            self._update_mock_usage(prompt, resp)
+            return resp
+        if "bounding box of the handwritten line" in prompt_lower:
+            resp = '{"bbox": [100, 50, 140, 950]}'
+            self._update_mock_usage(prompt, resp)
+            return resp
+        if "either option a or option b" in prompt_lower:
+            resp = '{"choice": "NEITHER", "confidence": 0.5, "reason": "mock"}'
+            self._update_mock_usage(prompt, resp)
+            return resp
+
         # Stage 1: Verbatim Transcription Simulation
         if "transcribe every word exactly as written" in prompt_lower or "stage 1" in prompt_lower or "verbatim" in prompt_lower:
             resp = (
@@ -110,6 +124,30 @@ class MockGemmaEngine(BaseVLMEngine):
         **kwargs: Any
     ) -> str:
         prompt_lower = prompt.lower()
+
+        # Stage 4 rubric-driven mode prompts (must precede the generic modular branch)
+        if "mode a (item-scored)" in prompt_lower:
+            if "student_sequence" in prompt_lower:
+                resp = json.dumps({"student_sequence": ["c", "h", "j", "a", "e", "d", "g", "i", "f", "b"], "notes": "mock"})
+            else:
+                resp = json.dumps({"items": [{"item_label": l, "candidate_answer": "iii"} for l in "abcde"], "notes": "mock"})
+            self._update_mock_usage(prompt, resp)
+            return resp
+        if "mode b (point-scored)" in prompt_lower:
+            resp = json.dumps({"items": [{"item_label": l, "candidate_answer": "mock", "marks_awarded": 1.5, "rationale": "mock"} for l in "abcde"], "notes": "mock"})
+            self._update_mock_usage(prompt, resp)
+            return resp
+        if "mode c (band-scored)" in prompt_lower:
+            resp = json.dumps({
+                "raw_subscores": {"context_content_data": 2.5, "structure_format_brevity": 2.0, "language_mechanics": 1.5, "originality_comparisons_paraphrase": 1.5},
+                "criterion_evidence": {"context_content_data": "mock quote"},
+                "structural_audit": {"paragraph_subdivisions": False, "missing_layout_components": [], "verbatim_copy_suspected": False,
+                                     "exceeds_length_limit": False, "external_facts_or_personal_opinions": False, "attempted": True},
+                "frequent_errors": ["subject-verb agreement"], "positive_aspects": ["relevant content"],
+                "feedback_summary": "Mock feedback."
+            })
+            self._update_mock_usage(prompt, resp)
+            return resp
 
         # Stage 4 Modular Question Evaluation Simulation
         if "evaluating an individual question answer" in prompt_lower or "exam question context" in prompt_lower or "stage 4 modular" in prompt_lower:

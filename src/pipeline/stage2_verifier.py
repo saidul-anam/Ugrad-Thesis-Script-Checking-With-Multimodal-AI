@@ -96,6 +96,7 @@ class Stage2Verifier:
         image: Image.Image,
         stage1_transcript: str,
         question_syllabus: Optional[List[Dict[str, Any]]] = None,
+        question_reference_vocab: Optional[List[str]] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
@@ -103,7 +104,11 @@ class Stage2Verifier:
     ) -> Stage2VerificationResult:
         # Truncate prompt text if extremely long to avoid exceeding context window
         clipped_text = stage1_transcript[:3000] if len(stage1_transcript) > 3000 else stage1_transcript
-        prompt = build_stage2_prompt(stage1_transcript=clipped_text, question_syllabus=question_syllabus)
+        prompt = build_stage2_prompt(
+            stage1_transcript=clipped_text,
+            question_syllabus=question_syllabus,
+            question_reference_vocab=question_reference_vocab
+        )
 
         try:
             response = self.engine.generate_multimodal(

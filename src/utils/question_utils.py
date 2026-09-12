@@ -329,21 +329,17 @@ def save_extracted_question(
 
 def extract_question_vocab(
     question: ExtractedQuestion,
-    max_tokens: int = 150
+    max_tokens: int = 250
 ) -> List[str]:
     """
     Extract domain vocabulary terms from an ExtractedQuestion artifact.
     These terms serve as reference vocabulary for Stage 1 handwriting transcription
     to help decipher difficult cursive strokes without autocorrecting student errors.
+    Prioritizes key answer entities (MCQ options, cloze box clues, answer key targets)
+    over generic reading passage prose.
     """
     if not question or not question.question_text:
         return []
-
-    combined_text = question.question_text
-    for sq in question.sub_questions:
-        combined_text += " " + str(sq.get("name", "")) + " " + str(sq.get("text", ""))
-
-    tokens = re.findall(r'[A-Za-z\u0980-\u09FF]+(?:-[A-Za-z\u0980-\u09FF]+)*', combined_text)
 
     stop_words = {
         "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for", "of", "with",
@@ -363,17 +359,54 @@ def extract_question_vocab(
         "correct", "alternatives", "table", "chart", "diagram", "story", "theme", "paragraph"
     }
 
+    priority_tokens: List[str] = []
+
+    # 1. Check if official answer key exists in configs/answer_keys/<qid>.yaml
+    try:
+        import yaml
+        from pathlib import Path
+        repo_root = Path(__file__).resolve().parent.parent.parent
+        key_path = repo_root / "configs" / "answer_keys" / f"{question.question_id}.yaml"
+        if key_path.exists():
+            with open(key_path, "r", encoding="utf-8") as f:
+                kd = yaml.safe_load(f) or {}
+            for part in ("mode_a", "mode_b"):
+                for q_id, q_data in kd.get(part, {}).items():
+                    if isinstance(q_data, dict):
+                        for item in q_data.get("items", []):
+                            if isinstance(item, dict):
+                                for acc in item.get("accepted", []) + item.get("key_points", []):
+                                    priority_tokens.extend(re.findall(r'[A-Za-z\u0980-\u09FF]+', str(acc)))
+    except Exception:
+        pass
+
+    # 2. Extract clue table cells and MCQ options from the question prompt
+    for line in question.question_text.splitlines():
+        if "|" in line and not line.strip().startswith("| :"):
+            for cell in line.split("|"):
+                priority_tokens.extend(re.findall(r'[A-Za-z\u0980-\u09FF]+', cell))
+        elif re.search(r'\b(?:i|ii|iii|iv|v)\.\s+', line):
+            priority_tokens.extend(re.findall(r'[A-Za-z\u0980-\u09FF]+', line))
+
+    # 3. Sub-questions titles and guidance text
+    for sq in question.sub_questions:
+        sq_text = str(sq.get("name", "")) + " " + str(sq.get("text", ""))
+        priority_tokens.extend(re.findall(r'[A-Za-z\u0980-\u09FF]+', sq_text))
+
+    # 4. General passage tokens
+    general_tokens = re.findall(r'[A-Za-z\u0980-\u09FF]+(?:-[A-Za-z\u0980-\u09FF]+)*', question.question_text)
+
     seen = set()
     vocab: List[str] = []
 
-    for tok in tokens:
+    for tok in priority_tokens + general_tokens:
         clean_tok = tok.strip()
         low = clean_tok.lower()
         if low in stop_words:
             continue
         if len(clean_tok) < 3:
             continue
-        if len(clean_tok) == 3 and not clean_tok.isupper():
+        if len(clean_tok) == 3 and not clean_tok.isupper() and low not in {"why", "box", "fly", "net"}:
             continue
         if low in seen:
             continue

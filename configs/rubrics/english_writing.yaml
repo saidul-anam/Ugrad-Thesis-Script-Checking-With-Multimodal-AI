@@ -1,78 +1,310 @@
-# English 1st Paper Examination Rubric (Class XI / HSC)
-# Aligned with Official NCTB Curriculum & Question Paper SE_11_Q1
-subject: "English"
-question_type: "HSC English 1st Paper (Reading & Guided Writing)"
-total_marks: 100.0
+# NCTB Class XI English 1st Paper Assessment Framework
 
-criteria:
-  # =========================================================================
-  # PART-A: READING (60 MARKS)
-  # =========================================================================
-  - id: "q1_a_mcq"
-    name: "Q1(A): Multiple Choice Questions (Gaza Passage)"
-    max_marks: 5.0
-    description: "Multiple Choice Questions on Gaza passage (items a-e). Award 1.0 mark per correctly identified option (up to 5.0 full marks for all 5 correct)."
+provenance_and_traceability:
+  data_direct:
+    - Holistic grammar evaluation
+    - Elimination of handwriting/presentation bias
+    - Context and originality weighting
+    - Narrative resolution requirements
+  syllabus_extrapolated:
+    - Formal layout requirements
+    - Graph comparative mechanics
+    - Summary length constraints
 
-  - id: "q1_b_short_answers"
-    name: "Q1(B): Short Answer Questions (Gaza Passage)"
-    max_marks: 10.0
-    description: "5 open comprehension questions (2 marks each) evaluating: (a) poverty/siege reasons, (b) author awareness, (c) imagination via sea, (d) returning to refugee camp reality, (e) fear of flies/war trauma. Award marks for factual accuracy, relevance, and coherent English sentences."
+question_map:
+  - question_no: "1(A)"
+    printed_task: "Read the passage and answer — choose the correct answer from the alternatives"
+    task_type: MCQ
+    mode: A
+    standard_marks: 5
+    breakdown: "0.5 x 10 = 5"
+  - question_no: "1(B)"
+    printed_task: "Read the passage and answer the following questions"
+    task_type: Short_Answer
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "2"
+    printed_task: "Read the text and make a flow chart"
+    task_type: Flow_Chart
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "3"
+    printed_task: "Summarize the following text"
+    task_type: Summary
+    mode: C
+    standard_marks: 10
+    breakdown: "10"
+  - question_no: "4"
+    printed_task: "Fill in the blanks with suitable word from the box"
+    task_type: Cloze_With_Clues
+    mode: A
+    standard_marks: 5
+    breakdown: "0.5 x 10 = 5"
+  - question_no: "5"
+    printed_task: "Fill in the blanks with appropriate word in each gap"
+    task_type: Cloze_Without_Clues
+    mode: A
+    standard_marks: 10
+    breakdown: "1 x 10 = 10"
+  - question_no: "6"
+    printed_task: "The following sentences are jumbled — rearrange them"
+    task_type: Rearrangement
+    mode: A
+    standard_marks: 10
+    breakdown: "1 x 10 = 10"
+  - question_no: "7"
+    printed_task: "Answer the questions and write a paragraph"
+    task_type: Paragraph
+    mode: C
+    standard_marks: 10
+    breakdown: "10"
+  - question_no: "8"
+    printed_task: "Look at the chart — analyse it focussing the main aspects"
+    task_type: Graph_Chart
+    mode: C
+    standard_marks: 10
+    breakdown: "10"
+  - question_no: "9"
+    printed_task: "Complete the story and give a proper title"
+    task_type: Story
+    mode: C
+    standard_marks: 7
+    breakdown: "7"
+  - question_no: "10"
+    printed_task: "Write a letter / email"
+    task_type: Letter_Email
+    mode: C
+    standard_marks: 5
+    breakdown: "5"
+  - question_no: "11"
+    printed_task: "Write down the theme of the poem"
+    task_type: Theme
+    mode: C
+    standard_marks: 8
+    breakdown: "8"
 
-  - id: "q2_flow_chart"
-    name: "Q2: Flow Chart (Adolescent Bride Miseries)"
-    max_marks: 10.0
-    description: "Completion of 5 subsequent flowchart boxes (2 marks each) detailing consequences of adolescent marriage in Bangladesh (e.g. abuse/dowry violence, health risks in pregnancy, maternal mortality, loss of mobility/social status, curtailed opportunities). Deduct for incomplete or non-sequential notes."
+paper_structure:
+  part_a_reading:
+    range: "Q1-Q6"
+    marks: 60
+  part_b_writing:
+    range: "Q7-Q11"
+    marks: 40
+  total_marks: 100
 
-  - id: "q3_poem_summary"
-    name: "Q3: Poem Summary ('Hope is the thing with feathers')"
-    max_marks: 10.0
-    description: "Summarizing Emily Dickinson's poem into a concise paragraph (around 50-80 words). Evaluate understanding of the central metaphor (hope as an untiring bird singing in adversity), conciseness, originality of expression, and absence of external irrelevancies."
+scoring_modes:
+  A_ITEM:
+    method: "right/wrong per item"
+    questions: ["1(A)", "4", "5", "6"]
+    task_types: ["MCQ", "Cloze_With_Clues", "Cloze_Without_Clues", "Rearrangement"]
+  B_POINT:
+    method: "partial credit per item"
+    questions: ["1(B)", "2"]
+    task_types: ["Short_Answer", "Flow_Chart"]
+  C_BAND:
+    method: "four criteria + performance bands"
+    questions: ["3", "7", "8", "9", "10", "11"]
+    task_types: ["Summary", "Paragraph", "Graph_Chart", "Story", "Letter_Email", "Theme"]
 
-  - id: "q4_cloze_with_clues"
-    name: "Q4: Cloze Test with Clues (Success and Risk)"
-    max_marks: 5.0
-    description: "10 blanks (0.5 marks each) using words from the clue box with necessary grammatical/form changes (e.g. attain, why, that, overcome, courageous, result, discouraged, inspire, successful, disaster). Award 0.5 per contextually and grammatically correct answer."
+general_evaluation_guidelines:
+  - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
+  - no_per_error_math: "In Mode C, evaluate error density holistically within performance bands without fixed deductions."
+  - mark_granularity: "Whole and half marks (0.5) only."
+  - illegibility_handling: "Do not penalise transcription markers ([illegible], [unclear: word], [cut: word]). Mark item unscorable only if completely unreadable."
+  - unattempted_vs_wrong: "Unattempted = not_attempted (0 marks). Attempted & wrong = incorrect (0 marks)."
+  - computed_metrics_authoritative: "Follow supplied computed metrics and cap notes exactly; do not recount or remeasure."
+  - evidence_requirement: "Mode C scores must be supported by EXACT, CONTINUOUS quotes without paraphrasing or structural alterations."
+  - calibration: "Class XI Bangladeshi context: comprehensible, on-topic script with frequent grammatical slips belongs in Middle Bands (Band 2/3), not Band 4."
 
-  - id: "q5_cloze_without_clues"
-    name: "Q5: Cloze Test without Clues (Education)"
-    max_marks: 10.0
-    description: "10 contextual blanks (1.0 mark each) on the importance of education for health, mental growth, and life choices. Award 1.0 mark per contextually suitable, grammatically accurate word choice."
+mode_specifications:
+  mode_a_item_scored:
+    formula: "total_score = correct_items * mark_per_item (capped at MAX_MARK)"
+    tasks:
+      Q1_A_MCQ:
+        allocation: "0.5 x 10 = 5"
+        rules:
+          - "Binary credit (0.5 or 0)."
+          - "Multiple selections earn 0."
+          - "Option letter, text, or both accepted."
+          - "Spelling errors in written text do not penalise."
+      Q4_Cloze_With_Clues:
+        allocation: "0.5 x 10 = 5"
+        rules:
+          - "Requires correct word AND correct grammatical form."
+          - "Incorrect form earns 0."
+          - "Minor spelling slips allowed if word identity/form remains intact."
+          - "Reused box words credited only where correct."
+      Q5_Cloze_Without_Clues:
+        allocation: "1 x 10 = 10"
+        rules:
+          - "Any contextually suitable and grammatically accurate word gets full credit."
+          - "Strict on grammatical fit, generous on vocabulary choice."
+      Q6_Rearrangement:
+        allocation: "1 x 10 = 10"
+        rules:
+          - "Strict absolute-position scoring per item (1 mark per sentence in exact correct position)."
+          - "Order shift domino effect applies per standard board conventions."
+          - "Accepts letter sequences or full sentence rewrites."
 
-  - id: "q6_rearranging"
-    name: "Q6: Rearranging Sentences (Louis Pasteur)"
-    max_marks: 10.0
-    description: "Rearranging 10 scrambled sentences (1.0 mark each) recounting Louis Pasteur's discovery of the rabies cure and treating Joseph Meister into correct chronological narrative sequence."
+  mode_b_point_scored:
+    tasks:
+      Q1_B_Short_Answer:
+        allocation: "2 x 5 = 10"
+        scale:
+          2.0: "Accurate, complete, drawn from passage, expressed in a coherent sentence."
+          1.5: "Accurate/complete but fragment form, or slight language obscurity."
+          1.0: "Partially accurate (1 of 2 elements, or vague)."
+          0.5: "Touches relevant passage area but misses question core."
+          0.0: "Wrong, absent, or unaddressing full sentence lift."
+        rules:
+          - "Direct lifting allowed only if it directly answers the question."
+          - "Outside knowledge unsupported by passage earns 0 for accuracy."
+      Q2_Flow_Chart:
+        allocation: "2 x 5 = 10"
+        scale:
+          2.0: "Correct content, correct sequence position, note form."
+          1.0: "Correct content out of sequence OR right passage area but imprecise."
+          0.0: "Wrong content, blank, or duplicate box."
+        rules:
+          - "Content dominates syntax."
+          - "Match worked example structure (noun/gerund phrase preferred, but full sentence acceptable)."
+          - "Duplicated content across boxes credited once only."
 
-  # =========================================================================
-  # PART-B: GUIDED WRITING (40 MARKS)
-  # =========================================================================
-  - id: "q7_paragraph_ai"
-    name: "Q7: Paragraph on Artificial Intelligence"
-    max_marks: 10.0
-    description: "Well-structured paragraph answering the 5 guided questions: definition of AI, key features, real-world applications, impact on teaching and learning, and potential threats/challenges. Assess thematic depth, coherence, and paragraph structure."
+  mode_c_band_scored:
+    general_rules:
+      scale_discipline: "Calculate raw_total from four criteria first, then apply hard caps to produce total_score."
+      motivation_rule: "Band 4 standard excellent scripts receive middle or lower values. Award MAX_MARK only for exceptional, mature, creative expression."
+      precision_tiebreaker:
+        band_4: "Highest = zero errors & flawless structure; Middle = minor slips; Lowest = multiple minor errors."
+        bands_3_and_2: "Higher = elevated syntax/vocabulary; Lower = basic/standard."
+        band_1: "Highest = coherent attempt; Lowest = fragmented/near-unreadable."
+    hard_caps:
+      paragraph_split: "Split into multiple sub-paragraphs -> capped at 50% of MAX_MARK (Cap 5 for 10-mark)."
+      letter_layout_missing: "Missing 3+ layout components -> capped at 50% of MAX_MARK (Cap 2 for 5-mark)."
+      summary_violations: "Exceeding 1/3rd source length OR >50% verbatim copying -> capped at 50% of MAX_MARK (Cap 5 for 10-mark)."
+      theme_verbatim_copy: ">50% verbatim poem line reproduction -> capped at 50% of MAX_MARK (Cap 4 for 8-mark)."
+      graph_external_facts: "Personal opinions, moral judgments, or external facts -> HARD CAP AT 6 (Override cap)."
+    performance_bands_by_max_mark:
+      max_10:
+        band_4: "8-10"
+        band_3: "6-7"
+        band_2: "4-5"
+        band_1: "1-3"
+        band_0: "0"
+      max_8:
+        band_4: "7-8"
+        band_3: "5-6"
+        band_2: "3-4"
+        band_1: "1-2"
+        band_0: "0"
+      max_7:
+        band_4: "6-7"
+        band_3: "4-5"
+        band_2: "3"
+        band_1: "1-2"
+        band_0: "0"
+      max_5:
+        band_4: "4-5"
+        band_3: "3"
+        band_2: "2"
+        band_1: "1"
+        band_0: "0"
+    tasks:
+      Q3_Summary:
+        max_mark: 10
+        criteria_ceilings:
+          context_content_data: 3
+          structure_format_brevity: 2
+          language_mechanics: 2
+          originality_comparisons_paraphrase: 3
+      Q7_Paragraph:
+        max_mark: 10
+        criteria_ceilings:
+          context_content_data: 3
+          structure_format_brevity: 3
+          language_mechanics: 2
+          originality_comparisons_paraphrase: 2
+      Q8_Graph_Chart:
+        max_mark: 10
+        criteria_ceilings:
+          context_content_data: 3
+          structure_format_brevity: 3
+          language_mechanics: 2
+          originality_comparisons_paraphrase: 2
+      Q9_Story:
+        max_mark: 7
+        criteria_ceilings:
+          context_content_data: 2
+          structure_format_brevity: 2
+          language_mechanics: 1
+          originality_comparisons_paraphrase: 2
+      Q10_Letter_Email:
+        max_mark: 5
+        criteria_ceilings:
+          context_content_data: 1
+          structure_format_brevity: 2
+          language_mechanics: 1
+          originality_comparisons_paraphrase: 1
+        layout_components:
+          letter: ["Address", "Date", "Salutation", "Body", "Complimentary Close", "Signature"]
+          email: ["To", "From", "Subject Line", "Salutation", "Body", "Sign-off"]
+      Q11_Theme:
+        max_mark: 8
+        criteria_ceilings:
+          context_content_data: 3
+          structure_format_brevity: 2
+          language_mechanics: 1
+          originality_comparisons_paraphrase: 2
 
-  - id: "q8_chart_analysis"
-    name: "Q8: Chart Analysis (USA Electricity Sources 1980)"
-    max_marks: 10.0
-    description: "Data commentary (at least 80 words) describing and comparing electricity generation shares (Coal 46%, Natural gas 24%, Hydro 15%, Oil 12%, Nuclear 2%). Evaluate data accuracy, comparative connectors, and clear analytical overview."
-
-  - id: "q9_story_completion"
-    name: "Q9: Story Completion (Lion and Mouse)"
-    max_marks: 7.0
-    description: "Creative story completion following the prompt of the sleeping lion and mouse. Evaluate: suitable title (1 mark), logical narrative progression and climax (4 marks), and appropriate moral resolution / friendship conclusion (2 marks)."
-
-  - id: "q10_informal_letter"
-    name: "Q10: Informal Letter (Future Plan after HSC)"
-    max_marks: 5.0
-    description: "Letter to a friend outlining future academic or career aspirations after the HSC examination. Evaluate correct letter layout (heading, salutation, body, subscription) and natural personal tone."
-
-  - id: "q11_poem_theme"
-    name: "Q11: Theme of Poem ('All people dream...')"
-    max_marks: 8.0
-    description: "Extracting and explaining the philosophical theme of T.E. Lawrence's poem (contrast between passive night-dreamers whose dreams are vanity vs. active day-dreamers who make their dreams reality). Evaluate analytical insight and concise articulation."
-
-penalties:
-  spelling_error_deduction: 0.25
-  grammar_error_deduction: 0.5
-  max_linguistic_deduction: 5.0
-
+output_json_schema:
+  question_no: "string (1A | 1B | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11)"
+  task_type: "string (MCQ | Short_Answer | Flow_Chart | Cloze_With_Clues | Cloze_Without_Clues | Rearrangement | Summary | Paragraph | Graph_Chart | Story | Letter_Email | Theme)"
+  task_mode: "string (A_ITEM | B_POINT | C_BAND)"
+  max_mark_applied: "number"
+  attempt_status:
+    is_attempted: "boolean"
+    is_blank_or_unintelligible: "boolean"
+  items:
+    type: "array or null (Mode A/B only)"
+    items_schema:
+      item_label: "string"
+      candidate_answer: "string"
+      status: "string (correct | partially_correct | incorrect | not_attempted | unscorable)"
+      marks_awarded: "number"
+      marks_available: "number"
+      rationale: "string"
+  criterion_reasoning:
+    type: "object or null (Mode C only)"
+    properties:
+      context_content_data: { rationale: "string", evidence: "string" }
+      structure_format_brevity: { rationale: "string", evidence: "string" }
+      language_mechanics: { rationale: "string", evidence: "string" }
+      originality_comparisons_paraphrase: { rationale: "string", evidence: "string" }
+  raw_subscores:
+    type: "object or null (Mode C only)"
+    properties:
+      context_content_data: "number"
+      structure_format_brevity: "number"
+      language_mechanics: "number"
+      originality_comparisons_paraphrase: "number"
+      raw_total: "number"
+  structural_audit:
+    cap_applied: "boolean"
+    applied_cap_reason: "string (None | Paragraph_Subdivisions | Letter_Missing_Layout | Summary_Verbatim_Length | Theme_Verbatim_Copy | Graph_External_Facts)"
+  capped_from: "number or null"
+  score_breakdown:
+    type: "object or null (Mode C only)"
+    properties:
+      context_content_data: "number"
+      structure_format_brevity: "number"
+      language_mechanics: "number"
+      originality_comparisons_paraphrase: "number"
+      total_score: "number"
+  performance_band: "string or null (Band 4 | Band 3 | Band 2 | Band 1 | Band 0)"
+  total_score: "number"
+  error_analysis:
+    frequent_errors: "array of strings"
+    positive_aspects: "array of strings"
+  feedback_summary: "string"

@@ -1,4 +1,5 @@
 import os
+import re
 import time
 import yaml
 import json
@@ -42,6 +43,8 @@ from src.pipeline.stage0b_teacher_marks import Stage0bTeacherMarkExtractor, Stag
 from src.pipeline.stage1_transcriber import Stage1Transcriber
 from src.pipeline.stage2_verifier import Stage2Verifier
 from src.pipeline.stage3_error_analyzer import Stage3ErrorAnalyzer
+from src.pipeline.arbitration import EvidenceArbitrationGate
+from src.utils.linguistic_sanitizer import get_english_lexicon
 from src.pipeline.stage4_evaluator import Stage4Evaluator
 from src.pipeline.answer_segmenter import segment_script_into_questions, extract_header_qno
 from src.prompts.stage4_modular import is_objective_question
@@ -106,6 +109,95 @@ def _attribute_errors_to_pages(
             total_error_count=len(p_errs),
             linguistic_summary=""
         )
+
+
+def _token_pattern(word: str) -> "re.Pattern":
+    return re.compile(r"(?<!\w)" + re.escape(word) + r"(?!\w)", re.IGNORECASE)
+
+
+def _replace_token_preserving_case(text: str, c_word: str, i_word: str, count: int = 0) -> str:
+    def repl(m: "re.Match") -> str:
+        src = m.group(0)
+        return (i_word[:1].upper() + i_word[1:]) if src[:1].isupper() else i_word
+    return _token_pattern(c_word).sub(repl, text, count=count)
+
+
+def _normalize_token_in_context(
+    text: str,
+    c_word: str,
+    i_word: str,
+    erroneous_text: str,
+    context: str,
+    lexicon: Optional[set] = None,
+) -> str:
+    """
+    Replace the misread token with the intended token ONLY inside the span where the error occurred
+    (the context sentence, else the erroneous span), so a cleared 'do'->'to' does not rewrite every
+    other 'do' on the page. If the span cannot be found, a page-wide replacement is done only when
+    the misread token is not a dictionary word (i.e. it can only be this misread).
+    """
+    if not text or not c_word or not i_word or c_word.lower() == i_word.lower():
+        return text
+    for needle in (context, erroneous_text):
+        needle = " ".join((needle or "").split())
+        if len(needle) < 3:
+            continue
+        span_re = re.compile(r"\s+".join(re.escape(t) for t in needle.split()), re.IGNORECASE)
+        m = span_re.search(text)
+        if m:
+            new_span = _replace_token_preserving_case(m.group(0), c_word, i_word, count=1)
+            return text[:m.start()] + new_span + text[m.end():]
+    if lexicon is not None and c_word.lower() in lexicon:
+        return text
+    return _replace_token_preserving_case(text, c_word, i_word)
+
+
+def _apply_normalizations(
+    cleared: List[Dict[str, Any]],
+    ans: Optional[AlignedAnswerItem],
+    page_results: List[PageExtractionResult],
+    errors: List[Any],
+    lexicon: Optional[set] = None,
+) -> int:
+    """Apply HANDWRITING_AMBIGUITY normalizations to the answer text AND the per-page transcripts."""
+    n = 0
+    for amb in cleared:
+        if not amb.get("normalize", True):
+            continue
+        c_word = str(amb.get("candidate") or "")
+        i_word = str(amb.get("intended_word") or "")
+        if not c_word or not i_word or c_word.lower() == i_word.lower():
+            continue
+        err_text, ctx = "", ""
+        cid = str(amb.get("candidate_id") or "")
+        try:
+            e_idx = int(cid.split(":")[1]) if cid.count(":") >= 2 else -1
+            if 0 <= e_idx < len(errors):
+                err_text = getattr(errors[e_idx], "erroneous_text", "") or ""
+                ctx = getattr(errors[e_idx], "context_sentence", "") or ""
+        except Exception:
+            pass
+        if not ctx and not err_text:
+            for e in errors:
+                if c_word.lower() in (getattr(e, "erroneous_text", "") or "").lower():
+                    err_text = getattr(e, "erroneous_text", "") or ""
+                    ctx = getattr(e, "context_sentence", "") or ""
+                    break
+        if ans is not None:
+            ans.answer_text = _normalize_token_in_context(ans.answer_text, c_word, i_word, err_text, ctx, lexicon)
+        targets = [p for p in page_results if ans is None or not ans.page_numbers or p.page_no in ans.page_numbers]
+        for p in targets:
+            p.stage2_verification.verified_transcript = _normalize_token_in_context(
+                p.stage2_verification.verified_transcript, c_word, i_word, err_text, ctx, lexicon
+            )
+        n += 1
+    return n
+
+
+def _rebuild_combined_verified(page_results: List[PageExtractionResult]) -> str:
+    if len(page_results) == 1:
+        return page_results[0].stage2_verification.verified_transcript
+    return "\n\n--- Page Break ---\n\n".join(p.stage2_verification.verified_transcript for p in page_results)
 
 
 class ScriptCheckingPipeline:
@@ -339,6 +431,7 @@ class ScriptCheckingPipeline:
                     image=p_img,
                     stage1_transcript=stage1_result.raw_transcript,
                     question_syllabus=question_obj.sub_questions if question_obj else None,
+                    question_reference_vocab=question_vocab if question_obj else None,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=decoding.max_new_tokens,
@@ -482,6 +575,37 @@ class ScriptCheckingPipeline:
         u3_comp = 0
         u3_total = 0
 
+        # ---------------------------------------------------------
+        # STAGE 3b setup: evidence-fused handwriting ambiguity gate
+        # ---------------------------------------------------------
+        subject_name = "Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English"
+        arb_cfg = getattr(self.config, "arbitration", None)
+        arb_mode = (arb_cfg.mode if arb_cfg is not None else "legacy").lower()
+        arb_lexicon = get_english_lexicon() if subject_name == "English" else set()
+        gate: Optional[EvidenceArbitrationGate] = None
+        if arb_mode == "evidence" and page_images:
+            _img_by_page = {p_no: img for p_no, img, _ in page_images}
+
+            def _clean_image_fn(n: int, _m=_img_by_page):
+                res0 = self.stage0.detect(_m[n])
+                return res0.clean_image if getattr(res0, "clean_image", None) is not None else _m[n]
+
+            gate = EvidenceArbitrationGate(
+                engine=self.engine,
+                cfg=arb_cfg,
+                script_id=script_id,
+                output_dir=script_output_dir,
+                page_images=page_images,
+                page_transcripts={p.page_no: p.stage2_verification.verified_transcript for p in page_results},
+                clean_image_fn=_clean_image_fn,
+                full_transcript=combined_verified,
+                lexicon=arb_lexicon,
+                question_vocab=(set(question_vocab or [])
+                                | ({w.lower() for w in re.findall(r"[A-Za-z]+", question_obj.question_text)} if question_obj else set())),
+                language="bn" if subject_name == "Bangla" else "en",
+            )
+            print(f"[Extraction] [3b/3] Evidence gate ready (writer profile: {len(gate.profile.pair_counts)} confusion pairs from {len(gate.profile.anchors)} anchor words)")
+
         # Run Stage 3 targeted per question
         if aligned_answers and len(aligned_answers) > 1:
             for ans in aligned_answers:
@@ -512,33 +636,34 @@ class ScriptCheckingPipeline:
                 u3_total += usage.get("total_tokens", 0)
 
                 # -------------------------------------------------------------
-                # STAGE 3b: Multimodal Visual Arbitration (Benefit of the Doubt)
+                # STAGE 3b: Handwriting Ambiguity Arbitration (Benefit of the Doubt)
                 # -------------------------------------------------------------
-                spelling_cands = [e for e in q_err_res.errors if "spell" in (e.error_type or "").lower()]
-                if spelling_cands and page_images:
+                if q_err_res.errors and page_images and arb_mode != "off":
                     ans_pno = ans.page_numbers[0] if ans.page_numbers else 1
                     target_p_img = page_images[ans_pno - 1][1] if (1 <= ans_pno <= len(page_images)) else page_images[0][1]
+                    original_errs = list(q_err_res.errors)
                     confirmed_errs, cleared_ambiguities = self.stage3.arbitrate_visual_errors(
                         image=target_p_img,
                         errors=q_err_res.errors,
                         temperature=decoding.temperature,
                         top_p=decoding.top_p,
-                        thinking_mode=active_thinking
+                        thinking_mode=active_thinking,
+                        gate=gate,
+                        q_no=ans.q_no,
+                        answer_text=ans.answer_text,
                     )
-                    usage_arb = self.engine.get_last_usage()
-                    u3_prompt += usage_arb.get("prompt_tokens", 0)
-                    u3_comp += usage_arb.get("completion_tokens", 0)
-                    u3_total += usage_arb.get("total_tokens", 0)
+                    if gate is None:
+                        usage_arb = self.engine.get_last_usage()
+                        u3_prompt += usage_arb.get("prompt_tokens", 0)
+                        u3_comp += usage_arb.get("completion_tokens", 0)
+                        u3_total += usage_arb.get("total_tokens", 0)
 
                     if cleared_ambiguities:
-                        print(f"[Extraction] [3b/3] Visual Arbitration for Q{ans.q_no}: Awarded Benefit of the Doubt to {len(cleared_ambiguities)} ambiguous stroke(s).")
-                        # Normalize transcript tokens in the answer text so downstream Stage 4 evaluates clean text
-                        for amb in cleared_ambiguities:
-                            c_word = amb.get("candidate", "")
-                            i_word = amb.get("intended_word", "")
-                            if c_word and i_word and c_word.lower() != i_word.lower():
-                                ans.answer_text = re.sub(r'\b' + re.escape(c_word) + r'\b', i_word, ans.answer_text, flags=re.IGNORECASE)
-                        q_err_res.errors = confirmed_errs
+                        n_amb = sum(1 for c in cleared_ambiguities if c.get("verdict", "HANDWRITING_AMBIGUITY") == "HANDWRITING_AMBIGUITY")
+                        n_unc = len(cleared_ambiguities) - n_amb
+                        print(f"[Extraction] [3b/3] Arbitration for Q{ans.q_no}: benefit of the doubt {n_amb}, uncertain (human review) {n_unc}, deductions kept {len(confirmed_errs)}/{len(original_errs)}.")
+                        _apply_normalizations(cleared_ambiguities, ans, page_results, original_errs, arb_lexicon)
+                    q_err_res.errors = confirmed_errs
 
                 for e in q_err_res.errors:
                     e.question_no = ans.q_no
@@ -561,19 +686,75 @@ class ScriptCheckingPipeline:
             u3_comp = usage.get("completion_tokens", 0)
             u3_total = usage.get("total_tokens", 0)
 
-            spelling_cands = [e for e in q_err_res.errors if "spell" in (e.error_type or "").lower()]
-            if spelling_cands and page_images:
+            if q_err_res.errors and page_images and arb_mode != "off":
+                original_errs = list(q_err_res.errors)
                 confirmed_errs, cleared_ambiguities = self.stage3.arbitrate_visual_errors(
                     image=page_images[0][1],
                     errors=q_err_res.errors,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
-                    thinking_mode=active_thinking
+                    thinking_mode=active_thinking,
+                    gate=gate,
+                    q_no=None,
+                    answer_text=combined_verified,
                 )
+                if gate is None:
+                    usage_arb = self.engine.get_last_usage()
+                    u3_prompt += usage_arb.get("prompt_tokens", 0)
+                    u3_comp += usage_arb.get("completion_tokens", 0)
+                    u3_total += usage_arb.get("total_tokens", 0)
                 if cleared_ambiguities:
-                    q_err_res.errors = confirmed_errs
+                    _apply_normalizations(cleared_ambiguities, None, page_results, original_errs, arb_lexicon)
+                    if aligned_answers:
+                        for a in aligned_answers:
+                            _apply_normalizations(cleared_ambiguities, a, [], original_errs, arb_lexicon)
+                q_err_res.errors = confirmed_errs
 
             all_extracted_errors = q_err_res.errors
+
+        # ---------------------------------------------------------
+        # STAGE 3b wrap-up: persist evidence, sync normalized transcripts
+        # ---------------------------------------------------------
+        arbitration_meta: Dict[str, Any] = {"mode": arb_mode}
+        if gate is not None:
+            arb_res = gate.finalize()
+            u3_prompt += arb_res.token_usage.get("prompt_tokens", 0)
+            u3_comp += arb_res.token_usage.get("completion_tokens", 0)
+            u3_total += arb_res.token_usage.get("total_tokens", 0)
+            arbitration_meta.update({
+                "total_candidates": arb_res.total_candidates,
+                "benefit_of_doubt": sum(1 for r in arb_res.records if r.verdict == "HANDWRITING_AMBIGUITY"),
+                "genuine": sum(1 for r in arb_res.records if r.verdict == "GENUINE_ERROR"),
+                "uncertain_count": len(arb_res.uncertain),
+                "uncertain": [
+                    {
+                        "q_no": r.candidate.question_no,
+                        "read": r.candidate.candidate_token,
+                        "intended": r.candidate.intended_token,
+                        "context": r.candidate.context_sentence,
+                        "score": r.ambiguity_score,
+                        "crop_path": r.evidence.crop_path,
+                    } for r in arb_res.uncertain
+                ],
+                "cleared": [
+                    {
+                        "q_no": r.candidate.question_no,
+                        "read": r.candidate.candidate_token,
+                        "intended": r.candidate.intended_token,
+                        "score": r.ambiguity_score,
+                        "localization": r.evidence.localization_method,
+                    } for r in arb_res.records if r.verdict == "HANDWRITING_AMBIGUITY"
+                ],
+                "model_calls": arb_res.total_model_calls,
+                "token_usage": arb_res.token_usage,
+                "artifact": "stage3b_arbitration.json",
+                "writer_profile": "writer_profile.json",
+            })
+            print(f"[Extraction] [3b/3] Arbitration complete: {arb_res.total_candidates} candidates, "
+                  f"{arbitration_meta['benefit_of_doubt']} benefit of doubt, {arbitration_meta['genuine']} genuine, "
+                  f"{arbitration_meta['uncertain_count']} uncertain, {arb_res.total_model_calls} crop-level model calls.")
+        combined_verified = _rebuild_combined_verified(page_results)
+        aggregated_stage2.verified_transcript = combined_verified
 
         spelling_cnt = sum(1 for e in all_extracted_errors if "spell" in e.error_type.lower())
         grammar_cnt = sum(1 for e in all_extracted_errors if "gram" in e.error_type.lower())
@@ -660,7 +841,8 @@ class ScriptCheckingPipeline:
                 "verified_by_human": is_verified_gt,
                 "ground_truth_marks": ground_truth_marks,
                 "vlm_detected_teacher_marks": vlm_detected_marks,
-                "aligned_answers": [a.model_dump() for a in aligned_answers] if aligned_answers else []
+                "aligned_answers": [a.model_dump() for a in aligned_answers] if aligned_answers else [],
+                "arbitration": arbitration_meta
             }
         )
 
@@ -816,11 +998,9 @@ class ScriptCheckingPipeline:
 
         if eval_mode == "modular":
             print("\n[Evaluation] [4/4] Executing Stage 4: Modular Question-by-Question Evaluation...")
-            aligned_answers = []
-            if extraction.metadata.get("aligned_answers"):
+            aligned_answers = segment_script_into_questions(extraction, question_obj)
+            if not aligned_answers and extraction.metadata.get("aligned_answers"):
                 aligned_answers = [AlignedAnswerItem.model_validate(a) for a in extraction.metadata["aligned_answers"]]
-            if not aligned_answers:
-                aligned_answers = segment_script_into_questions(extraction, question_obj)
             print(f"[Evaluation] Loaded {len(aligned_answers)} distinct question answers.")
 
             stage4_result = self.stage4.evaluate_modular(

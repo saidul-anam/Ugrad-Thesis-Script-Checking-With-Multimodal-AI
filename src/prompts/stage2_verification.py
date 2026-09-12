@@ -24,8 +24,9 @@ If Stage 1 misread standard cursive handwriting strokes or digits as an unnatura
 - Minim Doubling: Lowercase 'm' naturally has 3 downward legs/humps. If Stage 1 misread it as 'mm' (e.g., 'Stormm'), verify against the image and restore 'Storm'.
 - Exit Flourishes: A pen exit flick off a terminal 'r' or 'w' is NOT an added letter 'e'. If Stage 1 transcribed 'overe' for 'over' or 'Deare' for 'Dear', restore 'over' / 'Dear'.
 - Cursive Loop Ambiguity: In standard English phrases (e.g., 'Many days have passed', 'do not have any knowledge'), if an open cursive 'v' was misread as 'r' ('hare'), verify against the sentence and image and restore 'have'.
-- Ascender & Crossbar Ambiguities: Cursive 'f' often lacks a prominent crossbar and connects directly into following vowels (resembling 'd'), or 't' resembles 'd' or 'l' due to looped ascenders, or cursive 'c-t' ligatures stutter (resembling 'c-i-d-t'). In standard vocabulary (e.g. 'powerful sector', 'electricity supply', 'pie chart illustrates', 'new thoughts'), if Stage 1 transcribed an ambiguous stroke as a non-word (e.g. 'powerdul', 'electricidty', 'illustrodes', 'thouths'), inspect the image and restore the student's intended standard word ('powerful', 'electricity', 'illustrates', 'thoughts').
+- Ascender & Crossbar Ambiguities: Cursive ascender letters (f, t, l, d, b) and ligature joins are frequently misread as one another when a crossbar is faint or a loop is closed. If Stage 1 transcribed a non-word that differs from an obvious in-context standard word only by such a stroke, inspect the image: restore the standard word ONLY if the ink genuinely supports it; if the student's letters are clearly formed as written, keep the student's spelling.
 - Question Header Digits: Verify handwritten question numbers after 'Ans to the Question No - ' against the image strokes, syllabus, and answer topic. If an answer corresponds to Question 9 (Story Completion: 'A lion and a mouse') and the handwritten digit was misread as '05' due to stroke curvature, restore 'Ans to the Question No - 09'.
+- Objective Item Options: When verifying answers to objective questions (MCQs, cloze items with clues), cross-examine candidate answers against the exam vocabulary and question options (e.g. if Stage 1 transcribed an unnatural OCR slip like 'coastard' where the student wrote an MCQ choice like 'coward', check the image strokes and restore the student's true answer).
 
 CRITICAL AUDITING CONSTRAINTS:
 - Do NOT invent misspellings for correctly written words.
@@ -56,10 +57,11 @@ Return a valid JSON object matching this schema:
 
 def build_stage2_prompt(
     stage1_transcript: str,
-    question_syllabus: Optional[List[Dict[str, Any]]] = None
+    question_syllabus: Optional[List[Dict[str, Any]]] = None,
+    question_reference_vocab: Optional[List[str]] = None
 ) -> str:
-    """Build the Stage 2 Autocorrection Verification prompt with optional syllabus context."""
-    syllabus_str = ""
+    """Build the Stage 2 Autocorrection Verification prompt with optional syllabus and vocab context."""
+    context_sections = []
     if question_syllabus:
         lines = []
         for sq in question_syllabus[:15]:
@@ -68,7 +70,13 @@ def build_stage2_prompt(
             if q_num and q_title:
                 lines.append(f"- Q{q_num}: {q_title}")
         if lines:
-            syllabus_str = "\nEXAM SYLLABUS REFERENCE:\n" + "\n".join(lines) + "\n"
+            context_sections.append("EXAM SYLLABUS REFERENCE:\n" + "\n".join(lines))
+
+    if question_reference_vocab:
+        vocab_preview = ", ".join(f"'{w}'" for w in question_reference_vocab[:200])
+        context_sections.append(f"TARGET EXAM QUESTION VOCABULARY & OPTIONS:\n[{vocab_preview}]")
+
+    syllabus_str = ("\n" + "\n\n".join(context_sections) + "\n") if context_sections else ""
 
     return STAGE2_PROMPT_TEMPLATE.format(
         stage1_transcript=stage1_transcript,

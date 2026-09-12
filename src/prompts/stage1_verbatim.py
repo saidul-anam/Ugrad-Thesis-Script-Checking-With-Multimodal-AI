@@ -56,10 +56,10 @@ def build_stage1_prompt(
             )
 
     if question_reference_vocab:
-        vocab_preview = ", ".join(f"'{w}'" for w in question_reference_vocab[:40])
+        vocab_preview = ", ".join(f"'{w}'" for w in question_reference_vocab[:250])
         prompt += (
             f"\n\n--- EXAM QUESTION REFERENCE VOCABULARY (STRICTLY NO AUTOCORRECTION) ---\n"
-            f"Target exam question vocabulary: [{vocab_preview}].\n"
+            f"Target exam question vocabulary (MCQ options, clue words, answer targets): [{vocab_preview}].\n"
             f"CRITICAL DIRECTIVE: Use this reference vocabulary ONLY to help decipher ambiguous cursive strokes or messy pen marks. "
             f"If the student made an actual spelling, grammatical, or word-choice error (e.g. wrote 'disasterre', 'succeded', 'corage'), "
             f"YOU MUST TRANSCRIBE THEIR EXACT MISSPELLING character-for-character so Stage 3 can penalize it. "
