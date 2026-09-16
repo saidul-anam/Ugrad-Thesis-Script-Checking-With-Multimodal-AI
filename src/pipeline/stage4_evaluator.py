@@ -118,7 +118,12 @@ class Stage4Evaluator:
         spec.max_mark = max_mark
         errors_text = "No confirmed linguistic errors."
         if ans.errors:
-            errors_text = "\n".join(f"- [{e.get('error_type', 'error')}] '{e.get('erroneous_text', '')}' -> '{e.get('suggested_correction', '')}'" for e in ans.errors[:12])
+            from src.pipeline.token_guard import filter_protected_errors
+            clean_errors, _ = filter_protected_errors(ans.errors, ans.answer_text)
+            if clean_errors:
+                errors_text = "\n".join(f"- [{e.get('error_type', 'error')}] '{e.get('erroneous_text', '')}' -> '{e.get('suggested_correction', '')}'" for e in clean_errors[:12])
+            else:
+                errors_text = "No confirmed linguistic errors."
         source_text = source_text_for_question(ans.q_no, question_text) if spec.task_type.lower() in ("summary", "theme") else ""
 
         if mode == "A":

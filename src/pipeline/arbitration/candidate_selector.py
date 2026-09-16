@@ -100,13 +100,32 @@ def differing_token_pairs(erroneous: str, correction: str, max_edits: int = 2) -
 _ALPHA_WORD = re.compile(r"^[a-z]+$")
 
 
+CULTURAL_NCTB_TERMS: Set[str] = {
+    "salam", "salaam", "eid", "madrasah", "madrasa", "hartal", "lakh", "crore",
+    "rickshaw", "puja", "babu", "thana", "upazila", "ghat", "azimpur", "bdr",
+}
+
+
+HANDWRITING_INITIAL_CONFUSIONS = {
+    "r": ["v"],
+    "v": ["r"],
+    "c": ["e"],
+    "e": ["c"],
+    "d": ["cl"],
+    "m": ["rn", "nn", "n"],
+    "n": ["u", "m"],
+    "u": ["n"],
+    "l": ["t", "i"],
+}
+
+
 def lexicon_candidates(
     answer_text: str,
     lexicon: Set[str],
     question_vocab: Optional[Set[str]] = None,
     existing_errors: Optional[List[LinguisticErrorItem]] = None,
-    min_len: int = 4,
     max_edits: int = 2,
+    min_len: int = 4,
 ) -> List[LinguisticErrorItem]:
     """
     Dictionary scan (no model, no letter rules): every alphabetic token of the answer that is not a
@@ -120,8 +139,13 @@ def lexicon_candidates(
     covered = set()
     for e in existing_errors or []:
         covered.update(tokenize(e.erroneous_text or ""))
-    raw_tokens = answer_text.split()
-    answer_lex = {t for t in tokenize(answer_text) if t in lexicon}
+
+    # Filter out tabular / form / address lines (e.g. envelope tables | From | To |)
+    prose_lines = [line for line in answer_text.splitlines() if not line.strip().startswith("|")]
+    prose_text = "\n".join(prose_lines)
+    raw_tokens = prose_text.split()
+
+    answer_lex = {t for t in tokenize(prose_text) if t in lexicon}
     seen: Set[str] = set()
     out: List[LinguisticErrorItem] = []
     for i, raw in enumerate(raw_tokens):
@@ -129,7 +153,7 @@ def lexicon_candidates(
         low = tok.lower()
         if len(low) < min_len or not _ALPHA_WORD.match(low) or low in seen:
             continue
-        if low in lexicon or low in q_vocab or low in covered:
+        if low in lexicon or low in q_vocab or low in covered or low in CULTURAL_NCTB_TERMS:
             continue
         prev = raw_tokens[i - 1] if i > 0 else ""
         sentence_start = i == 0 or prev.endswith((".", "!", "?", ":")) or prev.lower().startswith("ans")
@@ -154,6 +178,8 @@ def lexicon_candidates(
             return (levenshtein(low, w), abs(len(w) - len(low)), w)
         pool = {w for w in (q_vocab | answer_lex) if abs(len(w) - len(low)) <= max_edits and len(w) >= 3}
         pool.update(difflib.get_close_matches(low, [w for w in lexicon if w[:1] == low[:1] and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=5, cutoff=0.8))
+        for alt in HANDWRITING_INITIAL_CONFUSIONS.get(low[:1], []):
+            pool.update(difflib.get_close_matches(low, [w for w in lexicon if w.startswith(alt) and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=3, cutoff=0.7))
         best, best_d = None, max_edits + 1
         if pool:
             cand_w = min(pool, key=_rank)

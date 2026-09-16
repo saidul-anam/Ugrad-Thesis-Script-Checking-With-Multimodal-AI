@@ -24,6 +24,7 @@ HEADER_NORMALIZATION_RULES = [
     (re.compile(r'Anseve?r', re.IGNORECASE), 'Answer'),
     (re.compile(r'\bAns(?:i?to|i\s*to)\b', re.IGNORECASE), 'Ans to'),
     (re.compile(r'\bAnsi\b', re.IGNORECASE), 'Ans'),
+    (re.compile(r'\b(?:Ans\s+(?:to\s+(?:the\s+)?)?)(?:que|due)\b', re.IGNORECASE), 'Ans to the Q'),
     (re.compile(r'\$?\s*\\?i?ghtarrow\s*\$?', re.IGNORECASE), ' -> '),
 ]
 
@@ -41,15 +42,17 @@ def to_arabic_digits(text: str) -> str:
 
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
-    # English question headers
-    r'(?:\n|\A)\s*(?:Ans(?:i?to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    # English question headers (handles Ans/Answer/Dans/Que/due, optional colons, etc.)
+    r'(?:\n|\A)\s*(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]*(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
     r'(?:\n|\A)\s*Ans[:\s]+(?:to\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
-    r'(?:\n|\A)\s*Q(?:uestion)?[\s\.\,\-]+(?:No[\s\.\,\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    r'(?:\n|\A)\s*(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]+(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
     # Bengali question headers
     r'(?:\n|\A)\s*(?:[০-৯0-9]{1,2}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*প্রশ্নের?\s*উত্তর)|'
     r'(?:\n|\A)\s*(?:প্রশ্নের?\s*উত্তর\s*[:\-]?\s*[০-৯0-9]{1,2})|'
-    # Subparts: (A), (B), (ক), (খ) on new line
-    r'(?:\n|\A)\s*[\(（](?:[A-Da-d]|[ক-ঘ])[\)）]\s*(?:\n|Ans|Answer)|'
+    # Subparts: (A), (B), (ক), (খ), circled letters Ⓐ-Ⓓ, or standalone A/B line before sub-items
+    r'(?:\n|\A)\s*[\(（](?:[A-Da-d]|[ক-ঘ])[\)）]\s*(?:\n|\r\n|Ans|Answer)|'
+    r'(?:\n|\A)\s*[Ⓐ-Ⓓ]\s*(?:\n|\r\n|Ans|Answer)|'
+    r'(?:\n|\A)\s*[A-B]\s*(?:\n|\r\n)\s*(?=[a-e][\)\.]|\([a-e]\))|'
     # Theme/Poem headers
     r'(?:\n|\A)\s*Theme:\s+The\s+poem'
     r'))',
@@ -57,9 +60,11 @@ HEADER_SPLIT_REGEX = re.compile(
 )
 
 HEADER_EXTRACT_REGEX = re.compile(
-    r'(?:Ans(?:i?to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*([0-9]{1,2}(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'Q(?:uestion)?[\s\.\,\-]*(?:No[\s\.\,\-]*)?\s*([0-9]{1,2}(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'^\s*\(([A-B])\)',
+    r'(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]*(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}\s*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]+(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}\s*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'^\s*[\(（]([A-B])[\)）]\s*(?:\n|\r\n|Ans|Answer|$)|'
+    r'^\s*([ⒶⒷ])\s*(?:\n|\r\n|Ans|Answer|$)|'
+    r'^\s*([A-B])\s*$',
     re.IGNORECASE | re.MULTILINE
 )
 
@@ -88,9 +93,9 @@ def _extract_explicit_english_header(arabic_lines: str) -> Optional[str]:
         if g:
             val = g.strip().upper()
             clean_val = re.sub(r'\b0+(\d+)', r'\1', val)
-            if clean_val in ["1", "1A", "1(A)", "A"]:
+            if clean_val in ["1", "1A", "1(A)", "A", "Ⓐ"]:
                 return "1(A)"
-            elif clean_val in ["1B", "1(B)", "B"]:
+            elif clean_val in ["1B", "1(B)", "B", "Ⓑ"]:
                 return "1(B)"
             elif clean_val in ["Z", "N"]:
                 return "7"
@@ -164,8 +169,10 @@ def extract_header_qno(
 
     # 4. Subpart (B) following (A) or subpart (খ) following (ক)
     if current_parent in ["1", "1(A)", "1A"]:
-        if re.search(r'^\s*[\(（](?:B|b|খ)[\)）]', first_lines, re.MULTILINE):
+        if re.search(r'^\s*(?:[\(（](?:B|খ)[\)）]|[Ⓑ]|B(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
             return "1(B)"
+        if re.search(r'^\s*(?:[\(（](?:A|ক)[\)）]|[Ⓐ]|A(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
+            return "1(A)"
 
     # 5. Backward compatibility heuristics for English HSC
     if "theme:" in first_lines_lower and ("dream" in first_lines_lower or "poem" in first_lines_lower):
@@ -246,9 +253,17 @@ def segment_script_into_questions(
             answer_buckets[target_q]["text_parts"].append(s.strip())
             answer_buckets[target_q]["pages"].add(page_no)
 
-        # Attribute page errors to active question(s)
-        if current_q_no and current_q_no in answer_buckets:
-            answer_buckets[current_q_no]["errors"].extend(page_errors)
+    # Gather all script-level errors from extraction
+    all_extracted_errors = []
+    if pages:
+        for p in pages:
+            if p.stage3_errors and p.stage3_errors.errors:
+                for e in p.stage3_errors.errors:
+                    d = e.model_dump() if hasattr(e, "model_dump") else dict(e)
+                    d.setdefault("page_no", p.page_no)
+                    all_extracted_errors.append(d)
+    if not all_extracted_errors and extraction.stage3_errors and extraction.stage3_errors.errors:
+        all_extracted_errors = [e.model_dump() if hasattr(e, "model_dump") else dict(e) for e in extraction.stage3_errors.errors]
 
     # Convert buckets to structured AlignedAnswerItem list
     aligned_items: List[AlignedAnswerItem] = []
@@ -260,13 +275,62 @@ def segment_script_into_questions(
     else:
         ordered_keys = sorted(all_keys)
 
+    # Pre-build combined answer texts for matching
+    combined_texts = {}
+    for q in ordered_keys:
+        combined_texts[q] = "\n\n".join(answer_buckets[q]["text_parts"]).strip()
+
+    # Attribute errors to questions accurately using question_no and context
+    question_errors: Dict[str, List[Dict[str, Any]]] = {q: [] for q in ordered_keys}
+    for err in all_extracted_errors:
+        qn = str(err.get("question_no") or "").strip().upper()
+        needle = str(err.get("erroneous_text") or "").strip().lower()
+        ctx = str(err.get("context_sentence") or "").strip().lower()
+
+        matched_q = None
+        # 1. Match by explicit question_no
+        if qn:
+            for q in ordered_keys:
+                clean_q = q.upper().replace("(", "").replace(")", "").strip()
+                clean_qn = qn.replace("(", "").replace(")", "").strip()
+                if q.upper() == qn or clean_q == clean_qn:
+                    matched_q = q
+                    break
+
+        # 2. Match by context sentence presence in answer text
+        if not matched_q and ctx:
+            for q in ordered_keys:
+                q_txt = combined_texts[q].lower()
+                if ctx[:30] in q_txt or (len(ctx) > 15 and ctx[-20:] in q_txt):
+                    matched_q = q
+                    break
+
+        # 3. Match by erroneous_text within word boundaries in answer text
+        if not matched_q and needle:
+            for q in ordered_keys:
+                q_txt = combined_texts[q].lower()
+                if re.search(r'\b' + re.escape(needle) + r'\b', q_txt):
+                    matched_q = q
+                    break
+
+        # 4. Fallback: match by page presence if error has page_no or page_number
+        err_page = err.get("page_no") if err.get("page_no") is not None else err.get("page_number")
+        if not matched_q and err_page is not None:
+            for q in ordered_keys:
+                if err_page in answer_buckets[q]["pages"]:
+                    matched_q = q
+                    break
+
+        if matched_q:
+            question_errors[matched_q].append(err)
+
     for q in ordered_keys:
         b = answer_buckets[q]
-        combined_ans = "\n\n".join(b["text_parts"]).strip()
+        combined_ans = combined_texts[q]
         # Deduplicate error dicts by erroneous_text + sentence
         seen_errs = set()
         dedup_errors = []
-        for err in b["errors"]:
+        for err in question_errors[q]:
             key = (err.get("erroneous_text", ""), err.get("context_sentence", ""))
             if key not in seen_errs:
                 seen_errs.add(key)

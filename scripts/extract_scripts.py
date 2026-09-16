@@ -350,6 +350,12 @@ def main():
         action="store_true",
         help="Disable interactive terminal prompts and use CLI values directly"
     )
+    parser.add_argument(
+        "--parallel-workers",
+        type=int,
+        default=1,
+        help="Number of concurrent workers for page extraction and consensus re-reads (1=serial, >1=parallel, default: 1)."
+    )
 
     args = parser.parse_args()
 
@@ -468,6 +474,10 @@ def main():
         force_api=args.api,
         api_url=args.api_url if args.api else None
     )
+    if getattr(args, "parallel_workers", 1) > 1:
+        cfg.pipeline.parallel_workers = args.parallel_workers
+        cfg.arbitration.consensus_parallel_workers = args.parallel_workers
+
     pipeline = ScriptCheckingPipeline(
         engine=engine,
         config=cfg
@@ -501,7 +511,8 @@ def main():
                 force_extract=not args.skip_extracted,
                 question_input=getattr(args, "question", None),
                 questions_root=getattr(args, "questions_dir", "outputs/questions"),
-                extract_teacher_marks=extract_marks
+                extract_teacher_marks=extract_marks,
+                parallel_workers=getattr(args, "parallel_workers", 1)
             )
 
             summary_records.append({

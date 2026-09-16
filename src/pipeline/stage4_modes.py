@@ -26,6 +26,7 @@ import yaml
 
 from src.core.schemas import AlignedAnswerItem
 from src.utils.ground_truth import canonicalize_question_key
+from src.utils.linguistic_sanitizer import get_english_lexicon
 
 
 # ---------------------------------------------------------------------------
@@ -216,9 +217,12 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
         # MCQ only: the student may write the option text (or option letter + text)
         if is_mcq and len(an) >= 6 and (an in c or c in an):
             return True
-        # tolerate a single-character slip in words of length >= 5 (rubric: minor spelling slips)
+        # tolerate a single-character slip in words of length >= 5 (rubric: minor spelling slips),
+        # but only if candidate is NOT a different legitimate English word (e.g. "healthy" != "health")
         if len(an) >= 5 and abs(len(an) - len(c)) <= 1 and difflib.SequenceMatcher(None, c, an).ratio() >= 0.85:
-            return True
+            lexicon = get_english_lexicon()
+            if c not in lexicon:
+                return True
     return False
 
 
@@ -409,7 +413,13 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
     mpi = float(key_entry.get("mark_per_item") or spec.mark_per_item or 1.0)
     seq = key_entry.get("correct_sequence")
     if seq:
-        student = [str(x).strip().lower() for x in (parsed.get("student_sequence") or [])]
+        raw_student = [str(x).strip().lower() for x in (parsed.get("student_sequence") or [])]
+        from src.pipeline.token_guard import sanitize_rearrangement_sequence
+        repaired_seq, anomalies = sanitize_rearrangement_sequence(" ".join(raw_student))
+        student = repaired_seq if repaired_seq and len(repaired_seq) == len(raw_student) else raw_student
+        if anomalies:
+            res.notes.extend(anomalies)
+
         correct = 0
         for pos, letter in enumerate(seq):
             got = student[pos] if pos < len(student) else ""
@@ -528,6 +538,18 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
     res.weaknesses = [str(s) for s in (parsed.get("frequent_errors") or [])][:5]
     ev = parsed.get("criterion_evidence") or {}
     if isinstance(ev, dict):
+        hallucinations = []
+        norm_ans = re.sub(r'\s+', ' ', answer_text.lower())
+        for k, v in ev.items():
+            s = str(v).strip()
+            # If evidence contains quoted excerpts, check against student's answer text
+            quote_m = re.findall(r'["\']([^"\']{10,})["\']', s)
+            for q in quote_m:
+                norm_q = re.sub(r'\s+', ' ', q.lower())
+                if norm_q not in norm_ans:
+                    hallucinations.append(q[:40])
+        if hallucinations:
+            res.notes.append(f"evidence_quote_unverified: {hallucinations}")
         res.notes.append("evidence: " + json.dumps({k: str(v)[:80] for k, v in ev.items()}, ensure_ascii=False))
     return res
 

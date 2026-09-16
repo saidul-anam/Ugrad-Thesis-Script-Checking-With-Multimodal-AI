@@ -207,7 +207,12 @@ def aligned_token(sample_tokens: List[str], ref_tokens: List[str], target_idx: i
     return None
 
 
-def _find_target_index(ref_tokens: List[str], candidate: str, intended: str) -> int:
+def _find_target_index(
+    ref_tokens: List[str],
+    candidate: str,
+    intended: str,
+    context_sentence: Optional[str] = None,
+) -> int:
     cand, inten = candidate.lower(), intended.lower()
     for i, t in enumerate(ref_tokens):
         if t == cand:
@@ -220,7 +225,36 @@ def _find_target_index(ref_tokens: List[str], candidate: str, intended: str) -> 
         d = min(levenshtein(t, cand), levenshtein(t, inten))
         if d < best_d:
             best_i, best_d = i, d
-    return best_i if best_d <= 2 else -1
+    if best_d <= 2:
+        return best_i
+
+    # Context-anchored fallback:
+    # If the candidate/intended token is not found within 2 edits (e.g. OCR read 'renny', dictionary guessed 'runny',
+    # but the paper has 'verry'), use surrounding context words from context_sentence to find the target position in ref_tokens.
+    if context_sentence:
+        ctx_tokens = tokenize(context_sentence)
+        cand_in_ctx = -1
+        for i, t in enumerate(ctx_tokens):
+            if t == cand or t == inten or min(levenshtein(t, cand), levenshtein(t, inten)) <= 1:
+                cand_in_ctx = i
+                break
+        if cand_in_ctx >= 0:
+            prev_tok = ctx_tokens[cand_in_ctx - 1] if cand_in_ctx > 0 else None
+            next_tok = ctx_tokens[cand_in_ctx + 1] if cand_in_ctx + 1 < len(ctx_tokens) else None
+            if prev_tok and next_tok:
+                for j in range(len(ref_tokens) - 2):
+                    if ref_tokens[j] == prev_tok and ref_tokens[j + 2] == next_tok:
+                        return j + 1
+            if prev_tok:
+                for j in range(len(ref_tokens) - 1):
+                    if ref_tokens[j] == prev_tok:
+                        return j + 1
+            if next_tok:
+                for j in range(1, len(ref_tokens)):
+                    if ref_tokens[j] == next_tok:
+                        return j - 1
+
+    return -1
 
 
 def agreement(
@@ -228,13 +262,14 @@ def agreement(
     reference_line: str,
     candidate: str,
     intended: str,
+    context_sentence: Optional[str] = None,
 ) -> Tuple[float, float, Optional[float], List[Optional[str]]]:
     """
     Share of re-reads whose aligned token equals the candidate / the intended token, plus the
     token-level confidence of the disputed word in the consensus (None if not locatable).
     """
     ref_tokens = tokenize(reference_line)
-    t_idx = _find_target_index(ref_tokens, candidate, intended)
+    t_idx = _find_target_index(ref_tokens, candidate, intended, context_sentence)
     aligned: List[Optional[str]] = []
     for s in samples:
         aligned.append(aligned_token(tokenize(s), ref_tokens, t_idx) if t_idx >= 0 else None)
@@ -258,24 +293,43 @@ def consensus_signal(agr_candidate: float, agr_intended: float, word_conf: Optio
     base = min(1.0, max(0.0, 0.5 + 0.5 * (agr_intended - agr_candidate)))
     if word_conf is None:
         return base
+    if base >= 0.8:
+        return min(1.0, max(base, 0.8 + 0.2 * word_conf))
+    if base <= 0.2:
+        return max(0.0, min(base, base * (1.2 - 0.2 * word_conf)))
     return 0.7 * base + 0.3 * (1.0 - word_conf)
 
 
 # ---------------------------------------------------------------------------
 # Engine-facing transcriber
 # ---------------------------------------------------------------------------
+import threading
+
+
 class ConsensusTranscriber:
-    def __init__(self, engine, n_samples: int = 5, use_sampling: bool = True, temperature: float = 0.7, seed: int = 0):
+    def __init__(
+        self,
+        engine,
+        n_samples: int = 5,
+        use_sampling: bool = True,
+        temperature: float = 0.7,
+        seed: int = 0,
+        parallel_workers: int = 1,
+    ):
         self.engine = engine
         self.augs = default_augmentations(n_samples, use_sampling, temperature)
         self.model_calls = 0
         self.token_usage: Dict[str, int] = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+        self.parallel_workers = max(1, int(parallel_workers or 1))
         self._rng = random.Random(seed)
+        self._lock = threading.Lock()
 
     def _accumulate_usage(self) -> None:
-        u = self.engine.get_last_usage() or {}
-        for k in self.token_usage:
-            self.token_usage[k] += int(u.get(k, 0) or 0)
+        with self._lock:
+            self.model_calls += 1
+            u = self.engine.get_last_usage() or {}
+            for k in self.token_usage:
+                self.token_usage[k] += int(u.get(k, 0) or 0)
 
     def read_once(self, crop: Image.Image, aug: Optional[Augment] = None) -> str:
         img = apply_augmentation(crop, aug) if aug else crop
@@ -288,23 +342,43 @@ class ConsensusTranscriber:
             max_new_tokens=96,
             thinking_mode=False,
         )
-        self.model_calls += 1
         self._accumulate_usage()
         return _clean_line(out)
 
-    def run(self, crop: Image.Image, reference_line: str, candidate: str, intended: str) -> Dict[str, Any]:
-        samples: List[str] = []
-        for aug in self.augs:
-            try:
-                samples.append(self.read_once(crop, aug))
-            except Exception as ex:  # a failed re-read is simply a missing sample
-                samples.append("")
+    def run(
+        self,
+        crop: Image.Image,
+        reference_line: str,
+        candidate: str,
+        intended: str,
+        context_sentence: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        samples: List[str] = [""] * len(self.augs)
+        if self.parallel_workers > 1 and len(self.augs) > 1:
+            from concurrent.futures import ThreadPoolExecutor
+
+            def _read_idx(pair):
+                idx, aug = pair
+                try:
+                    return idx, self.read_once(crop, aug)
+                except Exception:
+                    return idx, ""
+
+            with ThreadPoolExecutor(max_workers=min(len(self.augs), self.parallel_workers)) as executor:
+                for idx, res in executor.map(_read_idx, enumerate(self.augs)):
+                    samples[idx] = res
+        else:
+            for i, aug in enumerate(self.augs):
+                try:
+                    samples[i] = self.read_once(crop, aug)
+                except Exception as ex:  # a failed re-read is simply a missing sample
+                    samples[i] = ""
         samples_ok = [s for s in samples if s]
         if not samples_ok:
             return {"samples": samples, "agreement_candidate": None, "agreement_intended": None,
                     "word_confidence": None, "signal": None, "consensus": None,
                     "consensus_token": None, "consensus_token_agreement": 0.0}
-        agr_c, agr_i, word_conf, aligned = agreement(samples_ok, reference_line, candidate, intended)
+        agr_c, agr_i, word_conf, aligned = agreement(samples_ok, reference_line, candidate, intended, context_sentence)
         res = progressive_consensus(samples_ok)
 
         # Extract dominant visual consensus token across aligned tokens

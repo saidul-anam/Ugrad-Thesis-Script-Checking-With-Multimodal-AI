@@ -7,10 +7,25 @@ from src.pipeline.stage4_modes import (
     load_rubric_specs, rubric_is_mode_based, load_answer_key, key_for_question,
     score_mode_a, score_mode_b, score_mode_c, snap_half, band_for, verbatim_overlap,
     build_mode_a_prompt, build_mode_b_prompt, build_mode_c_prompt, source_text_for_question,
+    _matches_accepted,
 )
 
 RUBRIC = yaml.safe_load(open("configs/rubrics/english_writing.yaml", "r", encoding="utf-8"))
 KEY = load_answer_key("SE_11_Q1")
+
+
+def test_matches_accepted_spelling_tolerance_and_lexicon_gate():
+    # Minor typographical slips on words >= 5 letters (not legitimate other words)
+    assert _matches_accepted("atain", ["attain"]) is True
+    assert _matches_accepted("helth", ["health"]) is True
+    
+    # Real words that are different parts of speech or different words must NOT match
+    assert _matches_accepted("healthy", ["health"]) is False
+    assert _matches_accepted("rights", ["right"]) is False
+    
+    # Exact match
+    assert _matches_accepted("health", ["health"]) is True
+    assert _matches_accepted("right", ["right"]) is True
 
 
 def test_rubric_specs_loaded_per_mode():

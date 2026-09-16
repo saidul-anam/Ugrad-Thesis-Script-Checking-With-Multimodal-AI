@@ -8,9 +8,16 @@ from src.core.schemas import Stage2VerificationResult, AutocorrectionDiffItem
 from src.prompts.stage2_verification import build_stage2_prompt, STAGE2_SYSTEM_PROMPT
 
 
+def sanitize_latex_json(text: str) -> str:
+    """Ensure LaTeX commands like \\rightarrow don't get unescaped into control characters like \\r."""
+    for cmd in ["rightarrow", "times", "frac", "bullet"]:
+        text = re.sub(rf'(?<!\\)\\{cmd}', rf'\\\\{cmd}', text)
+    return text
+
+
 def _extract_json_from_text(text: str) -> Optional[Dict[str, Any]]:
     """Extract JSON object from string even if surrounded by markdown code blocks."""
-    text = text.strip()
+    text = sanitize_latex_json(text.strip())
     match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
     if match:
         try:
@@ -132,19 +139,15 @@ class Stage2Verifier:
         parsed_data = _extract_json_from_text(response)
         if parsed_data and "verified_transcript" in parsed_data:
             diffs = []
-            verified_text = parsed_data["verified_transcript"]
+            declared_items = parsed_data.get("silent_corrections_fixed", [])
 
-            for item in parsed_data.get("silent_corrections_fixed", []):
+            for item in declared_items:
                 s1_out = str(item.get("stage1_output") or item.get("original") or item.get("stage1") or "").strip()
                 act_hw = str(item.get("actual_handwritten") or item.get("corrected") or item.get("actual") or "").strip()
                 reason = str(item.get("reason", "")).strip()
                 ctx = str(item.get("context_snippet", "")).strip()
 
                 if is_spurious_reversion(s1_out, act_hw):
-                    # Spurious cursive ligature reversion (e.g. work -> woork)
-                    # Restore Stage 1's correct word in verified_text
-                    if act_hw and s1_out:
-                        verified_text = re.sub(rf"\b{re.escape(act_hw)}\b", s1_out, verified_text)
                     continue
 
                 diffs.append(AutocorrectionDiffItem(
@@ -154,11 +157,40 @@ class Stage2Verifier:
                     context_snippet=ctx
                 ))
 
+            # Build verified transcript starting from Stage 1 (Declared-Only Modification Policy)
+            verified_text = stage1_transcript
+            for d in diffs:
+                s1 = d.stage1_output
+                act = d.actual_handwritten
+                ctx = d.context_snippet
+                if not s1 or not act or s1 == act:
+                    continue
+                if ctx and ctx in verified_text and s1 in ctx:
+                    updated_ctx = ctx.replace(s1, act, 1)
+                    verified_text = verified_text.replace(ctx, updated_ctx, 1)
+                elif s1 in verified_text:
+                    verified_text = re.sub(rf"\b{re.escape(s1)}\b", act, verified_text, count=1)
+
+            # Strict Tag & LaTeX Protection: Never drop [struck: ...] tags or LaTeX arrows from Stage 1
+            struck_tags = re.findall(r'\[struck:[^\]]+\]', stage1_transcript)
+            for tag in struck_tags:
+                if tag not in verified_text:
+                    inner = tag[len("[struck:"): -1].strip()
+                    if inner and inner in verified_text:
+                        verified_text = re.sub(rf'\b{re.escape(inner)}\b', tag, verified_text, count=1)
+
+            # Preserve LaTeX arrow notations from Stage 1 if present
+            if r"$\rightarrow$" in stage1_transcript and r"$\rightarrow$" not in verified_text:
+                verified_text = re.sub(r'[\r\n\t\x0b\x0c]?ightarrow', r'\\rightarrow', verified_text)
+                if r"\rightarrow" in verified_text and r"$\rightarrow$" not in verified_text:
+                    verified_text = verified_text.replace(r"\rightarrow", r"$\rightarrow$")
+
+            notes = parsed_data.get("verification_notes", "")
             return Stage2VerificationResult(
                 verified_transcript=verified_text,
                 silent_corrections_fixed=diffs,
                 total_corrections_count=len(diffs),
-                verification_notes=parsed_data.get("verification_notes", "")
+                verification_notes=notes
             )
 
         # Fallback if raw text returned without valid JSON structure

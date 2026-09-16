@@ -19,11 +19,20 @@ _SYSTEM_DICT_PATH = "/usr/share/dict/words"
 _ENGLISH_LEXICON: Optional[Set[str]] = None
 
 COMMON_ENGLISH_FALLBACK = {
-    "really", "reality", "healthy", "succeeded", "alone", "attain", "disaster",
-    "engineer", "university", "family", "families", "according", "respect",
-    "intelligence", "system", "minister", "gaza", "pasteur", "france", "dhaka",
-    "power", "electricity", "natural", "coal", "nuclear", "lion", "mouse",
-    "poverty", "famine", "siege", "author", "deprivation", "moment", "momentum"
+    "really", "reality", "healthy", "health", "succeeded", "success", "successful",
+    "alone", "attain", "disaster", "engineer", "university", "family", "families",
+    "according", "respect", "intelligence", "system", "minister", "gaza", "pasteur",
+    "france", "dhaka", "power", "electricity", "natural", "coal", "nuclear", "lion",
+    "mouse", "poverty", "famine", "siege", "author", "deprivation", "moment", "momentum",
+    "right", "rights", "duty", "duties", "literate", "illiterate", "literacy", "happy",
+    "happiness", "teach", "teaches", "teacher", "learn", "learns", "enable",
+    "enables", "best", "better", "essential", "revolution", "revolutionary", "child",
+    "children", "school", "education", "educational", "opportunity", "opportunities",
+    "mobility", "status", "violence", "pregnancy", "vulnerable", "abuse", "curtail",
+    "full", "time", "household", "law", "laws", "doctor", "medicine", "medical",
+    "college", "passed", "passing", "hope", "dream", "dreams", "science", "scientific",
+    "solve", "problem", "problems", "program", "programme", "algorithm", "disease",
+    "germ", "germs", "cure", "cured", "cures", "treat", "treated", "animal", "animals"
 }
 
 

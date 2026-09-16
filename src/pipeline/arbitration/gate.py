@@ -22,7 +22,7 @@ from src.core.schemas import (
     LinguisticErrorItem,
     Stage3bArbitrationResult,
 )
-from src.pipeline.arbitration.candidate_selector import select_candidates, lexicon_candidates
+from src.pipeline.arbitration.candidate_selector import select_candidates, lexicon_candidates, levenshtein
 from src.pipeline.arbitration.symbolic_evidence import align_chars, phonetic_plausibility
 from src.pipeline.arbitration.writer_profile import (
     WriterProfile,
@@ -83,6 +83,7 @@ class EvidenceArbitrationGate:
             n_samples=cfg.consensus_samples,
             use_sampling=cfg.consensus_use_sampling_variant,
             temperature=cfg.consensus_temperature,
+            parallel_workers=getattr(cfg, "consensus_parallel_workers", 1),
         )
         self.judge = ForcedChoiceJudge(engine)
         self.records: List[ArbitrationRecord] = []
@@ -118,9 +119,11 @@ class EvidenceArbitrationGate:
         ev.phonetic_signal = 1.0 - pp
 
         # 2. learned writer prior (before this candidate contributes to the profile).
-        #    Below min_count there is NO evidence either way -> None (neutral), not 0 (= "genuine").
-        wp, cnt = writer_prior(self.profile, ops, self.cfg.writer_profile_min_count)
-        ev.writer_prior = wp if cnt >= max(1, self.cfg.writer_profile_min_count) else None
+        # Check if intended_token is an established writer anchor word (demonstrated correct usage in script)
+        is_writer_anchor = cand.intended_token.lower() in getattr(self.profile, "anchors", [])
+        req_min = 1 if is_writer_anchor else max(1, self.cfg.writer_profile_min_count)
+        wp, cnt = writer_prior(self.profile, ops, req_min)
+        ev.writer_prior = wp if cnt >= req_min else None
         ev.writer_pair_count = cnt
 
         # 3. localization + crop evidence
@@ -135,8 +138,13 @@ class EvidenceArbitrationGate:
             ev.crop_path = crop.path
             # 3a. augmented consensus
             try:
-                cres = self.consensus.run(crop.image, crop.transcript or cand.context_sentence,
-                                          cand.candidate_token, cand.intended_token)
+                cres = self.consensus.run(
+                    crop.image,
+                    crop.transcript or cand.context_sentence,
+                    cand.candidate_token,
+                    cand.intended_token,
+                    context_sentence=cand.context_sentence,
+                )
                 ev.consensus_samples = [s for s in cres.get("samples", [])]
                 ev.consensus_agreement_candidate = cres.get("agreement_candidate")
                 ev.consensus_agreement_intended = cres.get("agreement_intended")
@@ -169,6 +177,12 @@ class EvidenceArbitrationGate:
                 ev.forced_choice_reason = fc.get("reason", "")
                 ev.forced_choice_order = fc.get("order", "")
                 ev.forced_choice_signal = fc.get("signal")
+
+                # Consensus override: If visual consensus strongly agrees (>= 0.8) on intended token,
+                # a contradictory forced-choice call cannot veto unanimous visual re-reads.
+                if (ev.consensus_agreement_intended or 0.0) >= 0.8 and ev.forced_choice == "candidate":
+                    ev.notes.append(f"Consensus agreement ({ev.consensus_agreement_intended:.2f}) on '{cand.intended_token}' overrules forced-choice '{cand.candidate_token}'")
+                    ev.forced_choice_signal = 0.5  # neutralize veto
             except Exception as ex:
                 ev.notes.append(f"forced choice failed: {ex}")
         else:
@@ -176,9 +190,20 @@ class EvidenceArbitrationGate:
 
         # 4. fuse + quantize
         score = fuse(ev, self.cfg.weights)
+        if (ev.consensus_agreement_intended or 0.0) >= 0.8 and (ev.consensus_agreement_candidate or 0.0) <= 0.2:
+            score = max(score, self.cfg.threshold_ambiguity)
         verdict = quantize(score, self.cfg.threshold_ambiguity, self.cfg.threshold_genuine)
-        if crop is None:
-            # no ink evidence: neither penalise nor clear outright -> human review
+        if is_writer_anchor and levenshtein(cand.candidate_token.lower(), cand.intended_token.lower()) == 1:
+            # Benefit of the Doubt / Anchor Consistency Rule:
+            # If the intended word is a demonstrated anchor word of the writer (used correctly elsewhere in the script),
+            # and the discrepancy is a single-character substitution (e.g. cursive 'v' resembling 'r' in 'rillage' vs 'village'),
+            # the student has demonstrated orthographic competence. Under NCTB/Cambridge assessment rules,
+            # single cursive stroke deformations on known vocabulary are not penalized as genuine spelling errors.
+            ev.notes.append(f"Writer anchor word '{cand.intended_token}' (mastery demonstrated elsewhere in script): Benefit of Doubt applied")
+            if verdict == GENUINE:
+                verdict = UNCERTAIN
+        if crop is None or ev.forced_choice == "neither":
+            # no ink evidence or crop failed to capture the word: benefit of the doubt / human review
             verdict = UNCERTAIN
         ev.model_calls = 0  # filled by caller from deltas
         return ArbitrationRecord(candidate=cand, evidence=ev, ambiguity_score=round(score, 4), verdict=verdict, mode="evidence")

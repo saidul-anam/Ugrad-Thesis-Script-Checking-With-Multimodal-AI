@@ -144,9 +144,9 @@ mode_specifications:
       Q6_Rearrangement:
         allocation: "1 x 10 = 10"
         rules:
-          - "Strict absolute-position scoring per item (1 mark per sentence in exact correct position)."
-          - "Order shift domino effect applies per standard board conventions."
-          - "Accepts letter sequences or full sentence rewrites."
+          - "Slot-independent position scoring: 1 mark awarded for each sentence/letter in its exact correct position (1 to 10)."
+          - "No cascading domino penalty: an incorrect or omitted item in an earlier slot does not break or zero out subsequent correct slots."
+          - "Accepts letter sequences (table format) or full sentence rewrites."
 
   mode_b_point_scored:
     tasks:

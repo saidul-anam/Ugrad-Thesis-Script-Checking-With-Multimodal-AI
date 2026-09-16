@@ -263,7 +263,8 @@ class ScriptCheckingPipeline:
         force_extract: bool = False,
         question_input: Optional[Union[str, ExtractedQuestion]] = None,
         questions_root: str = "outputs/questions",
-        extract_teacher_marks: Optional[bool] = None
+        extract_teacher_marks: Optional[bool] = None,
+        parallel_workers: Optional[int] = None
     ) -> ExtractionResult:
         """
         Execute optimized multimodal extraction on all pages of an exam script:
@@ -365,7 +366,11 @@ class ScriptCheckingPipeline:
         all_teacher_marks: List[TeacherMarkItem] = []
         any_red_ink = False
 
-        for page_no, p_img, p_path in page_images:
+        active_workers = parallel_workers if parallel_workers is not None else getattr(self.config.pipeline, "parallel_workers", 1)
+        active_workers = max(1, int(active_workers or 1))
+
+        def _process_single_page(item):
+            page_no, p_img, p_path = item
             ckpt_path = os.path.join(checkpoint_dir, f"page_{page_no}.json")
 
             # Check for page-level checkpoint
@@ -375,12 +380,7 @@ class ScriptCheckingPipeline:
                         cached_p = PageExtractionResult.model_validate_json(f.read())
                     print(f"\n--- Page {page_no}/{len(page_images)} (Resumed from checkpoint) ---")
                     print(f"[Extraction] Loaded Page {page_no} from checkpoint ({len(cached_p.stage1_transcription.raw_transcript.split())} words)")
-                    page_results.append(cached_p)
-                    if cached_p.has_red_ink:
-                        any_red_ink = True
-                    if extract_teacher_marks:
-                        all_teacher_marks.extend(cached_p.teacher_marks)
-                    continue
+                    return cached_p
                 except Exception as e:
                     print(f"[Extraction] Note: Checkpoint for page {page_no} invalid ({e}). Re-extracting.")
 
@@ -392,8 +392,6 @@ class ScriptCheckingPipeline:
             print(f"[Extraction] [0/3] Stage 0: Running OpenCV HSV Red-Ink Detection (Page {page_no})...")
             stage0_res = self.stage0.detect(p_img)
             print(f"[Extraction] [0/3] Stage 0 Result -> has_red_ink={stage0_res.has_red_ink} ({stage0_res.red_pixel_count} px, {stage0_res.red_pixel_ratio*100:.3f}%) [Context: 0/4,096 tokens (0.0%)]")
-            if stage0_res.has_red_ink:
-                any_red_ink = True
 
             # ---------------------------------------------------------
             # STAGE 1: Verbatim Transcription (Ignoring Teacher Red Ink)
@@ -472,7 +470,6 @@ class ScriptCheckingPipeline:
                     thinking_mode=active_thinking
                 )
                 page_marks = stage0b_res.teacher_marks
-                all_teacher_marks.extend(page_marks)
                 u0b = self.engine.get_last_usage()
                 ctx0b = self.engine.format_last_usage()
                 print(f"[Extraction] [0b/3] Stage 0b Found -> {len(page_marks)} numeric teacher mark(s) on Page {page_no} {ctx0b}")
@@ -509,7 +506,6 @@ class ScriptCheckingPipeline:
                 teacher_marks=page_marks,
                 token_usage=page_token_usage
             )
-            page_results.append(p_res)
 
             # Checkpoint this page to disk immediately
             try:
@@ -517,6 +513,25 @@ class ScriptCheckingPipeline:
                     f.write(p_res.model_dump_json(indent=2))
             except Exception as e:
                 print(f"[Extraction] Note: Could not save checkpoint for Page {page_no} ({e})")
+
+            return p_res
+
+        if active_workers > 1 and len(page_images) > 1:
+            from concurrent.futures import ThreadPoolExecutor
+            print(f"[Extraction] ⚡ Running concurrent page processing with {active_workers} worker(s)...")
+            with ThreadPoolExecutor(max_workers=min(len(page_images), active_workers)) as executor:
+                page_results = list(executor.map(_process_single_page, page_images))
+        else:
+            page_results = [_process_single_page(item) for item in page_images]
+
+        # Sort strictly by page_no to guarantee deterministic output ordering
+        page_results.sort(key=lambda p: p.page_no)
+
+        for p in page_results:
+            if p.has_red_ink:
+                any_red_ink = True
+            if extract_teacher_marks:
+                all_teacher_marks.extend(p.teacher_marks)
 
         # -------------------------------------------------------------
         # Aggregate Multi-Page Transcripts & Run Global Script-Level Stage 3

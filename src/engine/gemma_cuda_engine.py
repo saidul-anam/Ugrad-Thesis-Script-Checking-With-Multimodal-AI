@@ -42,6 +42,8 @@ class GemmaCudaEngine(BaseVLMEngine):
         self.context_window = 4096
         self.max_context_window = 4096
         self.last_usage = {}
+        import threading
+        self._inference_lock = threading.Lock()
         self._init_model()
 
     def clear_cuda_cache(self) -> None:
@@ -68,36 +70,34 @@ class GemmaCudaEngine(BaseVLMEngine):
         import torch
 
         max_tokens = int(gen_kwargs.get("max_new_tokens", 512))
-        # 2-stage defense:
-        # 1. Full requested tokens with KV cache
-        # 2. If OOM, purge CUDA cache and retry with safe viable token budget (min 512 tokens to preserve JSON completeness)
         attempts = [
             {"max_new_tokens": max_tokens, "use_cache": True},
             {"max_new_tokens": max(512, int(max_tokens * 0.75)), "use_cache": True},
         ]
 
         last_error: Optional[RuntimeError] = None
-        for idx, candidate in enumerate(attempts, start=1):
-            local_kwargs = dict(gen_kwargs)
-            local_kwargs.update(candidate)
-            try:
-                with torch.inference_mode():
-                    return self.model.generate(**inputs, **local_kwargs)
-            except RuntimeError as exc:
-                last_error = exc
-                if not self._is_cuda_oom_error(exc):
-                    raise
+        with self._inference_lock:
+            for idx, candidate in enumerate(attempts, start=1):
+                local_kwargs = dict(gen_kwargs)
+                local_kwargs.update(candidate)
+                try:
+                    with torch.inference_mode():
+                        return self.model.generate(**inputs, **local_kwargs)
+                except RuntimeError as exc:
+                    last_error = exc
+                    if not self._is_cuda_oom_error(exc):
+                        raise
 
-                is_last_attempt = idx >= len(attempts)
-                if is_last_attempt:
-                    raise
+                    is_last_attempt = idx >= len(attempts)
+                    if is_last_attempt:
+                        raise
 
-                next_candidate = attempts[idx]
-                print(
-                    "[GemmaCudaEngine] CUDA OOM during generation; clearing cache and retrying with "
-                    f"max_new_tokens={next_candidate['max_new_tokens']}..."
-                )
-                self.clear_cuda_cache()
+                    next_candidate = attempts[idx]
+                    print(
+                        "[GemmaCudaEngine] CUDA OOM during generation; clearing cache and retrying with "
+                        f"max_new_tokens={next_candidate['max_new_tokens']}..."
+                    )
+                    self.clear_cuda_cache()
 
         if last_error is not None:
             raise last_error
