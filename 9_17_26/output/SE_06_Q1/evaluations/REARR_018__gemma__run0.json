@@ -1,0 +1,98 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The response is marked position-by-position against the key (b, a, d, f, c, h, e, g). Position 1 is correct (Sentence b). Positions 2, 3, 4, 5, 6, and 8 are incorrect. Position 7 is correct (Sentence e).",
+      "evidence": "Once Hazrat Bayazid Bastami came home to see his ailing mother, ... she woke up some hours later,"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequencing of plot events",
+      "Incomplete response/transcript fragmentation"
+    ],
+    "positive_aspects": [
+      "Correct identification of the opening sentence"
+    ]
+  },
+  "feedback_summary": "The candidate correctly placed the first sentence (b) and the seventh sentence (e) in their correct positions. All other positions (2, 3, 4, 5, 6, 8) were either filled with the wrong sentence or contained fragmented text. Total score: 2/8.",
+  "_metadata": {
+    "task_id": "REARR_018",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0018",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "33fc475d8366b6791dc932afd2178cac6a9021d912d9cf8b99a0c42effc4c225",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:46:13.334074+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9b8a5fd2f50d1fc6b3ee8e094c4d9d4af7586c676ad09f9e44a3de9cdd94b9e9",
+    "input_tokens": 6612,
+    "output_tokens": 6485,
+    "thoughts_tokens": 5848,
+    "cost_usd": 0.002607,
+    "latency_ms": 446983,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6612,
+        "output_tokens": 6485,
+        "thoughts_tokens": 5848,
+        "cost_usd": 0.002607,
+        "latency_ms": 446983,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

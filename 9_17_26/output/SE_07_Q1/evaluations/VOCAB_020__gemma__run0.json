@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, c, and d are answered correctly according to the key. Item e is incorrect because 'Noise' is a noun and does not function as an antonym for the adjective 'Quiet' (which requires 'noisy', 'loud', etc.).",
+      "evidence": "(a) Beautiful (Antonym) - Ugly (b) Brave (synonym) - Courageous (c) Clean (asynonym) - neat (d) old (synonym) - Aged (e) Quiet (Antonym) - Noise"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Part-of-speech mismatch (Noun used instead of Adjective)"
+    ],
+    "positive_aspects": [
+      "Strong grasp of synonyms and antonyms for the majority of the task"
+    ]
+  },
+  "feedback_summary": "Items a (Ugly), b (Courageous), c (neat), and d (Aged) are correct. Item e (Noise) is marked incorrect as it is a noun and not a valid antonym for the adjective 'Quiet'. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "VOCAB_020",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0019",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9ba72ed50287a22d5717e280fbafe89d4b6cdf69f416e1e705f7b08cb6005873",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:35:22.790172+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1e867d5526b7dbfd9cf68142680e7b18208d5832d76f004baefcbecdcb325616",
+    "input_tokens": 6247,
+    "output_tokens": 2268,
+    "thoughts_tokens": 1606,
+    "cost_usd": 0.001305,
+    "latency_ms": 438734,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6247,
+        "output_tokens": 2268,
+        "thoughts_tokens": 1606,
+        "cost_usd": 0.001305,
+        "latency_ms": 438734,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

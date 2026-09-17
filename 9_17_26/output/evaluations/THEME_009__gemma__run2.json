@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the dichotomy between passive night dreams and active day dreams. However, the response remains at a descriptive level rather than articulating an abstract theme (e.g., 'the power of determination' or 'willpower').",
+      "evidence": "And struggle hard to make them come true."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and avoids padding, though it reads as a series of simple sentences rather than a sophisticated analysis.",
+      "evidence": "People dreams in their life. Their are two types of dreams."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in basic subject-verb agreement ('People dreams', 'don't let us sleep') and a homophone error ('Their are' instead of 'There are').",
+      "evidence": "People dreams in their life. Their are two types of dreams."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids copying the poem's text entirely and attempts to express the idea in their own words, including a creative interpretation of 'dangerous people' as those who don't sleep.",
+      "evidence": "And the other is what don't let us sleep."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Homophone confusion (Their/There)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of the poem's core contrast"
+    ]
+  },
+  "feedback_summary": "The candidate successfully understood the core contrast of the poem and expressed it in their own words without copying. However, the response is more of a simplified summary than a thematic analysis. The score is significantly hindered by frequent, basic grammatical errors in subject-verb agreement and spelling.",
+  "_metadata": {
+    "task_id": "THEME_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c7a7ed79c238dab5243534e83db8748acd2287447d290bde5a5ba5541f73156f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:32:53.659677+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "71724e3408d65607795ddb15ff6822bceb440ffe3b1ebe16cef745a1a2373b41",
+    "input_tokens": 4277,
+    "output_tokens": 1733,
+    "thoughts_tokens": 1020,
+    "cost_usd": 0.000948,
+    "latency_ms": 49140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 1733,
+        "thoughts_tokens": 1020,
+        "cost_usd": 0.000948,
+        "latency_ms": 49140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

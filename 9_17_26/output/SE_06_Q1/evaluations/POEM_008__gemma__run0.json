@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 5 items. Item (a) is incorrect as it mentions fruits/praise instead of the transition to winter (0 marks). Item (b) answers the 'hopeful bird' prompt correctly (2 marks). Item (c) answers the 'singing in winter' prompt with a sensible reading regarding the duration of the season (2 marks). Item (d) correctly identifies the lesson of hope and resilience (2 marks). Item (e) correctly describes the Moon peeping at people/children (2 marks). Total: 0+2+2+2+2 = 8.",
+      "evidence": "Robin never loses hope... Robin gives us that IF nobody sings in the Winter it will seem long... Robin teaches us that We should never lose hope... The Moon comes there to peep the folks."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misalignment of answer labels with specific question letters"
+    ],
+    "positive_aspects": [
+      "Strong understanding of the poems' themes of hope and companionship",
+      "Ability to paraphrase central ideas in own words"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of the five attempted questions based on the indicative substance of the poems. Item (a) was marked wrong as it did not align with the expected content regarding autumn's end. Items (b), (c), (d), and (e) were awarded full marks (2 each) for providing sensible and relevant interpretations of the poems, despite some mixing of the question labels.",
+  "_metadata": {
+    "task_id": "POEM_008",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0008",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "8a27c9fa0e5b4cec2faa87352d2b1a11c6399f2a5edc76388556003dc226f7be",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:32:20.157608+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "358340a48f7699c9ff818744025c38049db411441833ba52dd604b2abb6cafe3",
+    "input_tokens": 6535,
+    "output_tokens": 2669,
+    "thoughts_tokens": 1930,
+    "cost_usd": 0.001454,
+    "latency_ms": 312250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6535,
+        "output_tokens": 2669,
+        "thoughts_tokens": 1930,
+        "cost_usd": 0.001454,
+        "latency_ms": 312250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

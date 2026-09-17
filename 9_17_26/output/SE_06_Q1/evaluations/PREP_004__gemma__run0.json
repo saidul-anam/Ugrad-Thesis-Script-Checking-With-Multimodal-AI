@@ -1,0 +1,97 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student did not attempt the actual task. None of the five required prepositions (bottom of, top of, through, along, across) appear in the response. Instead, the student wrote a fragmented descriptive piece about the season of Spring.",
+      "evidence": "\"The season I Like Most\""
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Off-task response",
+      "Failure to follow prompt instructions"
+    ],
+    "positive_aspects": [
+      "Legible handwriting",
+      "Attempted to organize thoughts using a numbered list"
+    ]
+  },
+  "feedback_summary": "The student completely misunderstood the requirements of the question. Instead of writing five individual sentences using the specific prepositions provided in the prompt, the student wrote a descriptive text titled 'The season I Like Most'. Because none of the required prepositions (bottom of, top of, through, along, across) were used, all items are marked wrong.",
+  "_metadata": {
+    "task_id": "PREP_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "6200a687da3b5ec27b2fa8cd1205b5ddc31be277d45ff153bceff9c175b58887",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:10:34.948855+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f603d0f2a64d7538c2304c737d946758cbeb27a6806f74c8c6a6d7d420734c04",
+    "input_tokens": 6348,
+    "output_tokens": 1793,
+    "thoughts_tokens": 1156,
+    "cost_usd": 0.001173,
+    "latency_ms": 189702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6348,
+        "output_tokens": 1793,
+        "thoughts_tokens": 1156,
+        "cost_usd": 0.001173,
+        "latency_ms": 189702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

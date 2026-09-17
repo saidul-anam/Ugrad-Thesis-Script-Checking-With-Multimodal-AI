@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core contrast between passive and active dreamers, although it stays close to a literal restatement rather than exploring the broader abstract theme of purposeful action versus idle fantasy.",
+      "evidence": "the people who dreams while sleeping, their  dreams had no value, that is just a vanity. But the people who dreams with open eyes, are the real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "Presented as a unified, single-block response with appropriate brevity and no extraneous padding.",
+      "evidence": "In this poem, poet shows that the people who dreams while sleeping"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical flaws are present within a short text, including subject-verb agreement errors ('people who dreams'), article omission ('poet shows'), comma splices, and unidiomatic preposition stacking ('by at any cost').",
+      "evidence": "the people who dreams while sleeping, their  dreams had no value, that is just a vanity."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is framed entirely in the student's own words with zero verbatim copying, but relies on basic syntax and closely mirrors the poem's literal structure.",
+      "evidence": "They make their dream come true by at any cost."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement error ('people who dreams')",
+      "Missing definite article ('poet shows' instead of 'the poet shows')",
+      "Prepositional redundancy ('by at any cost')",
+      "Comma splice and tense inconsistency ('had no value, that is')"
+    ],
+    "positive_aspects": [
+      "Correctly identifies the central message and contrast of the poem",
+      "Composed entirely in the candidate's own words without verbatim copying",
+      "Adheres strictly to single-block concise formatting"
+    ]
+  },
+  "feedback_summary": "The candidate correctly grasps the poem's central message—distinguishing passive, idle dreamers from active achievers who turn dreams into reality. The theme is stated concisely in a single block without verbatim copying. However, the explanation remains largely on the surface level and is hampered by basic grammatical inaccuracies, including subject-verb agreement errors and awkward phrasing.",
+  "_metadata": {
+    "task_id": "THEME_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e0c877a0d6745a50207bd5f2635a2806b85dd46783327bab96086487f9587e5d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:36:57.803698+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "38b38a12a197110e9aa2cc551c890cfeb7fbf6ee16529cec8a2e66ed207fb858",
+    "input_tokens": 4275,
+    "output_tokens": 2981,
+    "thoughts_tokens": 2172,
+    "cost_usd": 0.008735,
+    "latency_ms": 39952,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4275,
+        "output_tokens": 2981,
+        "thoughts_tokens": 2172,
+        "cost_usd": 0.008735,
+        "latency_ms": 39952,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

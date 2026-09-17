@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully extends the stem with a logical and complete plot that follows the traditional narrative arc of the fable. The sequence of events is coherent.",
+      "evidence": "it accidentally bumps onto the lion which leads to the lion waking up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and establishes a friendship, fulfilling the 'positive ending' requirement. However, the student completely failed to provide a title as explicitly requested in the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a significant and inconsistent shift from past tense (stem) to present tense throughout the body. Additionally, there are several spelling and subject-verb agreement errors.",
+      "evidence": "they becomes best friends"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, memorized fable (The Lion and the Mouse) with no creative variations or vivid descriptive detail. While not a verbatim copy of a specific guide, it lacks originality.",
+      "evidence": "It uses its sharp teeth to cut of the net and real releasing the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Past to Present shift)",
+      "Subject-verb agreement errors",
+      "Spelling mistakes (e.g., 'pathetie', 'migh')",
+      "Missing structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Satisfactory positive resolution",
+      "Direct adherence to the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate provided a coherent and complete narrative that logically follows the stem. However, the script is penalized for failing to provide a title, which was a specific requirement of the task. Linguistically, the writing is marred by an inconsistent shift into the present tense and several basic grammatical and spelling errors. The plot is a standard retelling of a well-known fable, lacking the creative flair or descriptive depth required for higher bands.",
+  "_metadata": {
+    "task_id": "STORY_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3130fce00120ed9008a0472fd0d9e4a35af1940945b37a8b5d7a63e890617b77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:12:38.928847+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0b91ba9520c0e444dbd9b979e9971697c94b03b8f34397901c01384694916d2e",
+    "input_tokens": 4499,
+    "output_tokens": 3454,
+    "thoughts_tokens": 2689,
+    "cost_usd": 0.001486,
+    "latency_ms": 97655,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4499,
+        "output_tokens": 3454,
+        "thoughts_tokens": 2689,
+        "cost_usd": 0.001486,
+        "latency_ms": 97655,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

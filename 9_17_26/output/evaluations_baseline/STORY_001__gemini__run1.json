@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative continues sequentially from the provided prompt, maintaining the familiar fable plotline and leading to a logical resolution.",
+      "evidence": "The lion caught the mouse. The mouse got scared and told the lion to eat to let him free, one day he might save the lion's life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story includes a clear moral lesson at the end, but fails to provide any title, which is an explicit structural requirement.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple spelling errors ('forrest', 'it's', 'trappen', 'greatful', 'worek'), faulty syntax ('told the lion to eat to let him free'), run-on sentence structure, and tense inconsistency.",
+      "evidence": "One day, in the jungle the mouse heard a sound he followed the sound and saw that the lion was trappen in a net which was put there by the hunters."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Follows a memorised, formulaic plot with simple phrasing and lacks descriptive flair or imaginative narrative progression.",
+      "evidence": "Hearing this the lion laughed and told the mouse that he was small how even can he save the life of the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Missing story title",
+      "Spelling errors (forrest, trappen, greatful, worek)",
+      "Punctuation errors leading to run-on sentences",
+      "Grammatical and syntactic confusion (e.g., 'to eat to let him free', 'mouse have saved')"
+    ],
+    "positive_aspects": [
+      "Clear narrative progression connecting smoothly to the prompt",
+      "Reaches a complete resolution with a stated moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate completes the story logically from the stem and concludes with a valid moral. However, the response lacks a title, relies on very basic and formulaic phrasing, and exhibits multiple spelling, syntactic, and punctuation errors throughout.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fd076f122deeacd3ba814d3bfacc9eed8b173f736c2c40684d79a70051ff9df1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:09:05.403544+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ddf766d1477c729b83a23b2f0377d6b39c354f8201e2e27305c4c95173f54be2",
+    "input_tokens": 4404,
+    "output_tokens": 3287,
+    "thoughts_tokens": 2505,
+    "cost_usd": 0.009539,
+    "latency_ms": 24172,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3287,
+        "thoughts_tokens": 2505,
+        "cost_usd": 0.009539,
+        "latency_ms": 24172,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

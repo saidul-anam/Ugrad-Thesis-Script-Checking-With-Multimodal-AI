@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, clearly stating the intention to describe future plans and detailing a specific goal to educate villagers.",
+      "evidence": "I am going to describe the future plan after passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required informal letter components (address, date, salutation, body, closing, and signature) are present and correctly placed.",
+      "evidence": "28 June, 2026, Donia, Dhaka. 1236... Dear Lamia... Yours ever Sadia"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains frequent grammatical errors, including incorrect pluralization, improper prepositional usage, and faulty infinitive phrases, which significantly hinder the linguistic quality.",
+      "evidence": "Their childs also don't get education. ... for live a healthy and planned life"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids generic templates, providing an authentic and personalized narrative regarding social work in their own village.",
+      "evidence": "Many farmers of my village are not educated. Because of this they don't know how to farming very well."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pluralization errors (e.g., 'childs')",
+      "Infinitive/Gerund confusion (e.g., 'for live', 'how to farming')",
+      "Prepositional errors (e.g., 'beside of this')",
+      "Punctuation fragments (e.g., 'Now. I am going to')"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout",
+      "Original and selfless thematic content"
+    ]
+  },
+  "feedback_summary": "The student demonstrates an excellent grasp of the letter format and presents an original, thoughtful plan for the future, which elevates the script above standard memorized responses. However, the linguistic mechanics are weak, characterized by persistent errors in basic grammar and syntax. According to the tiebreaker rules for Band 4, the presence of multiple mechanical errors necessitates awarding the lowest value of the band.",
+  "_metadata": {
+    "task_id": "LETTER_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a9e1915ba2112b96016e011faa9fca9dc9aaa7cb33ef58f0852003973c1bee36",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:11:33.994999+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "15e32814fbbaf0ed79eef9d6259da0e96d3fc04007d51d2877f9298b19f0df4a",
+    "input_tokens": 4530,
+    "output_tokens": 3005,
+    "thoughts_tokens": 2223,
+    "cost_usd": 0.001355,
+    "latency_ms": 83327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4530,
+        "output_tokens": 3005,
+        "thoughts_tokens": 2223,
+        "cost_usd": 0.001355,
+        "latency_ms": 83327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

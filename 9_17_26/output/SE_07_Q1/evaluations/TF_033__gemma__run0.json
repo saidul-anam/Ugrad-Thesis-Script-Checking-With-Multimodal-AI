@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is incorrect as the student marked it True. Item (b) is correct (False with correct correction). Item (c) is correct (False with correct correction). Item (d) is correct (True). Item (e) is correct (False with correct correction).",
+      "evidence": "a) True b) False = Neil Armstrong landed with Edwin Aldrin land and Micheal Collins stayed in main ship. c) False = Neil Armstrong was the first person to walk on the Moon's surface d) True e) False = The me misson proved tot that humans had not achieved interplanetary travel to to Mars befor 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions; spelling/grammar in corrections does not penalise the mark if the fact is correct.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual error in item (a)"
+    ],
+    "positive_aspects": [
+      "Accurate corrections for False statements",
+      "Consistent adherence to required format"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of five items. Item (a) was marked True instead of False. Items (b), (c), (d), and (e) are correct, with the False items properly accompanied by accurate factual corrections. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "TF_033",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0032",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "dc464a02ecec39256245593748ff30d96bdf918705debcf749856840729038e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:22:15.238366+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e19f4d90b02f67f9560a38fdfd9fe387077787924bfd2bdbd28f19edaf121a01",
+    "input_tokens": 6437,
+    "output_tokens": 1643,
+    "thoughts_tokens": 957,
+    "cost_usd": 0.001137,
+    "latency_ms": 457171,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6437,
+        "output_tokens": 1643,
+        "thoughts_tokens": 957,
+        "cost_usd": 0.001137,
+        "latency_ms": 457171,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

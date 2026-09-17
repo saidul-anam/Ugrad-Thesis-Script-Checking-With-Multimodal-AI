@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core concept of hope being a comfort and a 'saviour' within the human soul, though the expression is clumsy.",
+      "evidence": "Hope is the saviour thing Which helps to Senvise the human beings"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block as required. However, it lacks the conciseness expected of a summary, essentially retelling the poem rather than condensing it.",
+      "evidence": "Summery: Hope is the saviour thing"
+    },
+    "language_mechanics": {
+      "rationale": "There are significant errors in spelling ('Summery', 'perchaes'), unintelligible word choice ('Senvise'), and subject-verb agreement ('soul always hold').",
+      "evidence": "Our soul always hold a lot of hope."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies heavily on the phrasing of the original poem, failing to translate the imagery into their own descriptive words.",
+      "evidence": "hope is the thing with feathers which is perchaes in the soul"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Summery, perchaes)",
+      "Subject-verb agreement (soul always hold)",
+      "Lexical confusion (Senvise)"
+    ],
+    "positive_aspects": [
+      "Correctly identifies the central theme of hope",
+      "Maintains a single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate understands the basic theme of the poem but struggles with linguistic precision and original paraphrasing. The writing is marred by frequent spelling and grammatical errors. While the response is a single block, it is more of a fragmented retelling than a concise summary. No structural caps were applied per the provided computation notes.",
+  "_metadata": {
+    "task_id": "SUMMARY_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "03d409d299007ae8547889174d4174ae43e5a3064bfab99339fbd60473e0e57a",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:12:47.153958+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fd5a565c472c2853b489f5e1c2e67bfdec89f5eee0e16f11c2c01de6b7b81b09",
+    "input_tokens": 4382,
+    "output_tokens": 2625,
+    "thoughts_tokens": 1908,
+    "cost_usd": 0.001226,
+    "latency_ms": 92515,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4382,
+        "output_tokens": 2625,
+        "thoughts_tokens": 1908,
+        "cost_usd": 0.001226,
+        "latency_ms": 92515,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

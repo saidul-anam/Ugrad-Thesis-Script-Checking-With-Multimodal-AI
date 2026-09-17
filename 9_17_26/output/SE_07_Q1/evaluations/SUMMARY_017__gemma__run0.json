@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the astronauts, the date, and the overarching significance of the mission, but completely omits the central event (the actual landing and walking on the moon) and the safe return to Earth.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin began their journey to the Moon in July 16, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written in two separate paragraphs rather than a single unified block. Additionally, it exceeds the one-third length constraint (length_ratio: 0.3588).",
+      "evidence": "USA.\n\nThe Apollo 11 mission"
+    },
+    "language_mechanics": {
+      "rationale": "The syntax is simple and clear, though there is a spelling error in 'launched'.",
+      "evidence": "launehed"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Despite some verbatim lifting of short phrases, the student synthesized the first two sentences of the source into one, showing some effort at paraphrasing.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin began their journey to the Moon in July 16, 1969."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Structural failure (multiple paragraphs)",
+      "Omission of core narrative events",
+      "Spelling error"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of names and dates",
+      "Clear, legible sentence construction"
+    ]
+  },
+  "feedback_summary": "The summary identifies the mission participants and the date but fails to mention the most critical aspect of the text: the moon landing itself and the return trip. It triggers a hard cap of 2 due to exceeding the 1/3 length limit and failing the single-paragraph structure requirement. While some phrases are copied, the student showed basic ability to synthesize information in the opening sentence. One spelling error ('launehed') was noted.",
+  "_metadata": {
+    "task_id": "SUMMARY_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "035637667056d4e3d0a85ac48f2b1d901230e43cea928127a3f21e2cab6a5875",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:57:02.831513+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "127d38b548f8a0d9b1bda0b2ae02c632f72586d860dc32dbd579e92bc5814a4b",
+    "input_tokens": 6044,
+    "output_tokens": 4181,
+    "thoughts_tokens": 3406,
+    "cost_usd": 0.001859,
+    "latency_ms": 176672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6044,
+        "output_tokens": 4181,
+        "thoughts_tokens": 3406,
+        "cost_usd": 0.001859,
+        "latency_ms": 176672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

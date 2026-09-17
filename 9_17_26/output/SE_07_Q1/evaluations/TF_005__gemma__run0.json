@@ -1,0 +1,96 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is incorrect (True instead of False). Item b is incorrect as only 'False' was written without the required correction. Item c is incorrect as it provides contradictory answers ('True False') without a correction. Item d is correct. Item e is incorrect as only 'False' was written without the required correction.",
+      "evidence": "d. True"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to provide required corrections for False statements",
+      "Incorrect factual identification"
+    ],
+    "positive_aspects": [
+      "Correctly identified statement d as True"
+    ]
+  },
+  "feedback_summary": "The student scored 1 out of 5. Item (d) was correct. Items (a), (b), (c), and (e) were marked wrong. Specifically, for items (b), (c), and (e), the student failed to provide the mandatory correction required for 'False' statements as per the instructions.",
+  "_metadata": {
+    "task_id": "TF_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "06e0153966804792080957eda98898c40d87bc5f191bba558b9f51530ea1b2b5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:29:25.407295+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3b04252b2e47ec9cc044b0aae99efc6cb22b96496b8740f6eb1c4778fdde8520",
+    "input_tokens": 6380,
+    "output_tokens": 1213,
+    "thoughts_tokens": 585,
+    "cost_usd": 0.001002,
+    "latency_ms": 177702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6380,
+        "output_tokens": 1213,
+        "thoughts_tokens": 585,
+        "cost_usd": 0.001002,
+        "latency_ms": 177702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

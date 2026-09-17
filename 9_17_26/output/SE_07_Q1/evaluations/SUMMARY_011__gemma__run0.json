@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student captures the basic chronological events (launch, arrival, and return) but misses the core historical significance of the first man walking on the moon and the resulting impact of the mission.",
+      "evidence": "the three American astronauts began their journey to the moon... the astronauts came back back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block, but it exceeds the required length constraint of one-third of the original passage (length ratio 0.41).",
+      "evidence": "The passage about three American astronauts... Their success made history."
+    },
+    "language_mechanics": {
+      "rationale": "The writing is generally intelligible but contains a significant opening fragment and a word repetition ('back back').",
+      "evidence": "The passage about three American astronauts. ...came back back safely to Earth."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is overwhelmingly verbatim, copying entire sentences directly from the source text without attempting to paraphrase.",
+      "evidence": "Their spacecraft was called Apollo 11. It was launched from Florida, USA."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Sentence fragments",
+      "Constraint violation (length)"
+    ],
+    "positive_aspects": [
+      "Maintains chronological sequence",
+      "Correct identification of key dates"
+    ]
+  },
+  "feedback_summary": "The candidate provided a chronological account of the mission, but the response fails as a summary because it is largely a collection of copied sentences. Due to the verbatim overlap (73.77%) and the length exceeding one-third of the original text, a hard cap of 2 is applied per the NCTB guidelines.",
+  "_metadata": {
+    "task_id": "SUMMARY_011",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0010",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "7b9eb15bcf4212e0233fe680fa954bd49c7ae13eb71c62433f2565f39c7c3c3f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:48:47.352809+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3f54477428b549c92a1325ad534da72e5926a172243f1bd6a7428d8af04df09e",
+    "input_tokens": 6068,
+    "output_tokens": 1913,
+    "thoughts_tokens": 1193,
+    "cost_usd": 0.001181,
+    "latency_ms": 296608,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6068,
+        "output_tokens": 1913,
+        "thoughts_tokens": 1193,
+        "cost_usd": 0.001181,
+        "latency_ms": 296608,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

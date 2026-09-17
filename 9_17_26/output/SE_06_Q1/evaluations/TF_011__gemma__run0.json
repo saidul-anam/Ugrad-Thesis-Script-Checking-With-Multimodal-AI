@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct: False verdict with correct content in correction. Item (b) is correct: False verdict with correct content in correction. Item (c) is incorrect: student provided both 'False' and 'True', which according to the rubric scores 0. Item (d) is correct: False verdict with correct content in correction. Item (e) is incorrect: student wrote 'True' but the key is 'False'. Total = 1+1+0+1+0 = 3.",
+      "evidence": "a) False. C.A: After hear, his mothers advice Raju think he can imper improve. b) False. C.A: He got 10 out of 10 in in Mathematics. c) False. True. d) False. C.A: Raju plans to work hard as he could. e) True."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions always receive 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions always receive 0 for this criterion; mechanics are part of the item correctness check.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions always receive 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Contradictory answering (providing both True and False for one item)",
+      "Incorrect truth value identification"
+    ],
+    "positive_aspects": [
+      "Ability to provide accurate corrections for False statements"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a), (b), and (d), providing both the correct 'False' verdict and the necessary factual correction. Item (c) was marked 0 because the student provided two contradictory options ('False. True.'), and item (e) was marked 0 as the verdict 'True' is incorrect according to the passage.",
+  "_metadata": {
+    "task_id": "TF_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3b894f498fefeebbd4aa05960dcb3f7e79837bca213acbd00a5697bd80272332",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:47:30.784437+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9e0f5748e04a1e034c4734b895627c249ad6012b7ccd0dcea10e7a5cd9097344",
+    "input_tokens": 6450,
+    "output_tokens": 1531,
+    "thoughts_tokens": 775,
+    "cost_usd": 0.001104,
+    "latency_ms": 615296,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6450,
+        "output_tokens": 1531,
+        "thoughts_tokens": 775,
+        "cost_usd": 0.001104,
+        "latency_ms": 615296,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate failed to provide any new content. The prompt required at least ten new sentences to complete the story; the candidate provided only a fragment ('one friend') after copying the stem.",
+      "evidence": "one friend"
+    },
+    "structure_format_brevity": {
+      "rationale": "There is no title provided, no sequence of events, and no resolution or ending to the story.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "No original sentences were written to evaluate. Even within the copied text, there are spelling errors ('atime', 'hism').",
+      "evidence": "once upon atime... approaching hism"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response consists almost entirely of a verbatim copy of the provided prompt, showing no original narrative development.",
+      "evidence": "once upon atime two friends went on a journey. they had to go through a forest on the way."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to develop the prompt",
+      "Verbatim copying of the stem",
+      "Incomplete response"
+    ],
+    "positive_aspects": [
+      "Attempted to start the response"
+    ]
+  },
+  "feedback_summary": "The candidate has essentially failed to attempt the task. The response is a near-verbatim copy of the prompt's stem and stops abruptly without adding any meaningful plot development, the required ten sentences, a title, or a conclusion. As no original writing was produced, the script scores 0.",
+  "_metadata": {
+    "task_id": "STORY_021",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0021",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "84a739291f518887b211a49958ebc18e23ec4f1ea482c92edd94ec10d1dc173a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:27:42.034010+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "56eca606e028068a49f6e6a1af5316acbd56960a71c141de69a3d623e63d2bed",
+    "input_tokens": 5951,
+    "output_tokens": 2023,
+    "thoughts_tokens": 1364,
+    "cost_usd": 0.001202,
+    "latency_ms": 265312,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5951,
+        "output_tokens": 2023,
+        "thoughts_tokens": 1364,
+        "cost_usd": 0.001202,
+        "latency_ms": 265312,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

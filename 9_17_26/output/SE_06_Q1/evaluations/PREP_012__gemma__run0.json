@@ -1,0 +1,96 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully used all five required prepositions in intelligible, grammatically correct sentences. Item a: 'bottom of' used correctly. Item b: 'top of' used correctly. Item c: 'through' used correctly. Item d: 'along' used correctly. Item e: 'across' used correctly.",
+      "evidence": "Lane is at the bottom of the Earth. The plane is at the top of the sky. He just went through the forest. Walk along the streets. Please! go across the line."
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "All items correctly attempted",
+      "Consistent use of prepositions in simple, clear sentences"
+    ]
+  },
+  "feedback_summary": "All five items are correct. Item (a) 'bottom of' is correct; Item (b) 'top of' is correct; Item (c) 'through' is correct; Item (d) 'along' is correct; Item (e) 'across' is correct. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "PREP_012",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0012",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "c631d857f9d0dba088a6a5de2ee7b6bd4f83757f8e5fcdf052c288ecba62f8b7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:47:19.430276+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "de4a3b7a0cdba12b44f7bf49c96d2a7678dcef2b89f8e4843efb56a5b89e6a64",
+    "input_tokens": 6268,
+    "output_tokens": 1578,
+    "thoughts_tokens": 934,
+    "cost_usd": 0.0011,
+    "latency_ms": 276828,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6268,
+        "output_tokens": 1578,
+        "thoughts_tokens": 934,
+        "cost_usd": 0.0011,
+        "latency_ms": 276828,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

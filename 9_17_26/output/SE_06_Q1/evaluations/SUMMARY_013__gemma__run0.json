@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.5,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student failed to summarize the actual passage. They hallucinated a new protagonist ('Rina' instead of 'Raju'), changed the grade level, and altered the marks/subjects. Only a minimal score is awarded for attempting to follow the general narrative arc of the source.",
+      "evidence": "Rina is a student of class five."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails both structural requirements: it is split into multiple paragraphs instead of a single block, and it significantly exceeds the one-third length limit (86 words vs the ~43 word limit).",
+      "evidence": "Rina belive that with more practice, she can improve all his subject."
+    },
+    "language_mechanics": {
+      "rationale": "The writing is plagued by severe spelling errors and poor subject-verb agreement, which are below the expected standard for Class VI.",
+      "evidence": "Phathematics, Science getting 4 in each. ... Her father adviee him"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoided verbatim copying of sentences (as confirmed by the 0.0 overlap metric), although the structure is a close mirror of the original text.",
+      "evidence": "Rina belive that with more practice, she can improve all his subject."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.5,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy/hallucination",
+      "Spelling errors (e.g., 'Phathematics', 'adviee')",
+      "Structural failure (length and paragraphing)"
+    ],
+    "positive_aspects": [
+      "Avoided direct verbatim lifting from the source text"
+    ]
+  },
+  "feedback_summary": "The candidate did not summarize the provided text, instead rewriting it as a different story with a different character and incorrect facts. The response is too long, lacks the required single-paragraph format, and contains numerous spelling and grammatical errors. A minimal score is awarded for the attempt to mimic the source narrative without copying sentences verbatim.",
+  "_metadata": {
+    "task_id": "SUMMARY_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "daa9e19ce68cbf905f012364d78d04e5162e797c884cfd63b179e25b4b41c981",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:49:59.781047+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1ed848959d04b4e4327c677eee4e06c6fed2639fb0f8fcbf63422dc82f3d7677",
+    "input_tokens": 6167,
+    "output_tokens": 3767,
+    "thoughts_tokens": 2993,
+    "cost_usd": 0.001747,
+    "latency_ms": 317592,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6167,
+        "output_tokens": 3767,
+        "thoughts_tokens": 2993,
+        "cost_usd": 0.001747,
+        "latency_ms": 317592,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

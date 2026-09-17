@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the central dichotomy of the poem (night dreams vs. day dreams) and recognizes that only the latter are productive/real.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that states the theme immediately and contains no unnecessary filler.",
+      "evidence": "There are two kind of dream."
+    },
+    "language_mechanics": {
+      "rationale": "The writing is marred by pervasive errors in pluralization ('two kind', 'Those dream'), subject-verb agreement ('Those... is'), and a critical typo/unintelligible word ('fata').",
+      "evidence": "Those dream we see while sleeping is not for us."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids all direct copying from the text and attempts an original interpretation, though the expression remains basic.",
+      "evidence": "another because of which we can not sleep."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Noun Pluralization",
+      "Punctuation/Sentence Fragments",
+      "Lexical errors (Typo: 'fata')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of the poem's core dichotomy"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the abstract theme of the poem and presented it in the correct structural format. However, the score is limited to the lower end of Band 3 due to significant linguistic failures, including poor subject-verb agreement and a confusing terminal phrase ('fata come true') that hinders fluency.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "75951cd15996cf2b8348e8c762da773fd37bff4c1844c0a956c97456ca2a5306",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:14:50.597724+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cf5ce79658b200e1f3b06c14666e2933b682170ac44af927d27a9c910590acb8",
+    "input_tokens": 4277,
+    "output_tokens": 2723,
+    "thoughts_tokens": 2018,
+    "cost_usd": 0.001245,
+    "latency_ms": 86422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 2723,
+        "thoughts_tokens": 2018,
+        "cost_usd": 0.001245,
+        "latency_ms": 86422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

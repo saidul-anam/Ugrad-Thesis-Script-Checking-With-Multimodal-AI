@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core thematic contrast between passive night dreamers and active day dreamers, though the explanation remains close to a literal description rather than articulating an abstract philosophical theme.",
+      "evidence": "poet shows that the people who dreams while sleeping, their  dreams had no value, that is just a vanity. But the people who dreams with open eyes, are the real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The theme is expressed in a single, compact block without unnecessary padding or irrelevant filler.",
+      "evidence": "In this poem, poet shows that the people who dreams while sleeping, their  dreams had no value, that is just a vanity."
+    },
+    "language_mechanics": {
+      "rationale": "The response exhibits multiple subject-verb agreement errors ('people who dreams'), tense inconsistencies ('dreams had no value'), missing articles ('In this poem, poet'), and redundant prepositions ('by at any cost').",
+      "evidence": "people who dreams while sleeping, their  dreams had no value, that is just a vanity. But the people who dreams with open eyes, are the real dreamers. They make their dream come true by at any cost."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts basic paraphrasing without copying exact full lines, but stays very close to the poem's literal expressions ('dreams with open eyes', 'vanity', 'make their dream come true') without adding deeper interpretive insight.",
+      "evidence": "people who dreams with open eyes, are the real dreamers. They make their dream come true by at any cost."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement error ('people who dreams')",
+      "Redundant preposition usage ('by at any cost')",
+      "Omission of definite article ('poet shows' instead of 'the poet shows')",
+      "Tense shift and run-on phrasing ('dreams had no value, that is just a vanity')"
+    ],
+    "positive_aspects": [
+      "Correctly identifies the main contrast between passive and active dreamers",
+      "Maintains conciseness in a single unified paragraph",
+      "Avoids verbatim reproduction of the original poem lines"
+    ]
+  },
+  "feedback_summary": "The candidate understands the central message of the poem and communicates the distinction between day and night dreamers concisely in a single paragraph. However, the score is limited by recurring subject-verb agreement errors, awkward syntax, and a tendency to restate the poem's surface ideas rather than elevating them into a broader thematic interpretation.",
+  "_metadata": {
+    "task_id": "THEME_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e0c877a0d6745a50207bd5f2635a2806b85dd46783327bab96086487f9587e5d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:36:58.728002+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "45303d53e227f0ebb6848bad0525abd01a2eaa636795b573e53a133012cc03ce",
+    "input_tokens": 4275,
+    "output_tokens": 2740,
+    "thoughts_tokens": 1865,
+    "cost_usd": 0.008132,
+    "latency_ms": 42562,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4275,
+        "output_tokens": 2740,
+        "thoughts_tokens": 1865,
+        "cost_usd": 0.008132,
+        "latency_ms": 42562,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

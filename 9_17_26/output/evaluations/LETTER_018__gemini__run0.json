@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by clearly detailing future plans to pursue a medical degree and serve the community.",
+      "evidence": "In last letter you wanted to about my future plan after passing HSC exam. You are well known about that, my aim is to be an honest and wise doctore."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural components of an informal letter (sender address, date, salutation, body, subscription, signature, and envelope) are present and properly sequenced.",
+      "evidence": "Asulia, Savar\n27-06-2026\n\nDear friend,"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple spelling mistakes, missing prepositions, omitted grammatical subjects, and punctuation errors compromise language precision.",
+      "evidence": "renwed medical college after pas HSC : After passing from the Medical college, will join in a medical camping for helping poor and sick peopote people beside continui continuing"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter maintains a personal, communicative tone with authentic thoughts regarding medical camps rather than relying solely on rigid formulaic filler.",
+      "evidence": "will join in a medical camping for helping poor and sick peopote people beside continui continuing my higher education."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (doctore, renwed, pas, peopote, continui)",
+      "Omission of grammatical subject in compound/complex clauses (will join)",
+      "Missing prepositions (wanted to [know] about)"
+    ],
+    "positive_aspects": [
+      "Complete structural layout including full envelope details",
+      "Direct relevance and fulfillment of the prompt",
+      "Appropriate informal register and tone"
+    ]
+  },
+  "feedback_summary": "The candidate delivers a fully structured informal letter with all necessary layout conventions (address, date, salutation, body, close, signature, and envelope). The prompt objective—sharing future plans after the HSC examination—is addressed directly and authentically. However, mechanical errors (such as 'renwed', 'doctore', 'pas HSC', and missing subject pronouns) prevent a top-mark award, placing the script at the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "66fbb49268653cba6f99b9995a3b3f5334080e31808dc8ea9f2946672135614e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:14:56.257983+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "460e99b67705bfa52b6c500c83a21c87863b1bd2f1c1f9801c1208d47b9fcfbc",
+    "input_tokens": 4355,
+    "output_tokens": 3046,
+    "thoughts_tokens": 2230,
+    "cost_usd": 0.008922,
+    "latency_ms": 24266,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4355,
+        "output_tokens": 3046,
+        "thoughts_tokens": 2230,
+        "cost_usd": 0.008922,
+        "latency_ms": 24266,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

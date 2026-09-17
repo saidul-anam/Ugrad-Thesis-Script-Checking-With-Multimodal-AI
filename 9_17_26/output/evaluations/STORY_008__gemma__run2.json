@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The story continues seamlessly from the provided stem and follows a logical, sequential plot that adheres to the well-known fable narrative.",
+      "evidence": "the mouse stumbled on the taile of the lion. The sleeping lion woke up and grabbed the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate provides a positive ending with a clear moral lesson; however, they completely omitted the required title.",
+      "evidence": "He got the reward of his forgiveness."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple spelling errors and significant grammatical mistakes, particularly in verb conjugation and pluralization.",
+      "evidence": "cutted the net using his sharp teeths"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, predictable retelling of a common fable with no creative deviations or vivid descriptive details.",
+      "evidence": "The lion thanked the mouse for saving his life"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (taile, pitty, iscreaming)",
+      "Incorrect past tense formation (cutted)",
+      "Incorrect pluralization (teeths)"
+    ],
+    "positive_aspects": [
+      "Strong logical flow",
+      "Clear and positive moral resolution"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of narrative flow and successfully reaches a positive, moral conclusion. However, the score is constrained by the failure to provide a title and frequent linguistic errors in spelling and grammar. The writing is a standard retelling of a memorized fable and lacks creative originality.",
+  "_metadata": {
+    "task_id": "STORY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1f7656b5bb782bb0bbc24a9645a5182a97a77f8f546c8b3414ec40d58312cd89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:21:19.973554+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8095bde3ed51b729260ef617ccb41161f492683586153bf996bb6480a883864e",
+    "input_tokens": 4477,
+    "output_tokens": 2344,
+    "thoughts_tokens": 1665,
+    "cost_usd": 0.001151,
+    "latency_ms": 66468,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4477,
+        "output_tokens": 2344,
+        "thoughts_tokens": 1665,
+        "cost_usd": 0.001151,
+        "latency_ms": 66468,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, iii, and iv are correct. Item ii is incorrect because it identifies the object ('spacecreaft') rather than the people requested ('Who?'). Item v is incorrect because it identifies the date ('on July 24, 1969') rather than the location ('Where?').",
+      "evidence": "began their journey to the moon... on July 20, 1969... came back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; no separate marks awarded for structure.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; no separate marks awarded for mechanics.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; no separate marks awarded for originality.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect category of information (providing 'what' for 'who' and 'when' for 'where')"
+    ],
+    "positive_aspects": [
+      "Correct retrieval of event and date details for three out of five items"
+    ]
+  },
+  "feedback_summary": "Items i, iii, and iv were correct. Item ii is incorrect as the student wrote 'spacecreaft' (an object) instead of the names of the astronauts. Item v is incorrect as the student provided the date 'on July 24, 1969' instead of the location 'all over the world'.",
+  "_metadata": {
+    "task_id": "TABLE_008",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0007",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "e26782ab1445bb3b96de06bb6b2be3f297d9f811978ed3c38158d22092619563",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:09:53.898878+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3027c6c8acc71ee6b0cade438344e2c7aca17a98a518225737aaf7eaa50faa32",
+    "input_tokens": 6370,
+    "output_tokens": 1866,
+    "thoughts_tokens": 1205,
+    "cost_usd": 0.001197,
+    "latency_ms": 166172,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6370,
+        "output_tokens": 1866,
+        "thoughts_tokens": 1205,
+        "cost_usd": 0.001197,
+        "latency_ms": 166172,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

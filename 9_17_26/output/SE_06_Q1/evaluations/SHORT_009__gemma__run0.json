@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (a), (c), (d), and (e) are correct as they provide the required factual content from the passage. Item (b) is marked 0 because it merely states the day is celebrated 'with great enthusiasm' (an emotional description) without listing the actual activities/methods of celebration required by the key.",
+      "evidence": "a) During the war in 1971. Bangladesh got independence. after nine-month-long blood-soaked battle agains the pakistani army. c) The National Martyrs are Memorial Important for us because they t lost their lives during the war, to save the contry d) people recite patriotic song at the National Martyrs' Memorial e) The Victory Day, begins with 31-gun salute to respect the martyrs."
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to provide specific descriptive details in response to 'How' (Item b)"
+    ],
+    "positive_aspects": [
+      "Correct identification of key facts across most items",
+      "Ability to extract specific information regarding the memorial and the salute"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of five items. Item (a) correctly identifies the independence and the nature of the battle. Item (c) correctly identifies the purpose of the memorial. Item (d) correctly identifies patriotic songs. Item (e) correctly links the 31-gun salute to respecting the martyrs. Item (b) is incorrect as it fails to describe the activities of the celebration, providing only a general statement about enthusiasm.",
+  "_metadata": {
+    "task_id": "SHORT_009",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0009",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f1a8779b5460942705953c158be3b646143e2873214ad80853fd1a6cc993da2a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:34:31.595140+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dee9fb83c11b96373322bf1f0fb837c76517a8826896cfdbd13ad2e6aec24d84",
+    "input_tokens": 6618,
+    "output_tokens": 1931,
+    "thoughts_tokens": 1184,
+    "cost_usd": 0.001241,
+    "latency_ms": 350796,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6618,
+        "output_tokens": 1931,
+        "thoughts_tokens": 1184,
+        "cost_usd": 0.001241,
+        "latency_ms": 350796,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

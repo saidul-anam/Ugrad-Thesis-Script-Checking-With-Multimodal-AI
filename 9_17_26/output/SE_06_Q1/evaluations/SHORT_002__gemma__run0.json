@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct as it identifies the nine-month fight and the victory. Item b is correct as it mentions paying respect to martyrs by giving flowers at the Memorial, which is supported by the text. Items c, d, and e were not attempted.",
+      "evidence": "victory ley Nine month Fight... giving flower in the National Martyres Memorial"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not awarded.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are not scored separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not awarded.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of items (c, d, e)",
+      "Spelling errors (ley, myrtyrs)"
+    ],
+    "positive_aspects": [
+      "Correct identification of core facts for items a and b"
+    ]
+  },
+  "feedback_summary": "Item a: Right. Item b: Right. Item c: Not attempted. Item d: Not attempted. Item e: Not attempted. Total score: 2/5.",
+  "_metadata": {
+    "task_id": "SHORT_002",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0002",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "e9c1040beb4d30fd0a3b2ec1539594b53436203d068af5b062a8b061eb3cf4df",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:05:28.908880+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "31a585ebe64e5688c162fcee2aa2e085c1487a4b1394f180b3b14791e43de063",
+    "input_tokens": 6553,
+    "output_tokens": 1642,
+    "thoughts_tokens": 1029,
+    "cost_usd": 0.001148,
+    "latency_ms": 197092,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6553,
+        "output_tokens": 1642,
+        "thoughts_tokens": 1029,
+        "cost_usd": 0.001148,
+        "latency_ms": 197092,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

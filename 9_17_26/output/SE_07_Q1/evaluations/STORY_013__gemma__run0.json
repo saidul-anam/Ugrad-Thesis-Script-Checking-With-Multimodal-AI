@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student continues the story smoothly, providing a clear sequence of events that leads to the correct conclusion. They provided well over the ten required new sentences.",
+      "evidence": "The bear came and snited his ear and thout he was dead so it whe walked away."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a logical conclusion with a clear moral, but the student failed to provide a title as required by the prompt. Additionally, the final sentence is an incomplete fragment.",
+      "evidence": "Then the 2nd friend looked down was he realize"
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of phonetic spelling errors and grammatical slips, though the meaning remains intelligible. Tense is generally consistent in the past, but syntax is weak.",
+      "evidence": "as the bear came clozen The 2nd friend went ran and climbed up a tree, forgetting about his best f"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student provides a standard retelling of the known fable. While not a verbatim guide copy, it lacks descriptive originality or unique phrasing.",
+      "evidence": "It told me a realis friend does not leave some one behind"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe phonetic spelling errors (e.g., 'clozen', 'bihing', 'thout')",
+      "Missing mandatory title",
+      "Incomplete terminal sentence"
+    ],
+    "positive_aspects": [
+      "Strong understanding of plot progression",
+      "Correct application of the story's moral",
+      "Adequate length"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the narrative and successfully completes the story with the correct moral and sufficient length. However, the script is significantly weakened by a total absence of a title and pervasive spelling errors throughout the text. The final sentence is left unfinished, which detracts from the structural resolution.",
+  "_metadata": {
+    "task_id": "STORY_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "d3157b5d54f9d518ce42e11833f227d64fa4172ddf50ba992713633e58ef05f1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:21:43.708491+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "68f24202b34a5aa482aa760c298251104ea69d7cd22e4f0824d07b007fbd0b10",
+    "input_tokens": 6030,
+    "output_tokens": 3793,
+    "thoughts_tokens": 3038,
+    "cost_usd": 0.001741,
+    "latency_ms": 462672,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6030,
+        "output_tokens": 3793,
+        "thoughts_tokens": 3038,
+        "cost_usd": 0.001741,
+        "latency_ms": 462672,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

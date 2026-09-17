@@ -1,0 +1,94 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. Item (a) provides a correct antonym; item (b) provides a correctly intended synonym despite a spelling error ('courages' for 'courageous'); item (c) provides a correct synonym; item (d) provides a correct synonym; item (e) provides a correct antonym.",
+      "evidence": "a. Beautiful - Ugly (Antonym)\nb. Brave - courages (Synonym)\nc. clean -  tidy (Synonym)\nd. Old - elder\ne. Quiet Quiet - loud (Antonym)"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy in identifying requested relations (synonym/antonym)",
+      "Appropriate vocabulary selection for the level"
+    ]
+  },
+  "feedback_summary": "The student correctly answered all five items: a (Ugly), b (courages), c (tidy), d (elder), and e (loud). Minor spelling in item b was ignored per the marking guidelines.",
+  "_metadata": {
+    "task_id": "VOCAB_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f81e0ffae7b54659c6cb93221e9f74009dc08658de6768af9dfc5b041f4805ed",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:43:43.304945+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "afd9f1861165f82bbae4aed8dfd22356fc47515ad623ea7c27eca41cf2300860",
+    "input_tokens": 6239,
+    "output_tokens": 1460,
+    "thoughts_tokens": 833,
+    "cost_usd": 0.001062,
+    "latency_ms": 418140,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6239,
+        "output_tokens": 1460,
+        "thoughts_tokens": 833,
+        "cost_usd": 0.001062,
+        "latency_ms": 418140,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

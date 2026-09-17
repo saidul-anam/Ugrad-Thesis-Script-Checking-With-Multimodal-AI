@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, iii, iv, and v are correct. Item ii is marked 0 because 'They' is too vague and fails to specify which of the three astronauts actually landed on the moon (Armstrong and Aldrin), as required by the key and the passage context. Total: 1+0+1+1+1 = 4.",
+      "evidence": "I) began their journey to the moon. II) They III) July 20, 1969 IV) Came back to earth V) all over the world"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Imprecise pronoun use in item ii"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of dates and locations",
+      "Correct identification of main events"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items i, iii, iv, and v. Item ii was marked incorrect because 'They' does not specify the particular astronauts who landed on the moon, which is necessary for accuracy in this table. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "TABLE_004",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0003",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "7378218a65ccf6f795374bed7f0b5f33ac28e7c1bba05e564512ea2e596b1e40",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:16:32.592410+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7a3e9a54c5d700fa2439dd5c3a89f6202b47f31ecd57aa89c3fdf487ad751abb",
+    "input_tokens": 6359,
+    "output_tokens": 1657,
+    "thoughts_tokens": 1013,
+    "cost_usd": 0.001133,
+    "latency_ms": 292092,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6359,
+        "output_tokens": 1657,
+        "thoughts_tokens": 1013,
+        "cost_usd": 0.001133,
+        "latency_ms": 292092,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

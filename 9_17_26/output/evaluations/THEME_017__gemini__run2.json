@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core contrast of the poem between passive and active dreaming effectively, though the thematic depth remains somewhat basic.",
+      "evidence": "The poem reppresents two types of dreamers. One those who passively dream at night, another those one is who actively dream at day."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single concise block that identifies the theme early and maintains appropriate length without fluff.",
+      "evidence": "The poem reppresents two types of dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical inaccuracies are present, including spelling mistakes ('reppresents', 'meningless'), double conjunction usage ('While... but'), and erroneous possessive apostrophes ('dreamers's', 'dream's').",
+      "evidence": "forget their dream in meningless but day dreamers's are powerful because they pursue their dream's"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids direct copying and uses original analytical framing ('passively', 'actively'), though syntactic phrasing is slightly clumsy and repetitive.",
+      "evidence": "passively dream at night, another those one is who actively dream at day."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('reppresents', 'meningless')",
+      "Incorrect use of apostrophe for plural forms ('dreamers's', 'dream's')",
+      "Faulty clause connector / run-on conjunction ('While... but')"
+    ],
+    "positive_aspects": [
+      "Clear abstract understanding of the poem's central dichotomy (passive vs. active dreamers)",
+      "Expressed in candidate's own words with 0% verbatim line copying",
+      "Maintained single-paragraph structure with concise brevity"
+    ]
+  },
+  "feedback_summary": "The response accurately identifies the underlying theme of the poem by contrasting passive night dreamers with action-oriented day dreamers in its own words. However, the score is held at Band 3 due to noticeable grammatical errors, incorrect apostrophe usage, and spelling slips.",
+  "_metadata": {
+    "task_id": "THEME_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "5a2c7ad3443e8b106d88bf558cad17e6b310e13e3641dd4d7281cc86f1f656b8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:07:31.499776+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "77f30c9d177c7ad9f14917993fc32a2ed1df2ef4327888a6e65087b9ca3083d2",
+    "input_tokens": 4285,
+    "output_tokens": 3378,
+    "thoughts_tokens": 2599,
+    "cost_usd": 0.00973,
+    "latency_ms": 55563,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4285,
+        "output_tokens": 3378,
+        "thoughts_tokens": 2599,
+        "cost_usd": 0.00973,
+        "latency_ms": 55563,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (i) is correct. Item (ii) is correct. Item (iii) is incorrect as it mixes marks for both the well-done and poorly-done subjects, contradicting the row's specific requirement for subjects he did well in. Item (iv) is correct. Item (v) is correct. Total: 1+1+0+1+1 = 4.",
+      "evidence": "a) (i) six; b) (ii) Bangla, English, Mathematics; c) (iii) 8 in Banla, 9 in English, 10 in mathematics, 6 in ICT, Science and Religion; d) (iv) ICT, scince and religion.; e) (v) 6 in ICT, Scince and Religion"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Information contamination (mixing data from different categories in item iii)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of subject lists",
+      "Correct extraction of numerical data for most items"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of five items. Items (i), (ii), (iv), and (v) are marked correct. Item (iii) is marked incorrect because the student included marks for ICT, Science, and Religion, which does not fit the requested category of subjects Raju 'did well in'.",
+  "_metadata": {
+    "task_id": "TABLE_009",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0009",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "cce49b2d3c33cc454bdcde6477342e7200d0eb37aa90bbf86ecee499b81ad0af",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:39:55.685195+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "80bf623cc34801478a6d9fe913160c0d78b6073db9976984dc515ad635373b6b",
+    "input_tokens": 6441,
+    "output_tokens": 2546,
+    "thoughts_tokens": 1840,
+    "cost_usd": 0.001408,
+    "latency_ms": 648000,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6441,
+        "output_tokens": 2546,
+        "thoughts_tokens": 1840,
+        "cost_usd": 0.001408,
+        "latency_ms": 648000,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered five items (c, d, b, a, g). Item (c) captures the idea of a wasted/poor life. Item (d) describes physical care. Item (b) correctly identifies the suggestion to enjoy nature. Item (a) identifies the responsibility of safety and guidance. Item (g) identifies nature as a source of beauty. All five carry the indicative content of the key.",
+      "evidence": "the poet feels and boring and wasting his life... parents shows care by grooming... enjoy the beauty of nature... keep the child safe... nature plays the beauty"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions; errors do not cost marks if meaning is clear.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Syntax errors (e.g., 'the poet feels and boring')",
+      "Subject-verb agreement (e.g., 'parents says')"
+    ],
+    "positive_aspects": [
+      "Correct conceptual understanding of both poems",
+      "Ability to paraphrase key ideas independently"
+    ]
+  },
+  "feedback_summary": "The student successfully answered 5 questions. Items c, d, b, a, and g were all marked correct as they align with the indicative content of the answer key. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "POEM_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "23579987785ad1dde0cc580a4ce116a5ed18738b6ef8ab17500b74c1c0207605",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:41:10.597285+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e2bb30e3165e594b3c404023a67f24dadc28763f07a72a22aecabd6b4209b72c",
+    "input_tokens": 6462,
+    "output_tokens": 1759,
+    "thoughts_tokens": 1081,
+    "cost_usd": 0.001174,
+    "latency_ms": 556405,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6462,
+        "output_tokens": 1759,
+        "thoughts_tokens": 1081,
+        "cost_usd": 0.001174,
+        "latency_ms": 556405,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

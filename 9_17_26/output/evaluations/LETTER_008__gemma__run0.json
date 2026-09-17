@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The purpose of the letter is stated immediately and the content directly addresses the prompt by describing a specific future plan.",
+      "evidence": "I want to discuss about my future plan with you."
+    },
+    "structure_format_brevity": {
+      "rationale": "Core components (Date, Address, Salutation, Body, Close, Signature) are present. However, the addition of a 'From/To' block at the bottom is unconventional for an informal letter.",
+      "evidence": "27 June, 2026\nAzimpur, Dhaka\n\nDear Juliya,"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent grammatical errors, including improper preposition use ('discuss about', 'in next month'), spelling errors ('prespective'), and awkward phrasing.",
+      "evidence": "discuss about my future plan... in next month... in your prespective"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids memorized templates, providing an authentic and modern plan to learn AI development.",
+      "evidence": "I am thinking to learn how to make an AI of my own and if it goes well I'll publish it online"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Prepositional misuse ('discuss about', 'in next month')",
+      "Spelling errors ('prespective')",
+      "Awkward sentence construction ('Hoping you to stay well')"
+    ],
+    "positive_aspects": [
+      "Clear and immediate statement of purpose",
+      "Creative and original content regarding AI development"
+    ]
+  },
+  "feedback_summary": "The student provides a coherent response with an original goal, avoiding generic templates. While the core layout of the letter is present, the structural placement of the sender/receiver details at the end is non-standard. The score is held at the lower end of Band 4 due to multiple mechanical slips in grammar and spelling.",
+  "_metadata": {
+    "task_id": "LETTER_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a65e59e4bd13d171db731e72fe53ecfeac70ece39f87a02b8ce6179feb7d813",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:22:39.600043+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3cff0484dc2f36d5316e3be4bf673c2634d62ddb003dd9289de367f51460d6ec",
+    "input_tokens": 4401,
+    "output_tokens": 2193,
+    "thoughts_tokens": 1447,
+    "cost_usd": 0.001098,
+    "latency_ms": 60734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4401,
+        "output_tokens": 2193,
+        "thoughts_tokens": 1447,
+        "cost_usd": 0.001098,
+        "latency_ms": 60734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all key data points (Coal 46%, Natural Gas 24%, Hydro 16%, Oil 12%, Nuclear 2%) and correctly identifies the highest and lowest sources, though initial phrasing contains garbled text ('41% Natural gas Coal').",
+      "evidence": "Coal which was the highest 46% of the total sources... Now the least used one was Nuclear only 2%."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory sentence is present and data is organized hierarchically from highest to lowest, but the student introduces an inappropriate concluding paragraph containing external moral advice and recommendations.",
+      "evidence": "If we want to save these natural ressource we should increase the use of renewabl enery."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling errors ('sourcee', 'powere', 'stued', 'ressource', 'renewabl enery'), missing verbs, and punctuation/run-on issues noticeably impede fluency.",
+      "evidence": "After that Natural gas the second highest option for generating electricity which was 24%."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic comparative markers ('highest', 'second highest', 'least used') are used to sequence the data, but overall sentence structures remain rudimentary and repetitive.",
+      "evidence": "After that Natural gas the second highest option for generating electricity which was 24%. Then it was Hydro-electric powere which was 16% of total."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (sourcee, powere, stued, ressource, renewabl enery)",
+      "Inclusion of external opinions/moral recommendations in a factual graph description",
+      "Run-on and fragmented sentence structures"
+    ],
+    "positive_aspects": [
+      "Accurately included all data points from the chart",
+      "Correctly identified peaks (Coal) and troughs (Nuclear)"
+    ]
+  },
+  "feedback_summary": "The script correctly identifies all five energy sources and highlights the highest and lowest contributors. However, it incorporates external moral judgment and policy recommendations in the conclusion, invoking the Graph/Chart standalone cap (maximum 6). Language mechanics are compromised by frequent spelling slips and fragmented syntax, placing the response at the base of Band 3 with 6 marks.",
+  "_metadata": {
+    "task_id": "CHART_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8c985728e08f54b7bd01e854b7082f8be18017afc956b5b212bde2c4dabd529c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:08:01.874911+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "98ea90287cd6b51cfa52a619015e9af9c66233af3a2e15f5d96dcbbc31f02399",
+    "input_tokens": 4404,
+    "output_tokens": 2548,
+    "thoughts_tokens": 1711,
+    "cost_usd": 0.007691,
+    "latency_ms": 18766,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 2548,
+        "thoughts_tokens": 1711,
+        "cost_usd": 0.007691,
+        "latency_ms": 18766,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

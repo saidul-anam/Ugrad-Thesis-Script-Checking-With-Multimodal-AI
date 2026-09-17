@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to summarize the core metaphor of Dickinson's poem objectively. Instead of distilling the poem's themes, the text injects irrelevant personal preaching about dreams, problem-solving, and conversational reactions.",
+      "evidence": "In this time every person should have a dream, and alway focus on your dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is divided into two disjointed paragraphs rather than a single unified block, lacking logical transitional flow between thoughts.",
+      "evidence": "Hope is everything in our life. A bird sings the tune without words"
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple severe grammatical breakdowns, sentence fragments lacking subjects, punctuation errors, and misspellings ('alway', 'fward', 'warmm').",
+      "evidence": "try to destroy our dream, we don't lose hope. I so, we should try our best and solve the problem to move fward."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While verbatim overlap is low, the candidate partially mangles lines from the text into ungrammatical phrases rather than synthesizing the meaning in original, coherent language.",
+      "evidence": "A bird sings the tune without words and her And that kept so many warmm."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of personal opinions, advice, and conversational filler in a summary",
+      "Sentence fragments and broken syntax",
+      "Spelling errors (alway, fward, warmm)",
+      "Splitting summary into multiple paragraphs"
+    ],
+    "positive_aspects": [
+      "Attempted response using mostly own vocabulary rather than copying large chunks verbatim",
+      "Recognized the central subject of 'Hope'"
+    ]
+  },
+  "feedback_summary": "The candidate attempts to address the topic of hope, but misunderstands the summary task by offering subjective advice on dreams and personal struggles. The script suffers from heavy grammatical distortion, sentence fragments, spelling mistakes, and an unnecessary paragraph break. It achieves the upper end of Band 1 (3/10) because a discernible attempt was made despite pervasive mechanical and structural flaws.",
+  "_metadata": {
+    "task_id": "SUMMARY_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "519b736122236b09d00a5fe4b5500f805fc24d1c0bb48a1245d7b919c911c3c3",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:00:45.563096+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "bc6876b6a45b4253ddded6d3bdbbc517643690b2436667248bf5cc47ba87f574",
+    "input_tokens": 4400,
+    "output_tokens": 3643,
+    "thoughts_tokens": 2855,
+    "cost_usd": 0.010427,
+    "latency_ms": 23155,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4400,
+        "output_tokens": 3643,
+        "thoughts_tokens": 2855,
+        "cost_usd": 0.010427,
+        "latency_ms": 23155,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

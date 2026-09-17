@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly states the purpose in the introductory lines and thoroughly fulfills the prompt by describing a specific plan to visit the village and educate illiterate community members after the HSC exam.",
+      "evidence": "Now. I am going to describe the future plan after passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout elements of an informal letter are present and correctly positioned: sender's address, date, salutation, multi-paragraph body, complimentary close, signature, and envelope details.",
+      "evidence": "28 June, 2026,\nDonia, Dhaka. 1236\n\nDear Lamia,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains recurring grammatical errors including incorrect pluralization ('childs'), preposition errors ('beside of this', 'join with me'), flawed verb structures ('how to farming', 'for live'), and improper punctuation ('Now. I am going to').",
+      "evidence": "Their childs also don't get education. Because of this they also do many works to live a happy life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response features an authentic and meaningful narrative regarding rural literacy rather than relying entirely on a memorised, generic template.",
+      "evidence": "Many farmers of my village are not educated. Because of this they don't know how to farming very well."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Irregular pluralization errors ('childs' instead of 'children')",
+      "Faulty gerund/infinitive usage ('how to farming', 'for live')",
+      "Preposition redundancy ('beside of this', 'join with me')",
+      "Punctuation run-ons and sentence fragments ('Now. I am going to')"
+    ],
+    "positive_aspects": [
+      "Complete and accurate informal letter layout including envelope details",
+      "Clear, relevant, and purposeful context directly answering the prompt",
+      "Meaningful and socially conscious development of the topic"
+    ]
+  },
+  "feedback_summary": "The candidate presents a well-structured informal letter containing all standard layout components (heading, date, salutation, body, close, signature, and envelope). The content is relevant, authentic, and thoughtfully addresses post-HSC plans. However, multiple mechanical slips in grammar, pluralization, and syntax prevent a full score, placing the script at the lower boundary of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a9e1915ba2112b96016e011faa9fca9dc9aaa7cb33ef58f0852003973c1bee36",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:09:56.495010+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "e294f49f9c5ec3fbc3bc6086813cc888178346e61f83d946483d1658f30b6d69",
+    "input_tokens": 4529,
+    "output_tokens": 2901,
+    "thoughts_tokens": 2045,
+    "cost_usd": 0.008611,
+    "latency_ms": 18922,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4529,
+        "output_tokens": 2901,
+        "thoughts_tokens": 2045,
+        "cost_usd": 0.008611,
+        "latency_ms": 18922,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

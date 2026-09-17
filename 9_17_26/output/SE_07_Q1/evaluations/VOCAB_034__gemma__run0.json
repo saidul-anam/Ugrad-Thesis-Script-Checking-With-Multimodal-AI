@@ -1,0 +1,98 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified the antonym for 'Beautiful' (Ugly), the synonym for 'Clean' (Fresh), the synonym for 'Old' (Aged), and the antonym for 'Quiet' (loud). The synonym for 'Brave' was marked 'Strong', which is conceptually different from courage and therefore incorrect.",
+      "evidence": "Beautiful (Antonym): Ugly; Brave (Synonym): Strong; clean (Synonym): Fresh; old (Synonym): Aged; Quiet (Antonym): loud"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Conceptual confusion between physical strength and courage (Brave/Strong)"
+    ],
+    "positive_aspects": [
+      "Strong grasp of basic antonyms and synonyms",
+      "Correct identification of word relations"
+    ]
+  },
+  "feedback_summary": "The student scored 4 out of 5. Items (a) Beautiful-Ugly, (c) Clean-Fresh, (d) Old-Aged, and (e) Quiet-loud were marked correct. Item (b) Brave-Strong was marked incorrect as 'strong' is not a synonym for 'brave'.",
+  "_metadata": {
+    "task_id": "VOCAB_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6d12279852a1853113b3a5de538c727233d66a2fe428056875af39215c84a7a4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:27:01.845044+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a9b9f46079b87d76a73d7f96e359716fc357a1fb8a029c5fc92b9c25ad04228d",
+    "input_tokens": 6226,
+    "output_tokens": 1744,
+    "thoughts_tokens": 1088,
+    "cost_usd": 0.001146,
+    "latency_ms": 450983,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6226,
+        "output_tokens": 1744,
+        "thoughts_tokens": 1088,
+        "cost_usd": 0.001146,
+        "latency_ms": 450983,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

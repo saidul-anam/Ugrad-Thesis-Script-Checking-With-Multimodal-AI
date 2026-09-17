@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central contrast between the vanity of night dreams and the fruition of day dreams, although the explanation is simplistic.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality. But the dreemiers who dreem day they want to see his dreem in reality"
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single block and remains concise, but fails to provide a clear, formal opening statement identifying the theme explicitly.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Severe and pervasive linguistic failures including spelling ('nigh', 'dreem', 'trive', 'heard' for hard), subject-verb agreement ('Some one dream'), and incorrect word choice ('watch dream').",
+      "evidence": "watch dream in their subconcious mind... Some one dream in the nigh... work heard"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying and uses original phrasing, though the interpretation is very literal and lacks depth regarding the poem's imagery.",
+      "evidence": "so they work heard"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (Spelling)",
+      "Subject-Verb Agreement",
+      "Lexical inaccuracy"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of the core contrast"
+    ]
+  },
+  "feedback_summary": "The candidate understands the basic meaning of the poem and successfully avoids copying lines from the text. However, the response is marred by severe grammatical and spelling errors that hinder professional quality. While the theme is identified, it is presented as a summary of events rather than an abstract governing idea. The score is placed in Band 2 due to the high density of mechanical errors.",
+  "_metadata": {
+    "task_id": "THEME_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b418e1baab05071ff9df8fb1d1baddd66f822930320703cefee116bc0edf9979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:49:08.057207+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "eeca4037fcfd040293b182b1c4cfc60a870cf715886dc97164d297ccb5d0bf12",
+    "input_tokens": 4287,
+    "output_tokens": 1767,
+    "thoughts_tokens": 1047,
+    "cost_usd": 0.000959,
+    "latency_ms": 50546,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4287,
+        "output_tokens": 1767,
+        "thoughts_tokens": 1047,
+        "cost_usd": 0.000959,
+        "latency_ms": 50546,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

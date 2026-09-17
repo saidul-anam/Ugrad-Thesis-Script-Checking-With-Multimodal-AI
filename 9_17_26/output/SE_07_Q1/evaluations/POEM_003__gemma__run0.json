@@ -1,0 +1,96 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, c, and d are correct as they capture the required indicative content. Item e is incorrect because the student provided an answer for item (h) regarding the poet's message in 'Leisure' instead of explaining why childhood is important in 'Whose Child is This?'.",
+      "evidence": "The poet's message in the poem is that - we should leave our busy life and enjoy the nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect prompt pairing (Answered question h instead of e)"
+    ],
+    "positive_aspects": [
+      "Accurate conceptual understanding of both poems",
+      "Clear and concise expression"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of the five attempted items (a, b, c, and d). Item e was marked 0 because the response addressed the poet's message in 'Leisure' (Question h) rather than the importance of childhood (Question e).",
+  "_metadata": {
+    "task_id": "POEM_003",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0002",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f07a28b0c5b78e21dcdd706cd8afab634e427e4684e009c6ccb83b5769f19c45",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:07:57.034496+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dd688670240df0149d9e496847ca174d2f772d6293ea8e6f52a4be72449dc1bf",
+    "input_tokens": 6513,
+    "output_tokens": 1947,
+    "thoughts_tokens": 1300,
+    "cost_usd": 0.001235,
+    "latency_ms": 209296,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6513,
+        "output_tokens": 1947,
+        "thoughts_tokens": 1300,
+        "cost_usd": 0.001235,
+        "latency_ms": 209296,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

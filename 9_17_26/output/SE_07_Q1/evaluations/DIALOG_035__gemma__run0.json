@@ -1,0 +1,103 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student fully addresses the prompt, discussing the annual exam results for both characters and providing specific details about their marks in multiple subjects.",
+      "evidence": "I got very nice result. w your's? sheila: ov thanks! my result also very good."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script adheres perfectly to dialogue layout with clear speaker labels, alternating turns, a greeting, and a proper closing.",
+      "evidence": "Myself: Bye! Have a good day. sheila: bye! Have a good day too."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors ('doig', 'finer', 'numbe') and grammatical slips in question formation ('now are you?' instead of 'how are you?'), though meaning remains clear.",
+      "evidence": "I'm doig Well. what abo you? sheila: I'm also finer."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue feels authentic and non-templated, using specific marks and subject lists (BGS, ICT) that show the student's own input rather than a memorized guide.",
+      "evidence": "I got 96 out of 100. what is your english number?"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling slips like 'doig', 'numbe')",
+      "Syntax errors in interrogative sentences ('now are you?')",
+      "Omission of auxiliary verbs ('my result also very good')"
+    ],
+    "positive_aspects": [
+      "Excellent adherence to dialogue structural conventions",
+      "High level of detail regarding the subject marks",
+      "Natural conversational flow and coherence"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a very strong response that fully satisfies the requirements of the prompt. The dialogue layout is flawless and the content is comprehensive, including specific subject scores for both speakers. The score is slightly tempered by frequent minor spelling and grammatical errors ('doig', 'finer', 'numbe'), but these are age-appropriate and do not impede communication. The authenticity of the marks provided suggests a genuine attempt rather than reliance on a memorized guide.",
+  "_metadata": {
+    "task_id": "DIALOG_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ed765b217ca53cb3730d927ace3d76b2cdd240dab6774971e3fabdf1a4094084",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:29:25.956741+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "16a7f0aa0a5b46e5be85871ec808ea1eac7f29aec1574426cec9d0afbd1f61f1",
+    "input_tokens": 6151,
+    "output_tokens": 2019,
+    "thoughts_tokens": 1214,
+    "cost_usd": 0.001221,
+    "latency_ms": 200702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6151,
+        "output_tokens": 2019,
+        "thoughts_tokens": 1214,
+        "cost_usd": 0.001221,
+        "latency_ms": 200702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

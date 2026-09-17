@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored evaluation: (a) Incorrect word order ('is the post ossice'); (b) Kept auxiliary 'does' and missing main verb; (c) Wrong content (answered prompt 'd' instead of 'c'); (d) Wrong content and incorrect word order ('is the postmasteгs'); (e) Kept auxiliary 'does' and used incorrect question word 'where' instead of 'when'.",
+      "evidence": "a) Do you know wheгge is the post ossice? b) Do you know what does the post master? c) Do you know wheгge his childтгen goto School? d) Do you know why is the postmasteгs So happy? e) Do you know wheгge does the postmasteг come to the post ossice?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Direct question word order in embedded clauses",
+      "Retention of auxiliary verbs (does)",
+      "Misalignment of prompt items"
+    ],
+    "positive_aspects": [
+      "Consistent attempt to use the required 'Do you know' starter"
+    ]
+  },
+  "feedback_summary": "The candidate failed to apply the rules of embedded questions. Items (a), (d), and (e) maintained the direct question word order (verb before subject), and item (b) incorrectly retained the auxiliary 'does'. While the candidate correctly transformed the logic for prompt (d) in their answer for item (c), the mapping to the required key items was unsuccessful across the board.",
+  "_metadata": {
+    "task_id": "TRANS_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2bb8c3b4ec7052f968e3acb87598962355353e5e78c267857c8b02435af5e64c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:00:50.207307+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8b7983a611b404e16c2fe6b4c335175333c2bb64ad86a28040d64173cbe1c63b",
+    "input_tokens": 6283,
+    "output_tokens": 3276,
+    "thoughts_tokens": 2526,
+    "cost_usd": 0.001611,
+    "latency_ms": 235296,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6283,
+        "output_tokens": 3276,
+        "thoughts_tokens": 2526,
+        "cost_usd": 0.001611,
+        "latency_ms": 235296,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

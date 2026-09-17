@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively answers all guiding questions from the prompt, addressing the definition, practical everyday applications, role in education, and potential threats of AI without drifting off-topic.",
+      "evidence": "Artificial Intelligence also known for it's short form AI is a man created intelligence consisting of millions of data-structures and patterns."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response features a clear topic sentence and logical progression, but it is split into two separate blocks of text rather than maintaining a single unified paragraph structure.",
+      "evidence": "schedule etc.\n\nAI has also revolutionized"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling mistakes ('abont', 'varions', 'Beconse', 'amounut', 'humnan'), apostrophe errors ('it's' used for possessive), preposition substitution ('do' instead of 'to'), and occasional punctuation/capitalization oversights.",
+      "evidence": "abont different types of data structures, patterns and algorithms. It was created to help us humans in our varions works."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing uses authentic, self-generated phrasing and relevant examples rather than relying on memorised stock clichés or guide templates.",
+      "evidence": "One can tell AI do make a daily routine for them and it will create a daily routine tailored just for them"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('abont', 'varions', 'Beconse', 'amounut', 'humnan')",
+      "Possessive pronoun and apostrophe confusion ('it's' instead of 'its')",
+      "Preposition confusion ('do' instead of 'to')",
+      "Punctuation and capitalization slips (comma splice, missing capital letter after full stop)"
+    ],
+    "positive_aspects": [
+      "Thorough and relevant content addressing all prompt cues",
+      "Authentic, original voice with concrete examples regarding education and lifestyle",
+      "Logical flow of ideas from definition to applications and potential risks"
+    ]
+  },
+  "feedback_summary": "The response demonstrates good understanding and directly covers all aspects of the prompt with authentic phrasing. On raw merit, the content and ideas achieve 8/10. However, because the candidate separated the text into two sub-paragraphs, a mandatory structural hard cap of 5 marks applies under NCTB paragraph formatting rules. Linguistic mechanics also require attention regarding spelling and possessive forms.",
+  "_metadata": {
+    "task_id": "PARA_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b7e32c8c8b3431764033b278c6d68d9b8fc9c90600f8493d34f57f94b6b5b5fa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:50:55.414271+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "54bfcfe4820e22e959c6ad42cac0c4fafecbeb02af619aecc706e86a6c30ba0c",
+    "input_tokens": 4521,
+    "output_tokens": 3415,
+    "thoughts_tokens": 2554,
+    "cost_usd": 0.009894,
+    "latency_ms": 23202,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4521,
+        "output_tokens": 3415,
+        "thoughts_tokens": 2554,
+        "cost_usd": 0.009894,
+        "latency_ms": 23202,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

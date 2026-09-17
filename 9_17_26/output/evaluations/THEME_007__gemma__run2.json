@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the abstract theme (ambition vs. passive dreaming), though the explanation is basic and lacks nuance regarding the 'danger' mentioned in the poem.",
+      "evidence": "For some dream is what we see when we sleep and for some dream is what keeps them awake."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single, concise block that states the theme immediately without irrelevant padding.",
+      "evidence": "Dream isn't equal for everyone."
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple subject-verb agreement errors and a spelling mistake in a very short text.",
+      "evidence": "Dream isn't equal... some dream is... aquire... This types of people"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids verbatim copying, although the opening sentence closely mirrors the poem's first line in structure.",
+      "evidence": "Dream isn't equal for everyone."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Spelling (aquire)"
+    ],
+    "positive_aspects": [
+      "Correct thematic identification",
+      "Strict adherence to single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captures the core theme of the poem, distinguishing between passive dreaming and active ambition. The structural requirements are fully met. However, the score is limited by significant linguistic errors, specifically in subject-verb agreement and spelling, which prevent the script from reaching Band 4.",
+  "_metadata": {
+    "task_id": "THEME_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f91672b85c46981f8c9f1fb9158185dc0a631de0b10f16e107b777e6e58ec8a9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:15:40.590367+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "590ec3f29908cd03d27a38aca231101d99b0996c3d2f3f0c4cf4d8a6b2740861",
+    "input_tokens": 4274,
+    "output_tokens": 2593,
+    "thoughts_tokens": 1922,
+    "cost_usd": 0.001205,
+    "latency_ms": 73375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4274,
+        "output_tokens": 2593,
+        "thoughts_tokens": 1922,
+        "cost_usd": 0.001205,
+        "latency_ms": 73375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

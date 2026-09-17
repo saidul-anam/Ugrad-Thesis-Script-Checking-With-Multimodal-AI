@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses most prompt questions by defining AI, mentioning real-world tools, noting its role in education, and discussing drawbacks including threats to creativity and human existence, though points are covered briefly.",
+      "evidence": "Nowadays AI is turn into chatgpt, Gemini etc. It can be mobiled anywhere. students also are benetifed by AI."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script maintains a single continuous paragraph format with an appropriate title, a clear topic sentence, contrastive transitions, and a concluding recommendation.",
+      "evidence": "Artificial intelligence (AI) is a kind of artificial brain."
+    },
+    "language_mechanics": {
+      "rationale": "High error density throughout the script, including modal verb misuse, incorrect passive/auxiliary structures, pronoun-noun agreement errors, capitalization slips, and spelling errors.",
+      "evidence": "It can thinking solving problem and so on. Nowadays AI is turn into chatgpt, Gemini etc."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows genuine effort to formulate thoughts independently with modern references rather than using a standard memorised template, but vocabulary and sentence structures remain simplistic.",
+      "evidence": "Sometimes, we can see that students are depends on it more than they need. It also hampers our creativity power."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verb form and modal errors (e.g., 'can thinking solving', 'is turn into', 'are depends')",
+      "Spelling errors (e.g., 'benetifed', 'existance')",
+      "Non-standard vocabulary and preposition usage (e.g., 'mobiled', 'creativity power', 'abuse of AI')",
+      "Sentence-initial capitalization errors (e.g., 'students also are', 'so, we should')"
+    ],
+    "positive_aspects": [
+      "Strict adherence to single-paragraph structural layout",
+      "Direct relevance to the topic with inclusion of contemporary AI tools (ChatGPT, Gemini)",
+      "Balanced coverage of both advantages and potential hazards"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid thematic understanding of Artificial Intelligence, successfully incorporating modern tools and covering both benefits and threats within a single unified paragraph block. However, frequent grammatical inaccuracies, auxiliary verb errors, and spelling slips lower the linguistic quality, placing the response at the lower end of Band 3 (6/10).",
+  "_metadata": {
+    "task_id": "PARA_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "baf0930b639c357af40f76c7178eb12e6685e6e647669cdd63bc96ca12da7fb8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:32:01.336052+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "35f30db4c5035aee327432533d684533d180d3c8a462cfb8316e7f1e11883a6e",
+    "input_tokens": 4364,
+    "output_tokens": 4786,
+    "thoughts_tokens": 3946,
+    "cost_usd": 0.013274,
+    "latency_ms": 28094,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4364,
+        "output_tokens": 4786,
+        "thoughts_tokens": 3946,
+        "cost_usd": 0.013274,
+        "latency_ms": 28094,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

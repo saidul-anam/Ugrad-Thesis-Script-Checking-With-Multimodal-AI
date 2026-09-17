@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core idea that hope sustains human existence, but introduces extraneous personal metaphors and omits Dickinson's key themes of selfless resilience during hardship.",
+      "evidence": "Hope is the power that keeps us alive."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single unified paragraph and maintains appropriate conciseness.",
+      "evidence": "Hope is the direction of our life."
+    },
+    "language_mechanics": {
+      "rationale": "The writing contains multiple grammatical and mechanical errors, including subject-verb agreement ('It show'), incorrect word order in an embedded clause ('where should we go'), and a spelling error ('Whitout').",
+      "evidence": "It show us the path, where should we go."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response achieves 0% verbatim overlap by avoiding source text repetition, but substitutes faithful paraphrasing of the poem's imagery with an invented, simplistic external analogy.",
+      "evidence": "Whitout hope we all are like the dead fish in the sea."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement error ('It show')",
+      "Indirect question word-order error ('where should we go')",
+      "Spelling error ('Whitout')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source poem",
+      "Maintained a single-paragraph structural format",
+      "Identified the basic life-sustaining significance of hope"
+    ]
+  },
+  "feedback_summary": "The candidate produces a concise, single-paragraph summary written entirely in their own words without copying lines from the poem. However, it relies on extraneous metaphors rather than paraphrasing the poem's actual imagery (such as hope's resilience in storms and asking for nothing in return), and contains recurring mechanical slips in subject-verb agreement, syntax, and spelling.",
+  "_metadata": {
+    "task_id": "SUMMARY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3d59c6a9436c7f899da9d05129944a73d6df18c696e57a5a2c6ee4b70a4772a9",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:12:13.434722+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "88a716db4793f157ad1697b7c8bbce4b597f770d1e357aa8869a4f55b35abf07",
+    "input_tokens": 4360,
+    "output_tokens": 3376,
+    "thoughts_tokens": 2643,
+    "cost_usd": 0.009748,
+    "latency_ms": 43609,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4360,
+        "output_tokens": 3376,
+        "thoughts_tokens": 2643,
+        "cost_usd": 0.009748,
+        "latency_ms": 43609,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

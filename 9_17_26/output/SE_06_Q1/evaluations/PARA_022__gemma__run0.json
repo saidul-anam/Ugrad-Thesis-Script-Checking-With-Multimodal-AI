@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate stays on topic and includes relevant details regarding the rickshaw puller's poverty, working hours, and the effect on their children's education, though the expression is fragmented.",
+      "evidence": "A rickshaw puller children not going to school because rickshaw puller children workin bor us."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the primary structural requirement of a single unified paragraph by splitting the text into two blocks. Additionally, it lacks a clear, grammatically correct topic sentence.",
+      "evidence": "on day to Rickshaw puller home not go eating family members."
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive failure in linguistic mechanics. Sentence structures are broken, subject-verb agreement is almost entirely absent, and syntax is often unintelligible.",
+      "evidence": "A Rickshaw pulls Who man Pull the the Rickshaw."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The work is an original attempt by the student; the specific nature of the errors confirms it is not a memorized guide text.",
+      "evidence": "A Rickshaw puller Sometimes giving not real taka."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe syntactic breakdown",
+      "Incorrect verb forms",
+      "Lack of subject-verb agreement",
+      "Paragraph subdivision"
+    ],
+    "positive_aspects": [
+      "Stayed on topic",
+      "Original effort",
+      "Appropriate length"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the topic and provides relevant contextual details about the life of a rickshaw puller. However, the script is severely hampered by a breakdown in basic English grammar and syntax, making several sentences nearly unintelligible. Structurally, the candidate failed to maintain a single paragraph format, triggering a structural cap (though the raw score was already below the cap limit). The effort is original and an appropriate attempt for the level, but requires significant work on sentence construction.",
+  "_metadata": {
+    "task_id": "PARA_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "53dc9b0993450443357be6e728738592081271341db9cba86e3c1c8dc31bf173",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:34:56.150946+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e0f0101888c421a113302407d847f0120cf32eed2eeb1dff869f2b3a0c7735c4",
+    "input_tokens": 6028,
+    "output_tokens": 2174,
+    "thoughts_tokens": 1401,
+    "cost_usd": 0.001255,
+    "latency_ms": 457500,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6028,
+        "output_tokens": 2174,
+        "thoughts_tokens": 1401,
+        "cost_usd": 0.001255,
+        "latency_ms": 457500,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

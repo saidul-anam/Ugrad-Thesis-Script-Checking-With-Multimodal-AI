@@ -1,0 +1,99 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student fully addresses the prompt, mentioning the specific duration of the fever (a week), the symptoms (body pain, Covid symptoms), and the doctor's advice regarding diet and medicine.",
+      "evidence": "I suffering from fever for a week. my body is in pain and I have some Covid symptoms symtoms."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script follows a dialogue layout with alternating turns and appropriate opening/closing. However, speaker labels are inconsistent and riddled with typos (e.g., 'Saishahid', 'safsahid', 'Docton', 'Doctori'), which slightly detracts from the structural professionalism.",
+      "evidence": "Saishahid: May, I come in, sir?\nDocton : Yes, please have a seat,"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in spelling ('Docton', 'presenribed', 'regulanly', 'probm') and grammar ('I suffering', 'Is your family any another person has this symtoms'). While the meaning remains clear for a Class VI level, the error density is high.",
+      "evidence": "I'm presenribed you some medicines, eat them regulanly until recovery"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue feels authentic to the student's own voice rather than a memorized guide. The turns respond logically to one another, creating a genuine interaction.",
+      "evidence": "sahid: Any medeines?\nDoctori: I'm presenribed you some medicines"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling of key characters (Doctor -> Docton/Doctori)",
+      "Subject-verb agreement and tense (I suffering)",
+      "Incorrect sentence construction in questions"
+    ],
+    "positive_aspects": [
+      "Full adherence to the prompt's content requirements",
+      "Correct dialogue format and turn-taking",
+      "Clear communication of ideas despite linguistic errors"
+    ]
+  },
+  "feedback_summary": "The candidate has successfully fulfilled the requirements of the prompt, covering all necessary symptoms and the doctor's advice. The dialogue format is correct, although the speaker labels are inconsistently spelled. The total score is limited by significant spelling and grammatical errors; however, because the content is complete and the interaction is original and coherent, it reaches the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "DIALOG_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "e3507fcc5eac60a3358b614bfc060dec7633d719361374449058694c4b972311",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:21.952164+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "823c5dd253b6318b790ec12162bbeaa601c4e5c5fb9ec4d39ac51d094eff6c00",
+    "input_tokens": 6136,
+    "output_tokens": 2435,
+    "thoughts_tokens": 1588,
+    "cost_usd": 0.001344,
+    "latency_ms": 529828,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6136,
+        "output_tokens": 2435,
+        "thoughts_tokens": 1588,
+        "cost_usd": 0.001344,
+        "latency_ms": 529828,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

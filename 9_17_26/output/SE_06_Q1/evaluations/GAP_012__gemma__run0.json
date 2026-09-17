@@ -1,0 +1,99 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly filled 3 out of 5 gaps. Item (a) matches the key. Item (b) 'went' fits the sentence grammatically ('Then they went to Jaipur') and aligns with the passage. Item (d) matches the key. Item (c) is incorrect because providing 'He got He came' creates a double subject ('Uncle Santosh He came') which is grammatically incorrect. Item (e) 'He told' is the wrong part of speech/structure for the sentence provided.",
+      "evidence": "a. talked. b. went d. sold"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical structure (incorrect insertion of subject in gap)",
+      "Part of speech error (finite verb used instead of participle)"
+    ],
+    "positive_aspects": [
+      "Correct identification of key vocabulary ('talked', 'sold')",
+      "Contextual understanding of movement ('went')"
+    ]
+  },
+  "feedback_summary": "The student scored 3 out of 5. Items (a), (b), and (d) were marked correct. Item (c) was marked wrong because the student included the subject 'He', making the resulting sentence grammatically incorrect ('Uncle Santosh He came...'). Item (e) was marked wrong as 'He told' does not fit the grammatical requirement of the sentence.",
+  "_metadata": {
+    "task_id": "GAP_012",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0012",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "7d17f0dc3f9fb7cbb1fec6321d29ff13d838011de488d6f1891fdcc8ac296b7d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:57:43.891345+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6f8cd31c4704a9c0af9e715680d7cf16fd54e02c7c4d27f02ef9b85f2e324ad4",
+    "input_tokens": 6324,
+    "output_tokens": 2277,
+    "thoughts_tokens": 1575,
+    "cost_usd": 0.001315,
+    "latency_ms": 973312,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6324,
+        "output_tokens": 2277,
+        "thoughts_tokens": 1575,
+        "cost_usd": 0.001315,
+        "latency_ms": 973312,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

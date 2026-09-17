@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is incorrect (provided the name of the spacecraft rather than the event of beginning the journey); Item ii is incorrect (included Michael Collins, whereas only Armstrong and Aldrin landed); Item iii is correct; Item iv is correct; Item v is incorrect (provided a date instead of the location 'all over the world').",
+      "evidence": "iii. 20 July, 1969\niv. come back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misinterpreting 'Event' as a noun/object (Item i)",
+      "Inaccurate data retrieval regarding participants (Item ii)",
+      "Confusion between temporal and spatial requirements (Item v)"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of date and action for items iii and iv"
+    ]
+  },
+  "feedback_summary": "Items iii and iv were marked correct. Item i is incorrect as 'Apollo 11' is the spacecraft, not the event. Item ii is incorrect because Michael Collins did not land on the moon. Item v is incorrect because the student provided a date instead of the location.",
+  "_metadata": {
+    "task_id": "TABLE_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "88eb9099811b50afbe33f5ec373a8e3b8c2f9d0a252f24e7b9a67a521ffb0272",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:46:00.050478+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b2931c1d63bc32cd2db78afff9159c2569aeb8a5d53ff63644f34740d2fbb757",
+    "input_tokens": 6371,
+    "output_tokens": 1943,
+    "thoughts_tokens": 1278,
+    "cost_usd": 0.00122,
+    "latency_ms": 474342,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6371,
+        "output_tokens": 1943,
+        "thoughts_tokens": 1278,
+        "cost_usd": 0.00122,
+        "latency_ms": 474342,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored marking for the first five attempted questions: (a) 0 marks - answer about 'fruits' does not match the key's focus on the transition to winter; (b) 2 marks - correctly identifies that Robin sings in all seasons; (c) 2 marks - correctly identifies Robin as hopeful during bad seasons; (g) 1 mark - a thin attempt to explain the playmate's origin, though the reasoning ('opposite qualities') is weak; (h) 2 marks - 'peep' correctly captures the substance of the Moon looking in on the child. Total: 0+2+2+1+2=7.",
+      "evidence": "robin says about Autumn, there are some fruits for all pride. Robin sings in all four seasons so, he is a happy bind. Robin doesn't lose hope if it's a bad season also. The boy think the phymaie lives in another land. because, he has all opposite qualities. The Moon came there to peep."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary/Spelling slips ('bind' for 'bird', 'phymaie' for 'playmate')"
+    ],
+    "positive_aspects": [
+      "Correctly captures the essence of the bird's hope and happiness",
+      "Succinct and accurate answer for the Moon's action"
+    ]
+  },
+  "feedback_summary": "The student answered five questions. Item (a) was marked wrong as it missed the core substance of the poem's description of autumn. Items (b), (c), and (h) were marked fully correct for capturing the required substance. Item (g) received 1 mark for being a thin but relevant attempt. Total score: 7/10.",
+  "_metadata": {
+    "task_id": "POEM_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "fae1428923f3aa706621eff0c375d5a50272828eb8000ad7ec81b6969f5ec0ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:02:43.770296+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e96a112bf46c2e3d929636502f518a359076628b920831982ffa716528e8f5df",
+    "input_tokens": 6484,
+    "output_tokens": 1989,
+    "thoughts_tokens": 1198,
+    "cost_usd": 0.001245,
+    "latency_ms": 1009702,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6484,
+        "output_tokens": 1989,
+        "thoughts_tokens": 1198,
+        "cost_usd": 0.001245,
+        "latency_ms": 1009702,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

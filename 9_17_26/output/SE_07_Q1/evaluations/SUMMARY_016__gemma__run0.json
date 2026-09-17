@@ -1,0 +1,96 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The summary captures all critical data points: the names of the astronauts, the date of launch, the ship's name, the landing date, and the return date.",
+      "evidence": "Neil Armstrong, Michael Collins, and Edwin Aldrin started their journey to the Moon on July 16, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single unified block and is well within the required 1/3 length of the original text (length ratio 0.30).",
+      "evidence": "They returned safely to Earth on July 24, 1969"
+    },
+    "language_mechanics": {
+      "rationale": "Syntax is generally clear and appropriate for Class VII, though there is a minor typographical error ('fr.') that disrupts the flow.",
+      "evidence": "The spacecraft was called fr. Apollo 11"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate shows some effort to synthesize sentences (combining names and date), but continues to rely heavily on the source text's phrasing for the launch and return details.",
+      "evidence": "launched from Florida, USA"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor typographical slip"
+    ],
+    "positive_aspects": [
+      "Excellent adherence to length constraints",
+      "Accurate extraction of key chronological facts"
+    ]
+  },
+  "feedback_summary": "The candidate has provided a competent and concise summary that captures the core events of the Apollo 11 mission. The structural integrity is perfect, and the length is ideal. A full mark is withheld due to a minor typo ('fr.') and the reliance on source phrasing rather than creative paraphrasing. Per the Grade Ceiling/Motivation rule, a score of 4 reflects a strong performance for a Class VII student.",
+  "_metadata": {
+    "task_id": "SUMMARY_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "649781a969e2dafdbb70294d77caaacdbf239e71f7228aace40772656403cc2b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:47:24.717374+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2b1d9c19c6a527f378e2111645e1adb078d89958b6a3e750a074689db21202da",
+    "input_tokens": 6049,
+    "output_tokens": 3142,
+    "thoughts_tokens": 2414,
+    "cost_usd": 0.001547,
+    "latency_ms": 187312,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6049,
+        "output_tokens": 3142,
+        "thoughts_tokens": 2414,
+        "cost_usd": 0.001547,
+        "latency_ms": 187312,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

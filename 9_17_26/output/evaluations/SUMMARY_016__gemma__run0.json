@@ -1,0 +1,96 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student identifies the core components of the poem (persistence, strength in hardship, selflessness), but the approach is a linear paraphrase rather than a thematic summary.",
+      "evidence": "Hope can be heard in the chillest land and on the strangest Sea."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block. As per the provided cap note, the length ratio was not penalized for this poetry task.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a clear spelling error ('crump' instead of 'crumb') and a grammatical error in preposition usage ('perches the soul' instead of 'perches in the soul').",
+      "evidence": "asks for a crump even in extremity"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing is heavily reliant on the original text's structure and wording, mirroring the poem line-by-line with minimal synthesis or original expression.",
+      "evidence": "heard the sweetest in the Gale"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling error (crump)",
+      "Missing preposition (perches the soul)"
+    ],
+    "positive_aspects": [
+      "Accurate representation of poem's content",
+      "Correct block structure"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies all primary points of the poem. However, the response is more of a prose translation than a summary, lacking original synthesis and exhibiting high reliance on the source text's phrasing. Linguistic precision is marred by a spelling mistake and a preposition error. No structural caps were applied as per the specific instructions for poetry summaries.",
+  "_metadata": {
+    "task_id": "SUMMARY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "4c4be18ed66d41e7b74a28006537c6d5303107f92425ddd318f16f224eaa6596",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:50:23.163911+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5e13d025928b0890a742c0cabf06bef293d5ddad46d0019d176b55e5b912d52f",
+    "input_tokens": 4380,
+    "output_tokens": 2234,
+    "thoughts_tokens": 1544,
+    "cost_usd": 0.001108,
+    "latency_ms": 63672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4380,
+        "output_tokens": 2234,
+        "thoughts_tokens": 1544,
+        "cost_usd": 0.001108,
+        "latency_ms": 63672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

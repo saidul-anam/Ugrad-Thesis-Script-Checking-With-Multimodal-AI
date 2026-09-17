@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student captures the overall theme of determination and parental support but fails to include the main supporting facts: the specific character (Raju), the context of the school tests, and the specific subjects he struggled with or excelled in.",
+      "evidence": "He believes that one day with more practise and experience he can improve all his subjects."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block, but it fails the brevity requirement significantly, comprising approximately 50% of the original text length, exceeding the 1/3 limit.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple grammatical failures, including subject-verb agreement errors ('parents motivates') and incorrect verb forms ('He learning').",
+      "evidence": "His parents motivates him. He learning from getting failed in study."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate has completely avoided verbatim lifting from the passage, using their own (albeit flawed) phrasing throughout.",
+      "evidence": "The story is about a small boy who hates to fail but he never gets full marks at every thing."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Incorrect verb conjugation (present participle used as main verb)"
+    ],
+    "positive_aspects": [
+      "Complete absence of verbatim copying",
+      "Correct identification of the text's emotional core/conclusion"
+    ]
+  },
+  "feedback_summary": "The student has written an original response that avoids copying the text. However, it is more of a general reflection than a summary, as it omits key specific facts (Raju's name, the specific subjects, and the context of the tests). The response is too long relative to the source text (50% vs the 33% limit) and contains several grammatical errors. Because the raw score of 2 is already at the structural cap for length, the final score is 2.",
+  "_metadata": {
+    "task_id": "SUMMARY_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "7d3ee8e47a853097fc10eecef7fcf29b0c958b8e9c48480654350fc96c3835ed",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:41:19.305397+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1cdfbb3b063d4211c5bd870d82a760891831292c4b76de430a14f729195b3088",
+    "input_tokens": 6121,
+    "output_tokens": 2314,
+    "thoughts_tokens": 1560,
+    "cost_usd": 0.001306,
+    "latency_ms": 153032,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6121,
+        "output_tokens": 2314,
+        "thoughts_tokens": 1560,
+        "cost_usd": 0.001306,
+        "latency_ms": 153032,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

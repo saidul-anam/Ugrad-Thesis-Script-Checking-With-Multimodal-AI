@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the primary metaphorical meaning of the poem, explaining how hope acts like a bird providing warmth and enduring everywhere, though some supporting details are slightly over-literalized.",
+      "evidence": "Like the bird we can find hope anywhere in any situation."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single block without paragraph breaks, but the final sentence ends as a disjointed fragment rather than a complete concluding thought.",
+      "evidence": "In our best times or on the times where we are alone."
+    },
+    "language_mechanics": {
+      "rationale": "Several mechanical and grammatical errors are present, such as missing articles ('with bird', 'Bird'), misspelled/incorrect inflection ('flys'), misuse of apostrophe for possessive ('It's singing'), and poor relative clause structure.",
+      "evidence": "Bird always flys here and there. In the jungle in rain, in winter and also on the strangest sea we can hear it. It's singing keeps many people warm."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates independent paraphrasing with 0% verbatim overlap from the source text, expressing the poem's themes in the candidate's own words, albeit in simple syntax.",
+      "evidence": "In the poem Hope is compared with bird."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of determiners/articles ('compared with bird', 'Bird always')",
+      "Spelling and inflection errors ('flys' instead of 'flies')",
+      "Confusion between contraction and possessive pronoun ('It's' instead of 'Its')",
+      "Sentence fragment at the conclusion"
+    ],
+    "positive_aspects": [
+      "Complete absence of verbatim copying (0.0% overlap)",
+      "Clear understanding and explanation of the central metaphor",
+      "Maintained single-paragraph formatting"
+    ]
+  },
+  "feedback_summary": "The candidate shows a good conceptual understanding of Emily Dickinson's poem by explaining the central metaphor in their own words without copying lines directly. However, the score is placed in Band 3 due to basic syntax, multiple language mechanics errors (spelling, articles, possessive punctuation), and an incomplete final sentence fragment.",
+  "_metadata": {
+    "task_id": "SUMMARY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "266ec3331ebf6d65c9f5b2235813bf94bb7882956d0f39f722ef854bd64d5477",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T20:05:22.490296+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "084e4520118c58ea89c8db60e83639f02c47995d13825432f159862052674f59",
+    "input_tokens": 4389,
+    "output_tokens": 2905,
+    "thoughts_tokens": 2099,
+    "cost_usd": 0.008579,
+    "latency_ms": 17217,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4389,
+        "output_tokens": 2905,
+        "thoughts_tokens": 2099,
+        "cost_usd": 0.008579,
+        "latency_ms": 17217,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student accurately captures the central point (school tests), the specific results (successes and failures), and the outcome (determination to improve). The change of the name from Raju to Rahim is a minor factual slip that does not obscure the summary's core content.",
+      "evidence": "He got 9 in Bangla, 8 in English and 10 in Math. But he did poorly in ICT, Science and Religion"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block, but the length ratio (0.43) exceeds the strict 1/3rd (0.33) limit specified in the General Evaluation Guidelines.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "The writing is clear and free of grammatical errors, demonstrating a competent level of English for a Class VI student.",
+      "evidence": "He tried to improve all his subjects working hard even more."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While some simplification occurred, the student lifted several key phrases verbatim from the source text.",
+      "evidence": "Last week, his school held class tests in several subjects."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Exceeding length constraint",
+      "Verbatim lifting"
+    ],
+    "positive_aspects": [
+      "Clear understanding of content",
+      "Strong grammatical control"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the text and writes with commendable grammatical accuracy. However, the summary exceeds the permitted length (1/3rd of the original) and relies on direct lifting for several sentences. According to the general evaluation guidelines, a hard cap of 2 is applied for exceeding the length limit.",
+  "_metadata": {
+    "task_id": "SUMMARY_012",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0012",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "307945822cc3e467da6d5a56ccb1b692cb1460877f4d37cb48e26c28384a1f3a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:44:56.604826+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e2e0b09bdd7406d1784c67c6a290c6d664f6dd6dc6f0c0bdfda474836550d957",
+    "input_tokens": 6124,
+    "output_tokens": 3044,
+    "thoughts_tokens": 2328,
+    "cost_usd": 0.001526,
+    "latency_ms": 145641,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6124,
+        "output_tokens": 3044,
+        "thoughts_tokens": 2328,
+        "cost_usd": 0.001526,
+        "latency_ms": 145641,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

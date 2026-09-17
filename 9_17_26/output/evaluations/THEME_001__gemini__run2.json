@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate grasps the core abstract contrast between passive night dreaming and active, actionable daytime dreams, though the explanation is relatively simple.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single unified block with appropriate brevity, stating the central idea immediately.",
+      "evidence": "There are two kind of dream. one which we see while we sleep"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple grammatical and mechanical errors, including number agreement slips, missing capitalization, an errant mid-sentence period, and an unintelligible word.",
+      "evidence": "Those dream we see while sleeping is not for us. Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The theme is expressed entirely in the candidate's own words with 0% verbatim copying, offering an interpretive analogy rather than quoting the poem.",
+      "evidence": "Those which take our sleep is our real. dream"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb and number agreement errors ('two kind of dream', 'Those dream... is')",
+      "Punctuation and capitalization faults ('one which', 'real. dream')",
+      "Lexical corruption / typo ('fata')"
+    ],
+    "positive_aspects": [
+      "Completely original phrasing with zero verbatim copying from the poem",
+      "Correctly identifies the abstract conceptual distinction between passive and active dreamers"
+    ]
+  },
+  "feedback_summary": "The candidate successfully interprets the poem's central message by distinguishing between passive illusions and actionable goals in their own words. The response adheres to structural brevity and single-paragraph form. However, recurring mechanical errors—such as number agreement mistakes, misplaced punctuation, and a corrupted word ('fata')—limit the score to the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e191280e2479814d83562f9fd6108c34c80f83c36b34ad5d01f2cb3007534351",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:41:46.789595+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f8bdff98417dfd2e3ca2d8c6b39a731d1b28655d98f40b9ad35f69a61cfefc6c",
+    "input_tokens": 4276,
+    "output_tokens": 3100,
+    "thoughts_tokens": 2335,
+    "cost_usd": 0.009033,
+    "latency_ms": 22844,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 3100,
+        "thoughts_tokens": 2335,
+        "cost_usd": 0.009033,
+        "latency_ms": 22844,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

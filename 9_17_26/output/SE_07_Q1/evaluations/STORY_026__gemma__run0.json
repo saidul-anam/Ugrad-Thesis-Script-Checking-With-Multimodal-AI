@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate continues the story seamlessly from the stem, provides more than ten new sentences, and maintains a clear sequence of events following the traditional fable plot.",
+      "evidence": "Both os them became Sгightened but suddenly one os them climped up a tree. The otheгs Sinding no otheгs alternativ, lay slat on his face withоut bгeathing"
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a definitive resolution with a clear moral lesson; however, the candidate completely failed to provide a suitable title as required by the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of spelling and transcription errors (e.g., 'os' for 'of', 'Sг' for 'Fr', 'Тsegplied' for 'replied'). Dialogue punctuation is fragmented and largely incorrect.",
+      "evidence": "He then his Sгiend said\" What did the beαгs whishpeгs into youгs eαгc\"?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the plot is a standard, well-known fable, the phrasing appears to be the student's own attempt rather than a verbatim reproduction of a guide text.",
+      "evidence": "He told his Sгiend that the beαгs do the said:\" Do not tгust a Sгiend who leaves you alone in a dangeгs\""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling/phonetic errors",
+      "Incorrect dialogue punctuation",
+      "Missing structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Successful resolution and moral"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a good understanding of the narrative task by continuing the story logically and including a clear moral. The score is limited primarily by the omission of a title and a high frequency of mechanical and spelling errors. Despite the linguistic slips, the meaning is consistently clear for a Class VII student.",
+  "_metadata": {
+    "task_id": "STORY_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "836fb5c655440e854bf516190ea1724dd2a286097d8ecb709d77311b5c7b1810",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:00:23.090190+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cdbc15784a631e00872fd3fcacb708d98b9569ade8a7895744bae77a8c0fc443",
+    "input_tokens": 6048,
+    "output_tokens": 3283,
+    "thoughts_tokens": 2490,
+    "cost_usd": 0.00159,
+    "latency_ms": 208155,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6048,
+        "output_tokens": 3283,
+        "thoughts_tokens": 2490,
+        "cost_usd": 0.00159,
+        "latency_ms": 208155,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

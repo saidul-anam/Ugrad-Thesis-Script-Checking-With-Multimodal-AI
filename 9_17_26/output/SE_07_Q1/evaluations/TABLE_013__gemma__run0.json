@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered four out of five items. Item i: Correct content; Item ii: Incorrect (provided 'spacecraft' instead of the names of the astronauts); Item iii: Correct date; Item iv: Correct event; Item v: Correct location.",
+      "evidence": "i. began their journy to the moon moon. iii. July 20, 1969 iv. came back to earth v. all over the world"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are only assessed as part of item correctness. Minor spelling/repetition errors in item i did not cost the mark.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not applicable, and lifting from the text is permitted.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Fact retrieval error (Who landed on the moon)"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of dates and locations from the text"
+    ]
+  },
+  "feedback_summary": "The student correctly identified the items for i, iii, iv, and v. Item ii was marked incorrect as the student provided the object ('spacecraft') rather than the people ('Armstrong and Aldrin') requested by the 'Who?' column. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "TABLE_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "20965ed505b7d622e41049dd0e03b35278feb254013bbdabe3177610d5e53d9a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:12:34.984348+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c0edc6eb493f6b28f8a30e707a39ec26e400d59287c3e71d9f6e467083c396c4",
+    "input_tokens": 6361,
+    "output_tokens": 1320,
+    "thoughts_tokens": 654,
+    "cost_usd": 0.001032,
+    "latency_ms": 291405,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6361,
+        "output_tokens": 1320,
+        "thoughts_tokens": 654,
+        "cost_usd": 0.001032,
+        "latency_ms": 291405,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

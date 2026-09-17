@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly distinguishes between the two types of dreamers and identifies the theme of ambition and success, though the explanation is somewhat simplistic.",
+      "evidence": "for some dream is what keeps them awake"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that introduces the theme immediately without unnecessary padding.",
+      "evidence": "Dream isn't equal for everyone."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in subject-verb agreement ('Dream isn't', 'This types of people'), spelling ('aquire'), and sentence fragments ('What doesn't let them sleep...').",
+      "evidence": "This types of people are meant to be successful."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids verbatim copying, but the interpretation is basic and does not engage with the poem's specific imagery.",
+      "evidence": "What doesn't let them sleep until they aquire it."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Spelling errors",
+      "Sentence fragments"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from source",
+      "Accurate identification of the central theme"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a clear understanding of the poem's central theme—the distinction between passive dreaming and active ambition—and expressed it entirely in their own words. However, the script is heavily penalized for language mechanics, specifically multiple subject-verb agreement errors and poor sentence structure.",
+  "_metadata": {
+    "task_id": "THEME_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f91672b85c46981f8c9f1fb9158185dc0a631de0b10f16e107b777e6e58ec8a9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:14:57.292176+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e9a6862ec6fbcbf3403fa363e87368300aae242e246427dc0ffffcb37bd8ffd0",
+    "input_tokens": 4274,
+    "output_tokens": 2041,
+    "thoughts_tokens": 1370,
+    "cost_usd": 0.00104,
+    "latency_ms": 57750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4274,
+        "output_tokens": 2041,
+        "thoughts_tokens": 1370,
+        "cost_usd": 0.00104,
+        "latency_ms": 57750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

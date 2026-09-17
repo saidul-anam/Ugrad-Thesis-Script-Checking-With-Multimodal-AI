@@ -1,0 +1,96 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as it identifies the date, the outcome (independence), and the nature of the conflict. Item (b) is incorrect because it states the mood ('great enthusiasm') rather than the methods of celebration (salute, flags, etc.). Item (c) is incorrect because it claims the memorial is for those who lost their 'house' instead of their 'lives'. Item (d) is incorrect because it explains why people sing (to show respect) but fails to state what they sing (patriotic songs). Item (e) is incorrect as it conflates the 31-gun salute with the hoisting of the flag, which are two distinct events.",
+      "evidence": "At 1971 Bangladesh got Independence after 9 mounth long battle against Pakistan anmy"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question: structure is not independently evaluated.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question: mechanics are not independently evaluated.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question: originality is not independently evaluated.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Content inaccuracy (misreading 'lives' as 'house')",
+      "Failure to address the specific 'what' or 'how' of the question"
+    ],
+    "positive_aspects": [
+      "Correct identification of historical facts in item (a)"
+    ]
+  },
+  "feedback_summary": "The candidate scored 1 out of 5. Item (a) was marked correct. Item (b) was marked wrong for providing a generic statement instead of specific celebratory actions. Item (c) was marked wrong due to a factual error ('house' instead of 'lives'). Item (d) was marked wrong for omitting the specific type of songs. Item (e) was marked wrong for misidentifying the meaning of the 31-gun salute.",
+  "_metadata": {
+    "task_id": "SHORT_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "8706c118e87322d66e6e8a94c9f8ee0bfa830be1a04815e18ce3a966da9c9977",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:51:32.948850+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cf7bc672b9146fdf81968e99f4f2cdf1b61894e7837df72d2b4dc1b1e906f6ff",
+    "input_tokens": 6605,
+    "output_tokens": 1786,
+    "thoughts_tokens": 1028,
+    "cost_usd": 0.001196,
+    "latency_ms": 465687,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6605,
+        "output_tokens": 1786,
+        "thoughts_tokens": 1028,
+        "cost_usd": 0.001196,
+        "latency_ms": 465687,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

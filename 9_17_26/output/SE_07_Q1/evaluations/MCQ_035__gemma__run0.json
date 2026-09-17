@@ -1,0 +1,96 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct. Item b is correct. Item c is incorrect. Item d is incorrect as the candidate provided conflicting markers (roman numeral ii vs the text of option i). Item e is incorrect. Item f is incorrect. Item g is incorrect as the candidate provided conflicting markers (roman numeral iii vs the text of option ii).",
+      "evidence": "a. iii, rural area\nb.  (ii) He earns irregularly for daily needs"
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Conflicting option selection (providing a numeral and text that do not match)",
+      "Incorrect identification of parts of speech"
+    ],
+    "positive_aspects": [
+      "Correct comprehension of the setting and idioms"
+    ]
+  },
+  "feedback_summary": "Items a and b are correct. Items c, e, and f are incorrect. Items d and g are marked wrong because the candidate provided both a roman numeral and the text of two different options, which according to the rubric, scores 0 for that item.",
+  "_metadata": {
+    "task_id": "MCQ_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "e323e4cbb5784dab6c68338aa820a0ad8eca90ca6380678d4296ca65c8dd7414",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:24:12.146963+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "13429e95b046535a3bd85f20ad92b04780878728ff266099b6997e5ecbb04ea7",
+    "input_tokens": 6470,
+    "output_tokens": 1829,
+    "thoughts_tokens": 1194,
+    "cost_usd": 0.001196,
+    "latency_ms": 76250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6470,
+        "output_tokens": 1829,
+        "thoughts_tokens": 1194,
+        "cost_usd": 0.001196,
+        "latency_ms": 76250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

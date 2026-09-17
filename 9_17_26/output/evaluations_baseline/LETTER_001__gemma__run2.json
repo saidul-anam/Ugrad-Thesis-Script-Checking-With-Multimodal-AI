@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the letter and provides specific details regarding their future plans (freelancing in video editing, graphic design, and AI), directly fulfilling the prompt.",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam. Today I'am writing so."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six mandatory structural components (Address, Date, Salutation, Body, Close, Signature) are present and correctly positioned.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\nDear Saiful,\n...Your's ever,\nKalam"
+    },
+    "language_mechanics": {
+      "rationale": "The register is appropriate, but there are several spelling and punctuation errors (e.g., 'beggining', 'self-relient', and the incorrect apostrophe in 'Your's'). Syntax is occasionally clunky.",
+      "evidence": "At the beggining of the letter... self-relient... Your's ever"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the opening and closing are somewhat formulaic/templated, the body contains authentic and specific goals that move beyond a generic response.",
+      "evidence": "such as video editing. graphic design, AI work and many more other works"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (beggining, self-relient)",
+      "Punctuation errors (incorrect apostrophe in 'Your's', misuse of period in list)"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to structural layout",
+      "Clear and relevant content"
+    ]
+  },
+  "feedback_summary": "The script is a strong attempt that fully adheres to the structural requirements of an informal letter. The content is relevant and specific. However, the score is tempered by several linguistic slips in spelling and punctuation, as well as a slightly formulaic opening. It comfortably fits into Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "11149c364f116c540ed2fa80e5e2d31f4b081f57668961df2d4067775140f015",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:12:17.312891+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8a70a90a09baac995964329dc5c6d7898215c439388eb929072b7f1cf9ca7f5f",
+    "input_tokens": 4404,
+    "output_tokens": 1766,
+    "thoughts_tokens": 987,
+    "cost_usd": 0.00097,
+    "latency_ms": 51140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 1766,
+        "thoughts_tokens": 987,
+        "cost_usd": 0.00097,
+        "latency_ms": 51140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

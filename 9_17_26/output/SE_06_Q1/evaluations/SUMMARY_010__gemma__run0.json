@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures the core narrative: Raju's academic success in some subjects, failure in others, and his determination to improve.",
+      "evidence": "In his clogs test he does well In Bangla, English and mathematics. But he could not do well In sct, Science and Religion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is written as a single coherent block. While it slightly exceeds the strict one-third limit (46 words vs 43), it is effectively concise in form.",
+      "evidence": "Raju is a student of clags S class six. In his clogs test he does well In Bangla, English and mathematics. But he could not do well In sct, Science and Religion. He can't lose his hope. He belides that he will do better in future."
+    },
+    "language_mechanics": {
+      "rationale": "The response contains multiple significant spelling and transcription errors ('clags', 'clogs', 'sct', 'belides') that detract from the quality, despite being intelligible.",
+      "evidence": "clags S class six... clogs test... In sct... He belides"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student has successfully avoided verbatim lifting from the source text, using their own phrasing throughout.",
+      "evidence": "He can't lose his hope."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling/Typographical errors",
+      "Non-standard abbreviations"
+    ],
+    "positive_aspects": [
+      "Strong paraphrasing",
+      "Complete coverage of main events"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good understanding of the text and successfully paraphrased the main events. However, the script is marred by frequent spelling errors ('clags', 'clogs', 'belides'). Additionally, because the summary exceeds one-third of the original text length (as indicated by the authoritative metrics), a structural hard cap of 2 is applied to the total score.",
+  "_metadata": {
+    "task_id": "SUMMARY_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "c3730028e1f8dbbebef506b0b7ae51566ae3aa78fc5b5d84cb4ff042dc8d01ba",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:44:17.311607+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6399bf3d9e1ac69d6bbefe49a82a331eb018978d4cf5e943ee0f36ecaa52deec",
+    "input_tokens": 6103,
+    "output_tokens": 3191,
+    "thoughts_tokens": 2422,
+    "cost_usd": 0.001568,
+    "latency_ms": 602562,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6103,
+        "output_tokens": 3191,
+        "thoughts_tokens": 2422,
+        "cost_usd": 0.001568,
+        "latency_ms": 602562,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies all data points from the chart, including the highest (coal) and lowest (nuclear) sources. However, there is a logical error in attributing production to the source itself rather than the process.",
+      "evidence": "The oil produced 12% of its total electricity"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes an introductory sentence and follows a logical, though basic, sequence. It avoids external facts and moral judgments, thus avoiding the structural cap.",
+      "evidence": "The chart in the passage declares us the source of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There is high error density. Significant issues with spelling ('neuclean', 'neucleane'), word choice ('It is clean' instead of 'clear'), and syntax ('As per shown', 'declares us the source').",
+      "evidence": "least amount of electricity was made using neuclean"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic comparative language is used ('massive amount', 'least amount', 'second most main source'), but the phrasing remains repetitive and lacks sophistication.",
+      "evidence": "Second most main source of electricity was natural gas"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling of 'nuclear')",
+      "Syntactic slips (incorrect prepositional phrases like 'As per shown')",
+      "Lexical misuse ('clean' for 'clear')"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of all numerical data",
+      "Correct identification of the primary and secondary sources"
+    ]
+  },
+  "feedback_summary": "The student successfully extracted and reported all the data from the chart correctly, identifying the peaks and troughs of the data set. However, the writing is marred by significant grammatical errors and spelling mistakes. The structure is basic, functioning more as a list of data than an analytical description. Due to the standard/basic nature of the syntax and vocabulary, the score is placed at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "CHART_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "85a04beac66f49ee0396ea180b32d9547fe584f23193d0afd7d1eac398a24fa7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:19:36.666148+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cd02f29b6a6d9e60cc23fe667d2a9934c57fad212a073dcff5c092dd6a1c8fa9",
+    "input_tokens": 4430,
+    "output_tokens": 1850,
+    "thoughts_tokens": 1076,
+    "cost_usd": 0.000998,
+    "latency_ms": 52187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4430,
+        "output_tokens": 1850,
+        "thoughts_tokens": 1076,
+        "cost_usd": 0.000998,
+        "latency_ms": 52187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

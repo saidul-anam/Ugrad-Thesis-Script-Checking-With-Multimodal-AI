@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the essential contrast between night dreamers and day dreamers, but explains it as a literal summary rather than extracting a fully abstracted governing theme.",
+      "evidence": "The content of the poem indicates the difference between day and night dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single, tight block that states the central contrast upfront and provides supporting elaboration without irrelevant padding.",
+      "evidence": "The content of the poem indicates the difference between day and night dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "There is a prominent subject-verb agreement error with a plural subject paired with a singular verb in a very short response.",
+      "evidence": "The people who dream in the night wakes up to find that it was nothing in the morning."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying from the poem and introduces some original phrasing, but remains closely bound to the surface narrative rather than interpreting the underlying metaphor.",
+      "evidence": "are hungry to make that dream come true."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement error ('people... wakes up')",
+      "Surface-level paraphrase instead of abstract thematic interpretation"
+    ],
+    "positive_aspects": [
+      "Completely avoided verbatim copying from the source text",
+      "Single-paragraph structure maintained with appropriate brevity"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the core contrast presented in the poem, successfully paraphrasing the lines in their own words without copying directly from the text. However, the response leans more toward summarizing the poem's literal content than expressing an abstract theme (such as the value of active determination over passive daydreaming). In addition, a subject-verb agreement slip reduces the language score. Overall, it represents a solid Band 3 effort.",
+  "_metadata": {
+    "task_id": "THEME_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "da8c91c76c042bc8fb71a62156fe8d23fc52022f9daf25f2cd6a8a86c61ded73",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:57:19.958336+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "829082a2ee6ee8d910a954fcc5e7103491d9a08b24ef35d4840fca8e37266cdb",
+    "input_tokens": 4278,
+    "output_tokens": 3347,
+    "thoughts_tokens": 2617,
+    "cost_usd": 0.009651,
+    "latency_ms": 25016,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4278,
+        "output_tokens": 3347,
+        "thoughts_tokens": 2617,
+        "cost_usd": 0.009651,
+        "latency_ms": 25016,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

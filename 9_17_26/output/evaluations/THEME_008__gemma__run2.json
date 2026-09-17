@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the contrast between day and night dreamers but treats it as a descriptive comparison of people rather than articulating an abstract governing theme (e.g., ambition vs. fantasy).",
+      "evidence": "People who dreams with wide open eye in the morning are not normal like people who dreams at night."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is concise, but it lacks a formal opening statement that explicitly defines the theme.",
+      "evidence": "People who dreams with wide open eye..."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive subject-verb agreement errors ('People who dreams') and an incorrect singular noun usage ('wide open eye').",
+      "evidence": "People who dreams with wide open eye"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying and attempts an original interpretation of the 'day dreamers' as those who 'dreams under light'.",
+      "evidence": "Those people who dreams under light works hard to achieve it."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Noun Number Mismatch"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Clear understanding of the poem's basic contrast"
+    ]
+  },
+  "feedback_summary": "The candidate understands the basic premise of the poem and expresses it in their own words, avoiding any verbatim copying. However, the response is a summary of the poem's characters rather than an analysis of its theme. The score is further limited by consistent grammatical errors in subject-verb agreement.",
+  "_metadata": {
+    "task_id": "THEME_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8ea0d5a019c65a6412550dcb301a1c4b6336257b82aa6f7925f901b6a8a34725",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:24:06.605747+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0c0f94fb22ccb6aa33394d7c55a9c4407b6692225167997b2d3cc78c9543a826",
+    "input_tokens": 4271,
+    "output_tokens": 2200,
+    "thoughts_tokens": 1499,
+    "cost_usd": 0.001087,
+    "latency_ms": 61952,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4271,
+        "output_tokens": 2200,
+        "thoughts_tokens": 1499,
+        "cost_usd": 0.001087,
+        "latency_ms": 61952,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

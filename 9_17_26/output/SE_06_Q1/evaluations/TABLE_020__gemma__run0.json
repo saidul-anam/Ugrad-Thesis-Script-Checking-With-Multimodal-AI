@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly based on the key. Item (a) identifies 'class six'; (b) identifies all three subjects; (c) provides the correct marks (8, 9, 10) for those subjects despite including extraneous data from subsequent rows; (d) identifies all three weak subjects; (e) identifies the correct mark '6 marks in each'.",
+      "evidence": "(a) class six. (b) Bangla, English and Mathematics (c) 8 in Bangla, 9 in English, 10 in Mathematics... (d) Ict, science and Religion (e) ... 6 marks in each."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Accurate retrieval of all required data points",
+      "Full completion of the task"
+    ]
+  },
+  "feedback_summary": "The student correctly answered all five items. Items (a), (b), and (d) are exactly correct. Items (c) and (e) are marked correct because they contain the required information, although the student included redundant text from the passage in these responses.",
+  "_metadata": {
+    "task_id": "TABLE_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2ee4202b66fdd04d23a11f15c4529bae37904e4d43287b82a4165350cc8e11f3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:19:17.990606+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a6776b591ac1f5fbdee73c5424c53be1105893cdfd7c02a729d3ccf638a4aa90",
+    "input_tokens": 6442,
+    "output_tokens": 2346,
+    "thoughts_tokens": 1682,
+    "cost_usd": 0.001348,
+    "latency_ms": 261266,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6442,
+        "output_tokens": 2346,
+        "thoughts_tokens": 1682,
+        "cost_usd": 0.001348,
+        "latency_ms": 261266,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

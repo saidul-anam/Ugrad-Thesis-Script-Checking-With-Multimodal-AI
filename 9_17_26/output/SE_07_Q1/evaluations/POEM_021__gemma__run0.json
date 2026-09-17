@@ -1,0 +1,97 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 5 items. Item (a) is correct as it describes clothing and guidance; item (c) is correct as 'incomplete' matches the key's 'poor/not worth living'; item (e) is correct as it mentions the learning process that shapes the child; item (f) is incorrect because the student provides the message of 'Leisure' instead of the teacher's role in 'Whose Child is This?'; item (g) is correct as it identifies nature as a source of happiness/joy. Total: 1+1+1+0+1 = 4.",
+      "evidence": "a. ...They help the child to wear good dresses... c. The poet feels the life incomplete without time for the nature... e. a child learns about his responsibilities , a child learns what is good and what is bad... f. gives poet's message in the poem 'Leisure'... g. Nature brings happiness to us"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Task confusion (answered question 'h' in the slot for question 'f')"
+    ],
+    "positive_aspects": [
+      "Good conceptual understanding of the themes in 'Leisure' and 'Whose Child is This?'"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 4 out of the 5 attempted items. Items (a), (c), (e), and (g) were marked correct. Item (f) was marked incorrect because the response discussed the poet's message in 'Leisure' rather than the teacher's role in 'Whose Child is This?'. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "POEM_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "cc1e1b7576dba077c9864985c2210d4f1887d9fd63bd2c05bbeaa0209812abc2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:57:09.640197+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "53f84d356757a24ddb048fa0fb574c74ed69277c74793b344345bc6e44c4bd68",
+    "input_tokens": 6576,
+    "output_tokens": 2401,
+    "thoughts_tokens": 1625,
+    "cost_usd": 0.001378,
+    "latency_ms": 235719,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6576,
+        "output_tokens": 2401,
+        "thoughts_tokens": 1625,
+        "cost_usd": 0.001378,
+        "latency_ms": 235719,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

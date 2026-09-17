@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student captures all key milestones: the launch date, the spacecraft name, the landing, and the safe return.",
+      "evidence": "On July 16, 1969... the astгonauts came back sαsely to Eaг6th."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is far too long, representing nearly 68% of the original text, which violates the 1/3rd length constraint.",
+      "evidence": "student_word_count: 89 / source_word_count: 131"
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive and systematic use of incorrect characters (e.g., Cyrillic letters replacing Latin ones) and spelling errors, rendering the mechanics poor.",
+      "evidence": "Sгoom Florida, USA. A Sтeгs Sоus days... Тgeache the Moon."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Despite the character substitutions lowering the machine overlap score, the student has merely deleted a few sentences rather than paraphrasing the content in their own words.",
+      "evidence": "The Apollo 11 mission showed the powегs os Science, teamcoгok, and human couгsage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Excessive length (violates summary constraints)",
+      "Non-standard character substitution (spelling/mechanics)",
+      "Lack of original paraphrasing"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of key dates and facts",
+      "Maintained the chronological sequence of the mission"
+    ]
+  },
+  "feedback_summary": "The candidate identified the core facts of the text correctly. However, the response is not a summary but a slightly shortened version of the original, exceeding the length limit (triggering a structural cap). Furthermore, the script contains bizarre character substitutions (e.g., 'г' for 'r') and lacks any attempt at original paraphrasing.",
+  "_metadata": {
+    "task_id": "SUMMARY_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "55779d620b2854638fbeff9962628c92528aa5a1052f83184007d10c733b9283",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:09:48.404198+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8f5a445620099fd67c9e4ba769081a9df9c46a865dd163b0d957a92b04f2750c",
+    "input_tokens": 6139,
+    "output_tokens": 2432,
+    "thoughts_tokens": 1661,
+    "cost_usd": 0.001344,
+    "latency_ms": 773500,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6139,
+        "output_tokens": 2432,
+        "thoughts_tokens": 1661,
+        "cost_usd": 0.001344,
+        "latency_ms": 773500,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

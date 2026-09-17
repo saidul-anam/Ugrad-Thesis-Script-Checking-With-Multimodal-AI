@@ -1,0 +1,102 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt directly and includes several concrete details, such as the difference between auto and paddle rickshaws and their ability to enter narrow areas. However, marks are deducted for repetition (the sentence regarding money to feed the family is written twice).",
+      "evidence": "A rickshaw-Puller can go those places where Bus, truck etc can't go. There are 'Auto' Rickshaw and 'Paddle' Rickshaw"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response strictly adheres to the single-block paragraph format and includes a clear, albeit grammatically flawed, topic sentence.",
+      "evidence": "A Rickshaw-Puller is a man who earns his living by leave people in location."
+    },
+    "language_mechanics": {
+      "rationale": "While the text remains intelligible, there are pervasive errors in spelling ('beed' for feed, 'opsion' for option, 'nespect' for respect), subject-verb agreement ('They earns'), and word choice ('Populan means').",
+      "evidence": "They earns money by how many passengers he can carry. They only have money to live and beed there family."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic to a Class VI student and does not appear to be a memorized guide template, though the vocabulary is limited and some phrasing is repetitive.",
+      "evidence": "most Rickshaw-Pullens choose 'Auto' Rickshaw."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Phonetic spelling errors (beed, opsion, nespect)",
+      "Subject-verb agreement (They earns, They lives)",
+      "Lexical errors (Populan, leave people in location)"
+    ],
+    "positive_aspects": [
+      "Correct structural format",
+      "Specific local context (Auto vs Paddle Rickshaws)",
+      "Clear thematic coherence"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a well-structured single paragraph that is entirely on-topic. The content is sufficient for Class VI and shows a degree of original observation. However, the score is limited to Band 3 due to frequent linguistic errors in spelling and grammar, and some repetitive phrasing. The work is readable and sincere, but lacks the mechanical precision required for Band 4.",
+  "_metadata": {
+    "task_id": "PARA_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "956c1cdfd6852980c8987d3f23266f019334a610602bea6aa9427f927b6fdb63",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:27:54.199079+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b1452fb11c4cdd893ccf79d07ea55404fbafea3d065f9cbb340404ea431db60d",
+    "input_tokens": 6061,
+    "output_tokens": 2838,
+    "thoughts_tokens": 2016,
+    "cost_usd": 0.001458,
+    "latency_ms": 306702,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6061,
+        "output_tokens": 2838,
+        "thoughts_tokens": 2016,
+        "cost_usd": 0.001458,
+        "latency_ms": 306702,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

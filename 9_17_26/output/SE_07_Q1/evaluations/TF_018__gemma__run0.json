@@ -1,0 +1,97 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Marked 'False' but provided no correction, scoring 0. Item b: Marked 'False' but the correction provided ('Neil Armstrong, Michael Collins, and Edwin Aldrin landed on the moon') is factually incorrect according to the text, as Collins did not land, scoring 0. Item c: Marked 'True' when the answer is 'False', scoring 0. Item d: Marked 'True', which is correct, scoring 1. Item e: Marked 'False' but the correction provided is a general statement from the text and does not correct the factual error regarding travel to Mars, scoring 0.",
+      "evidence": "d. True"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Missing corrections for False statements",
+      "Incorrect factual corrections",
+      "Misidentification of True/False status"
+    ],
+    "positive_aspects": [
+      "Correctly identified item d"
+    ]
+  },
+  "feedback_summary": "The student scored 1 out of 5. Item (a) lacked a correction; item (b) had a correction that repeated the error in the prompt; item (c) was marked True instead of False; item (d) was correct; item (e) provided a relevant sentence from the text but failed to correct the specific error about Mars.",
+  "_metadata": {
+    "task_id": "TF_018",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0017",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "7e3e70ab5621f24452f506192d1e234b66c4f6d988ed7f14ce932d35e9059418",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:10:48.023361+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3fdcf4f2a02d5de3588c9e749e39757d5b441ead6574812294dc01633ab6d70e",
+    "input_tokens": 6413,
+    "output_tokens": 1548,
+    "thoughts_tokens": 848,
+    "cost_usd": 0.001106,
+    "latency_ms": 142953,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6413,
+        "output_tokens": 1548,
+        "thoughts_tokens": 848,
+        "cost_usd": 0.001106,
+        "latency_ms": 142953,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

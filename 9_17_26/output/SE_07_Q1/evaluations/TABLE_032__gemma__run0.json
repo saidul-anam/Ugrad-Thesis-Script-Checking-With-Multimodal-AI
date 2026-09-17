@@ -1,0 +1,100 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (i) and (iv) are correct. Item (ii) is incorrect because it includes Michael Collins, who did not land on the moon. Item (iii) provides the return date instead of the landing date. Item (v) describes the emotion ('excitement') instead of the location ('all over the world').",
+      "evidence": "three American astronauts began their journey to the moon. ... come back safely to Earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in Item ii",
+      "Date confusion in Item iii",
+      "Category error (answering 'how' instead of 'where') in Item v"
+    ],
+    "positive_aspects": [
+      "Correctly identified the start of the journey",
+      "Correctly identified the return to Earth"
+    ]
+  },
+  "feedback_summary": "Items (i) and (iv) were marked correct. Item (ii) was marked wrong as Michael Collins did not land on the moon. Item (iii) was marked wrong for providing the wrong date. Item (v) was marked wrong because 'with great excitement' describes the manner, not the location (where) people watched the news.",
+  "_metadata": {
+    "task_id": "TABLE_032",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0031",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "01b6f1ff59a4ca11656e4448328bc8f80e9cf2073a2e135d66ad4a1e9028a350",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:31:08.434228+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a737a958a33d4ad277711eea0dcac8e2567b0d77956fb788e2b12ad2ecff200d",
+    "input_tokens": 6368,
+    "output_tokens": 1744,
+    "thoughts_tokens": 1066,
+    "cost_usd": 0.00116,
+    "latency_ms": 1177016,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6368,
+        "output_tokens": 1744,
+        "thoughts_tokens": 1066,
+        "cost_usd": 0.00116,
+        "latency_ms": 1177016,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

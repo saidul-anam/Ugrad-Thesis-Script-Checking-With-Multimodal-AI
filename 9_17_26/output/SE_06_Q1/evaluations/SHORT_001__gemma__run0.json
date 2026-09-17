@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, c, and e are correct. Item a correctly identifies the casualties of the war. Item c correctly identifies the purpose and status of the Memorial as a focal point, with content recoverable despite spelling errors. Item e correctly identifies the 31-gun salute as the start of the day. Item b is incorrect because it describes the spirit/manner of celebration ('great enthusiasm') rather than the specific activities (salutes, flags, programs) listed in the key. Item d was not attempted.",
+      "evidence": "a. The war in 1971 Pakistani army killed theree million people and assaulted thousands of woman, ... c. The National Martyrs' Memorial is important bedcause our monument dedicated to the slodirzes and civilians ... becomes a focal point for citizens to pay their respect. ... e. The ba day begins with a 31-gun salute at dawn"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are only assessed as part of content recoverability.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not a scoring criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Item omission (Item d)",
+      "Vague/General response instead of specific activities (Item b)"
+    ],
+    "positive_aspects": [
+      "Successful retrieval of key factual data for items a, c, and e"
+    ]
+  },
+  "feedback_summary": "The candidate scored 3 out of 5. Items a, c, and e were marked correct as they carried the required factual content from the reading passage. Item b was marked incorrect because it provided a general description of the atmosphere rather than the specific ways the day is celebrated. Item d was left blank.",
+  "_metadata": {
+    "task_id": "SHORT_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "05aac7cfb136a412948d9fbfa1d256cc9baf45bf7146343c39f5ecfbd3edbed8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:26:04.945524+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9a1816ba511335a2b628505bf47a3db9820578414696194225f9892e39b2692d",
+    "input_tokens": 6623,
+    "output_tokens": 2803,
+    "thoughts_tokens": 2046,
+    "cost_usd": 0.001503,
+    "latency_ms": 1433125,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6623,
+        "output_tokens": 2803,
+        "thoughts_tokens": 2046,
+        "cost_usd": 0.001503,
+        "latency_ms": 1433125,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

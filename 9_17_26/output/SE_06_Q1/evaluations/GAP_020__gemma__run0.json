@@ -1,0 +1,96 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Only item (b) is correct. Item (a) 'never forgot' does not fit the narrative sequence 'After finding the box...'. Items (c), (d), and (e) are grammatically incorrect fillers that make the sentences incoherent.",
+      "evidence": "went back."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical incoherence in gap filling",
+      "Lack of syntactic alignment with the prompt sentences"
+    ],
+    "positive_aspects": [
+      "Correctly identified the action of returning to Jaipur in item (b)"
+    ]
+  },
+  "feedback_summary": "Item (b) was marked correct. Items (a), (c), (d), and (e) were marked incorrect. Specifically, (a) is contextually wrong for the sequence of events, and (c), (d), and (e) result in grammatically broken sentences.",
+  "_metadata": {
+    "task_id": "GAP_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "7d1b8aa49d879d7039bdd6deed41a6ffcb822424aaaab903595b7d2a3f4e161c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:30:45.478264+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e7235bf3ef041ba72114e192102290652c11fdfe928fe8e5297baf030b35035f",
+    "input_tokens": 6349,
+    "output_tokens": 2049,
+    "thoughts_tokens": 1434,
+    "cost_usd": 0.00125,
+    "latency_ms": 952358,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6349,
+        "output_tokens": 2049,
+        "thoughts_tokens": 1434,
+        "cost_usd": 0.00125,
+        "latency_ms": 952358,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

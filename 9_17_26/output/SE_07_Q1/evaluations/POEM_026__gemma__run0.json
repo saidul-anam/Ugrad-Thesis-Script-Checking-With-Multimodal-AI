@@ -1,0 +1,97 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted five items (b, c, g, h, f), but none of them convey the correct meaning as per the answer key. Item (b) fails to suggest enjoying nature; (c) does not state that life without nature is poor; (g) and (h) are incoherent fragments about 'spending time' without mentioning beauty or impoverishment; item (f) (labeled as 'S') incorrectly describes the teacher's role as 'dangerous' rather than one of guidance and knowledge.",
+      "evidence": "The poet suggestion about natuгse in the poem because They all people spending the leisure time."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incoherent sentence structure",
+      "Failure to comprehend poem themes",
+      "Incorrect factual claims"
+    ],
+    "positive_aspects": [
+      "Attempted the required number of questions"
+    ]
+  },
+  "feedback_summary": "The student attempted five questions (b, c, g, h, and f). However, none of the answers align with the indicative content of the answer key. Most responses are linguistically fragmented and fail to address the core prompts of the poems. Item (b) 0, Item (c) 0, Item (g) 0, Item (h) 0, Item (f) 0. Total: 0/5.",
+  "_metadata": {
+    "task_id": "POEM_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "e1717f86ea47e62fe450f51e2a7361753c5607b3edfdd7e21af1f4c009c36575",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:02:07.816303+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8758a7e46f99ba217ae292cffb000b299252e2b83447401be0f2502b3ea98723",
+    "input_tokens": 6479,
+    "output_tokens": 1693,
+    "thoughts_tokens": 975,
+    "cost_usd": 0.001156,
+    "latency_ms": 312891,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6479,
+        "output_tokens": 1693,
+        "thoughts_tokens": 975,
+        "cost_usd": 0.001156,
+        "latency_ms": 312891,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

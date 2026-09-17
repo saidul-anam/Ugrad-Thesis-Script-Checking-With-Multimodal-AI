@@ -1,0 +1,96 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. (a) 'show' matches the key; (b) 'great' matches the key; (c) 'cheered' matches the key; (d) 'entertainment' fits grammatically and agrees with the passage context of a performance; (e) 'cheerings' is a clear intended match for 'cheering/cheers' and is accepted per the rubric's guideline on intended words.",
+      "evidence": "a. show b. great c. cheered d. entertainment e. cheerings"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy against the provided key",
+      "Appropriate use of contextual synonyms"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered all five items. Items (a), (b), and (c) match the key exactly. Item (d) 'entertainment' is an acceptable synonym for the intended meaning, and item (e) 'cheerings' is accepted as a clear intended match for 'cheers' or 'cheering'.",
+  "_metadata": {
+    "task_id": "GAP_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "02def7ce56271e39b1743f8a7c75b37296f9498635b6fb9506bbf417a1c098f8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:51:08.013410+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "96e93e8b529de76fa54efc5ad0de0e3e05c92bfd2ad51b7129c7370644de3667",
+    "input_tokens": 6222,
+    "output_tokens": 1991,
+    "thoughts_tokens": 1340,
+    "cost_usd": 0.00122,
+    "latency_ms": 251719,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6222,
+        "output_tokens": 1991,
+        "thoughts_tokens": 1340,
+        "cost_usd": 0.00122,
+        "latency_ms": 251719,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

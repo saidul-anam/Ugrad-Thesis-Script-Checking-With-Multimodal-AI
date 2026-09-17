@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Correct content in a complete sentence (2). Item b: Incoherent fragment with no relevant information (0). Item c: Answers the wrong question (provides work details instead of financial reasons) (0). Item d: Answers the wrong question (provides financial reasons instead of daily activities) (0). Item e: Contains the correct content for the children's education, but the sentence is very broken ('she also student study Mitu and Nitu'), meaning content survives only by inference (1). Total: 2+0+0+0+1=3.",
+      "evidence": "a. An: Joynul and Nazma lived in a small village. ... e. An: Nazma do es all the work athome from morning to nigh, rain or shine and she also student study Mitu and Nitu."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions have a fixed score of 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions have a fixed score of 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions have a fixed score of 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misalignment of answers to question prompts (c and d swapped)",
+      "Severe syntactic breakdown in later responses",
+      "Vocabulary insufficiency"
+    ],
+    "positive_aspects": [
+      "Accurate response to the first comprehension item"
+    ]
+  },
+  "feedback_summary": "The candidate successfully answered item (a) [2 marks]. Item (b) was incoherent [0 marks]. Items (c) and (d) were swapped, meaning the content provided did not match the question asked [0 marks each]. Item (e) contained the correct core idea regarding the children's education, but the sentence was so grammatically broken that it only earns a partial mark [1 mark]. Total score: 3/10.",
+  "_metadata": {
+    "task_id": "SHORT_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8aa5f6346a8d17b90f3b70e12fad937ef74316be886908c06a560176cee7df4e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:23:57.280013+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9bf936be71a90572eaadbceb32c28ace8891af27b3d276eaf39411f695585b6f",
+    "input_tokens": 6464,
+    "output_tokens": 2105,
+    "thoughts_tokens": 1331,
+    "cost_usd": 0.001278,
+    "latency_ms": 495546,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6464,
+        "output_tokens": 2105,
+        "thoughts_tokens": 1331,
+        "cost_usd": 0.001278,
+        "latency_ms": 495546,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

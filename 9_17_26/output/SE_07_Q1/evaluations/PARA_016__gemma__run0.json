@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 8.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt with concrete and relevant details including the date, the specific chief guest, and the order of events.",
+      "evidence": "The vice chancellor of BUET was the chief guest."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified paragraph with a clear opening topic sentence and remains close to the requested length.",
+      "evidence": "The Annual Prize-Giving Ceremony of my ceremony school is the best and most memorable day of my school."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors ('distrik', 'instructi') and minor grammatical slips ('held in 29th January', 'Our The ceremony'), although meaning is never obscured.",
+      "evidence": "distrik the prizes among the toppers"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic and avoids the hollow phrasing of guidebooks, using specific details and a few higher-level idiomatic expressions.",
+      "evidence": "He told us to work hard as the competition is now sky-high."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 8.5,
+    "capped_from": 8.5
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling slips (distrik, instructi)",
+      "Preposition errors (held in [date])",
+      "Redundancy (ceremony school)"
+    ],
+    "positive_aspects": [
+      "Excellent adherence to paragraph structure",
+      "Consistent use of past tense",
+      "Use of specific, concrete details"
+    ]
+  },
+  "feedback_summary": "The candidate has written a strong, focused paragraph that fully meets the requirements of the prompt. The content is well-developed and the structure is a perfect single block. The final score is slightly lowered due to a high density of minor spelling and grammatical errors, but the overall quality remains comfortably within Band 4 for a Class VII student.",
+  "_metadata": {
+    "task_id": "PARA_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "5eff2c3e6e53ca1e0e22b44d92c5221eb269d142234e7422f5672cf539cb5dfd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:54:06.144554+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5b8408fe06f6f1d186e22794f29293580e71df08281cb419d25a07f99f7be505",
+    "input_tokens": 5971,
+    "output_tokens": 2367,
+    "thoughts_tokens": 1633,
+    "cost_usd": 0.001307,
+    "latency_ms": 333219,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5971,
+        "output_tokens": 2367,
+        "thoughts_tokens": 1633,
+        "cost_usd": 0.001307,
+        "latency_ms": 333219,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

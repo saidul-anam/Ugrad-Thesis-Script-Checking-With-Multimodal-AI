@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately and clearly addresses the prompt by describing a specific future plan (studying engineering in Russia).",
+      "evidence": "I like engineering so, I was thinking about moving to Russia after my HSC and continue my study there and get a degree."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six essential components of an informal letter (Address, Date, Salutation, Body, Closing, and Signature) are present.",
+      "evidence": "27th June, 2026 / Azimpur , Dhaka / Dear Siyom, / ... / your best friend / Ritom"
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple significant linguistic errors, including homophone confusion ('to' vs 'too'), a confusing lexical choice ('fat letter'), and a fragmented, incomplete sentence ('write about its').",
+      "evidence": "I'm doing well to. ... In this fat letter I'll write about its"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter feels authentic and personal rather than a memorized template, using specific goals and culturally appropriate familial greetings.",
+      "evidence": "Convey my salam to your parents and some love for your younger siblings."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Homophone confusion (to/too)",
+      "Lexical misuse (fat letter)",
+      "Syntax fragmentation (incomplete sentences)"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to layout requirements",
+      "Genuine and original content"
+    ]
+  },
+  "feedback_summary": "The candidate has demonstrated a strong grasp of the letter's structural requirements and provided an original, on-topic response. However, the writing is marred by several linguistic errors—specifically the use of 'fat letter' and the incomplete phrase 'write about its'—which indicate a lack of proofreading and a struggle with basic syntax. Per the tiebreaker rules for Band 4, the score is set to the lowest value of the band (4) due to these multiple mechanical errors.",
+  "_metadata": {
+    "task_id": "LETTER_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a2e1d1854a08e9396c5c839168d1d0a72ebdeb259ab28d603968130fb6201867",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:14:27.215392+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9d0c2cab0f59796707b62b7bd94e812cc1fa3529b7decc0aa30591020a16a53a",
+    "input_tokens": 4426,
+    "output_tokens": 3844,
+    "thoughts_tokens": 3074,
+    "cost_usd": 0.001596,
+    "latency_ms": 108265,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4426,
+        "output_tokens": 3844,
+        "thoughts_tokens": 3074,
+        "cost_usd": 0.001596,
+        "latency_ms": 108265,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

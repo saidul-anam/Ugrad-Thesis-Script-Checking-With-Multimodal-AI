@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt and clearly describes a specific future plan (freelancing) as requested.",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components of a formal/informal letter layout are present and correctly positioned.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "The text is readable, but contains multiple spelling errors and non-standard punctuation/apostrophe usage.",
+      "evidence": "beggining, I'am, self-relient, Your's ever"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response uses a very common memorized opening template but offsets this with authentic and modern details regarding AI and video editing.",
+      "evidence": "At the beggining of the letter take my salam... such as video editing. graphic design, AI work"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (beggining, relient)",
+      "Incorrect apostrophe usage (I'am, Your's)",
+      "Uncountable noun error (so many works)"
+    ],
+    "positive_aspects": [
+      "Perfect structural layout",
+      "Direct adherence to prompt",
+      "Personalized content regarding freelancing niches"
+    ]
+  },
+  "feedback_summary": "The candidate has provided a structurally complete letter that directly answers the prompt. While the language mechanics are marred by several spelling mistakes and the use of a generic opening template, the inclusion of specific career goals (AI, Graphic Design) demonstrates a level of authenticity. Per the tiebreaker rules for Band 4, the score is set at the lowest value of the band due to multiple minor mechanical errors.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "11149c364f116c540ed2fa80e5e2d31f4b081f57668961df2d4067775140f015",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:12:18.455976+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "41387137ae59024b28002505a8d6ec956524eb1a974bb79b911b2f1fd4a1369c",
+    "input_tokens": 4404,
+    "output_tokens": 2319,
+    "thoughts_tokens": 1568,
+    "cost_usd": 0.001136,
+    "latency_ms": 70609,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 2319,
+        "thoughts_tokens": 1568,
+        "cost_usd": 0.001136,
+        "latency_ms": 70609,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

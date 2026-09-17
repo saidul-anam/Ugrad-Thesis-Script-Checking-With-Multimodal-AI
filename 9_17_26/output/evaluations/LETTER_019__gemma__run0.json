@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately and clearly addresses the prompt, stating the intention to discuss future plans after the HSC exam and specifying a career goal in computer engineering.",
+      "evidence": "In the letter y wanted to know about my future Plan affi passing HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six essential components of an informal letter (Date, Address, Salutation, Body, Close, and Signature) are present, despite some unconventional duplication of address details at the end.",
+      "evidence": "27-06-2026\\nDemira, Dhaka\\nBangladesh\\n\\nDear Messi,\\n...\\nYour loving,\\nMridul"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains a high density of severe spelling and grammatical errors that impede professional readability, including broken syntax and incorrect word choices.",
+      "evidence": "reci your letter; affi passing; Exa is close to door; belong computer engineer; q fullfill dream; mentlime; Spiking; parrants"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the mention of specific universities (BUET, RUET) shows some personal effort, the overall framing relies heavily on memorized guide templates for the opening and closing.",
+      "evidence": "At first take my heartiest love. ... knocking at the door. ... No more today, Convey my Salam to your parrants"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (reci, affi, mentlime, spiking, parrants)",
+      "Incorrect word usage (belong instead of become)",
+      "Grammatical fragmentation (Hope you great)"
+    ],
+    "positive_aspects": [
+      "Full adherence to letter layout",
+      "Direct response to the prompt with specific goals"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the task's purpose and the required structural layout of an informal letter. However, the score is significantly limited by a very high density of linguistic errors, including frequent spelling mistakes and poor syntactical control. While the content is relevant, the reliance on formulaic templates and the lack of basic mechanical precision place this script firmly in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "9e2f17c3279a8a14d69b1748161c0baf99aff60f3174950b0034a43a1814ac13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:26:56.013140+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "04e32a1d5b734aa67a8451e36ff7d2fc1403aea3ab94c50145f6d7647b47e6d3",
+    "input_tokens": 4408,
+    "output_tokens": 3302,
+    "thoughts_tokens": 2496,
+    "cost_usd": 0.001431,
+    "latency_ms": 92047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4408,
+        "output_tokens": 3302,
+        "thoughts_tokens": 2496,
+        "cost_usd": 0.001431,
+        "latency_ms": 92047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

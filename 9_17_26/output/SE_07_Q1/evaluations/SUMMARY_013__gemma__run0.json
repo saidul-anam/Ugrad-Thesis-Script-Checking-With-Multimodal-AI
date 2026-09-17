@@ -1,0 +1,103 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures all key milestones: the launch date, the spacecraft name, the landing date, the specific roles of the astronauts, and the return date.",
+      "evidence": "On July 16, 1969 The 1st mission to the moon was held... The spacecraft beach the moon... On July 24, 1969 The Apollo 11 came back to earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails on two structural counts: it is written in three separate fragments/paragraphs rather than a single coherent block, and the length exceeds the 1/3rd limit (60 words vs 43.6).",
+      "evidence": "On July 16, 1969... [Paragraph break] On July 20, 1969... [Paragraph break] On July 24, 1969"
+    },
+    "language_mechanics": {
+      "rationale": "There are several spelling and grammatical errors ('There' for 'Their', 'lounched', 'watch' for 'watched', 'beach' for 'reached', 'Michal Colling'). While the meaning is clear, the error density is high for Class VII.",
+      "evidence": "There spacecraft was called Apollo 11. It lounched from Florida... The spacecraft beach the moon."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student makes a genuine effort to paraphrase the text rather than copying sentences verbatim, showing good originality in sentence construction.",
+      "evidence": "The 1st mission to the moon was held."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (lounched, Michal)",
+      "Homophone confusion (There/Their)",
+      "Incorrect word choice (beach instead of reached)",
+      "Structural failure (multiple paragraphs)"
+    ],
+    "positive_aspects": [
+      "Comprehensive content coverage",
+      "Successful paraphrasing (low verbatim overlap)"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a strong understanding of the text and successfully paraphrased the content without copying verbatim. However, the response failed to follow the structural requirements of a summary: it was split into three paragraphs instead of one, and it exceeded the one-third length constraint. Due to these structural breaks, a hard cap of 2 was applied. Additionally, there are frequent spelling and mechanical errors.",
+  "_metadata": {
+    "task_id": "SUMMARY_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ecf1f7f842d7dd9e33b09f08769da64517af6ce349b5a4ba3196864c0c2781ac",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:14:15.077999+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c091f7f2c9b2b0fdb237f76c1eec88c6089d66c8a8ec7a9b0f96ae94ed555feb",
+    "input_tokens": 6077,
+    "output_tokens": 2034,
+    "thoughts_tokens": 1174,
+    "cost_usd": 0.001218,
+    "latency_ms": 268953,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6077,
+        "output_tokens": 2034,
+        "thoughts_tokens": 1174,
+        "cost_usd": 0.001218,
+        "latency_ms": 268953,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

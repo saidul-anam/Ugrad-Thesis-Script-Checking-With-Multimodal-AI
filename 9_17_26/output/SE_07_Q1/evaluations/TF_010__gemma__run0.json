@@ -1,0 +1,100 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct (False + correction identifying it as a spacecraft). Item b is correct (False + correction identifying the two who landed). Item c is incorrect because the correction 'So many people... walk on the moon' does not specifically correct the error that Armstrong was the 'final' person by stating he was the 'first'. Item d is correct (True). Item e (mislabeled as c) is incorrect as the student marked it 'true' while the answer is 'False'.",
+      "evidence": "a) False. Ans:- Apollo 11 was a Spacecraft. b) False. Asn:- Neli Armstrong and Edwin Aldrin landed on the moon d) true"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to provide specific factual correction for item c",
+      "Incorrect truth value for item e",
+      "Labeling error in the final response"
+    ],
+    "positive_aspects": [
+      "Correctly identified and corrected items a and b",
+      "Correctly identified item d"
+    ]
+  },
+  "feedback_summary": "The student scored 3 out of 5. Item a: Correct. Item b: Correct. Item c: Incorrect (correction did not specify that Armstrong was the first person). Item d: Correct. Item e: Incorrect (marked true instead of false).",
+  "_metadata": {
+    "task_id": "TF_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "79cda3fff81804c9d46a0d073eee7223ec659d525d4f28d9b6287e6d9e115e80",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:38:04.232625+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2f198ee9e8114dcc87c64abc34fe4bd4032b8eb48370ac4875ac10bd96ca983d",
+    "input_tokens": 6420,
+    "output_tokens": 1995,
+    "thoughts_tokens": 1299,
+    "cost_usd": 0.001241,
+    "latency_ms": 244530,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6420,
+        "output_tokens": 1995,
+        "thoughts_tokens": 1299,
+        "cost_usd": 0.001241,
+        "latency_ms": 244530,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

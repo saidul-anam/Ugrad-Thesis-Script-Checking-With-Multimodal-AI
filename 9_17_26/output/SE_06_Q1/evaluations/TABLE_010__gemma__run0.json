@@ -1,0 +1,100 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored evaluation: (i) correct; (ii) correct; (iii) incorrect (provided 'And 6' instead of marks for strong subjects); (iv) incorrect (incorrectly identified 'Art' instead of 'ICT'); (v) correct. Total: 3 marks.",
+      "evidence": "a) Six b) Bangla, English and mathematics e) 6"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is always 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is always 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is always 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inaccurate data retrieval (Item c)",
+      "Incorrect subject identification (Item d)"
+    ],
+    "positive_aspects": [
+      "Correctly identified the grade level",
+      "Correctly listed the subjects of strength",
+      "Correctly identified the marks for weak subjects"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered items a, b, and e. Item c was incorrect as it did not provide the marks for the strong subjects. Item d was incorrect because it included 'Art', which is not mentioned in the passage, instead of 'ICT'. Total score: 3/5.",
+  "_metadata": {
+    "task_id": "TABLE_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1c2269a22e798546580fc4f00d9d841488b1bee0120d69fdd46e0a7bf8f31f8b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:08:00.393815+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "78fe1c5b5b3f9a7ca0b76a67fabda78f2b18777e5a89a435eebf7ce8111afb51",
+    "input_tokens": 6395,
+    "output_tokens": 1639,
+    "thoughts_tokens": 992,
+    "cost_usd": 0.001131,
+    "latency_ms": 2100297,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6395,
+        "output_tokens": 1639,
+        "thoughts_tokens": 992,
+        "cost_usd": 0.001131,
+        "latency_ms": 2100297,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

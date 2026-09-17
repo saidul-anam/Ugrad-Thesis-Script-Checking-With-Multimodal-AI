@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate attempts to address the core questions of the prompt by defining AI, mentioning tools like ChatGPT, discussing its utility for underprivileged learners, and identifying threats such as deepfakes.",
+      "evidence": "Artificial Intelligence means  it is a software programme and it helps many us by solve many problems. Like ChatGPT, Deepfake etc."
+    },
+    "structure_format_brevity": {
+      "rationale": "The text violates the mandatory single-block paragraph format by splitting the response into two separate sub-paragraphs, alongside weak internal transitions.",
+      "evidence": "learn and children's is the future of our world."
+    },
+    "language_mechanics": {
+      "rationale": "The script displays pervasive errors in spelling, subject-verb agreement, irregular plurals, duplicated words, and faulty sentence boundaries throughout.",
+      "evidence": "This is very helpful softwor for all people's in this world. But  most of the times AI used for teaching and tearing. In our world many countrie's childs are are poor economy."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response reflects an authentic individual attempt rather than a memorized template, incorporating contemporary examples despite severely broken syntax.",
+      "evidence": "Like that face change, a kid video edit, create some bad pictures and many more prof problems are create by using AI."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling errors ('teauces', 'mory', 'softwor', 'tearing', 'side-effectes', 'bade', 'proptems', 'issurces')",
+      "Irregular plural and possessive misuse ('childs', 'countrie's', 'children's')",
+      "Repetition/duplication of words ('are are', 'to to', 'for for')",
+      "Faulty passive voice and verb formation ('are create', 'AI used')"
+    ],
+    "positive_aspects": [
+      "Directly addresses prompt requirements including educational benefits and societal threats",
+      "Mentions relevant real-world technologies (ChatGPT, Deepfake)",
+      "Avoids rote-learned generic introductory templates"
+    ]
+  },
+  "feedback_summary": "The candidate shows an understanding of the prompt by discussing both the beneficial applications and the threatening aspects of AI. However, the response violates structural paragraph conventions by splitting the text into multiple sub-paragraphs (which imposes a maximum cap of 5 marks). Heavy mechanical deficiencies, frequent spelling blunders, and fragmented syntax place the script at the lower end of Band 2.",
+  "_metadata": {
+    "task_id": "PARA_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e50dcd506cfadf0f574158fa337891fcd9fa9a79b1f5148c69b4b9925a73d735",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:02:28.042264+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "02357a5849ad76b225913a9294c0d6ab23233cce51b07c9b945f9cbdafcb66cf",
+    "input_tokens": 4480,
+    "output_tokens": 4748,
+    "thoughts_tokens": 3878,
+    "cost_usd": 0.013214,
+    "latency_ms": 29937,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 4748,
+        "thoughts_tokens": 3878,
+        "cost_usd": 0.013214,
+        "latency_ms": 29937,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

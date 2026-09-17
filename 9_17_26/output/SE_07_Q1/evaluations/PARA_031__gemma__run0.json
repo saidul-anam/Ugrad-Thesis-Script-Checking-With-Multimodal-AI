@@ -1,0 +1,101 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt and provides a chronological account of the event including the chief guest, the distribution of prizes, and the conclusion. However, the detail is basic and the ending is repetitive.",
+      "evidence": "The principal read out his report. Then he called students by their position and the VC of BUET gave them price."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified block as required, and it begins with a clear, if basic, topic sentence. The internal flow is linear but becomes clunky and redundant at the end.",
+      "evidence": "The Annual prize giving ceremony was held of 27 January."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in preposition use, passive voice construction, and spelling. However, the meaning remains generally clear for a Class VII level.",
+      "evidence": "gave them price... gave speaches Speeches... a song was singing by one of the student... chief biguests"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears to be an authentic attempt by the student rather than a memorized guide text, evidenced by the specific mention of the BUET playground and the slightly erratic phrasing.",
+      "evidence": "It held on BUET Playground."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (price for prize, speaches, biguests)",
+      "Incorrect passive voice (It held, song was singing)",
+      "Preposition errors (held of 27 January)"
+    ],
+    "positive_aspects": [
+      "Strict adherence to single-paragraph format",
+      "Consistent chronological narrative",
+      "Authentic voice"
+    ]
+  },
+  "feedback_summary": "The candidate successfully followed the structural requirements by writing a single paragraph on the correct topic. The content is sufficient and avoids guide-text clichés. However, the score is limited by significant linguistic errors, specifically in spelling and tense consistency, and a redundant concluding section regarding the time of the event.",
+  "_metadata": {
+    "task_id": "PARA_031",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0030",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "1941478ad58b9c2701a62e38ce8189d3c2ce435149dc28cb9998e085456bf48f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:25:23.940152+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8ebc80468a1f4fca087337b7986a58f9c7ca807b96442756638af4e11196f0c1",
+    "input_tokens": 5972,
+    "output_tokens": 2286,
+    "thoughts_tokens": 1521,
+    "cost_usd": 0.001283,
+    "latency_ms": 914391,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5972,
+        "output_tokens": 2286,
+        "thoughts_tokens": 1521,
+        "cost_usd": 0.001283,
+        "latency_ms": 914391,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

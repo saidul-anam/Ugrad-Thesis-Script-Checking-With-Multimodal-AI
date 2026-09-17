@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate vaguely perceives the contrast between passive dreamers and active dreamers, but fails to extract an abstract governing theme, relying instead on confused psychological terms and surface-level rephrasing.",
+      "evidence": "Dreams are two kind of one is in subconcious mind and another is unsubconcious mind."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written in a single short block without extraneous padding, but internal structural coherence is disrupted by broken punctuation and sentence fragments.",
+      "evidence": "Who dreams at night to close there eyes Which have. no effact."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive grammatical breakdowns, faulty subject-verb agreement, erratic full stops in mid-clause, and spelling errors throughout.",
+      "evidence": "People are all see dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response makes an effort to use original phrasing rather than copying the poem verbatim (0% overlap), but expression is severely limited by poor lexical command.",
+      "evidence": "They are dangerous because this dreams will be gain they in their heal life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe verb form errors ('are all see dream', 'It's vanish', 'is helps')",
+      "Mid-sentence punctuation faults creating fragments ('Which have. no effact.')",
+      "Homophone and spelling confusions ('there' for 'their', 'effact' for 'effect', 'heal' for 'real')",
+      "Invented vocabulary ('unsubconcious')"
+    ],
+    "positive_aspects": [
+      "Attempted entirely in candidate's own words with zero verbatim copying from the poem",
+      "Maintains single-paragraph formatting within appropriate brevity"
+    ]
+  },
+  "feedback_summary": "The candidate attempts to interpret the poem in their own words without copying verbatim lines, recognizing that day dreamers achieve their goals while night dreams vanish. However, the explanation is conceptually muddled and heavily impeded by pervasive grammatical breakdowns, fragmented sentences, and flawed vocabulary.",
+  "_metadata": {
+    "task_id": "THEME_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0a089c0f40e5817b18c20c07f700d8316defa2de03f98a9d2a6f4624b0524fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:34.754090+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5f1657da90a8ecc5173e03554e534e0ad6097dd220556ce5eb88d6f78c399f99",
+    "input_tokens": 4316,
+    "output_tokens": 2791,
+    "thoughts_tokens": 1999,
+    "cost_usd": 0.008272,
+    "latency_ms": 22344,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4316,
+        "output_tokens": 2791,
+        "thoughts_tokens": 1999,
+        "cost_usd": 0.008272,
+        "latency_ms": 22344,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned the first six sentences (c, f, e, g, a, h). However, sentences 7 and 8 were swapped (b instead of d, and d instead of b), resulting in 6 correct positions.",
+      "evidence": "1. c\n2. f\n3. e\n4. g\n5. a\n6. h"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Positioning error (Items 7 and 8 swapped)"
+    ],
+    "positive_aspects": [
+      "Perfect sequence for the first six items"
+    ]
+  },
+  "feedback_summary": "Items 1(c), 2(f), 3(e), 4(g), 5(a), and 6(h) are correctly positioned. Items 7 and 8 are incorrect as the student swapped the positions of 'b' and 'd'.",
+  "_metadata": {
+    "task_id": "REARR_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "73e4d2488e1aedf84c3076ad5cf5b5671744ba7075f6b2e3206e322193cca50a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:30:31.237525+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5d89239948d38b27fd1a4b05ba32c68af803f7dcafb8cfb929d3d7b122b863e2",
+    "input_tokens": 6280,
+    "output_tokens": 1469,
+    "thoughts_tokens": 857,
+    "cost_usd": 0.001069,
+    "latency_ms": 309078,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1469,
+        "thoughts_tokens": 857,
+        "cost_usd": 0.001069,
+        "latency_ms": 309078,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

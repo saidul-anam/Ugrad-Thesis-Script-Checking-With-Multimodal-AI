@@ -1,0 +1,101 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly and clearly addresses the prompt, explaining the primary goal (medical) and the fallback plan (Dhaka University).",
+      "evidence": "In your letter you wanted to know about my future plan after HSC. In this letter, I'm going to discribe my plan."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components are present and correctly positioned, including the date, address, salutation, and sign-off. The addition of the envelope format is a positive standard practice in this curriculum.",
+      "evidence": "27 June, 2026\n7/A Dhanmondi 32, Dhaka\nDear Luffy,\n...\nYour ever\nFihaz"
+    },
+    "language_mechanics": {
+      "rationale": "The informal register is consistent, but there are several spelling and grammatical errors that prevent a full score.",
+      "evidence": "discribe my plan... preparing for addmission... from the very litte... students dream is"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The progression of thought is logical. While the introduction is somewhat formulaic, the reasoning regarding the 'foolish mindset' of losing hope shows authentic student expression.",
+      "evidence": "Losing hope of life after that is a foolish mindset. That's why if medical doesn't work out, Dhaka University is my back up plan."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (discribe, addmission, litte)",
+      "Possessive noun punctuation (students dream)",
+      "Article/Plurality errors (become doctor)"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout",
+      "Clear and logical content development",
+      "Appropriate informal tone"
+    ]
+  },
+  "feedback_summary": "The script is structurally sound and fully addresses the prompt. It falls into Band 4, but is awarded the lowest value of that band (4) due to multiple minor spelling and grammatical errors. The expression is clear and authentic, and the layout is exemplary.",
+  "_metadata": {
+    "task_id": "LETTER_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2c562c70a50a9e58d5bdd933832902a6bab9b1dbc5fbe46307343d7611456e77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:31:47.272021+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "76544eb18cd4262866df2879c51feb08fb4ecfec88f72c18d5dc49942f5a04a0",
+    "input_tokens": 4430,
+    "output_tokens": 3195,
+    "thoughts_tokens": 2408,
+    "cost_usd": 0.001401,
+    "latency_ms": 89313,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4430,
+        "output_tokens": 3195,
+        "thoughts_tokens": 2408,
+        "cost_usd": 0.001401,
+        "latency_ms": 89313,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

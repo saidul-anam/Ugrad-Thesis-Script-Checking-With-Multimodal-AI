@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'ten thousand' is contextually and grammatically incorrect. Item (b) 'back' lacks the necessary verb to be grammatically correct. Item (c) 'told the boys' does not fit the sentence structure. Item (d) 'bought them' is grammatically incorrect and contradicts the meaning of the passage (he sold them). Item (e) 'Ray' is grammatically incorrect.",
+      "evidence": "(a) ten thousand. (b) back. (c) told the boys (d) bought them (e) Ray."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical incompatibility",
+      "Contextual misunderstanding"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "All items were marked incorrect. (a) 'ten thousand' does not fit; (b) 'back' lacks a verb; (c) 'told the boys' is grammatically incorrect in the sentence; (d) 'bought them' is grammatically incorrect and factually wrong (he sold the papers); (e) 'Ray' does not fit the sentence structure.",
+  "_metadata": {
+    "task_id": "GAP_019",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0019",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f79b9dddcc7238433b19f32d9c34093bcf878815e56fb90f82595e17a936a63a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:13:46.274542+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ece79215912eae758763219680ba357d7ad585f9460ecab352c3ae9a275edcd1",
+    "input_tokens": 6330,
+    "output_tokens": 1320,
+    "thoughts_tokens": 656,
+    "cost_usd": 0.001029,
+    "latency_ms": 284780,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6330,
+        "output_tokens": 1320,
+        "thoughts_tokens": 656,
+        "cost_usd": 0.001029,
+        "latency_ms": 284780,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

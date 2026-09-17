@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly and directly addresses the prompt by detailing realistic post-HSC aspirations, specifically pursuing higher education abroad and initiating a business venture.",
+      "evidence": "After HSC I am willing to move abroad for educational purpose."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout elements of an informal letter are present in the correct order, including the date, address, salutation, body paragraphs, sign-off, signature, and postal envelope layout.",
+      "evidence": "Tatibazer, Dhaka\nDear, Arnob"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling mistakes and faulty word selections severely undermine grammatical precision throughout the script.",
+      "evidence": "Now I am wrutting about it. After HSC I am willing to move abroad for educational purpose. I want to go there for higher study. So beside the academic syllebus, I am taking a litle preparation for this. Perhaps I am also thing about starding a small - bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate demonstrates authentic personal reflection and thematic justification regarding youth employment opportunities rather than relying entirely on rote memorization.",
+      "evidence": "You know the current situation of the job market of our country. We all should generate new opportunities."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (wrutting, syllebus, litle, bussiness, youres)",
+      "Lexical confusion and typos (thing instead of thinking, starding instead of starting)",
+      "Punctuation placement error in salutation (comma placed between Dear and Arnob)"
+    ],
+    "positive_aspects": [
+      "Complete and fully compliant informal letter structural layout",
+      "Direct thematic alignment with the HSC future planning prompt",
+      "Logical flow of ideas and natural paragraph transitions"
+    ]
+  },
+  "feedback_summary": "The letter maintains full structural fidelity and clearly communicates the writer's future plans with logical progression. However, high spelling error density reduces the language mechanics score, placing the final evaluation at the lower threshold of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1023ff9c2066afb1efcfc25a34f3a345611b201f662f28f6e83e9160de989774",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:17:55.231132+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7c8f2d5d1af3e73582ec7f1a3e7ea132242d4efe0d1dbbba37367cdd8a148b85",
+    "input_tokens": 4375,
+    "output_tokens": 3027,
+    "thoughts_tokens": 2247,
+    "cost_usd": 0.00888,
+    "latency_ms": 18530,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4375,
+        "output_tokens": 3027,
+        "thoughts_tokens": 2247,
+        "cost_usd": 0.00888,
+        "latency_ms": 18530,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

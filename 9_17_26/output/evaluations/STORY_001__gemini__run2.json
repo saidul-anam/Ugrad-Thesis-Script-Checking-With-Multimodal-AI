@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate logically extends the prompt stem and develops the traditional plot sequentially to a complete narrative resolution.",
+      "evidence": "He went to the lion and cut the net with his sharp  teeth. The lion was greatful for him as the mouse have saved his life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a constructive moral conclusion, but completely omits the mandatory title required by the prompt.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "The writing exhibits recurrent spelling errors, garbled syntax, apostrophe errors, and tense inconsistencies.",
+      "evidence": "The mouse got scared and told the lion to eat to let him free, one day he might save the lion's life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies heavily on a standard, predictable retelling with simplistic expression and unrefined transitions.",
+      "evidence": "Hearing this the lion laughed and told the mouse that he was small how even can he save the life of the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('forrest', 'trappen', 'greatful', 'worek')",
+      "Syntactic breakdown and scrambled phrasing ('told the lion to eat to let him free', 'how even can he save')",
+      "Punctuation and apostrophe errors ('it's sound' instead of 'its sound')",
+      "Tense/agreement inconsistency ('the mouse have saved')"
+    ],
+    "positive_aspects": [
+      "Maintains narrative continuity from the given stem",
+      "Concludes with an explicit, constructive moral lesson"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a logical narrative progression following the given prompt, successfully completing the story with a clear constructive moral. However, marks are deducted for omitting a title and for noticeable mechanical weaknesses, including frequent spelling errors, tense shifts, and garbled sentence constructions.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0e788379019ad8c4d8df0147446961f907193b58f950b3f75c88fa7f2bbb34f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:38:15.369209+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "72ae2c8f1b803d0159b9072787ff4e59ff06fa86bfde4d42ce18edeae8e6bb6f",
+    "input_tokens": 4404,
+    "output_tokens": 3394,
+    "thoughts_tokens": 2638,
+    "cost_usd": 0.009806,
+    "latency_ms": 21719,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3394,
+        "thoughts_tokens": 2638,
+        "cost_usd": 0.009806,
+        "latency_ms": 21719,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

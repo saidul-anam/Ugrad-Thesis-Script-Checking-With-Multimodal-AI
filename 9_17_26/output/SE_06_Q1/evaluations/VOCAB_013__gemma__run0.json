@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as 'Come in' functions as a valid antonym for 'went back'. Item (b) is incorrect because it provides a descriptive phrase/definition rather than a synonym. Item (c) 'Helper' is not a synonym for 'Friend'. Item (d) 'Unshow' is a non-existent word and not a recognized antonym for 'Show'. Item (e) 'Boy' is unrelated to the word 'Bought'.",
+      "evidence": "a. went back |  | Come in"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion between synonym and definition",
+      "Lack of vocabulary range",
+      "Use of non-standard word formation (un- prefix)"
+    ],
+    "positive_aspects": [
+      "Correctly identified antonym for item (a)"
+    ]
+  },
+  "feedback_summary": "Item (a) is correct. Items (b), (c), (d), and (e) are incorrect.",
+  "_metadata": {
+    "task_id": "VOCAB_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2bd9a871b772c12aac984410da776b9a987c1ee9f6f9a62f50fe96605ae7852f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:48:32.875810+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0269e09e72bbdd8705b6f122caccfd1eafde2b7f51f1c5b40c11f881a26b5f55",
+    "input_tokens": 6333,
+    "output_tokens": 2060,
+    "thoughts_tokens": 1416,
+    "cost_usd": 0.001251,
+    "latency_ms": 262687,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6333,
+        "output_tokens": 2060,
+        "thoughts_tokens": 1416,
+        "cost_usd": 0.001251,
+        "latency_ms": 262687,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

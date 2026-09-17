@@ -1,0 +1,95 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered only one item (f). Items a, b, c, d, e, and g were answered incorrectly based on the provided answer key.",
+      "evidence": "f. (iv) unitedly."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria do not apply.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are only relevant to whether the item choice is correct.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality criteria do not apply.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection"
+    ],
+    "positive_aspects": [
+      "Correct identification of item f"
+    ]
+  },
+  "feedback_summary": "Item f was marked correct. Items a, b, c, d, e, and g were marked incorrect.",
+  "_metadata": {
+    "task_id": "MCQ_021",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0021",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "edc706037a240e1e18cf2788517936b8f39c1318e22c0df570ec7ea5c4900ca6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:23:21.991297+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7ec5c22dfcb1885b418a70a820d19cbfdbe27bf027f3f023776b985cca01271b",
+    "input_tokens": 6691,
+    "output_tokens": 1484,
+    "thoughts_tokens": 930,
+    "cost_usd": 0.001114,
+    "latency_ms": 244000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6691,
+        "output_tokens": 1484,
+        "thoughts_tokens": 930,
+        "cost_usd": 0.001114,
+        "latency_ms": 244000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

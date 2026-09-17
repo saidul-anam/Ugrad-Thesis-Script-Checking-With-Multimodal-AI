@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the abstract central theme: the distinction between passive dreaming and the active pursuit of goals.",
+      "evidence": "explore the difference between active and passive dream"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a concise, single block that states the theme immediately without any padding.",
+      "evidence": "Theme: The poem 'Dream' explore..."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains significant errors in subject-verb agreement ('explore' instead of 'explores'), pluralization ('passive dream'), and a major sentence fragment starting with 'emphasizing'.",
+      "evidence": "explore the difference between active and passive dream. emphasizing those"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses original phrasing and avoids any direct copying from the poem, utilizing their own conceptual vocabulary.",
+      "evidence": "with purpose and vision make dream change to reality"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Sentence Fragmentation",
+      "Noun Pluralization"
+    ],
+    "positive_aspects": [
+      "Strong conceptual understanding",
+      "Complete originality in phrasing",
+      "Excellent brevity"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear and accurate understanding of the poem's theme, successfully paraphrasing the core idea without relying on the original text. While the structural requirements are met perfectly, the score is limited to the lower end of Band 4 due to frequent linguistic errors in subject-verb agreement and sentence construction.",
+  "_metadata": {
+    "task_id": "THEME_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3ba4c547e178ff15bee9c8b311b7684d392a8660c9ec919b6799a425362ecd04",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:37:06.269811+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b795c22e5b03e0e1757670a49dd19cb8a5c37d1afd5fcdbd944d50412f5baa33",
+    "input_tokens": 4256,
+    "output_tokens": 1993,
+    "thoughts_tokens": 1329,
+    "cost_usd": 0.001024,
+    "latency_ms": 61265,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4256,
+        "output_tokens": 1993,
+        "thoughts_tokens": 1329,
+        "cost_usd": 0.001024,
+        "latency_ms": 61265,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

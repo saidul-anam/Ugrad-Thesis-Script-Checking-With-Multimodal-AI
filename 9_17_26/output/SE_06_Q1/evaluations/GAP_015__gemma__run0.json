@@ -1,0 +1,97 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items b, d, and e are correct according to the answer key and context. Item a ('saw') does not fit grammatically with the preposition 'about' in this context. Item c ('wanted') does not match the meaning of discovering the papers were valuable ('came to know').",
+      "evidence": "b. went. d. sold. e. hearing."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Contextual vocabulary mismatch"
+    ],
+    "positive_aspects": [
+      "Accurate identification of key actions (selling, hearing news)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items b, d, and e. Item a was marked wrong because 'saw' does not fit the phrase 'saw about valuable stones'. Item c was marked wrong because 'wanted to know' changes the meaning from the passage's fact that he discovered the value.",
+  "_metadata": {
+    "task_id": "GAP_015",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0015",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "ff5673c26822d7505230d8b0ef7f9003a27b7238cf37c92259b672f38f043a2b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:09:01.477850+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fa856185c6e225ded8def063c21893db3f9078a258c9f856e8383b593eeca002",
+    "input_tokens": 6322,
+    "output_tokens": 1750,
+    "thoughts_tokens": 1136,
+    "cost_usd": 0.001157,
+    "latency_ms": 912343,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6322,
+        "output_tokens": 1750,
+        "thoughts_tokens": 1136,
+        "cost_usd": 0.001157,
+        "latency_ms": 912343,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

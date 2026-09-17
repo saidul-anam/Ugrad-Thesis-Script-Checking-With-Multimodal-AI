@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the topic and includes relevant details about the rickshaw-puller's housing, work, and financial struggle. However, the content is basic and falls short of the requested 120-word length (82 words), lacking deeper descriptive detail.",
+      "evidence": "He usually lives in a small hut or on slum. His life is full of struggle."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified paragraph with a clear, functional topic sentence that introduces the subject.",
+      "evidence": "A rickshaw puller is a poor man who pulls a rickshaw for his living."
+    },
+    "language_mechanics": {
+      "rationale": "Tense consistency is maintained. There are minor grammatical slips typical for Class VI (e.g., 'on slum' instead of 'in a slum', 'pulls rickshaw in roads' instead of 'on the roads', and unnecessary capitalization of 'Hurry').",
+      "evidence": "He pulls rickshaw in roads."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is simple and authentic to the grade level. While some sentences are generic ('He works very hard'), there is no evidence of verbatim copying from a guide text.",
+      "evidence": "Sometimes he hires a rickshaw from the owner, then he pays the rent at night."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Prepositional errors",
+      "Article omission",
+      "Incorrect capitalization"
+    ],
+    "positive_aspects": [
+      "Correct paragraph structure",
+      "Consistent present tense",
+      "Clear topic sentence"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a competent, structurally sound paragraph. It follows the layout requirements and stays on topic. The score is placed in Band 3 because the content is somewhat thin and the word count is significantly below the target, though the language is readable and appropriate for Class VI.",
+  "_metadata": {
+    "task_id": "PARA_002",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0002",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "a7ad214f6b0b96f4a4e4f11a8b89c1c96a910c15536b37afa6cf48d78fa66419",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:22:43.948244+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1378851e71db0d0b98440b7a8846ec12da90cd717b99a095d6761734ce031150",
+    "input_tokens": 5961,
+    "output_tokens": 1768,
+    "thoughts_tokens": 1020,
+    "cost_usd": 0.001126,
+    "latency_ms": 1232139,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5961,
+        "output_tokens": 1768,
+        "thoughts_tokens": 1020,
+        "cost_usd": 0.001126,
+        "latency_ms": 1232139,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

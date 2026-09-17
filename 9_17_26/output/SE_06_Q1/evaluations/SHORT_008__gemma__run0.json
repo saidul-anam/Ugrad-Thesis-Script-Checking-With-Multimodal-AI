@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, c, d, and e are marked correct as they provide the required factual content from the passage. Item b is marked 0 because 'with great enthusiasm' is a general description of the atmosphere and does not answer 'how' (the specific activities like gun salutes, parades, and flags) as required by the key.",
+      "evidence": "a. During the war in 1971 Bangladesh fought against the Pakistani army. c. ...it is dedicated to the soldiers and civillans Who lost their lives during the war. d. People sing patriotic songs at the National Martyrs' Memorial. e. The 31-gun salute represents the supreme sacrifices of the millions Bangladeshi people."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Insufficient detail in item (b)"
+    ],
+    "positive_aspects": [
+      "Accurate factual retrieval",
+      "Direct and concise answers"
+    ]
+  },
+  "feedback_summary": "Item a: Correct. Item b: Incorrect (response is too generic and fails to list the activities of celebration). Item c: Correct. Item d: Correct. Item e: Correct.",
+  "_metadata": {
+    "task_id": "SHORT_008",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0008",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2eadf9fffa5affaa77a2cbec46ca17d279b1802420d3700427a1a7885f840e15",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:29:19.177819+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c0a80aa222958e230cd42fd3624ffc352e8c84de6424987e36509018ac61375a",
+    "input_tokens": 6603,
+    "output_tokens": 2526,
+    "thoughts_tokens": 1872,
+    "cost_usd": 0.001418,
+    "latency_ms": 344937,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6603,
+        "output_tokens": 2526,
+        "thoughts_tokens": 1872,
+        "cost_usd": 0.001418,
+        "latency_ms": 344937,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all guided prompt questions, covering the definition of AI, its devices and applications, its role in education, and potential threats regarding privacy.",
+      "evidence": "The AI can generat images and videos, solve our educational problems, makes our doubts easier and many more things."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single unified block with zero paragraph splits and contains a basic introductory topic sentence.",
+      "evidence": "Artificial intelligence known as AI is a software which has his own power to solve or qunswen many things."
+    },
+    "language_mechanics": {
+      "rationale": "High density of spelling errors ('qunswen', 'generat', 'servilenced', 'caustions'), inappropriate pronoun personification ('his own power', 'safe with him'), incorrect pluralization of uncountable nouns ('informations'), and redundant conjunctions ('Though... but', 'Although... but').",
+      "evidence": "Although it says that all our personal  informations are save safe with him, but we should also be caustions about it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows genuine contextual engagement by citing modern AI models and real-world issues rather than relying on a generic memorized template, though transitions rely heavily on repetitive sentence openings ('Even').",
+      "evidence": "Our most known AI's are Chat Gpt, & Gemini, Cloude."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'qunswen', 'thei', 'generat', 'servilenced', 'caustions')",
+      "Incorrect pronoun referencing for inanimate technology ('his own power', 'safe with him')",
+      "Uncountable noun misuse ('many information', 'personal informations')",
+      "Double conjunction usage ('Though... but', 'Although... but')"
+    ],
+    "positive_aspects": [
+      "Strictly maintained single-paragraph structural integrity",
+      "Directly answered all prompt questions with relevant and authentic examples (mentioning modern tools like ChatGPT and Gemini and CCTV surveillance)"
+    ]
+  },
+  "feedback_summary": "The script demonstrates good topical coverage and follows the required single-paragraph format, addressing the features, applications, educational value, and threats of AI. However, language mechanics show frequent spelling slips, pronoun misuse, and basic syntax issues, which places the script at the baseline of Band 3.",
+  "_metadata": {
+    "task_id": "PARA_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e59845e1c5e2dabe0d43f0c283994facc1ac78d35f6b9ba9c719dfb400d85f5e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:17:10.470064+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "aa40fae3d93f55142d8e107d380515db716c07ebaed0f922ada53710a8cab05b",
+    "input_tokens": 4498,
+    "output_tokens": 3868,
+    "thoughts_tokens": 3021,
+    "cost_usd": 0.011019,
+    "latency_ms": 22593,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4498,
+        "output_tokens": 3868,
+        "thoughts_tokens": 3021,
+        "cost_usd": 0.011019,
+        "latency_ms": 22593,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

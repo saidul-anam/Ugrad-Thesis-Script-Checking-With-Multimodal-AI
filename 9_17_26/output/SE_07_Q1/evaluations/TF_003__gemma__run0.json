@@ -1,0 +1,96 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are marked correctly. a) Correct verdict and fact (astronomical expedition); b) Correct verdict and fact (Collins stayed in ship); c) Correct verdict and fact (Armstrong was first); d) Correct verdict (True); e) Correct verdict and fact (corrected Mars to moon).",
+      "evidence": "a) False. correct answer: Apollo 11 was a astronomical expedition to the moon that began in 1969. b) False. correct answer: Micheal Collins stayed in the main ship and Neil Armstrong and Edwin Aldrin landed on the moon. c) False. correct answer: Neil Armstrong was the first person to walk on the Moon's surface. d) True. e) False. correct answer: The mission proved that humans has achieved interplanetary travel to moon in 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are only considered as part of whether an item is correct.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not assessed.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy on both verdicts and corrections",
+      "Clear presentation of answers"
+    ]
+  },
+  "feedback_summary": "The student achieved full marks. Item a: Correct (False + correction). Item b: Correct (False + correction). Item c: Correct (False + correction). Item d: Correct (True). Item e: Correct (False + correction).",
+  "_metadata": {
+    "task_id": "TF_003",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0002",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6693de86514b908e5398357a979fcee3ea324a81ae01f083f11c8a489cd5a4df",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:01:42.837369+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ff43f14889fd17a8436f9390c60b076791da7980140f2eb57433fc2e40470ed3",
+    "input_tokens": 6469,
+    "output_tokens": 1977,
+    "thoughts_tokens": 1270,
+    "cost_usd": 0.00124,
+    "latency_ms": 469891,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6469,
+        "output_tokens": 1977,
+        "thoughts_tokens": 1270,
+        "cost_usd": 0.00124,
+        "latency_ms": 469891,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

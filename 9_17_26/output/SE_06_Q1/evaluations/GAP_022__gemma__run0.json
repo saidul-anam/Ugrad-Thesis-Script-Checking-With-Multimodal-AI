@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'thought' matches the key. Item (b) 'went' fits grammatically and agrees with the passage (they went back to Jaipur), so it is correct. Item (c) 'about' is grammatically incorrect in context. Item (d) 'told' is semantically incorrect (cannot 'tell' papers to a museum). Item (e) 'gave' is grammatically incorrect in the phrase 'gave the news, the boy were happy'.",
+      "evidence": "a. thought b. went"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criteria fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical incorrectness in gap filling",
+      "Semantic misalignment with passage context"
+    ],
+    "positive_aspects": [
+      "Correct identification of basic verbs for the first two gaps"
+    ]
+  },
+  "feedback_summary": "The student scored 2 out of 5. Items (a) and (b) are correct. Items (c), (d), and (e) are incorrect due to grammatical errors or incorrect word choice.",
+  "_metadata": {
+    "task_id": "GAP_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "41ed689b2a796e87b4c1b9ab34337e35e7c238ee684d788752be552821026a69",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:37:12.347752+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9cce52319023ab03829af7fcbcff808b4fd64e51d4b683b074a37c5578489113",
+    "input_tokens": 6318,
+    "output_tokens": 1258,
+    "thoughts_tokens": 617,
+    "cost_usd": 0.001009,
+    "latency_ms": 812375,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6318,
+        "output_tokens": 1258,
+        "thoughts_tokens": 617,
+        "cost_usd": 0.001009,
+        "latency_ms": 812375,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

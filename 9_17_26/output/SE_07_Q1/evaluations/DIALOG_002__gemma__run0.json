@@ -1,0 +1,101 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fully addresses the prompt, covering both speakers' results, their relative positions (1st and 2nd), specific subject performance (Mathematics), and their parents' reactions.",
+      "evidence": "I have secured first position in the class. And you? sheila: I have secured second position"
+    },
+    "structure_format_brevity": {
+      "rationale": "The dialogue follows the required layout perfectly: clear speaker labels, alternating turns, a proper opening greeting, and a closing farewell.",
+      "evidence": "Myself: Good morning, Sheila! ... Sheila: Bye!"
+    },
+    "language_mechanics": {
+      "rationale": "While the vocabulary is impressively advanced for Class VII, there are several spelling errors ('recieved', 'similiar', 'gotte') and one instance of awkward syntax ('very not demanding').",
+      "evidence": "Have you recieved your annual examination results yet?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The turns are genuinely responsive to one another, and the inclusion of a specific academic struggle/success in Mathematics prevents the script from feeling like a generic memorized template.",
+      "evidence": "I recall how diligently you worked to improve in Mathematics throughout the year."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (vowel errors)",
+      "Occasional awkward phrasing"
+    ],
+    "positive_aspects": [
+      "Advanced vocabulary for grade level",
+      "Excellent structural adherence",
+      "Logical and cohesive flow of conversation"
+    ]
+  },
+  "feedback_summary": "An excellent response that demonstrates a high level of linguistic competence. The candidate adhered strictly to the dialogue format and provided a comprehensive answer to the prompt. The total score of 9 reflects a Band 4 performance, with a small deduction in language mechanics due to a few spelling slips ('recieved', 'similiar', 'gotte') and a phrasing error ('very not demanding').",
+  "_metadata": {
+    "task_id": "DIALOG_002",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0001",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4e8d5ccea34dc3494cd4a4187b9ec30a09e8ed140809bf5e3aab5a7b971754c0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:51:52.219202+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ad3282580398af625e7967bdad81f706c6c14693b388096d67e3c1194e522ead",
+    "input_tokens": 6114,
+    "output_tokens": 1911,
+    "thoughts_tokens": 1174,
+    "cost_usd": 0.001185,
+    "latency_ms": 158062,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6114,
+        "output_tokens": 1911,
+        "thoughts_tokens": 1174,
+        "cost_usd": 0.001185,
+        "latency_ms": 158062,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

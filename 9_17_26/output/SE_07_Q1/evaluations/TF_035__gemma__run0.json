@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: False verdict is correct, but correction contains a factual error (1060). Item b: Correct verdict and correct correction. Item c: Incorrect verdict (True instead of False). Item d: Correct verdict. Item e: False verdict is correct, but correction is a general statement from the text that does not address/correct the 'Mars' error.",
+      "evidence": "b. False. Ans: Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the Moon. d. True."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in corrections",
+      "Failure to provide specific corrections for False statements"
+    ],
+    "positive_aspects": [
+      "Correct identification of several True/False verdicts"
+    ]
+  },
+  "feedback_summary": "The student scored 2 out of 5. Item b is correct (verdict and correction). Item d is correct. Item a is wrong because the correction contains a significant factual error (1060). Item c is wrong (incorrect verdict). Item e is wrong because the correction does not address the specific error regarding Mars.",
+  "_metadata": {
+    "task_id": "TF_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "988da5b5c54ba6f852bf9b04f16c7eb1d27b556a11881b56fd39d94eb22ebf38",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:31:07.657316+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fbe6a3117b7b337fcac8f4cb231a6ae79bd483be959d2ae16045ca2f4ba40ec0",
+    "input_tokens": 6440,
+    "output_tokens": 1526,
+    "thoughts_tokens": 861,
+    "cost_usd": 0.001102,
+    "latency_ms": 409578,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6440,
+        "output_tokens": 1526,
+        "thoughts_tokens": 861,
+        "cost_usd": 0.001102,
+        "latency_ms": 409578,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

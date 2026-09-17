@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and complete continuation of the stem, following the classic narrative arc of the Lion and the Mouse fable without drifting off-topic.",
+      "evidence": "The mouse came and helped the lion by cutting the net by it's sharp teeth."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear positive conclusion and provides a relevant moral lesson. However, the candidate failed to provide a title, which is a specific requirement of the prompt.",
+      "evidence": "Moral of the story is — we should not judge anyone by their outlook."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in tense (e.g., 'apologize' instead of 'apologized'), word choice (e.g., 'plying' for 'playing', 'pleasure' for 'pleased'), and severe syntactical breakdowns that hinder fluency.",
+      "evidence": "The mouse apologize for it's did and told him if he forgive the mouse it will be his friend and help in we when he needs."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, predictable fable. While the candidate uses their own words, there is no creative deviation or vivid descriptive detail to merit a higher score.",
+      "evidence": "The mouse saw behind the the tree."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present used instead of Past)",
+      "Incorrect word choice (Lexical errors)",
+      "Missing structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Successful inclusion of a constructive moral"
+    ]
+  },
+  "feedback_summary": "The candidate successfully developed the story stem into a coherent narrative with a clear positive resolution and a moral. However, the score is heavily penalized by a total lack of a title and significant linguistic failures, including incorrect verb tenses and maladapted vocabulary (e.g., 'plying', 'pleasure'), which place the script at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bb90af09d69476bc00a80dd2db6422b17a265ee835435a5ca432a03ebd4b1201",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:17:36.706985+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6665c4a2cfd021dcb8d6cd9758cdea4c9949b4260c09704c72deaa2f640ecf22",
+    "input_tokens": 4414,
+    "output_tokens": 2702,
+    "thoughts_tokens": 1931,
+    "cost_usd": 0.001252,
+    "latency_ms": 76391,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4414,
+        "output_tokens": 2702,
+        "thoughts_tokens": 1931,
+        "cost_usd": 0.001252,
+        "latency_ms": 76391,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

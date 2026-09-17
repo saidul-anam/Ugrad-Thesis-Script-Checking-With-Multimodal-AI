@@ -1,0 +1,96 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "None of the items match the answer key or acceptable relations. a) 'brout' is not an antonym for beautiful; b) 'Braves' is a form of the word itself, not a synonym; c) 'clens' is not a synonym for clean; d) 'rich' is not a synonym for old; e) 'avey' is not an antonym for quiet.",
+      "evidence": "Beautiful --- brout\n Brave --- Braves\n Clean --- clens\n old --- rich\n quiet --- avey"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect vocabulary selection",
+      "Failure to distinguish between synonym and antonym"
+    ],
+    "positive_aspects": [
+      "Attempted all five items"
+    ]
+  },
+  "feedback_summary": "The student attempted all items but failed to provide any correct answers. Item a (incorrect), Item b (incorrect), Item c (incorrect), Item d (incorrect), and Item e (incorrect) all score 0.",
+  "_metadata": {
+    "task_id": "VOCAB_001",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0000",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "b1dad2f06f0081200b38c83398bed02010823d82c47a1e2977e5c3bc81ff9444",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:23:09.712453+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f1735fe3a69bc29461a4ce025016805141bf5968c8ba1482875755a5d1c5b2fb",
+    "input_tokens": 6213,
+    "output_tokens": 1854,
+    "thoughts_tokens": 1203,
+    "cost_usd": 0.001177,
+    "latency_ms": 73733,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6213,
+        "output_tokens": 1854,
+        "thoughts_tokens": 1203,
+        "cost_usd": 0.001177,
+        "latency_ms": 73733,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively addresses all five prompt requirements: definition, features, applications, impact on education, and threats.",
+      "evidence": "Artificial Intelligence or AI is a computer based prograne... AI in in also helping in the field of teaching and learning... But demerits also finded in in feature."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified block with a clear opening definition acting as the topic sentence, adhering to paragraph constraints.",
+      "evidence": "Artificial Intelligence or AI is a computer based prograne which, can do any types of software command we give it."
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of spelling errors and grammatical failures. Syntax is often broken, and word choices are imprecise, though the text remains legible.",
+      "evidence": "prograne which, can do any types... many too much helpful... est easier from prvous generation... calculat a big amount of billion... finded in in feature."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is authentic and avoids memorized templates, but it is extremely basic and lacks sophisticated transitions or vocabulary.",
+      "evidence": "People are getting lazy as they can do thin works, lying on the bed."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe orthographic/spelling errors",
+      "Subject-verb agreement failure",
+      "Incorrect adjective/adverb usage (e.g., 'too much helpful')"
+    ],
+    "positive_aspects": [
+      "Complete coverage of all prompt questions",
+      "Strict adherence to single-paragraph structure",
+      "Avoidance of memorized guide-book templates"
+    ]
+  },
+  "feedback_summary": "The student demonstrates a strong understanding of the topic and addresses every part of the prompt with relevant content. Structurally, the work is correct as a single paragraph. However, the script is heavily marred by persistent spelling and grammatical errors that significantly lower the linguistic quality. Because the content is comprehensive and original, it remains in Band 3, but the language mechanics are far below the required standard for a higher grade.",
+  "_metadata": {
+    "task_id": "PARA_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "709123dcdacc174e69a7d712bb73d438f674f594533af852b979d58f18956efa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:39:01.099827+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "959e8a4d216ebcf980a6f7889f5ee4a33a655472a85ec9d27afc46cd8eeb71c2",
+    "input_tokens": 4565,
+    "output_tokens": 2272,
+    "thoughts_tokens": 1475,
+    "cost_usd": 0.001138,
+    "latency_ms": 63875,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4565,
+        "output_tokens": 2272,
+        "thoughts_tokens": 1475,
+        "cost_usd": 0.001138,
+        "latency_ms": 63875,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

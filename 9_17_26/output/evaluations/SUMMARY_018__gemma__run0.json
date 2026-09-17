@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core theme of hope as a supportive force during hardship, but includes external interpretations (hard work, shaping life) not present in the original poem.",
+      "evidence": "inspires people to shape their life, to do continues handwork"
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the response fails the basic purpose of a summary by being nearly the same length as the original text (64 words vs 69 words).",
+      "evidence": "The following tent is about hope... keep hope in our heart."
+    },
+    "language_mechanics": {
+      "rationale": "Significant errors in word choice ('tent' for 'text'), morphology ('continues handwork'), and register ('cause'), along with missing prepositions.",
+      "evidence": "The following tent is about hope"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate mostly avoids direct copying and attempts to paraphrase the poem's imagery into prose.",
+      "evidence": "keeps us warm in the hardest situation of life"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lexical substitutions (e.g., 'tent' instead of 'text')",
+      "Morphological errors (e.g., 'continues handwork')",
+      "Informal register (e.g., 'cause')"
+    ],
+    "positive_aspects": [
+      "Accurate identification of the central theme",
+      "Effective avoidance of verbatim copying"
+    ]
+  },
+  "feedback_summary": "The candidate successfully grasps the abstract theme of the poem. However, the writing is severely marred by linguistic inaccuracies and a failure to condense the material, resulting in a summary that is virtually the same length as the source. The addition of external moralizing ('handwork') slightly deviates from the objective nature of a summary. Score is placed at the lower end of Band 3 due to poor syntax and vocabulary.",
+  "_metadata": {
+    "task_id": "SUMMARY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "52ef0e406d4ae688c046d1cd7293b7a0608a4bd7197827322ae197a8afb72698",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-25T00:09:44.070944+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3375f3163c655f295c463756bbd144ba6f97f6e035f0830ffad53f9e05319937",
+    "input_tokens": 4393,
+    "output_tokens": 2355,
+    "thoughts_tokens": 1618,
+    "cost_usd": 0.001146,
+    "latency_ms": 66016,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4393,
+        "output_tokens": 2355,
+        "thoughts_tokens": 1618,
+        "cost_usd": 0.001146,
+        "latency_ms": 66016,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

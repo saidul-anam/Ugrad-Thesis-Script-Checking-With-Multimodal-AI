@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Four items are correct: b (matches key), c (matches key), f (matches key), and g (matches key). Three items are incorrect: a (student chose urban instead of rural), d (student chose occasionally instead of morning to night), and e (student chose adverb instead of adjective).",
+      "evidence": "b. ii) He earns irregularly for daily need's. c. iv) Adverb f. iii) Rough. g. ii) Household manager and caregiver."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structure is not assessed separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are not assessed separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not assessed separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misidentification of factual details from text",
+      "Incorrect part-of-speech classification"
+    ],
+    "positive_aspects": [
+      "Accurate interpretation of idiomatic phrases",
+      "Correct identification of family roles"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items b, c, f, and g. Items a, d, and e were marked incorrect.",
+  "_metadata": {
+    "task_id": "MCQ_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "72b463f03570c2bc0bda8b2903208c2cebcebc091550966df1d2491d375d54e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:28:50.484377+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "957168b5baac75c0e4bc9231a2cd62805389aede005674ffc01d3de4f695cb47",
+    "input_tokens": 6471,
+    "output_tokens": 1887,
+    "thoughts_tokens": 1257,
+    "cost_usd": 0.001213,
+    "latency_ms": 1029812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6471,
+        "output_tokens": 1887,
+        "thoughts_tokens": 1257,
+        "cost_usd": 0.001213,
+        "latency_ms": 1029812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

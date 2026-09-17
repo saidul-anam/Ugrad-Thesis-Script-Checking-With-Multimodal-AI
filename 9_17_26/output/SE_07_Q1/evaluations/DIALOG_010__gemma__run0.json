@@ -1,0 +1,100 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The dialogue fully addresses the prompt, covering the positive results of both characters and expanding the conversation to include reasons for performance.",
+      "evidence": "I got A+ in all subjects in annual examimahat examination... My result are is good but not that good as I wanted."
+    },
+    "structure_format_brevity": {
+      "rationale": "The student correctly uses the dialogue layout with clear speaker labels, alternating turns, and appropriate greetings and closures.",
+      "evidence": "Myself: Hi! Sheila How are you?\nsheila: Hi! I'm fine . What about you?"
+    },
+    "language_mechanics": {
+      "rationale": "While the register is natural and the meaning is clear, there are several spelling errors and a subject-verb agreement mistake.",
+      "evidence": "examimahat examination... shoila... result are is good... dow yo think"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The conversation feels authentic and avoids memorized templates by incorporating a specific discussion about study routines and math notes.",
+      "evidence": "I think I didn't make my study routine well. specially for maths."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling/Typographical errors",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to dialogue formatting",
+      "Relevant and detailed content"
+    ]
+  },
+  "feedback_summary": "The student has produced a very competent dialogue that perfectly adheres to the required structural format. The content is fully on-topic and displays a natural flow of conversation appropriate for Class VII. The total score is slightly reduced from full marks due to multiple minor spelling slips and a grammatical error in agreement, but these do not impede communication.",
+  "_metadata": {
+    "task_id": "DIALOG_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "357dbb7b5f9a265b39fcc432d71817389ba8a3819b5ed9dbb4724ff1d7242c2e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:55:16.204186+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9ce314ee928243aad2f4d0b58fbe952879bc575a238d41f719218d951027dc0d",
+    "input_tokens": 5966,
+    "output_tokens": 2076,
+    "thoughts_tokens": 1376,
+    "cost_usd": 0.001219,
+    "latency_ms": 951937,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5966,
+        "output_tokens": 2076,
+        "thoughts_tokens": 1376,
+        "cost_usd": 0.001219,
+        "latency_ms": 951937,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

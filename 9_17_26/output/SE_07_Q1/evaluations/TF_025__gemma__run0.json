@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct (False + correct correction); Item b is incorrect (True given, but should be False); Item c is correct (False + correct correction); Item d is correct (True); Item e is incorrect because while the verdict is 'False', the correction provided claims travel to the moon happened 'before 1969', which contradicts the passage stating the 1969 mission was the first time.",
+      "evidence": "a) False; Apollo11 was a spacecraft to the Moon that began in 1969... c) False; Neil Armstrong was the first person to walk on the moon surface. d) True."
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect factual correction (Item e)",
+      "Incorrect True/False verdict (Item b)"
+    ],
+    "positive_aspects": [
+      "Correct identification and correction for items a, c, and d"
+    ]
+  },
+  "feedback_summary": "Items a, c, and d were answered correctly. Item b was marked True when it should have been False. Item e was marked False, but the correction provided was factually incorrect, stating that travel to the moon had been achieved before 1969, which contradicts the text.",
+  "_metadata": {
+    "task_id": "TF_025",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0024",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "279737553442e85013d5678ae57804eb53e86d640d283865ae3ce6fc8c4bb7a6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:42:08.582303+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "31ce3ad6e15e11030579b2dd0f4b923bcb872e6507d0d9c26d7ad895dee33496",
+    "input_tokens": 6432,
+    "output_tokens": 2524,
+    "thoughts_tokens": 1842,
+    "cost_usd": 0.0014,
+    "latency_ms": 308967,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6432,
+        "output_tokens": 2524,
+        "thoughts_tokens": 1842,
+        "cost_usd": 0.0014,
+        "latency_ms": 308967,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

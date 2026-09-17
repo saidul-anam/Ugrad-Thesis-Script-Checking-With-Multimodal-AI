@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to grasp the central philosophical contrast between passive night dreamers and proactive day dreamers, reducing the theme to a generic motivational platitude about hard work and hope.",
+      "evidence": "Everyone should have a dream. Without dream a man can't live. So, we should work hard."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response begins in a basic prose block but breaks structural cohesion at the end by inserting disjointed lines from an external quote.",
+      "evidence": "Today is Difficult, \nTomorrow is much more difficult \nBut Day after tomorrow is you Yours"
+    },
+    "language_mechanics": {
+      "rationale": "Severe and frequent mechanical flaws including malapropisms ('opticals' for 'obstacles'), spelling slips ('los', 'Alamys'), repetitive typos ('Because  Because', 'success success'), and incorrect verb phrasing ('are try to', 'will success').",
+      "evidence": "Some times many opticals are try to destroy you. But you should never los hope. Always be Alamys try your best, and oneday you will success success in your life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the student does not copy from the poem stem, there is zero authentic interpretation of the poem's imagery; the text relies completely on generic cliché filler and a memorized quote.",
+      "evidence": "Today is Difficult, \nTomorrow is much more difficult \nBut Day after tomorrow is you Yours"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Malapropism (using 'opticals' instead of 'obstacles')",
+      "Spelling errors ('los' for 'lose', 'Alamys')",
+      "Duplicated words ('Because Because', 'success success')",
+      "Incorrect verb and part-of-speech usage ('are try to', 'will success')"
+    ],
+    "positive_aspects": [
+      "Did not copy the lines of the poem verbatim",
+      "Attempted a discernible sentence structure"
+    ]
+  },
+  "feedback_summary": "The candidate makes a discernible effort to write in English but completely misses the core theme of the poem. The response substitutes thematic interpretation with generic motivational clichés and an irrelevant quote, accompanied by severe mechanical and grammatical errors.",
+  "_metadata": {
+    "task_id": "THEME_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "53911b2fea66f273c27932d5a72d0948b68cc456e4d28ff79540c743ff1d6a76",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:05:46.681704+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "28ce8a27f8470452dd40c5473229985146eac4a15c4ff98b4aa4302715533c2b",
+    "input_tokens": 4307,
+    "output_tokens": 3151,
+    "thoughts_tokens": 2342,
+    "cost_usd": 0.00917,
+    "latency_ms": 20077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4307,
+        "output_tokens": 3151,
+        "thoughts_tokens": 2342,
+        "cost_usd": 0.00917,
+        "latency_ms": 20077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

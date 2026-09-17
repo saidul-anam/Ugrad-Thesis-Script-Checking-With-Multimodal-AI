@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.75,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the plot from the stem, following a logical sequence of events (conflict, capture, and rescue).",
+      "evidence": "it got a clash with lion and the lion woke up."
+    },
+    "structure_format_brevity": {
+      "rationale": "A title is provided and the story reaches a positive resolution. However, the title is linguistically incoherent and does not align logically with the story's positive ending.",
+      "evidence": "\" King in perfect with crown Not in the eitre it's just a clown \""
+    },
+    "language_mechanics": {
+      "rationale": "Severe linguistic breakdown. Pervasive errors in tense, spelling, and word choice that hinder readability in the latter half of the script.",
+      "evidence": "ensurt the mouse that he will wener napem the mouse"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard retelling of the Aesop fable with some attempt at original dialogue, though the phrasing is often incorrect.",
+      "evidence": "the mouse guiltly answered the lion that he was playing and lion was a burden for the mouse"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.25,
+    "total_score": 3.0,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (e.g., 'take' instead of 'took')",
+      "Severe spelling/lexical errors (e.g., 'wener napem', 'cathed', 'dit')",
+      "Incorrect word usage (e.g., 'guiltly', 'burden')"
+    ],
+    "positive_aspects": [
+      "Coherent sequential plot development",
+      "Successful integration of the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate understands the narrative requirements and completes the story with a logical plot. However, the linguistic quality is very poor, characterized by severe spelling and grammatical failures (particularly in the phrase 'wener napem'). While the raw total suggests a borderline Band 3, the broken syntax and incoherence of the title force the script into Band 2 per the tiebreaker rule regarding basic/broken syntax.",
+  "_metadata": {
+    "task_id": "STORY_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8bdf6f9cf0ab048aa06d5323d30478d3968cb530e36bd8be65021fed6cfa791f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:41:47.862252+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5d47a8b29217199a2dfe23a28c8657502d4a07e2620cc777b28b44e0c3d7598d",
+    "input_tokens": 4489,
+    "output_tokens": 3157,
+    "thoughts_tokens": 2371,
+    "cost_usd": 0.001396,
+    "latency_ms": 89062,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4489,
+        "output_tokens": 3157,
+        "thoughts_tokens": 2371,
+        "cost_usd": 0.001396,
+        "latency_ms": 89062,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

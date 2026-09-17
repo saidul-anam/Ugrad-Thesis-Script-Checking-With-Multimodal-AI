@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the main characters and the sequence of events (departure, landing, return), but the essential concluding synthesis regarding the mission's significance is missing, and key dates are hallucinated.",
+      "evidence": "three American astronauts began journey to the Moon"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails both structural requirements: it is written as fragmented lines rather than a single coherent block, and the length (45%) exceeds the 1/3rd limit.",
+      "evidence": "the astronaut came back safely to Earth."
+    },
+    "language_mechanics": {
+      "rationale": "There are severe mechanical failures, including nonsensical spelling ('oven' for 'over', 'fouridays'), punctuation errors, and catastrophic date errors ('2969' and '1869').",
+      "evidence": "all oven the world watched the news with a great excitement"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies almost entirely on verbatim lifting from the source text, with the only changes being errors or omissions.",
+      "evidence": "michael collins stayed in the in the main ship and and Anmstrong and Aldrin landed on the Moon"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Severe spelling errors",
+      "Factual hallucinations (dates)",
+      "Lack of paragraph unity"
+    ],
+    "positive_aspects": [
+      "Chronological sequence maintained"
+    ]
+  },
+  "feedback_summary": "The candidate attempted to summarize the core events but failed in almost every technical category. The response is essentially a fragmented, verbatim copy of the source text plagued by severe spelling errors ('oven', 'fouridays') and incorrect years ('2969', '1869'). It lacks the structure of a proper summary and does not use the student's own words.",
+  "_metadata": {
+    "task_id": "SUMMARY_012",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0011",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "adff7c19eb1f25b29bb5bfcf49f15ce986441dd059fd8e4b1c1a9560a1f51532",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:00:18.688020+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "18558a2f0d362891b3df3ded3f13fbe9ba50614c970ba9f94da7cb83c1bdd5ae",
+    "input_tokens": 6070,
+    "output_tokens": 2190,
+    "thoughts_tokens": 1461,
+    "cost_usd": 0.001264,
+    "latency_ms": 145390,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6070,
+        "output_tokens": 2190,
+        "thoughts_tokens": 1461,
+        "cost_usd": 0.001264,
+        "latency_ms": 145390,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

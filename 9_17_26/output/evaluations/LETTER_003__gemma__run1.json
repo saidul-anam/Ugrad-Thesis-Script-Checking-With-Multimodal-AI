@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student directly addresses the prompt and clearly states the purpose of the letter in the second paragraph, providing specific plans (computer programming, business, and tutoring).",
+      "evidence": "In your letter, You have wanted to know about the future plan after passing HSC exam. Now I'm writing you about about it."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components are present: address, date, salutation, body, closing, and signature. While the student added a redundant 'From/To/Stamp' section at the end, the essential layout is intact.",
+      "evidence": "27 June , 2026\nAzimpure , Dhaka\n\nDear fried... Yours ever\nSakib"
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive and severe spelling and grammatical errors throughout the text, which are below the expected standard for HSC Class 11.",
+      "evidence": "condial love... received your letter yeasted... a loth of things... it'll will be penferect"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response relies heavily on memorized, generic templates for the opening and closing, which lacks authentic phrasing.",
+      "evidence": "At first take my condial love and good wishes to you. Hope that you are all well by the grace of Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (e.g., 'fried', 'yeasted', 'penferect')",
+      "Grammatical redundancy/errors (e.g., 'it's will be', 'it'll will be')",
+      "Heavy reliance on memorized letter templates"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to structural layout components",
+      "Clear and relevant response to the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the required letter format and successfully addresses the prompt with specific future goals. However, the script is significantly weakened by high error density in spelling and grammar, as well as a reliance on formulaic, memorized phrases. These mechanical failures prevent the script from reaching Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "979443a216a6382e2c776d1dc7d85f4ac53a6aaf075c5ba2d093d4bdc0d75f89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:11:57.496172+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6afa02b19dacd2a8fc2296c83ab267c740e3421efa9293616e37abebdb033e3e",
+    "input_tokens": 4466,
+    "output_tokens": 3063,
+    "thoughts_tokens": 2260,
+    "cost_usd": 0.001366,
+    "latency_ms": 102672,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4466,
+        "output_tokens": 3063,
+        "thoughts_tokens": 2260,
+        "cost_usd": 0.001366,
+        "latency_ms": 102672,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

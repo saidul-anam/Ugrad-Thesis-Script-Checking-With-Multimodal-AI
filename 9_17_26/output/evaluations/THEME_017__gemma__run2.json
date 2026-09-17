@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central theme of the poem: the distinction between passive night-dreamers and active day-dreamers who achieve their goals.",
+      "evidence": "The poem reppresents two types of dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single, concise block that introduces the theme immediately and provides supporting explanation without unnecessary padding.",
+      "evidence": "The poem reppresents two types of dreamers. One those who passively dream at night..."
+    },
+    "language_mechanics": {
+      "rationale": "The writing is marred by significant spelling errors and awkward syntax, though the meaning remains clear.",
+      "evidence": "reppresents... meningless... day dreamers's"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids direct copying of the poem's lines and uses their own words to interpret the imagery, though the vocabulary remains basic.",
+      "evidence": "pursue their dream's with open eyes and make their dream successful."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (e.g., 'reppresents', 'meningless')",
+      "Punctuation (misuse of possessive apostrophes)",
+      "Syntactic fragmentation"
+    ],
+    "positive_aspects": [
+      "Accurate thematic identification",
+      "Effective paraphrasing with zero verbatim copying"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid understanding of the poem's central theme, successfully contrasting passive and active dreaming. The structure is appropriate for a theme analysis. However, the score is constrained by linguistic weaknesses, specifically multiple spelling errors and poor grammatical control in sentence construction.",
+  "_metadata": {
+    "task_id": "THEME_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "5a2c7ad3443e8b106d88bf558cad17e6b310e13e3641dd4d7281cc86f1f656b8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:08:38.067334+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "753916ad20995894e61c5fdaa8d34a38df5ea68f3094e1c53c6cd94c25302009",
+    "input_tokens": 4286,
+    "output_tokens": 2380,
+    "thoughts_tokens": 1676,
+    "cost_usd": 0.001143,
+    "latency_ms": 66561,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4286,
+        "output_tokens": 2380,
+        "thoughts_tokens": 1676,
+        "cost_usd": 0.001143,
+        "latency_ms": 66561,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

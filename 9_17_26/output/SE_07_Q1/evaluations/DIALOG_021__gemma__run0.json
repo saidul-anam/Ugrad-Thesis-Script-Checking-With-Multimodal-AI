@@ -1,0 +1,102 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The dialogue fully addresses the prompt, covering the results of both Sheila (A+) and the speaker (A grade), and extending the conversation to specific subjects and difficulties.",
+      "evidence": "I got an A+. ... I also did well, I got an A grade."
+    },
+    "structure_format_brevity": {
+      "rationale": "The student uses correct dialogue layout with clear speaker labels, alternating turns, a proper opening greeting, and a closing farewell.",
+      "evidence": "Myself : Hello - Sheila ! ... Sheila : Bye!"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent mechanical errors, including spelling mistakes ('felling', 'sconed', 'dificulties'), an incorrect short-answer contraction ('Yes, I'm'), and a missing auxiliary in a question.",
+      "evidence": "I'm felling great. ... Yes, I'm. ... Which subject you scored the highest in?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The interaction feels authentic and responsive rather than a memorized template; the turns flow naturally from one to the other.",
+      "evidence": "That's impressive. You must be very happy with your result."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (felling, sconed, dificulties)",
+      "Grammatical errors (incorrect final contraction 'Yes, I'm' and missing auxiliaries in interrogative sentences)"
+    ],
+    "positive_aspects": [
+      "Excellent adherence to dialogue structural requirements",
+      "Natural, interactive conversational flow"
+    ]
+  },
+  "feedback_summary": "The candidate produced a well-structured dialogue that fully satisfies the prompt's requirements. The interaction is natural and on-topic. The score is slightly reduced due to multiple mechanical errors in spelling and basic grammar, though these are typical for a Class VII student under exam conditions.",
+  "_metadata": {
+    "task_id": "DIALOG_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "eff41fd16bab95038d047ebd5af54cd1ef4a58576f32582a62ae5cc0e1fd043e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:58:07.392579+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "98f4a286187f07d9b301fe5a51a68da46b97c83eb5b2ff0b9ddc0ff0582793a9",
+    "input_tokens": 6124,
+    "output_tokens": 2266,
+    "thoughts_tokens": 1534,
+    "cost_usd": 0.001292,
+    "latency_ms": 92203,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6124,
+        "output_tokens": 2266,
+        "thoughts_tokens": 1534,
+        "cost_usd": 0.001292,
+        "latency_ms": 92203,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. The student failed to change the direct question word order to the embedded clause order (subject before verb) and failed to remove the auxiliary verbs 'do' and 'does'. Item (a) keeps 'is' before the subject; (b) keeps 'does' and is incomplete; (c) keeps 'is' before the subject; (d) keeps 'do'; (e) keeps 'does'.",
+      "evidence": "(a) Do you know where is the post office? (b) Do you know what does the postmaster (c) Do you know why is the postmaster so happy? (d) Do you know where do his children go to school? (e) Do you know when does the postmaster come to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to convert direct question to embedded clause word order",
+      "Retention of auxiliary verbs (do/does)"
+    ],
+    "positive_aspects": [
+      "Attempted all five items",
+      "Correctly used the introductory phrase 'Do you know'"
+    ]
+  },
+  "feedback_summary": "The student attempted all five items but failed to apply the rules of sentence transformation for embedded clauses. Every item retains the direct question structure. Items (a), (c), (d), and (e) all fail because the verb/auxiliary comes before the subject. Item (b) is both grammatically incorrect in its structure and incomplete. Marks: a=0, b=0, c=0, d=0, e=0. Total = 0.",
+  "_metadata": {
+    "task_id": "TRANS_015",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0014",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9968c6e2c564d1401dbd747b7e4ffac66f46f3c34913ef3346676cc4e9af8556",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:38:24.096918+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d5086a2ea1eb92876f242b938d89d2e105361e42d66e7e767602c6c2f6763687",
+    "input_tokens": 6163,
+    "output_tokens": 1449,
+    "thoughts_tokens": 698,
+    "cost_usd": 0.001051,
+    "latency_ms": 157702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6163,
+        "output_tokens": 1449,
+        "thoughts_tokens": 698,
+        "cost_usd": 0.001051,
+        "latency_ms": 157702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

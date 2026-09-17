@@ -1,0 +1,157 @@
+{
+  "script_id": null,
+  "pages_processed": 8,
+  "answers": [
+    {
+      "question_number": "1",
+      "transcript": "(a) addjactive\n(b) noun\n(c) comprozation\n(d) verb\n(g) Preprosition\n(f) addjactive\n(h) Interjaction\n(i) pronomoun\n(j) Preprosition\n(k) noun",
+      "pages": [
+        1
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student used letters (a) through (k) rather than (a) through (g)."
+    },
+    {
+      "question_number": "2",
+      "transcript": "(a) a\n(b) with\n(c) a\n(d) fraom\n(e) blessing\n(f) a\n(g) happiness\n(h) blessing\n(i) of\n(j) inx\n(k) happiness",
+      "pages": [
+        2
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student used letters (a) through (k)."
+    },
+    {
+      "question_number": "3",
+      "transcript": "1. Akbar was born in 1542 at Amarkot in sindh.\n2. His full name was Jalaluddin Mohammad AKbar.\n3. His father was Humayun.\n4. He had not much education.\n5. Despite this - he became a great education.",
+      "pages": [
+        2
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "4",
+      "transcript": "(a) received\n(b) wanted\n(c) ~~stopt~~ , (c) stoad\n(d) saw\n(e) constructe",
+      "pages": [
+        3
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student wrote (c) twice for the third item."
+    },
+    {
+      "question_number": "5",
+      "transcript": "a. How important Physical exercise is!\nb. exercise regularly.\nc. will not make you healthy Daily exercise\nd. ~~Wolk~~ walk every morning have boosted Your energy.\ne. ~~I~~ A fit body is necessary for a hay lito\n(f) Daily exercise do not",
+      "pages": [
+        3,
+        4
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 1,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Item (f) continues on page 4. 'hay lito' in item (e) is unclear."
+    },
+    {
+      "question_number": "6",
+      "transcript": "~~My ma~~\nMy mother woke me up early in the morning. I had a bath and put on my best clothes. then I had breakfast and started for school with my mother.",
+      "pages": [
+        4
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "7",
+      "transcript": "The annual prize ceremony of {inserted: Our State School}\n\nTo: jamil@gmail.com\n\nSubj: The annal prize ceremony of our school.\n\nDear jamil\n\nI am writing you about my annual prize ceremony of our school.\n\nThe annual prize ceremony was held on 21 may 2026. The School campus was decorated. School was decorated a big Pandal on our school campus. every important person was came. The ciffed guest guest is a Baist VC. When the VC was came giving honoca from form the scout stood and clapped. At 3 p.m the ceremony was held. The Principal gave prize who was 1st, 2nd and 3rd. The prize was end and the cultural event was held.\n\nregad your parents and love your youngen. No more today with best wish and love.\n\nyour friend shamin.",
+      "pages": [
+        5,
+        6
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "The annual prize ceremony of our State School",
+      "notes": null
+    },
+    {
+      "question_number": "8",
+      "transcript": "\"The season I Like Most\"\n\n1 Introduction: Every season are will. But every one like most one season.\n\n2 What season I Like most: ~~Butika~~ very much Everyone like winter, sammar, autumn spring etc. I like most spaik sering\n\n3 Time of Spring: spring to come after witen. spring come February lost to to April.\n\n4 wri then: The sky is ~~not~~ not cloudy. The wri then is not so hot and not so cool. The sun shince very much.\n\n5 People's Do: This season people are very happy. children are play in filde.\n\n6 why sering I like most:",
+      "pages": [
+        7,
+        8
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    }
+  ],
+  "questions_not_found": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "overall_confidence": 0.94,
+  "extraction_warnings": [],
+  "_metadata": {
+    "script_id": "SE_06_Q1_0004",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_06_Q1",
+    "prompt_version": "extraction_prompt_c6_v1",
+    "prompt_file": "extraction_prompt_c6_v1.md",
+    "prompt_hash": "f172ab06cd2b8256703c24aac7a3e69688981e106974ba6a4975feb8e0e852b6",
+    "cache_key": "afda69b73ea429694cf870cd77e8c07357dafbf051a3e55903af87d69bb5b521",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-17T03:58:58.072942+00:00",
+    "wall_time_s": 1051.484,
+    "pages_available": 8,
+    "total_input_tokens": 5056,
+    "total_output_tokens": 1585,
+    "total_cost_usd": 0.000981,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 8,
+        "input_tokens": 5056,
+        "output_tokens": 1585,
+        "cost_usd": 0.0009811,
+        "latency_ms": 1051342,
+        "http_status": 200,
+        "attempt_number": 4
+      }
+    ]
+  }
+}

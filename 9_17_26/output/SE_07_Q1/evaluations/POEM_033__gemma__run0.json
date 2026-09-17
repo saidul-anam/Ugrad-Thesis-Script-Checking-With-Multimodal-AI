@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered 5 items. Item (a) identifies care/responsibility (1); Item (d) identifies feeding, loving, and guiding ('bade nim, low nim' interpreted as feed/love) (1); Item (e) identifies that childhood shapes the future (1); Item (f) identifies the teacher's role in providing knowledge and character (1); Item (g) provides the answer for question (c) regarding the quality of life, but fails to explain the 'role of nature' required for question (g) (0). Total = 4.",
+      "evidence": "a) ...taking child kind and caring. d) ...bade nim, low nim and teaching nim... e) ...main source of skills, knowledge, how to better in future f) ...teaching nim how to better in future about skills, knowledge"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; no separate marks awarded for structure.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; no separate marks awarded for mechanics. Spelling errors like 'nim' for 'him' do not cost marks if the idea is clear.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; no separate marks awarded for originality.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misalignment of answer to question label (Item g answers question c)",
+      "Severe phonetic spelling errors ('nim' for 'him', 'sho' for 'show', 'bade' for 'feed')"
+    ],
+    "positive_aspects": [
+      "Correct identification of core thematic ideas from both poems",
+      "Successful paraphrasing of the teacher's and parent's roles"
+    ]
+  },
+  "feedback_summary": "The student correctly identified the core ideas for items a, d, e, and f. Despite significant spelling and grammatical struggles, the meaning remains clear and aligns with the answer key. Item g was marked 0 because the student answered question (c) instead of question (g). Total score: 4/5.",
+  "_metadata": {
+    "task_id": "POEM_033",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0032",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "25aa05b1b4c8b5f60a386867c5e43ab6ae088761be1bd187ed7d8ebcb193e79b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:21:51.713830+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0daab735914dee72ccbcfbe12049bc06d4745b7bdcdafa4c5ca035afd58af05c",
+    "input_tokens": 6480,
+    "output_tokens": 2889,
+    "thoughts_tokens": 2093,
+    "cost_usd": 0.001515,
+    "latency_ms": 303608,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6480,
+        "output_tokens": 2889,
+        "thoughts_tokens": 2093,
+        "cost_usd": 0.001515,
+        "latency_ms": 303608,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

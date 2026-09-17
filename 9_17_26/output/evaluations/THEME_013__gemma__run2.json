@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between passive (night) and active (day) dreamers, but describes the content of the poem rather than articulating an abstract governing theme (e.g., ambition or determination).",
+      "evidence": "Their are some dreamers who see dreams in night... But real dreamers are very dangerous people."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block, but it fails to explicitly state the theme early; it simply begins a narrative paraphrase of the poem.",
+      "evidence": "Every people have dream."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive basic errors including subject-verb agreement, noun pluralization, and homophone confusion ('Their' for 'There' and vice versa).",
+      "evidence": "Every people have dream... Their are some dreamers... make there dreams true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoids verbatim copying, but the interpretation is superficial and mirrors the poem's linear logic without offering original insight.",
+      "evidence": "They can do any thing to make there dreams true."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Homophone confusion (Their/There)",
+      "Incorrect noun number/article usage"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Accurate grasp of the poem's primary contrast"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the poem's contrast between night and day dreamers but provides a content summary rather than a thematic analysis. The response is significantly weakened by frequent errors in basic English grammar and spelling, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "THEME_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de42167462f987f331573c0127594e8c1a5cf4a3116ef27648bec63579bce539",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:30:22.722533+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bae9192ba5217386fbfdcc095b9b8e51299cb90f1e45da5e3db06e8109a66b07",
+    "input_tokens": 4282,
+    "output_tokens": 2411,
+    "thoughts_tokens": 1685,
+    "cost_usd": 0.001151,
+    "latency_ms": 67859,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4282,
+        "output_tokens": 2411,
+        "thoughts_tokens": 1685,
+        "cost_usd": 0.001151,
+        "latency_ms": 67859,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

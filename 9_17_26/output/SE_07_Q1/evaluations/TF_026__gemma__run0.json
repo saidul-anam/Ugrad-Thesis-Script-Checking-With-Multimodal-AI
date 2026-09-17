@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered incorrectly. Item (a) is False, student said 'Тgue'. Item (b) is False, student said 'Тgue'. Item (c) is False, student said 'Тgue'. Item (d) is True, student said 'False'. Item (e) is False, student said 'Тgue'.",
+      "evidence": "a) Тgue. b) Тgue. c) Тgue. d) False. e) Тgue."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanical marks are not applicable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factually incorrect responses",
+      "Incorrect identification of truth values"
+    ],
+    "positive_aspects": [
+      "Attempted all five items"
+    ]
+  },
+  "feedback_summary": "Item a: Wrong. Item b: Wrong. Item c: Wrong. Item d: Wrong. Item e: Wrong. The candidate failed to correctly identify the truth value of any of the five statements provided.",
+  "_metadata": {
+    "task_id": "TF_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ae30203dc5d1fa021588351e55b289aef66ebfc7d841458516beaa77afc6e1ed",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:26:05.249396+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ddcccc0ef58016ac38f25409866bd5fb1ed3c9e22021e6c91b3579ca10802075",
+    "input_tokens": 6430,
+    "output_tokens": 1390,
+    "thoughts_tokens": 758,
+    "cost_usd": 0.00106,
+    "latency_ms": 1750344,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6430,
+        "output_tokens": 1390,
+        "thoughts_tokens": 758,
+        "cost_usd": 0.00106,
+        "latency_ms": 1750344,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

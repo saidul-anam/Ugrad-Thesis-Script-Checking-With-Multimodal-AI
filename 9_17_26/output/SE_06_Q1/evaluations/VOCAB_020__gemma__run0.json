@@ -1,0 +1,96 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is a synonym, not an antonym; (b) is incorrect; (c) is incorrect; (d) is correct; (e) is incorrect.",
+      "evidence": "(d) Hide"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect word relation (synonym instead of antonym)",
+      "Vocabulary insufficiency"
+    ],
+    "positive_aspects": [
+      "Correctly identified the antonym for 'show'"
+    ]
+  },
+  "feedback_summary": "Only item (d) was answered correctly. Item (a) provided a synonym ('came back') instead of the requested antonym. Items (b), (c), and (e) provided words that do not match the required meanings.",
+  "_metadata": {
+    "task_id": "VOCAB_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "ebf5fe2b52522a0a5695b766ff4a4351bfa453eda4936d7ad22270c7de9eda28",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:32:47.970727+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "de77af0491d60af92425190412056119d4cb8e2ddd195133621e8deba1162e8a",
+    "input_tokens": 6311,
+    "output_tokens": 1729,
+    "thoughts_tokens": 1147,
+    "cost_usd": 0.00115,
+    "latency_ms": 1074500,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6311,
+        "output_tokens": 1729,
+        "thoughts_tokens": 1147,
+        "cost_usd": 0.00115,
+        "latency_ms": 1074500,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

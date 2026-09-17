@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully extends the stem and maintains a logical sequential plot that leads to a resolution.",
+      "evidence": "Then the mouse cut the net to save the life of the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion with a clear constructive outcome, but fails the specific prompt requirement to provide a title.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in tense consistency (mixing present and past), severe spelling mistakes, and incorrect word usage.",
+      "evidence": "the lion wake up and contrineously roar."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a direct reproduction of a well-known memorized fable with no creative deviation or unique narrative turns.",
+      "evidence": "The mous go there and see saw the lion was merginalized by a hunter net."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency",
+      "Spelling errors (e.g., 'fucront', 'contrineously', 'lought')",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Clear understanding of plot sequence",
+      "Coherent narrative flow"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the story's plot and provides a logical sequence of events that satisfies the prompt's requirement for a positive ending. However, the writing is heavily marred by linguistic inaccuracies, particularly in spelling and tense usage. Critically, the candidate failed to provide a title as explicitly requested in the prompt. The content is a standard memorized fable without original creative input.",
+  "_metadata": {
+    "task_id": "STORY_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e6d4f291e4d35dd47e1fc312467c7a86136c98673207d1b8fa6ccef80b94998",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:45:50.089255+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6925054e9e800bd7d91c69a8108709db28c6953149eeb7e0977890772b17c02c",
+    "input_tokens": 4442,
+    "output_tokens": 2453,
+    "thoughts_tokens": 1741,
+    "cost_usd": 0.00118,
+    "latency_ms": 68797,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4442,
+        "output_tokens": 2453,
+        "thoughts_tokens": 1741,
+        "cost_usd": 0.00118,
+        "latency_ms": 68797,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, d, f, and g are correct. Items c and e are incorrect. Item a is marked correct because the text 'rural area' matches the key despite the incorrect roman numeral.",
+      "evidence": "a. viii. rural area\nb. ii. He earns irregularly for daily needs\nd. i. From morning to night\nf. iii. Rough\ng. ii. Household manager and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Parts of speech identification (confusion between Adverb and Adjective)"
+    ],
+    "positive_aspects": [
+      "Strong reading comprehension and ability to identify context-specific meanings"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 5 out of 7 items (a, b, d, f, g). Items c and e were incorrect. Total score is 5/7.",
+  "_metadata": {
+    "task_id": "MCQ_032",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0031",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ceb0973378bb8fb8f6ed2a6d2cd2cb0e7b49a193baf26f182cdb495ca1520434",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:25:22.153314+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "893ead29da376fdefb99b72c86386b0eaa76fca1bb2b4b4dc1dc7c4450c5ba91",
+    "input_tokens": 6467,
+    "output_tokens": 1845,
+    "thoughts_tokens": 1244,
+    "cost_usd": 0.0012,
+    "latency_ms": 855328,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6467,
+        "output_tokens": 1845,
+        "thoughts_tokens": 1244,
+        "cost_usd": 0.0012,
+        "latency_ms": 855328,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

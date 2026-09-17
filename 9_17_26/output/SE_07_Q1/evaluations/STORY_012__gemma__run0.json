@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate failed to develop the stem into a story. Instead of writing ten new sentences, the response is a fragmented, repetitive attempt to rewrite the prompt. There is no plot progression or sequence of events.",
+      "evidence": "Both became them suaddly them"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response lacks a title, a resolution, and a discernible ending.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe grammatical breakdown. Spelling is critically flawed (e.g., 'fonset' for forest, 'bean' for bear), and syntax is almost entirely absent.",
+      "evidence": "throug a fonset on the way"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "No original narrative was created; the student merely echoed the prompt in a corrupted form.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe grammatical breakdown",
+      "Critical spelling errors",
+      "Failure to develop narrative plot"
+    ],
+    "positive_aspects": [
+      "Attempted to engage with the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate did not complete the story. The response consists of a fragmented and linguistically broken repetition of the prompt's opening lines. There is no new plot development, no title, and no resolution. Due to the severe grammatical failure, the response is barely coherent, placing it in Band 1.",
+  "_metadata": {
+    "task_id": "STORY_012",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0011",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "d75d7690607b5792b9eea9730620093da53101f7eb9643d54a633e4464823e4a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:14:01.038715+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b3abceeebd5cee5e19e982faf9a4d5559f2a89957e2c083c1ed0ed148cdd334c",
+    "input_tokens": 5858,
+    "output_tokens": 2441,
+    "thoughts_tokens": 1794,
+    "cost_usd": 0.001318,
+    "latency_ms": 822343,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5858,
+        "output_tokens": 2441,
+        "thoughts_tokens": 1794,
+        "cost_usd": 0.001318,
+        "latency_ms": 822343,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

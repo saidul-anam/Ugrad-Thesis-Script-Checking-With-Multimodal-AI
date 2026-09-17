@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logically sequenced continuation of the stem that follows the expected plot of the fable and reaches a resolution.",
+      "evidence": "The mouse helped the lion to se escape the trap. Then they went from there."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story has a positive ending and logical flow, but it completely fails to provide a title as explicitly required by the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive grammatical errors, including incorrect negation, improper verb forms, and spelling mistakes, though the narrative remains intelligible.",
+      "evidence": "the lion was decided to don't kill the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a generic retelling of a well-known fable (The Lion and the Mouse) with no creative descriptive detail or original narrative turns.",
+      "evidence": "From this they were firm friends."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect negation ('to don't kill')",
+      "Verb form errors ('was decided', 'was roarnd', 'was help')",
+      "Spelling errors ('continuesly', 'roarnd')"
+    ],
+    "positive_aspects": [
+      "Coherent plot progression",
+      "Satisfactory narrative resolution"
+    ]
+  },
+  "feedback_summary": "The student successfully completes the story with a clear and logical plot that satisfies the narrative requirements. However, the script loses marks for failing to provide a title and for a high density of linguistic errors. The writing is formulaic, relying on a memorized fable rather than original expression.",
+  "_metadata": {
+    "task_id": "STORY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a95f2b6012f13a2ed024def8ddd8d304f5de18e5f2f5267f456dab9ff6621da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:09:49.259900+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "40e181b783e5af3af52c86ebf02cf04a438ea731489ff891073f3a358d75c393",
+    "input_tokens": 4490,
+    "output_tokens": 3215,
+    "thoughts_tokens": 2527,
+    "cost_usd": 0.001414,
+    "latency_ms": 90312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4490,
+        "output_tokens": 3215,
+        "thoughts_tokens": 2527,
+        "cost_usd": 0.001414,
+        "latency_ms": 90312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

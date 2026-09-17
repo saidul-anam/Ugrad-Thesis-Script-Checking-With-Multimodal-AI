@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies the central metaphor of hope as a bird and understands that hope persists through hardship, though the explanation is basic.",
+      "evidence": "In the poem Hope is compared with bird."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written in a single block, the response fails to demonstrate the 'summary' skill of condensation; it is nearly the same length as the original poem, offering almost no brevity.",
+      "evidence": "In the poem Hope is compared with bird. Bird always flys here and there... In our best times or on the times where we are alone."
+    },
+    "language_mechanics": {
+      "rationale": "The text contains several basic errors in article usage, spelling ('flys' instead of 'flies'), and prepositional choice ('on the times').",
+      "evidence": "Bird always flys here and there."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids all verbatim copying and uses their own words to interpret the imagery, though the vocabulary is simplistic.",
+      "evidence": "Like the bird we can find hope anywhere in any situation."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Missing articles (a/the)",
+      "Spelling errors (flys)",
+      "Poor prepositional usage"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct thematic identification"
+    ]
+  },
+  "feedback_summary": "The student understands the core metaphor of the poem and expresses it in their own words without copying. However, the response lacks the essence of a 'summary' as it does not condense the original text significantly. Linguistic precision is low, with frequent errors in basic grammar and spelling. Total score reflects a basic but competent understanding.",
+  "_metadata": {
+    "task_id": "SUMMARY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "00141ad1ef6868fa39a3ff4f893bf1ac2870d7f82485c23b6956acb68240c2b8",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T20:33:49.810802+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "29f5b170267e108a07263783a5d7edf93a5bf2cb14599505409a5dd5a1aac1ea",
+    "input_tokens": 4390,
+    "output_tokens": 1697,
+    "thoughts_tokens": 993,
+    "cost_usd": 0.000948,
+    "latency_ms": 54311,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4390,
+        "output_tokens": 1697,
+        "thoughts_tokens": 993,
+        "cost_usd": 0.000948,
+        "latency_ms": 54311,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is incorrect (wrong date/event); Item ii is incorrect (provided date instead of names); Item iii is illegible; Item iv is incorrect (provided wrong date instead of event); Item v is illegible.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect information retrieval",
+      "Misunderstanding of table requirements (providing dates instead of names/events)"
+    ],
+    "positive_aspects": [
+      "Attempted some items"
+    ]
+  },
+  "feedback_summary": "All items scored 0. Item i ('JUN 6 1969') is incorrect; Item ii ('JUN 20 1969') provides a date instead of the required names; Item iii is illegible; Item iv ('JUN 24 1969') provides a date instead of the required event; Item v is illegible.",
+  "_metadata": {
+    "task_id": "TABLE_001",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0000",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "a5781baa68053ac46a9eae478bc2720e0121a07905d6c6720a2978eae88c32ca",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:25:04.144442+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "79149613c82f8e6605b1fbd332cde158795ef8d537aaaea261b8598f45ce5022",
+    "input_tokens": 6364,
+    "output_tokens": 1417,
+    "thoughts_tokens": 783,
+    "cost_usd": 0.001062,
+    "latency_ms": 188156,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6364,
+        "output_tokens": 1417,
+        "thoughts_tokens": 783,
+        "cost_usd": 0.001062,
+        "latency_ms": 188156,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

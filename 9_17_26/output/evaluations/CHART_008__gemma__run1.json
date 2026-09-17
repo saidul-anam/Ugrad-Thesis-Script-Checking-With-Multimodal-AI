@@ -1,0 +1,100 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately includes every data point provided in the chart (Coal 46%, Natural Gas 24%, Hydro 16%, Oil 12%, Nuclear 2%) without missing any source.",
+      "evidence": "USA produced 16% of its e elec tricity using hydro- electric power... neucleane... is only 2%. The oil produced 12%... natural gas which was only 24%... coal... the percentage is 46%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows a basic structure with an introductory sentence and a concluding statement. However, the organization is repetitive (using 'Lastly' twice) and lacks a sophisticated analytical flow.",
+      "evidence": "The chart in the passage declares us the source of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of errors, including severe spelling mistakes ('neuclean', 'neucleane'), grammatical awkwardness ('As per shown'), and typographical errors ('e elec tricity').",
+      "evidence": "It is clean that in the late USA the natural elements were the main source of electricity in USA."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts to use comparative language ('massive amount', 'least amount', 'second most main source'), though the vocabulary remains basic and repetitive.",
+      "evidence": "Second most main source of electricity was natural gas"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (neuclean, neucleane, clean for clear)",
+      "Syntactic errors (As per shown, thein is coal)",
+      "Repetitive transition words (Lastly... Lastly)"
+    ],
+    "positive_aspects": [
+      "Complete data coverage",
+      "Correct identification of highest and lowest values",
+      "Attempt at structural components (Intro/Conclusion)"
+    ]
+  },
+  "feedback_summary": "The script is comprehensive in terms of data inclusion, capturing all five energy sources and their respective percentages accurately. It follows a logical, if simplistic, structure. However, the score is heavily constrained by poor language mechanics, characterized by significant spelling errors and awkward phrasing. The use of comparative vocabulary is present but basic. No structural cap was applied as the concluding remark was a general summary rather than an external fact or moral judgment.",
+  "_metadata": {
+    "task_id": "CHART_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "85a04beac66f49ee0396ea180b32d9547fe584f23193d0afd7d1eac398a24fa7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:19:50.309172+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "daf72180768f561779198b27ed08e25825435e288613c4818af9fda663a075a2",
+    "input_tokens": 4430,
+    "output_tokens": 1730,
+    "thoughts_tokens": 891,
+    "cost_usd": 0.000962,
+    "latency_ms": 49092,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4430,
+        "output_tokens": 1730,
+        "thoughts_tokens": 891,
+        "cost_usd": 0.000962,
+        "latency_ms": 49092,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

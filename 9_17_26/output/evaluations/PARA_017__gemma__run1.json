@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully addresses all five guiding questions provided in the prompt: definition, features (accuracy), applications (factories/business), education (study materials/assignments), and threats (unemployment/loss of creativity).",
+      "evidence": "Artificial Intelligence is a sophisticated com technology... In Factory and company owner owner Fully depend on AI as a result many people don't get job."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified block with a clear opening topic sentence. However, the internal cohesion is weak, with repetitive sentence starters ('AI is...', 'AI solve...', 'AI Sometime...').",
+      "evidence": "Artificial Intelligence is a sophisticated com technology of a modern modern computer science performing various task of human requine like Business."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of linguistic errors, including severe spelling mistakes ('requine', 'Noae', 'physies', 'assupoe', 'armyong', 'benie advrontages', 'pelience') and subject-verb agreement issues ('Many Factory us AI').",
+      "evidence": "Many Factory us AI to keep ex data of people, money etc."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears authentic and avoids the use of memorized guide-book templates. The candidate attempts to provide original examples (e.g., physics questions, factory data), though the expression is basic.",
+      "evidence": "Fully pelience on AI people lose their creativity and become lazy."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors",
+      "Subject-Verb Agreement",
+      "Lexical gaps/Word choice"
+    ],
+    "positive_aspects": [
+      "Complete adherence to prompt questions",
+      "Correct structural format (single block)",
+      "Authentic expression"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong understanding of the task requirements by addressing every guiding question in the prompt. The structural format is correct. However, the script is heavily marred by spelling and grammatical errors. While the content merits a higher score, the high error density precludes it from Band 4, placing it in the upper range of Band 3.",
+  "_metadata": {
+    "task_id": "PARA_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b257563db8d7e7c68ea26f36a91fb5a2027fa5bed209215f94b8dab69e325182",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:01:37.495746+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "49afd0dac433b969e63d6e16b1b9654cffb8c170209b840c285e71006156ae2a",
+    "input_tokens": 4482,
+    "output_tokens": 3854,
+    "thoughts_tokens": 3043,
+    "cost_usd": 0.001604,
+    "latency_ms": 109077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4482,
+        "output_tokens": 3854,
+        "thoughts_tokens": 3043,
+        "cost_usd": 0.001604,
+        "latency_ms": 109077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

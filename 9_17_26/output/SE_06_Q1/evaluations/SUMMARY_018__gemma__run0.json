@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the main sequence of events: Raju's identity, his mixed exam results, his father's encouragement, and his goal for improvement, despite a factual error regarding the English mark.",
+      "evidence": "He got 8 in Bangla, 7 in English and 10 in mathematics out of 10. but he got 6 marks in I c T, Science and Religion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails on two counts: it is split into two blocks rather than a single paragraph, and the length (54%) significantly exceeds the one-third limit.",
+      "evidence": "Raju is a student. He dreads in class six. He has his exam result\n\nHe got 8 in Bangla..."
+    },
+    "language_mechanics": {
+      "rationale": "There are significant linguistic errors, including the misuse of 'dreads' (likely intending 'reads' or 'is'), improper capitalization and spacing in 'I c T', and a fragmented sentence structure.",
+      "evidence": "He dreads in class six."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script relies heavily on verbatim lifting from the text (approx 49% overlap), particularly for the dialogue and the conclusion.",
+      "evidence": "His father told him not to lose hope"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Incorrect word choice (Lexical error)",
+      "Structural failure (Paragraph split)"
+    ],
+    "positive_aspects": [
+      "Accurately identified all key narrative points",
+      "Maintained the general logic of the source text"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extracted the main points of the text, but the response is essentially a shortened version of the original rather than a summary. It fails structural requirements by being split into two paragraphs and exceeding the length limit. Severe mechanical errors (e.g., 'He dreads in class six') and heavy reliance on the source text's phrasing prevent a higher score. A structural cap of 2 was applied due to the length exceeding 1/3 of the original text.",
+  "_metadata": {
+    "task_id": "SUMMARY_018",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0018",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1ff60ba721dd24c8586c6b6c1ec25269f973ea9a0088cb1498b9eb8999770157",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:22:54.570466+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "da64ed27ae17dea7d15fc2d4ffea1e74f1f0fda8070df3478485af7872f01e95",
+    "input_tokens": 6142,
+    "output_tokens": 2657,
+    "thoughts_tokens": 1857,
+    "cost_usd": 0.001411,
+    "latency_ms": 1025562,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6142,
+        "output_tokens": 2657,
+        "thoughts_tokens": 1857,
+        "cost_usd": 0.001411,
+        "latency_ms": 1025562,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

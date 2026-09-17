@@ -1,0 +1,98 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct. Item (b) provides an antonym instead of a synonym. Item (c) provides a verb instead of a synonym for the adjective. Item (d) is conceptually unrelated to 'old' as a synonym. Item (e) is conceptually unrelated to 'quiet' as an antonym.",
+      "evidence": "a) Ugly."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion between synonym and antonym tasks",
+      "Incorrect lexical association"
+    ],
+    "positive_aspects": [
+      "Correctly identified the antonym for 'beautiful'"
+    ]
+  },
+  "feedback_summary": "The student correctly answered item (a). Item (b) is incorrect as an antonym ('Afraid') was given instead of a synonym. Items (c), (d), and (e) are incorrect as the words provided do not meet the required synonym/antonym relationship.",
+  "_metadata": {
+    "task_id": "VOCAB_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "29114f7e77bb503021e56621d839f8f1ad23bbcefee52b9f48ab3e8395b256a0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:21:24.527739+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ff2599ddcec449650520db56942d15d27797f4cb06b69d149e4fa42f2e6b077a",
+    "input_tokens": 6219,
+    "output_tokens": 1798,
+    "thoughts_tokens": 1171,
+    "cost_usd": 0.001161,
+    "latency_ms": 419405,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6219,
+        "output_tokens": 1798,
+        "thoughts_tokens": 1171,
+        "cost_usd": 0.001161,
+        "latency_ms": 419405,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

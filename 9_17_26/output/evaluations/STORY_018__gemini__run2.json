@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a complete, logical continuation from the provided stem, sequentially depicting the mouse disturbing the lion, being spared, and subsequently returning the favor.",
+      "evidence": "So, the mouse cut the trap by its teeth and freed the lion from the cage. Thus its helped the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative concludes with a positive ending and an explicit moral lesson, but fails to include any title at the beginning.",
+      "evidence": "From the story we came do understa uderstan- d that we should not uderestimate little thing. based It can help us in our hard time."
+    },
+    "language_mechanics": {
+      "rationale": "The response suffers from frequent spelling mistakes, incorrect past-tense verb forms, awkward preposition usage, and transcription slips, demonstrating poor mechanical control.",
+      "evidence": "White running It accidentally beated the lion. The lion woke up and caught the mouse. The lion became angry and threaten the mouse to it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, formulaic reproduction of a well-known fable, lacking vivid descriptive detail, natural dialogue, or creative stylistic turns.",
+      "evidence": "Many days passa One day the lion was walking along the forest. Suddenly its step stepped in a trap of some animalcatcher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Irregular past tense errors ('beated' instead of 'beat', 'passa' for 'passed', 'threaten' for 'threatened')",
+      "Spelling and typo slips ('White' for 'While', 'though' for 'thought', 'uderstan- d', 'uderestimate')",
+      "Pronoun and preposition errors ('threaten the mouse to it', 'its step stepped', 'tried do escape')"
+    ],
+    "positive_aspects": [
+      "Smooth and logical progression of the story arc directly connected to the prompt stem",
+      "Clear inclusion of a constructive moral lesson at the conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the narrative arc of the traditional fable with coherent chronological pacing and a clear moral lesson. However, the response completely omits a title, exhibits heavy spelling and grammatical errors (notably in past-tense verb forms and prepositions), and follows a very basic, unembellished plot structure.",
+  "_metadata": {
+    "task_id": "STORY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "60fb43a11dab9a851f079e80c94b7c8e710fc2e4ab3e0b473aed038bcb73e2d7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:13:55.232402+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "41ae2998116fa20329badea026d566e5b1ade8e1a61ca868236f38a62af66c11",
+    "input_tokens": 4411,
+    "output_tokens": 3698,
+    "thoughts_tokens": 2866,
+    "cost_usd": 0.010568,
+    "latency_ms": 30655,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4411,
+        "output_tokens": 3698,
+        "thoughts_tokens": 2866,
+        "cost_usd": 0.010568,
+        "latency_ms": 30655,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

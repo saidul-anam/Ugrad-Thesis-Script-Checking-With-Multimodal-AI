@@ -1,0 +1,220 @@
+{
+  "script_id": null,
+  "pages_processed": 13,
+  "answers": [
+    {
+      "question_number": "1",
+      "transcript": "a. viii. rural area\nb. ii. He earns irregularly for daily needs\nc. i. Adjective\nd. i. From morning to night\ne. iii. Adverb\nf. iii. Rough\ng. ii. Household manager and caregiver",
+      "pages": [
+        1
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "2",
+      "transcript": "a. Mrs. Nazma and Mr Joynul Ali live in a small village with their daughters\nb. Joynul is a carpenter. He is hired by the villagers to make chairs, tables, pira (low stool) and other furniture.\nc. Joynul Ali face financial difficulties because he does not work every day. He lives from hand to mouth.\nd. Nazma does throughout the day all the work at home from morning to night rain or shine.\ne. Sometime she sits with Mitu and Mitu teaches them Bangla and English (alphabets and some numbers. They do not go school. So Nazma contribute to her children's early education.",
+      "pages": [
+        2,
+        3
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "3",
+      "transcript": "a. shous\nb. outstanding\nc. cheered\nd. ~~cumme~~ cummensity\ne. cheer",
+      "pages": [
+        3
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "4",
+      "transcript": "a. Beautiful (Ant) - ugly\nb. Brave (syn) - strong\nc. clean (syn) - {inserted: neat} neet\nd. old (syn) - ~~ca~~ ~~concineng~~ aged aged\ne. sweet (Ant) - ~~natande~~ noisy",
+      "pages": [
+        4
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "5",
+      "transcript": "i. three American astronauts began their journey to the moon.\nii. Michael Collins and Armstrong and Aldrin\niii. on july 24, 1969\niv. come back safely to Earth\nv. With great exeltemeng",
+      "pages": [
+        4
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "6",
+      "transcript": "a. True\nb. False\nc. A: Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the moon\nd. True ~~False~~, C.A : Neil Armstrong was the first person to walk on the moon's surface\ne. False C.A : The mission mission proved that humans had already achieved interplanetary travel to Mars after 1969.",
+      "pages": [
+        5
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "7",
+      "transcript": "The story was a famous person who journey to the Moon. They were neil Armstrong, Michael collins, and Edwin Aldrin Their spacecraft was called Apollo 11. Then, neil Armstrong was the 1st person to walk there. At lost, The APOLLO 11 mission showed the power of science, teamwork and human courang.",
+      "pages": [
+        6
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "8",
+      "transcript": "a. Do you know where the post office is ?\nb. Do you know ~~whe~~ what the postmaster do ?\nc. Do you know why the postmaster is so happy ?\nd. Do you know where his children go to school ?\ne. Do you know when the postmaster comes to the post office ?",
+      "pages": [
+        6,
+        7
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "9",
+      "transcript": "1. e\n2. ~~n~~ c\n3. a\n4. g\n5. ~~e~~ b\n6. ~~c~~ b\n7. d\n8. f",
+      "pages": [
+        7
+      ],
+      "confidence": 0.7,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Grid labels for position 2, 5, and 6 contain student corrections; letters are slightly ambiguous but interpreted as c, b, b."
+    },
+    {
+      "question_number": "10",
+      "transcript": "a. The parent says that his childhood is a responsibility and guide.\nb. Childhood is important because it is a time for development.\nf. The teacher describes his role is educate and learn lessons\ng. The nature plays time for nature around us when we are busy.\nd. The parent shows care by teaching knowledge kindness and guide",
+      "pages": [
+        7,
+        8
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "11",
+      "transcript": "Once upon a time two friends went on a journey. They had to go through a forest on the way. As they went the wood they saw a bear-----\n\nBoth of them become frightened. But suddenly one of them climbed up a tree. The bear soon {inserted: alternative} came up and smell his body without breathing-\n\nAs he lay down without breathing, the bean soon come up and smelt his body-seeing the bear going away, the other man come down the tree. His friend said, why the bear whisper to your ear ?\n\nHis replied, he {inserted: good} a good advice for me. What is that? He replied.\n\nHe replied to his fraied, all friend in a danger one me.",
+      "pages": [
+        9,
+        10
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "A friend is need to be two friends",
+      "notes": null
+    },
+    {
+      "question_number": "12",
+      "transcript": "The Annual prize-Giving Ceremony of our school is really a happy and ~~exe~~ excellent event for all The Annual prize-Giving function was held on last fifteenth January. we decorated every corner of compand with green leaves, festoons and green flowers. sufficient sitting arrangements were also brightly decorated and prizes were neatly displayed of the stage on the separate table. All students were present at the function. Among others the guardians and some eminent people attend the function. At 4:00 pm the function was started. In the nex of time, the chief guest come with his car. he was a warm welcome. The formal ceremony begin the recitation from holy Quran. Then the headmaster report of examination the short speech. Then the chief guest gave a short speech. He highey praised the overall performance and its excele result for the Annual Examination. Then he gave a prize distribution among the others distribution without extra caliecuram. After completing the prizing-Giving we staged a ded the function was held on with the vote of the we really very enjoyable that day.",
+      "pages": [
+        10,
+        11
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "13",
+      "transcript": "Here's a dialogue beween sheila and Myself without prize-Giv Annual examination result-\n\nAsim : Hey Sheila! How are you?\n\nsheila : I'm find. what about you?\n\nAsim : I'm fine so our result are finally out. ~~when subject~~ {inserted: what did you do?} what did you do?\n\nsheila : I did pretty well. I got 88 % overall. I'm a quite a happy and you?\n\nAsim : That's amazing congratulations! I got 82 % overall. I hope also happy with my mark. I guess its not bad.\n\nSheila : Thats amazing Which subject did you highest in ?\n\nAsim : Mathmeties, I got 97. I'am very confident about it. But English my percentage down.\n\nsheila : wow, 97 Math is incredible. Don't disappointed English- you better next time I struggle Science. But I manage only 82\n\nAsim : we enjoy our result. Don't be disappoi maybe we can plan in study to next year to improve our result?\n\nSheila : okay, why not let's keep hard working.\n\nAsim : Thank u so much sheila.\n\nsheila : You're most welcome,",
+      "pages": [
+        11,
+        12,
+        13
+      ],
+      "confidence": 0.95,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    }
+  ],
+  "questions_not_found": [],
+  "overall_confidence": 0.9,
+  "extraction_warnings": [],
+  "_metadata": {
+    "script_id": "SE_07_Q1_0031",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_07_Q1",
+    "prompt_version": "extraction_prompt_c7_v1",
+    "prompt_file": "extraction_prompt_c7_v1.md",
+    "prompt_hash": "e2dd27e8b39c59d5a775a5d5d8bb0971b6e3b7711196aaa57f59718019ace134",
+    "cache_key": "cac746843c1e3181de293ac8ec2aaf3a87327b1d2840e88bdf346d65644fb559",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-16T21:14:27.584011+00:00",
+    "wall_time_s": 372.797,
+    "pages_available": 15,
+    "total_input_tokens": 6528,
+    "total_output_tokens": 2640,
+    "total_cost_usd": 0.001445,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 15,
+        "input_tokens": 6528,
+        "output_tokens": 2640,
+        "cost_usd": 0.0014448,
+        "latency_ms": 372594,
+        "http_status": 200,
+        "attempt_number": 1
+      }
+    ]
+  }
+}

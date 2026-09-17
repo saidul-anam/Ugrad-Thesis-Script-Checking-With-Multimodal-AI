@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate missed the 'Natural gas' data point entirely and provided contradictory data for Nuclear power (initially stating 20%, later 2%), indicating poor data precision.",
+      "evidence": "the 20% of electricity came From Nuclear power plant."
+    },
+    "structure_format_brevity": {
+      "rationale": "While there is a lead sentence and a conclusion, the response includes prohibited external facts and general knowledge not present in the chart.",
+      "evidence": "Electricity is one of the most valuable source of energy."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in capitalization, article usage, and word choice (e.g., 'coal factories' instead of power plants).",
+      "evidence": "came From Hydro-electric power plant."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts basic comparisons ('majority', 'lowest', 'less than'), but the phrasing is repetitive and simple.",
+      "evidence": "the majority of electricity in USA like 46% came from coal factories"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data inaccuracy (hallucinated 20% for Nuclear)",
+      "Omission of key data (Natural Gas)",
+      "Incorrect capitalization (From)",
+      "Inclusion of external/non-chart information"
+    ],
+    "positive_aspects": [
+      "Presence of an introductory and concluding statement",
+      "Successful identification of the highest and lowest values"
+    ]
+  },
+  "feedback_summary": "The response follows a basic analytical structure but suffers from significant data inaccuracies—specifically the omission of Natural Gas and a contradiction regarding Nuclear power percentages. The inclusion of external opinions on the value of electricity triggers the structural cap for Graph descriptions. Language is basic with frequent mechanical errors. The score is placed at the top of Band 2 due to the correct identification of the primary trend (coal) despite the factual slips.",
+  "_metadata": {
+    "task_id": "CHART_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e2295018ad0e7653f519b67fc53858cd3ce3a25776171936d2812aa991f2f6c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:32:29.464240+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "087b210668f9b873c07f9101d09b7bc33f4916540f00866f77366cfc721f0a39",
+    "input_tokens": 4425,
+    "output_tokens": 2085,
+    "thoughts_tokens": 1341,
+    "cost_usd": 0.001068,
+    "latency_ms": 58672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4425,
+        "output_tokens": 2085,
+        "thoughts_tokens": 1341,
+        "cost_usd": 0.001068,
+        "latency_ms": 58672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

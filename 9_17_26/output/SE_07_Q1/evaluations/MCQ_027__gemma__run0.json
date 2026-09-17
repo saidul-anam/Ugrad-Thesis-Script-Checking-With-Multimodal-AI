@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items b, d, and g are correct. Items a, c, e, and f are incorrect. Per rubric, misspellings in correctly identified options (e.g., 'irregulantly', 'manggen') do not cost marks.",
+      "evidence": "b. ii. He earns irregulantly for daily needs; d. i. From morning to night; g. ii Household manggen and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect identification of grammatical parts of speech (items c, e)",
+      "Misunderstanding of vocabulary/context (items a, f)"
+    ],
+    "positive_aspects": [
+      "Correctly identified the meaning of the idiom 'hand to mouth'",
+      "Accurately identified the character's schedule and family role"
+    ]
+  },
+  "feedback_summary": "The candidate scored 3 out of 7. Items b, d, and g were correct. Items a, c, e, and f were incorrect. Spelling errors in correct options were ignored as per marking guidelines.",
+  "_metadata": {
+    "task_id": "MCQ_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "fd2273071cb178543fa2cc9e07df95f5dba01ae8a4d5af1421ea9b88de294c1b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:08:53.062747+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "157857592ec48d8fc910fd267034c0d8d8f5ca3a523556e16d2ded8a7814f224",
+    "input_tokens": 6470,
+    "output_tokens": 1198,
+    "thoughts_tokens": 557,
+    "cost_usd": 0.001006,
+    "latency_ms": 718141,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6470,
+        "output_tokens": 1198,
+        "thoughts_tokens": 557,
+        "cost_usd": 0.001006,
+        "latency_ms": 718141,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

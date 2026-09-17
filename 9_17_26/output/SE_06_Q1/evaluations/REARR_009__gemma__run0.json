@@ -1,0 +1,93 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provided both a numeric list and a full narrative text. While the list contained an error at position 6 and omitted position 8, the narrative text correctly sequences all eight sentences in the order specified by the answer key (b, a, d, f, c, h, e, g). Per the rubric, if both are provided, the order is marked either way, and the narrative demonstrates a perfect sequence.",
+      "evidence": "Once Hazrat Bayzid came home to seem his ailing mother. she asked Bayazid to give her a glass of water, but he could not find any water in the pitcher. So, he went to the will quite fa from their house. He filled the pitcher, came back and went to his mother with a glass of water. But sh again fell asleep. Her instead of wak her up, stood by her bed with th glass of water in this hand. she woke up some hounrs later. As he was still standing by her bed, his mother drank the glass of water and blessed him from the core of heart."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect logical sequencing of the story events"
+    ]
+  },
+  "feedback_summary": "The student successfully rearranged all 8 sentences in the correct sequence within the narrative text: b, a, d, f, c, h, e, g. Although the accompanying list was slightly inaccurate, the text provided proves the student understood the correct order. Copying slips in the text did not affect the score as per the marking guidelines.",
+  "_metadata": {
+    "task_id": "REARR_009",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0009",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3c65c021b753e5f119aef97054fe479a18fc6ee98a1adb769210714ad5ea12b4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:39:46.185042+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d5fe1173b4ca07e9cb7b4b4b68c707e3989121c7b5c9d54af065d5f5445aa4ad",
+    "input_tokens": 6561,
+    "output_tokens": 2462,
+    "thoughts_tokens": 1720,
+    "cost_usd": 0.001395,
+    "latency_ms": 509797,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6561,
+        "output_tokens": 2462,
+        "thoughts_tokens": 1720,
+        "cost_usd": 0.001395,
+        "latency_ms": 509797,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

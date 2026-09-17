@@ -1,0 +1,97 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student completely misunderstood the task. Instead of providing a sequence of the eight sentences (1-8), the student merely rewrote three of the provided sentences (a, b, and c) as individual answers. Consequently, no sentence has been placed in its correct sequential position according to the answer key.",
+      "evidence": "a) Ans I waved my torch desperately... b) Ans: without thingting... c) Ans: Suddenly I noticed..."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not awarded separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are not awarded separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not awarded separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Task comprehension failure (treating a rearrange task as a short-answer task)"
+    ],
+    "positive_aspects": [
+      "Attempted to engage with the text of the sentences"
+    ]
+  },
+  "feedback_summary": "The candidate failed to perform the required task of rearranging the sentences into a correct sequence. Instead, they wrote fragmented versions of only three sentences (a, b, and c). Since no sentence was placed in the correct position relative to the answer key (Position 1: c, Position 2: f, etc.), the score is 0.",
+  "_metadata": {
+    "task_id": "REARR_023",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0022",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "882177bdbcc58feb3e9cf392afbd66273b584f43ca02b560eb4a56dd664c67f1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:16:40.730358+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "13b9161b43a25684b1853ab23f030511fad07f9c3260fd99f4560f14d55f8de6",
+    "input_tokens": 6348,
+    "output_tokens": 2246,
+    "thoughts_tokens": 1589,
+    "cost_usd": 0.001309,
+    "latency_ms": 366234,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6348,
+        "output_tokens": 2246,
+        "thoughts_tokens": 1589,
+        "cost_usd": 0.001309,
+        "latency_ms": 366234,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

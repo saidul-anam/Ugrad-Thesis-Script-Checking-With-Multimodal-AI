@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 2.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures all core elements: the astronauts' names, the dates of departure and return, the spacecraft name, and the overall significance of the mission.",
+      "evidence": "Three American astronauts, named Neil Armstrong, Michael Collins and Edwin Aldrin began thein journey too to moon on July 16, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary fails the brevity constraint significantly. The computed length ratio is 0.51, which is well over the 1/3 (0.33) limit specified in the rubric. Additionally, the student repeats the first sentence, creating an unnecessary second paragraph.",
+      "evidence": "The American astronauts began their journey to the moon on July 16, 1969."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent linguistic errors unsuitable for a high score: consistent misspelling of 'their' as 'thein', clunky phrasing ('too to moon'), and a sentence fragment ('On July 24, 1969.').",
+      "evidence": "began thein journey too to moon on July 16, 1969."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the student avoids total verbatim copying (overlap is ~30%), several key phrases are lifted directly from the text without modification.",
+      "evidence": "This misson showed the power of science and teamwork."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 2.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (thein)",
+      "Sentence fragmentation",
+      "Length constraint violation"
+    ],
+    "positive_aspects": [
+      "Accurate content extraction",
+      "Coherent sequence of events"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good understanding of the text's content, capturing all essential facts. However, the response is too long (exceeding 50% of the source text) and contains significant spelling and grammatical errors. Due to the length violation, a structural hard cap of 2 has been applied to the total score.",
+  "_metadata": {
+    "task_id": "SUMMARY_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c58d555471746b0dbe1beb0782463319bf020a7ba4155c73d5c653bac9ba7b53",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:29:33.584211+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "59794820139079e994957903b878b8dcb2024415ec8c03a21655604764ff5c42",
+    "input_tokens": 6081,
+    "output_tokens": 2481,
+    "thoughts_tokens": 1691,
+    "cost_usd": 0.001352,
+    "latency_ms": 174969,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6081,
+        "output_tokens": 2481,
+        "thoughts_tokens": 1691,
+        "cost_usd": 0.001352,
+        "latency_ms": 174969,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

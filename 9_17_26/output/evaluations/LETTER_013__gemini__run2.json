@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the purpose of the letter/email, outlining their ambition to become a doctor and their concrete plan to take medical admission coaching.",
+      "evidence": "wanted to know aboud my future plan after passing HSC Exam. Now, I am telling you about that."
+    },
+    "structure_format_brevity": {
+      "rationale": "The text adopts an email layout with recipient, subject line, salutation, body paragraphs, and sign-off, though minor informal letter closing conventions ('Yours friend') are mixed in and the 'From' field is omitted.",
+      "evidence": "To : sawda25671@gmail.com.\nSubject : Describing the future plan after HSC Exam."
+    },
+    "language_mechanics": {
+      "rationale": "Contains heavy spelling errors ('aboud', 'poore', 'ic', 'couching', 'madical', 'knowledg', 'grammare'), grammatical inaccuracies ('are will', 'You send me a email', 'I will admitted'), and improper closing syntax ('Yours friend').",
+      "evidence": "I will admitted in Admission couching center to get a good preparation for madical exam."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative flows naturally and reflects an authentic personal voice rather than a fully memorised generic template.",
+      "evidence": "You know, I alway wanted to be a great doctor. I want to give free treatment to the poore people."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'aboud', 'poore', 'couching', 'madical', 'knowledg', 'grammare')",
+      "Verb form and voice errors (e.g., 'I will admitted')",
+      "Article usage and tense inconsistency (e.g., 'a email', 'You send me')",
+      "Incorrect complimentary close ('Yours friend' instead of 'Your friend')"
+    ],
+    "positive_aspects": [
+      "Directly and clearly addresses the prompt topic",
+      "Logical progression from current HSC exams to future medical aspirations",
+      "Correct inclusion of essential email structural parts"
+    ]
+  },
+  "feedback_summary": "The script fulfills the task by clearly presenting future plans to become a doctor and prepare for medical admission tests. The email structure is well-maintained overall, though mixed with informal letter sign-offs. However, persistent spelling mistakes and grammatical slips significantly affect mechanical accuracy.",
+  "_metadata": {
+    "task_id": "LETTER_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "86638f9b3411232f69f22a70fce6530414f5e28b22b5cdf93d1235ad7077e6e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:27:23.085862+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "4e49c913946af86d69ddb83888af341ac585b672fe093291a293d98a218937a9",
+    "input_tokens": 4415,
+    "output_tokens": 2499,
+    "thoughts_tokens": 1649,
+    "cost_usd": 0.007572,
+    "latency_ms": 15437,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4415,
+        "output_tokens": 2499,
+        "thoughts_tokens": 1649,
+        "cost_usd": 0.007572,
+        "latency_ms": 15437,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

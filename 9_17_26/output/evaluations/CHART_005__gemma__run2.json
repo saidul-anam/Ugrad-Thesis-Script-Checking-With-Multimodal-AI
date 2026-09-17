@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the data points but makes a critical numerical error regarding the primary source (writing 4650% instead of 46%). While the other figures are correct, the response is a list rather than an analysis.",
+      "evidence": "USA produce 4650% of electricity by burning Coal"
+    },
+    "structure_format_brevity": {
+      "rationale": "Includes a basic introductory sentence and presents the data in a logical sequence. However, the word count (60) is significantly below the required minimum of 80 words.",
+      "evidence": "In the chart it shows the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Significant errors in subject-verb agreement ('USA produce'), redundant phrasing ('In the chart it shows'), and inconsistent tense usage.",
+      "evidence": "In the chart it shows the sources of the USA electricity"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Lacks analytical and comparative vocabulary. The phrasing is repetitive ('They get... They get...'), with only one instance of comparative analysis.",
+      "evidence": "which is the second biggest source of their electricity"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Data precision errors (4650%)",
+      "Subject-verb agreement failure",
+      "Repetitive sentence structure",
+      "Insufficient length"
+    ],
+    "positive_aspects": [
+      "Correct identification of the second largest source",
+      "Clear presentation of most data points"
+    ]
+  },
+  "feedback_summary": "The script is a basic description of the chart rather than an analysis. A critical error in data precision (4650%) and a failure to meet the minimum word count limit negatively impact the score. Linguistically, the response is repetitive and contains several basic grammatical errors. It falls into Band 2 as it provides a list of data without identifying broader trends or using sophisticated comparative language.",
+  "_metadata": {
+    "task_id": "CHART_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "74d4ea978bcefe07adfd40f190e8d1be7fa162315965c8c8b268d7df044f4c43",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:47:53.135434+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "970461d3fd42b6a23da2f7fdbf0bd54ae4c754adb46410351de1e93c2b2aa406",
+    "input_tokens": 4335,
+    "output_tokens": 2005,
+    "thoughts_tokens": 1236,
+    "cost_usd": 0.001035,
+    "latency_ms": 56312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4335,
+        "output_tokens": 2005,
+        "thoughts_tokens": 1236,
+        "cost_usd": 0.001035,
+        "latency_ms": 56312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

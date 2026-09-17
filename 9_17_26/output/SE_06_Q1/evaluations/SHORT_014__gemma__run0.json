@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as it mentions the nine-month battle and independence. Item (b) is incorrect as it only states the day is celebrated with enthusiasm without detailing how. Item (c) is incorrect as it fails to mention the memorial is dedicated to the martyrs or serves as a place of respect. Item (d) is correct as it identifies the singing of a national/patriotic song. Item (e) is correct as it identifies that the salute marks the start of the day at dawn. Sum: 1+0+0+1+1 = 3.",
+      "evidence": "got independence After a nine month long blood-soaked battle against the pakistani army. [a] ... The national sing is national song. [d] ... The days begins with a 31-gun salute at dawn [e]"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Insufficient detail in descriptive answers (Item b)",
+      "Lack of specific factual connection to the prompt (Item c)"
+    ],
+    "positive_aspects": [
+      "Successful retrieval of key facts for items a, d, and e",
+      "Ability to identify the temporal marker for the 31-gun salute"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a), (d), and (e). Item (a) correctly identifies the battle and independence; item (d) correctly identifies the singing of national songs; item (e) correctly identifies the timing of the 31-gun salute. Item (b) was marked wrong because it only described the mood (enthusiasm) rather than the methods of celebration. Item (c) was marked wrong as it did not explain the importance of the memorial (dedication to martyrs) and instead provided a vague statement about the war.",
+  "_metadata": {
+    "task_id": "SHORT_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "c4b9db730cd506b6154e699dc067da22a299b1a14492526e71d7323d230c44b9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:48.986052+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "696262df75d52eb21131deea4d2ca239c364b936565d3adaa8c3e4a239e14777",
+    "input_tokens": 6652,
+    "output_tokens": 1974,
+    "thoughts_tokens": 1183,
+    "cost_usd": 0.001257,
+    "latency_ms": 508032,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6652,
+        "output_tokens": 1974,
+        "thoughts_tokens": 1183,
+        "cost_usd": 0.001257,
+        "latency_ms": 508032,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

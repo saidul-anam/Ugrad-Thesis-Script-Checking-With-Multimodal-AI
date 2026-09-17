@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student continues the story smoothly from the stem, provides a clear sequence of events, and successfully wrote 11 new sentences, meeting the length requirement.",
+      "evidence": "The other friend did not know how to climb a tree. so he did not find any alternative, he at once lay down on the road."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story has a clear resolution and includes a moral lesson at the end. However, a suitable title was not provided, which is a specific requirement of the task.",
+      "evidence": "The other friend replied that the bear told me don't believe the friend who leave you in danger."
+    },
+    "language_mechanics": {
+      "rationale": "There are several mechanical errors: spelling ('bach' for back, 'whispen' for whisper), tense inconsistency ('smell' instead of smelled), and awkward syntax ('bear did does not'). While understandable for Class VII, these errors are frequent.",
+      "evidence": "The bear came and smell his whole body."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student tells the familiar fable competently. It does not appear to be a verbatim guide copy, but it lacks original descriptive detail or creative flair, remaining purely functional.",
+      "evidence": "The bear went bach because he thought that the man was dead."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (bach, whispen)",
+      "Subject-verb agreement and tense slips (smell, who leave)",
+      "Missing title"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Meets sentence count requirement",
+      "Clear resolution/moral"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical progression and a clear moral, exceeding the minimum sentence requirement. However, the omission of a title and several linguistic errors—particularly in spelling and verb forms—prevent a higher score. The writing is a competent Class VII attempt at a known fable.",
+  "_metadata": {
+    "task_id": "STORY_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "08c7b27b367f0cc968b395a82cc060d7b56743123b2fa92bb48d8893564899c0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:00:16.947784+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "320d3397ab0228498ccfcb42be3afee879a2dc344dce11a7de698e3fc1ac8392",
+    "input_tokens": 6004,
+    "output_tokens": 2253,
+    "thoughts_tokens": 1491,
+    "cost_usd": 0.001276,
+    "latency_ms": 194108,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6004,
+        "output_tokens": 2253,
+        "thoughts_tokens": 1491,
+        "cost_usd": 0.001276,
+        "latency_ms": 194108,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly according to the answer key. (a) 'ugly' is a correct antonym; (b) 'fearless' is a correct synonym; (c) 'didy heat' represents clear, although clumsy, misspellings of 'tidy' and 'neat', both of which are acceptable synonyms; (d) 'ancient' is a correct synonym; (e) 'noisg' is a clear misspelling of 'noisy', which is a correct antonym.",
+      "evidence": "a) ugly b) fearless c) didy heat d) ancient e) noisg"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic slips (spelling)"
+    ],
+    "positive_aspects": [
+      "Perfect accuracy in identifying semantic relations (synonym/antonym)"
+    ]
+  },
+  "feedback_summary": "Items a, b, c, d, and e are all marked correct. The student successfully identified the required antonyms and synonyms for all five words. Spelling errors in items (c) and (e) were ignored as the intended correct words were clearly discernible, in accordance with the marking guidelines for item-scored vocabulary tasks.",
+  "_metadata": {
+    "task_id": "VOCAB_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "0bcd9310e0b933312788081870011979965aa7243ce954eac1536e7763a55ca4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:55:20.772168+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c22ef45e22bb2dbc52a514e59f88193c00cb1bad187cc136b33b88ebdd40a849",
+    "input_tokens": 6214,
+    "output_tokens": 2405,
+    "thoughts_tokens": 1743,
+    "cost_usd": 0.001343,
+    "latency_ms": 196047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6214,
+        "output_tokens": 2405,
+        "thoughts_tokens": 1743,
+        "cost_usd": 0.001343,
+        "latency_ms": 196047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

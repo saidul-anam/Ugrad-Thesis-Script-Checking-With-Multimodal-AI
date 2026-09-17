@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student captures the essential figures and the goal of the mission, but introduces a factual error regarding the return date (29 July instead of 24 July) and includes a fragmented sentence about Florida.",
+      "evidence": "29 July, 1969, they safely landed came back to Earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block, but it exceeds the ideal one-third length (length ratio is 0.458).",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are several errors in preposition use ('In 20 July'), verb tense ('spacecraft land'), and syntax ('safely landed came back').",
+      "evidence": "their spacecraft land on moon"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While some parts are paraphrased, there is heavy reliance on the source text, including the final sentence which is copied verbatim.",
+      "evidence": "The Apollo 11 mission showed the power of science, teamwork and human courage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency",
+      "Preposition errors",
+      "Verbatim lifting",
+      "Factual inaccuracy"
+    ],
+    "positive_aspects": [
+      "Correctly identified all three astronauts",
+      "Maintained a single paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate captures the core events of the Apollo 11 mission and correctly identifies the key personnel. However, the summary is slightly over the recommended length and contains several grammatical errors typical of Class VII, specifically regarding tense and prepositions. A factual error was made regarding the return date, and the conclusion was lifted verbatim from the text, preventing a higher score in originality.",
+  "_metadata": {
+    "task_id": "SUMMARY_020",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0019",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "cdf28e02f882aa0e68c6e67af33beb08996c939dd0e7df13eae917336f9532e2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:38:27.087232+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e63f568a6eb2974f71d84c9e3738303df695b61d82966c82aee09c58766ca88f",
+    "input_tokens": 6072,
+    "output_tokens": 3151,
+    "thoughts_tokens": 2416,
+    "cost_usd": 0.001553,
+    "latency_ms": 319735,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6072,
+        "output_tokens": 3151,
+        "thoughts_tokens": 2416,
+        "cost_usd": 0.001553,
+        "latency_ms": 319735,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

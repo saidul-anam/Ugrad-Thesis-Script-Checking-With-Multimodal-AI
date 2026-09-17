@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items b, c, d, and g are correct. Item a and f are scored 0 because the candidate provided multiple options without indicating a specific choice, which per rubric costs the mark. Item e is incorrect.",
+      "evidence": "b. (ii) He earns irregularly for daily needs. c. (iv) Adverb d. (i) From morning to night g. (ii) Household manager and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to select a single option (multiple alternatives provided)",
+      "Incorrect identification of part of speech"
+    ],
+    "positive_aspects": [
+      "Correct identification of contextual meanings",
+      "Accurate comprehension of reading passage details"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items b, c, d, and g. Items a and f were marked incorrect as the student listed multiple alternatives for each, violating the rule that multiple options with no clear indication of intent score 0. Item e was answered incorrectly.",
+  "_metadata": {
+    "task_id": "MCQ_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4313b7cdfbeed7c55b1b30351285f43c80eeffdd01327d9208ba65895e395655",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:26:38.606812+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2ebdc0d98a4f9aa84ece6efffe3d8cc1e5437fd41f5877eba1286a4bd7b62fe9",
+    "input_tokens": 6489,
+    "output_tokens": 1625,
+    "thoughts_tokens": 998,
+    "cost_usd": 0.001136,
+    "latency_ms": 295280,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6489,
+        "output_tokens": 1625,
+        "thoughts_tokens": 998,
+        "cost_usd": 0.001136,
+        "latency_ms": 295280,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, c, and d are correct. Item a, b, and d include correct corrections for the False verdict. Item c is correctly marked True. Item e is marked False but the correction 'told him to lose hope' is the opposite of the fact in the passage, thus scoring 0.",
+      "evidence": "a) False. Raja thinks he can improve his weak subjects. b) False. He got 10 out of 10 in Mathematics c) True. d) False. Raja plans to work harde next time."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factually incorrect correction in item e (omitted 'not' from 'not to lose hope')"
+    ],
+    "positive_aspects": [
+      "Consistent accuracy in identifying True/False status",
+      "Ability to provide correct corrections for most items"
+    ]
+  },
+  "feedback_summary": "Item a: Correct (False + correct correction). Item b: Correct (False + correct correction). Item c: Correct (True). Item d: Correct (False + correct correction). Item e: Incorrect (The student provided a 'False' verdict but the correction 'told him to lose hope' contradicts the passage; thus, 0 marks).",
+  "_metadata": {
+    "task_id": "TF_009",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0009",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "303194d49f1525f4c8593f1a64054c0801adf4c46ddcb0294243d2d452cdf524",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:33:00.075167+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b45f503d8ebe3771319d77aa35bbb5898db6a964225331223dce77d71ca3cba4",
+    "input_tokens": 6440,
+    "output_tokens": 1831,
+    "thoughts_tokens": 1151,
+    "cost_usd": 0.001193,
+    "latency_ms": 230375,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6440,
+        "output_tokens": 1831,
+        "thoughts_tokens": 1151,
+        "cost_usd": 0.001193,
+        "latency_ms": 230375,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

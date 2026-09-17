@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.25
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the essential narrative arc: the class tests, the mixed results (though English marks are slightly altered), the parents' encouragement, and the resolution to work harder.",
+      "evidence": "Raju work very hard to do well. He get 8 in Bangla, 10 in English, 10 in math. He do not well in Ict, Religion and science."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is presented as a single block, but it significantly exceeds the 1/3 length requirement (computed at 50.39% of the source text), triggering the structural cap.",
+      "evidence": "Raju is a student of class. This week, his saheool held clast test in all subject... Than Raju is hard work,"
+    },
+    "language_mechanics": {
+      "rationale": "There are severe and pervasive errors in spelling ('saheool', 'clast', 'mathers', 'tall') and syntax ('He do not well', 'You well other exam'), which are below the expected standard for Class VI.",
+      "evidence": "his saheool held clast test in all subject"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate has made a genuine attempt to paraphrase the text in their own words rather than copying sentences verbatim from the source.",
+      "evidence": "Raju's mathers tall to him, \"Do not worry. You well other exam\""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 3.25
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe phonetic spelling errors",
+      "Subject-verb agreement failure",
+      "Incorrect word usage (e.g., 'tall' for 'told')"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of main points",
+      "Successful avoidance of verbatim copying"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified all main plot points and avoided copying the text verbatim. However, the writing is marred by severe spelling and grammatical errors. Crucially, the summary length (50.39% of the original) exceeds the allowed limit, resulting in a structural hard cap of 2 marks.",
+  "_metadata": {
+    "task_id": "SUMMARY_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1ed424b114ecc7497a905ec17349b1c5a0a125ad9465ba93b1e2bfc62cf8c7e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:51.981606+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "77cc58ecb5fca88d5c1e88eac00816f75d7ee308884cd228de4f97094e732091",
+    "input_tokens": 6144,
+    "output_tokens": 2557,
+    "thoughts_tokens": 1741,
+    "cost_usd": 0.001381,
+    "latency_ms": 439109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6144,
+        "output_tokens": 2557,
+        "thoughts_tokens": 1741,
+        "cost_usd": 0.001381,
+        "latency_ms": 439109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

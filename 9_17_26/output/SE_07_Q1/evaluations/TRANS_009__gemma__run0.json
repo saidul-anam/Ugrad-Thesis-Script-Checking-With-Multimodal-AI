@@ -1,0 +1,98 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored evaluation: (a) Incorrect - retains direct question order 'where is'; (b) Incorrect - retains auxiliary 'does'; (c) Incorrect - inserts 'does' and retains direct order; (d) Correct - removes auxiliary and uses subject-verb order 'children go'; (e) Incorrect - retains auxiliary 'does'. Total: 1 mark.",
+      "evidence": "Do you know which school his children go to?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect word order in embedded clauses",
+      "Failure to remove auxiliary verbs (do/does)"
+    ],
+    "positive_aspects": [
+      "Correct transformation of structure in item (d)"
+    ]
+  },
+  "feedback_summary": "The student only successfully transformed item (d). Items (a), (b), (c), and (e) were marked wrong because they failed to convert the direct question into an embedded clause, either by keeping the verb before the subject or by retaining the auxiliary 'does'.",
+  "_metadata": {
+    "task_id": "TRANS_009",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0008",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ff2f2f515e383ac8ba93ac0df93167f3635cbd20e056cf813dfa3695b8c98a7a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:29:07.825265+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b04ca5fad10cf50416b02c9194a8eec00574333a26048ab4f8c3b679f8899a86",
+    "input_tokens": 6160,
+    "output_tokens": 2022,
+    "thoughts_tokens": 1397,
+    "cost_usd": 0.001223,
+    "latency_ms": 307532,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6160,
+        "output_tokens": 2022,
+        "thoughts_tokens": 1397,
+        "cost_usd": 0.001223,
+        "latency_ms": 307532,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

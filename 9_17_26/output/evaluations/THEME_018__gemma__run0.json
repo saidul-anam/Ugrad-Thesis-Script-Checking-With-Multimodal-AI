@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core idea that day-dreaming leads to the realization of success, though the interpretation is somewhat superficial and lacks a discussion of the 'dangerous' aspect of such dreamers.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified block and states the theme immediately at the start.",
+      "evidence": "The poem tells us about 'Dream'..."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in spelling ('achive', 'planm', 'libes'), syntax ('it can work hand'), and subject-verb agreement ('others who doesn't doesn't').",
+      "evidence": "Those who dream by day it can work hand to achive their success"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student avoided verbatim copying of the poem's lines, using their own words, although the phrasing is rudimentary and lacks genuine literary interpretation.",
+      "evidence": "It helps people to make a happy and planm life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (achive, planm, libes)",
+      "Syntactic breakdown",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Complete absence of verbatim copying",
+      "Correct identification of the primary concept"
+    ]
+  },
+  "feedback_summary": "The candidate understands the central theme of the poem and has successfully paraphrased the idea without copying lines from the text. However, the writing is severely hampered by poor linguistic mechanics, including multiple spelling mistakes and broken syntax. While the structure is appropriate, the lack of mechanical precision and depth in analysis places this script in the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "06fca6e85ae6034abf25c383242697d75d00afb4386152fb111addcc0e9066bc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:17:52.263815+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "835f176e2a85da92f63705a4ea92988e2be28131992d734e5b0d869975097d59",
+    "input_tokens": 4294,
+    "output_tokens": 2116,
+    "thoughts_tokens": 1389,
+    "cost_usd": 0.001064,
+    "latency_ms": 59187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4294,
+        "output_tokens": 2116,
+        "thoughts_tokens": 1389,
+        "cost_usd": 0.001064,
+        "latency_ms": 59187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct (S+V order). Item b is correct (S+V order; missing punctuation ignored per rubric). Item c is incorrect because it changes the meaning of the prompt ('what made' instead of 'why is'). Item d is incorrect because it retains the auxiliary 'does' in the embedded clause. Item e is correct (S+V order; missing punctuation ignored). Total marks: 1+1+0+0+1 = 3.",
+      "evidence": "a) Do you know where the post office is? b) Do you know what the postmaster does c) Do you know what made the postmast so happy? d) Do you know where does his children go to school? e) Do you know when the postmaster comes to the post office"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions; mechanics are assessed as part of the item accuracy.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Retention of auxiliary verbs in embedded clauses",
+      "Alteration of prompt meaning/question word"
+    ],
+    "positive_aspects": [
+      "Consistent use of the 'Do you know' introductory phrase",
+      "Correct S+V word order in 3 out of 5 items"
+    ]
+  },
+  "feedback_summary": "Items a, b, and e were marked correct. Item c was marked wrong for changing 'why' to 'what', altering the meaning. Item d was marked wrong for incorrectly retaining the auxiliary 'does' in the embedded clause.",
+  "_metadata": {
+    "task_id": "TRANS_029",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0028",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2236e69217b5e3ec3d4ac6876dabd9ddea39946720256248ba7c76ce612d0d24",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:11:21.471016+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fb4af3b46ba558ed60e958fa17f74000ab44fb8ffff092a77bb32c46c646f4f9",
+    "input_tokens": 6157,
+    "output_tokens": 2230,
+    "thoughts_tokens": 1509,
+    "cost_usd": 0.001285,
+    "latency_ms": 534421,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6157,
+        "output_tokens": 2230,
+        "thoughts_tokens": 1509,
+        "cost_usd": 0.001285,
+        "latency_ms": 534421,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered three items correctly: a (Ugly), c (neat), and d (aged). Item b was omitted, and item e ('continive') is not a valid antonym for 'quiet'.",
+      "evidence": "a. Beautiful- Ugly (ant)\nc. clean - neat (syn)\nd. old - aged (syn)"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of answer (Item b)",
+      "Incorrect word choice/non-existent word (Item e)"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonyms and synonyms for 60% of the task"
+    ]
+  },
+  "feedback_summary": "Items a, c, and d were marked correct. Item b was omitted and item e was incorrect ('continive' is not a synonym/antonym for quiet). Total score is 3 out of 5.",
+  "_metadata": {
+    "task_id": "VOCAB_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "7d030530b1d0cd0a0f418d349ffd306d3e6891bbda193077c469b98d539d56c1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:27:09.049482+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "681682b941b383895e97a7c9879aa1fef3393a6fe0ced0bae7b6584f7d16a548",
+    "input_tokens": 6232,
+    "output_tokens": 1719,
+    "thoughts_tokens": 1113,
+    "cost_usd": 0.001139,
+    "latency_ms": 177891,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6232,
+        "output_tokens": 1719,
+        "thoughts_tokens": 1113,
+        "cost_usd": 0.001139,
+        "latency_ms": 177891,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

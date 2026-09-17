@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (i) is incorrect as '5%' does not match 'Class six'. Items (ii), (iii), (iv), and (v) are correct as they accurately reflect the information in the passage.",
+      "evidence": "b. Bangla, English, Mathmatices, out of c. 8, 9, 10, 10 Marks d. ICT, science and religion e. getting only 6 marks in each."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in item (i)"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of subject names and marks for remaining items"
+    ]
+  },
+  "feedback_summary": "Item (i) was marked wrong ('5%' is incorrect). Items (ii), (iii), (iv), and (v) were marked right. Total: 4/5.",
+  "_metadata": {
+    "task_id": "TABLE_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "e9042116744da02dae82b032ce983d84c5b171062efab7cf82505f0ba553575d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:52:21.778336+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "25955b1141d74eff22274dea30fe2e1bd346fc1543e21bcc83fb5ed166bf5bf1",
+    "input_tokens": 6418,
+    "output_tokens": 1486,
+    "thoughts_tokens": 872,
+    "cost_usd": 0.001088,
+    "latency_ms": 273000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6418,
+        "output_tokens": 1486,
+        "thoughts_tokens": 872,
+        "cost_usd": 0.001088,
+        "latency_ms": 273000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

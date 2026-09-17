@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The response is not a summary of the poem but a generic reflection on hope. It completely ignores the poem's central metaphor of the bird, the setting of the 'soul', and the resilience against the 'storm'.",
+      "evidence": "Hope is the direction of our life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The student adhered to the single-block format. Per the provided cap_note, the length limit was not applied for this specific poem.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are clear errors in subject-verb agreement ('It show') and spelling ('Whitout').",
+      "evidence": "It show us the path... Whitout hope"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoided verbatim copying from the source text entirely. However, they did not 'paraphrase' the text so much as they wrote a separate composition about the topic.",
+      "evidence": "Whitout hope we all are like the dead fish in the sea."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Spelling errors",
+      "Lack of textual fidelity (generic content instead of summary)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Consistent single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate failed to summarize the provided poem, instead providing a generic essay-style reflection on the concept of hope. While the response is original in phrasing and follows structural constraints, it lacks the required contextual data from the source text. Linguistic errors in grammar and spelling further limit the score.",
+  "_metadata": {
+    "task_id": "SUMMARY_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3d59c6a9436c7f899da9d05129944a73d6df18c696e57a5a2c6ee4b70a4772a9",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:12:33.983757+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2347fbbd5edb61e0b1c59afb35676888f6b1d04c73ba963e03c95f257001a276",
+    "input_tokens": 4361,
+    "output_tokens": 2178,
+    "thoughts_tokens": 1491,
+    "cost_usd": 0.001089,
+    "latency_ms": 61812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4361,
+        "output_tokens": 2178,
+        "thoughts_tokens": 1491,
+        "cost_usd": 0.001089,
+        "latency_ms": 61812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

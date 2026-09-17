@@ -1,0 +1,102 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt comprehensively, covering the work, the economic hardship, and the social condition of a rickshaw puller. However, the depth is limited by the language.",
+      "evidence": "He lives from hand to mouth. He lives in a slum. He can't provide food, education and medicine to his family."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single block as required and begins with a clear topic sentence, though internal coherence is weakened by mechanical errors.",
+      "evidence": "A nickshaw Pullen plays an important role in our Communication sector."
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of phonetic spelling errors and grammatical failures. While the meaning is recoverable, the errors are pervasive and severe for Class VI.",
+      "evidence": "canny cannying passengens... gard life... niskey work... weathen... two squze of food"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content is highly formulaic, following the structure and points of common memorized guide texts used in the region.",
+      "evidence": "Our Goverment should give him a small loan."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe phonetic spelling (e.g., 'nickshaw', 'canny', 'weathen')",
+      "Grammatical breakdown in sentence construction",
+      "Reliance on formulaic guide-text content"
+    ],
+    "positive_aspects": [
+      "Strict adherence to single-paragraph format",
+      "Comprehensive coverage of the subject matter",
+      "Clear attempt at a logical flow of ideas"
+    ]
+  },
+  "feedback_summary": "The candidate has written a comprehensive response that covers all the key aspects of a rickshaw puller's life and adheres to the single-paragraph format. However, the script is marred by severe and pervasive spelling and grammatical errors (e.g., 'nickshaw Pullen', 'canny cannying passengens'), which characterize a struggling writer. The content also mirrors memorized guide templates. Consequently, it falls into Band 2.",
+  "_metadata": {
+    "task_id": "PARA_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "0607d57665253b77326e38512664b4cb78d0e948a54f97d68efed50c4aa1f4fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:14:50.852182+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e97dd69a5360d9839340f6dfcfe999ddf22e99772b19fe015bd8a4965b76b71a",
+    "input_tokens": 6151,
+    "output_tokens": 2988,
+    "thoughts_tokens": 2197,
+    "cost_usd": 0.001512,
+    "latency_ms": 2410516,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6151,
+        "output_tokens": 2988,
+        "thoughts_tokens": 2197,
+        "cost_usd": 0.001512,
+        "latency_ms": 2410516,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

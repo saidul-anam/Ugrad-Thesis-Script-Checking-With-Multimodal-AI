@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct ('show'); item (c) is correct ('cheered'); item (e) is correct as it fits grammatically and agrees with the text ('cheer'). Item (b) is incorrect because 'cheered great' is grammatically invalid in the sentence 'gave cheered great performances'. Item (d) 'bond' is contextually incorrect as the text describes excitement and applause, not the formation of a bond.",
+      "evidence": "a) show. b) cheered great c) cheered. d) bond e) cheer"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions always receive 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions always receive 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions always receive 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical phrasing in gap (b)",
+      "Contextual misalignment in gap (d)"
+    ],
+    "positive_aspects": [
+      "Correct identification of key nouns and verbs in (a), (c), and (e)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a), (c), and (e). Item (b) was marked wrong due to the inclusion of 'cheered' which makes the sentence grammatically incorrect. Item (d) was marked wrong as 'bond' does not align with the passage's description of the audience's reaction. Total score: 3/5.",
+  "_metadata": {
+    "task_id": "GAP_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "27075f9b235ebf745482cc543e4a097c8bae20e13e961bae773ab638ec28616f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:17:37.284232+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "98719b4599b1b398874b39251171d2ae54dae643b58163821feff5cd9de2229e",
+    "input_tokens": 6224,
+    "output_tokens": 2020,
+    "thoughts_tokens": 1332,
+    "cost_usd": 0.001228,
+    "latency_ms": 251421,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6224,
+        "output_tokens": 2020,
+        "thoughts_tokens": 1332,
+        "cost_usd": 0.001228,
+        "latency_ms": 251421,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

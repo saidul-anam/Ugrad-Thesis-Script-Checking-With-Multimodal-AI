@@ -1,0 +1,97 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored evaluation: (a) Incorrect; does not mention parental duties of care/love. (b) Correct; captures the essence of needing time for nature. (c) Incorrect; describes the situation of being busy but not the poet's feeling that such a life is 'poor'. (d) Incorrect; provides an answer relating to nature's role (Q g) rather than parental care. (e) Incorrect; provides an answer relating to the poet's message (Q h) rather than the importance of childhood.",
+      "evidence": "The poet's suggestion about nature we must time for nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Prompt mismatch (answering different questions than those labeled)",
+      "Fragmented sentence structure",
+      "Insufficient content depth"
+    ],
+    "positive_aspects": [
+      "Correct identification of the core theme of 'Leisure' in item b"
+    ]
+  },
+  "feedback_summary": "The candidate attempted five questions. Item (b) was marked correct for capturing the central suggestion of the poem 'Leisure'. Items (a) and (c) were marked incorrect due to insufficient content. Items (d) and (e) were marked incorrect because the candidate provided answers that corresponded to questions (g) and (h) from the paper, rather than the questions labeled (d) and (e).",
+  "_metadata": {
+    "task_id": "POEM_030",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0029",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ba5f4dff279521217c348dacadb7edb39b9f340817877754ad0d5d6f6ec79e58",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:09:40.346743+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2b834779ec6453bd91164f9eabc760ceaa85e1bd650e347213232dd377f67197",
+    "input_tokens": 6438,
+    "output_tokens": 2042,
+    "thoughts_tokens": 1324,
+    "cost_usd": 0.001256,
+    "latency_ms": 191687,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6438,
+        "output_tokens": 2042,
+        "thoughts_tokens": 1324,
+        "cost_usd": 0.001256,
+        "latency_ms": 191687,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

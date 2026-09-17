@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted five items. Item b: Correct substance (happy, singing) - 2 marks. Item d: Correct substance (singing to avoid sadness in winter) - 2 marks. Item f (content matches question e): Correct substance (be hopeful/sing) - 2 marks. Item g: Correct substance (playmate in another land) - 2 marks. Item h: Correct substance (moon peeping/looking in) - 2 marks. Total = 10.",
+      "evidence": "Rabin is a very happy bind... Singing Don't be sad duning winter... Alaways be hopebul... the playmate lives in som strange another land... The Moon come the to peep."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is fixed at 0. Spelling errors do not penalize the score as long as content is recoverable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Phonetic spelling errors (e.g., 'bind' for bird, 'sweatly' for sweetly, 'hopebul' for hopeful, 'peom' for poem)"
+    ],
+    "positive_aspects": [
+      "Accurate comprehension of the poems' central messages",
+      "Successfully answered the required number of questions"
+    ]
+  },
+  "feedback_summary": "The student answered five items: b, d, f (content of e), g, and h. Each item was marked correct (2 marks each) because the answers provided the correct substance as per the indicative key, despite frequent spelling errors which are ignored in this task type. Total score: 10/10.",
+  "_metadata": {
+    "task_id": "POEM_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "c981e22355db6b13a90f65701e04ab1c5738268892159914e40929757591c72e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:29:07.687455+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c687331cf07f3fcc8cb036d12a43b855f9127b49c772210fecc007cd177ac541",
+    "input_tokens": 6507,
+    "output_tokens": 2327,
+    "thoughts_tokens": 1565,
+    "cost_usd": 0.001349,
+    "latency_ms": 383735,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6507,
+        "output_tokens": 2327,
+        "thoughts_tokens": 1565,
+        "cost_usd": 0.001349,
+        "latency_ms": 383735,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

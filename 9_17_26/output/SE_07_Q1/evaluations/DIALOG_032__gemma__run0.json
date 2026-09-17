@@ -1,0 +1,103 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully addresses the prompt by discussing both Sheila's (88%) and Asim's (82%) results, including specific subjects. However, the dialogue is somewhat repetitive ('what did you do? what did you do?') and lacks depth in the conversational exchange.",
+      "evidence": "sheila : I did pretty well. I got 88 % overall. ... Asim : That's amazing congratulations! I got 82 % overall."
+    },
+    "structure_format_brevity": {
+      "rationale": "The student employs a perfect dialogue layout with clear speaker labels, alternating turns, a proper opening greeting, and a closing exchange.",
+      "evidence": "Asim : Hey Sheila! How are you? \n\nsheila : I'm find. what about you?"
+    },
+    "language_mechanics": {
+      "rationale": "The script is entirely readable and maintains a natural spoken register, but it contains frequent errors in spelling, subject-verb agreement, and word choice that are typical for a struggling Class VII student.",
+      "evidence": "I'm find. ... our result are finally out. ... Mathmeties, I got 97. ... Don't disappointed English"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the greeting and closing are formulaic, the student introduces specific academic details (percentage and subjects) and attempts original peer-to-peer encouragement, showing it is not a purely memorized template.",
+      "evidence": "Don't disappointed English- you better next time I struggle Science."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (e.g., 'find' for 'fine', 'Mathmeties')",
+      "Subject-verb agreement ('result are')",
+      "Incorrect verb forms ('Don't disappointed')"
+    ],
+    "positive_aspects": [
+      "Correct dialogue formatting",
+      "Effective use of specific data to satisfy the prompt",
+      "Coherent flow of conversation"
+    ]
+  },
+  "feedback_summary": "The candidate has followed the structural requirements of a dialogue perfectly. The content is on-topic and covers the requirements for both characters' results. However, the score is limited to Band 3 due to frequent linguistic errors in spelling and grammar. The student's attempt to include specific subject scores shows a good level of original effort for Class VII.",
+  "_metadata": {
+    "task_id": "DIALOG_032",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0031",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f4dcfde71db81f3d32099292e45635631371b31708c9b7f18028a48a95e66b29",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:23:04.926795+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e8920654095919b36ebc3a76224969e4c4001cafc15f1d7da7271ad1355850c8",
+    "input_tokens": 6042,
+    "output_tokens": 5189,
+    "thoughts_tokens": 4357,
+    "cost_usd": 0.002161,
+    "latency_ms": 584858,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6042,
+        "output_tokens": 5189,
+        "thoughts_tokens": 4357,
+        "cost_usd": 0.002161,
+        "latency_ms": 584858,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

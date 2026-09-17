@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct (misspelling of performance); Item (b) is correct (valid synonym); Item (c) is correct; Item (d) is correct (misspelling of curiosity); Item (e) is incorrect as 'cheered' is a verb and the sentence requires a noun.",
+      "evidence": "a) performenge b) outstanding c) cheered d) curicity e) cheered"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Part of speech error (using a verb instead of a noun in item e)"
+    ],
+    "positive_aspects": [
+      "Effective use of synonyms (outstanding)",
+      "Strong understanding of the text's context"
+    ]
+  },
+  "feedback_summary": "Items (a), (b), (c), and (d) were marked correct. 'performenge' and 'curicity' are accepted as clear misspellings of 'performance' and 'curiosity'. 'outstanding' is an appropriate synonym for the required content. Item (e) was marked incorrect because 'cheered' is a verb and does not fit grammatically into the phrase 'with loud [noun]'.",
+  "_metadata": {
+    "task_id": "GAP_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "09d3d742523e565663e8a5481da7f1f1b26e93d0c221123d49a8488696acf5b0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:31:11.392955+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "aaabd138d12e1707bf94224c4425640c2b239c55ef5118d269b46e460469a243",
+    "input_tokens": 6223,
+    "output_tokens": 1886,
+    "thoughts_tokens": 1215,
+    "cost_usd": 0.001188,
+    "latency_ms": 721687,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6223,
+        "output_tokens": 1886,
+        "thoughts_tokens": 1215,
+        "cost_usd": 0.001188,
+        "latency_ms": 721687,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

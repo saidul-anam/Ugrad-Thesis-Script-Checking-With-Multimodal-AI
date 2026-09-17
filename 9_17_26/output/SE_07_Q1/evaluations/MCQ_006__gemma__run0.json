@@ -1,0 +1,95 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified all seven options (a through g) matching the answer key. Misspelling in item (b) does not penalize the score per marking instructions.",
+      "evidence": "a. iii, rural area. b. ii. He earns ir regularly for daily needs. c. iv. Adverb d. i. From morning to night. e. iv. Adjective f. iii. Rough. g. ii. Household manager and caregiver."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy across all items"
+    ]
+  },
+  "feedback_summary": "All items marked correctly: a (Correct), b (Correct), c (Correct), d (Correct), e (Correct), f (Correct), g (Correct).",
+  "_metadata": {
+    "task_id": "MCQ_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "5ec0a332d5ebc9370c8c4020b6fd2cde39a4730a43820e42bca827fabea33a4e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:36:41.592489+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1075ba3622f28f06db931d75a1c01e7a2e000df2678bf15a54edd5f59ad99378",
+    "input_tokens": 6473,
+    "output_tokens": 1712,
+    "thoughts_tokens": 1134,
+    "cost_usd": 0.001161,
+    "latency_ms": 117407,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6473,
+        "output_tokens": 1712,
+        "thoughts_tokens": 1134,
+        "cost_usd": 0.001161,
+        "latency_ms": 117407,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

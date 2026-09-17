@@ -1,0 +1,96 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered correctly according to the answer key: (a) show, (b) great, (c) cheered, (d) interest, and (e) cheers.",
+      "evidence": "A. show B. great C. cheered D. interest E cheers"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy",
+      "Correct understanding of textual context"
+    ]
+  },
+  "feedback_summary": "The student correctly identified the required words for all five gaps: (a) show, (b) great, (c) cheered, (d) interest, and (e) cheers.",
+  "_metadata": {
+    "task_id": "GAP_004",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0003",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9627a6472824841b194794b8c093cabf413132aa3fe3cb627337ac056ea003ce",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:11:40.154444+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ff2801feb3654816c82acbfedf0a1c7dd4cbe51d154665a1b2552b04c4001a8b",
+    "input_tokens": 6219,
+    "output_tokens": 1480,
+    "thoughts_tokens": 906,
+    "cost_usd": 0.001066,
+    "latency_ms": 113046,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6219,
+        "output_tokens": 1480,
+        "thoughts_tokens": 906,
+        "cost_usd": 0.001066,
+        "latency_ms": 113046,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures the central point of the text, including the subject's grade, the specific marks achieved (both high and low), and the final resolution regarding future improvement.",
+      "evidence": "He got 8 in gangla, 9 in English, and 10 in Mathematics. out of I c T , Seience, and Religion getting only 6 marks in each."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary exceeds the 1/3rd length limit (58 words against a threshold of approximately 43 words).",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are significant linguistic failures, including spelling errors ('gangla', 'Seience', 'batten'), a missing subject in the second sentence, and poor grammatical construction in the final sentence.",
+      "evidence": "Raju thinkeing will do batten in future."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script is largely a sequence of lifted phrases from the source text, with a verbatim overlap of 61.9%, far exceeding the 50% limit.",
+      "evidence": "He got 8 in gangla, 9 in English, and 10 in Mathematics."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Spelling errors",
+      "Syntactic fragmentation"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of key data points",
+      "Maintains the narrative arc of the original text"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good understanding of the passage's content, capturing all primary facts. However, the response failed on all structural and linguistic counts: it exceeds the length limit, is over 60% verbatim copying, and contains frequent spelling and grammatical errors. A structural hard cap of 2 was applied due to verbatim copying, though the raw score based on merit also equalled 2.",
+  "_metadata": {
+    "task_id": "SUMMARY_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "dec9da3948c3a994f834baa8d36ec1982c039676dd7f427377aa8517fe4ef42c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:14:52.360480+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ddb904c3d0e8e36cf0e9b2eeeab23c08d393ece675689da2049bd29dc257f1a9",
+    "input_tokens": 6133,
+    "output_tokens": 2274,
+    "thoughts_tokens": 1516,
+    "cost_usd": 0.001296,
+    "latency_ms": 1087921,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6133,
+        "output_tokens": 2274,
+        "thoughts_tokens": 1516,
+        "cost_usd": 0.001296,
+        "latency_ms": 1087921,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, c, and g are correct. Item a identifies 'actuality'. Item b identifies 'iv'. Item c identifies 'honour' (despite misspelling 'shounour'). Item g identifies 'iv' and the collective option. Items d, e, and f are incorrect as they select options (i, iii, iii respectively) that do not match the key (ii, ii, iv).",
+      "evidence": "a. actuality b. iv) pride and joy. c. shounour g. iv) all of 8 & iii bewollof"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection for items d, e, and f"
+    ],
+    "positive_aspects": [
+      "Correct identification of meanings and categories in 4 out of 7 items"
+    ]
+  },
+  "feedback_summary": "Items a, b, c, and g were answered correctly (4 marks). Items d, e, and f were answered incorrectly (0 marks). Total score: 4/7.",
+  "_metadata": {
+    "task_id": "MCQ_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "14499c113048846bee717768cc47e98bc175f2832d865ee5053b0ad5fa3f1934",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:42:42.583875+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a2e296c898cbd160c731b650c8818d64ade5f07814417aaa976d910fa02132d0",
+    "input_tokens": 6686,
+    "output_tokens": 1615,
+    "thoughts_tokens": 969,
+    "cost_usd": 0.001153,
+    "latency_ms": 464108,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6686,
+        "output_tokens": 1615,
+        "thoughts_tokens": 969,
+        "cost_usd": 0.001153,
+        "latency_ms": 464108,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

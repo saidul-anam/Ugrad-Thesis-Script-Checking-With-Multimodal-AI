@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to extract the abstract theme of the poem (the resilience of hope). Instead, they list fragments of the poem and add irrelevant personal opinions/generic filler.",
+      "evidence": "All the People have a hope about everything. never remore hope from all the good things."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written in a single block, the response is longer than the original source text (85 words vs 69 words), which fundamentally violates the purpose of a summary.",
+      "evidence": "Hope is the thing with feathers... situation of our life."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive grammatical failures, including missing auxiliary verbs, incorrect subject-verb agreement, and flawed sentence construction.",
+      "evidence": "One day we can successful."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The first half of the response consists of nearly verbatim phrases from the poem, while the second half uses generic, non-interpretative language.",
+      "evidence": "It sore must be the storm that could abash the little bird."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of 'be' verb (e.g., 'can successful')",
+      "Verb tense/structure errors (e.g., 'Hope is never stops')",
+      "Irrelevant external commentary"
+    ],
+    "positive_aspects": [
+      "Maintained a single paragraph structure",
+      "Attempted to incorporate key images from the text"
+    ]
+  },
+  "feedback_summary": "The candidate failed to summarize the poem, instead producing a text longer than the original that combines direct copying with irrelevant personal reflections. The writing is characterized by severe grammatical breakdowns and a lack of understanding of the poem's central theme. The score is placed in Band 1 as there is a discernible attempt to engage with the text despite the structural and linguistic failures.",
+  "_metadata": {
+    "task_id": "SUMMARY_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "94578e4e4a7d39705ae62a7b40029d87ffef3900ba0ebbe5830b24926e07a562",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:34:55.682175+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5cf5f47a615dd344bf94f243cd2a6455a9120d30f0c0646a30af3bf1eaa6bd3a",
+    "input_tokens": 4422,
+    "output_tokens": 2521,
+    "thoughts_tokens": 1762,
+    "cost_usd": 0.001198,
+    "latency_ms": 70280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4422,
+        "output_tokens": 2521,
+        "thoughts_tokens": 1762,
+        "cost_usd": 0.001198,
+        "latency_ms": 70280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

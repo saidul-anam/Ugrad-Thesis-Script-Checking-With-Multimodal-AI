@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the central abstract contrast of the poem, distinguishing between passive night dreams and purposeful daytime ambitions, though the explanation remains somewhat simplistic.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "Presented as a single concise block that addresses the prompt directly, though internal sentence structure is disrupted by punctuation errors.",
+      "evidence": "Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple mechanical faults including number disagreement, subject-verb agreement errors, missing capitalization, an errant mid-sentence full stop, and an uncorrected/garbled word.",
+      "evidence": "There are two kind of dream. one which we see while we sleep"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response achieves 0% verbatim overlap, phrasing the interpretation entirely in the candidate's own words via a familiar analogy, though expression is basic.",
+      "evidence": "Those dream we see while sleeping is not for us. Those which take our sleep is our real."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb and number agreement errors ('two kind of dream', 'Those dream... is')",
+      "Punctuation and capitalization faults ('one which', 'real. dream')",
+      "Garbled phrasing / typographical errors ('fata come true')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim reliance on the poem text (0.0% overlap)",
+      "Captures the core distinction between passive dreaming and actionable reality"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identifies the poem's underlying theme by contrasting idle nighttime dreams with actionable, purposeful daytime ambition. The response is written entirely in the candidate's own words without copying from the prompt. However, the score is constrained to Band 2 due to pervasive mechanical weaknesses, including subject-verb disagreements, punctuation errors, and unclear phrasing.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "75951cd15996cf2b8348e8c762da773fd37bff4c1844c0a956c97456ca2a5306",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:13:24.175814+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "86626a135a99b1c8ec81fe8ddc2ba7f21b33d282a05a436c4e6ffb5e361ec98a",
+    "input_tokens": 4276,
+    "output_tokens": 2856,
+    "thoughts_tokens": 2063,
+    "cost_usd": 0.008423,
+    "latency_ms": 61187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 2856,
+        "thoughts_tokens": 2063,
+        "cost_usd": 0.008423,
+        "latency_ms": 61187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

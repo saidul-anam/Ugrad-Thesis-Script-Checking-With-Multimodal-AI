@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as it accurately identifies the battle and independence. Item (b) is incorrect because the student wrote '21 gun salute' instead of the required '31 gun salute'. Items (c), (d), and (e) were not attempted.",
+      "evidence": "Bangladesh got independo independence after a nine-month-long blood-soaked battle against the Pakistani army."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in item b",
+      "Omission of items c, d, and e"
+    ],
+    "positive_aspects": [
+      "Correct identification of content for item a"
+    ]
+  },
+  "feedback_summary": "Item (a) is marked right. Item (b) is marked wrong because it mentions a '21 gun salute' instead of '31'. Items (c), (d), and (e) were not attempted.",
+  "_metadata": {
+    "task_id": "SHORT_012",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0012",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "d5c62df8b1c6804947602d10fdd8e68339d5a8b86ab68111fa6519919f0a37e8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:44:24.212816+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2db54be9ca2771ea7cde99cef4f61c7bf0e3acf89d31f3bca25477b07236f33f",
+    "input_tokens": 6585,
+    "output_tokens": 1857,
+    "thoughts_tokens": 1249,
+    "cost_usd": 0.001216,
+    "latency_ms": 216905,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6585,
+        "output_tokens": 1857,
+        "thoughts_tokens": 1249,
+        "cost_usd": 0.001216,
+        "latency_ms": 216905,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

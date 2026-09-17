@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all prompt questions, covering the definition, applications across various fields (healthcare, agriculture, business), educational impact, and negative aspects like unemployment and decreased creativity.",
+      "evidence": "AI revolutionized teaching and learning the student sumirige their lesson by useing ai. teacher preapare their lesson by the propen use of ai."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a clear topic sentence and a concluding remark, but violates the single-paragraph constraint by splitting the response into three separate paragraphs (2 paragraph breaks).",
+      "evidence": "If we use ai in a certain level it will be blessing for us."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors, subject-verb agreement issues, passive voice misuse, and erratic capitalization.",
+      "evidence": "Artificial Intelligene is use to math dicition, to solve problem and to give information. Artificial Intelligence work as a man. It is used special programme and Algorth to invented it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student attempts authentic expression by naming contemporary AI models and specific real-world applications, though expression remains syntactically basic and repetitive.",
+      "evidence": "The enample of ai is just like : open ai, google asistant, gemini, meta ai etc."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('Intelligene', 'Algorth', 'enample', 'sumirige', 'preapare', 'propen', 'demanitles')",
+      "Faulty verb forms and subject-verb agreement ('is use to', 'work as a man', 'doctore are use', 'has taking place')",
+      "Mid-word capitalization and run-on sentence constructions ('decrEase', missing periods between clauses)"
+    ],
+    "positive_aspects": [
+      "Directly addresses all prompt guiding questions with relevant domain-specific details",
+      "Mentions specific modern AI applications (Gemini, Meta AI, OpenAI)"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the prompt questions and incorporates relevant contemporary applications of AI. However, the script is split into multiple sub-paragraphs, violating the single unified paragraph rule, which invokes a mandatory structural hard cap at 5 marks. In addition, language mechanics suffer from pervasive spelling errors, awkward phrasing, and grammatical inaccuracies.",
+  "_metadata": {
+    "task_id": "PARA_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d3f9db778398967dcd93b2c649d9dbb94c3074c3b1b99abadbb7443b1ae47cd2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:40:43.868219+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "784c8dac9cfc0864dcf0e0d1b346d876162ebb5eb216e5175d9a9899eaf24be3",
+    "input_tokens": 4460,
+    "output_tokens": 3604,
+    "thoughts_tokens": 2756,
+    "cost_usd": 0.010348,
+    "latency_ms": 19812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4460,
+        "output_tokens": 3604,
+        "thoughts_tokens": 2756,
+        "cost_usd": 0.010348,
+        "latency_ms": 19812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

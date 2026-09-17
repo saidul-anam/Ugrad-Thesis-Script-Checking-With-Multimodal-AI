@@ -1,0 +1,99 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is incorrect (marked True). Item b is correct (False + correct explanation). Item c is correct (False + correct explanation). Item d is correct (True). Item e is incorrect because while the verdict is 'False', the correction does not address the error regarding Mars; it simply quotes a general conclusion from the text.",
+      "evidence": "b. False: michael Collins stayed in the main ship and Armstrong and Aldrin landed on the Moon. c. False: Neil Armstrong was the first person to walk on the Moon's surface d. True"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inaccurate factual identification (Item a)",
+      "Failure to provide a relevant correction for a False statement (Item e)"
+    ],
+    "positive_aspects": [
+      "Correct identification and correction of landing details (Item b)",
+      "Accurate correction of chronological fact (Item c)"
+    ]
+  },
+  "feedback_summary": "Items b, c, and d were marked correct. Item a was marked wrong as the student identified a false statement as true. Item e was marked wrong because the correction provided did not address the specific error in the statement (Mars vs Moon), thus failing the requirement for a correct correction.",
+  "_metadata": {
+    "task_id": "TF_030",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0029",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "642e182cd54332f03b03560503a4e57c91b4bc10ff26ededb957ca82995cf882",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:16:13.620014+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f08c79aca967de9b9373b8d0dad0adfa1f5101c79b33184d08357349deccf2a4",
+    "input_tokens": 6428,
+    "output_tokens": 1691,
+    "thoughts_tokens": 1006,
+    "cost_usd": 0.00115,
+    "latency_ms": 672125,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6428,
+        "output_tokens": 1691,
+        "thoughts_tokens": 1006,
+        "cost_usd": 0.00115,
+        "latency_ms": 672125,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

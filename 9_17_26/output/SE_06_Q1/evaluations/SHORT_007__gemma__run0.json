@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered correctly. Item a identifies the casualties; Item b lists celebration activities; Item c explains the memorial's dedication; Item d identifies patriotic songs; Item e identifies the timing of the salute (dawn), which aligns with marking the start of the day.",
+      "evidence": "Pakistani army killed three million people and assoulted thousands of woman...Different political, cultural and educational programmes are organised...monnumnet dedicated to the soldiers and civilians...recite patriotic songs...31- gun salute at dawn"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structure and brevity are not independently assessed.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are not independently assessed provided the content is recoverable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not independently assessed.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors (e.g., 'assoulted', 'colounbul', 'Savan', 'monnumnet', 'thein')"
+    ],
+    "positive_aspects": [
+      "Full content retrieval for all items",
+      "Accurate interpretation of the reading passage"
+    ]
+  },
+  "feedback_summary": "The candidate successfully answered all five questions (a, b, c, d, and e) correctly. Each answer carries the required content from the answer key. While there are numerous spelling mistakes throughout the response, these do not result in mark deductions for this item-scored task.",
+  "_metadata": {
+    "task_id": "SHORT_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "518dee5b3158be63748eeb1599a580082f81a56e207518750bf7ad33f25bf5c0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:22:47.499292+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d1c4bcae7bc3ccf99bb8aff340272d7e13433ce79f40c009ca10cf03f8690cbe",
+    "input_tokens": 6700,
+    "output_tokens": 2207,
+    "thoughts_tokens": 1515,
+    "cost_usd": 0.001332,
+    "latency_ms": 189750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6700,
+        "output_tokens": 2207,
+        "thoughts_tokens": 1515,
+        "cost_usd": 0.001332,
+        "latency_ms": 189750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

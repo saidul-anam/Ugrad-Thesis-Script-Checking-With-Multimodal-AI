@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate seamlessly continues the storyline from the provided prompt stem, maintaining clear sequential plot development through the confrontation, release, capture, and rescue.",
+      "evidence": "While running, the mouse collied with the lion. Since the lion's sleep was disturbed by the mouse, the lion got angry."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative reaches a complete and positive resolution where the characters become friends, but it fails to supply the required title and lacks an explicitly stated constructive moral lesson.",
+      "evidence": "After that, they become very good friends."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple recurring mechanical errors are present, including incorrect irregular past tense forms, spelling inaccuracies, missing articles, and inappropriate tense shifts into the simple present.",
+      "evidence": "But lion catched him."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The submission follows the conventional Aesop fable plot with basic syntax and predictable phrasing, lacking vivid descriptive language or creative turns.",
+      "evidence": "The mouse told the lion that if the lion gets in any trouble in  future, he cuill save him."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Irregular past tense conjugation errors (e.g., 'catched' instead of 'caught')",
+      "Spelling inaccuracies (e.g., 'collied', 'cuill', 'traped', 'sharpp')",
+      "Inconsistent tense shifting between past and present (e.g., 'goes', 'become')",
+      "Missing story title"
+    ],
+    "positive_aspects": [
+      "Logical and smooth narrative progression directly extending the stem",
+      "Satisfying and positive story resolution"
+    ]
+  },
+  "feedback_summary": "The candidate develops a coherent and well-paced continuation of the provided stem, leading to a satisfying positive resolution. However, marks are lost due to the omission of a proper title and frequent grammatical and mechanical errors, including faulty past-tense forms ('catched'), arbitrary tense shifts ('goes', 'become'), and multiple spelling mistakes ('collied', 'cuill', 'traped', 'sharpp').",
+  "_metadata": {
+    "task_id": "STORY_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8522eb0331f9d14bf9631fd125dfd0b2c9f7d5962fdcd34c2b2887362abd68fe",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:28:51.234357+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7c98cd0d08368f9ecabc0e34a42ec534d9d2ea9cb11c75d7f7e1530c167f3fa1",
+    "input_tokens": 4407,
+    "output_tokens": 3465,
+    "thoughts_tokens": 2679,
+    "cost_usd": 0.009985,
+    "latency_ms": 28609,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 3465,
+        "thoughts_tokens": 2679,
+        "cost_usd": 0.009985,
+        "latency_ms": 28609,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

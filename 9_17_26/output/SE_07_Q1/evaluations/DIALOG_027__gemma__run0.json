@@ -1,0 +1,98 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student mentions annual results and percentages (87%, 82%), addressing the prompt. However, the logical flow of the conversation collapses in the second half, becoming incoherent.",
+      "evidence": "Iam all subject ananud 87%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The student followed the dialogue layout perfectly: used speaker labels, alternated turns, included an opening greeting, and provided a closing.",
+      "evidence": "Ahanaf: Hi! She sheila. wt How ane you?"
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe density of errors in spelling, grammar, and syntax. Words like 'result' (hesult), 'really' (healy), and 'fine' (find) are consistently misspelled or misused, making the text difficult to read.",
+      "evidence": "Iam find thank you. what the last annual examination hesult?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is an authentic attempt by the student rather than a memorized guide template, though the expression is very limited.",
+      "evidence": "Your ane impohve"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe orthographic errors (spelling)",
+      "Syntax breakdown",
+      "Subject-verb agreement failures"
+    ],
+    "positive_aspects": [
+      "Correct dialogue structural layout",
+      "Successful inclusion of required prompt details (exam results)"
+    ]
+  },
+  "feedback_summary": "The candidate successfully implemented the structural requirements of a dialogue, including speaker labels and a greeting/closing. However, the linguistic quality is very poor, with pervasive spelling and grammatical errors that hinder readability. While the prompt's core requirement (discussing results) was addressed via the mention of percentages, the conversation lacks coherence in its later turns.",
+  "_metadata": {
+    "task_id": "DIALOG_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "a74d7a8424fdaef5b835f88aad34170e3faafb89878173ed6cf6f1cd4e2f37c8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:01:47.553505+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "50ae42f111d2140986e91ad298c956ce9194fd9f23015f15829205974d5be1b1",
+    "input_tokens": 6049,
+    "output_tokens": 2993,
+    "thoughts_tokens": 2256,
+    "cost_usd": 0.001503,
+    "latency_ms": 292625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6049,
+        "output_tokens": 2993,
+        "thoughts_tokens": 2256,
+        "cost_usd": 0.001503,
+        "latency_ms": 292625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

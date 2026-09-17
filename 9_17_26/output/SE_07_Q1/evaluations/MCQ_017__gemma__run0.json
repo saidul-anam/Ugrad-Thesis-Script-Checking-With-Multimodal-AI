@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored marking: a (Incorrect: iv instead of iii) = 0; b (Correct) = 1; c (Correct) = 1; d (Correct) = 1; e (Correct) = 1; f (Invalid: two options provided without selection) = 0; g (Correct) = 1. Total = 5.",
+      "evidence": "a. iv civic area b. ii He earns inregularly for daily needs c. iv Adverb d. From morning to night e. iv Adjective f. ii Rough ii Loftly g. ii Household manager and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions are awarded 0 in this category per rubric.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions are awarded 0 in this category per rubric.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions are awarded 0 in this category per rubric.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection",
+      "Providing multiple options for a single item"
+    ],
+    "positive_aspects": [
+      "Strong performance in grammar identification (Adverb, Adjective)",
+      "Accurate comprehension of specific textual details"
+    ]
+  },
+  "feedback_summary": "The student correctly answered five items: b, c, d, e, and g. Item a is incorrect. Item f is scored 0 because the student provided two conflicting options ('ii Rough' and 'ii Loftly') without indicating which one was the final choice, which according to the rubric results in zero marks for that item.",
+  "_metadata": {
+    "task_id": "MCQ_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "afd089f60c530a3b14687afe31d0e1d3b39b6ccc096c78ddae0fb8db6bebc9ea",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:53:49.296025+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "afb242bfd6b10f3d83cbe400abf3125d4012e4c5260e9c42df032dcb199d0f3d",
+    "input_tokens": 6464,
+    "output_tokens": 1798,
+    "thoughts_tokens": 1095,
+    "cost_usd": 0.001186,
+    "latency_ms": 302250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6464,
+        "output_tokens": 1798,
+        "thoughts_tokens": 1095,
+        "cost_usd": 0.001186,
+        "latency_ms": 302250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

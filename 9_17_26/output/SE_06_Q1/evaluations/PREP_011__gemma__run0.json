@@ -1,0 +1,98 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct (intelligible use of 'bottom of'); Item b is correct (correct use of 'top of'); Item c is correct (correct use of 'through' despite a missing auxiliary verb); Item d is incorrect as 'along' is used without an object and does not function as a preposition in a correct English sense; Item e is incorrect as it is a phrase fragment lacking a verb, not a complete sentence.",
+      "evidence": "a) bottom of -> The data is bottom of the chart... b) Top of -> The fat is the top of the food piramid. c) Through -> They going through a wood."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragmentation",
+      "Incorrect prepositional usage (missing object)"
+    ],
+    "positive_aspects": [
+      "Correct identification and usage of 'top of' and 'through'"
+    ]
+  },
+  "feedback_summary": "The candidate correctly used prepositions in items (a), (b), and (c), earning 3 marks. Item (d) is marked wrong because 'along' is used incorrectly without an object. Item (e) is marked wrong because it is a phrase fragment and not a complete sentence.",
+  "_metadata": {
+    "task_id": "PREP_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "a5dc348cb407ca2b4278ed0a8b9685a3c51d4dad9a61af9ed368a78cce5438f8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:42:16.102359+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fcebd7749ea1d49abf9d0c77a5e306b77500d3a0c150fe3d36ae48994fec710d",
+    "input_tokens": 6280,
+    "output_tokens": 1415,
+    "thoughts_tokens": 741,
+    "cost_usd": 0.001053,
+    "latency_ms": 166750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1415,
+        "thoughts_tokens": 741,
+        "cost_usd": 0.001053,
+        "latency_ms": 166750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

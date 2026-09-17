@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, iii, iv, and v are marked correct as they capture the essential information from the passage. Item ii is marked incorrect because it mentions only Neil Armstrong and omits Edwin Aldrin, who is required by the key.",
+      "evidence": "they go to moon in; in the moon; come back to earth in; watched the news all over the world"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of key detail (Edwin Aldrin in item ii)"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of dates and locations from the text"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered 4 out of 5 items. Items i (journey to moon), iii (location on moon), iv (return to earth), and v (location of news watchers) were correct. Item ii was incorrect as it failed to name both astronauts who landed on the moon.",
+  "_metadata": {
+    "task_id": "TABLE_023",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0022",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "74c7f0a260dbfd3a64ec637271f1bd1aa46d38c80c5a0b552fd610dcac2916b5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:14:25.126838+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1ced50b4a7fd48cc97545c58fecb9f09a5f6ff08a98f827f33b07792183e9320",
+    "input_tokens": 6429,
+    "output_tokens": 2160,
+    "thoughts_tokens": 1529,
+    "cost_usd": 0.001291,
+    "latency_ms": 230625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6429,
+        "output_tokens": 2160,
+        "thoughts_tokens": 1529,
+        "cost_usd": 0.001291,
+        "latency_ms": 230625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

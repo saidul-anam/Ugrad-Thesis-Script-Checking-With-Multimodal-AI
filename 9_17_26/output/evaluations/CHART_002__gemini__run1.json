@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five data points from the chart are accurately captured and correctly attributed (Coal 46%, Natural gas 24%, Hydro 16%, Oil 12%, Nuclear 2%), correctly highlighting coal as the predominant source.",
+      "evidence": "which rate was 46%, nearly half of the chart. Natural gas consumption gives second highest source for produce electricity which is 24%"
+    },
+    "structure_format_brevity": {
+      "rationale": "Features an effective introductory statement and a concluding observation summarizing the main contributors, though the body organization is somewhat sequential rather than analytically grouped.",
+      "evidence": "The pie chart illustrates the sources of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple mechanical and grammatical errors, including sentence fragments starting with relative pronouns, subject-verb agreement slips, tense inconsistency for historical 1980 data, spelling mistakes, and missing punctuation.",
+      "evidence": "which rate was 46%, nearly half of the chart."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Includes basic comparative phrasing such as 'nearly half' and 'second highest source', but lacks varied and advanced comparative syntactical structures.",
+      "evidence": "Natural gas consumption gives second highest source for produce electricity which is 24%"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragments starting with relative pronouns (e.g., '. which rate was 46%')",
+      "Tense inconsistency when reporting 1980 historical data (mixing present and past tenses)",
+      "Spelling and article errors (e.g., 'Accroding', 'a important sector')"
+    ],
+    "positive_aspects": [
+      "Accurate reporting of all statistical figures from the prompt",
+      "Clear introductory and concluding overview framing the data",
+      "Effective use of analytical descriptors like 'nearly half' and 'second highest'"
+    ]
+  },
+  "feedback_summary": "The candidate successfully reports all chart figures accurately and frames the analysis with a clear introduction and conclusion. However, the score is constrained by grammatical flaws, sentence fragments beginning with relative pronouns, inconsistent tense usage for past data, and basic comparative vocabulary.",
+  "_metadata": {
+    "task_id": "CHART_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d36cc554d456e7526143afd7dc68af87460b09b4b133378dd0a48c701d902d0a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:06:48.123990+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c8fd94d0c9a34df043653edfad53759e960ccdce73de138e05c43e375818aa37",
+    "input_tokens": 4381,
+    "output_tokens": 3523,
+    "thoughts_tokens": 2722,
+    "cost_usd": 0.010122,
+    "latency_ms": 51141,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4381,
+        "output_tokens": 3523,
+        "thoughts_tokens": 2722,
+        "cost_usd": 0.010122,
+        "latency_ms": 51141,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items b, d, e, f, and g are correct. Item a is incorrect (ii instead of iii). Item c is incorrect and contains two options, neither of which is the correct answer (iv). Total = 5 correct items.",
+      "evidence": "b. Ans: (ii)\nd. Ans: (i)\ne. Ans: (iv)\nf. Ans: (iii)\ng. Ans: (ii)"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect identification of rural area (Item a)",
+      "Incorrect identification of adverb (Item c)"
+    ],
+    "positive_aspects": [
+      "Correct interpretation of idioms (Item b)",
+      "Accurate identification of adjectives and speaker roles"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 5 out of 7 items. Right: b, d, e, f, g. Wrong: a, c.",
+  "_metadata": {
+    "task_id": "MCQ_030",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0029",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9cb8429e2fa97291134538a70c3ab8e1084e0631590d3a365cfe6e24a8edec3c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:05:01.497519+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a30e3229da2d9c0a5eedea92cf12c2ec3a6c60c78e12956b522dba8d33199d44",
+    "input_tokens": 6470,
+    "output_tokens": 1218,
+    "thoughts_tokens": 608,
+    "cost_usd": 0.001012,
+    "latency_ms": 94219,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6470,
+        "output_tokens": 1218,
+        "thoughts_tokens": 608,
+        "cost_usd": 0.001012,
+        "latency_ms": 94219,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, and c are correct transformations with the subject before the verb and no auxiliary 'do/does/did'. Item d is incomplete, omitting the verb entirely. Item e fails because the verb is not in the correct form ('come' instead of 'comes'), which is a requirement for the mark.",
+      "evidence": "a. An: Do you know where the post office is? b. An: Do you know what the post master does 2 c. An: Do you know why the postmaster is so happy. d. An: Do you know where his children e. An: Do you know when  the post master come to the post office"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incomplete sentence structure",
+      "Subject-verb agreement error"
+    ],
+    "positive_aspects": [
+      "Correct handling of embedded clause word order in three items",
+      "Successful removal of auxiliary verbs in transformed clauses"
+    ]
+  },
+  "feedback_summary": "Items a, b, and c were marked correct (1 mark each) as they followed the required embedded clause word order. Item d was marked wrong (0) as it was an incomplete sentence. Item e was marked wrong (0) because the verb 'come' was not in the correct form ('comes') as required by the marking key. Total: 3/5.",
+  "_metadata": {
+    "task_id": "TRANS_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "16129000e04bee801bc13d2999a8930455b1c8b91aa123022b1b7a04dce437a2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:28:39.346501+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "15591b1e1c4c5dfa1898d8fd830828aa0d5bc0dcdc0ca1a760f62489f1adc958",
+    "input_tokens": 6164,
+    "output_tokens": 1543,
+    "thoughts_tokens": 836,
+    "cost_usd": 0.001079,
+    "latency_ms": 415639,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6164,
+        "output_tokens": 1543,
+        "thoughts_tokens": 836,
+        "cost_usd": 0.001079,
+        "latency_ms": 415639,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

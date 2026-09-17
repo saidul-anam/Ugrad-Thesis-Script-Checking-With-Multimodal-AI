@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. Item (a) and (c) retain direct question word order (verb before subject). Items (b), (d), and (e) incorrectly retain the auxiliary verbs 'does' or 'do'. Per the marking key, these specific errors result in zero marks for the item.",
+      "evidence": "a) Do you know where is the post office? b) Do you know what does the post master do? c) Do you know why is the postmaster So happy? d) Do you know where do his children go to School? e) Do you know when does the postmaster come to the post Office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Retention of direct question word order",
+      "Failure to remove auxiliary verbs (do/does) in embedded clauses"
+    ],
+    "positive_aspects": [
+      "Successfully used the required introductory phrase 'Do you know' for all items",
+      "Attempted all parts of the question"
+    ]
+  },
+  "feedback_summary": "The candidate failed to perform the required grammatical transformation for all items. In (a) and (c), the student kept the verb before the subject; in (b), (d), and (e), the student kept the auxiliary verbs. Items a=0, b=0, c=0, d=0, e=0. Total: 0/5.",
+  "_metadata": {
+    "task_id": "TRANS_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9ba78faf9c209b6ae24617ef180dbc9dbccd8b908b3b86a12ef36bb0f62f33ca",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:40:08.790666+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8ae6b934c8b7829dd449c8682238b34eb798ce796c0470e5f46f2e17e6670dac",
+    "input_tokens": 6160,
+    "output_tokens": 1976,
+    "thoughts_tokens": 1254,
+    "cost_usd": 0.001209,
+    "latency_ms": 81516,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6160,
+        "output_tokens": 1976,
+        "thoughts_tokens": 1254,
+        "cost_usd": 0.001209,
+        "latency_ms": 81516,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

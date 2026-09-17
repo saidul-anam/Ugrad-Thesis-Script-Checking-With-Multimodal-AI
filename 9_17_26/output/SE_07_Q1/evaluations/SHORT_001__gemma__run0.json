@@ -1,0 +1,100 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Full marks (2) for correct content in a complete sentence. Item b: Partial marks (1) as 'carpenter' is mentioned but the sentence is fragmented and includes irrelevant data. Item c: Zero (0) as the reason for financial difficulty is not provided. Item d: Partial marks (1) for providing the correct core content ('work at home from morning to night') within a broken sentence. Item e: Partial marks (1) for identifying 'childrens education', 'numbers' (mnumbegs), and 'Bangla and English' despite severe syntactic breakdown. Total: 2+1+0+1+1 = 5.",
+      "evidence": "a. Joynul and Nazma live in a small village b. ...Joynul is a carpenter... d. ...work at home from morning to night e. ...childrens education and some mnumbegs goto Bangla and English"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe syntactic breakdown",
+      "Fragmented sentence structure",
+      "Inclusion of irrelevant information (kids' ages in Q2b)"
+    ],
+    "positive_aspects": [
+      "Ability to locate correct key facts in the text",
+      "Accurate response to question (a)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered item (a) with full marks. Items (b), (d), and (e) were awarded 1 mark each because the correct factual content was present, but the responses were provided as broken fragments or syntactically corrupted sentences. Item (c) was marked 0 as it failed to state the reason for financial difficulties. Total score: 5/10.",
+  "_metadata": {
+    "task_id": "SHORT_001",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0000",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c8309def1d7579accb27abf300114ba0325dc756cd86838cb9a1a8e6728a2628",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:25:10.619598+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "13978f76c0d597b750b7b0d4931a1652b3e4341c94ba4c56263ed24ac8451ce8",
+    "input_tokens": 6450,
+    "output_tokens": 1843,
+    "thoughts_tokens": 1058,
+    "cost_usd": 0.001198,
+    "latency_ms": 194641,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6450,
+        "output_tokens": 1843,
+        "thoughts_tokens": 1058,
+        "cost_usd": 0.001198,
+        "latency_ms": 194641,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All attempted items (a, b, c, d) are incorrect because the student omitted the mandatory interrogative word (where, what, why, where) required to form the embedded clause. Item e was omitted. a: 0, b: 0, c: 0, d: 0, e: 0.",
+      "evidence": "Do you know the post office is."
+    },
+    "structure_format_brevity": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of interrogative pronouns/adverbs in embedded questions"
+    ],
+    "positive_aspects": [
+      "Attempted most of the items"
+    ]
+  },
+  "feedback_summary": "The student failed to include the question words (where, what, why) in the transformations, rendering the embedded clauses incomplete and grammatically incorrect. Item a: 0; Item b: 0; Item c: 0; Item d: 0; Item e: 0 (unattempted). Total score: 0/5.",
+  "_metadata": {
+    "task_id": "TRANS_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c202240c707e8570f7d14bcbb2dd33f8ad0bb571da313b15670be529b75cfd70",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:09:16.256709+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dc91c59a41924d639a75d197dc57817c560d7a9ee27502c497cc63bd04d0dad2",
+    "input_tokens": 6140,
+    "output_tokens": 1829,
+    "thoughts_tokens": 1190,
+    "cost_usd": 0.001163,
+    "latency_ms": 741343,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6140,
+        "output_tokens": 1829,
+        "thoughts_tokens": 1190,
+        "cost_usd": 0.001163,
+        "latency_ms": 741343,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (i) is correct. Item (ii) is incorrect (lists weak subjects instead of strong ones). Item (iii) is correct. Item (iv) is correct. Item (v) is incorrect (irrelevant text provided). Total: 1+0+1+1+0 = 3.",
+      "evidence": "class six. ... He got 8 in Bangla 9 in English and 10 in Mathe maties out of 10. ... I c T , science and Religion."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Information mismatch (swapped subjects for ii and iv)",
+      "Irrelevant content in final item"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of class and specific marks"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (i), (iii), and (iv). Item (ii) is marked wrong as it lists the subjects the student did poorly in rather than those they did well in. Item (v) is marked wrong as the response is irrelevant to the required marks.",
+  "_metadata": {
+    "task_id": "TABLE_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "9be70a8d533ece6f40274e64829c8f0a8df5efa3ae50e5db9deb8e0986e1b877",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:28:32.720976+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1935d55e6ce2bca0c2323ba0d81ce9be57cf3a31ccc6536cac877c0a760d186d",
+    "input_tokens": 6437,
+    "output_tokens": 1745,
+    "thoughts_tokens": 1101,
+    "cost_usd": 0.001167,
+    "latency_ms": 1949718,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6437,
+        "output_tokens": 1745,
+        "thoughts_tokens": 1101,
+        "cost_usd": 0.001167,
+        "latency_ms": 1949718,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

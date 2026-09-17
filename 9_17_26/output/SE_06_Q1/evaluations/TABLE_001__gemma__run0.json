@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered four out of five items. Item (a) 'Six' is correct. Item (b) 'Math . Bangla and English' is correct. Item (d) 'ICT, Science and Religion' is correct. Item (e) '6 marks each' is correct. Item (c) is incorrect because 'Out of 10' refers to the total possible marks, not the actual marks the student obtained (8, 9, and 10).",
+      "evidence": "Six; Math . Bangla and English; ICT, Science and Religion; 6 marks each"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misidentification of required data for item c"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of subject names and numeric data for most items"
+    ]
+  },
+  "feedback_summary": "Items a, b, d, and e were marked correct. Item c was marked incorrect as the candidate provided the mark ceiling rather than the marks obtained.",
+  "_metadata": {
+    "task_id": "TABLE_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f65e15e31242831e86b85cff8d5bc571dc4631b55d0e45c9f94c8d185692972b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:11:54.477162+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "440673b82fb6544b4db45549c680ea516e813d959d4540a64bd2c353ec6893fa",
+    "input_tokens": 6398,
+    "output_tokens": 1767,
+    "thoughts_tokens": 1118,
+    "cost_usd": 0.00117,
+    "latency_ms": 582671,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6398,
+        "output_tokens": 1767,
+        "thoughts_tokens": 1118,
+        "cost_usd": 0.00117,
+        "latency_ms": 582671,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

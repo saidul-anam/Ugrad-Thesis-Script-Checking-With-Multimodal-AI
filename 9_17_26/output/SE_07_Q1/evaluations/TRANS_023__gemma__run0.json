@@ -1,0 +1,96 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (a), (c), (d), and (e) were omitted. Item (b) was attempted, but the student provided an answer to the question (explaining the role of a postmaster) instead of transforming the sentence into an embedded clause as required by the prompt.",
+      "evidence": "b) Ans Do you know the postmaster take it see all post and give them #to the cerect person."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Task misunderstanding (answering the question instead of transforming it)",
+      "Omission of items"
+    ],
+    "positive_aspects": [
+      "Attempted one item"
+    ]
+  },
+  "feedback_summary": "Items (a), (c), (d), and (e) were not attempted. For item (b), the candidate failed to perform the required sentence transformation, instead providing a description of a postmaster's duties. Consequently, no marks were awarded.",
+  "_metadata": {
+    "task_id": "TRANS_023",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0022",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ee84d1f62c3ae8d538543f56282fcaa834a61894fca77b7bbac9958e24198023",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:12:57.235417+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "831c138b396728049f62e1c1735d91fcbfbb300287447006129dd2ba416bce95",
+    "input_tokens": 6115,
+    "output_tokens": 1714,
+    "thoughts_tokens": 1089,
+    "cost_usd": 0.001126,
+    "latency_ms": 144218,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6115,
+        "output_tokens": 1714,
+        "thoughts_tokens": 1089,
+        "cost_usd": 0.001126,
+        "latency_ms": 144218,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

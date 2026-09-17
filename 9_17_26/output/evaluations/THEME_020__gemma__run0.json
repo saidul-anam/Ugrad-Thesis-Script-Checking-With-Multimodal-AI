@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core contrast between passive night-dreamers and active day-dreamers, though the approach is more of a summary of the poem's logic than an articulation of an abstract theme (e.g., ambition or determination).",
+      "evidence": "But the people who dreams with open eyes, are the real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single coherent block, is concise, and contains no irrelevant padding.",
+      "evidence": "In this poem, poet shows that the people who dreams while sleeping... make their dream come true by at any cost."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in subject-verb agreement ('people who dreams') and article usage ('poet shows' instead of 'the poet shows').",
+      "evidence": "people who dreams while sleeping"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the candidate avoids verbatim copying (as per metrics), the interpretation is basic and stays very close to the surface meaning of the poem without providing genuine analytical depth.",
+      "evidence": "They make their dream come true by at any cost."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Article omission"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct identification of the poem's central contrast"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captures the central idea of the poem. The response is structurally sound and avoids plagiarism. However, the content remains a paraphrase of the poem's narrative rather than an abstract thematic analysis. The score is further limited by basic linguistic errors in subject-verb agreement and article usage.",
+  "_metadata": {
+    "task_id": "THEME_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e0c877a0d6745a50207bd5f2635a2806b85dd46783327bab96086487f9587e5d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:38:32.481758+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6602077af0bfb2aa2fb05e7f4bbe066e631b4d57e6030467a2d1e66c6641dd95",
+    "input_tokens": 4276,
+    "output_tokens": 3378,
+    "thoughts_tokens": 2666,
+    "cost_usd": 0.001441,
+    "latency_ms": 94687,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 3378,
+        "thoughts_tokens": 2666,
+        "cost_usd": 0.001441,
+        "latency_ms": 94687,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

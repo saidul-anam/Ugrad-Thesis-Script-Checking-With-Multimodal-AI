@@ -1,0 +1,96 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned all eight sentences. Comparing the provided text to the answer key: Position 1 is 'b', Position 2 is 'a' (despite the student incorrectly labeling it as 'd'), Position 3 is 'd', Position 4 is 'f', Position 5 is 'c', Position 6 is 'h', Position 7 is 'e', and Position 8 is 'g'.",
+      "evidence": "b) Once Hazrat Bayazid Bustami came home... d) She asked Bayazid... d) So he went... f) He filled the pitcher... c) But She fell asleep... h) He instead... e) She woke up... g) As he was still standing..."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect narrative sequencing",
+      "Accurate content placement"
+    ]
+  },
+  "feedback_summary": "All eight items were positioned correctly according to the answer key (b, a, d, f, c, h, e, g). Although the student mistakenly labeled the second sentence as 'd' instead of 'a', the content of the sentence is correct and in the correct position; per the rubric, this is treated as a labeling slip and not a sequencing error. Total score: 8/8.",
+  "_metadata": {
+    "task_id": "REARR_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "860d908c57cba024069c3f7c460ac1830689c5a258839a92fbdbdd3b14b95ce2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:23:46.721770+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "62ae99c1c377d5263962f2adb88e0eb29ce52566b677707e6857ee5237fdb545",
+    "input_tokens": 6559,
+    "output_tokens": 2344,
+    "thoughts_tokens": 1634,
+    "cost_usd": 0.001359,
+    "latency_ms": 468046,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6559,
+        "output_tokens": 2344,
+        "thoughts_tokens": 1634,
+        "cost_usd": 0.001359,
+        "latency_ms": 468046,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

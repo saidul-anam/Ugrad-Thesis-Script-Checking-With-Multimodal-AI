@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate systematically answers all prompt questions, covering the definition, sectoral applications, educational benefits, and potential threats of AI.",
+      "evidence": "Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized in a single continuous paragraph with an appropriate opening topic sentence, though internal cohesion is slightly weakened by run-on constructions.",
+      "evidence": "Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain."
+    },
+    "language_mechanics": {
+      "rationale": "High density of mechanical errors, including spelling mistakes ('sectores', 'presisely', 'Beacuse', 'privecy'), subject-verb agreement issues ('try', 'it also have'), and faulty punctuation/sentence structure ('time. and energy.', 'It is has become', 'make gather').",
+      "evidence": "Which task are time consuming and hard AI can easily solve them at no time. It is has become an important part of our daily life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing reflects genuine individual effort free from memorized stock templates, though the vocabulary and sentence structures remain quite basic and plain.",
+      "evidence": "So, we all should use this modern technology for the pleasure of  mankind."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'sectores', 'presisely', 'Beacuse', 'privecy')",
+      "Subject-verb agreement slips (e.g., 'technology... try', 'it also have')",
+      "Faulty punctuation and run-on sentences (e.g., misplaced full stop in 'time. and energy.', merged clauses without conjunctions or periods)",
+      "Garbled phrasing / syntactic breakdown (e.g., 'make gather', 'It is has become')"
+    ],
+    "positive_aspects": [
+      "Followed single-paragraph structural requirement without improper line breaks",
+      "Addressed all guided prompt questions logically and remained entirely on-topic",
+      "Authentic, non-formulaic expression"
+    ]
+  },
+  "feedback_summary": "The script fulfills all content requirements of the prompt within a single unified paragraph block. It effectively covers the definition, uses, educational impact, and risks of AI. However, frequent mechanical issues—such as recurrent spelling mistakes, subject-verb disagreement, and flawed sentence boundaries—place it at the lower threshold of Band 3.",
+  "_metadata": {
+    "task_id": "PARA_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "22da2324ad749376f13b161bb51036b6b4ca3611cb4a62ab7ac27f2d0ed9aa56",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:06:39.225749+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7916a09ec8afbc30a28cd1dab2f714f720561a1f9d6514511655828dbd87f201",
+    "input_tokens": 4433,
+    "output_tokens": 3180,
+    "thoughts_tokens": 2306,
+    "cost_usd": 0.00928,
+    "latency_ms": 23532,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4433,
+        "output_tokens": 3180,
+        "thoughts_tokens": 2306,
+        "cost_usd": 0.00928,
+        "latency_ms": 23532,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

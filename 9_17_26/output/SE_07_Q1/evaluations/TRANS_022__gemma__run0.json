@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. Item (a) omits the question word 'where'. Item (b) omits 'what'. Item (c) omits 'why' and uses incorrect word order ('happy is'). Item (d) omits the subject 'you' and the question word 'where'. Item (e) omits 'when' and is incoherent, while incorrectly retaining the auxiliary 'does'.",
+      "evidence": "(a) Do you know the post office is ? (b) Do you know postmaster does. (c) Do you know postmaster so happy is. (d) Do know his children go to school. (e) Do you know postmaster office does."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of interrogative pronouns/adverbs (where, what, why, when)",
+      "Incorrect clause structure",
+      "Omission of articles and subjects"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "The candidate failed to correctly transform any of the five sentences. In every instance, the essential question word (e.g., 'where', 'what', 'why') was omitted, rendering the embedded clauses grammatically incorrect. Items (a) 0, (b) 0, (c) 0, (d) 0, (e) 0.",
+  "_metadata": {
+    "task_id": "TRANS_022",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0021",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4d8f8a93d94bcb978f7d774f38db4058ce7193602b79b361a2b0baba597a2382",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:33:37.877620+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0ef9283acd687eb947c14a9207c05af4e099d77449089faf8820dcf815c6ea9e",
+    "input_tokens": 6155,
+    "output_tokens": 1945,
+    "thoughts_tokens": 1222,
+    "cost_usd": 0.001199,
+    "latency_ms": 103734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6155,
+        "output_tokens": 1945,
+        "thoughts_tokens": 1222,
+        "cost_usd": 0.001199,
+        "latency_ms": 103734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

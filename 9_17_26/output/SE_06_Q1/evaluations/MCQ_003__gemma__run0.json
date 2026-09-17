@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, c, and g match the answer key. Item b is correct despite the misspelling of 'pride'. Items d, e, and f are incorrect.",
+      "evidence": "a. iv. actuality\nb. iv. prid and joy\nc. ii. honour\ng. iv. all of i, ii & iii"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary selection error (Synonyms/Meanings)"
+    ],
+    "positive_aspects": [
+      "Correct identification of factual options"
+    ]
+  },
+  "feedback_summary": "Items a, b, c, and g were answered correctly. Items d, e, and f were answered incorrectly.",
+  "_metadata": {
+    "task_id": "MCQ_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "09e3cba6a941ed9df4323cd61183d2891dcc84bddac2cc72a40295229342530f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:04:19.299341+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dc36c0e1e624899c488c1d7b19630ebefcfbb81b688df76c7e09f5170d37f580",
+    "input_tokens": 6683,
+    "output_tokens": 1609,
+    "thoughts_tokens": 1045,
+    "cost_usd": 0.001151,
+    "latency_ms": 127469,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6683,
+        "output_tokens": 1609,
+        "thoughts_tokens": 1045,
+        "cost_usd": 0.001151,
+        "latency_ms": 127469,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

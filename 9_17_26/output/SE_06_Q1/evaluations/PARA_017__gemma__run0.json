@@ -1,0 +1,102 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a comprehensive overview of the rickshaw puller's life, covering professional challenges, economic hardship, living conditions, and social needs. It exceeds the word count but provides rich, relevant detail.",
+      "evidence": "He carries people on his rickshaw one place to another. Sometimes, he also carries goods in his rickshaw."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is correctly formatted as a single unified paragraph. It begins with a clear topic sentence that introduces the subject effectively.",
+      "evidence": "A rickshaw puller plays an imporant role in our community and society."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent grammatical and spelling errors. Notable issues include 'slam area' (slum), 'imporant', and severe syntactic breakdowns such as 'keeps his work earns the himself' and 'He afford medicines'.",
+      "evidence": "He lives in a slam area or a cheap rental room."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies heavily on standard guide-book templates for the introduction and general descriptions, although the concluding suggestions for government loans show a slight degree of independent thought.",
+      "evidence": "A rickshaw puller plays an imporant role in our community and society."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (e.g., 'slam' for 'slum', 'imporant')",
+      "Syntax/Sentence Structure (e.g., 'keeps his work earns the himself')",
+      "Missing auxiliary verbs (e.g., 'He afford medicines')"
+    ],
+    "positive_aspects": [
+      "Excellent content coverage",
+      "Correct paragraph structure",
+      "Strong empathetic perspective and logical conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong understanding of the topic and provides a well-detailed account of a rickshaw puller's life. The structure is perfect for a paragraph task. However, the score is limited to the lower end of Band 4 due to frequent mechanical errors in spelling and syntax. The use of some memorized phrasing is evident, though the student's specific suggestions for government loans provide a positive touch of originality.",
+  "_metadata": {
+    "task_id": "PARA_017",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0017",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "38c8e7ef3d3d5d25b823144418ebbea17f0f79a1700747b811bb121819b7cf8b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:14:50.786490+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f6910186b08803c558c1c9bbff2d100908a1d15af22103883209fc16db43d805",
+    "input_tokens": 6131,
+    "output_tokens": 3326,
+    "thoughts_tokens": 2522,
+    "cost_usd": 0.001611,
+    "latency_ms": 738342,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6131,
+        "output_tokens": 3326,
+        "thoughts_tokens": 2522,
+        "cost_usd": 0.001611,
+        "latency_ms": 738342,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

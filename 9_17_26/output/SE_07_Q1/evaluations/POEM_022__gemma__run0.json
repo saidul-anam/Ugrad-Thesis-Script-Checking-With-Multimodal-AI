@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) provides vague descriptors ('kind and decepline') that do not align with the specific responsibilities of feeding, clothing, and protecting mentioned in the key. Item (b) answers a question about parental care instead of the poet's suggestion about nature in 'Leisure'. Item (c) answers a question about childhood instead of the poet's feeling about life in 'Leisure'. Item (d) answers a question about the teacher's role instead of how the parent shows care. No attempted items match the required content for their respective labels.",
+      "evidence": "(a) The parent say about their responsibility. kind and decepline (b) the parent show care the child from respreet, kind and decepline. (c) the childhood is Importstaint ace ornding by the teachers. (d) the teachers describe his role honest, decipline, and kindness."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Content mismatch (answering the wrong question for the given label)",
+      "Vague/incomplete responses"
+    ],
+    "positive_aspects": [
+      "Attempted four of the required five items"
+    ]
+  },
+  "feedback_summary": "Item (a) is too vague and does not capture the key responsibilities. Items (b), (c), and (d) provide answers that correspond to other questions in the set, resulting in a mismatch with the prompts for those specific letters. Total score: 0/5.",
+  "_metadata": {
+    "task_id": "POEM_022",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0021",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "428d175c5f03ba7429e5f261f80d142730393f0d15e2e0c50af264f0f2b9377f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:31:35.772037+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "448010154499f50ed3d2ee487f733f1fa1f8605d4396cb77d97a7acf4261d080",
+    "input_tokens": 6422,
+    "output_tokens": 2133,
+    "thoughts_tokens": 1395,
+    "cost_usd": 0.001282,
+    "latency_ms": 1261280,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6422,
+        "output_tokens": 2133,
+        "thoughts_tokens": 1395,
+        "cost_usd": 0.001282,
+        "latency_ms": 1261280,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

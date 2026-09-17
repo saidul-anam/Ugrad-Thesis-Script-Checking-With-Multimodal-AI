@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Accurately represents every data point from the chart (Coal 46%, Natural Gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) without omitting categories or hallucinating external facts.",
+      "evidence": "In the chart the use of nuclear plants were the lowest with just 2%."
+    },
+    "structure_format_brevity": {
+      "rationale": "Features a functional introductory sentence and an organized ascending progression, but loses brevity towards the end by redundantly listing all figures in a single repetitive concluding run-on.",
+      "evidence": "So, we can now say in 1980, USA used coal for 46%, natural gas for 24%, hydro-electric power for 16%, using oil to make 12% and using nuclear power plant for the remoing 2%"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple spelling errors ('methed', 'mode', 'remoing'), a subject-verb agreement slip ('use... were'), and missing terminal punctuation detract from mechanical precision.",
+      "evidence": "46% of the electricity was mode from coal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates strong comparative synthesis rather than static listing, actively calculating relative percentage differences and ranking items effectively.",
+      "evidence": "Right next up is oil which makes 12% of the electricity with a staggering 10% rise from nuclear plants."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes ('methed', 'mode', 'remoing')",
+      "Subject-verb agreement error ('the use of nuclear plants were')",
+      "Punctuation omission at the end of the script"
+    ],
+    "positive_aspects": [
+      "Precise data extraction matching chart values 100%",
+      "Effective use of comparative framing and difference calculations",
+      "Strict adherence to chart data with zero external fact intrusion"
+    ]
+  },
+  "feedback_summary": "The candidate delivers a cohesive and data-accurate description of the 1980 US electricity sources, successfully highlighting relative sizes and differences. Although comparative analytical skills are strong, multiple mechanical and spelling slips place the score at the base of Band 4.",
+  "_metadata": {
+    "task_id": "CHART_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c9d4346591fb09893e7d50c1515595876bc33cdbf31cbced3972ce4cc9846b31",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:09:50.233354+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f747dfd8294921624d9a6774d8b02935e2b9e41720ac513c4bc5df2458b3d2b9",
+    "input_tokens": 4436,
+    "output_tokens": 3232,
+    "thoughts_tokens": 2422,
+    "cost_usd": 0.009411,
+    "latency_ms": 19672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4436,
+        "output_tokens": 3232,
+        "thoughts_tokens": 2422,
+        "cost_usd": 0.009411,
+        "latency_ms": 19672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

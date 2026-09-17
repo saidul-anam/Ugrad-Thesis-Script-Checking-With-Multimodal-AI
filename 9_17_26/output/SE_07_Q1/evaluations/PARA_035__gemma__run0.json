@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student covers all key components of the prompt: decorations, guests, the sequence of events (Quran recitation, results, speeches, prizes), and cultural programs. Some phrasing is confusing ('encourage their fault'), but the core content is comprehensive.",
+      "evidence": "The chif guest, students, gurdians and others some local peopl were attended the event."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is correctly formatted as a single unified paragraph with a clear opening topic sentence and a concluding thought. Length is appropriate.",
+      "evidence": "The annual Prize giving day is a very special day of my school."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors (chif, speach, annval resuld, gurdians) and grammatical slips in tense and agreement. However, the meaning remains clear throughout.",
+      "evidence": "The chif guest were welcome wan"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic and not derived from a memorized guide. The inclusion of a specific detail like 'V C of BUE' shows original thought.",
+      "evidence": "The chif guest was V C of BUE."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors",
+      "Subject-verb agreement",
+      "Tense inconsistency"
+    ],
+    "positive_aspects": [
+      "Strict adherence to single-paragraph format",
+      "Original and authentic content",
+      "Good logical sequencing of events"
+    ]
+  },
+  "feedback_summary": "The candidate has successfully produced a single-block paragraph that fully addresses the prompt with authentic details. While the structural integrity is perfect and the content is original, the script is marred by frequent spelling and grammatical errors. Per the tiebreaker for Band 4, the score is set at the lower end of the band due to these mechanical slips.",
+  "_metadata": {
+    "task_id": "PARA_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "fb7a4ee4079430bd1f39e5e6d820b9187f07550353b1b51fe6862314fdf4719a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:33:34.327453+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "31d932b8ddbfec18f5b347721dc4a8c03d2ddbcd12cb6c825fe017a36119b7f2",
+    "input_tokens": 5975,
+    "output_tokens": 1958,
+    "thoughts_tokens": 1213,
+    "cost_usd": 0.001185,
+    "latency_ms": 470280,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5975,
+        "output_tokens": 1958,
+        "thoughts_tokens": 1213,
+        "cost_usd": 0.001185,
+        "latency_ms": 470280,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

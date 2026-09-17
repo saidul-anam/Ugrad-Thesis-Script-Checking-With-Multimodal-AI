@@ -1,0 +1,100 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as it identifies the nine-month blood-soaked battle against the army. Item (b) is incorrect as it provides a general statement rather than describing *how* the day is celebrated. Item (c) is incorrect as it describes the National Parade Ground instead of the National Martyrs' Memorial. Item (d) is incorrect as it describes the purpose of the monument rather than what people *sing*. Item (e) is correct as it identifies that the 31-gun salute marks the beginning of the day. Total: 1+0+0+0+1 = 2.",
+      "evidence": "a. The war in 1971 during after a nine month long blood-soaked batll agnee against the patise army... e. The day begins with a 31- gun satute at down"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misreading the prompt (answering 'what is the monument' instead of 'what is sung')",
+      "Providing generic statements instead of specific details",
+      "Confusing different locations mentioned in the text (Parade Ground vs Memorial)"
+    ],
+    "positive_aspects": [
+      "Ability to locate key phrases in the text",
+      "Recoverable meaning despite significant spelling errors"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered items (a) and (e). Item (b) was too vague; item (c) described the wrong location; item (d) failed to answer the specific question about singing. Total score: 2/5.",
+  "_metadata": {
+    "task_id": "SHORT_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2501b16d25d35f94e0b7bf5376342b735345c0ae5146d8c1f91709d7e8bccd64",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:15:12.806567+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f3526fc14f648a25bdd1e6339495cb1f0a83f6008645543e59ee4e41f8250e45",
+    "input_tokens": 6637,
+    "output_tokens": 2073,
+    "thoughts_tokens": 1326,
+    "cost_usd": 0.001286,
+    "latency_ms": 1162375,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6637,
+        "output_tokens": 2073,
+        "thoughts_tokens": 1326,
+        "cost_usd": 0.001286,
+        "latency_ms": 1162375,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

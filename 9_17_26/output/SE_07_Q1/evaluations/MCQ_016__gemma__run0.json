@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, d, and g are correct. Item c provides a conflicting roman numeral (ii) and text (Adverb), which counts as two options. Item e provides two distinct options ((iv) Adjective and (iii) Adverb). Item f is incorrect. Total: 4.",
+      "evidence": "a) (iii) rural area; b) (ii) He earns re irregularly for daily needs; d) (i) From morning to night; g) (ii) Household manager and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Conflicting option identifiers (roman numeral vs text)",
+      "Providing multiple answers for a single item"
+    ],
+    "positive_aspects": [
+      "Accurate identification of rural context",
+      "Correct understanding of the phrase 'hand to mouth'"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items a, b, d, and g. Item c scored 0 because the roman numeral (ii) and the text 'Adverb' refer to different options. Item e scored 0 because two different options were provided. Item f was incorrect.",
+  "_metadata": {
+    "task_id": "MCQ_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c9cd62064a532aec6c1c9a7636b6c18cad5463381c46ea92ec4d494ba8126064",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:41:40.980857+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "094dd70cb7cafe6fa966092701b127a1743809b903b6ee9545128ad9bbb05fbc",
+    "input_tokens": 6481,
+    "output_tokens": 1871,
+    "thoughts_tokens": 1217,
+    "cost_usd": 0.001209,
+    "latency_ms": 82875,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6481,
+        "output_tokens": 1871,
+        "thoughts_tokens": 1217,
+        "cost_usd": 0.001209,
+        "latency_ms": 82875,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

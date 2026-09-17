@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The response is entirely off-topic. It describes a school prize ceremony and a visit from a VC, failing to mention any of the core facts about Raju's academic performance or the subjects mentioned in the source text.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as an email/letter rather than a summary paragraph. Additionally, it is the same length as the original passage (ratio 1.0), far exceeding the 1/3rd length constraint.",
+      "evidence": "To: jamil@gmail.com"
+    },
+    "language_mechanics": {
+      "rationale": "The writing exhibits severe grammatical breakdown and frequent spelling errors that fall below Class VI standards.",
+      "evidence": "every important person was came"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "As the response does not engage with the source text at all, it fails to perform the task of paraphrasing the provided content.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Complete task failure (off-topic)",
+      "Incorrect format (Email instead of Summary)",
+      "Severe syntax and spelling errors"
+    ],
+    "positive_aspects": [
+      "Maintained a consistent (though incorrect) narrative theme"
+    ]
+  },
+  "feedback_summary": "The student failed the task completely by providing a response that is entirely unrelated to the source text. Instead of summarizing Raju's school tests, the candidate wrote a letter about a prize ceremony. The response is also structurally incorrect and exceeds the allowed length.",
+  "_metadata": {
+    "task_id": "SUMMARY_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "ac40583ad7772f808895a2afc5e4e52618f85825c38637eb7b6eba9694ad21af",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:12:00.457390+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "250f2df09fb69b35e4f6ff96eeb2cdc5406281e05007ca5eb3ca71a4d7377dca",
+    "input_tokens": 6226,
+    "output_tokens": 2690,
+    "thoughts_tokens": 2020,
+    "cost_usd": 0.00143,
+    "latency_ms": 327483,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6226,
+        "output_tokens": 2690,
+        "thoughts_tokens": 2020,
+        "cost_usd": 0.00143,
+        "latency_ms": 327483,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

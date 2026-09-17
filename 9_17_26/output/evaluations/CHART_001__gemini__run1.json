@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all the data points from the chart (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%) and correctly identifies the highest and lowest sources. However, an unedited false start ('41% Natural gas Coal') slightly impacts precision.",
+      "evidence": "Coal which was the highest 46% of the total sources."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script opens with an overview sentence and organizes data sequentially. However, it introduces an unwarranted personal/moral conclusion about renewable energy in a separate paragraph, which violates the requirement for strict objective data reporting.",
+      "evidence": "If we want to save these natural ressource we should increase the use of renewabl enery."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple spelling errors ('sourcee', 'powere', 'stued', 'ressource', 'renewabl', 'enery') and punctuation/run-on issues ('in 1980 In 1980 The main', 'A Now the least') are present throughout the text.",
+      "evidence": "The main sourcee of generation electricity in USA was 41% Natural gas Coal which was the highest 46% of the total sources."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic comparative phrases ('highest', 'second highest', 'least used') are used to structure the report, but transitions remain elementary and repetitive.",
+      "evidence": "After that Natural gas the second highest option for generating electricity which was 24%."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'sourcee', 'powere', 'ressource', 'renewabl enery')",
+      "Inclusion of external opinions and recommendations not present in the graph",
+      "Run-on sentences and unedited false starts"
+    ],
+    "positive_aspects": [
+      "All five statistical categories from the pie chart are accurately cited",
+      "Correctly identifies the peak (coal) and trough (nuclear) categories"
+    ]
+  },
+  "feedback_summary": "The candidate successfully covers all statistical points and highlights the highest and lowest energy sources. However, the response includes an extraneous moral conclusion recommending renewable energy, which triggers the mandatory hard cap of 6 for external opinions/facts. Frequent spelling and mechanical errors also keep the raw score at the Band 3 level.",
+  "_metadata": {
+    "task_id": "CHART_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fa86707c99b449d255da2cce195d25313d2ea1dbf365f3b17ce4d9a9f98951ea",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:36:12.955268+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "563ac640c09934a2b67c2eeeb48987bee35a6f9d6801d8333526b1af6e73c43e",
+    "input_tokens": 4404,
+    "output_tokens": 3095,
+    "thoughts_tokens": 2235,
+    "cost_usd": 0.009059,
+    "latency_ms": 26781,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3095,
+        "thoughts_tokens": 2235,
+        "cost_usd": 0.009059,
+        "latency_ms": 26781,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

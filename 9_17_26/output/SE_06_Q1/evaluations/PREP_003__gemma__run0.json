@@ -1,0 +1,98 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Three items (a, c, e) are correct. Item (a) uses 'bottom of' correctly in an intelligible sentence. Item (c) uses 'through' correctly. Item (e) uses 'across' correctly. Item (b) is incorrect because it omits the required 'of' and is not a complete sentence ('I to score...'). Item (d) is incorrect as 'along' is not used as a preposition in a coherent sentence.",
+      "evidence": "a. bottom = He scored with his first goal in the bottom of the corner; c. through = He can pass the ball through many people; e) across = He can dribble across all players."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of required prepositional components",
+      "Incomplete sentence structure"
+    ],
+    "positive_aspects": [
+      "Correct contextual application of 'through' and 'across'"
+    ]
+  },
+  "feedback_summary": "Items a, c, and e were marked correct as they used the prepositions in intelligible sentences. Item b was marked wrong because it omitted the 'of' from the required phrase 'top of' and lacked a main verb. Item d was marked wrong as the word 'along' was not used as a preposition.",
+  "_metadata": {
+    "task_id": "PREP_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "58068ce7f7123fbcdccd1a0a4759f7ee99ed41bcbfa1a5330d1e70c167fbe48f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:05:07.716849+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e01c652e1d3e57678f2159b1fdfcd82b26f9f4c803acce06fe220870568bdf70",
+    "input_tokens": 6284,
+    "output_tokens": 2164,
+    "thoughts_tokens": 1470,
+    "cost_usd": 0.001278,
+    "latency_ms": 175891,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6284,
+        "output_tokens": 2164,
+        "thoughts_tokens": 1470,
+        "cost_usd": 0.001278,
+        "latency_ms": 175891,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

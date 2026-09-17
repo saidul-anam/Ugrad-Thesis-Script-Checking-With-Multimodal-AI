@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the start date and the participants but fails to summarize the actual events of the mission (landing, return) and ends with a nonsensical statement that obscures the core facts.",
+      "evidence": "On July 16, 1969. three American astronauts began their journey to the moon."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is well within the one-third length constraint.",
+      "evidence": "On July 16, 1969. three American astronauts began their journey to the moon. they were Neil Armstrong Michael collins and Edwin Aldrin. Their spacecraft was the first person to walk mankind."
+    },
+    "language_mechanics": {
+      "rationale": "There are punctuation errors (period instead of comma after date), capitalization errors (lowercase 'they' and 'collins'), and a complete breakdown of syntax in the final sentence.",
+      "evidence": "Their spacecraft was the first person to walk mankind."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is overwhelmingly verbatim, lifting the first two sentences almost exactly from the source text.",
+      "evidence": "three American astronauts began their journey to the moon"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Syntactic collapse",
+      "Punctuation/Capitalization"
+    ],
+    "positive_aspects": [
+      "Adherence to length constraints",
+      "Correct identification of key figures"
+    ]
+  },
+  "feedback_summary": "The summary is heavily reliant on verbatim copying (over 80%) and fails to capture the resolution of the text. While it stays within the length limit, the final sentence is grammatically incoherent, stating the spacecraft was a person. A structural hard cap of 2 was applied due to the high percentage of verbatim overlap.",
+  "_metadata": {
+    "task_id": "SUMMARY_022",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0021",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "fc75c20423af9c3e2c76beff5f1527b6dad974321590ec31f426776d8c7084e3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:09:00.664849+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "59a2e6634de7d7eb63753b62c46d6cf856a7e31e7486595245ae8bcc3c857429",
+    "input_tokens": 6014,
+    "output_tokens": 1693,
+    "thoughts_tokens": 963,
+    "cost_usd": 0.001109,
+    "latency_ms": 314609,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6014,
+        "output_tokens": 1693,
+        "thoughts_tokens": 963,
+        "cost_usd": 0.001109,
+        "latency_ms": 314609,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

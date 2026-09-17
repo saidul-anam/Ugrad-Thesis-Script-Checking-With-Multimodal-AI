@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Captures the central message that hope provides endurance and strength through adversity, though it reduces the poem's richer metaphorical layers to a generic statement.",
+      "evidence": "It never ends even in the a worse situation. It helps a man to fight until he reaches his destination."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single concise block without paragraph breaks or extraneous personal commentary.",
+      "evidence": "Hope is the thing  makes him keeps a person alive and, work hard. It never ends even in the a worse situation. It helps a man to fight until he reaches his destination."
+    },
+    "language_mechanics": {
+      "rationale": "Displays noticeable structural and grammatical slips, including a double-verb construction ('makes him keeps'), faulty comma usage, and a double article ('the a worse').",
+      "evidence": "makes him keeps a person alive and, work hard. It never ends even in the a worse situation."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Completely avoids verbatim copying from the poem and attempts to express the core idea in the student's own words, though phrasing remains basic and slightly clumsy.",
+      "evidence": "Hope is the thing  makes him keeps a person alive and, work hard."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty syntax / double verb ('makes him keeps')",
+      "Erroneous article combination ('the a worse')",
+      "Punctuation and coordination error ('alive and, work hard')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Correctly identifies the core concept of hope's resilience",
+      "Maintains brevity in a single unified paragraph"
+    ]
+  },
+  "feedback_summary": "The candidate captures the core theme of the poem in their own words without copying verbatim lines. However, sentence structure and grammar show notable weaknesses, such as faulty phrasing and double-article errors. The response sits at the baseline of Band 3 due to standard-to-basic vocabulary and mechanical errors.",
+  "_metadata": {
+    "task_id": "SUMMARY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "56bc3e402ac9b566e35d75d367b0c5d67f66d3e1231fc4a06c93fb6d77ccc096",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:15:40.760663+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2c2eaa835811cffdda04badece7954b163f0ef101b9b589150d62ad9b644514a",
+    "input_tokens": 4356,
+    "output_tokens": 2487,
+    "thoughts_tokens": 1718,
+    "cost_usd": 0.007524,
+    "latency_ms": 15500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4356,
+        "output_tokens": 2487,
+        "thoughts_tokens": 1718,
+        "cost_usd": 0.007524,
+        "latency_ms": 15500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

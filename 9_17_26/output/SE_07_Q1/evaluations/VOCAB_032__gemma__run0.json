@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'ugly' is a correct antonym for 'Beautiful'. Item (b) 'strong' is not a synonym for 'Brave' (incorrect). Item (c) 'neat' is a correct synonym for 'Clean'. Item (d) 'aged' is a correct synonym for 'Old'. Item (e) 'noisy' is a correct antonym for 'Quiet', despite the student miswriting the target word as 'sweet'. Total = 4 marks.",
+      "evidence": "a. Beautiful (Ant) - ugly; b. Brave (syn) - strong; c. clean (syn) - neat neet; d. old (syn) - aged aged; e. sweet (Ant) - noisy"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Conceptual error in synonym choice for 'Brave'"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonyms and synonyms for 4 out of 5 items"
+    ]
+  },
+  "feedback_summary": "Items a, c, d, and e are marked correct. Item b is marked incorrect as 'strong' is not a synonym for 'Brave'.",
+  "_metadata": {
+    "task_id": "VOCAB_032",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0031",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "27d87c5416a23fc53a46e10c6f41f0f958e239a8953729464a9db7b48ec3a4af",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:24:11.155535+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "615d747913d4c50c116fcd2b619b2e80d79ff782fe95b1c781a48f1fbe7d85f7",
+    "input_tokens": 6240,
+    "output_tokens": 2087,
+    "thoughts_tokens": 1416,
+    "cost_usd": 0.00125,
+    "latency_ms": 767421,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6240,
+        "output_tokens": 2087,
+        "thoughts_tokens": 1416,
+        "cost_usd": 0.00125,
+        "latency_ms": 767421,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

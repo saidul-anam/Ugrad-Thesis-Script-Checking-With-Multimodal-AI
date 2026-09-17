@@ -1,0 +1,97 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate's sequence was [a, c, f, e, g, h, d, b]. Comparing this position-by-position with the key [c, f, e, g, a, h, d, b]: Pos 1 (a vs c) is wrong; Pos 2 (c vs f) is wrong; Pos 3 (f vs e) is wrong; Pos 4 (e vs g) is wrong; Pos 5 (g vs a) is wrong; Pos 6 (h vs h) is correct; Pos 7 (d vs d) is correct; Pos 8 (b vs b) is correct. Total = 3 marks.",
+      "evidence": "Growing impatient, I made a quick decision. As the car passed by, I opened the door and jumped inside without hesitation. Feeling relieved and safe, I politely began to request the owner to drop near Lalpur."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequence positioning for the first five items"
+    ],
+    "positive_aspects": [
+      "Correctly sequenced the final three sentences of the narrative"
+    ]
+  },
+  "feedback_summary": "The student correctly positioned items 6 (h), 7 (d), and 8 (b). Items 1, 2, 3, 4, and 5 were incorrectly positioned. Total score: 3/8.",
+  "_metadata": {
+    "task_id": "REARR_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9420a55f6f11fcb68e3141f4775f3f5c7bd572b25201a6f7106b538606b5dfec",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:03:14.415227+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dd77078a94dedbae3f6f70e5e9aea87bfc21c99fdb87c384c5901cf38a9d846b",
+    "input_tokens": 6394,
+    "output_tokens": 2126,
+    "thoughts_tokens": 1412,
+    "cost_usd": 0.001277,
+    "latency_ms": 379516,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6394,
+        "output_tokens": 2126,
+        "thoughts_tokens": 1412,
+        "cost_usd": 0.001277,
+        "latency_ms": 379516,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

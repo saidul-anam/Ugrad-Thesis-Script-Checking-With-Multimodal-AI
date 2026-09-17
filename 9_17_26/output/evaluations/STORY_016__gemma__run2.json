@@ -1,0 +1,96 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student continues the stem seamlessly and maintains a logical sequence of events from the conflict to the resolution.",
+      "evidence": "it accidentally fell on th lion. This woke the lion up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and provides a clear moral; however, it fails to provide a title as explicitly required by the prompt.",
+      "evidence": "Moral of the story: Size doesn't matter. Help can come from unexpected sources."
+    },
+    "language_mechanics": {
+      "rationale": "There are significant and repetitive spelling errors (e.g., 'monse' for mouse, 'lite' for life) and unstable tense control, shifting from past to present mid-narrative.",
+      "evidence": "the lion catches the monse and holds him in his palm."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a direct reproduction of a common memorized fable (The Lion and the Mouse) with no creative deviation or original phrasing.",
+      "evidence": "the lion fell into the hunter's slick trap."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Systemic spelling mistakes (monse, lite, langhed)",
+      "Tense inconsistency (switching between past and present)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Correct inclusion of a moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extended the story stem with a coherent and logical plot. The narrative reaches a satisfactory conclusion with a relevant moral. However, the score is limited by the omission of a title, a reliance on a memorized story template, and frequent linguistic errors—most notably the repeated misspelling of 'mouse' as 'monse' and 'life' as 'lite', along with inconsistent tense usage.",
+  "_metadata": {
+    "task_id": "STORY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c3d14c5df9ddab57739025a19caf8181a1a60831836298dccf8236e8fc1208f4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:55:14.317539+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a50bdad9002a3f9a1a3ada2046dcaf7bfd14440deaab76273f489f24634d0efe",
+    "input_tokens": 4465,
+    "output_tokens": 2414,
+    "thoughts_tokens": 1684,
+    "cost_usd": 0.001171,
+    "latency_ms": 67717,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4465,
+        "output_tokens": 2414,
+        "thoughts_tokens": 1684,
+        "cost_usd": 0.001171,
+        "latency_ms": 67717,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

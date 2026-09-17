@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script directly addresses the guiding prompt questions by defining AI, noting modern tools, describing applications in education, and acknowledging the threat of job displacement, though explanations remain elementary.",
+      "evidence": "In this world many school and coleges use AI to teaching and learning. AI analysed every student in the class and told him what he is lacking of"
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate adheres to the single-paragraph convention with an introductory definition and a concluding recommendation, though internal transitions between ideas are slightly abrupt.",
+      "evidence": "Artificial Intelligence is something that we human created to to make our life much easy."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors are present, including subject-verb agreement issues ('Some says'), unjustified shifts to past tense ('analysed', 'told'), prepositional and comparative errors ('much easy', 'lacking of'), and minor spelling/typo slips ('coleges', 'imodel', duplicate 'to to').",
+      "evidence": "AI analysed every student in the class and told him what he is lacking of, how he can improve in his study."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response demonstrates genuine personal expression and names actual contemporary AI models rather than using stock guide templates, but the syntax is repetitive with repeated use of 'It can' and 'AI can'.",
+      "evidence": "It can answer everything. It can generate any type of picture. It can make a 3d imodel of a human, dog, cat etc."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement failures (e.g., 'Some says', 'take human')",
+      "Tense inconsistency (shifting into past tense 'analysed' and 'told' during present general descriptions)",
+      "Spelling, spacing, and typing errors ('coleges', 'imodel', 'to to', 'Now a days')",
+      "Incorrect comparative form and preposition usage ('much easy', 'lacking of', 'use AI to teaching')"
+    ],
+    "positive_aspects": [
+      "Maintained a single unbroken paragraph layout throughout",
+      "Directly answered all prompt questions without generic rote padding",
+      "Included relevant modern examples ('chat gpt, gemini, Grok')"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a relevant single-block paragraph addressing all required points regarding Artificial Intelligence, incorporating specific modern examples. However, the score is limited to the lower end of Band 3 due to repetitive syntax and recurrent grammatical slips involving tense consistency, subject-verb agreement, and word forms.",
+  "_metadata": {
+    "task_id": "PARA_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3215bf8b98341296783d38ded46b23dafff3717134d37de081b9480004b9689d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:14:35.191674+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6004e7375c5e41585a2587e573179ac930c96005f3835195abe7d8c278033f00",
+    "input_tokens": 4410,
+    "output_tokens": 3250,
+    "thoughts_tokens": 2362,
+    "cost_usd": 0.009448,
+    "latency_ms": 21467,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4410,
+        "output_tokens": 3250,
+        "thoughts_tokens": 2362,
+        "cost_usd": 0.009448,
+        "latency_ms": 21467,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

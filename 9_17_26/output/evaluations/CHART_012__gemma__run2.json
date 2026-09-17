@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies and reports all five data points from the chart with 100% accuracy, including the highest (Coal) and lowest (Nuclear) sources.",
+      "evidence": "The highes amount of electricity generatet by caal and the percentage is 46%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script follows the required layout (lead sentence, body, summary), but the lead sentence is a memorized template that is contextually inappropriate, referring to 'progression' and 'variation' for a static pie chart.",
+      "evidence": "This graph effective illustrate the progression of data hightlith highlighting the variation."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling and grammatical errors, including phonetic misspellings of key terms from the prompt.",
+      "evidence": "caal, neucklear, portrayas, peruspective, highes, generatet"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Basic comparative terms are used to order the data, though the phrasing is standard and lacks sophistication.",
+      "evidence": "which is 2nd highest"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors",
+      "Misuse of memorized templates",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Precise data extraction",
+      "Correct identification of maximum and minimum values"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong ability to extract and report data accurately, ensuring all values from the chart are represented. However, the quality of writing is significantly lowered by severe spelling mistakes ('caal', 'neucklear') and the use of a generic, memorized introductory paragraph that does not fit the nature of the data (referring to 'progression' in a static chart). The score is placed at the lower end of Band 3 because the accuracy of the content prevents it from falling into Band 2, despite the linguistic weaknesses.",
+  "_metadata": {
+    "task_id": "CHART_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d299ba34e59dfccf17ee24d10018d4c885a2f55ece0a91ddb0592c057ba36f3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:16:11.407392+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b5a346932ca63afa658dbe8206c7d2b4f2215564a10652405d8a88aca24f76ce",
+    "input_tokens": 4392,
+    "output_tokens": 2600,
+    "thoughts_tokens": 1827,
+    "cost_usd": 0.001219,
+    "latency_ms": 73469,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4392,
+        "output_tokens": 2600,
+        "thoughts_tokens": 1827,
+        "cost_usd": 0.001219,
+        "latency_ms": 73469,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

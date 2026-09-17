@@ -1,0 +1,102 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student addresses the prompt by mentioning the annual results of both speakers and discussing a difficult subject, but the exchange is thin and lacks depth.",
+      "evidence": "I have got A grade too. ... Mathematics is quit difficult for me."
+    },
+    "structure_format_brevity": {
+      "rationale": "The dialogue follows the correct format perfectly: it uses speaker labels, alternating turns, an opening greeting, and a closing farewell.",
+      "evidence": "Myself : Hello friend ! How are you?\nFriend : I'm fine, thank you. And you?"
+    },
+    "language_mechanics": {
+      "rationale": "The spoken register is natural for the age level, but the script is marred by frequent spelling errors and grammatical slips that occasionally hinder fluency.",
+      "evidence": "Do you recine your result ? ... Relly ! Really ! ... Thank Obey; now by"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is basic and follows a very common student template, but it is clearly the student's own attempt rather than a polished guide reproduction.",
+      "evidence": "We should more hardwork to achine our dream."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (recine, Relly, achine)",
+      "Grammatical redundancies (I'm am)",
+      "Incorrect verb usage (We should more hardwork)"
+    ],
+    "positive_aspects": [
+      "Strict adherence to dialogue formatting",
+      "Correct coverage of the prompt's required content",
+      "Appropriate conversational register"
+    ]
+  },
+  "feedback_summary": "The candidate has successfully followed the structural requirements of a dialogue and addressed all parts of the prompt. However, the overall quality is limited by significant spelling and grammatical errors ('recine' for receive, 'achine' for achieve, 'Thank Obey' for thank you/goodbye). While the response is coherent and appropriate for a Class VII student, the density of linguistic errors and the generic nature of the conversation place it in Band 3.",
+  "_metadata": {
+    "task_id": "DIALOG_015",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0014",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f8e9a4a8d34c1387c9e136913402e00ad52426eae4767df2b976cfeb0dac28be",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:48:32.926337+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fe16a1c4706f9d72e28831023cd017fe49920e4593ae3485cdc7c231fc81ab49",
+    "input_tokens": 5962,
+    "output_tokens": 4558,
+    "thoughts_tokens": 3793,
+    "cost_usd": 0.001964,
+    "latency_ms": 566500,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5962,
+        "output_tokens": 4558,
+        "thoughts_tokens": 3793,
+        "cost_usd": 0.001964,
+        "latency_ms": 566500,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

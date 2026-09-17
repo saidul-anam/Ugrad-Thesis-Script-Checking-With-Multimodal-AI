@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a smooth continuation of the stem and maintains a clear, sequential plot that follows the logic of the fable.",
+      "evidence": "The lion woke up and told he will eat the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails to provide a title and does not explicitly state a moral lesson, although the ending is positive.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is frequent inconsistency in tense (switching between present 'crashes' and past 'woke up') and several spelling errors.",
+      "evidence": "while running it crashes into the lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story is a standard, memorized version of a classic fable with no creative deviations or vivid descriptive language.",
+      "evidence": "some days later that lion fall into hanters trap."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past)",
+      "Spelling errors (neutritious, hanters, faild)",
+      "Missing structural components (Title)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Accurate continuation of the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the plot with a logical sequence of events. However, the score is limited by the absence of a title and an explicit moral lesson. Linguistically, the script suffers from frequent tense shifts and basic spelling errors. Since the vocabulary and syntax are basic and the story is a common memorized fable, it is awarded the lower bound of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a1ad5590a399ddcb097e6fd95cbc3ab4b4e80b31fab6f53a9e7b2750a24cc40e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:16:51.509515+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "edcda182e807df1ef3a358ec962638a1d7e2f336dc0ae96104663c9b9527023c",
+    "input_tokens": 4366,
+    "output_tokens": 2726,
+    "thoughts_tokens": 2038,
+    "cost_usd": 0.001254,
+    "latency_ms": 84937,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4366,
+        "output_tokens": 2726,
+        "thoughts_tokens": 2038,
+        "cost_usd": 0.001254,
+        "latency_ms": 84937,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

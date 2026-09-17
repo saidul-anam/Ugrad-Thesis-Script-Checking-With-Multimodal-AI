@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the guiding questions regarding the definition, common applications, impact on learning, and negative threats of AI, but the explanations are basic and lack analytical depth.",
+      "evidence": "Ai has revolutionized teching and learning and earing too. Any problem can be solved by Ai, not just solve they also explian their solution step by step. It has a negetive side too."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script violates the core single-block format rule of paragraph writing by splitting the text into two distinct paragraphs. Sentence sequencing is disjointed between the two sections.",
+      "evidence": "Programming and coding is the heart of financial industry. By using Ai anybody like you and me can code and programme by using Ai."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling mistakes, faulty auxiliary usage, subject-verb disagreements, and erratic punctuation throughout the text.",
+      "evidence": "Human use Ai to spreced fake news and photos. videos Ai is becoming more powerful' so the diffrence between reality and Ai is getting lessen day by day."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows authentic topical knowledge by naming contemporary AI models, but the vocabulary and sentence structures remain overly conversational and repetitive.",
+      "evidence": "Chatbot Ai like chatgpt, gemini, grok, claude can are helping humans in their daily life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'date' for data, 'inputed', 'desinged', 'teching', 'earing', 'explian', 'negetive', 'spreced', 'diffrence')",
+      "Grammatical and agreement slips (e.g., 'can are helping', 'is just a tools', 'Human use')",
+      "Punctuation and run-on sentence boundaries (e.g., 'photos. videos', 'powerful' so')"
+    ],
+    "positive_aspects": [
+      "Directly addresses the prompt's guided sub-questions",
+      "Demonstrates relevant real-world awareness of modern AI tools (ChatGPT, Claude, Gemini, Grok)"
+    ]
+  },
+  "feedback_summary": "The response adequately covers the required content points, touching upon applications, educational uses, and potential misuses of AI. However, the response is divided into multiple paragraphs, invoking the mandatory structural cap of 5 marks. In addition, the writing exhibits a heavy density of spelling, grammatical, and punctuation errors alongside colloquial syntax.",
+  "_metadata": {
+    "task_id": "PARA_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "de29b2a460bd711dd849f4c2d6af0fa690057ec68df7374051490d376f009389",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:25:57.240868+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "3e95107890fe5eb6557a4a026e578cd9dd9f46a3c709ff09614fd28d3c128063",
+    "input_tokens": 4415,
+    "output_tokens": 3009,
+    "thoughts_tokens": 2134,
+    "cost_usd": 0.008847,
+    "latency_ms": 18859,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4415,
+        "output_tokens": 3009,
+        "thoughts_tokens": 2134,
+        "cost_usd": 0.008847,
+        "latency_ms": 18859,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

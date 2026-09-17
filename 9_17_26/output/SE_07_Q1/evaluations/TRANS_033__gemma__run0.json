@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. The candidate failed to convert direct questions into embedded clauses, maintaining direct-question word order (a, c) or retaining the auxiliary verbs 'do/does' (b, d, e) in all instances.",
+      "evidence": "Do you know where is the post office? ... Do you know what does the postmaster do? ... Do you know why is the postmaster so happy ? ... Do you know where do nist children go to school? ... Do you know when does the postmaster come to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to use embedded clause word order",
+      "Retention of auxiliary verbs (do/does) in indirect questions"
+    ],
+    "positive_aspects": [
+      "Attempted all items",
+      "Correctly applied the 'Do you know' opening"
+    ]
+  },
+  "feedback_summary": "All items were marked incorrect. Item (a) and (c) kept the verb before the subject; items (b), (d), and (e) incorrectly retained the auxiliary verbs 'does' and 'do'. No marks awarded.",
+  "_metadata": {
+    "task_id": "TRANS_033",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0032",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "32f3b06b97d7389d5dbc367650c1fddc82a5afc3eafd503563fef82c40a351d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:37:12.023411+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7058fd0b0f96f20f2550ef9be23cda00046c14d511e8bc59897f0a006a1289b1",
+    "input_tokens": 6162,
+    "output_tokens": 1323,
+    "thoughts_tokens": 667,
+    "cost_usd": 0.001013,
+    "latency_ms": 1285780,
+    "attempt_number": 8,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6162,
+        "output_tokens": 1323,
+        "thoughts_tokens": 667,
+        "cost_usd": 0.001013,
+        "latency_ms": 1285780,
+        "attempt_number": 8,
+        "http_status": 200
+      }
+    ]
+  }
+}

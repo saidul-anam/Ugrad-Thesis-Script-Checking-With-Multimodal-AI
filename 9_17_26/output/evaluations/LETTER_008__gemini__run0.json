@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by clearly detailing a specific, constructive future plan after the HSC examinations.",
+      "evidence": "My HSC examination is going to finish in next month and I want to discuss about my future plan with you."
+    },
+    "structure_format_brevity": {
+      "rationale": "The structural layout of an informal letter is well-maintained, featuring the date, place, salutation, logically partitioned body paragraphs, complimentary close, signature, and envelope details.",
+      "evidence": "27 June, 2026\nAzimpur, Dhaka"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple mechanical inaccuracies, including spelling errors ('prespective', 'Addres', 'Roud'), redundant prepositions ('in next month', 'discuss about'), comma splices, and awkward phrasing ('Hoping you to stay well').",
+      "evidence": "I hope you'll like my idea and give me suggestions in your prespective should I do this or not."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing demonstrates genuine, non-templated self-expression with an authentic and contemporary aspiration rather than clichéd guide-book responses.",
+      "evidence": "I am thinking to learn how to make an AI of my own and if it goes well I'll publish it online and make it free for others too."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('prespective', 'Addres', 'Roud')",
+      "Preposition misuse ('finish in next month', 'discuss about')",
+      "Comma splices and run-on phrasing in the second paragraph"
+    ],
+    "positive_aspects": [
+      "Authentic and creative plan (learning AI development to help others)",
+      "Clear adherence to informal letter conventions and layout",
+      "Warm and natural conversational tone"
+    ]
+  },
+  "feedback_summary": "The candidate presents a well-structured and authentic informal letter that fulfills all aspects of the prompt. The layout includes essential components including the address, date, salutation, body paragraphs, sign-off, and an envelope layout. While the content and originality are commendable, mechanical slips such as spelling errors ('prespective', 'Addres') and minor grammatical issues keep the score at 4 out of 5.",
+  "_metadata": {
+    "task_id": "LETTER_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a65e59e4bd13d171db731e72fe53ecfeac70ece39f87a02b8ce6179feb7d813",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:21:38.860365+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "13ab89238b918c85081830ac62d3d75fe0c085576395c608a7b51ee5972720cf",
+    "input_tokens": 4400,
+    "output_tokens": 3170,
+    "thoughts_tokens": 2349,
+    "cost_usd": 0.009245,
+    "latency_ms": 18875,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4400,
+        "output_tokens": 3170,
+        "thoughts_tokens": 2349,
+        "cost_usd": 0.009245,
+        "latency_ms": 18875,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

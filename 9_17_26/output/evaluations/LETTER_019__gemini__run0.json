@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the topic, discussing future plans to study computer engineering at an engineering university (BUET/RUET/KUET) and improve English language skills.",
+      "evidence": "In the letter y wanted to know about my future Plan affi passing HSC Exam. Actually My HSC Exa is close to door or knocking at the door."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural components of an informal letter are present in the correct order: date, sender's place, salutation, body paragraphs, complimentary close, signature, and envelope address blocks.",
+      "evidence": "27-06-2026\nDemira, Dhaka\nBangladesh\n\nDear Messi,"
+    },
+    "language_mechanics": {
+      "rationale": "Language mechanics are heavily impaired with pervasive spelling errors ('reci', 'affi', 'Exa', 'mentlime', 'Spiking', 'listining', 'parrants'), incorrect verb forms ('can also developed'), and poor punctuation.",
+      "evidence": "In the mentlime I can also developed my English Spiking and listining Skill to cope-up with the modern age ."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter relies heavily on memorized formulaic expressions for both the opening and closing remarks, with weak, unnatural phrasing throughout the core body.",
+      "evidence": "At first take my heartiest love. Hope you great by the grace of Almighty ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'reci', 'affi', 'Exa', 'mentlime', 'Spiking', 'listining', 'parrants')",
+      "Grammatical and modal verb errors ('have a plan to belong computer engineer', 'can also developed')",
+      "Overreliance on memorized letter cliches ('take my heartiest love', 'convey my Salam')"
+    ],
+    "positive_aspects": [
+      "Complete informal letter layout including all standard headings, salutation, close, and envelope details",
+      "Directly addresses the prompt regarding post-HSC future plans"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates complete command over the structural format of an informal letter, including all six core components and envelope details. The prompt is appropriately addressed with relevant details about future academic goals. However, the script suffers from high spelling and grammatical error density alongside formulaic opening and closing templates, keeping the score at 3/5.",
+  "_metadata": {
+    "task_id": "LETTER_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "9e2f17c3279a8a14d69b1748161c0baf99aff60f3174950b0034a43a1814ac13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:25:23.606660+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5447455d50e15fa23c1413961f4f98a93e8c0e424870f3f6c820744ff4a8644e",
+    "input_tokens": 4407,
+    "output_tokens": 3224,
+    "thoughts_tokens": 2363,
+    "cost_usd": 0.009382,
+    "latency_ms": 24905,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 3224,
+        "thoughts_tokens": 2363,
+        "cost_usd": 0.009382,
+        "latency_ms": 24905,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. (a) 'show' matches the key. (b) 'beautiful' is a suitable adjective for the performance. (c) 'cheered' matches the key. (d) 'joy' is a suitable noun describing the people's reaction. (e) 'clap' functions as a noun here and is a suitable alternative to clapping/applause.",
+      "evidence": "a) show\nb) beautiful\nc) cheered\nd) joy\ne) clap"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions are not marked on structure.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions are not marked on separate language mechanics.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions are not marked on originality.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy",
+      "Good use of contextually appropriate synonyms"
+    ]
+  },
+  "feedback_summary": "The student answered all items correctly. Items (a) show, (b) beautiful, (c) cheered, (d) joy, and (e) clap are all accurate and grammatically suitable according to the passage and key.",
+  "_metadata": {
+    "task_id": "GAP_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "fce45e588f9ec96cd85c49ace96f1833c624e628bc0a9f970fa784cede49e538",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:10:45.322090+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c7ea17c03c670cfc4383a287c488f35f037d4fcebdaa18b04a5b077d1c7e85ea",
+    "input_tokens": 6220,
+    "output_tokens": 1634,
+    "thoughts_tokens": 1015,
+    "cost_usd": 0.001112,
+    "latency_ms": 224453,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6220,
+        "output_tokens": 1634,
+        "thoughts_tokens": 1015,
+        "cost_usd": 0.001112,
+        "latency_ms": 224453,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

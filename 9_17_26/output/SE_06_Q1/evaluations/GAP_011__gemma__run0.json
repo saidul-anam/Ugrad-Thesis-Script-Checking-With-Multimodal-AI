@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a ('thought') is in the key. Item b ('went') fits grammatically and contextually. Item c ('They wanted') is grammatically incorrect as it follows the subject 'Uncle Santosh'. Item d ('sold') is in the key. Item e ('hearning') is a misspelling of 'hearing', which is acceptable per the rubric.",
+      "evidence": "a) thought b) went c) They wanted d) sold e) hearning"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions have a fixed ceiling of 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions have a fixed ceiling of 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions have a fixed ceiling of 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical misalignment in item c"
+    ],
+    "positive_aspects": [
+      "Correct identification of key narrative events",
+      "Appropriate word choice for most gaps"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items a, b, d, and e. Item e ('hearning') is marked correct as a clear misspelling of 'hearing'. Item c is incorrect because 'They wanted' creates an ungrammatical sentence when paired with the subject 'Uncle Santosh'.",
+  "_metadata": {
+    "task_id": "GAP_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f8da356ad95e2e11ffca78c4f1ed4d85ed3e6ea594e89b678408570798a73768",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:41:30.557449+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "926a700c46c3a2e9d92220152520f5a295e051acde22da5d256e8a96711df3df",
+    "input_tokens": 6321,
+    "output_tokens": 1645,
+    "thoughts_tokens": 995,
+    "cost_usd": 0.001126,
+    "latency_ms": 337562,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6321,
+        "output_tokens": 1645,
+        "thoughts_tokens": 995,
+        "cost_usd": 0.001126,
+        "latency_ms": 337562,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

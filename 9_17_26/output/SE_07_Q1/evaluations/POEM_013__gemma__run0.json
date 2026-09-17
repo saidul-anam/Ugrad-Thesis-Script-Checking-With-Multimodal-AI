@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored: (a) Correct - identifies care tasks like bathing/clothing (1); (b) Correct - mentions needing time to enjoy nature (1); (c) Incorrect - the response is an incomplete sentence that merely repeats the question without stating the poet's feeling (0); (d) Correct - identifies feeding and dressing (1); (h) Correct - 'take d brakes' conveys the message of pausing to appreciate nature (1). Total: 4/5.",
+      "evidence": "a. ...wash and bath him/h... what to were; b. ...suggests that we need time to enjoy nature; d. ...feeding him/her * dresing up him/her; h. ...we should take d brakes"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incomplete sentence construction (Item c)",
+      "Phonetic spelling/Typing errors (e.g., 'messeseag', 'thak', 'd brakes')"
+    ],
+    "positive_aspects": [
+      "Accurate identification of core themes in both poems",
+      "Ability to paraphrase key concepts"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of the five attempted items. Items (a), (b), (d), and (h) all captured the required indicative content from the poems. Item (c) was marked incorrect as it was an incomplete thought that did not provide the answer to how the poet feels.",
+  "_metadata": {
+    "task_id": "POEM_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "b5b7c5ec5c68b35d69ed5c0f6ee0687e02b13533c8b31c87cc78cd605e452216",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:20:20.679849+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ce5f5692d59a0dda9871158c335e3f6c74d4c7d51eecf9eb9cd00e079eb3a23b",
+    "input_tokens": 6510,
+    "output_tokens": 1776,
+    "thoughts_tokens": 1043,
+    "cost_usd": 0.001184,
+    "latency_ms": 433280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6510,
+        "output_tokens": 1776,
+        "thoughts_tokens": 1043,
+        "cost_usd": 0.001184,
+        "latency_ms": 433280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate grasps the core message of the poem regarding the contrast between passive dreaming and taking active effort to achieve dreams, but explains it in a very basic and literal manner rather than an abstract thematic analysis.",
+      "evidence": "dreemiers who dreem day they want to see his dreem in reality so they work heard"
+    },
+    "structure_format_brevity": {
+      "rationale": "The text is written in a single block without unnecessary padding, but lacks a well-defined thematic topic sentence and mature structural development.",
+      "evidence": "All of the people watch dream in their subconcious mind."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of severe spelling errors ('nigh', 'hind', 'dreem', 'trive', 'dreemiers', 'heard') and grammatical slips ('watch dream', 'Some one dream', 'his dreem') resulting in zero marks for mechanics.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate expresses the interpretation entirely in their own words with 0% verbatim overlap from the source poem, though vocabulary is rudimentary and phrasing is flawed.",
+      "evidence": "All of the people watch dream in their subconcious mind."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent phonetic spelling errors ('nigh' for night, 'hind' for kind, 'dreem' for dream, 'trive' for true, 'dreemiers' for dreamers, 'heard' for hard)",
+      "Unnatural phrasing and collocation ('watch dream', 'dreem day')",
+      "Subject-verb agreement and pronoun inconsistency ('Some one dream', 'they want to see his dreem')"
+    ],
+    "positive_aspects": [
+      "Successfully identifies the poem's core contrast between passive night dreaming and practical daytime action",
+      "Demonstrates complete originality with zero verbatim copying from the source text"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an accurate basic comprehension of the poem's theme by recognizing that daydreamers work hard to turn their dreams into reality while nighttime dreams remain futile. Paraphrasing is fully original without direct copying. However, the score is limited by pervasive spelling mistakes and faulty sentence mechanics throughout the text.",
+  "_metadata": {
+    "task_id": "THEME_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b418e1baab05071ff9df8fb1d1baddd66f822930320703cefee116bc0edf9979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:48:00.351957+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "98f56b6bbd1c787fb73ba90e56813d38061fa28160f22fe2596cdd12041851f3",
+    "input_tokens": 4286,
+    "output_tokens": 3888,
+    "thoughts_tokens": 3059,
+    "cost_usd": 0.011006,
+    "latency_ms": 24250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4286,
+        "output_tokens": 3888,
+        "thoughts_tokens": 3059,
+        "cost_usd": 0.011006,
+        "latency_ms": 24250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

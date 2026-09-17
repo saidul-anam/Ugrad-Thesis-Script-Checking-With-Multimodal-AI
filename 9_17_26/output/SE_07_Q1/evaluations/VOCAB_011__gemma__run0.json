@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, c, d, and e are correct. Item b ('Strong') is not a synonym for 'Brave'.",
+      "evidence": "a. Beautiful (Ant) = Ugly; b. Brave (syn) = Strong; c. clean (syn) = Neat; d. old (syn) = aged; e. quiet (Ant) = loudly"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions have a fixed ceiling of 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions have a fixed ceiling of 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions have a fixed ceiling of 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Conceptual confusion between bravery and strength"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonyms and synonyms for 4 out of 5 items"
+    ]
+  },
+  "feedback_summary": "The candidate scored 4 out of 5. Item (a) 'Ugly', (c) 'Neat', (d) 'aged', and (e) 'loudly' are correct. Item (b) is incorrect as 'Strong' is not a synonym for 'Brave'.",
+  "_metadata": {
+    "task_id": "VOCAB_011",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0010",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9ef4742cd7cfa2b13b5e2601b321d0079b338c44d0ee4a9a6d4f2f9221e51380",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:43:50.723580+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3847cae985d8a14492b9fa332ab9239da63831cb13fdaa58bf02fa48026c0475",
+    "input_tokens": 6235,
+    "output_tokens": 1698,
+    "thoughts_tokens": 1066,
+    "cost_usd": 0.001133,
+    "latency_ms": 101421,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6235,
+        "output_tokens": 1698,
+        "thoughts_tokens": 1066,
+        "cost_usd": 0.001133,
+        "latency_ms": 101421,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

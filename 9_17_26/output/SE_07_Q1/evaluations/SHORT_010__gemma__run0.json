@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly according to the key. Item (a) correctly identifies the small village (2/2). Item (b) identifies furniture and repair work (2/2). Item (c) links financial difficulty to not finding work every day (2/2). Item (d) identifies that she works all day (2/2). Item (e) correctly identifies teaching Bangla, English, and numbers (2/2).",
+      "evidence": "Joynyl and Nazma live in a small village... Joynul make different types wood furniture... doesn't find work everyday... Nazma work all day... teaching them Bangla, English and some number."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions; minor errors in agreement and spelling are ignored per instructions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement (e.g., 'Joynul make', 'Joynal Ali face')",
+      "Spelling slips (e.g., 'villagens', 'satsit')"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of all key information from the text",
+      "Consistent use of full sentences"
+    ]
+  },
+  "feedback_summary": "The student successfully answered all five questions. Item (a) is correct; Item (b) is correct; Item (c) is correct; Item (d) is correct; Item (e) is correct. Despite several grammatical errors and spelling slips, the required content is present in every answer, and the meanings are clear, thus earning full marks for each item.",
+  "_metadata": {
+    "task_id": "SHORT_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "40127818540f2cb55b3036df15f6505c9ecbc6ac530de5f4c53fffeac78e1272",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:33:59.698341+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2d41ae4f03b8d9719df851ca0278db0639808249ba385df6a2dbe6ee198f8bc4",
+    "input_tokens": 6475,
+    "output_tokens": 2293,
+    "thoughts_tokens": 1553,
+    "cost_usd": 0.001335,
+    "latency_ms": 168641,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6475,
+        "output_tokens": 2293,
+        "thoughts_tokens": 1553,
+        "cost_usd": 0.001335,
+        "latency_ms": 168641,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly placed items 'b' in position 1 and 'a' in position 2. All other items (c, d, e, f, g, h) were placed in positions that do not match the answer key (Position 3: c instead of d; Position 4: d instead of f; Position 5: e instead of c; Position 6: f instead of h; Position 7: g instead of e; Position 8: h instead of g).",
+      "evidence": "b. Once Hazrat Bayzid Bustami came home to see his ailing mothen.\na. "
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions are always 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions are always 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions are always 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequencing of narrative events"
+    ],
+    "positive_aspects": [
+      "Correctly identified the opening sequence"
+    ]
+  },
+  "feedback_summary": "Items 1 (b) and 2 (a) were correctly positioned. Items 3, 4, 5, 6, 7, and 8 were incorrectly positioned. The student failed to follow the narrative logic of the story, instead listing the items in a nearly alphabetical sequence.",
+  "_metadata": {
+    "task_id": "REARR_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "5cd0123beecd60f7a6ecc5f96ad773b78555818775dd4695a06da1f323400a07",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:00:17.949568+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3f5ed8ec168d44a450af52570e15b517b59cf1d067422b8919f14063b1237c7e",
+    "input_tokens": 6498,
+    "output_tokens": 2280,
+    "thoughts_tokens": 1615,
+    "cost_usd": 0.001334,
+    "latency_ms": 911375,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6498,
+        "output_tokens": 2280,
+        "thoughts_tokens": 1615,
+        "cost_usd": 0.001334,
+        "latency_ms": 911375,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

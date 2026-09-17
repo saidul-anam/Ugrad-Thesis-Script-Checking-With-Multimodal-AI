@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The response systematically addresses all the prompt's guiding questions—defining AI, citing practical applications in teaching, freelancing, and healthcare, and noting potential threats such as job displacement and security risks—without drifting off-topic.",
+      "evidence": "It is nowadays used widely in all sectores like teaching, nursing, training etc."
+    },
+    "structure_format_brevity": {
+      "rationale": "The text maintains a single unified paragraph structure with a clear introductory definition and a concluding recommendation, though sentence boundaries occasionally blur due to weak punctuation.",
+      "evidence": "Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain."
+    },
+    "language_mechanics": {
+      "rationale": "The script displays noticeable grammatical slips (subject-verb agreement, verb forms), multiple spelling mistakes, and erratic punctuation including an errant mid-sentence period and run-on structures.",
+      "evidence": "Freelancers use AI to do their work fast which saves both time. and energy."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing reflects authentic personal phrasing rather than a rote-memorized stock template, but relies on basic sentence constructions and awkward collocations.",
+      "evidence": "Which task are time consuming and hard AI can easily solve them at no time."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes ('sectores', 'presisely', 'Beacuse', 'privecy')",
+      "Subject-verb agreement and inflection errors ('try to do', 'it also have', 'taking peoples job')",
+      "Punctuation anomalies and fused sentences ('time. and energy', missing period before 'AI is very useful')"
+    ],
+    "positive_aspects": [
+      "Maintained a single cohesive paragraph block without improper sub-divisions",
+      "Directly answered all prompt questions with fully relevant examples"
+    ]
+  },
+  "feedback_summary": "The candidate produces a relevant, single-block paragraph addressing all required aspects of Artificial Intelligence. Content coverage is complete and authentic, but overall quality is constrained to Band 3 due to frequent spelling errors, punctuation faults, and basic syntactic structures.",
+  "_metadata": {
+    "task_id": "PARA_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "22da2324ad749376f13b161bb51036b6b4ca3611cb4a62ab7ac27f2d0ed9aa56",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:06:46.560574+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "bd72a7f194d4097b9b2575b4e8d02ac1b4474ff93a09fe11b9d8b8f2d81ae764",
+    "input_tokens": 4433,
+    "output_tokens": 3290,
+    "thoughts_tokens": 2505,
+    "cost_usd": 0.009555,
+    "latency_ms": 23436,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4433,
+        "output_tokens": 3290,
+        "thoughts_tokens": 2505,
+        "cost_usd": 0.009555,
+        "latency_ms": 23436,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

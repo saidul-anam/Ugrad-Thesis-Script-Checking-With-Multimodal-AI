@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The letter directly addresses the prompt by clearly explaining multifaceted future plans following the HSC examination (coaching, engineering admission, military consideration, and language development).",
+      "evidence": "In your last letter you wanted to know about my future plan after passing the HSC Exam. So, I thought why not write abort it to you."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required informal letter layout elements are present in proper sequence: sender address, date, salutation, body text, courteous close, complimentary close, signature, and postal address block.",
+      "evidence": "Road-6, Avenue-7,\nMirpur-DOHS, Dhaka\n27 June, 2026\n\nDear Abrar,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains noticeable mechanical flaws including uncapitalized personal pronouns ('i'), spelling slip ('abort' for 'about'), uncapitalized proper noun ('english'), and missing infinitive particles/prepositions ('going do', 'trying improve').",
+      "evidence": "from where i will prepare for my university admission exam... I'm going do the gym... im also thinking... trying improve my conversational english"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate conveys authentic, personalized plans and maintains a natural conversational flow rather than relying on clichéd or memorized templates.",
+      "evidence": "It's because, im also thinking about taking my chances at joining the Bangladesh Military."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Punctuation and capitalization errors (uncapitalized 'i', 'im', and 'english')",
+      "Typographical/spelling slip ('abort' instead of 'about')",
+      "Omission of prepositions/infinitive markers ('going do', 'trying improve')"
+    ],
+    "positive_aspects": [
+      "Complete structural layout adhering to NCTB informal letter conventions",
+      "Clear, contextually relevant, and original narrative addressing post-HSC aspirations"
+    ]
+  },
+  "feedback_summary": "The response successfully incorporates all essential components of an informal letter and presents genuine, prompt-aligned content. While the structure and communicative purpose are solid, recurrent mechanical lapses in capitalization, prepositions, and spelling place the final score at the baseline of Band 4 (4/5).",
+  "_metadata": {
+    "task_id": "LETTER_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "748c3de50ecdc1dcbd9a1f82f7553d9fd834f19a31e0d792ec47af6d348352e9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:55:30.907935+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "a8ac3968618efab03bd4a6760b9507a2186eec4f8f0063ffbea1a316c16d36a4",
+    "input_tokens": 4452,
+    "output_tokens": 3387,
+    "thoughts_tokens": 2556,
+    "cost_usd": 0.009803,
+    "latency_ms": 21359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4452,
+        "output_tokens": 3387,
+        "thoughts_tokens": 2556,
+        "cost_usd": 0.009803,
+        "latency_ms": 21359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

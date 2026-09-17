@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The summary captures the essential facts: Raju's identity, his high scores in some subjects, and his low scores in others. However, it omits the crucial context of the parents' advice and his specific plan for improvement, though it notes his belief in practice.",
+      "evidence": "He got 8 in Bangela, 9 in English and 10 in Math out of 10. But, he could not do well in ICT, Science and Religion only 6 markes."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is well within the one-third length constraint (length ratio 0.29).",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple spelling errors in basic words (Bangela, markes, mone, practoe) and the syntax in the third sentence is fragmented, which is significant even for Class VI.",
+      "evidence": "Bangela... markes... mone practoe"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the word count is low and it avoids long verbatim strings, the phrasing and sequence of information closely mirror the original text's structure, showing limited independent paraphrasing.",
+      "evidence": "He got 8 in Bangela, 9 in English and 10 in Math out of 10."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Orthography)",
+      "Sentence fragmentation"
+    ],
+    "positive_aspects": [
+      "Strong adherence to length constraints",
+      "Accurate identification of core facts"
+    ]
+  },
+  "feedback_summary": "The candidate successfully condensed the passage and captured the main plot points regarding Raju's exam results. The structure and length are excellent. However, the score is limited by significant spelling errors in basic vocabulary and a reliance on the source text's phrasing and sequence. The summary is a competent Band 3 effort.",
+  "_metadata": {
+    "task_id": "SUMMARY_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f76916be4dae448cac957f2b9dacd7565db2de91cc28cb952bf0f7690829f410",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:04:45.174081+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a1a3e3910533a922ca929b77f5a2683360bc596e73bfb6f52c3a58205e0a92dc",
+    "input_tokens": 6107,
+    "output_tokens": 2440,
+    "thoughts_tokens": 1667,
+    "cost_usd": 0.001343,
+    "latency_ms": 153358,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6107,
+        "output_tokens": 2440,
+        "thoughts_tokens": 1667,
+        "cost_usd": 0.001343,
+        "latency_ms": 153358,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

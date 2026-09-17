@@ -1,0 +1,99 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct according to the key. Item (a) matches 'show'. Item (b) contains the correct word 'great' despite the extraneous 'bos'. Item (c) matches 'cheered'. Item (d) 'exitment' is a misspelling of 'excitement' but is clearly intended and thus earns the mark per the rubric. Item (e) matches 'cheers'.",
+      "evidence": "a) show b) bos great c) cheered d) exitment e) cheers"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling error in 'exitment'",
+      "Extraneous word 'bos' in item (b)"
+    ],
+    "positive_aspects": [
+      "Perfect accuracy in content retrieval",
+      "Correct part of speech used for all gaps"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identified the required words for all five gaps. Item (a) correct; item (b) correct (identified 'great'); item (c) correct; item (d) correct (intended 'excitement'); item (e) correct.",
+  "_metadata": {
+    "task_id": "GAP_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "718e0a4c5710be906833b05e93b097b00d98539fc3dc7064da27941fba81256c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:42:09.391829+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "40cb38540c41566ff511d1e05d1e6f9abd8d6f7ca4ea652a20a89cb71e5350a8",
+    "input_tokens": 6224,
+    "output_tokens": 1568,
+    "thoughts_tokens": 906,
+    "cost_usd": 0.001093,
+    "latency_ms": 327797,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6224,
+        "output_tokens": 1568,
+        "thoughts_tokens": 906,
+        "cost_usd": 0.001093,
+        "latency_ms": 327797,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

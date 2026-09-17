@@ -1,0 +1,96 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly. For the 'False' statements (a, b, d, e), the candidate provided correct factual corrections based on the passage. Item (c) was correctly identified as 'True'.",
+      "evidence": "a) False. Ans: He believess that with more practice, he can improve all his subjects b) False. Ans: He got 10 mark out of 10 in mathmatics. c) True d) False. Ans: He belive he that more practice to improve all subjects e) False. Ans: his father told his to not to lose hope."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; language mechanics are only considered if they prevent the content from being recoverable. All answers were clearly intelligible.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Full accuracy on all items",
+      "Correct application of the True/False with correction format"
+    ]
+  },
+  "feedback_summary": "The student correctly identified all statements as True or False and provided accurate corrections for every False statement. Items a, b, c, d, and e are all marked correct.",
+  "_metadata": {
+    "task_id": "TF_018",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0018",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "de629b0610fe5e988fb6fcbc1304fce2b07a7e1a51fd6108ea28a43406028db2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:14:52.114249+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ec50be23d7ceff62c3f4817b2bef26877a8ceb0ac1f8a8144233ff4437228a2c",
+    "input_tokens": 6462,
+    "output_tokens": 1695,
+    "thoughts_tokens": 1035,
+    "cost_usd": 0.001155,
+    "latency_ms": 571532,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6462,
+        "output_tokens": 1695,
+        "thoughts_tokens": 1035,
+        "cost_usd": 0.001155,
+        "latency_ms": 571532,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all the essential milestones of the passage: the launch date, the arrival at the moon, the return to Earth, and the ultimate significance of the mission.",
+      "evidence": "began the journey to the Moon on July 16, 1969. They reached to moon on July 20, 1969. They back to Earth on July 24, 1969. The The Apollo 11 misson shoved the power of science"
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is written as a single coherent block and strictly adheres to the length constraint, remaining under one-third of the original text length.",
+      "evidence": "Neil Armstrong, Micheal Collins and Edwin b Adrin began the journey to the Moon on July 16, 1969. They reached to moon on July 20, 1969. They back to Earth on July 24, 1969. The The Apollo 11 misson shoved the power of science, teamwork and numan courage,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains a high density of errors that hinder the quality of the writing, including spelling slips (Micheal, misson, numan), a missing verb ('They back to'), and an incorrect word choice ('shoved' instead of 'showed').",
+      "evidence": "They back to Earth on July 24, 1969. The The Apollo 11 misson shoved the power of science, teamwork and numan courage,"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Based on the authoritative computed metrics provided, the verbatim overlap is 0.0%, indicating the student used their own phrasing.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'numan', 'misson')",
+      "Syntactic omissions (missing verb in 'They back to')",
+      "Lexical inaccuracy ('shoved' for 'showed')"
+    ],
+    "positive_aspects": [
+      "Strong adherence to brevity constraints",
+      "Accurate extraction of key chronological data"
+    ]
+  },
+  "feedback_summary": "The student successfully condensed the text into a concise summary that retains all primary facts and dates. While the structure and originality (per metrics) are excellent, the score is limited by significant mechanical failures, including several spelling mistakes and broken sentence structures.",
+  "_metadata": {
+    "task_id": "SUMMARY_033",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0032",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "997f28e407b73d2e258851d781c6172cc74d45949aac1137aa7cc4cc177e0545",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:21:36.085463+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e0fe24bf979ddb06f317bc18e5731f70f6bfa5c53e177fed7d1cfd3ca2f41ca5",
+    "input_tokens": 6049,
+    "output_tokens": 2494,
+    "thoughts_tokens": 1631,
+    "cost_usd": 0.001353,
+    "latency_ms": 380842,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6049,
+        "output_tokens": 2494,
+        "thoughts_tokens": 1631,
+        "cost_usd": 0.001353,
+        "latency_ms": 380842,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

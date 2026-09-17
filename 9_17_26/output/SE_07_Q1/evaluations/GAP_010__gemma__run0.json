@@ -1,0 +1,99 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'Performance' is correct per key. Item (b) 'Their' is grammatically possible but fails to capture the quality of the performance mentioned in the text ('great job'). Item (c) 'cheered' is correct per key. Item (d) 'Fun' fits grammatically and agrees with the positive context of the passage. Item (e) 'noises' is too generic and does not specifically reflect the cheering/clapping mentioned in the text.",
+      "evidence": "a) Performance, b) Their, c) cheered, d) Fun, e) noises"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vague vocabulary choice",
+      "Failure to identify qualitative descriptors"
+    ],
+    "positive_aspects": [
+      "Correct identification of key verbs",
+      "Appropriate noun usage in gap (a)"
+    ]
+  },
+  "feedback_summary": "The candidate scored 3 out of 5. Items (a), (c), and (d) were marked correct. Item (b) was marked wrong because 'their' does not describe the quality of the performance as required by the text context. Item (e) was marked wrong as 'noises' is too general and doesn't match the specific cheering described in the passage.",
+  "_metadata": {
+    "task_id": "GAP_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "e452da3c0c0fda27383b64640eda0de6703be45998268afc364caa91add98a9a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:38:03.780479+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8792ee7036b2f79c96b0f15d419ab7b2a41109a9d5874a13e69d1d4e46c41adb",
+    "input_tokens": 6220,
+    "output_tokens": 2195,
+    "thoughts_tokens": 1509,
+    "cost_usd": 0.00128,
+    "latency_ms": 378734,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6220,
+        "output_tokens": 2195,
+        "thoughts_tokens": 1509,
+        "cost_usd": 0.00128,
+        "latency_ms": 378734,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate completely fails to summarize the provided text. Instead of capturing the poem's metaphor of hope as a resilient bird in the soul, the candidate writes a generic, external commentary on the social utility of hope.",
+      "evidence": "Hope is very important for human being."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single block, but it does not function as a summary; it is a short, poorly structured essay.",
+      "evidence": "They are a burden for a society."
+    },
+    "language_mechanics": {
+      "rationale": "The text contains frequent grammatical errors, including incorrect preposition usage, subject-verb agreement issues, and faulty sentence construction.",
+      "evidence": "they can work for make their hope in real."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the candidate avoids verbatim copying (0% overlap), they fail the task of paraphrasing the source. The content is original in the sense that it is not copied, but it is irrelevant to the source text.",
+      "evidence": "Hopeless people don't have any identity ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Task Misinterpretation (wrote a general paragraph instead of a summary)",
+      "Syntax/Grammar errors",
+      "Punctuation spacing errors"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source",
+      "Maintained a single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate fundamentally misunderstood the assignment. A summary requires condensing the provided text's main ideas; however, the candidate provided a generic opinion piece on hope, ignoring the poem's specific imagery and theme. Combined with weak linguistic mechanics and poor syntax, the response falls into Band 1.",
+  "_metadata": {
+    "task_id": "SUMMARY_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ed7f787ffff1a4e7f79970c11d0ee71861aaab6d3061f0d0ff303703fe90f027",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:22:13.546241+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2fbfb3f2fd3dd52768fe29c20e954f84bfcc4a5420015e6adfb365d6123a759a",
+    "input_tokens": 4385,
+    "output_tokens": 1992,
+    "thoughts_tokens": 1260,
+    "cost_usd": 0.001036,
+    "latency_ms": 56202,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4385,
+        "output_tokens": 1992,
+        "thoughts_tokens": 1260,
+        "cost_usd": 0.001036,
+        "latency_ms": 56202,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

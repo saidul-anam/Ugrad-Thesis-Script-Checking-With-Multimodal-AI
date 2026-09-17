@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (a) 'came back', (c) 'mate', and (d) 'hide' are correct antonyms/synonyms according to the key. Item (b) 'room' is too generic to be a synonym for museum, and (e) 'bring' is not a synonym for bought.",
+      "evidence": "Went back - X - came back\nFriend - someone close, neighbour, two mate - X\nShow - X - hide"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect synonym selection (item b, e)"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonyms for 'went back' and 'show'"
+    ]
+  },
+  "feedback_summary": "The student correctly answered three items: (a) came back, (c) mate, and (d) hide. Items (b) and (e) were incorrect as 'room' and 'bring' do not serve as suitable synonyms for 'museum' and 'bought' respectively.",
+  "_metadata": {
+    "task_id": "VOCAB_006",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0006",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "6a5bf5c5b0ce0e97f9033f6d0aab2534e6cd3db2ea2f4f456af649755ad1e646",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:27:54.311043+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b430aba083249789f7262a4bc42fea97d7a748f1813cb9d2cfbf228c27882568",
+    "input_tokens": 6320,
+    "output_tokens": 1462,
+    "thoughts_tokens": 830,
+    "cost_usd": 0.001071,
+    "latency_ms": 954282,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6320,
+        "output_tokens": 1462,
+        "thoughts_tokens": 830,
+        "cost_usd": 0.001071,
+        "latency_ms": 954282,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

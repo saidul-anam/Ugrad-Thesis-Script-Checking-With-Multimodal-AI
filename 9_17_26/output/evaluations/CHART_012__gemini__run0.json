@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five data points from the chart are accurately captured (Coal 46%, Natural Gas 24%, Hydro 16%, Oil 12%, Nuclear 2%), correctly noting the highest, second highest, and lowest contributors without introducing any irrelevant external facts.",
+      "evidence": "The highes amount of electricity generatet by caal and the percentage is 46%. Natural gass's percentage is 22 24% percent which is 2nd highest."
+    },
+    "structure_format_brevity": {
+      "rationale": "The description follows a recognizable analytical structure consisting of an introductory attempt, grouped data reporting, and a concluding summary, though weakened by memorized introductory filler.",
+      "evidence": "Summerising the graph chart it is seen that the large contribute in electricity came from using coal. The smallest contribution comes from Nuclear in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling mistakes and grammatical slips across the script, including adverbial errors, subject-verb agreement issues, and misspelled key words.",
+      "evidence": "The highes amount of electricity generatet by caal and the percentage is 46%. Natural gass's percentage is 22 24% percent which is 2nd highest."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The opening uses generic pre-memorized stock template sentences, and the data points in the middle are reported sequentially rather than synthesized with advanced comparative vocabulary.",
+      "evidence": "This graph effective illustrate the progression of data hightlith highlighting the variation. The portrayas offers a clear peruspective"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling errors ('portrayas', 'peruspective', 'highes', 'generatet', 'caal', 'gass', 'neucklear', 'Summerising')",
+      "Grammatical and syntactic inaccuracies ('effective illustrate', 'Different part of the pie-chart stands', 'large contribute in electricity')",
+      "Over-reliance on memorized filler sentences in the introduction"
+    ],
+    "positive_aspects": [
+      "100% accurate extraction of all chart values and percentages",
+      "Correct identification of key trends (highest source, 2nd highest, and lowest source)",
+      "Clear concluding summary emphasizing the major and minor contributors"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extracts and reports all relevant data from the pie chart, correctly identifying coal as the primary electricity source and nuclear as the lowest. The overall structure includes an introduction, body, and conclusion. However, the score is held back by pervasive spelling and grammatical mistakes, memorized introductory filler, and simple list-like reporting rather than nuanced data comparisons.",
+  "_metadata": {
+    "task_id": "CHART_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d299ba34e59dfccf17ee24d10018d4c885a2f55ece0a91ddb0592c057ba36f3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:14:37.706262+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5efe6036ecb49cf28139d28b095f320ca2ef7b7ee4f1e921f9613ceb3d3c5717",
+    "input_tokens": 4391,
+    "output_tokens": 3602,
+    "thoughts_tokens": 2684,
+    "cost_usd": 0.010322,
+    "latency_ms": 26422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4391,
+        "output_tokens": 3602,
+        "thoughts_tokens": 2684,
+        "cost_usd": 0.010322,
+        "latency_ms": 26422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

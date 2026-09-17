@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly identifies the purpose of the letter and specifies a concrete future plan (becoming a doctor and helping the poor).",
+      "evidence": "my aim is to be an honest and wise doctore"
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components (address, date, salutation, body, closing, and signature) are present and correctly positioned.",
+      "evidence": "Asulia, Savar\n27-06-2026\n\nDear friend,"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors ('doctore', 'renwed', 'pas'), syntactic omissions ('wanted to about'), and typographical repetitions.",
+      "evidence": "medical camping for helping poor and sick peopote people beside continui continuing"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies heavily on a generic, memorized template for the opening and closing of the letter, though the specific goal is stated personally.",
+      "evidence": "How are you? Hope you are good by the grace of almighty Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies (e.g., 'doctore', 'renwed')",
+      "Missing verbs in clauses (e.g., 'wanted to about')",
+      "Typographical redundancies (e.g., 'peopote people')"
+    ],
+    "positive_aspects": [
+      "Complete adherence to layout requirements",
+      "Clear and direct response to the prompt's objective"
+    ]
+  },
+  "feedback_summary": "The script is structurally flawless, containing all necessary components of an informal letter. The content directly addresses the prompt with a clear future plan. However, the score is moderated due to frequent mechanical errors in spelling and grammar, as well as the use of highly formulaic expressions in the introduction and conclusion.",
+  "_metadata": {
+    "task_id": "LETTER_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "66fbb49268653cba6f99b9995a3b3f5334080e31808dc8ea9f2946672135614e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:17:13.212646+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c10252e3b5bf064e37ead23f40d92cd01275cfd478583a51e7ae86a106135f10",
+    "input_tokens": 4356,
+    "output_tokens": 2435,
+    "thoughts_tokens": 1687,
+    "cost_usd": 0.001166,
+    "latency_ms": 70015,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4356,
+        "output_tokens": 2435,
+        "thoughts_tokens": 1687,
+        "cost_usd": 0.001166,
+        "latency_ms": 70015,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

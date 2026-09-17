@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Correct (1 mark). Item b: Too general, fails to list specific celebrations (0 marks). Item c: Omitted (0 marks). Item d: Correct, identifies patriotic songs (1 mark). Item e: Correct, identifies the 31-gun salute at dawn (1 mark). Total: 3.",
+      "evidence": "a. Happened during the war 1971 Bangladesh got independece after nine month-long blood-soaked battle against the Pakistani army. ... d. ... recite patriotic songs ... e. The victory day 31-gun respect Salut at dawn."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of question c",
+      "Lack of specific detail in question b"
+    ],
+    "positive_aspects": [
+      "Successful retrieval of core facts for a, d, and e",
+      "Ability to locate specific answers within the text"
+    ]
+  },
+  "feedback_summary": "Items a, d, and e were marked correct as they contain the required information from the key. Item b was marked wrong because 'celebrated with great enthusiasm' is a general statement and does not explain HOW the day is celebrated. Item c was not attempted.",
+  "_metadata": {
+    "task_id": "SHORT_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "cea0451de6b0339343c196f2501f64319dae18e783b3b42cb9443efb842ae582",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:27:18.636566+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dd26016c24b08f37a76162196c8e14f7e7800eb0f496fdb894d89d724520653c",
+    "input_tokens": 6594,
+    "output_tokens": 2125,
+    "thoughts_tokens": 1445,
+    "cost_usd": 0.001297,
+    "latency_ms": 219640,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6594,
+        "output_tokens": 2125,
+        "thoughts_tokens": 1445,
+        "cost_usd": 0.001297,
+        "latency_ms": 219640,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly with required content. Item a: correct location (2); Item b: correct work types listed (2); Item c: correct reason for financial difficulty (2); Item d: correct daily routine (2); Item e: correct educational contribution (2). Total = 10.",
+      "evidence": "a) Joynul and Nazma live in a small village... b) Joynul hire by the villagers to make chairs... c) Joynul Ali faces financial difficulties... because he does not find works everyday... d) Nazman does all the work at home... e) Nazman sits with Mitu and Nitu, and teaches them alphabets and numbers."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor grammatical slips (e.g., 'Joynul hire' instead of 'is hired')",
+      "Repetitive wording ('difficulties difficult')"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of information from the text",
+      "Consistent use of complete sentences"
+    ]
+  },
+  "feedback_summary": "The student has provided correct answers for all five items. Item a is correct (2), item b provides the necessary details about furniture and repair work (2), item c correctly identifies the irregular nature of work (2), item d covers the home duties (2), and item e correctly describes the teaching of alphabets and numbers (2). Total score: 10/10.",
+  "_metadata": {
+    "task_id": "SHORT_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4c775c545124ecd85506c427423cde0442a9cac171d55fc218902b4c5da394cd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:07:12.443986+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6e0c485e05c45563dac89fe2b091e88d21c30d655e1b136a15323d7af4b5e530",
+    "input_tokens": 6524,
+    "output_tokens": 1708,
+    "thoughts_tokens": 971,
+    "cost_usd": 0.001165,
+    "latency_ms": 617546,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6524,
+        "output_tokens": 1708,
+        "thoughts_tokens": 971,
+        "cost_usd": 0.001165,
+        "latency_ms": 617546,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

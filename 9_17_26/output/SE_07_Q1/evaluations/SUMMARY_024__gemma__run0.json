@@ -1,0 +1,101 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures all core events: the launch date, the identity of the astronauts, the destination, the landing, and the safe return.",
+      "evidence": "three American astronauts began their journey to the Moon... the astronauts came back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is presented as a single coherent block, but it fails the brevity constraint by exceeding one-third of the original text length.",
+      "evidence": "On July 16, 1969... safely to Earth."
+    },
+    "language_mechanics": {
+      "rationale": "The syntax is generally clear, but there are notable typos in the names and a missing auxiliary verb in the third sentence.",
+      "evidence": "Michael e Collins, and En Edwin Aldrin. Their spacecraft called Apollo 11"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response lacks originality; the majority of the sentences are lifted verbatim from the source text, exceeding the 50% threshold.",
+      "evidence": "three American astronauts began their journey to the Moon."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Exceeding length constraints",
+      "Minor spelling slips"
+    ],
+    "positive_aspects": [
+      "Accurate factual coverage",
+      "Correct paragraph formatting"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good understanding of the text's content by including all key milestones of the Apollo 11 mission. However, the response is largely a collection of copied sentences rather than a paraphrase, and it exceeds the required length limit. Due to the high verbatim overlap (63.49%) and the length ratio, a structural hard cap of 2 is applied.",
+  "_metadata": {
+    "task_id": "SUMMARY_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "86ac06a96cb0f1a8d3034cdd0f12418ae6a43672702ebac61bce7edbf74029ac",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:53:27.667952+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "90c77a626d48b45c89a904999c53981adb327f6cc92d5f8c8c7f513209167cb3",
+    "input_tokens": 6070,
+    "output_tokens": 1884,
+    "thoughts_tokens": 1160,
+    "cost_usd": 0.001172,
+    "latency_ms": 1293483,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6070,
+        "output_tokens": 1884,
+        "thoughts_tokens": 1160,
+        "cost_usd": 0.001172,
+        "latency_ms": 1293483,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

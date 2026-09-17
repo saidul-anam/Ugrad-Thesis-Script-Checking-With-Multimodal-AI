@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides a clear, logical future plan including a primary goal and a backup plan.",
+      "evidence": "In your letter you wanted to know about my future plan after HSC. In this letter, I'm going to discribe my plan."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components for an informal letter (Address, Date, Salutation, Body, Close, and Signature) are present.",
+      "evidence": "27 June, 2026\n7/A Dhanmondi 32, Dhaka\nDear Luffy... Your ever\nFihaz"
+    },
+    "language_mechanics": {
+      "rationale": "There are several noticeable spelling errors and instances of awkward phrasing/fragmented syntax, though the meaning remains clear.",
+      "evidence": "discribe my plan... preparing for addmission... from the very litte"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter uses some common template phrases, but the internal logic regarding the 'foolish mindset' of losing hope shows some authentic thought.",
+      "evidence": "Losing hope of life after that is a foolish mindset. That's why if medical doesn't work out, Dhaka University is my back up plan."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (discribe, addmission)",
+      "Syntactic fragments (from the very litte)"
+    ],
+    "positive_aspects": [
+      "Full adherence to layout requirements",
+      "Direct and relevant content"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a structurally complete informal letter that directly fulfills the prompt. The content is well-organized and purposeful. The score is slightly moderated due to frequent spelling mistakes and some awkward phrasing in the second paragraph. However, the clarity of the message and the correct format place it in Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2c562c70a50a9e58d5bdd933832902a6bab9b1dbc5fbe46307343d7611456e77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:31:30.713354+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "28509b956e0d1da6f48bca46f83efef23b130fba64e0b67a4dd24d240348130e",
+    "input_tokens": 4430,
+    "output_tokens": 2093,
+    "thoughts_tokens": 1343,
+    "cost_usd": 0.001071,
+    "latency_ms": 59077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4430,
+        "output_tokens": 2093,
+        "thoughts_tokens": 1343,
+        "cost_usd": 0.001071,
+        "latency_ms": 59077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

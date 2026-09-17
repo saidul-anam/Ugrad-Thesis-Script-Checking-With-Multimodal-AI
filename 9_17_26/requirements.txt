@@ -1,0 +1,10 @@
+# Python 3.11+
+pymupdf          # PDF -> images (Stage 1)
+pydantic>=2      # schema validation for config + transcript models
+pyyaml           # config.yaml loading
+tenacity         # retry with exponential backoff on 429/5xx
+httpx            # HTTP client for OpenRouter
+rich             # progress bars + tables
+google-genai     # Vertex / Gemini client (grading stage reuses this interface)
+pyspellchecker   # Stage 4 ONLY: peer error-rate flag. Measures, never edits transcripts
+python-dotenv    # load .env (evaluation stage)

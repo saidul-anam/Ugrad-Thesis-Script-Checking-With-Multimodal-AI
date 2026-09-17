@@ -1,0 +1,96 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Correct location mentioned (2). Item b: Correct profession and work types mentioned (2). Item c: Correct reason for financial difficulty provided (2). Item d: Correct description of daily work provided (2). Item e: Correct description of teaching activities provided (2). All responses are in full, understandable sentences.",
+      "evidence": "Mrs. Nazma and Mr Joynul Ali live in a small village with their daughters."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not awarded separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanical marks are not awarded separately. Minor slips like 'wonke' do not cost marks per rubric.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not awarded separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling slips (e.g., 'wonke' for 'work')"
+    ],
+    "positive_aspects": [
+      "Full sentence construction",
+      "Accurate retrieval of all key information"
+    ]
+  },
+  "feedback_summary": "The candidate answered all five items correctly. a: correct location (2); b: correct profession and tasks (2); c: correct reason for financial hardship (2); d: correct daily activity (2); e: correct educational contribution (2). Total = 10/10.",
+  "_metadata": {
+    "task_id": "SHORT_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "090ee19dc0733bbb00e3e812aef08c27b76c71b6100d8665dc3babf45f7885d4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:58:07.417764+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1c0bc49d6027bf230930ef4c33845edb862d28408d52f3556a4c2d26674213ea",
+    "input_tokens": 6546,
+    "output_tokens": 2239,
+    "thoughts_tokens": 1568,
+    "cost_usd": 0.001326,
+    "latency_ms": 748984,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6546,
+        "output_tokens": 2239,
+        "thoughts_tokens": 1568,
+        "cost_usd": 0.001326,
+        "latency_ms": 748984,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All 5 energy sources and their exact percentage values from the 1980 chart are accurately cited without omission or factual error, correctly highlighting the highest (coal) and lowest (nuclear).",
+      "evidence": "In the chart the use of nuclear plants were the lowest with just 2%... the second largest one is natural gas with 24% and the most used methed was coal."
+    },
+    "structure_format_brevity": {
+      "rationale": "Features an appropriate introductory lead sentence and sequences the data clearly from lowest to highest, though the conclusion unnecessarily lists all data points a second time.",
+      "evidence": "The following Pie-chart shows the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Exhibits tense inconsistency when describing historical 1980 data (mixing past and present), spelling mistakes ('methed', 'mode', 'remoing'), and lacks a terminal full stop.",
+      "evidence": "oil which makes 12% of the electricity... most used methed was coal. 46% of the electricity was mode from coal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Incorporates comparative phrasing and percentage calculations, though the register becomes overly informal and conversational in places.",
+      "evidence": "Now comes the big ones. The second largest one is natural gas with 24%"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('methed', 'mode', 'remoing')",
+      "Tense inconsistency (mixing past 'were/made' with present 'makes')",
+      "Missing terminal punctuation and run-on sentence structure at the end"
+    ],
+    "positive_aspects": [
+      "100% data accuracy across all five categories",
+      "Correct identification of extreme values (highest and lowest)",
+      "Adheres strictly to the given chart with zero extraneous facts or personal bias"
+    ]
+  },
+  "feedback_summary": "The script accurately represents all data points from the chart and correctly identifies the primary trends. To improve, the candidate should maintain consistent past tense for historical data, eliminate spelling slips, avoid colloquial expressions, and provide an analytical summary rather than repeating the raw percentages.",
+  "_metadata": {
+    "task_id": "CHART_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c9d4346591fb09893e7d50c1515595876bc33cdbf31cbced3972ce4cc9846b31",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:09:42.212780+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "fe30fcee2a21766411a0fa95468c62ae76735290f825822609f2c2277951de0c",
+    "input_tokens": 4436,
+    "output_tokens": 3431,
+    "thoughts_tokens": 2624,
+    "cost_usd": 0.009908,
+    "latency_ms": 20983,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4436,
+        "output_tokens": 3431,
+        "thoughts_tokens": 2624,
+        "cost_usd": 0.009908,
+        "latency_ms": 20983,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

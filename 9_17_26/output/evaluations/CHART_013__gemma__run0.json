@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately extracts all data points from the chart and identifies the highest source, but significant space is wasted on non-chart information.",
+      "evidence": "It was used 46% and it is the hieghost amount. Natural gas nits also used largely in USA electricity. It was used 24%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response begins with a lead sentence, but the structure collapses in the second paragraph, which shifts from data analysis to a general discussion on environment and energy types.",
+      "evidence": "we know if we bearn coal it reduce carbon dy oxide whitch is harmful for atmosphere and it is cause of acid rain."
+    },
+    "language_mechanics": {
+      "rationale": "Extremely high error density in spelling, subject-verb agreement, and tense. Multiple words are distorted beyond standard English.",
+      "evidence": "hieghost amount... bearn coal... carbon dy oxide whitch... atmos phan e... Nucleon"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparisons are extremely basic and grammatically fractured. There is no use of sophisticated analytical vocabulary.",
+      "evidence": "coal are was use largely than natural gas"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe orthographic/spelling errors",
+      "Tense inconsistency and Subject-Verb Agreement failure",
+      "Inclusion of external moral/scientific opinions"
+    ],
+    "positive_aspects": [
+      "Accurate reproduction of numerical data",
+      "Included an introductory sentence"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the data points but failed the primary objective of the task: objective data analysis. The second half of the response consists of external facts and personal opinions regarding pollution and renewable energy, which triggers a structural cap (though the raw score was already below the cap). Language mechanics are very poor, with pervasive spelling errors ('hieghost', 'bearn', 'atmos phan e') and broken syntax. The response reads more like a basic environmental essay than a chart description.",
+  "_metadata": {
+    "task_id": "CHART_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "0e949a561cb5867d242551888845719227c8cd7cd74bbd6c74aad8bfb6878879",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:25:13.469837+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "96b9b69952f9a47093605c51c7202b6a00dac2a5a5bf7f6c00ca7e098514d00f",
+    "input_tokens": 4470,
+    "output_tokens": 1851,
+    "thoughts_tokens": 1065,
+    "cost_usd": 0.001002,
+    "latency_ms": 53577,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4470,
+        "output_tokens": 1851,
+        "thoughts_tokens": 1065,
+        "cost_usd": 0.001002,
+        "latency_ms": 53577,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

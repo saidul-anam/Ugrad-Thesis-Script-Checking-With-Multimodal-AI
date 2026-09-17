@@ -1,0 +1,98 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly provided the required relation for all five items: a (Ugly - Antonym), b (Fearless - Synonym), c (Tidy - Synonym), d (anicent - Synonym, clearly intended as 'ancient'), and e (Loud - Antonym).",
+      "evidence": "a. Beautiful (Antonym)- Ugly b. Brave (synonym)- Fearless c. Clean (synonym)- Tidy d. Old (synonym)-  anicent e. Quiet (Antonym)- Loud"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling error ('anicent' instead of 'ancient')"
+    ],
+    "positive_aspects": [
+      "Full accuracy in identifying antonyms and synonyms",
+      "Complete attempt of all items"
+    ]
+  },
+  "feedback_summary": "All five items were answered correctly. Item (a) Ugly, (b) Fearless, (c) Tidy, (d) anicent, and (e) Loud all match the required vocabulary relations. The misspelling of 'ancient' as 'anicent' in item (d) does not cost a mark according to the rubric.",
+  "_metadata": {
+    "task_id": "VOCAB_009",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0008",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "e7a633a2057eb1820865e44e5b649371491a580a8a589a2b6a3dc4f59bc91761",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:37:15.136130+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "af72136ab2529ad9357f13a2d0eab08ac647ea57d48b9867baddf53e4093a6ad",
+    "input_tokens": 6239,
+    "output_tokens": 1876,
+    "thoughts_tokens": 1198,
+    "cost_usd": 0.001187,
+    "latency_ms": 1040969,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6239,
+        "output_tokens": 1876,
+        "thoughts_tokens": 1198,
+        "cost_usd": 0.001187,
+        "latency_ms": 1040969,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by clearly detailing specific future plans after the HSC exam, including a tour, university admission preparation, and social work.",
+      "evidence": "Now, I will share my future Plan after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate includes key informal letter components including date, address, salutation, body paragraphs, complimentary close, and envelope details, though layout sequencing has minor flaws.",
+      "evidence": "27 June, 2026\nBhuighan-107, Dhaka\nDear Alif,"
+    },
+    "language_mechanics": {
+      "rationale": "The response contains pervasive spelling errors and recurrent faulty verb structures (such as modal/future auxiliary with past participle), which severely impacts grammatical mechanics.",
+      "evidence": "That's why I'll admitted in a engeoneiering based addmission coaching center. After that I'll Prefared myself."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative progression reflects authentic personal intent and genuine thought rather than relying solely on a generic memorised template.",
+      "evidence": "In the end of my addmission journy I want to some social work. That's why I'll engaged myself with some social work community."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'compliting', 'myshelf', 'Engeoneiering', 'addmission', 'Prefared', 'plane', 'freind')",
+      "Incorrect verb structures with future auxiliaries (e.g., 'will compliting', 'I'll admitted', 'I'll engaged')"
+    ],
+    "positive_aspects": [
+      "Direct and relevant response to the prompt with specific personal ambitions",
+      "Clear paragraph organization and appropriate informal letter format"
+    ]
+  },
+  "feedback_summary": "The candidate successfully covers the required topic by providing concrete personal plans post-HSC examination within an appropriate letter format. However, serious spelling inaccuracies and flawed verb phrase constructions weaken the overall language quality.",
+  "_metadata": {
+    "task_id": "LETTER_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d9e382573f2e56a9e366272a99d828aac1d4a86f9a9935ddaba9f041341ddfeb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:11.535086+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "975e4ea6fe7d7f5ad5035393bc2a080d230910fb96f4bee6fa3f26cfca3ee017",
+    "input_tokens": 4462,
+    "output_tokens": 4342,
+    "thoughts_tokens": 3566,
+    "cost_usd": 0.012194,
+    "latency_ms": 32219,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4462,
+        "output_tokens": 4342,
+        "thoughts_tokens": 3566,
+        "cost_usd": 0.012194,
+        "latency_ms": 32219,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

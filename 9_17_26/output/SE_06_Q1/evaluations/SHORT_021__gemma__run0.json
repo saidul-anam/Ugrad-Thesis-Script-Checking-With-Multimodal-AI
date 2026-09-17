@@ -1,0 +1,96 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as it identifies the battle and the achievement of independence. Item (b) is incorrect as 'great enthusiasm' is a description of mood, not the 'how' (the specific actions) required by the key. Item (c) is incorrect as it describes general programs rather than the importance of the Memorial. Item (d) is incorrect as it describes the start of the day rather than the songs sung. Item (e) was not attempted.",
+      "evidence": "Bangladesh got independence  after a nine-month-long blood-soaked battle against the pakistani army,"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misalignment of answers (providing information for one question under another)",
+      "Generic responses lacking specific key details"
+    ],
+    "positive_aspects": [
+      "Correct identification of the historical context in item (a)"
+    ]
+  },
+  "feedback_summary": "Item (a) is marked correct. Item (b) is marked wrong for providing a generic statement instead of specific celebration methods. Items (c) and (d) are marked wrong because the student provided information about celebrations and parades instead of the memorial's importance and the songs sung. Item (e) was not attempted.",
+  "_metadata": {
+    "task_id": "SHORT_021",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0021",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2d10ce4dba428d3e69b21e710ee45625896b436ee6d39029a5eb5c3020413b37",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:23:21.481006+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1898085316cbe10d1b1a86189d0e97f14f27765dba1b723f4e0cdf3d805c3d74",
+    "input_tokens": 6613,
+    "output_tokens": 2241,
+    "thoughts_tokens": 1556,
+    "cost_usd": 0.001334,
+    "latency_ms": 236641,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6613,
+        "output_tokens": 2241,
+        "thoughts_tokens": 1556,
+        "cost_usd": 0.001334,
+        "latency_ms": 236641,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

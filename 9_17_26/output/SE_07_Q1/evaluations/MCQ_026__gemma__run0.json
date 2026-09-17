@@ -1,0 +1,98 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified 6 out of 7 items. Items (a), (b), (c), (d), (f), and (g) match the answer key. Item (e) is incorrect (student chose iii; key is iv). Misspellings in the transcript of the options do not penalize the mark as the correct option identifiers were provided.",
+      "evidence": "(a) (iii) → rural area (b) (ii) → He eatons iгegulαгly Sогe daily needs. (c) (iv) → Adveгob (d) (i) → Fгoоm morning to night. (e) (iii) → Adveгob (f) (iii) → Rough. (g) (ii) → Household managегs and caregiвегs."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect part-of-speech identification (Item e)"
+    ],
+    "positive_aspects": [
+      "Strong reading comprehension",
+      "Consistent application of option identifiers"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 6 items: (a), (b), (c), (d), (f), and (g). Item (e) was marked wrong as the student selected option (iii) instead of the correct option (iv).",
+  "_metadata": {
+    "task_id": "MCQ_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f75f8e1d4fabb171d9e615338508d0e190fbb5e9211d2dc42e01f18cb64533a6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:01:19.759200+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "44f9d965a879d81b8e3d08386f25b56e0e2a6a631093ad324c8cd3be6b078213",
+    "input_tokens": 6517,
+    "output_tokens": 2097,
+    "thoughts_tokens": 1395,
+    "cost_usd": 0.001281,
+    "latency_ms": 264859,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6517,
+        "output_tokens": 2097,
+        "thoughts_tokens": 1395,
+        "cost_usd": 0.001281,
+        "latency_ms": 264859,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

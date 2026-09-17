@@ -1,0 +1,103 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the plot of the 'Two Friends and the Bear' fable in a logical sequence. However, they provided only 9 new sentences, failing to meet the requirement of 'at least ten new sentences'.",
+      "evidence": "They got frightened. one of them climbed on a tree. The other friend no see a alternative, lay down without breathing his face. The bear came and smelt the friend. bear think he is dead and went to the forest. The other friend who climbed a tree down down and come out his friend. He says his friend the bear what what say on your ear. The friend says, bear says me a good advise other a friend says what is the advise. The friend says the advise is \"don't trust a friend who leave you alone in danger\"."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear resolution and provides an explicit moral lesson; however, the candidate failed to provide a suitable title as requested in the prompt.",
+      "evidence": "the advise is \"don't trust a friend who leave you alone in danger\"."
+    },
+    "language_mechanics": {
+      "rationale": "There is significant instability in tense, shifting haphazardly between past ('climbed', 'smelt') and present ('says', 'think', 'come out'). There are also severe syntactical errors that hinder fluency.",
+      "evidence": "The other friend who climbed a tree down down and come out his friend."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a very basic reproduction of the common fable. It lacks any descriptive detail or narrative expansion beyond the barest plot points.",
+      "evidence": "The bear came and smelt the friend."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency",
+      "Missing title",
+      "Syntactic breakdowns",
+      "Sentence count deficit"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Clear resolution",
+      "Correct identification of the story's moral"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the story's plot and provides a clear moral ending. However, the score is limited by the omission of a title and a failure to meet the minimum sentence count (9 instead of 10). Linguistically, the script is weak, characterized by frequent tense shifts and poor sentence structure (e.g., 'down down and come out his friend').",
+  "_metadata": {
+    "task_id": "STORY_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "cf08553f20d0306af337102632eab9fa185146507b4ff921f85a87579cb3d001",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:30:16.244573+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ef1a8792706c31c18df2af305386e30cbd49c77935860a852cb93216bc1dfe8b",
+    "input_tokens": 6064,
+    "output_tokens": 3281,
+    "thoughts_tokens": 2416,
+    "cost_usd": 0.001591,
+    "latency_ms": 798469,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6064,
+        "output_tokens": 3281,
+        "thoughts_tokens": 2416,
+        "cost_usd": 0.001591,
+        "latency_ms": 798469,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

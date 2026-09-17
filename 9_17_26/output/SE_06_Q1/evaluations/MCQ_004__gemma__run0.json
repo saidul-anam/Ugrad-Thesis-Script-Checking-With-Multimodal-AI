@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All attempted items (a, b, c, d, f, g) are incorrect as the student provided parts of speech instead of selecting the correct alternatives from the provided options. Item (e) was omitted.",
+      "evidence": "(a) addjactive (b) noun (c) comprozation (d) verb (g) Preprosition (f) addjactive"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Task Misinterpretation (providing parts of speech instead of MCQ answers)"
+    ],
+    "positive_aspects": [
+      "Attempted the layout of the question"
+    ]
+  },
+  "feedback_summary": "The student completely misunderstood the requirements of the MCQ task. Instead of choosing the correct meaning or word from the options provided in the question, the student listed various parts of speech (e.g., 'noun', 'verb', 'addjactive'). Consequently, items a, b, c, d, f, and g are incorrect, and item e was not attempted. Total score: 0/7.",
+  "_metadata": {
+    "task_id": "MCQ_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "8c90c03cf2a42ed8f451604ea29892694b27b63ddfc981efee77eef805f87960",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:11:18.326984+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cb5fcd65bd70a58f7a1fbec808c5d1c4ed4f0a4fb22cdb22c62eeeb58b3cef7d",
+    "input_tokens": 6695,
+    "output_tokens": 1467,
+    "thoughts_tokens": 824,
+    "cost_usd": 0.00111,
+    "latency_ms": 406717,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6695,
+        "output_tokens": 1467,
+        "thoughts_tokens": 824,
+        "cost_usd": 0.00111,
+        "latency_ms": 406717,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

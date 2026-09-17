@@ -1,0 +1,102 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student covers all the necessary components of the event (decoration, guest, program sequence, and outcome), though some phrasing is fragmented and unclear.",
+      "evidence": "The chef guests gave away the prizes to the winner and shook hands."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified block as required. It lacks a strong, formal topic sentence, starting instead with a factual statement, but it maintains a logical sequence.",
+      "evidence": "My school annual prize- giving day was held on January 21, 2026, in our campus."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling errors ('chef' for chief, 'dice' for dais, 'flowens' for flowers, 'ballons' for balloons) and grammatical lapses ('Every students', 'ceremony was end'), though the text remains intelligible.",
+      "evidence": "The campus was decorated very brightly with ballons, banners, flowens etc."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic to a Class VII student, avoiding the sterile phrasing of guidebooks and including a personal detail about winning prizes.",
+      "evidence": "I also got two prizes. I Sang a song also."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Consistent misspelling of key terms (chief as chef, dais as dice)",
+      "Subject-verb agreement errors",
+      "Broken sentence structures"
+    ],
+    "positive_aspects": [
+      "Full adherence to the single-paragraph structural constraint",
+      "Comprehensive coverage of the event's timeline",
+      "Authentic, non-memorized expression"
+    ]
+  },
+  "feedback_summary": "The candidate has written a coherent paragraph that fully addresses the prompt, covering the decoration, the guests, and the sequence of events. The structural requirement (single paragraph) was met. However, the score is hampered by significant mechanical errors, particularly in spelling and basic grammar. Despite these slips, the work is original and appropriate for the grade level.",
+  "_metadata": {
+    "task_id": "PARA_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "aa41aed44518efffa10d213c23ab582c1d66454df98a8c0eac74b3307639c3fe",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:25:32.225356+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1b45821bb2c5654e96c959a7bd60a05f64d7bf7e28cdb4f4479b23c2b7ec6515",
+    "input_tokens": 5986,
+    "output_tokens": 2221,
+    "thoughts_tokens": 1449,
+    "cost_usd": 0.001265,
+    "latency_ms": 195312,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5986,
+        "output_tokens": 2221,
+        "thoughts_tokens": 1449,
+        "cost_usd": 0.001265,
+        "latency_ms": 195312,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

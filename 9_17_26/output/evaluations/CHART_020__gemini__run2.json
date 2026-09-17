@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate completely omits Natural Gas (24%), which is the second-largest energy source in the chart. Furthermore, data is reported inconsistently, stating 20% for Nuclear in paragraph 2 before citing 2% in paragraph 3.",
+      "evidence": "the 20% of electricity came From Nuclear power plant."
+    },
+    "structure_format_brevity": {
+      "rationale": "The writing is unnecessarily fragmented into four short, redundant paragraphs rather than a cohesive analytical unit, and begins with unprompted general filler about electricity.",
+      "evidence": "Electricity is one of the most valuable source of energy."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors occur throughout the text, including inappropriate mid-sentence capitalization of prepositions/nouns, missing articles, and missing sentence-initial capitalization.",
+      "evidence": "the 16% electricity came From Hydro-electric power plant. the 20% of electricity came From Nuclear power plant."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the script makes a basic comparative calculation (identifying a 44% difference between coal and nuclear), the expression is basic and repeats nearly identical phrases across paragraphs 3 and 4.",
+      "evidence": "which is 44% less than coal factories."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of a major data category (Natural gas at 24%)",
+      "Erratic mid-sentence and sentence-initial capitalization (e.g., 'came From', 'the 20%')",
+      "Incorrect determiner and article usage (e.g., 'the 16% electricity', 'valuable source')",
+      "Redundant repetition of identical conclusions across separate paragraphs"
+    ],
+    "positive_aspects": [
+      "Accurately identified coal as the majority source and nuclear as the lowest",
+      "Attempted a mathematical comparative calculation between peak and trough values"
+    ]
+  },
+  "feedback_summary": "The script demonstrates an attempt to analyze the chart by identifying the highest (coal) and lowest (nuclear) sources and calculating the difference between them. However, it suffers from a critical data omission by leaving out Natural Gas (24%) entirely, contains contradictory data reporting for Nuclear power (20% vs 2%), and exhibits repetitive paragraphing with recurring capitalization and grammatical errors. It falls into Band 2 with a score of 4.",
+  "_metadata": {
+    "task_id": "CHART_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e2295018ad0e7653f519b67fc53858cd3ce3a25776171936d2812aa991f2f6c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:31:46.817999+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "1bc9748400d5afbe89d018956adbcfe3e56211148f9ba27b3e875f9c4795117f",
+    "input_tokens": 4424,
+    "output_tokens": 4269,
+    "thoughts_tokens": 3421,
+    "cost_usd": 0.012,
+    "latency_ms": 30795,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4424,
+        "output_tokens": 4269,
+        "thoughts_tokens": 3421,
+        "cost_usd": 0.012,
+        "latency_ms": 30795,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

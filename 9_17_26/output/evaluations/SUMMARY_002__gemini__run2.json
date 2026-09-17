@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the core meaning of the poem, explaining how hope resides in the soul, provides strength in adversity, and demands nothing in return.",
+      "evidence": "Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is organized as a single, coherent paragraph of concise length suitable for summarizing a short poem.",
+      "evidence": "The poem 'Hope' illustrodes Hope lives in the soul and it sings endlessly at the darkest moment in the life."
+    },
+    "language_mechanics": {
+      "rationale": "There are noticeable spelling errors ('illustrodes', 'strensth'), subject-verb agreement errors ('never ask', 'hope give'), and punctuation omissions before 'Moreover'.",
+      "evidence": "illustrodes Hope lives in the soul... It never ask anything return... strensth and courage Moreover, in the extreme situation of the hope give us"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully transforms poetic metaphors into their own prose without copying verbatim lines from the text.",
+      "evidence": "In the storm of life it gives us strensth and courage Moreover, in the extreme situation of the hope give us mental comfort."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('illustrodes' for 'illustrates', 'strensth' for 'strength')",
+      "Subject-verb agreement errors ('It never ask', 'hope give')",
+      "Missing punctuation/run-on before connective adverb ('courage Moreover')"
+    ],
+    "positive_aspects": [
+      "Complete original paraphrasing with 0% verbatim copying",
+      "Accurate comprehension of Dickinson's central metaphor and themes",
+      "Well-structured single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid understanding of the poem by translating Emily Dickinson's metaphorical imagery into original prose. The summary successfully covers the main themes: hope's perpetual nature, its resilience during difficult times, and its selflessness. However, the score is held back from Band 4 due to recurring mechanical errors, including spelling inaccuracies, subject-verb agreement mistakes, and missing sentence boundary punctuation.",
+  "_metadata": {
+    "task_id": "SUMMARY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d549192170665e185897da644da5cdaa549f113bb0c495019ed5a04da7462877",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:05:14.036087+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "81620d8340bbdd651e94f6061de595161ca674cf10ec1a5b875155b3505556f7",
+    "input_tokens": 4375,
+    "output_tokens": 2842,
+    "thoughts_tokens": 2030,
+    "cost_usd": 0.008417,
+    "latency_ms": 20015,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4375,
+        "output_tokens": 2842,
+        "thoughts_tokens": 2030,
+        "cost_usd": 0.008417,
+        "latency_ms": 20015,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

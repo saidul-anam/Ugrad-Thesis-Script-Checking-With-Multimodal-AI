@@ -1,0 +1,97 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 6 questions. Following the rubric, only the first 5 attempts are marked. Item 1 (c) is correct. Item 2 (c) is a duplicate of the first attempt and therefore scores 0. Item 3 (d) is correct. Item 4 (h) is correct. Item 5 is labeled as 'd' but contains the correct answer for 'b', thus earning the mark. Item 6 (e) is ignored as it is beyond the first 5 attempts. Total: 1+0+1+1+1=4.",
+      "evidence": "The poet feels about life without time to for enjoy the beauty that this life is mean incomplete, poor and boring"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Duplicate answers provided for the same item",
+      "Incorrect labeling of items (Response 5 labeled 'd' but answers 'b')"
+    ],
+    "positive_aspects": [
+      "Strong understanding of the central themes of both poems",
+      "Ability to paraphrase key ideas effectively"
+    ]
+  },
+  "feedback_summary": "The student demonstrated good comprehension of the poems. However, they wasted one of their five allowed attempts by answering question 'c' twice. Item 1 (c) was marked correct, Item 2 (c) marked wrong as a duplicate, Item 3 (d) correct, Item 4 (h) correct, and Item 5 (answering 'b' despite the 'd' label) correct. Item 6 (e) was ignored per marking instructions.",
+  "_metadata": {
+    "task_id": "POEM_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "1e6f34a748581cd55f6c9e7df920232b8fc50ee8995d3eaa72175d38246cabf3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:27:35.105645+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c91d946b2391fbca7e61d8d931525003b675ca11f36eea854744b8b9ae1f618e",
+    "input_tokens": 6536,
+    "output_tokens": 3277,
+    "thoughts_tokens": 2529,
+    "cost_usd": 0.001637,
+    "latency_ms": 213327,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6536,
+        "output_tokens": 3277,
+        "thoughts_tokens": 2529,
+        "cost_usd": 0.001637,
+        "latency_ms": 213327,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly provided suitable words for items (a), (b), (c), and (e). Item (d) was omitted.",
+      "evidence": "a) show b) great c) cheered e) cheering"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of response for item (d)"
+    ],
+    "positive_aspects": [
+      "Accurate vocabulary choice fitting the context of the passage",
+      "Correct grammatical form for the provided gaps"
+    ]
+  },
+  "feedback_summary": "Items (a), (b), (c), and (e) were answered correctly. Item (d) was omitted. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "GAP_018",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0017",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "93cd1d908b47083e10602c0ee5d4f7dc839978ce50156dceca9b50567c472090",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:11:40.191122+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "373d638398cde352e31339640d1db8cb4b9cdf18be12e845b6a24c7dbe87b2a5",
+    "input_tokens": 6220,
+    "output_tokens": 1502,
+    "thoughts_tokens": 929,
+    "cost_usd": 0.001073,
+    "latency_ms": 643453,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6220,
+        "output_tokens": 1502,
+        "thoughts_tokens": 929,
+        "cost_usd": 0.001073,
+        "latency_ms": 643453,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

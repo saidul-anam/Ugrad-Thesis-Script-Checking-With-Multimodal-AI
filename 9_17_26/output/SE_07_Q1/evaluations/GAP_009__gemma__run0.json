@@ -1,0 +1,97 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly answered four out of five items. Item a ('Show'), item b ('great'), item c ('cheered'), and item e ('cheers') align with the answer key. Item d was omitted.",
+      "evidence": "a. Show\nb. great\nc. cheered\ne. cheers"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanical criteria are not applicable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality criteria are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of answer for item d"
+    ],
+    "positive_aspects": [
+      "Accurate word selection for 80% of the task"
+    ]
+  },
+  "feedback_summary": "Items a (Show), b (great), c (cheered), and e (cheers) are marked correct. Item d was left blank and scores 0. Total score is the sum of correct items.",
+  "_metadata": {
+    "task_id": "GAP_009",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0008",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "b6a501034b89d09cdbb70d7aaaf8ce7307c4305e2f247a2bdb6983e8f3904b9a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:24:00.280973+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f2c73cfc495cdc1acc294d554061bfea66f1ecc010b8201bf0e1e004893f3e57",
+    "input_tokens": 6219,
+    "output_tokens": 1359,
+    "thoughts_tokens": 761,
+    "cost_usd": 0.00103,
+    "latency_ms": 250218,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6219,
+        "output_tokens": 1359,
+        "thoughts_tokens": 761,
+        "cost_usd": 0.00103,
+        "latency_ms": 250218,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. i: Matches key; ii: Matches key; iii: Matches key; iv: Content is correct despite the use of 'safety' instead of 'safely'; v: 'around the world' is semantically identical to 'all over the world'.",
+      "evidence": "i) began their journey to the  Moon ii) Armstrong and Aldrin iii) on July 20, 1969 iv) came back safety to Earth v) around the world"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are factored into item correctness, not scored separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not applicable and lifting from the text is permitted.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Accurate extraction of data from the text",
+      "Full completion of all table cells"
+    ]
+  },
+  "feedback_summary": "The student correctly answered all five items (i, ii, iii, iv, and v). Item iv contains a minor word-form error ('safety' instead of 'safely'), but the fact is correct; Item v uses a synonym ('around' for 'all over'), which is acceptable. Full marks awarded.",
+  "_metadata": {
+    "task_id": "TABLE_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "3bcd89430c50cf73e38152cce5bcde1918b9f7aebd7fa7350defd1ead171d829",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:55:46.426590+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d8e3131e8313476d3f6d4892097d5545d491a43aa1582b8e4a0b6c3d17cfe31b",
+    "input_tokens": 6359,
+    "output_tokens": 1427,
+    "thoughts_tokens": 765,
+    "cost_usd": 0.001064,
+    "latency_ms": 129890,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6359,
+        "output_tokens": 1427,
+        "thoughts_tokens": 765,
+        "cost_usd": 0.001064,
+        "latency_ms": 129890,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

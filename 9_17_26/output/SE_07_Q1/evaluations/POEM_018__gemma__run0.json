@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 5 items. Item (c) correctly identifies that life is poor without nature (1). Item (d) provides generic virtues (kindness, discipline) rather than the specific care acts described in the poem (0). Item (e) correctly associates childhood importance with learning and teaching (1). Item (b) correctly identifies the suggestion to take time to enjoy nature (1). Item (a) provides generic terms rather than the specific responsibilities mentioned in the poem (0). Total: 1+0+1+1+0 = 3.",
+      "evidence": "c. The poet feels life is incomplete and poore without time for nature. ... e. childhood is important because because they learn teaching, respeet and kindness. ... b. The poet's suggests to show the nature and take time to enjoy."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are only considered as part of whether an item's meaning is clear enough to be correct.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not a separate scoring criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Generic answers lacking poem-specific detail (Items a, d)",
+      "Minor spelling errors (poore, respeet, deciplined)"
+    ],
+    "positive_aspects": [
+      "Correct understanding of the central theme of 'Leisure'",
+      "Ability to identify the core purpose of childhood in the second poem"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (b), (c), and (e), demonstrating a good grasp of the poem 'Leisure' and the importance of childhood in 'Whose Child is This?'. However, items (a) and (d) were marked incorrect as the responses listed generic values (kindness, discipline) rather than the specific nurturing responsibilities (feeding, clothing, protecting) outlined in the poem.",
+  "_metadata": {
+    "task_id": "POEM_018",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0017",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "004177f16b07e9454600428ad53ec534db8ddcd44d4051211495b3270ee81ab9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:15:22.949353+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e1fe2e10c027bbf54a0f95d3587a741ef9684cd02354cd653b10c456884f8869",
+    "input_tokens": 6447,
+    "output_tokens": 2827,
+    "thoughts_tokens": 2025,
+    "cost_usd": 0.001493,
+    "latency_ms": 222750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6447,
+        "output_tokens": 2827,
+        "thoughts_tokens": 2025,
+        "cost_usd": 0.001493,
+        "latency_ms": 222750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

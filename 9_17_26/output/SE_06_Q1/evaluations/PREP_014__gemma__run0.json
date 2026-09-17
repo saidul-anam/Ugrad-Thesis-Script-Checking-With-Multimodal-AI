@@ -1,0 +1,99 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. (a) 'drove bottom of' is not correct English; (b) 'is top of' is grammatically incorrect and lacks the necessary prepositional markers; (c) 'trough' is used instead of 'through'; (d) 'alone' is used instead of 'along'; (e) the sentence lacks a verb and is therefore not a complete sentence.",
+      "evidence": "a. The food drove bottom of the jarow. b. A Hill is top of other hill. c. It is trough of me. d. The boy is alone for the ear. e. The boy across the car."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect word substitution (trough for through, alone for along)",
+      "Fragmented sentences (missing verbs)",
+      "Lack of prepositional phrase structure"
+    ],
+    "positive_aspects": [
+      "Attempted all five items"
+    ]
+  },
+  "feedback_summary": "The candidate failed to produce any correct sentences. Item (a) is unintelligible; item (b) is grammatically incorrect; item (c) and (d) use incorrect words entirely; item (e) is a sentence fragment lacking a verb. All five items scored 0.",
+  "_metadata": {
+    "task_id": "PREP_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "bba53c62cc7feb135ded058be23eafe833bd3a2c764202d39be2031a80887631",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:56:41.380668+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0c867b0a2d8f208a56e28c34bad0a7f2806bba9505fb854541b5b97ee4a92dbb",
+    "input_tokens": 6264,
+    "output_tokens": 1780,
+    "thoughts_tokens": 1074,
+    "cost_usd": 0.00116,
+    "latency_ms": 483844,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6264,
+        "output_tokens": 1780,
+        "thoughts_tokens": 1074,
+        "cost_usd": 0.00116,
+        "latency_ms": 483844,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

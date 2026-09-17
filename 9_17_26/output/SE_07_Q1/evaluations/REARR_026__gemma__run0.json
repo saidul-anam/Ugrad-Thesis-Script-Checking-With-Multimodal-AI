@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly positioned items 1, 2, and 3. Items 4, 5, 6, 7, and 8 were placed in the incorrect sequence positions relative to the answer key. Per standard marking procedure, the first attempt provided is evaluated.",
+      "evidence": "1. c\n2. F\n3. E\n4. D\n5. B\n6. A\n7. G\n8. H"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; not applicable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequence positioning"
+    ],
+    "positive_aspects": [
+      "Accurate positioning of the narrative start"
+    ]
+  },
+  "feedback_summary": "The candidate's first attempt was marked. Items 1(c), 2(f), and 3(e) were correctly positioned. Items 4(d), 5(b), 6(a), 7(g), and 8(h) were incorrectly positioned. Total marks: 3/8.",
+  "_metadata": {
+    "task_id": "REARR_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "5e538f71d77cad8d59bc2e08366471463315b02427b8bb42e646a74e30156a86",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:11:01.681889+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1a6ab83f74b6e08c28c7913d4814fa7a6dd566f3c523ad457bc480ff9ff04a87",
+    "input_tokens": 6313,
+    "output_tokens": 3431,
+    "thoughts_tokens": 2800,
+    "cost_usd": 0.001661,
+    "latency_ms": 846782,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6313,
+        "output_tokens": 3431,
+        "thoughts_tokens": 2800,
+        "cost_usd": 0.001661,
+        "latency_ms": 846782,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

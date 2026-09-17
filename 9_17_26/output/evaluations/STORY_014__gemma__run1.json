@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem and follows the plot of the classic fable. The progression from the conflict (lion catching mouse) to the resolution (mouse saving lion) is clear, though the phrasing is awkward.",
+      "evidence": "the mouse entered the lion's nose by it's subconsinsly. The lion woke up and shouted the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes all necessary structural elements: a title, a positive resolution, and an explicit moral lesson.",
+      "evidence": "Size doesn't Matter to help. ... moral: we should not understimet anyone by his/her size or cover."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling and grammatical errors. Spelling is particularly poor, and word choice is frequently incorrect, though the general meaning remains intelligible.",
+      "evidence": "Onece a lion was sleeping in a forzest... cut the net by it's oil sharp theeth."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story is a very predictable, memorized retelling of Aesop's fable. There is no creative deviation, vivid description, or original narrative flair.",
+      "evidence": "The lion thanked the mouse and they made friendship with each other."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (e.g., 'forzest', 'theeth', 'understimet')",
+      "Syntax/Word Choice (e.g., 'shouted the mouse', 'attended there')"
+    ],
+    "positive_aspects": [
+      "Complete plot development",
+      "Adherence to structural requirements (Title and Moral)"
+    ]
+  },
+  "feedback_summary": "The candidate provided a complete and logically sequenced story that fulfills the basic requirements of the prompt, including a title and a moral. However, the writing is heavily reliant on a memorized template with no original creative input. Significant linguistic weaknesses, particularly in spelling and basic syntax, prevent a higher score. It sits in the lower end of Band 3 due to basic vocabulary and frequent mechanical errors.",
+  "_metadata": {
+    "task_id": "STORY_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e9a64d2ab4c0832707ce350d7f26cfec67565ad6a9ea29e9da466f0828b3768b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:36:18.202134+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1f1e81d14a27772f197c3aa8e9b50e022aff5b7edb6a866a433449752415e630",
+    "input_tokens": 4437,
+    "output_tokens": 2630,
+    "thoughts_tokens": 1828,
+    "cost_usd": 0.001233,
+    "latency_ms": 74077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4437,
+        "output_tokens": 2630,
+        "thoughts_tokens": 1828,
+        "cost_usd": 0.001233,
+        "latency_ms": 74077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

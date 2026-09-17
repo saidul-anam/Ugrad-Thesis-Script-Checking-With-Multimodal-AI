@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately establishes the context and provides a clear, relevant account of their post-HSC plans, fulfilling the prompt requirements directly.",
+      "evidence": "After HSC exam, I want to spend a month in my village. Then I want to prepare for a foreign student visa."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout elements of an informal letter are present in their proper positions: sender's address, date, salutation, body paragraphs, subscription, signature, and postal envelope layout.",
+      "evidence": "27 June, 2026\nDonia, Dhaka-1236"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple recurring spelling mistakes, homophone errors, and missing infinitive markers ('want participate', 'Japanesse', 'universitys', 'settle their', 'bussiness').",
+      "evidence": "My main target is to apply for Japanesse national universitys. I also want to live in that country so for several years or settle their."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The body reflects authentic personal voice and specific individualized goals (Japanese universities, AI/software tech) rather than memorized stock letter templates.",
+      "evidence": "I also want to study in AI and software technology at those universities. After graduation, I will join there a company or start my own bussiness there."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('Japanesse', 'universitys', 'bussiness')",
+      "Homophone confusion ('settle their' instead of 'settle there')",
+      "Missing infinitive particle ('want participate' instead of 'want to participate')"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout adhering to NCTB informal letter conventions",
+      "Original and authentic expression of specific post-exam aspirations"
+    ]
+  },
+  "feedback_summary": "The candidate produced a well-structured informal letter containing all standard layout components. The content is authentic and directly addresses the topic. However, noticeable mechanical slips in spelling and grammar reduce the language score, placing the script at the lowest end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "50e76c73e1093f8f7102087f4038383a4d402bcbcb70edb483f1548885973793",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:35:25.337195+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "3afff7c7b70cf8c717bdbc7b7f42d2ee34a570beb639cbdb2a9fad159669dbdf",
+    "input_tokens": 4401,
+    "output_tokens": 2675,
+    "thoughts_tokens": 1876,
+    "cost_usd": 0.008008,
+    "latency_ms": 33375,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4401,
+        "output_tokens": 2675,
+        "thoughts_tokens": 1876,
+        "cost_usd": 0.008008,
+        "latency_ms": 33375,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

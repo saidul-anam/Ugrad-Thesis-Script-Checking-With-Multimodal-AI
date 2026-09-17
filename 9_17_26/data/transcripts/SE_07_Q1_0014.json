@@ -1,0 +1,225 @@
+{
+  "script_id": null,
+  "pages_processed": 15,
+  "answers": [
+    {
+      "question_number": "1",
+      "transcript": "a. iii. rural area\nb. ii. He earns irregularly for daily needs\nc. i. Adjective\nd. i. From morning to be right man\ne. iv. Adjective iii. Adnerbh\nf. iii Roughund\ng. Household manager and ora caregiver",
+      "pages": [
+        1
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Question 1(d) contains very distorted handwriting that appears to read 'be right man' instead of 'evening'."
+    },
+    {
+      "question_number": "2",
+      "transcript": "(a) Joynul and Nazma line in a small village.\n(b) Joynul is a carpenter , I he makes chairs tables pira (low stool) hand other furniture.\n(d) Nazma does all the work at home from morning to night , rain or shine.\n(e) Nazma teaches them Bangla, English alphabets and some suth numbres to her children's early edi education.",
+      "pages": [
+        1,
+        2
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student skipped item (c)."
+    },
+    {
+      "question_number": "3",
+      "transcript": "(a) perfor performens\n(b) beatiful\n(c) cheerd\n(d) excitement\n(e) clapped\n(a) jaur\n(b) outstanding\n(c) che cheard\n(d) curiousit\n(e) cheerd",
+      "pages": [
+        2,
+        15
+      ],
+      "confidence": 0.85,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "The student answered this question in two separate sections (page 2 and page 15). The second section appears to be answers for synonyms/antonyms despite being labeled 'Question no. - 3'."
+    },
+    {
+      "question_number": "4",
+      "transcript": "(a) ugly\n(b) strong\n(c) neat\n(d) aged\n(e) loud",
+      "pages": [
+        2
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "5",
+      "transcript": "(i) began their journey to the Moon.\n(ii) Armstrong and Aldrin\n(iii) July 20, 1969\n(iv) $\\checkmark$ came back safely to earth.\n(v) around the world",
+      "pages": [
+        3
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "6",
+      "transcript": "(a) False. Ans: Apl Apollo 11 was a spacecraft expedition to the Moon that began in 1969.\n(b) False. Answer : Michael Collins stayed in the main ship along with Neil Armstrog and Edwin Aldbrin.\n(c) True\n(d) True\n(e) False. Answer : The mission proved that humans had abready achiened interplanetary travel to the Moon before 1969",
+      "pages": [
+        3,
+        4
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "7",
+      "transcript": "In passage, Neil Armstrong, Michael collins and Edwin Aldbrin three American astronauts began their journy to the Moon on July 16, 1969. It launched from Florida, USA. Their space- craft was called Apollo 11. Neil Armstrong was the first person to walk on the Moon. On 24, 1969 the they came back safely. Their made history. They showed the power of science, teamwork and to human courage.",
+      "pages": [
+        4,
+        5
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "8",
+      "transcript": "(a) Do you know where is the post office?\n(b) Do you know what does the postmaster\n(c) Do you know why is the postmaster so happy?\n(d) Do you know where do his children go to school?\n(e) Do you know when does the postmaster come to the post office?",
+      "pages": [
+        5
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "9",
+      "transcript": "1. c\n2. f\n3. e\n4. g\n5. a\n6. h\n7. d\n8. b\nSuddenly, I noticed two large yellow eyes approaching me. At first, I was frightened and wondered if it was a tiger. But soon, I realized the eyes were too large for that. As it came closer, I discovered it was it was slow moving Baby Austin car. I waved my torch desperately, but the car did not stop. Growing impatient, I made a quick decision. As the car passed by, I opened the door and jumped inside without hesitation. Feeling reliened and safe. I politely began to request the owner to drop me near Lalpur.",
+      "pages": [
+        6,
+        14,
+        15
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "The student provided the answer as a table followed by the full sentences. A fragment of the story also appeared on page 6."
+    },
+    {
+      "question_number": "10",
+      "transcript": "(a) The parent say to bathing, dressing about their responsibility...\n(b) The poet suggested that we should relax and enjoy the nature.\n(d) The poet parent shows bathing, dressing about the care for the child in the poem.\n(a) The parent says to take care learned discipline. in about their responsitily.\n(e) The childhood important according to the poem because it is time to learned to discipline, kindness and respect to elders.\n(h) The poet's message in poem we should seeing our around our world, relax and enjoy the nature.",
+      "pages": [
+        7,
+        8
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student provided two separate attempts for item (a) and skipped items (c) and (f, g)."
+    },
+    {
+      "question_number": "11",
+      "transcript": "Once upon a time two friends went on a journey. They had to go through a forest on their way. As they went the mood they saw a bear.\n\nSuddenly one of them climbed on a tree. As the other no fine other alternative. He lay down without breathing. The bear came soon, put his head down and smelt his body. As he stoped without breathing, the bear took him to be dead and went away. The other man came down to the tree and he then asked him, \"What did the bear wishper into your ear?\" his his friend sayed that, \"The bear gave me a pice of good advice!\" \"What was that ?\" He said. \"The bear said to me that, \"Never trusted a friend who leave along in a danger\"\"",
+      "pages": [
+        9,
+        10
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "A friend needed is a friend indeed",
+      "notes": null
+    },
+    {
+      "question_number": "12",
+      "transcript": "Prize Giving Day is one of the most memorable event of our school. It is usually held at the end of the year. Our school beatifully decorated with colourbut banners, and bellouns, bellouns and flower. In this day student who perform well in studies, sports, and cultural performers. Teacher students and gurdians coming with a great excitement. The program starts with a welcome speech by the principal. Then the chef guest gives a speech, to inspiring us. The program is began 12:00pm. Then the prize ceremony held. Prize such as bottles, dinner set, potted pot and a certificat gave the winner. When my name was called I was so happy and proud of my self. I can't hold my happines. My parents also happy and proud of me. That day ends with dances, songs and cultural performens. That day me and my bestfriend have a lot of fun with our friends. Prize Giving Day motinates and approaching our dream. I will never forgets this days.",
+      "pages": [
+        10,
+        11,
+        12
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "Annual Prize-Giving Day of My School",
+      "notes": null
+    },
+    {
+      "question_number": "13",
+      "transcript": "Myself : Hello friend ! How are you?\nFriend : I'm fine, thank you. And you?\nMyself : I'm fine too. Do you receive your annual result?\nFriend : Yes.\nMyself : How was it?\nFriend : Do you know ? I have got A grade.\nMyself : Great ! I'm am so proud of you.\nFriend : Thanks.\nMyself : Which part is subject is difficult for you?\nFriend : Mathematics is quit difficult for me. Do you recine your result ?\nMyself : Yes. I have got A grade too.\nFriend : Relly ! Really ! We both are doing good in the exam.\nMyself : Yes, We should more hardwork to achine our dream.\nFriend : Yes, you are right.\nMyself : Thank Obey; now by\nFriend : Bye!",
+      "pages": [
+        12,
+        13,
+        14
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    }
+  ],
+  "questions_not_found": [],
+  "overall_confidence": 0.88,
+  "extraction_warnings": [],
+  "_metadata": {
+    "script_id": "SE_07_Q1_0014",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_07_Q1",
+    "prompt_version": "extraction_prompt_c7_v1",
+    "prompt_file": "extraction_prompt_c7_v1.md",
+    "prompt_hash": "e2dd27e8b39c59d5a775a5d5d8bb0971b6e3b7711196aaa57f59718019ace134",
+    "cache_key": "de57b0297aac8ed5bca54b512ef68e5edfddbbf9ce2528c16fe4bcfc068dea08",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-16T20:53:13.282811+00:00",
+    "wall_time_s": 486.734,
+    "pages_available": 14,
+    "total_input_tokens": 6270,
+    "total_output_tokens": 2810,
+    "total_cost_usd": 0.00147,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 14,
+        "input_tokens": 6270,
+        "output_tokens": 2810,
+        "cost_usd": 0.00147,
+        "latency_ms": 486530,
+        "http_status": 200,
+        "attempt_number": 1
+      }
+    ]
+  }
+}

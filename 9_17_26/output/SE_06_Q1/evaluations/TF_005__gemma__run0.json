@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Correct verdict and correction. Item b: Correct verdict, but correction (40/40) is factually wrong according to the text (10/10). Item c: Correct verdict. Item d: Correct verdict and correction. Item e: Correct verdict and correction.",
+      "evidence": "a. False. Raju thinks he improve his weak subjects. b. False. He got 40 marks out of 40 in mathematics. c. True. d. false, Raju plans to give more time to those subjects. e. false. His father told him not to lose hope for low marks."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in correction for item b"
+    ],
+    "positive_aspects": [
+      "Consistent accuracy in True/False identification",
+      "Correct factual corrections for the majority of items"
+    ]
+  },
+  "feedback_summary": "Items a, c, d, and e are correct. Item b is incorrect because the correction provided ('40 marks out of 40') does not match the text, which states he got 10 out of 10.",
+  "_metadata": {
+    "task_id": "TF_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "e085d66c3320d7f3f813951fe0eb1ad51509db8cb1ac74cef7531a214ccd3e38",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:06:35.747076+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "82a90080062956c80395a0ac5760526049d5d274b16857260ed4d06ddc461542",
+    "input_tokens": 6444,
+    "output_tokens": 1946,
+    "thoughts_tokens": 1288,
+    "cost_usd": 0.001228,
+    "latency_ms": 3414625,
+    "attempt_number": 8,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6444,
+        "output_tokens": 1946,
+        "thoughts_tokens": 1288,
+        "cost_usd": 0.001228,
+        "latency_ms": 3414625,
+        "attempt_number": 8,
+        "http_status": 200
+      }
+    ]
+  }
+}

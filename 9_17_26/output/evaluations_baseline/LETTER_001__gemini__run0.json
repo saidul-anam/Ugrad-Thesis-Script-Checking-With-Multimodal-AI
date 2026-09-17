@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The letter clearly and directly addresses the prompt by explaining the candidate's specific post-HSC plan to pursue freelancing and learn digital skills.",
+      "evidence": "After my HSC Exam I will get a lot of free time which I am thinking to use for freelancing."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required informal letter structural components are present and correctly positioned (heading with address/date, salutation, body paragraphs, complimentary close, signature, and postal envelope layout).",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "The writing contains multiple spelling errors ('beggining', 'self-relient'), faulty contraction/punctuation ('I'am', 'Your's ever'), and incorrect sentence punctuation (periods fragmenting list items and unneeded colons).",
+      "evidence": "such as video editing.  graphic design, AI work and many more other works :"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate presents an authentic and modern idea (skill development in AI, video editing, graphic design for financial independence) rather than relying wholly on standard memorized letter clichés.",
+      "evidence": "There are so many works which can be done in Freelancing. such as video editing.  graphic design, AI work and many more other works"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'beggining', 'self-relient')",
+      "Faulty punctuation and contraction usage (e.g., 'I'am', 'Your's')",
+      "Sentence fragmentation and improper full stop usage before listing items"
+    ],
+    "positive_aspects": [
+      "Complete and accurate informal letter structure including envelope box",
+      "Direct response to the prompt with relevant and realistic future plans"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a well-structured informal letter containing all standard layout elements (date, address, salutation, body, close, signature, and envelope). The content directly answers the prompt with authentic post-HSC plans. However, several mechanical errors in spelling and punctuation prevent the script from achieving the full 5 marks, placing it appropriately at the baseline of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "11149c364f116c540ed2fa80e5e2d31f4b081f57668961df2d4067775140f015",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:11:26.161159+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "31f99131e98a1be13f5f76aa3b1734cf4c31cbd895b55dd6574d81c145ea3c60",
+    "input_tokens": 4403,
+    "output_tokens": 3060,
+    "thoughts_tokens": 2222,
+    "cost_usd": 0.008971,
+    "latency_ms": 64969,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4403,
+        "output_tokens": 3060,
+        "thoughts_tokens": 2222,
+        "cost_usd": 0.008971,
+        "latency_ms": 64969,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

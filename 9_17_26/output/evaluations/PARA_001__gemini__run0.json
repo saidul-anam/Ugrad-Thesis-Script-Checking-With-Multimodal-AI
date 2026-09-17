@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly and systematically addresses all five guiding questions (definition, applications across sectors, educational impact, and risks) without topic drift or generic padding.",
+      "evidence": "AI is very useful for us but it also have some threatening aspects such as taking peoples job, data loss, privecy lack and It has become so powerful that if anyone uses it for any bad work like hacking it can affect the whole nation."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single unified paragraph with an identifiable topic sentence and concluding thought, though internal sentence boundaries and run-on phrasing slightly weaken structural cohesion.",
+      "evidence": "Artificial Intelligence mostly known as AI is a modern technology which contains hardware and software and try to do tasks like human brain."
+    },
+    "language_mechanics": {
+      "rationale": "Exhibits noticeable mechanical and grammatical errors, including spelling mistakes ('sectores', 'presisely', 'privecy'), subject-verb agreement errors ('try', 'it also have'), verb doubling ('It is has become'), and erroneous punctuation ('time. and energy').",
+      "evidence": "Which task are time consuming and hard AI can easily solve them at no time. It is has become an important part of our daily life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows genuine, authentic student expression rather than a memorised template, but vocabulary range and syntactic constructions remain basic.",
+      "evidence": "Doctors can use AI to define any problem presisely. AI also can help students at making notes."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (sectores, presisely, Beacuse, privecy)",
+      "Subject-verb agreement and verb form errors (software and try, it also have, It is has become)",
+      "Faulty punctuation and run-on sentences (time. and energy, missing stops before new clauses)"
+    ],
+    "positive_aspects": [
+      "Follows single-paragraph formatting strictly without splitting into sub-paragraphs",
+      "Directly addresses all component questions from the prompt",
+      "Authentic student writing devoid of generic memorized stock phrases"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a relevant and structurally unified paragraph that answers all guiding questions on Artificial Intelligence without relying on memorised fluff. However, the score is placed at the lower end of Band 3 (6/10) due to basic syntax and frequent mechanical errors in spelling, subject-verb agreement, and punctuation.",
+  "_metadata": {
+    "task_id": "PARA_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e2b3e3553173dd24caec05e16adbd611eb376220c86cf9e5dcd994e534af167b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:34:12.906617+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7ed8e9a6708225e3f5aa63d0b9727eeb58208a7cc539e8bf8960db674b91c371",
+    "input_tokens": 4433,
+    "output_tokens": 3497,
+    "thoughts_tokens": 2639,
+    "cost_usd": 0.010072,
+    "latency_ms": 23094,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4433,
+        "output_tokens": 3497,
+        "thoughts_tokens": 2639,
+        "cost_usd": 0.010072,
+        "latency_ms": 23094,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

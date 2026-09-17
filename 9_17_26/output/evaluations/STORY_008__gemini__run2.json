@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical, smooth continuation from the prompt stem, maintaining clear chronological plot development.",
+      "evidence": "While  running, the mouse stumbled on the taile of the lion. The sleeping lion woke up and grabbed the  mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a constructive moral resolution, but completely omits the required story title.",
+      "evidence": "He got the reward of his forgiveness."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive morphological, spelling, and grammatical errors throughout the script (e.g., 'taile', 'pitty', 'iscreaming', 'cutted', 'teeths', tense inconsistency).",
+      "evidence": "He rushed towards him and cutted the net using his sharp teeths."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Presents a predictable, conventional retelling of the Aesop fable with basic vocabulary and unvaried sentence structures.",
+      "evidence": "The mouse thanked him and said he will neture his favour one day."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Non-standard verb inflection ('cutted')",
+      "Double pluralization ('teeths')",
+      "Spelling errors ('taile', 'pitty', 'iscreaming', 'neture')",
+      "Punctuation and run-on phrasing ('forgave him  told him there and not to disturb him again')"
+    ],
+    "positive_aspects": [
+      "Smooth continuity from the stem text",
+      "Clear moral lesson and positive resolution at the conclusion"
+    ]
+  },
+  "feedback_summary": "The response successfully develops the prompt into a complete narrative with a distinct moral ending. However, the candidate failed to provide a title, and the script contains widespread mechanical errors (incorrect past tense forms, non-standard plurals, and misspellings) alongside predictable phrasing, placing it at the base of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1f7656b5bb782bb0bbc24a9645a5182a97a77f8f546c8b3414ec40d58312cd89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:20:06.625412+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f768445ee107501363784ec8cc93ea9386d6759f55598f3ae6081b96a12b7667",
+    "input_tokens": 4476,
+    "output_tokens": 2291,
+    "thoughts_tokens": 1543,
+    "cost_usd": 0.00707,
+    "latency_ms": 13312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4476,
+        "output_tokens": 2291,
+        "thoughts_tokens": 1543,
+        "cost_usd": 0.00707,
+        "latency_ms": 13312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

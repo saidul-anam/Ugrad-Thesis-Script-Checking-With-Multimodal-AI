@@ -1,0 +1,96 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correctly answered according to the key. Item (a) has correct verdict and correction; item (b) has correct verdict and correction; item (c) is correctly marked True; item (d) has correct verdict and correction; item (e) has correct verdict and correction.",
+      "evidence": "a. False. Raju thinks he can do well in weak subjects. b. False. He got 10 out of 10 in Mathematics. c. True. d. False. Raju plans to give more time sing this subjects. e. False. His father told him not to lose hope."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect factual accuracy",
+      "Correct application of the False + Correction requirement"
+    ]
+  },
+  "feedback_summary": "The candidate achieved a perfect score. Items a, b, d, and e were correctly identified as False and provided with accurate corrections; item c was correctly identified as True. Item marks: a=1, b=1, c=1, d=1, e=1. Total: 5/5.",
+  "_metadata": {
+    "task_id": "TF_015",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0015",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "7d8a3d91e760f0e7c5f934f1549e66adfa54b6e01feb2b29a5cc41b0d5ff4edc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:15:29.142572+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4b68186dbac54d3d8ac454a7064d988aedfd03b7380ad93fb16c67b1c2e3f17e",
+    "input_tokens": 6442,
+    "output_tokens": 1974,
+    "thoughts_tokens": 1321,
+    "cost_usd": 0.001236,
+    "latency_ms": 1225093,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6442,
+        "output_tokens": 1974,
+        "thoughts_tokens": 1321,
+        "cost_usd": 0.001236,
+        "latency_ms": 1225093,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

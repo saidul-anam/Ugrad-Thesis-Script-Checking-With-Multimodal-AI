@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is correct. Item ii is incorrect (identifies an object instead of people). Item iii is incorrect due to a significant date error (1069 instead of 1969). Item iv is correct. Item v is incorrect (provides a date instead of a location). Total = 1 + 0 + 0 + 1 + 0 = 2.",
+      "evidence": "i. American astronauts began their journey to the moon. ... iv. come back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy (date error)",
+      "Category error (providing date instead of location)"
+    ],
+    "positive_aspects": [
+      "Correctly identified the start of the journey and the return to Earth"
+    ]
+  },
+  "feedback_summary": "Items i and iv were marked correct. Item ii was incorrect as it named the spacecraft instead of the astronauts. Item iii was marked incorrect due to the incorrect year (1069). Item v was marked incorrect as it provided a date instead of the required location ('All over the world').",
+  "_metadata": {
+    "task_id": "TABLE_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "0eace31c0cc7fd3e9bba71a2fc0fc85fbc865a91a0a1695de21d7e7294e1478e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:28:56.296666+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f6e8ab03ac1df44ea6da1d687a1ad65c36d16ca2043aa7dfa5989d18ecf3e6c3",
+    "input_tokens": 6366,
+    "output_tokens": 1433,
+    "thoughts_tokens": 782,
+    "cost_usd": 0.001067,
+    "latency_ms": 284141,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6366,
+        "output_tokens": 1433,
+        "thoughts_tokens": 782,
+        "cost_usd": 0.001067,
+        "latency_ms": 284141,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

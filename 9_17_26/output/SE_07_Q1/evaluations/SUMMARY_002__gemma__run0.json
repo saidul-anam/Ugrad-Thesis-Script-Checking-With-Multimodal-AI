@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures all key components of the passage: the mission name, the launch location, the astronauts' landing, and the overall significance of the achievement.",
+      "evidence": "The Apollo 11 space mission opened new waves in human scientific expidition and research... established the power of science team work and human courage."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the response fails the brevity constraint significantly. At 70% of the original length, it far exceeds the one-third guideline and even the 50% threshold for the hard cap.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "The syntax is impressively sophisticated for a Class VII student, utilizing complex sentence structures. There are minor spelling errors ('expidition', 'withe', 'colline'), but they do not impede comprehension.",
+      "evidence": "Being launched from Florida, USA, the spacecraft carried three astronauts as the entire world watched withe enthusiasm."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate demonstrates excellent paraphrasing skills with 0% verbatim overlap, reimagining the source text in their own vocabulary.",
+      "evidence": "The success of interplanetary exploration opened a new range for scientists, strengthening the fields of astronomy."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lack of conciseness/Brevity",
+      "Minor spelling slips"
+    ],
+    "positive_aspects": [
+      "Exceptional paraphrasing",
+      "Mature sentence structure"
+    ]
+  },
+  "feedback_summary": "The candidate has written a high-quality synthesis of the text with sophisticated vocabulary and original phrasing. However, the response is far too long for a summary, comprising 70% of the original text's length. Per the NCTB marking guidelines, because the length exceeds half the original passage, a hard cap of 2 is applied regardless of the linguistic quality.",
+  "_metadata": {
+    "task_id": "SUMMARY_002",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0001",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "1290d1677dce1dc36845e147356f84fe656e3ba3e99f9572342eb046626ac6b5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:50:17.589381+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bcd035bc7e85dd8f0409c5fab621b44acee74f7bd65a80ac026c601036ef52f9",
+    "input_tokens": 6081,
+    "output_tokens": 1890,
+    "thoughts_tokens": 1140,
+    "cost_usd": 0.001175,
+    "latency_ms": 359672,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6081,
+        "output_tokens": 1890,
+        "thoughts_tokens": 1140,
+        "cost_usd": 0.001175,
+        "latency_ms": 359672,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

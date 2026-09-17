@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified 5 out of 7 items: a (iii), b (ii), d (i), e (iv), and g (ii). Item c is incorrect (chose adjective instead of adverb) and item f is incorrect (chose stable instead of rough).",
+      "evidence": "a. (iii) rural area\nb. (ii) He earns irregularly for day daily needs.\nd. (i) from morning to night\ne.  (iv) Adjective\ng. (ii) Household manager and caregiver."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammar/Parts of Speech identification",
+      "Contextual vocabulary"
+    ],
+    "positive_aspects": [
+      "Strong factual recall from the passage",
+      "Correct identification of most options"
+    ]
+  },
+  "feedback_summary": "The student achieved a score of 5/7. Items a, b, d, e, and g were correct. Item c was marked wrong as the student chose 'Adjective' for 'sometimes' (Correct: Adverb). Item f was marked wrong as the student chose 'stable' (Correct: Rough).",
+  "_metadata": {
+    "task_id": "MCQ_025",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0024",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "201b857a73456d92d0e04b2509b57e2de3b7ab0c4d87c3035c2d0c217b3f1521",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:51:18.625485+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0efe863a5e1abbc4865d746595d5415ab43d1f15ebce5a9c5f68af361d6a8f53",
+    "input_tokens": 6481,
+    "output_tokens": 1824,
+    "thoughts_tokens": 1164,
+    "cost_usd": 0.001195,
+    "latency_ms": 1164407,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6481,
+        "output_tokens": 1824,
+        "thoughts_tokens": 1164,
+        "cost_usd": 0.001195,
+        "latency_ms": 1164407,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is correct; Item ii is incorrect as it names the object ('their spacecraft') instead of the people ('Armstrong and Aldrin'); Item iii is correct; Item iv is correct; Item v is correct. Sum = 4.",
+      "evidence": "i. began their journey to the Moon. ii. their spacecraft iii. on July 20, 1969 iv. came back to Earth v. all over the World"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect identification of entity in Item ii"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of dates and locations",
+      "Correct identification of events"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered four out of five items. Item i (event), Item iii (date), Item iv (event), and Item v (location) are all correct. Item ii is marked wrong because the candidate wrote 'their spacecraft' instead of naming the astronauts (Armstrong and Aldrin) as required by the 'Who?' column.",
+  "_metadata": {
+    "task_id": "TABLE_009",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0008",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c514342e7dad4d16bcd3e5e1afcb1572b0a9d6de3cea04d81460ad978ddaad7a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:24:25.602263+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "034d89aeffdc8834d582ac3c04af5d6cde187ed2222c805b637d08dba5f1217a",
+    "input_tokens": 6357,
+    "output_tokens": 1500,
+    "thoughts_tokens": 865,
+    "cost_usd": 0.001086,
+    "latency_ms": 236467,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6357,
+        "output_tokens": 1500,
+        "thoughts_tokens": 865,
+        "cost_usd": 0.001086,
+        "latency_ms": 236467,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

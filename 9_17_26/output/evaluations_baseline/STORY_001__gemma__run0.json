@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a smooth and logical continuation of the stem, following the sequence of the classic fable accurately.",
+      "evidence": "The lion caught the mouse... the mouse heard a sound... saw that the lion was trappen in a net"
+    },
+    "structure_format_brevity": {
+      "rationale": "The story concludes with a positive resolution and attempts to state a moral lesson; however, the candidate failed to provide a title as required by the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling mistakes and grammatical slips, particularly in subject-verb agreement and possessive adjectives.",
+      "evidence": "it's sound woke up the lion... trappen... greatful... mouse have saved his life"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, memorized version of Aesop's fable with no creative turns, vivid descriptions, or original adaptations.",
+      "evidence": "One day, in the jungle the mouse heard a sound he followed the sound"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (forrest, trappen, greatful, worek)",
+      "Grammar/Tense inconsistencies (mouse have saved)",
+      "Missing mandatory title"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Correct identification of the fable's moral"
+    ]
+  },
+  "feedback_summary": "The candidate successfully continues the story stem and reaches a positive conclusion with a clear moral. However, the response is a memorized fable lacking original creative input. Significant marks were deducted due to the total absence of a title and frequent spelling and grammatical errors. Per the Band 3 tiebreaker, the lower value is awarded due to basic syntax.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fd076f122deeacd3ba814d3bfacc9eed8b173f736c2c40684d79a70051ff9df1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:10:31.364669+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2a2207c0f9879432caa9c29ba7fe4b7c1ea9d2688b22b2c3965daa27ab22f1c8",
+    "input_tokens": 4405,
+    "output_tokens": 2492,
+    "thoughts_tokens": 1770,
+    "cost_usd": 0.001188,
+    "latency_ms": 70390,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4405,
+        "output_tokens": 2492,
+        "thoughts_tokens": 1770,
+        "cost_usd": 0.001188,
+        "latency_ms": 70390,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

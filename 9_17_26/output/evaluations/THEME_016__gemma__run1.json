@@ -1,0 +1,95 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast presented in the poem but describes the surface-level plot (difference between types of dreamers) rather than articulating an abstract governing theme such as 'determination' or 'the power of conscious ambition'.",
+      "evidence": "The content of the poem indicates the difference between day and night dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a coherent single block that introduces the main point immediately and remains concise.",
+      "evidence": "The content of the poem indicates the difference between day and night dreamers."
+    },
+    "language_mechanics": {
+      "rationale": "The writing is generally clear, but there is a distinct subject-verb agreement error ('people... wakes').",
+      "evidence": "The people who dream in the night wakes up"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids direct copying, though the phrasing closely follows the poem's structure. The use of 'hungry to make that dream come true' shows a basic attempt at original interpretation.",
+      "evidence": "are hungry to make that dream come true"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Strong structural adherence to single-block format"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's meaning and follows structural requirements perfectly. However, the response functions as a summary of the poem's content rather than an analysis of its abstract theme. The language is basic and contains a subject-verb agreement error. Because the syntax is standard and the thematic identification is surface-level, the score is placed at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "da8c91c76c042bc8fb71a62156fe8d23fc52022f9daf25f2cd6a8a86c61ded73",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:58:24.534674+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "71314b435a74bf20755a080ea5e95328d7cbb3d705e661e459d175c4bf107ee2",
+    "input_tokens": 4279,
+    "output_tokens": 2910,
+    "thoughts_tokens": 2199,
+    "cost_usd": 0.001301,
+    "latency_ms": 81547,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4279,
+        "output_tokens": 2910,
+        "thoughts_tokens": 2199,
+        "cost_usd": 0.001301,
+        "latency_ms": 81547,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

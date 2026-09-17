@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by immediately stating the purpose and elaborating on specific, realistic future plans after the HSC examination.",
+      "evidence": "In your last letter you want to about my after Hsc plans. So, today I will write about it. After HSC exam, I want to spend a month in my village."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six standard layout components of an informal letter are present and correctly positioned: date, sender's address, salutation, body paragraphs, complimentary close, signature, as well as the envelope address block.",
+      "evidence": "27 June, 2026\nDonia, Dhaka-1236\n\nDear Habib,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple mechanical inaccuracies, including spelling errors ('Japanesse', 'universitys', 'bussiness'), missing infinitive markers ('want participate'), missing verbs ('want to about'), and homophone misuse ('settle their').",
+      "evidence": "My main target is to apply for Japanesse national universitys. I also want to live in that country so for several years or settle their."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative content is personal, candid, and authentic, avoiding rote memorized clichés in the core body and logically structuring future academic and career aspirations.",
+      "evidence": "I also want to study in AI and software technology at those universities. After graduation, I will join there a company or start my own bussiness there."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('Japanesse', 'universitys', 'bussiness')",
+      "Missing infinitive markers and verbs ('want to about', 'want participate')",
+      "Homophone confusion ('their' used instead of 'there')"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout with all 6 required letter components present",
+      "Highly authentic, engaging, and prompt-focused narrative regarding post-HSC aspirations",
+      "Logical flow of ideas across opening, main body, and closing remarks"
+    ]
+  },
+  "feedback_summary": "The candidate produces a well-structured informal letter that complies with all formatting conventions and directly answers the prompt with authentic detail. However, noticeable mechanical lapses—particularly spelling mistakes and missing syntactic elements in verb constructions—prevent this script from scoring full marks, placing it at the base of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "50e76c73e1093f8f7102087f4038383a4d402bcbcb70edb483f1548885973793",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:35:04.591056+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "3b6fcf1f86fcd6d1379bdb7411733177d2188be98a2912f5a5b83905744f494b",
+    "input_tokens": 4401,
+    "output_tokens": 3202,
+    "thoughts_tokens": 2345,
+    "cost_usd": 0.009325,
+    "latency_ms": 32202,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4401,
+        "output_tokens": 3202,
+        "thoughts_tokens": 2345,
+        "cost_usd": 0.009325,
+        "latency_ms": 32202,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the central theme regarding the power of dreams and the distinction between night dreams and day dreams, though the explanation is simplistic.",
+      "evidence": "The poem is about the power of dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "While the response is a single block and states the theme early, the candidate included an irrelevant letter-style address and date header, which is a structural error for this task type.",
+      "evidence": "Nazipur, Naogaon, Date: 27-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive grammatical errors including subject-verb agreement, spelling mistakes, and syntax failures.",
+      "evidence": "this are only subconsus activity"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate used their own words and avoided verbatim copying, but the interpretation lacks depth and does not engage with the poem's imagery.",
+      "evidence": "Day dream can reache help people to reach goal."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (subconsus)",
+      "Subject-Verb Agreement (this are)",
+      "Syntax errors (reache help)",
+      "Irrelevant structural elements (Address/Date)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from source",
+      "Correct identification of the central theme"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the core theme of the poem and avoided copying the text verbatim. However, the score is heavily penalized by the inclusion of a letter-style header (address and date) which is entirely inappropriate for a theme analysis. Additionally, severe linguistic mechanical errors in spelling and grammar significantly hinder the quality of the expression.",
+  "_metadata": {
+    "task_id": "THEME_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "626f017fdef24047c80e7cbe5432b263c7dd8123349227121f740ccdbe8fe2d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:38:53.118602+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8b6388a7122654954392f91947ca91d6fd5a230224d8b53e94786a4441ba9700",
+    "input_tokens": 4291,
+    "output_tokens": 2034,
+    "thoughts_tokens": 1326,
+    "cost_usd": 0.001039,
+    "latency_ms": 57125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4291,
+        "output_tokens": 2034,
+        "thoughts_tokens": 1326,
+        "cost_usd": 0.001039,
+        "latency_ms": 57125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

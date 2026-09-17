@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the contrast between the two types of dreams but treats it as a surface-level plot summary rather than an abstract governing theme (e.g., the power of ambition or willpower).",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block and states the premise early, but it lacks a sophisticated synthesis or a concluding thematic statement.",
+      "evidence": "There are two kind of dream... these are possible to fata come true."
+    },
+    "language_mechanics": {
+      "rationale": "Significant errors in subject-verb agreement ('two kind', 'Those dream... is') and a critical spelling/lexical error ('fata') that disrupts professional quality.",
+      "evidence": "possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying and uses their own words, but the interpretation is very basic and does not engage with the poem's imagery.",
+      "evidence": "Those which take our sleep is our real. dream"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Noun Pluralization",
+      "Spelling/Typographical errors"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Adherence to the single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the basic contrast presented in the poem without copying the text directly. However, the response is a summary of the poem's logic rather than an articulation of its abstract theme. The score is heavily impacted by poor linguistic mechanics, including multiple agreement errors and an unintelligible word ('fata'). Per the tiebreaker rule, the lower value of Band 2 is awarded due to the basic and error-prone syntax.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "75951cd15996cf2b8348e8c762da773fd37bff4c1844c0a956c97456ca2a5306",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:14:51.691483+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b50a2fb4166656f9c662745ee538402449b0ac12f95c2f338d73b943ff1bd80b",
+    "input_tokens": 4277,
+    "output_tokens": 2797,
+    "thoughts_tokens": 2054,
+    "cost_usd": 0.001267,
+    "latency_ms": 99625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 2797,
+        "thoughts_tokens": 2054,
+        "cost_usd": 0.001267,
+        "latency_ms": 99625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

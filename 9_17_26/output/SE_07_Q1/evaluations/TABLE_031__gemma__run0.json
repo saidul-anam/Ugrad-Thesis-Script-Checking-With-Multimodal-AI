@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct: i. matches key; ii. matches key; iii. matches key; iv. matches key; v. contains the correct location 'all over the world'.",
+      "evidence": "i. began their journey to the Moon. ii. Armstrong and Aldrin iii. July 20, 1969 iv. came back safely to Earth v. all over the world with great — excitement."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy across all table items",
+      "Precise retrieval of information from the text"
+    ]
+  },
+  "feedback_summary": "The student answered all items correctly. Item (i) is correct; item (ii) is correct; item (iii) is correct; item (iv) is correct; and item (v) is correct. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TABLE_031",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0030",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c1d0c274541f79e0b8a933f36ef56ab9a0e52425e7a121aecc926ed2e4339099",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:14:13.788500+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c2bda39dd3abf0c740984c9b04b42753eff04191bb41d646d9a2c1cae24dea0c",
+    "input_tokens": 6364,
+    "output_tokens": 1515,
+    "thoughts_tokens": 911,
+    "cost_usd": 0.001091,
+    "latency_ms": 320717,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6364,
+        "output_tokens": 1515,
+        "thoughts_tokens": 911,
+        "cost_usd": 0.001091,
+        "latency_ms": 320717,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

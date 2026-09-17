@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified 4 out of 5 items. (a) 'show', (b) 'great', (c) 'cheered', and (e) 'cheer' are all correct according to the key and context. (d) 'performance' is incorrect as it does not fit the context of the sentence 'The show created great [excitement] among the people'.",
+      "evidence": "a) show b) great c) cheered d) performance e) cheer"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Contextual misinterpretation in item (d)"
+    ],
+    "positive_aspects": [
+      "Accurate vocabulary choice for 80% of the task",
+      "Good understanding of passage events"
+    ]
+  },
+  "feedback_summary": "The student scored 4 out of 5. Items (a), (b), (c), and (e) were marked correct. Item (d) was marked incorrect because 'performance' does not grammatically or contextually fit the sentence regarding the effect the show had on the people.",
+  "_metadata": {
+    "task_id": "GAP_030",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0029",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "3efc3979ff5f06f611ffb714a8c5b09a6bd03668be18099e483b972f6b5663db",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:07:11.247851+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1d04638f93985473c54c04f76c6fd5ae6ff19370b23352b307ea4d453c9241f8",
+    "input_tokens": 6220,
+    "output_tokens": 1622,
+    "thoughts_tokens": 979,
+    "cost_usd": 0.001109,
+    "latency_ms": 179640,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6220,
+        "output_tokens": 1622,
+        "thoughts_tokens": 979,
+        "cost_usd": 0.001109,
+        "latency_ms": 179640,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative continues smoothly from the stem and maintains a sequential, logical storyline following the familiar fable of the lion and the mouse.",
+      "evidence": "While running, it's sound woke up the lion. The lion caught the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "Although a constructive moral lesson and resolution are attempted at the end, the candidate completely omits the required title and leaves a scrambled closing sentence.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "Persistent spelling errors, incorrect possessive usage, garbled syntax, and tense agreement flaws undermine mechanical accuracy.",
+      "evidence": "told the lion to eat to let him free, one day he might save the lion's life. Hearing this the lion laughed and told the mouse that he was small how even can he save"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies entirely on a predictable, generic retelling without descriptive depth, creative embellishment, or varied sentence structures.",
+      "evidence": "He went to the lion and cut the net with his sharp  teeth. The lion was greatful for him"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (forrest, trappen, greatful, worek)",
+      "Punctuation and possessive confusion (it's instead of its)",
+      "Garbled syntax and run-on sentences (told the lion to eat to let him free, Then he the lion size doesn't matter)",
+      "Tense and subject-verb inconsistency (the mouse have saved)"
+    ],
+    "positive_aspects": [
+      "Smooth and logical continuation from the provided prompt stem",
+      "Sequential plot progression reaching a positive resolution and moral conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate presents a coherent and logical continuation of the stem with complete narrative progression and a positive moral lesson. However, the response lacks a title, relies on a predictable and unembellished retelling, and exhibits noticeable mechanical weaknesses including multiple spelling errors, punctuation slips, and garbled sentence structures.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fd076f122deeacd3ba814d3bfacc9eed8b173f736c2c40684d79a70051ff9df1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:09:31.137992+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "cf4a79271d23bb535e194babf08863d9df675d7539ee636f1f3c9001d0dd9c74",
+    "input_tokens": 4404,
+    "output_tokens": 3286,
+    "thoughts_tokens": 2498,
+    "cost_usd": 0.009536,
+    "latency_ms": 25734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3286,
+        "thoughts_tokens": 2498,
+        "cost_usd": 0.009536,
+        "latency_ms": 25734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

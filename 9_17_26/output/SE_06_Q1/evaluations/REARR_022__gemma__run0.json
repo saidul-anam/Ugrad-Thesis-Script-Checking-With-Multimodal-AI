@@ -1,0 +1,98 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student failed to rearrange the sentences. They listed the items in the order they appeared in the question (a, b, c, d, e, f, g) rather than the narrative sequence. Comparing the student's sequence to the key: Slot 1 (a vs b), Slot 2 (b vs a), Slot 3 (c vs d), Slot 4 (d vs f), Slot 5 (e vs c), Slot 6 (f vs h), Slot 7 (g vs e), Slot 8 (missing vs g). Zero items are in the correct position.",
+      "evidence": "a) She asked Bayzid to give her a glass of water... b) once Hazrat Bayazid Butami came home..."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to rearrange sequence",
+      "Alphabetical listing instead of chronological ordering"
+    ],
+    "positive_aspects": [
+      "Attempted to transcribe the sentences"
+    ]
+  },
+  "feedback_summary": "The candidate did not perform the rearrangement task. Instead of providing the correct sequence of sentences (b, a, d, f, c, h, e, g), they simply listed the sentences in the order they were presented in the prompt (a, b, c, d, e, f, g). Consequently, no sentence occupies the correct position according to the answer key. Total score: 0/8.",
+  "_metadata": {
+    "task_id": "REARR_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "aae46f3f77aa03d9bb964ee0bb572e78342197ce59b4b712001a6512e3332fb7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:37:49.605480+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bbe085698682ddbc7b4888b57db34cfbe65ef0357890f771cd803a2465c22c7e",
+    "input_tokens": 6603,
+    "output_tokens": 2207,
+    "thoughts_tokens": 1486,
+    "cost_usd": 0.001322,
+    "latency_ms": 713343,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6603,
+        "output_tokens": 2207,
+        "thoughts_tokens": 1486,
+        "cost_usd": 0.001322,
+        "latency_ms": 713343,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

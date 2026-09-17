@@ -1,0 +1,96 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted eight items, but only the first five (a-e) are marked per instructions. None of these five responses carry the ideas required by the answer key; they are largely incoherent fragments that do not answer the questions. Item a: 0, Item b: 0, Item c: 0, Item d: 0, Item e: 0.",
+      "evidence": "This is the poem about say"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe lack of comprehension",
+      "Incoherent sentence structure"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "Items a, b, c, d, and e were evaluated. None of the responses provided provide any of the required information from the answer key, consisting instead of unintelligible phrases. Total score is 0.",
+  "_metadata": {
+    "task_id": "POEM_001",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0000",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ab4b00f4a109b69393822f0fdd16ea969fcf634a6250e33e2d4c1958cb62703e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:28:05.939012+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "98f251fe741e6667302dd580180643a3e5b871092ea3ee44b56e5e1c2a7a67f0",
+    "input_tokens": 6426,
+    "output_tokens": 1504,
+    "thoughts_tokens": 878,
+    "cost_usd": 0.001094,
+    "latency_ms": 181781,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6426,
+        "output_tokens": 1504,
+        "thoughts_tokens": 878,
+        "cost_usd": 0.001094,
+        "latency_ms": 181781,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

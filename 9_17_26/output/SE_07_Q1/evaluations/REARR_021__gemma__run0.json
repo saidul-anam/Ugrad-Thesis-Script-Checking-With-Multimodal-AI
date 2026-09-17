@@ -1,0 +1,98 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully rearranged all 8 sentences in the correct sequence (c, f, e, g, a, h, d, b) within the paragraph. Although the preliminary list of letters was inaccurate, the final paragraph represents the correct order. Per instructions, copying slips inside sentences (e.g., 'too large from that' instead of 'for that') are not penalised.",
+      "evidence": "Suddenly, I noticed two large yellow eyes approaching me. At first, I was frightened and wondered if it was a tiger. But soon, I realized the eyes were too large from that, A taxi came closer, IT discovered was in a slow moving Baby Austin I waved my torch desperately, but the car did not stop. Growing impatient, I made a quick decision. As the car passed by I opened the door and jumped inside without any hesitation. Feeling relieved and safe, I politely began to request the owner to drop me near halpur ."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor transcription errors in sentences"
+    ],
+    "positive_aspects": [
+      "Perfect sequence of events",
+      "Correct narrative flow"
+    ]
+  },
+  "feedback_summary": "The student correctly sequenced all 8 items in the final paragraph: c (Pos 1), f (Pos 2), e (Pos 3), g (Pos 4), a (Pos 5), h (Pos 6), d (Pos 7), and b (Pos 8). Total score: 8/8.",
+  "_metadata": {
+    "task_id": "REARR_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "50ce1cf1ac9a87771cea28b4a5ecb00979a44c7b06b35e110145c5a4e815357a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:53:13.923459+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dcc1ac2409011079bec82f8c47649324229f57b49db6d9e54c326577837c1804",
+    "input_tokens": 6394,
+    "output_tokens": 2209,
+    "thoughts_tokens": 1469,
+    "cost_usd": 0.001302,
+    "latency_ms": 125905,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6394,
+        "output_tokens": 2209,
+        "thoughts_tokens": 1469,
+        "cost_usd": 0.001302,
+        "latency_ms": 125905,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

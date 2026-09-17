@@ -1,0 +1,100 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored marking: (a) 0: Missing verb 'is'; (b) 0: Retained auxiliary 'does' and question word order; (c) 0: Retained question word order (verb 'is' before subject); (d) 1: Correct embedded clause structure (subject 'children' before verb 'got') and auxiliary 'do' removed; (e) 1: Correct embedded clause structure and auxiliary 'does' removed.",
+      "evidence": "d) Do you know where his children got to school? e) Do you know when the postmaster comes to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Retention of question word order in embedded clauses",
+      "Failure to remove auxiliary verbs (do/does)",
+      "Omission of the main verb"
+    ],
+    "positive_aspects": [
+      "Successful transformation in the final two items",
+      "Correct removal of auxiliaries in items d and e"
+    ]
+  },
+  "feedback_summary": "The candidate struggled with the fundamental rule of embedded questions (subject before verb). Items (b) and (c) incorrectly maintained the direct-question word order and auxiliaries, and item (a) was incomplete due to a missing verb. However, items (d) and (e) were transformed correctly. Total score: 2/5.",
+  "_metadata": {
+    "task_id": "TRANS_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "d32fd118dbb1f24948650780920bb057bcfd37c5fa387e3b6d9ee0346a6300a2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:38:05.706990+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "01c1fd52d50afacc38d19d39f93a04507e93a0f8bc4fa0e26886cf9152f8375a",
+    "input_tokens": 6157,
+    "output_tokens": 1868,
+    "thoughts_tokens": 1165,
+    "cost_usd": 0.001176,
+    "latency_ms": 608610,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6157,
+        "output_tokens": 1868,
+        "thoughts_tokens": 1165,
+        "cost_usd": 0.001176,
+        "latency_ms": 608610,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

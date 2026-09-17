@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Correct content (small village) provided in an understandable sentence (2). Item b: Full content provided, including profession and specific tasks (2). Item c: Correct reason for financial difficulty (does not find work every day) provided in student's own words (2). Item d: Correct content provided regarding home work and timing (2). Item e: Correct content provided regarding teaching alphabets and numbers (2). Total: 2+2+2+2+2=10.",
+      "evidence": "a. Ans Mr Joynul Ali live in a and Mrs Nazma live in a small villag. ... b. Ans Joynul is a carpenter. ... c. Ans Joynul Ali faces financial difficulteies because he doesn't find work everyday. ... d. Ans Nazma does all the work at home from morning to hight rain or shine. ... e. Ans Sometimes Nazma sits with Mitu and Nitu, and teaches them Bangla and English alphabets and numbers."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not awarded separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are only considered as part of whether the item is understandable/correct.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not a separate scoring criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling slips (e.g., 'villag', 'difficulteies', 'hight')"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of information",
+      "Complete responses for all items"
+    ]
+  },
+  "feedback_summary": "The student correctly answered all five items. Item (a) was slightly cluttered but the meaning was clear. Items (b), (d), and (e) were largely verbatim lifts from the passage but were presented as full, coherent sentences rather than fragments, thus earning full marks. Item (c) was successfully paraphrased. All items are marked as 2/2.",
+  "_metadata": {
+    "task_id": "SHORT_031",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0030",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2a2613b65a48a0f4bec54816492e620c6aa720e794a3e8837058a2f48de9f40f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:13:20.060376+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "553923f8e3c025ae4d6a21840dc9ef794062c339377c47e17bf43416089b2060",
+    "input_tokens": 6544,
+    "output_tokens": 1945,
+    "thoughts_tokens": 1138,
+    "cost_usd": 0.001238,
+    "latency_ms": 301719,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6544,
+        "output_tokens": 1945,
+        "thoughts_tokens": 1138,
+        "cost_usd": 0.001238,
+        "latency_ms": 301719,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fully addresses the prompt, discussing the results of both Sheila and Amaina. Specific details (Global Studies, Math, English, Science) are provided, ensuring the conversation is not generic.",
+      "evidence": "I got 75 in Global Studies. ... I got higest manks in Math English and Science."
+    },
+    "structure_format_brevity": {
+      "rationale": "The layout is a perfect dialogue format with clear speaker labels, alternating turns, and a proper opening and closing.",
+      "evidence": "Sheila : Hello Amaina!How are you?\nAmaina : Hello Sheila. I'm Fine."
+    },
+    "language_mechanics": {
+      "rationale": "While the register is natural for the level, there are frequent spelling errors ('neally' for really, 'manks' for marks, 'impor' for important, 'higest' for highest, 'alot' for a lot). These are minor but consistent.",
+      "evidence": "I did neally well this year but I only got one subject."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue feels authentic rather than a memorized guide text; the interaction is reactive and the specific mention of struggling with 'dates and occasions' shows original thought.",
+      "evidence": "I struggle to remember the impor dates and occasions."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (Phonetic errors: 'manks', 'neally')"
+    ],
+    "positive_aspects": [
+      "Perfect dialogue structure",
+      "Good contextual detail",
+      "Natural conversational flow"
+    ]
+  },
+  "feedback_summary": "The candidate produced a well-structured dialogue that completely satisfied the prompt's requirements. The turns alternate correctly, and the content is specific and relevant. A high score is awarded for structure and content, with a slight deduction in language mechanics due to several recurring spelling mistakes ('neally', 'manks', 'higest').",
+  "_metadata": {
+    "task_id": "DIALOG_029",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0028",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2a3737f2e7a813cf84278aacaafbbc32f63371e320df87603d3f8c0eebc051d9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:22:24.498317+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8d053ab6233c6d460034b8efb01e596230ff2f114601924ea76853b8b25fa6c4",
+    "input_tokens": 6034,
+    "output_tokens": 2248,
+    "thoughts_tokens": 1500,
+    "cost_usd": 0.001278,
+    "latency_ms": 1138344,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6034,
+        "output_tokens": 2248,
+        "thoughts_tokens": 1500,
+        "cost_usd": 0.001278,
+        "latency_ms": 1138344,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

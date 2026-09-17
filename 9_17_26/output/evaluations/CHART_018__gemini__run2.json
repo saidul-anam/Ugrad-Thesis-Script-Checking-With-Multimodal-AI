@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies all the individual energy sources and notes the highest (coal at 46%) and least (nuclear at 2%) data points from the chart.",
+      "evidence": "From the pie chart we can see that the highest amount of electricity come  from coal. It is 46%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The description lacks grouped analytical synthesis, presenting data in a simple line-by-line list, and heavily incorporates external environmental facts and moralizing statements not present in the chart.",
+      "evidence": "From the burning of the coal, It produce harmful green house gas."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of subject-verb agreement errors, spelling slips, sentence fragments, and word duplication.",
+      "evidence": "If we don not use wisely. It will finish one day."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies entirely on repetitive, formulaic phrasing without synthesizing trends, calculating proportions, or using varied comparative vocabulary.",
+      "evidence": "From the piechart we can see that the least amount of  electricity, comes from nuclear."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement failures (e.g., 'electricity come', 'It produce', 'it also cause')",
+      "Spelling errors and typographical repetitions (e.g., 'pie ehart', 'soucees', 'fromne', 'do not not use use', 'to to', 'consequenees')",
+      "Sentence fragments (e.g., 'If we don not use wisely. It will finish one day.')",
+      "Inclusion of external commentary and moral judgments rather than purely analyzing given data"
+    ],
+    "positive_aspects": [
+      "Correctly extracts the key percentages and identifies the highest and lowest sources of electricity",
+      "Includes an introductory lead sentence acknowledging the chart topic and year"
+    ]
+  },
+  "feedback_summary": "The candidate captures all relevant data points from the pie chart, including the highest and lowest electricity sources. However, the response lists the data mechanically slice-by-slice rather than grouping or comparing trends. A substantial portion of the text is dedicated to external environmental consequences, which should be omitted in graph descriptions. Frequent grammatical, spelling, and structural errors place the script in Band 2 with a score of 4.",
+  "_metadata": {
+    "task_id": "CHART_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b28e216829ab2b739e72902d7949defd67785da741147a3f0c59de616f048ab9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:12:12.517126+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "e37cad34d1e1e4e4f6b9c4ef83377e291ba582b13d7f6105a1d79acf24cc30c0",
+    "input_tokens": 4479,
+    "output_tokens": 5633,
+    "thoughts_tokens": 4791,
+    "cost_usd": 0.015426,
+    "latency_ms": 43079,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4479,
+        "output_tokens": 5633,
+        "thoughts_tokens": 4791,
+        "cost_usd": 0.015426,
+        "latency_ms": 43079,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

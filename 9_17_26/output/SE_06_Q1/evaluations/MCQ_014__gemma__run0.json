@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All seven items were answered incorrectly based on the answer key: a (virtuality vs actuality), b (sorrows and suffering vs pride and joy), c (dignity vs honour), d (submitted vs courageous), e (fearful vs submitted), f (defended vs unitedly), and g (Independende vs all of i, ii & iii).",
+      "evidence": "(a + iii) = virtuality (b + iv) = sorrows and suffering (c + iv) = dignity (d + ii) = submitted (e + iii) = fearful (f + iii) = defended (g + ii) = Independende"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection across all items"
+    ],
+    "positive_aspects": [
+      "Attempted all questions"
+    ]
+  },
+  "feedback_summary": "The student attempted all items but failed to identify the correct alternative for any of them. Items a, b, c, d, e, f, and g are all incorrect. Total score: 0/7.",
+  "_metadata": {
+    "task_id": "MCQ_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f3bfb6e471c9867f1ef725945a50593879a869212da58b4bf0c7e25b346db85d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:56:44.431215+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "613874ab5073368f86ec24ece596ffc1333662f61ea2a4595e5d23abc9f0b6ed",
+    "input_tokens": 6691,
+    "output_tokens": 1562,
+    "thoughts_tokens": 923,
+    "cost_usd": 0.001138,
+    "latency_ms": 565000,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6691,
+        "output_tokens": 1562,
+        "thoughts_tokens": 923,
+        "cost_usd": 0.001138,
+        "latency_ms": 565000,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Position-by-position comparison against key: Item 1 (c) is correct; Item 2 (e) is incorrect; Item 3 (f) is incorrect; Item 4 (h) is incorrect; Item 5 (a) is correct; Item 6 (g) is incorrect; Item 7 (b) is incorrect; Item 8 (d) is incorrect. Total = 2 marks.",
+      "evidence": "1. c ... 5. a"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions are fixed at 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions are fixed at 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions are fixed at 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequential positioning",
+      "Logical flow disruption"
+    ],
+    "positive_aspects": [
+      "Correctly identified the starting sentence",
+      "Correctly positioned the fifth sentence"
+    ]
+  },
+  "feedback_summary": "The candidate correctly positioned 2 out of 8 sentences. Audit: 1:c (Correct), 2:e (Wrong), 3:f (Wrong), 4:h (Wrong), 5:a (Correct), 6:g (Wrong), 7:b (Wrong), 8:d (Wrong).",
+  "_metadata": {
+    "task_id": "REARR_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ca15ba896c44c583c2d20cbe51e1384a7e4f5fb3a442a3f43f503a89655062fd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:00:15.129181+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1cf0f1002f07c60ba21aa148104b0566c45607e9210e13ed724ac1225e848867",
+    "input_tokens": 6280,
+    "output_tokens": 1540,
+    "thoughts_tokens": 876,
+    "cost_usd": 0.00109,
+    "latency_ms": 200203,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1540,
+        "thoughts_tokens": 876,
+        "cost_usd": 0.00109,
+        "latency_ms": 200203,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Three items were answered correctly (a, b, e). Item (c) 'bought' is grammatically and contextually incorrect in the phrase 'bought to know'. Item (d) 'bought' is incorrect because the subject (Uncle Santosh) sold the papers to the museum; 'bought the papers to the museum' is not correct English.",
+      "evidence": "a) dreamt b) went back e) After hearing"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary/Context error (confusion between bought and sold)"
+    ],
+    "positive_aspects": [
+      "Correct identification of past tense verbs in items a and b",
+      "Correct usage of prepositional phrase in item e"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a), (b), and (e). Item (c) is incorrect as 'bought' does not fit the context of knowing something. Item (d) is incorrect as the subject performed the action of selling, not buying, and the phrasing is grammatically incorrect.",
+  "_metadata": {
+    "task_id": "GAP_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "5893cba13a41806e584ee3c5a0bc371ff223268bf07c8ab55a2454f420817c41",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:37:30.483715+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ad5af963525d8177b079c9f9251a10bd9ed7fe64b85358926d139ae9f4a61c5e",
+    "input_tokens": 6320,
+    "output_tokens": 1383,
+    "thoughts_tokens": 748,
+    "cost_usd": 0.001047,
+    "latency_ms": 286469,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6320,
+        "output_tokens": 1383,
+        "thoughts_tokens": 748,
+        "cost_usd": 0.001047,
+        "latency_ms": 286469,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered 4 out of 5 items. Item a is incorrect (marked True). Item b is correct (False with correct correction). Item c is correct (False with correct correction). Item d is correct (True). Item e is correct (False with correct correction).",
+      "evidence": "b. False. Michael Collins stayed in the main ship... c. False. Neil Armstrong was the first person... d. True... e. False. Humans hadnot already achieved..."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual misunderstanding of the nature of the expedition (Item a)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of False statements",
+      "Provision of comprehensive and correct factual corrections"
+    ]
+  },
+  "feedback_summary": "The student performed well, scoring 4 out of 5. Item (a) was incorrect as the student identified it as 'True'. Items (b), (c), (d), and (e) were all answered correctly, with necessary corrections provided for the false statements.",
+  "_metadata": {
+    "task_id": "TF_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "91bc7101ed7b89f497ee8ccefd9362320ef05771a00c569c0188157ae46a9dcf",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:20:49.632459+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fb04bed52348f02f502f9e1be1f532b3f978b4efda5c5774bc41c1d3c2aae8eb",
+    "input_tokens": 6447,
+    "output_tokens": 1774,
+    "thoughts_tokens": 1135,
+    "cost_usd": 0.001177,
+    "latency_ms": 186046,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6447,
+        "output_tokens": 1774,
+        "thoughts_tokens": 1135,
+        "cost_usd": 0.001177,
+        "latency_ms": 186046,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

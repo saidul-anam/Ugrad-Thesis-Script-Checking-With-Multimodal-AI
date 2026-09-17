@@ -1,0 +1,101 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a seamless continuation of the stem, developing the plot logically from the conflict (mouse in nose) to the resolution (mouse saving lion).",
+      "evidence": "While running suddenly the mouse enter into the nose of lion . Being ferocious the lion groaning and tell \"who is here?\""
+    },
+    "structure_format_brevity": {
+      "rationale": "A title is provided, the story reaches a positive conclusion, and a clear moral lesson is explicitly stated at the end.",
+      "evidence": "Moral: Every creature need other's help to live"
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in tense consistency, frequently using present tense forms in a past-tense narrative, along with spelling errors ('slepping', 'virtud').",
+      "evidence": "the lion smile loudly and say you will help me"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story is a verbatim retelling of a very common, memorized fable (Aesop's Lion and the Mouse) with no original creative twists or vivid descriptive details.",
+      "evidence": "The mouse notice that and cut the net with it's sharp teeth"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past)",
+      "Spelling errors (e.g., 'virtud', 'slepping')",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Strong adherence to plot requirements",
+      "Correct inclusion of title and moral"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of story structure by successfully continuing the stem and providing a constructive moral. However, the response is heavily memorized and lacks originality. The score is significantly hampered by frequent grammatical lapses, specifically the failure to maintain a consistent past tense throughout the narrative.",
+  "_metadata": {
+    "task_id": "STORY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "849b1b43cd884b3fbbaa24055e205009cfd8bd88b89aec2c18617c0e6011512a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:25:23.966581+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6f5afeec21fb8f80f9f9b8e74d8474f32c95e429c54d5abc0012fe554c886681",
+    "input_tokens": 4480,
+    "output_tokens": 2447,
+    "thoughts_tokens": 1713,
+    "cost_usd": 0.001182,
+    "latency_ms": 69093,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 2447,
+        "thoughts_tokens": 1713,
+        "cost_usd": 0.001182,
+        "latency_ms": 69093,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The continuation connects directly to the prompt stem and follows a logical sequential plot following the traditional fable.",
+      "evidence": "While running he suddenly slip into lion's nose. The lion woke up and became very angry and about to kill that mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a clear, positive conclusion demonstrating mutual friendship, but completely omits the required story title.",
+      "evidence": "From that day, that lion and mouse became best friends."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical flaws are present, including past-tense lapses, missing auxiliary verbs, incorrect reporting syntax, and improper modal backshifting.",
+      "evidence": "While running he suddenly slip into lion's nose. The lion woke up and became very angry and about to kill that mouse. Then the mouse told the lion to let him go. He also said that he will help the lion in future"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, predictable retelling of a well-known fable with basic sentence patterns and minimal vivid description.",
+      "evidence": "The lion became very happy and thanked the mouse for his help."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (using present tense 'slip' and 'will' in past narrative context)",
+      "Faulty indirect speech construction ('said that, how a mere mouse can help him')",
+      "Omission of required title"
+    ],
+    "positive_aspects": [
+      "Logical sequential narrative continuation from the prompt",
+      "Clear, positive moral resolution"
+    ]
+  },
+  "feedback_summary": "The candidate writes a complete and coherent story continuing smoothly from the stem with a positive resolution. However, the story omits a title and displays several grammatical errors, particularly around narrative tense control and indirect speech structure. As vocabulary and syntax are basic, the script sits at the lower value of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e68e531becbf9d0b5842ab905e5a4c0e3772b975678e702f3aa59ad1e0eee06",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:33:34.461719+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "581efd81c79f9e3b0dd2d6be71255c2595c2f161043b6fc7888a4a6962633908",
+    "input_tokens": 4474,
+    "output_tokens": 3368,
+    "thoughts_tokens": 2623,
+    "cost_usd": 0.009762,
+    "latency_ms": 41343,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4474,
+        "output_tokens": 3368,
+        "thoughts_tokens": 2623,
+        "cost_usd": 0.009762,
+        "latency_ms": 41343,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

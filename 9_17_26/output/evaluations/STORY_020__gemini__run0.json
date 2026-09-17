@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative continues smoothly and logically from the prompt stem, maintaining clear chronological plot progression throughout the story.",
+      "evidence": "The lion woke up and became very angry and about to kill that mouse. Then the mouse told the lion to let him go."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story develops a clear positive ending, but completely omits the mandatory title required by the prompt.",
+      "evidence": "From that day, that lion and mouse became best friends."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple past-tense inconsistencies, missing auxiliary verbs, incorrect prepositions, and improper sequence of tenses in reported speech.",
+      "evidence": "While running he suddenly slip into lion's nose."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot follows a predictable, traditional Aesop fable storyline with standard vocabulary and basic phrasing rather than creative or descriptive narrative turns.",
+      "evidence": "Then the rat started cutting the net by his sharp teeth."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense consistency slips (e.g., 'slip' instead of 'slipped')",
+      "Failure to backshift tenses in indirect speech ('will' instead of 'would')",
+      "Omission of auxiliary verbs ('became very angry and about to kill')",
+      "Preposition error ('cutting the net by his sharp teeth')"
+    ],
+    "positive_aspects": [
+      "Clear, coherent narrative continuation from the prompt",
+      "Satisfying and positive resolution depicting friendship and mutual help"
+    ]
+  },
+  "feedback_summary": "The candidate has provided a coherent and complete continuation of the prompt with a satisfying moral resolution. However, the submission lacks a title, relies on a predictable retelling of a classic fable, and contains several grammatical and tense-shifting errors (such as 'slip' and reported speech with 'will'). Based on standard/basic vocabulary and mechanics, the script is placed at the lower threshold of Band 3 with a score of 4 out of 7.",
+  "_metadata": {
+    "task_id": "STORY_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e68e531becbf9d0b5842ab905e5a4c0e3772b975678e702f3aa59ad1e0eee06",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:32:53.125828+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "da8bd3200bbc67df68bd54b6e23cb2c864bbf8688a754558f52781ce8105d3aa",
+    "input_tokens": 4474,
+    "output_tokens": 2822,
+    "thoughts_tokens": 2058,
+    "cost_usd": 0.008397,
+    "latency_ms": 27313,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4474,
+        "output_tokens": 2822,
+        "thoughts_tokens": 2058,
+        "cost_usd": 0.008397,
+        "latency_ms": 27313,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

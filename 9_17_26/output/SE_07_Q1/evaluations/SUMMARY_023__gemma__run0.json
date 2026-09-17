@@ -1,0 +1,101 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully identifies the start date, the launch location, the arrival on the moon, the activities performed, and the return to Earth.",
+      "evidence": "On July 16, 1969 three American began their journey to the moon... Apollo II reached to the Moon. Thery took photos... came da back too the earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary exceeds the required one-third length constraint (44% of the original text), failing the brevity requirement.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in spelling ('Florid', 'Thery'), grammar ('three American', '4 day'), and basic word usage ('came da back too').",
+      "evidence": "there spacecraft called by Apollo II... came da back too the earth."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student has made a genuine effort to rewrite the text in their own words, avoiding verbatim copying of full sentences.",
+      "evidence": "People all over the world see their ve victory"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes",
+      "Subject-verb agreement",
+      "Pluralization errors"
+    ],
+    "positive_aspects": [
+      "Good coverage of main events",
+      "Successful paraphrasing"
+    ]
+  },
+  "feedback_summary": "The candidate captured the essential narrative of the Apollo 11 mission. However, the response is heavily marred by linguistic errors and exceeds the allowed length for a summary. A structural cap of 2 was applied because the length exceeds one-third of the original text.",
+  "_metadata": {
+    "task_id": "SUMMARY_023",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0022",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "b6d91419eb59a7a7640e021e06521d4c86979fa2a61410d409f8ce2292214309",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:36:10.777233+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1a64575316974d8037264a9f596ef75097b3bed2328554634cff9d781495db09",
+    "input_tokens": 6051,
+    "output_tokens": 1962,
+    "thoughts_tokens": 1269,
+    "cost_usd": 0.001194,
+    "latency_ms": 256640,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6051,
+        "output_tokens": 1962,
+        "thoughts_tokens": 1269,
+        "cost_usd": 0.001194,
+        "latency_ms": 256640,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

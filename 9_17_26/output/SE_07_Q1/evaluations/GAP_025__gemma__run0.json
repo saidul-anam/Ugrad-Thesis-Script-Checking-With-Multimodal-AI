@@ -1,0 +1,97 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored evaluation: (a) 'smoothly' is grammatically incorrect as a noun object; (b) 'great' is correct; (c) 'cheered' is correct; (d) 'loud' is an adjective where a noun is required; (e) 'cheered' is a verb where a noun is required. Total correct items: 2.",
+      "evidence": "b) great c) cheered"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Part-of-speech errors (using adverbs/adjectives instead of nouns)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of descriptive terms and action verbs in gaps b and c"
+    ]
+  },
+  "feedback_summary": "Items (b) and (c) are correct. Items (a), (d), and (e) are incorrect due to the use of words that do not fit the required part of speech for the sentences.",
+  "_metadata": {
+    "task_id": "GAP_025",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0024",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "81f73973b48cde66c0aff7ef048e7026711128f23a933b473020fad15937fa7b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:41:09.040471+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "09c5508a52d64e5c224c76574ff496de39860fb06d890aee68e0c03f8a753afc",
+    "input_tokens": 6222,
+    "output_tokens": 1254,
+    "thoughts_tokens": 626,
+    "cost_usd": 0.000998,
+    "latency_ms": 471703,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6222,
+        "output_tokens": 1254,
+        "thoughts_tokens": 626,
+        "cost_usd": 0.000998,
+        "latency_ms": 471703,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

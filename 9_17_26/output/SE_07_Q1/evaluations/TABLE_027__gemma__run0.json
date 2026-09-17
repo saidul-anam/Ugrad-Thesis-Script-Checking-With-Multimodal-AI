@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, ii, iii, and iv are correct as they provide the right factual information from the passage; spelling errors are ignored for this item-scored task. Item v is incorrect because it provides a date instead of the required location ('All over the world').",
+      "evidence": "Jouhney to the 'moon. / Ahmstrong and Aldnin / 20 7oly 20, 1969. / came bach Satelt to Earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Fact error in item v (date provided instead of location)"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of key names and dates for most items"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identified the information for items i, ii, iii, and iv. Spelling inaccuracies in these items (e.g., 'Jouhney', 'Aldnin') did not result in mark deductions. Item v was marked incorrect because the candidate provided a date ('July 24, 1969') rather than the location ('All over the world') requested by the table context.",
+  "_metadata": {
+    "task_id": "TABLE_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "124369022dfd4c72b445184a43ee818924d8077519bab7d2cc8e0c1e55561b80",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:00:11.681110+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1a073d90b720db79695b26355d98e188742161135d050a49eb4b24cae032cf78",
+    "input_tokens": 6375,
+    "output_tokens": 1590,
+    "thoughts_tokens": 923,
+    "cost_usd": 0.001115,
+    "latency_ms": 196766,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6375,
+        "output_tokens": 1590,
+        "thoughts_tokens": 923,
+        "cost_usd": 0.001115,
+        "latency_ms": 196766,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

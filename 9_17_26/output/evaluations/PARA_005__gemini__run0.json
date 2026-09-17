@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script addresses the prompt questions by providing basic definitions, applications, educational uses, and potential threats of AI, though the elaboration remains somewhat simplistic.",
+      "evidence": "In this world many school and coleges use AI to teaching and learning. AI analysed every student in the class and told him what he is lacking of, how he can improve in his study."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single continuous paragraph with a discernible topic sentence, but internal cohesion is weakened by repetitive sentence openings.",
+      "evidence": "It can answer everything. It can generate any type of picture. It can make a 3d imodel of a human, dog, cat etc."
+    },
+    "language_mechanics": {
+      "rationale": "Contains noticeable grammatical slips such as subject-verb disagreement ('Some says'), unjustified past-tense shifting ('AI analysed... and told'), spelling errors ('imodel', 'coleges'), and awkward phrasing ('much easy', 'to teaching').",
+      "evidence": "Some says AI can replace a human and take their job."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates authentic thought by referencing contemporary AI platforms rather than relying on memorised guide cliches, though vocabulary and sentence variety remain basic.",
+      "evidence": "There are many A.I. like chat gpt, gemini, Grok etc."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors (e.g., 'Some says', 'that take human')",
+      "Tense inconsistency (inappropriate shift to past tense: 'analysed', 'told')",
+      "Spelling and typographical slips ('to to', 'imodel', 'coleges')",
+      "Incorrect preposition and adjective forms ('lacking of', 'much easy')"
+    ],
+    "positive_aspects": [
+      "Maintained a single unified paragraph format without splitting",
+      "Directly addresses prompt questions with relevant real-world examples (ChatGPT, Gemini, Grok)",
+      "Clear, readable communicative intent throughout the response"
+    ]
+  },
+  "feedback_summary": "The candidate writes a relevant, single-block paragraph that covers all prompt questions regarding definition, features, educational impact, and threats of AI. However, the score is constrained to the lower end of Band 3 due to basic sentence patterns, lack of transitional flow, and recurring grammatical errors (subject-verb agreement, tense shifts, and spelling mistakes).",
+  "_metadata": {
+    "task_id": "PARA_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3215bf8b98341296783d38ded46b23dafff3717134d37de081b9480004b9689d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:14:32.683452+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b23500ff4081aa48120a655d4ccd9d065338e65044fc6132b9de8e1f20a8588a",
+    "input_tokens": 4410,
+    "output_tokens": 2802,
+    "thoughts_tokens": 1953,
+    "cost_usd": 0.008328,
+    "latency_ms": 19358,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4410,
+        "output_tokens": 2802,
+        "thoughts_tokens": 1953,
+        "cost_usd": 0.008328,
+        "latency_ms": 19358,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

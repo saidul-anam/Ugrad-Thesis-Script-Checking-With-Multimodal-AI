@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a surface-level summary of the poem's content (the two types of dreams) rather than extracting the abstract theme of ambition, willpower, or the power of active dreaming.",
+      "evidence": "There are two kind of dream."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and introduces the topic immediately, but it is too brief and fails to provide supporting interpretation of the poem's meaning.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in subject-verb agreement, pluralization, and punctuation, including the use of a nonsensical word ('fata').",
+      "evidence": "Those dream we see while sleeping is not for us."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying entirely, but the phrasing is very basic and does not attempt to interpret the poem's imagery.",
+      "evidence": "another because of which we can not sleep."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement (e.g., 'Those dream... is')",
+      "Pluralization errors ('two kind of dream')",
+      "Punctuation and spelling ('real. dream', 'fata')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying of the source text",
+      "Followed the single-block structural requirement"
+    ]
+  },
+  "feedback_summary": "The candidate followed the layout requirements and showed good originality by not copying the poem. However, the response confuses a plot summary with a thematic analysis; it describes what happens in the poem rather than explaining the underlying idea. The writing is further weakened by significant grammatical errors and poor vocabulary choices.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e191280e2479814d83562f9fd6108c34c80f83c36b34ad5d01f2cb3007534351",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:43:05.245678+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "241573a545c79190aa4db3ab5c91b5217cac0acd3097dc87021824f3eda33fe8",
+    "input_tokens": 4277,
+    "output_tokens": 2747,
+    "thoughts_tokens": 1997,
+    "cost_usd": 0.001252,
+    "latency_ms": 78453,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 2747,
+        "thoughts_tokens": 1997,
+        "cost_usd": 0.001252,
+        "latency_ms": 78453,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

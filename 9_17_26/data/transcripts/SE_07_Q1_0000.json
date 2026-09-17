@@ -1,0 +1,208 @@
+{
+  "script_id": null,
+  "pages_processed": 14,
+  "answers": [
+    {
+      "question_number": "2",
+      "transcript": "a. Joynul and Nazma live in a small village\n b. Joynul do for the villager aged x and nut aged 5 Joynul is a carpenter he is hired by the villager to make a\n c. Joynul All faced diffict with the pan hired\n d. Nazma the day as the work at home from morning to night\n e. To help childrens education and some mnumbegs goto Bangla and English",
+      "pages": [
+        1,
+        2
+      ],
+      "confidence": 0.7,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Very erratic handwriting; 'mnumbegs' and 'diffict' transcribed as written."
+    },
+    {
+      "question_number": "3",
+      "transcript": "a. the (Adverb)\n b. gave (ROUGH)\n c. and (Farmer)\n d. loud",
+      "pages": [
+        3
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "7",
+      "transcript": "a. urganapea\n b. He is very ripen\n c. preposition\n d. only in the evening",
+      "pages": [
+        3
+      ],
+      "confidence": 0.6,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Transcribed second list on page 3."
+    },
+    {
+      "question_number": "4",
+      "transcript": "Beautiful --- brout\n Brave --- Braves\n Clean --- clens\n old --- rich\n quiet --- avey",
+      "pages": [
+        4
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "5",
+      "transcript": "a. JUN 6 1969\n b. JUN 20 1969\n c. [illegible]\n d. JUN 24 1969\n e. [illegible]",
+      "pages": [
+        5
+      ],
+      "confidence": 0.8,
+      "illegible_count": 2,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "6",
+      "transcript": "a. true\n b. true\n c. true\n d. true\n e. False",
+      "pages": [
+        6
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "8",
+      "transcript": "a. the post officer aged\n b. the post emaper doing the epot\n c. The post emaps happy and dose\n d. children in a sehe\n e. THE POST OFFIE",
+      "pages": [
+        8
+      ],
+      "confidence": 0.7,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "9",
+      "transcript": "1. b\n 2. c\n 3. e\n 4. b\n 5. g\n 6. c\n 7. d\n 8. g",
+      "pages": [
+        9
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Transcribed from the two-row grid cell by cell."
+    },
+    {
+      "question_number": "10",
+      "transcript": "a. This is the poem about say\n b. The Nato peador in a life\n c. The leisure pear the life\n d. this is child whose in the cape\n e. this is according important is the chir\n f. this is a shepherd is child\n g. The poem does pole\n h. The poem per massage the lE",
+      "pages": [
+        10,
+        11
+      ],
+      "confidence": 0.7,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "11",
+      "transcript": "The school is znd her in a school a pe and the honour an the bo at as ince and ser v re of us",
+      "pages": [
+        12
+      ],
+      "confidence": 0.6,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "ANNUAL PRIZE GIVING",
+      "notes": "Extreme illegibility; transcribed as best as possible."
+    },
+    {
+      "question_number": "13",
+      "transcript": "she friend: help she in ha\nare you ?\nmyself: I am fine the\nand you\nFriend: how are an uay exam in i r o n s\nmyself: yes you ar\nFriend: she is a sure\nare you and\nmyself: how old are you\nFriend: I m 20 year old\nFriend: how and a she l a b v e\nmyself: bye friend",
+      "pages": [
+        13,
+        14
+      ],
+      "confidence": 0.7,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "unlabelled_1",
+      "transcript": "The sentences are am ponaz ma mpo At tive in as manna with their dautho he is out the valige to muth from the given ut romgs",
+      "pages": [
+        7
+      ],
+      "confidence": 0.5,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student appears to be writing instructions to themselves rather than an answer."
+    }
+  ],
+  "questions_not_found": [
+    "1",
+    "12"
+  ],
+  "overall_confidence": 0.6,
+  "extraction_warnings": [
+    "Handwriting is extremely erratic throughout the script, affecting overall confidence."
+  ],
+  "_metadata": {
+    "script_id": "SE_07_Q1_0000",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_07_Q1",
+    "prompt_version": "extraction_prompt_c7_v1",
+    "prompt_file": "extraction_prompt_c7_v1.md",
+    "prompt_hash": "e2dd27e8b39c59d5a775a5d5d8bb0971b6e3b7711196aaa57f59718019ace134",
+    "cache_key": "606152da89c21f966909fde6e1aa9c3a7e1a5ea1cc3455c6b187f33b466ef913",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-16T20:28:28.772109+00:00",
+    "wall_time_s": 423.0,
+    "pages_available": 14,
+    "total_input_tokens": 6270,
+    "total_output_tokens": 1837,
+    "total_cost_usd": 0.001178,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 14,
+        "input_tokens": 6270,
+        "output_tokens": 1837,
+        "cost_usd": 0.0011781,
+        "latency_ms": 422765,
+        "http_status": 200,
+        "attempt_number": 3
+      }
+    ]
+  }
+}

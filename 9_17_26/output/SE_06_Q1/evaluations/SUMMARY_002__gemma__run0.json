@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures the central narrative: Raju's mixed test results, the specific subjects of success and failure, and his resolution to improve based on parental advice.",
+      "evidence": "he do well in Bangla, English, Math. But, he couldnt better in ICT, Seince, and Religion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the brevity constraint significantly. With a length ratio of 0.55, it exceeds both the 1/3 target and the 1/2 hard cap threshold.",
+      "evidence": "Rajer is a student of class six... improve this subjects."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in subject-verb agreement ('He work', 'he do', 'He think'), spelling ('Seince'), and syntax ('couldnt better'), which impede the flow of the summary.",
+      "evidence": "He work hard to do well. As a result, he do well"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying of the source text (only 16.9% overlap), attempting to paraphrase the events in their own words.",
+      "evidence": "His parents advice him to do well in next exam."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Tense inconsistency",
+      "Spelling errors"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of key points",
+      "Avoidance of verbatim lifting"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good understanding of the passage, capturing all essential points in their own words. However, the response is far too long (exceeding 50% of the original text), which triggers a structural hard cap of 2 marks. Additionally, the writing is marred by frequent grammatical errors in tense and agreement.",
+  "_metadata": {
+    "task_id": "SUMMARY_002",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0002",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "6b36e7202e0e04a5ece159549dec9aecbfe7b0520ce1f2e0d3bf353e714123d5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:06:32.960604+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1d9a35b115fb968c4ea01ba82c9f8c15cc4a25c671734eb732c83c0ddfba2818",
+    "input_tokens": 6140,
+    "output_tokens": 2049,
+    "thoughts_tokens": 1310,
+    "cost_usd": 0.001229,
+    "latency_ms": 261155,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6140,
+        "output_tokens": 2049,
+        "thoughts_tokens": 1310,
+        "cost_usd": 0.001229,
+        "latency_ms": 261155,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

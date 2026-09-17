@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides specific future goals (Medical college and Dhaka University), fulfilling the prompt's requirements.",
+      "evidence": "In your letter you wanted to know about my future plan after HSC. In this letter, I'm going to discribe my plan."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components of an informal letter (Address, Date, Salutation, Body, Close, and Signature) are present and correctly positioned.",
+      "evidence": "27 June, 2026\n7/A Dhanmondi 32, Dhaka\nDear Luffy,\n... Your ever\nFihaz"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple spelling errors and a significant lexical error ('from the very litte' instead of 'since I was very little'), preventing a full score in this category.",
+      "evidence": "discribe, addmission, from the very litte"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the opening and closing are formulaic and follow common templates, the middle section contains an authentic reflection on risk management and mindset.",
+      "evidence": "Losing hope of life after that is a foolish mindset. That's why if medical doesn't work out, Dhaka University is my back up plan."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (discribe, addmission)",
+      "Incorrect idiomatic phrasing (from the very litte)"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout",
+      "Coherent and logical progression of ideas"
+    ]
+  },
+  "feedback_summary": "The candidate has demonstrated a strong grasp of the letter format and has stayed strictly on-topic with a logical plan. The writing is clear and communicative. However, the score is capped at 4 (the lower end of Band 4) due to recurrent spelling errors and a clumsy phrasing error in the first paragraph. To improve, the candidate should focus on spelling precision and idiomatic English expressions.",
+  "_metadata": {
+    "task_id": "LETTER_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2c562c70a50a9e58d5bdd933832902a6bab9b1dbc5fbe46307343d7611456e77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:31:37.860507+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f85d91741f1b3109151e4921650d34ba77690aaa27fda1c62db4c9d8c7ef6d65",
+    "input_tokens": 4430,
+    "output_tokens": 2863,
+    "thoughts_tokens": 2077,
+    "cost_usd": 0.001302,
+    "latency_ms": 80047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4430,
+        "output_tokens": 2863,
+        "thoughts_tokens": 2077,
+        "cost_usd": 0.001302,
+        "latency_ms": 80047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

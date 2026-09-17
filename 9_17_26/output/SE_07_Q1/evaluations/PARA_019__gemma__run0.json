@@ -1,0 +1,103 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate covers all required elements of the event (decorations, schedule, guests, and activities). However, there is an awkward repetition of the sentence 'The function started at 4 pm', which slightly detracts from the content flow.",
+      "evidence": "The ceremony of our school was held on the last fifteenth January... The formal cenemony began with the recitation from the holy Quran."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response strictly adheres to the single-paragraph format requirement and begins with a clear, although grammatically flawed, topic sentence.",
+      "evidence": "The Annual Prize Giving Ceremony of our school was really an excited event."
+    },
+    "language_mechanics": {
+      "rationale": "There are several significant errors for a Class VII level: incorrect adjective use ('excited' instead of 'exciting'), severe subject-verb agreement and typing errors ('Eve A Every students were'), missing auxiliary verbs ('the function very enjoyable'), and spelling errors ('cenemony').",
+      "evidence": "Eve A Every students were present at the function."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies on common guide-book clichés typical of NCTB candidates (e.g., 'decorated every corner', 'recitation from the holy Quran'), showing limited original expression.",
+      "evidence": "We decorated every corner of the school compound with green leaves, festoon and colour papers."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Missing Copula/Auxiliary Verbs",
+      "Adjective Choice Errors",
+      "Redundancy"
+    ],
+    "positive_aspects": [
+      "Strict adherence to single-paragraph structure",
+      "Appropriate length",
+      "Complete coverage of the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a structurally sound single paragraph that fully addresses the prompt with appropriate detail and length. However, the score is limited to Band 3 due to frequent grammatical slips, including a severe error in the middle of the text ('Eve A Every students were') and a lack of original phrasing, relying instead on standard memorized templates. The repetition of the event's start time also indicates a lack of careful proofreading.",
+  "_metadata": {
+    "task_id": "PARA_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4aac016f1f24ea6e6555d19a178799033999559ff6e80c357d083f053710b1f2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:31:12.050021+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bd0187791793975892fae4ca3f1a7c0f9aea37287e4b893798ed77da01a0268d",
+    "input_tokens": 5959,
+    "output_tokens": 2438,
+    "thoughts_tokens": 1632,
+    "cost_usd": 0.001327,
+    "latency_ms": 554828,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5959,
+        "output_tokens": 2438,
+        "thoughts_tokens": 1632,
+        "cost_usd": 0.001327,
+        "latency_ms": 554828,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

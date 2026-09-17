@@ -1,0 +1,96 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted five items (b, c, d, e, g). Item b captures the suggestion to enjoy nature. Item c correctly identifies the 'poor' quality of a life without nature. Item d describes parental care (bathing, combing, teaching) which aligns with the indicative content of nursing and guiding. Item e correctly identifies childhood as the period for development. Item g identifies nature as a source of joy. All five are correct.",
+      "evidence": "The poet suggest us that we should take time to enjoy the nature. ... The poet feels that life without time for nature is very poor ... The parent shows care, by bathing his hands, combing his hair ... Childhood is important because it is the time for development and learning. ... Nature is the source of joy and pleasure"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Complete comprehension of the thematic elements of both poems",
+      "Direct and relevant responses"
+    ]
+  },
+  "feedback_summary": "The student correctly answered five items: b, c, d, e, and g. Each response aligns with the indicative content of the answer key. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "POEM_020",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0019",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "08e5072cefb2f78da78d05832b6f8f0d922669ea0d776979d61ae805cf5dcb6d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:48:48.642197+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6a5ec33564809fb314d9748030e3aff2ba81f4a23c7a5fdca7b3f95678f49c5b",
+    "input_tokens": 6463,
+    "output_tokens": 1882,
+    "thoughts_tokens": 1219,
+    "cost_usd": 0.001211,
+    "latency_ms": 621562,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6463,
+        "output_tokens": 1882,
+        "thoughts_tokens": 1219,
+        "cost_usd": 0.001211,
+        "latency_ms": 621562,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

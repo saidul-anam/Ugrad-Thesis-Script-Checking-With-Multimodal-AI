@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the subject and mentions relevant roles (carrying passengers), but the content is logically flawed and contradictory, claiming the puller is a 'famous person' and 'leads a better life'.",
+      "evidence": "carning passengens one place to anothers place"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response adheres to the structural requirement of a single unified block (no sub-paragraphs) and includes an attempt at a topic sentence.",
+      "evidence": "A Rickshaw pullen plays an import pole bin our communication sector"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in spelling, syntax, and grammar render several sentences nearly unintelligible. There is no control over tense or subject-verb agreement.",
+      "evidence": "import pole bin our communication sector carning passengens"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears to be an authentic attempt by the student rather than a memorised guide, given the specific nature of the errors and phrasing.",
+      "evidence": "He was hand work because in his family and daily means."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors (e.g., 'pullen', 'carning')",
+      "Syntactic breakdown (e.g., 'The foul weather his he was mon fore')",
+      "Logical contradictions regarding the subject's socio-economic status"
+    ],
+    "positive_aspects": [
+      "Strict adherence to single-paragraph format",
+      "Attempt to cover various aspects of the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate successfully followed the formatting constraint by writing in a single block. However, the quality of the English is very poor; the script is plagued by pervasive grammatical failures and spelling errors that frequently obscure meaning. Furthermore, the content contains illogical assertions that contradict the reality of the subject's life. While the attempt is authentic, it falls into Band 2 due to severe linguistic instability.",
+  "_metadata": {
+    "task_id": "PARA_019",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0019",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "d0730eebdf321bc99de45150045ecf9ee8cf11e954375466f00348b7d54025bd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:23:56.895883+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "108869b61dc06b48ebe0b6361cb9f39b7322e122929d17d9c413ba753a74cdf0",
+    "input_tokens": 6033,
+    "output_tokens": 2984,
+    "thoughts_tokens": 2217,
+    "cost_usd": 0.001499,
+    "latency_ms": 546093,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6033,
+        "output_tokens": 2984,
+        "thoughts_tokens": 2217,
+        "cost_usd": 0.001499,
+        "latency_ms": 546093,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

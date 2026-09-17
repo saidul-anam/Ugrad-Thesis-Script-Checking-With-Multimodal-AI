@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'thought' is explicitly in the key. Item (b) 'went' fits the sentence grammatically and agrees with the passage's fact that they traveled to Jaipur. Item (c) 'wanted' is incorrect as the context is about the discovery of value, not the desire to know. Item (d) 'gave' is incorrect as the sentence specifies a price ('for ten thousand rupees'), requiring the word 'sold'. Item (e) 'heard' is grammatically incorrect in this syntactic position; it requires a participial form like 'hearing'.",
+      "evidence": "a) thought b) went"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Grammatical category error (using past tense instead of gerund in item e)",
+      "Contextual inaccuracy (item c and d)"
+    ],
+    "positive_aspects": [
+      "Correct identification of synonyms for the first two gaps"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered items (a) and (b). Item (c) was marked wrong as 'wanted' does not fit the context of the discovery. Item (d) was marked wrong because 'gave' is not an appropriate substitute for 'sold' in a transaction for money. Item (e) was marked wrong due to a grammatical error; the sentence structure requires a present participle ('hearing') rather than a past tense verb ('heard').",
+  "_metadata": {
+    "task_id": "GAP_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "fceda176eb05ff60ac15f5c78dd06469202645d9ba7d9c29e135ae382d8e11b6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:04:31.613541+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e06c9fb9d3de956abaf993ffefb9eb2b6aed2ff293f9bcf5a07ad79aea6eb88e",
+    "input_tokens": 6319,
+    "output_tokens": 1882,
+    "thoughts_tokens": 1169,
+    "cost_usd": 0.001197,
+    "latency_ms": 139782,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6319,
+        "output_tokens": 1882,
+        "thoughts_tokens": 1169,
+        "cost_usd": 0.001197,
+        "latency_ms": 139782,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

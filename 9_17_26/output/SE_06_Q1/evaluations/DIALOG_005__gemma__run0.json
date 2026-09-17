@@ -1,0 +1,102 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate covers the core requirements of the prompt: mentions fever and Covid-19 symptoms and receives the doctor's advice to get tested at a center.",
+      "evidence": "I have been suffering from some covid -19 symetoms for a week.. doctor : Th. You and go and family go to covid-19 center give a sample to thest."
+    },
+    "structure_format_brevity": {
+      "rationale": "The layout is correct with alternating turns, an opening greeting, and a closing. However, the speaker's name is spelled inconsistently throughout the script (Shanid, shanhid, Shamid, Shahit), which slightly degrades the structural precision.",
+      "evidence": "Shanid : Hello doctor. ... shanhid : OK, doctor. ... Shamid : bay bay b.y ... Shahit : sey you .."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in spelling, syntax, and grammar. While the meaning is generally recoverable, the level of accuracy is below the expected Class VI standard.",
+      "evidence": "my fothaer and my sister suffering fever. ... You we test covid-19 ... I am filing very bad"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue is an original attempt and not a memorised guide text, although the vocabulary is very limited and the phrasing is repetitive.",
+      "evidence": "I am filing very bad"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (fothaer, symetoms, thest)",
+      "Syntax/Sentence construction failures",
+      "Inconsistent proper noun spelling"
+    ],
+    "positive_aspects": [
+      "Correct dialogue format",
+      "Addresses all parts of the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate successfully followed the dialogue format and addressed the required scenario (Covid-19 symptoms and doctor's visit). However, the script is marred by significant linguistic errors in spelling and grammar and a lack of consistency in spelling the protagonist's name. The score is placed at the lower end of Band 3 due to the broken syntax.",
+  "_metadata": {
+    "task_id": "DIALOG_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "5433eec306f864be2e7ad57380cb2562f4a862c6b36145c5a842dde40b375d26",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:29:09.702534+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "938eba1172cf69f6221910659e43b6bf73396e914038b26a9dc8fdebb3dd2eb7",
+    "input_tokens": 6084,
+    "output_tokens": 2966,
+    "thoughts_tokens": 2176,
+    "cost_usd": 0.001498,
+    "latency_ms": 1035217,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6084,
+        "output_tokens": 2966,
+        "thoughts_tokens": 2176,
+        "cost_usd": 0.001498,
+        "latency_ms": 1035217,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

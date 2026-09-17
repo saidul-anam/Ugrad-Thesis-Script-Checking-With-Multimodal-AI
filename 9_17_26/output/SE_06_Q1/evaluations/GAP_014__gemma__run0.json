@@ -1,0 +1,99 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (b) and (d) are marked correct. Item (b) 'went back' matches the key. Item (d) 'solled' is a misspelling of 'sold' but clearly intends the correct word, which earns the mark per the rubric. Item (c) 'wanted' is contextually incorrect as it does not align with the discovery of value described in the passage. Items (a) and (e) were omitted.",
+      "evidence": "b. went back, d. solled"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omitted responses",
+      "Contextual inaccuracy"
+    ],
+    "positive_aspects": [
+      "Correct identification of plot movement for item (b)",
+      "Correct conceptual understanding for item (d) despite spelling error"
+    ]
+  },
+  "feedback_summary": "The student scored 2 out of 5. Item (b) 'went back' is correct. Item (d) 'solled' is marked correct as a clear misspelling of 'sold'. Item (c) 'wanted' is incorrect. Items (a) and (e) were left blank.",
+  "_metadata": {
+    "task_id": "GAP_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "abffc6c592bd740573ed0a93a2ecb94d63de8448f20a78c51855f476a184e8e8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:08:37.741389+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a4962ccee63f80198b8cc502a56029caeed0e1230a2043e1d1a2b3c6bdfc8aac",
+    "input_tokens": 6317,
+    "output_tokens": 1770,
+    "thoughts_tokens": 1092,
+    "cost_usd": 0.001163,
+    "latency_ms": 1266969,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6317,
+        "output_tokens": 1770,
+        "thoughts_tokens": 1092,
+        "cost_usd": 0.001163,
+        "latency_ms": 1266969,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

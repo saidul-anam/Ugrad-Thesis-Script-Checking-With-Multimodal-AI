@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, c, and d are correctly answered with accurate corrections. Item e is marked 0 because the provided correction ('The mission showed the power of science...') is a general statement and fails to correct the specific factual error in the statement regarding interplanetary travel to Mars.",
+      "evidence": "a) False. Corr. Ans: Apollo 11 was a spacecraft to the Moon that began in 1969. b) False. Corr. Ans: Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the Moon. c) False. Corr. Ans: Neil Armstrong was the first person to walk on the Moon's surface. d) True."
+    },
+    "structure_format_brevity": {
+      "rationale": "Zero marks assigned as this is an item-scored question.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Zero marks assigned as this is an item-scored question.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Zero marks assigned as this is an item-scored question.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect correction logic for item e (provided a general true statement instead of refuting the specific false claim)"
+    ],
+    "positive_aspects": [
+      "Precise corrections for most false statements",
+      "Correct identification of the True statement"
+    ]
+  },
+  "feedback_summary": "The student earned 4 out of 5 marks. Items a, b, c, and d were marked right. Item e was marked wrong because the correction provided did not address the specific error about travel to Mars, and per the rubric, a 'False' verdict must be accompanied by a correct factual correction to earn the mark.",
+  "_metadata": {
+    "task_id": "TF_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "882f0dbd77f9e712e406309480ab5e10dcded9d205d1219989204ac0036085f8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:47:50.879078+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "29d0d34127a42fba6ed308941118cd0673efebde1c6bd01382460fcc1b89942c",
+    "input_tokens": 6465,
+    "output_tokens": 1945,
+    "thoughts_tokens": 1235,
+    "cost_usd": 0.00123,
+    "latency_ms": 256609,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6465,
+        "output_tokens": 1945,
+        "thoughts_tokens": 1235,
+        "cost_usd": 0.00123,
+        "latency_ms": 256609,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

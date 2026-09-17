@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to comprehend the poem's central theme of hope as an enduring, unconditional inner strength, instead introducing an irrelevant external moral claim and taking the bird metaphor literally.",
+      "evidence": "without hope a man become lazy. A little Bird sing nicely."
+    },
+    "structure_format_brevity": {
+      "rationale": "Although written as a single block within acceptable length, the response lacks internal cohesion and includes isolated sentence fragments rather than connected summary prose.",
+      "evidence": "Feathers."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains pervasive grammatical breakdowns, including isolated word fragments, subject-verb agreement errors, and incorrect pluralization after singular articles.",
+      "evidence": "Hope is an important feathers. Feathers. without hope a man become lazy."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows minimal paraphrasing ability, relying on awkward phrasing and lifting an entire line directly from the poem.",
+      "evidence": "Abash the little bird that kept so many warm."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragments lacking predicate structure",
+      "Subject-verb agreement failure",
+      "Direct copying of poem lines",
+      "Misinterpretation of central metaphor and introduction of external moralizing"
+    ],
+    "positive_aspects": [
+      "Attempted response kept in a single short block"
+    ]
+  },
+  "feedback_summary": "The candidate attempts a summary but fails to understand the metaphorical meaning of Dickinson's poem, introducing extraneous ideas ('a man become lazy') and directly copying lines from the source. Severe grammatical errors, such as sentence fragments ('Feathers.') and agreement errors ('a man become', 'Bird sing'), severely impede readability, placing the script at the top of Band 1 due to the presence of discernible sentences.",
+  "_metadata": {
+    "task_id": "SUMMARY_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fe45bcd4b2a0ce4664e2964db2b3dd6904d4c5b702b12fa50b8ba161bc5d8fbd",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:58:19.451419+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "762cb02be56b397c5b2dc5809fd50c267ffbfc79a00484f2d014c500bac58d47",
+    "input_tokens": 4354,
+    "output_tokens": 2685,
+    "thoughts_tokens": 1972,
+    "cost_usd": 0.008019,
+    "latency_ms": 17483,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4354,
+        "output_tokens": 2685,
+        "thoughts_tokens": 1972,
+        "cost_usd": 0.008019,
+        "latency_ms": 17483,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

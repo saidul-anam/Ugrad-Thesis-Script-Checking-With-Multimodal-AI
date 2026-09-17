@@ -1,0 +1,99 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is a correct antonym. Item b ('Strong') is not a synonym for brave. Item c ('glassy Cleand') does not provide a valid synonym for clean. Item d ('oldest') is a superlative form, not a synonym. Item e ('unquiet') is an acceptable antonym for quiet.",
+      "evidence": "a. Beautiful (Antonym) - Ugly... e. quiet (Antonym) - unquiet"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect synonym selection (Strong for Brave)",
+      "Use of superlative form instead of synonym (Oldest for Old)",
+      "Confusion of meaning/spelling for 'Clean'"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonyms for 'Beautiful' and 'Quiet'"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered items a and e. Items b, c, and d were marked incorrect as they did not provide valid synonyms as requested by the prompt.",
+  "_metadata": {
+    "task_id": "VOCAB_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6e06cb85c3fd2fe3222015da5ee310029fe73243b3439bebfe7a5fd59934b062",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:13:34.666610+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7a3a3a249e6259a50a2f718dfad691a80f9deb02feaa8bedb48131103d563a19",
+    "input_tokens": 6244,
+    "output_tokens": 1638,
+    "thoughts_tokens": 1014,
+    "cost_usd": 0.001116,
+    "latency_ms": 999750,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6244,
+        "output_tokens": 1638,
+        "thoughts_tokens": 1014,
+        "cost_usd": 0.001116,
+        "latency_ms": 999750,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned 3 out of 8 sentences. Correct: Position 6 (h), Position 7 (d), Position 8 (b). Incorrect: Position 1 (a instead of c), Position 2 (c instead of f), Position 3 (f instead of e), Position 4 (e instead of g), Position 5 (g instead of a).",
+      "evidence": "6. h\n7. d\n8. b"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequencing of the narrative introduction and build-up (Items 1-5)"
+    ],
+    "positive_aspects": [
+      "Correctly identified the resolution sequence (Items 6-8)"
+    ]
+  },
+  "feedback_summary": "The student awarded 3 marks for the following correct positions: 6(h), 7(d), and 8(b). Positions 1(a), 2(c), 3(f), 4(e), and 5(g) were incorrect according to the answer key.",
+  "_metadata": {
+    "task_id": "REARR_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2882d01ca010f06b08e9c1f290e82ae7a0d9dbdb98a81f4ea8508403330ef4d2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:28:04.032557+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e2328eaaa24b1aaa8ca25e63268958fabf8b22d9306f17c0998535e6646a1408",
+    "input_tokens": 6284,
+    "output_tokens": 1520,
+    "thoughts_tokens": 878,
+    "cost_usd": 0.001084,
+    "latency_ms": 551359,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6284,
+        "output_tokens": 1520,
+        "thoughts_tokens": 878,
+        "cost_usd": 0.001084,
+        "latency_ms": 551359,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

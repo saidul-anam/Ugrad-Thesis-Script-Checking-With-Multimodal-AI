@@ -1,0 +1,100 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies all five data points from the chart, although there is a confusing typo ('41% Natural gas Coal') in the opening sentence.",
+      "evidence": "Coal which was the highest 46% of the total sources. ... Natural gas ... 24%. ... Hydro-electric powere which was 16% ... 12% electricity was generated from oil. ... Nuclear only 2%"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a basic introduction, but it fails the structural requirement by including personal moral judgments and environmental advice not found in the data.",
+      "evidence": "If we want to save these natural ressource we should increase the use of renewabl enery."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and several fragmented sentences lacking main verbs.",
+      "evidence": "sourcee of generation electricity... powere... col conclusion... stued so much non-renewal energy"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses basic comparative terminology ('highest', 'second highest', 'least used'), but the vocabulary is simplistic and lacks analytical depth.",
+      "evidence": "the second highest option for generating electricity"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (sourcee, powere, ressource, renewabl)",
+      "Sentence fragmentation",
+      "Inclusion of external opinions/moralizing"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of numerical data",
+      "Clear identification of the highest and lowest values"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extracted the numerical data from the chart. However, the score is significantly hindered by a high frequency of spelling and grammatical errors. More importantly, the student included a concluding paragraph containing personal opinions and moral judgments regarding renewable energy; per the rubric, this triggers a structural cap (max 6), although the raw quality of the writing already placed the score below that threshold. To improve, the candidate should focus on purely objective description and basic spelling accuracy.",
+  "_metadata": {
+    "task_id": "CHART_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fa86707c99b449d255da2cce195d25313d2ea1dbf365f3b17ce4d9a9f98951ea",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:37:18.511428+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "71d6c511c993b90d9d50b5c9f1d652e22ca87d7635ace725f3462f03e3e0b327",
+    "input_tokens": 4405,
+    "output_tokens": 2046,
+    "thoughts_tokens": 1264,
+    "cost_usd": 0.001054,
+    "latency_ms": 57954,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4405,
+        "output_tokens": 2046,
+        "thoughts_tokens": 1264,
+        "cost_usd": 0.001054,
+        "latency_ms": 57954,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

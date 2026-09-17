@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all key elements: the contrast in subject performance, the parental intervention, and the resolution to improve.",
+      "evidence": "He did well in Bangla, English and Mathematics... got poor marks in ICT, science and Religion... His parents advised him... believes that with more pratice, he can surely improve himself."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block, but it exceeds the one-third length constraint (43% of source text), triggering a structural penalty.",
+      "evidence": "Raju is a student of class six."
+    },
+    "language_mechanics": {
+      "rationale": "There are minor spelling errors ('attendtive', 'pratice') and a syntactic redundancy ('didn't do well in got poor marks'), but the meaning remains clear for Class VI.",
+      "evidence": "didn't do well in got poor marks in ICT, science and Religion"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The summary is written in the student's own words with very low verbatim overlap (12%), showing good paraphrasing skills.",
+      "evidence": "can surely improve himself."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (orthography)",
+      "Syntactic slips"
+    ],
+    "positive_aspects": [
+      "Strong paraphrasing",
+      "Accurate content extraction"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a strong understanding of the text and effectively paraphrased the main events and resolution. However, the summary length exceeds the required limit of one-third of the original passage. Consequently, a structural hard cap of 2 is applied as per the evaluation guidelines.",
+  "_metadata": {
+    "task_id": "SUMMARY_017",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0017",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1ab411c6eea4ae7444db6a5f31261444c089f658f05b01ff28697a08fa56991a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:04:49.459086+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "14c6e0fc0e6f02fa7f9c5c6d874a7ec183b0d9d07ef5fec9723147a0a90fc6da",
+    "input_tokens": 6121,
+    "output_tokens": 2240,
+    "thoughts_tokens": 1532,
+    "cost_usd": 0.001284,
+    "latency_ms": 294812,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6121,
+        "output_tokens": 2240,
+        "thoughts_tokens": 1532,
+        "cost_usd": 0.001284,
+        "latency_ms": 294812,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

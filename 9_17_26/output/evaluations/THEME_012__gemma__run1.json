@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core contrast between idle dreaming and active pursuit of goals, though the explanation is basic and lacks depth regarding the 'vanity' or 'danger' mentioned in the poem.",
+      "evidence": "the people who work for it can make it come true"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows the required format: it is a single coherent block and states the theme immediately at the start.",
+      "evidence": "The main theme of the passage is"
+    },
+    "language_mechanics": {
+      "rationale": "There are several grammatical errors, including verb doubling ('is can be'), subject-verb agreement ('each of them bear'), and pluralization errors ('called dream').",
+      "evidence": "The dream we see while sleeping is can be sweet enough"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids all verbatim copying (0% overlap) and uses their own words to interpret the poem, although the phrasing is simple.",
+      "evidence": "the dream we see with our open eyes is the purpose of our life"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Syntax/Verb doubling",
+      "Noun-number agreement"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from source",
+      "Strong adherence to structural constraints",
+      "Accurate identification of the central theme"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the central theme and presents it in a well-structured, single-block format. The lack of verbatim copying is a significant strength. However, the score is limited by basic linguistic mechanics, specifically multiple errors in subject-verb agreement and clumsy sentence construction.",
+  "_metadata": {
+    "task_id": "THEME_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ebe0ff2b14f6b0d79fbac3c557aff0b32cdfcaa2fd5821c5cce2979c235936a4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:21:02.046588+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "77ea72879ec48c4aa20699efb44abb1ddc171841fdb2360f8384e5625453af06",
+    "input_tokens": 4291,
+    "output_tokens": 2399,
+    "thoughts_tokens": 1691,
+    "cost_usd": 0.001149,
+    "latency_ms": 68250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4291,
+        "output_tokens": 2399,
+        "thoughts_tokens": 1691,
+        "cost_usd": 0.001149,
+        "latency_ms": 68250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

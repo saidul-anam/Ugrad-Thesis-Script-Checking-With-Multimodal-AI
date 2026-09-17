@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, ii, iii, and iv are correctly answered based on the passage. Item v is incorrect as the student provided the marks for the strong subjects (8, 9, 10) instead of the weak subjects (6 marks each).",
+      "evidence": "(a) i. Six. (b) ii. Bangla, English, Mathematics. (c) iii. 8 in Bangla, 9 in English, 10 out of 10 in Mathematics (d) iv. ICT, science and religion. (e) v. 8, 9, 10"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; criteria fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; criteria fixed at 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; criteria fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factually incorrect data for item v"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of information for four out of five items",
+      "Correct identification of subjects and marks"
+    ]
+  },
+  "feedback_summary": "The student performed well, correctly answering items i, ii, iii, and iv. However, item v is marked wrong because the student provided the marks for the subjects Raju did well in, rather than the marks for the subjects he did poorly in. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "TABLE_019",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0019",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "06c846a8d96e09562e644194a9e455f98c135a8856210e169f3c49716de075eb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:20:10.018816+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fbf83044aad81d925c90c7c6829d088fd7618590024c3e60f03a12e011682d85",
+    "input_tokens": 6436,
+    "output_tokens": 1505,
+    "thoughts_tokens": 832,
+    "cost_usd": 0.001095,
+    "latency_ms": 581077,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6436,
+        "output_tokens": 1505,
+        "thoughts_tokens": 832,
+        "cost_usd": 0.001095,
+        "latency_ms": 581077,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student captures the initial journey and the landing but completely omits the safe return to Earth and the historical significance/conclusion of the mission.",
+      "evidence": "Neil Armstrong is the first person of the world who walked on the moon."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is well within the one-third length limit (41 words vs 131 source words).",
+      "evidence": "Three American astronauts began their journey to moon with the spacecraft Apollo 11. USA people watched the news with excitement. They took four days to reached the moon. Neil Armstrong is the first person of the world who walked on the moon."
+    },
+    "language_mechanics": {
+      "rationale": "Significant grammatical errors are present, specifically a failure in infinitive verb form ('to reached') and missing articles ('journey to moon').",
+      "evidence": "They took four days to reached the moon."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student has not paraphrased the text; instead, they have created 'trimmed' versions of original sentences, lifting phrasing almost entirely from the source.",
+      "evidence": "watched the news with excitement"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verb tense/form (Infinitive error)",
+      "Omission of definite articles",
+      "Verbatim lifting"
+    ],
+    "positive_aspects": [
+      "Adherence to length constraints",
+      "Correct structural format"
+    ]
+  },
+  "feedback_summary": "The student followed the structural requirements for length and format. However, the summary is incomplete as it ignores the conclusion of the passage. Linguistically, the response is weak, containing basic errors like 'to reached'. Most importantly, the student failed to use their own words, simply deleting a few words from the original sentences rather than paraphrasing.",
+  "_metadata": {
+    "task_id": "SUMMARY_025",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0024",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4f20ffb39046322afa6597d693a80068a888ba98024cd7b1c756a6d9c0286b90",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:48:26.686750+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1115a34ef33fc339a90ce63279ab814d7185c4965c533824cb641d6a85afcaa5",
+    "input_tokens": 6019,
+    "output_tokens": 2528,
+    "thoughts_tokens": 1798,
+    "cost_usd": 0.00136,
+    "latency_ms": 665516,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6019,
+        "output_tokens": 2528,
+        "thoughts_tokens": 1798,
+        "cost_usd": 0.00136,
+        "latency_ms": 665516,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

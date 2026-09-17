@@ -1,0 +1,97 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provided two distinct sets of answers for every gap (a through e) without indicating which answer was the intended final choice. Per the marking guidelines for item-scored questions, providing two options for one item without indicating intent results in 0 marks for that item.",
+      "evidence": "(a) perfor performens ... (a) jaur"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Providing multiple conflicting answers for a single item"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "The student provided two different answers for every single gap (a, b, c, d, and e). According to the examiner guidelines, providing two options for one item with no indication of which is intended scores 0 for that item. Consequently, no marks were awarded for any of the gaps.",
+  "_metadata": {
+    "task_id": "GAP_015",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0014",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "09dbfd9dd9742f9138e90e3bd3ccef2f56e01d688b82fbcb1a2deb5b3a63f7ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:41:50.057232+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1a2f2d1c5b05f97ac0c5a5199dd1150c007069b2bb772191f8210a20598c23f6",
+    "input_tokens": 6260,
+    "output_tokens": 1786,
+    "thoughts_tokens": 1169,
+    "cost_usd": 0.001162,
+    "latency_ms": 650671,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6260,
+        "output_tokens": 1786,
+        "thoughts_tokens": 1169,
+        "cost_usd": 0.001162,
+        "latency_ms": 650671,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

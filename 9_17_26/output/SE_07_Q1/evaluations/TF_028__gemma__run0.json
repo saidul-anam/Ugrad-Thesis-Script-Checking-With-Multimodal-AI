@@ -1,0 +1,96 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Incorrect (True instead of False). Item b: Correct (False with correct correction regarding Michael Collins). Item c: Incorrect (True instead of False). Item d: Incorrect (Verdict is 'Flase' while the key is 'True'). Item e: Incorrect (True instead of False). Only item b earns a mark.",
+      "evidence": "Flase. Correct ans: Michael Collins stayed in the main ship and Armstrong and Adrin landed on the moon."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect factual identification",
+      "Contradictory marking in item d"
+    ],
+    "positive_aspects": [
+      "Correctly identified and corrected item b"
+    ]
+  },
+  "feedback_summary": "The student only answered item (b) correctly by providing both the 'False' verdict and the correct factual correction. Items (a), (c), and (e) were marked with the wrong verdict. Item (d) was marked as 'False' but then contradicted with 'Correct ans: True', failing to provide a clear, correct verdict.",
+  "_metadata": {
+    "task_id": "TF_028",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0027",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9d20c1fd587c406e69bd49ef685a5835b7c693425632aeee504256eb16590574",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:11:08.350970+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ae95833930f7fbc6afae99daacb51bb18d0202bc981efe630e5e2a80b1938fa7",
+    "input_tokens": 6407,
+    "output_tokens": 1618,
+    "thoughts_tokens": 977,
+    "cost_usd": 0.001126,
+    "latency_ms": 656891,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6407,
+        "output_tokens": 1618,
+        "thoughts_tokens": 977,
+        "cost_usd": 0.001126,
+        "latency_ms": 656891,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

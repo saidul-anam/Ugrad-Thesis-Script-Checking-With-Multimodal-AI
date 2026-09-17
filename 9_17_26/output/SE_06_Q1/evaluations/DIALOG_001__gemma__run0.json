@@ -1,0 +1,101 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student addresses the prompt's core requirements by mentioning fever, headache, and body pain, and the doctor suggests a Covid-19 test. However, the conversation is disjointed because one of the doctor's turns is left blank, leaving the subsequent response without a prompt.",
+      "evidence": "I have been suffering fever. Also I bad headache and running shases and pains all over body. ... Please, gekly covid-19 test."
+    },
+    "structure_format_brevity": {
+      "rationale": "The student uses correct dialogue layout with speaker labels and alternating turns. There is an opening greeting, although the closing is abrupt. The blank turn is a significant structural flaw.",
+      "evidence": "Myself : May I come in, sir? Doeton : Yes, sit there on the chain"
+    },
+    "language_mechanics": {
+      "rationale": "The script is characterized by pervasive spelling errors (e.g., 'Doeton' for Doctor, 'poblem' for problem, 'memdens' for members) and severe syntactic breakdowns that barely meet the Class VI standard.",
+      "evidence": "My father pains all oven bady."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is an authentic attempt with simple, original phrasing rather than a memorized guide template. The turns generally respond to the preceding context.",
+      "evidence": "May I come in, sir?"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Phonetic spelling errors",
+      "Broken sentence syntax",
+      "Incomplete dialogue turns"
+    ],
+    "positive_aspects": [
+      "Adherence to dialogue layout",
+      "Directly addresses the medical scenario"
+    ]
+  },
+  "feedback_summary": "The candidate successfully employed the dialogue format using speaker labels and alternating turns. The content covers the required symptoms and the doctor's advice for a Covid-19 test, though the flow is interrupted by a blank line in the dialogue. The score is heavily weighed down by very poor language mechanics, with frequent spelling mistakes and incorrect sentence structures, though the effort is authentic and not copied.",
+  "_metadata": {
+    "task_id": "DIALOG_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "40f7fc97b28cb2cdf60b8c49ce3bb6a778adc291733464d63ed7c3269f57981b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:05:56.412651+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "eb61933f2ee7aebf6ec41b9815801acf55e7cfbdfcce1dd0d354d64ea5f44291",
+    "input_tokens": 5995,
+    "output_tokens": 2562,
+    "thoughts_tokens": 1776,
+    "cost_usd": 0.001368,
+    "latency_ms": 224592,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5995,
+        "output_tokens": 2562,
+        "thoughts_tokens": 1776,
+        "cost_usd": 0.001368,
+        "latency_ms": 224592,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

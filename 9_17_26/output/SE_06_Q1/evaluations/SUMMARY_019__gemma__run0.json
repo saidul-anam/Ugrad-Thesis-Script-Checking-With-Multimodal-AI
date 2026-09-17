@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student fails to synthesize the text and introduces significant factual inaccuracies, changing the protagonist's name (Tomal), class (seven), and the father's reaction (scolding instead of encouraging).",
+      "evidence": "Tomal is a student of class seven... His father scold him for low marks."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is far too long for a summary, with a length ratio of 0.69, significantly exceeding the one-third target.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive grammatical errors including subject-verb agreement ('father scold'), spelling ('mothe'), and syntax ('ICT, Science and Religion getting').",
+      "evidence": "His father scold him for low marks. But his mothe advised him"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student mostly rewrites the passage sentence-by-sentence rather than paraphrasing or synthesizing ideas.",
+      "evidence": "Last week, his school held class tests in several subjects."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy",
+      "Subject-verb agreement",
+      "Failure to synthesize/summarize"
+    ],
+    "positive_aspects": [
+      "Maintained the general sequence of events"
+    ]
+  },
+  "feedback_summary": "The response is not a summary but a flawed rewrite of the original text. It contains several factual errors (name, class, and parent's reaction) and fails the brevity requirement (69% of original length). While the student captures the basic narrative arc, the language mechanics are weak and the lack of paraphrasing results in a low score. A structural cap of 2 was applicable due to length, but the merit score was already lower.",
+  "_metadata": {
+    "task_id": "SUMMARY_019",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0019",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "ea55827406b2738f9d849fe5a9203687d0248abf0e415fa5aa9e5eb7fea35826",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:29:45.898201+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1ddb1ff3b7eed2e24fe4f1460633abd42e707ba48f2adc266a3ecc9f8ba2cc57",
+    "input_tokens": 6167,
+    "output_tokens": 2017,
+    "thoughts_tokens": 1294,
+    "cost_usd": 0.001222,
+    "latency_ms": 959609,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6167,
+        "output_tokens": 2017,
+        "thoughts_tokens": 1294,
+        "cost_usd": 0.001222,
+        "latency_ms": 959609,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

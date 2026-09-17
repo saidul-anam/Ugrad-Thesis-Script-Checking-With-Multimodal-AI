@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate seamlessly picks up from the provided stem and develops the traditional sequential plot through the capture, release, hunter's trap, and rescue without losing narrative continuity.",
+      "evidence": "suddenly he was caught by a hunter's net. The lion roared and cried. At at time that mouse attended there and asked the lion if she could help him."
+    },
+    "structure_format_brevity": {
+      "rationale": "A title is provided and the story reaches a positive, constructive conclusion with an explicit moral, though the title itself is slightly ungrammatical.",
+      "evidence": "Size doesn't Matter to help."
+    },
+    "language_mechanics": {
+      "rationale": "The script is plagued by frequent spelling errors, faulty prepositions, missing punctuation, and subject-verb agreement slips, demonstrating weak control over mechanics.",
+      "evidence": "the mouse entered the lion's nose by it's subconsinsly."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a very basic and predictable fable template with simplistic vocabulary and lacks creative descriptive embellishments.",
+      "evidence": "The lion understand that small in size can help the big size. The lion thanked the mouse and they made friendship with each other."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'Onece', 'forzest', 'subconsinsly', 'theeth', 'understimet', 'clas')",
+      "Grammatical and prepositional slips (e.g., 'shouted the mouse', 'attended there', 'The lion understand')",
+      "Punctuation and capitalization inconsistencies (e.g., missing period after 'came there', unnecessary capitalization in 'The lion was walking')"
+    ],
+    "positive_aspects": [
+      "Successfully maintains sequential plot progression from the stem to a complete resolution.",
+      "Supplies a relevant title and clearly articulates a constructive moral lesson."
+    ]
+  },
+  "feedback_summary": "The script provides a complete and logical continuation of the prompt, including a title and a clear moral ending. However, language mechanics are heavily compromised by persistent spelling errors, incorrect syntax, and basic vocabulary, placing it at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "STORY_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e9a64d2ab4c0832707ce350d7f26cfec67565ad6a9ea29e9da466f0828b3768b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:34:56.720706+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "64511cc4b2efe8fae6172474a2f1782b255c20023185a8f3cb4ab60f5b2319e9",
+    "input_tokens": 4436,
+    "output_tokens": 3768,
+    "thoughts_tokens": 2967,
+    "cost_usd": 0.010751,
+    "latency_ms": 21952,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4436,
+        "output_tokens": 3768,
+        "thoughts_tokens": 2967,
+        "cost_usd": 0.010751,
+        "latency_ms": 21952,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

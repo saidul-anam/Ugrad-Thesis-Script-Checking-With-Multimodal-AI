@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures all central points: the dates of launch, landing, and return, the astronauts involved, and the overall significance of the mission.",
+      "evidence": "The Apollo 11 mision was launched on July 16, 1969 with Neil Armstrong, Michael Collins, Edwin Aldrin."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the response significantly exceeds the 1/3rd length constraint (82 words against a limit of approximately 43).",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "The text is generally readable for a Class VII student, but it contains a spelling error ('mision') and a critical sentence fragment/incomplete thought.",
+      "evidence": "Micheal Collins stayed inside an"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids copying full sentences from the text, demonstrating an ability to synthesize and rewrite the information in their own words.",
+      "evidence": "The moon landing is one of the most impressive accomplishments in human history."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Length constraint violation",
+      "Sentence fragmentation",
+      "Minor spelling errors"
+    ],
+    "positive_aspects": [
+      "Accurate content retrieval",
+      "Low verbatim overlap"
+    ]
+  },
+  "feedback_summary": "The candidate shows a strong grasp of the source material and a good capacity for paraphrasing. However, the response is far too long, nearly double the permissible limit for a summary of this text, which triggers a structural hard cap of 2. Additionally, there is a notable mechanical failure where a sentence is left unfinished ('stayed inside an').",
+  "_metadata": {
+    "task_id": "SUMMARY_004",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0003",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9af85b86904fa812ff6d13b97f6b7d67cdbdb43d92abccef90e9720c9795ca40",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:18:56.277139+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4311800f706440119f25e713fe051c3ffc5985cac65d1f67ebe0fdcc40aad446",
+    "input_tokens": 6099,
+    "output_tokens": 2226,
+    "thoughts_tokens": 1516,
+    "cost_usd": 0.001278,
+    "latency_ms": 143672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6099,
+        "output_tokens": 2226,
+        "thoughts_tokens": 1516,
+        "cost_usd": 0.001278,
+        "latency_ms": 143672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

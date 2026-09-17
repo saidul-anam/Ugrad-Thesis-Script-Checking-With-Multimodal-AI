@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate incorrectly reports multiple data values from the chart (stating Coal is 49% instead of 46%, Hydro-electric power is 18% instead of 16%), leading to inaccurate comparative calculations.",
+      "evidence": "the largest electrycity source is Coal which hold 49%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The structure is marred by conversational padding, inclusion of external assumptions not found in the data, and an entire redundant final paragraph that repeats previous points.",
+      "evidence": "Which is so much expensive to make on genarate the electricity."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling errors occur throughout, alongside severe grammatical weaknesses such as sentence fragments starting with relative pronouns and incorrect verb forms.",
+      "evidence": "The secound largest sounce is Natural gas. Which hold the 24% of this Chart."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative language is clumsy and simplistic, relying on awkward phrasing rather than standard analytical vocabulary.",
+      "evidence": "And at last the most little bit sources is Nuclean."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('sounces', 'electrycity', 'percantage', 'secound', 'diffrence', 'lowwest')",
+      "Sentence fragments beginning with relative pronouns ('Which hold...', 'Which is 18%...')",
+      "Subject-verb agreement and tense errors ('coal dominant', 'is hold the oil', 'Nuclean are')",
+      "Data misreading from the prompt chart (recording 49% and 18% instead of 46% and 16%)",
+      "Inclusion of external commentary/speculation ('expensive to make on genarate')"
+    ],
+    "positive_aspects": [
+      "Correctly identifies the highest (Coal) and lowest (Nuclear) electricity sources",
+      "Attempts to calculate differences and compare categories across the data set"
+    ]
+  },
+  "feedback_summary": "The script demonstrates an attempt to describe the chart and identify the highest and lowest sources of electricity. However, it suffers from inaccurate data reporting (Coal at 49% and Hydro-electric at 18%), persistent spelling errors, sentence fragments, and unnecessary repetition in the concluding paragraph. External speculation regarding production costs is also introduced. The script falls into Band 2 with a total score of 4/10.",
+  "_metadata": {
+    "task_id": "CHART_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ff85287f6ade61e119d6d1721fe03d5e8fca88ebdfa86af1e2c3dab3c00f8287",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:12:39.306169+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "55b60b757df687a2876d658583c4d32fe8373f9057ccffe2903628ede7458390",
+    "input_tokens": 4555,
+    "output_tokens": 3891,
+    "thoughts_tokens": 3034,
+    "cost_usd": 0.011094,
+    "latency_ms": 25045,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4555,
+        "output_tokens": 3891,
+        "thoughts_tokens": 3034,
+        "cost_usd": 0.011094,
+        "latency_ms": 25045,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

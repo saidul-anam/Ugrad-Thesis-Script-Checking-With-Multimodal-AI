@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the central abstract theme accurately, contrasting passive dreaming during sleep with active, purposeful ambition.",
+      "evidence": "For some dream is what we see when we sleep and for some dream is what keeps them awake."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single, coherent block that states the central idea early without unnecessary padding or repetition.",
+      "evidence": "Dream isn't equal for everyone."
+    },
+    "language_mechanics": {
+      "rationale": "Several mechanical and grammatical errors occur within a short response, including a sentence fragment, a spelling mistake ('aquire'), and subject-determiner disagreement ('This types').",
+      "evidence": "What doesn't let them sleep until they aquire it. This types of people"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate demonstrates authentic interpretation and zero verbatim borrowing, expressing the poem's core dichotomy entirely in their own words.",
+      "evidence": "for some dream is what keeps them awake."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragment ('What doesn't let them sleep until they aquire it.')",
+      "Spelling error ('aquire' instead of 'acquire')",
+      "Demonstrative-noun number agreement error ('This types' instead of 'These types')"
+    ],
+    "positive_aspects": [
+      "Accurately interprets the underlying metaphor of the poem rather than merely summarizing plot lines",
+      "Zero verbatim borrowing from the source text",
+      "Concise, focused single-block structure"
+    ]
+  },
+  "feedback_summary": "The candidate displays a good conceptual understanding of the poem's theme, effectively articulating the distinction between passive dreamers and active achievers in their own words. The response is concise and well-structured, but marks in mechanics are lost due to a sentence fragment, a spelling error ('aquire'), and agreement faults ('This types').",
+  "_metadata": {
+    "task_id": "THEME_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f91672b85c46981f8c9f1fb9158185dc0a631de0b10f16e107b777e6e58ec8a9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:13:57.805132+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "1d2437772323a566294bd4af49557b1f08d053c6e5a6cd85995281107bfa764d",
+    "input_tokens": 4273,
+    "output_tokens": 2891,
+    "thoughts_tokens": 2147,
+    "cost_usd": 0.008509,
+    "latency_ms": 17968,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4273,
+        "output_tokens": 2891,
+        "thoughts_tokens": 2147,
+        "cost_usd": 0.008509,
+        "latency_ms": 17968,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "None of the five required items (a-e) contain the correct information as per the answer key. The responses are single, irrelevant words or fragments that do not answer the questions.",
+      "evidence": "(a) a (b) with (c) a (d) fraom (e) blessing"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect content",
+      "Non-responsive answers"
+    ],
+    "positive_aspects": [
+      "Attempted the questions"
+    ]
+  },
+  "feedback_summary": "The student failed to provide correct answers for any of the items. Item (a) is wrong, (b) is wrong, (c) is wrong, (d) is wrong, and (e) is wrong. The responses provided are largely unintelligible in the context of the questions asked.",
+  "_metadata": {
+    "task_id": "SHORT_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "b5f76bd59db1a24c540012c59ba4639b4ece586bef210050993338aa9d5ebb51",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:08:28.256873+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "feda41528c239ad2d389ff783eba6c3cbc3adaefc1c99057a07708f76911ecc4",
+    "input_tokens": 6559,
+    "output_tokens": 1739,
+    "thoughts_tokens": 1148,
+    "cost_usd": 0.001178,
+    "latency_ms": 236640,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6559,
+        "output_tokens": 1739,
+        "thoughts_tokens": 1148,
+        "cost_usd": 0.001178,
+        "latency_ms": 236640,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

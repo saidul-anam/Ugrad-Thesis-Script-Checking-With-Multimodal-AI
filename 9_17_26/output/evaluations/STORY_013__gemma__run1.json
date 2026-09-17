@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and sequential continuation of the stem, following the standard plot of the lion and the mouse fable to a conclusion.",
+      "evidence": "the mouse get into the sleeping lion nose. As a result, the lion woke up and chased the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story has a positive ending, but fails significantly on structural requirements: there is no title provided and no explicitly stated moral lesson.",
+      "evidence": "The lion thanked the mouse to help him."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of errors in tense consistency (mixing present and past) and spelling. Punctuation is often incorrect.",
+      "evidence": "the lion agree with the mouse and forgave the mouse. One day, the lion was walking in the jangle"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a reproduction of a well-known memorized fable. There are no original narrative turns or descriptive details to elevate the writing.",
+      "evidence": "He came and eat the met and free the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (e.g., 'agree' instead of 'agreed')",
+      "Spelling errors (e.g., 'happity', 'jangle', 'met')",
+      "Missing structural elements (Title)"
+    ],
+    "positive_aspects": [
+      "Coherent plot progression",
+      "Successful continuation of the provided stem"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical sequence of events and a positive conclusion. However, the score is limited by the complete absence of a title and a lack of an explicitly stated moral. Language mechanics are weak, characterized by frequent tense shifts and spelling mistakes. Furthermore, the narrative is a standard memorized fable with no evidence of original expression.",
+  "_metadata": {
+    "task_id": "STORY_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ab428952ba0c2cc4fae2fc8cc780d4b8ba2bea283c6112f5368416d8b026fa9e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:27:18.624123+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8f73120ed54469fc207cbf15874373e490baa52ba6f22e241d70df9caa38881d",
+    "input_tokens": 4457,
+    "output_tokens": 3152,
+    "thoughts_tokens": 2396,
+    "cost_usd": 0.001391,
+    "latency_ms": 88938,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4457,
+        "output_tokens": 3152,
+        "thoughts_tokens": 2396,
+        "cost_usd": 0.001391,
+        "latency_ms": 88938,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

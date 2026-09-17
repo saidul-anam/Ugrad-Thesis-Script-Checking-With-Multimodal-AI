@@ -1,0 +1,99 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five prepositions were used in intelligible sentences where the meaning of the preposition was correct. Item (a) is correct. Item (b) is correct despite spelling ('troees') and missing article/preposition ('at the'), as the positional sense of 'top of' is correct. Item (c) is correct. Item (d) is correct despite the odd inclusion of 'door,', as 'along the road' is correct English. Item (e) is correct despite the typo 'The He'.",
+      "evidence": "a. bottom of + The knife is at the bottom of the table. b. top of - The troees are top of the hills. c. through - The man goes through the door. d. along - We are walking along the door, road. e. across - The He is walking across the road."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions; mechanics are evaluated as part of the item's correctness per the rubric's guidance on minor slips.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'troees')",
+      "Minor syntactic slips (e.g., missing 'at the', 'The He')"
+    ],
+    "positive_aspects": [
+      "Correct functional application of all target prepositions",
+      "Sentences are conceptually clear and intelligible"
+    ]
+  },
+  "feedback_summary": "The candidate successfully used all five target prepositions in contexts that demonstrate an understanding of their meaning. All five items (a, b, c, d, e) are marked as correct. Minor spelling errors and phrasing slips were ignored in accordance with the marking guidelines for item-scored preposition tasks.",
+  "_metadata": {
+    "task_id": "PREP_015",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0015",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "0b2f02debcbfee98f753adf79e272fe699e55856e046d9a235471ddd93219ac3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:58:40.211637+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0685fff312605cb28e412cd071cd914a13610827f3efec502b366d2a8f3343a2",
+    "input_tokens": 6283,
+    "output_tokens": 2184,
+    "thoughts_tokens": 1425,
+    "cost_usd": 0.001283,
+    "latency_ms": 198250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6283,
+        "output_tokens": 2184,
+        "thoughts_tokens": 1425,
+        "cost_usd": 0.001283,
+        "latency_ms": 198250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

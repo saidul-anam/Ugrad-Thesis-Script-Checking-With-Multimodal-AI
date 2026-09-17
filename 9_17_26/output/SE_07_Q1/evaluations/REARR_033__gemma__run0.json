@@ -1,0 +1,97 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned 6 out of 8 items. Items 1(c), 2(f), 3(e), 4(g), 7(d), and 8(b) match the key. Items 5 and 6 were swapped (h instead of a, and a instead of h).",
+      "evidence": "1. c 2. f 3. e 4. g 5. h 6. a 7. d 8. b"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sequence error (transposition of items 5 and 6)"
+    ],
+    "positive_aspects": [
+      "Correct identification of the beginning and ending sequences"
+    ]
+  },
+  "feedback_summary": "The student correctly placed items 1, 2, 3, 4, 7, and 8. Marks were lost for items 5 and 6, where the student placed 'h' and 'a' in the reverse order of the answer key.",
+  "_metadata": {
+    "task_id": "REARR_033",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0032",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "3fed2aca4984e5fb69b7d93f7919f9cbe527919ddd23b77cc213bc14a44231b3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:39:53.042236+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7defa00b154238149d8492e9f8adf3ec3410d8f3d871ece1b2347d13db2ffa73",
+    "input_tokens": 6280,
+    "output_tokens": 1311,
+    "thoughts_tokens": 678,
+    "cost_usd": 0.001021,
+    "latency_ms": 65766,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1311,
+        "thoughts_tokens": 678,
+        "cost_usd": 0.001021,
+        "latency_ms": 65766,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

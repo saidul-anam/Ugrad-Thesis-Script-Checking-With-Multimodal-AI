@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The first five attempts were marked. Item 1 (first 'a') is a fragment that repeats the question (0). Item 2 (second 'a') misidentifies the parent's specific responsibilities in the poem (0). Item 3 (b) correctly identifies the suggestion to enjoy nature (1). Item 4 (c) correctly identifies the negative feeling about a life without nature (1). Item 5 (f) attributes the teacher's role to the poem 'Leisure', which is the wrong poem, thus scoring 0 per the marking note.",
+      "evidence": "The poet suggests us to spend the leisure time in nature. The poet feels very bad for life without time in nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; no marks are awarded for structure.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; no marks are awarded for language mechanics.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; no marks are awarded for originality.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Mixing up poems (attributing teacher to 'Leisure')",
+      "Repetition of question stem without answering"
+    ],
+    "positive_aspects": [
+      "Correct understanding of the central themes of the poem 'Leisure'"
+    ]
+  },
+  "feedback_summary": "The student answered 6 items; only the first 5 were marked. Item (a) first attempt: Wrong (fragment); Item (a) second attempt: Wrong (incorrect content); Item (b): Correct; Item (c): Correct; Item (f): Wrong (attributed to the wrong poem). Total score: 2/5.",
+  "_metadata": {
+    "task_id": "POEM_025",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0024",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4083981d2017f638fbc95d703586586133c99af8901f364244eb1cbb6a0e5c26",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:01:56.321697+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d875108b7cd77e9d02f9228d57f36eeaac1c3735eeaa6e464bce0a0bde0e91a7",
+    "input_tokens": 6453,
+    "output_tokens": 2422,
+    "thoughts_tokens": 1693,
+    "cost_usd": 0.001372,
+    "latency_ms": 301421,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6453,
+        "output_tokens": 2422,
+        "thoughts_tokens": 1693,
+        "cost_usd": 0.001372,
+        "latency_ms": 301421,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

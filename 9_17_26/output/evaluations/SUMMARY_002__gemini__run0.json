@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately grasps the core theme of the poem—that hope resides internally, endures through life's trials without demanding recompense, and offers strength during adversity. However, the interpretation is somewhat brief and simply stated.",
+      "evidence": "Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return."
+    },
+    "structure_format_brevity": {
+      "rationale": "Maintains a concise, single-paragraph summary structure appropriate for the given poem length without extraneous narrative drift or padding.",
+      "evidence": "The poem 'Hope' illustrodes Hope lives in the soul and it sings endlessly at the darkest moment in the life. It never ask anything return. In the storm of life it gives us strensth and courage Moreover, in the extreme situation of the hope give us mental comfort."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical errors detract from fluency, including spelling errors ('illustrodes', 'strensth'), subject-verb agreement slips ('never ask', 'hope give'), a missing preposition ('anything [in] return'), and punctuation omission before the conjunctive adverb 'Moreover'.",
+      "evidence": "illustrodes Hope lives in the soul... It never ask anything return... strensth and courage Moreover, in the extreme situation of the hope give us"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates excellent originality with 0% verbatim overlap, successfully translating Dickinson's bird and storm metaphors into abstract conceptual terms ('mental comfort', 'darkest moment', 'courage').",
+      "evidence": "In the storm of life it gives us strensth and courage Moreover, in the extreme situation of the hope give us mental comfort."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('illustrodes', 'strensth')",
+      "Subject-verb agreement and prepositional omissions ('never ask', 'anything return', 'hope give')",
+      "Punctuation/run-on boundary error before 'Moreover'"
+    ],
+    "positive_aspects": [
+      "Completely original phrasing with zero verbatim line lifting",
+      "Accurate thematic interpretation of poetic imagery into abstract concepts",
+      "Unified single-paragraph structure with concise delivery"
+    ]
+  },
+  "feedback_summary": "The candidate provides a solid, conceptually accurate summary of the poem, successfully translating metaphorical imagery into their own words with zero verbatim copying. While the structural format and core understanding are strong, noticeable spelling, agreement, and punctuation errors hold the score at Band 3 (7/10).",
+  "_metadata": {
+    "task_id": "SUMMARY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d549192170665e185897da644da5cdaa549f113bb0c495019ed5a04da7462877",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:05:00.410216+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "7b519de6b7ee55c03eddcb8a4f87689021fd134906eafe5fe7f9c3e4d8c47435",
+    "input_tokens": 4375,
+    "output_tokens": 3439,
+    "thoughts_tokens": 2564,
+    "cost_usd": 0.00991,
+    "latency_ms": 22375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4375,
+        "output_tokens": 3439,
+        "thoughts_tokens": 2564,
+        "cost_usd": 0.00991,
+        "latency_ms": 22375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

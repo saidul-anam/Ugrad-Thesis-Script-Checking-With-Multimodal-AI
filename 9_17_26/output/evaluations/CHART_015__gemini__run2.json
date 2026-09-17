@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the majority of data points (Coal 46%, Natural Gas 24%, Oil 12%, Hydro 16%), but omits the exact numeric figure for Nuclear (2%) and misnames hydro-electric power as 'Hydro carbon'.",
+      "evidence": "Coal is height use of to produce electricity and its parsentage is 46%."
+    },
+    "structure_format_brevity": {
+      "rationale": "Presents an introductory line and a concluding sentence, but data is listed mechanically line-by-line across fragmented paragraphs rather than synthesized analytically. Extraneous external facts and personal judgments are included.",
+      "evidence": "Use of natural gas is the best way of producing electricity. Natural sources are available in the world."
+    },
+    "language_mechanics": {
+      "rationale": "High density of spelling errors ('electrishian', 'persent', 'parentay', 'oill', 'parsentage', 'eassy', 'proocess', 'electnicity', 'heighest') and subject-verb agreement/syntax slips ('chart show', 'was is', 'Nuclear element are').",
+      "evidence": "USA electrishian produce electricity by using Hydro carbon electric power and it was 16 persent."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Heavy reliance on repetitive formulaic phrasing ('is used to produce electricity') with very rudimentary comparative language ('lowest', 'height use').",
+      "evidence": "12% oill is used to produce electricity. Coal is height use of to produce electricity"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling inaccuracies (e.g., 'electrishian', 'persent', 'oill', 'electnicity')",
+      "Subject-verb agreement and verb form errors ('pie chart show', 'Nuclear element are')",
+      "Inclusion of external knowledge/opinions not shown in the chart",
+      "Repetitive clause structures without varied analytical transitions"
+    ],
+    "positive_aspects": [
+      "Includes an introductory overview and identifies the highest and lowest sources",
+      "Accurately quotes most percentage figures from the prompt chart"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the major data points from the chart (Coal, Natural Gas, Oil, Hydro) and correctly notes the highest and lowest sources. However, the script falls into Band 2 due to a high density of spelling and grammatical errors, mechanical line-by-line listing, omission of the 2% nuclear figure, and the insertion of external opinions and facts not present in the graph.",
+  "_metadata": {
+    "task_id": "CHART_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e3abb4ca20a4b68583033a099c627d2da2ba34ff6bcf34c7b37d268730c08bb2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:43:02.071222+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b80728cb9a38e81c7d27908db64d9208e218920c462cd93ccb331231272e7012",
+    "input_tokens": 4463,
+    "output_tokens": 4308,
+    "thoughts_tokens": 3421,
+    "cost_usd": 0.012109,
+    "latency_ms": 26545,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4463,
+        "output_tokens": 4308,
+        "thoughts_tokens": 3421,
+        "cost_usd": 0.012109,
+        "latency_ms": 26545,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

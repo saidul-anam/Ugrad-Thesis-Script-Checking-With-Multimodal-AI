@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the letter and directly fulfills the prompt by detailing plans to travel to Cox's Bazar and educate illiterate villagers after the HSC exams.",
+      "evidence": "Today I describe you about the future Plan after Passing HSC Exam!"
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural layout components of an informal letter (sender address, date, salutation, body paragraphs, complimentary close, signature, and envelope with From/To/Stamp) are fully present and correctly arranged.",
+      "evidence": "27 June, 2026\nDonia,Dhaka-1236\nDear Sadia,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains numerous grammatical, spelling, and capitalization slips, including tense confusion when discussing future plans, non-standard verb forms, capitalization of common nouns, and spelling errors.",
+      "evidence": "Many days hare passed since we met last."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate provides an authentic personal voice and logical progression of ideas regarding social responsibility and teaching in the village rather than relying strictly on generic template filler.",
+      "evidence": "I have a Plan for poor People at my village. I want to be a teacher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'hare' for 'have', 'Parunts' for 'parents')",
+      "Tense inconsistency and faulty verb inflection (e.g., 'I came to my village', 'educated them')",
+      "Inappropriate capitalization of common nouns and lowercased proper nouns (e.g., 'People', 'Plan', 'rethia', 'camilla')"
+    ],
+    "positive_aspects": [
+      "Complete and flawless informal letter layout including all structural components and envelope",
+      "Clear, focused response directly answering the prompt topic",
+      "Constructive, meaningful content regarding social work and literacy"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a structurally complete informal letter containing all required elements (address, date, salutation, body, close, signature, and envelope). The content addresses the prompt well with a clear and socially constructive plan for post-HSC life. However, multiple mechanical slips in spelling, tense agreement, and capitalization prevent a full mark in language mechanics, placing the script at the baseline of Band 4 with a total score of 4/5.",
+  "_metadata": {
+    "task_id": "LETTER_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c8de56b33916a8332411fcd8e0bcb0497be43425e9166cdc0eeb80ff5721ee1a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:38:40.553133+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "fad5f5a16f23a0308f3065833c2eb23130b55ac69b54263dea5b53c629ddfc9c",
+    "input_tokens": 4439,
+    "output_tokens": 3741,
+    "thoughts_tokens": 2889,
+    "cost_usd": 0.010684,
+    "latency_ms": 47390,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4439,
+        "output_tokens": 3741,
+        "thoughts_tokens": 2889,
+        "cost_usd": 0.010684,
+        "latency_ms": 47390,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: 2 marks (Correct location). Item b: 2 marks (Identified occupation and products). Item c: 2 marks (Identified irregular work and hand-to-mouth existence). Item d: 2 marks (Identified housework). Item e: 2 marks (Identified teaching alphabets and numbers). All items contain the required content in understandable sentences.",
+      "evidence": "Joynul and Nazma lives lives in a small village. ... Joynul is a carpenter. He makes chairs, tables, piras ... doesn't find work everyday and he lives from hand to mouth ... Nazma does all the work at home ... teaching her childrens Bangla, English alphabets and numbers."
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement (e.g., 'Nazma lives lives')",
+      "Run-on sentence structure in item c",
+      "Minor spelling/pluralization errors (e.g., 'furnitures')"
+    ],
+    "positive_aspects": [
+      "Perfect content recall",
+      "Ability to construct full sentences rather than lifting fragments"
+    ]
+  },
+  "feedback_summary": "All five items (a-e) were marked as correct, receiving 2 marks each for a total of 10. The candidate successfully identified all key facts from the passage. While there are several grammatical errors (subject-verb agreement and punctuation), these do not result in mark deductions for this item-scored task as the content is clearly communicated and understandable.",
+  "_metadata": {
+    "task_id": "SHORT_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "cfd5ca47590d4bb8f392db4b70b37ae17c245945235d8d15a03e47bad9609f2f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:29:04.952253+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ac20cf41fdc90cf3aa658831aebfc01f8652e3620cb0d9eb92aefad030205e36",
+    "input_tokens": 6505,
+    "output_tokens": 2414,
+    "thoughts_tokens": 1671,
+    "cost_usd": 0.001375,
+    "latency_ms": 416547,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6505,
+        "output_tokens": 2414,
+        "thoughts_tokens": 1671,
+        "cost_usd": 0.001375,
+        "latency_ms": 416547,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the basic emotional arc of the passage (sadness over marks, parental encouragement, and hope for improvement), though it lacks the introductory context of who Raju is.",
+      "evidence": "Raju felt a little sad about his low marks but Promised to study harder next time."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the structural requirements: it is split into two paragraphs instead of one, and the length (54%) significantly exceeds the one-third limit.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "While most of the text is lifted from the source, the candidate introduces minor errors in the transcription/assembly process.",
+      "evidence": "His mother advised him to those Subject."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is almost entirely verbatim (97% overlap), failing the requirement to express the summary in the candidate's own words.",
+      "evidence": "He could not do well in ICT, Science, Religion, getting only 6 marks in each."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Exceeding length constraints",
+      "Incorrect paragraphing"
+    ],
+    "positive_aspects": [
+      "Maintains the core narrative flow of the original text"
+    ]
+  },
+  "feedback_summary": "The candidate did not write a summary but instead extracted several verbatim sentences from the source text. The response exceeds the length limit, is not written in the student's own words, and is incorrectly split into multiple paragraphs. Due to these structural failures and the high verbatim overlap, a hard cap of 2 is applied.",
+  "_metadata": {
+    "task_id": "SUMMARY_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "8f5e1bf3f858b8de61457c4e9b9ce0d3c958a203374f8e0a02314bdf70dabde7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:37:04.534724+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "57e90111887c482e7f9517032bcdd29e0ee801bd0fd8cf4d017b6f70d5c9b032",
+    "input_tokens": 6132,
+    "output_tokens": 2082,
+    "thoughts_tokens": 1377,
+    "cost_usd": 0.001238,
+    "latency_ms": 703515,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6132,
+        "output_tokens": 2082,
+        "thoughts_tokens": 1377,
+        "cost_usd": 0.001238,
+        "latency_ms": 703515,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

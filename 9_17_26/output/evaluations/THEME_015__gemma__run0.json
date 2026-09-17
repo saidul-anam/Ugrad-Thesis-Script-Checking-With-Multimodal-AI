@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core contrast between the 'valueless' night dreams and the 'reality' of day dreams, though it remains a surface-level summary rather than an abstract statement of theme (e.g., ambition or willpower).",
+      "evidence": "But the dreemiers who dreem day they want to see his dreem in reality so they work heard."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single, coherent block that addresses the prompt immediately without padding.",
+      "evidence": "All of the people watch dream in their subconcious mind."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in spelling ('dreem', 'nigh', 'hind', 'heard'), grammar ('Some one dream'), and phrasing ('come trive'). The error density is too high for any marks.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids all verbatim copying from the source text, but the phrasing is very basic and lacks sophistication.",
+      "evidence": "they want to see his dreem in reality so they work heard."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (e.g., 'dreem', 'nigh', 'heard' for hard)",
+      "Subject-verb agreement errors",
+      "Incorrect word choice/Syntax"
+    ],
+    "positive_aspects": [
+      "Complete avoidance of verbatim copying",
+      "Accurate grasp of the poem's basic premise"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's core contrast between passive and active dreaming. While the response is original and structurally sound (single block), it is heavily marred by pervasive linguistic errors in spelling and grammar. Furthermore, the content functions more as a summary than a thematic analysis. The score reflects a Band 3 performance due to the accuracy of the core idea despite the mechanical failures.",
+  "_metadata": {
+    "task_id": "THEME_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b418e1baab05071ff9df8fb1d1baddd66f822930320703cefee116bc0edf9979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:48:57.410284+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cfc7cc6df6490aa965e2fbbe6de8140040977ad4e5ef0360ca348b2dfcfae7a2",
+    "input_tokens": 4287,
+    "output_tokens": 2081,
+    "thoughts_tokens": 1308,
+    "cost_usd": 0.001053,
+    "latency_ms": 58422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4287,
+        "output_tokens": 2081,
+        "thoughts_tokens": 1308,
+        "cost_usd": 0.001053,
+        "latency_ms": 58422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

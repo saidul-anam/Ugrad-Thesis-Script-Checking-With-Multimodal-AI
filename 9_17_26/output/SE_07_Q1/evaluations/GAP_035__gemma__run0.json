@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'performance' and Item (b) 'great' are correct per the answer key. Items (c) and (d) were omitted. Item (e) 'cheered' is the wrong part of speech (verb) for the noun position required by the sentence 'The show continued with loud (e) —'.",
+      "evidence": "a. performance. b. great."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of answers",
+      "Incorrect part of speech"
+    ],
+    "positive_aspects": [
+      "Accurate vocabulary choice for initial items"
+    ]
+  },
+  "feedback_summary": "Items (a) and (b) are marked correct. Items (c) and (d) were not attempted and score 0. Item (e) is incorrect because the student provided a verb ('cheered') where a noun was grammatically required.",
+  "_metadata": {
+    "task_id": "GAP_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "d9b3b64aebabc134a69d7130ad436f1f47d520e0782cd562c0858b80345567fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:31:12.120826+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "af64137c75ca76856684d7308866ccb306456e81b20d201adafdebadebcef2bf",
+    "input_tokens": 6222,
+    "output_tokens": 1564,
+    "thoughts_tokens": 945,
+    "cost_usd": 0.001091,
+    "latency_ms": 455203,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6222,
+        "output_tokens": 1564,
+        "thoughts_tokens": 945,
+        "cost_usd": 0.001091,
+        "latency_ms": 455203,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

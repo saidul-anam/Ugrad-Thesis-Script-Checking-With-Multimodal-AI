@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by outlining post-HSC plans including learning computer skills, tutoring, and starting a business.",
+      "evidence": "In your letter, You have wanted to know about the future plan after passing HSC exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All standard informal letter layout components are intact: date, address, salutation, body, complimentary close, signature, and postal envelope layout.",
+      "evidence": "27 June , 2026\nAzimpure , Dhaka\n\nDear fried,"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling distortions and syntactic errors disrupt the flow of language, precluding a mark in this criterion.",
+      "evidence": "Dear fried, At first take my condial love... received your letter yeasted... it'll will be penferect"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script leans heavily on traditional, memorized rote-guide opening and closing formulas with basic sentence progression.",
+      "evidence": "At first take my condial love and good wishes to you. Hope that you are all well by the grace of Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors (fried for friend, condial for cordial, yeasted for yesterday, penferect for perfect, loth for lot)",
+      "Redundant auxiliary verbs and modals (it's will be, it'll will be)",
+      "Incorrect preposition and verb constructions (in depended on it, make ensure)"
+    ],
+    "positive_aspects": [
+      "Complete structural formatting with all standard informal letter elements present",
+      "Directly addresses the given topic with relevant ideas"
+    ]
+  },
+  "feedback_summary": "The candidate maintains full informal letter structure and addresses the prompt with relevant post-examination plans. However, significant spelling mistakes and grammatical slips reduce the linguistic quality, placing the script in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "979443a216a6382e2c776d1dc7d85f4ac53a6aaf075c5ba2d093d4bdc0d75f89",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:10:18.174808+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d179982f4d2e845182319d27394a2993f98d01c6925546c1a3d41a303462bfd3",
+    "input_tokens": 4465,
+    "output_tokens": 3017,
+    "thoughts_tokens": 2263,
+    "cost_usd": 0.008882,
+    "latency_ms": 19000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4465,
+        "output_tokens": 3017,
+        "thoughts_tokens": 2263,
+        "cost_usd": 0.008882,
+        "latency_ms": 19000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

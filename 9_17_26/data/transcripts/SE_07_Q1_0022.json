@@ -1,0 +1,197 @@
+{
+  "script_id": null,
+  "pages_processed": 12,
+  "answers": [
+    {
+      "question_number": "2",
+      "transcript": "a) Ans: Mr Joynul Ali and Mrs Nazma live in a small village with their daughter.\nb) Ans: Joynul work oso a carpenter in his village for ~~his~~ the villagers.\nc) Ans: Mr joynul Ali is a carpenter his ~~he payment~~ payment is low and to teach her both daughter he face financial difficulties.\nd) Ans: Nazma does all the work of the home. sometimes she #teach her daughter Bangla and english alphabets and numbers.\ne) Ans: for early education Nazma sit owithe mitu and nitu. and teaches them Bangla and english alphabets and some numbers.",
+      "pages": [
+        1
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "3",
+      "transcript": "The audience watched the {inserted: @}show very carefully. Everyone clapped and {inserted: (b)} cheered loudly. The stage The performers gave {inserted: (b)} a great performances. Everyone clapped and (c) cheered loudly. The stage {inserted: (D)} was decorated with light. The show created great {inserted: (d)} among the people. The show continued with loud (e) noise.",
+      "pages": [
+        2
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student rewrote full sentences for gap-filling."
+    },
+    {
+      "question_number": "4",
+      "transcript": "1) beautifull = unbeautifull. (Antonym)\n2) brave = superbrave. (synonym)\n3) Clean = Cleare . (synonym)\n4) old = oldest . (synonym)\n5) Quiet = start . (Antonym)",
+      "pages": [
+        2
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "5",
+      "transcript": "a) Neil Armstrong, Michael collins, and Edwin Aldrin | they go to moon in | July 16.1969.\nb) Neil Armstrong Apollo II | Landed on the moon | July 20.1969 in\nc) Neil Armstrong | became the firse person to walk on the moon. | in the moon.\nd) The astronauts | come back to earth in | July 24.1969.\ne) people, | watched the news all over the world. | ",
+      "pages": [
+        3
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "6",
+      "transcript": "a) Apollo II (False) Apollo 11 was a spacecraft that launched from Florida, USA.\nb) (False) Michael collins lan does not land on the moon with Neil Anmstrong and Edwin Aldrin ot dive [illegible].\nc) (True)\nd) (True)\ne) (False) The misson does not proved that human had already achieved interplanetary travel to Mars befor 1969.",
+      "pages": [
+        3,
+        4
+      ],
+      "confidence": 0.8,
+      "illegible_count": 1,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "7",
+      "transcript": "On July 16, 1969 three American began their ~~you~~ journey to the moon. there spacecraft called by Apollo II. It was launched from Florid, U.S.A. After 4 day Apollo II reached to the Moon. Thery took photos, They walked and collect rocks. after 4 day they came {inserted: da} back too the earth. People all over the world see their ve victory",
+      "pages": [
+        4
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "8",
+      "transcript": "b) Ans Do you know the postmaster take it see all post and give them #to the cerect person.",
+      "pages": [
+        5
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student only provided answer for item b."
+    },
+    {
+      "question_number": "9",
+      "transcript": "a) Ans I waved my torch desperately beacause a car coming twords me ~~dut~~ but the car didnot stop and: It's move slowly.\nb) Ans: without thingting in enter the car and felt feel safe I politety begar to request the owner to drop me hear lalpur.\nc) Ans: Suddenly I noticed two large yellow eay eyes approaching to me first thought it was a tiger but I remember tiger eye is not that much big.",
+      "pages": [
+        5
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student provided sentences instead of a sequence grid."
+    },
+    {
+      "question_number": "11",
+      "transcript": "Once upon a time, There was Two best friend who treasted eachother very much. They promiesd never they help each other in even evry moment.\n\none day they ~~thou~~ decited to go to the forest to explore. they go to the forest, when they talking they suddenly saw they a dbear ~~cam~~ cameing twords them. one of the they botha of them got sceared and istart runing.\n\nsuddonly one of the remember he can climed tree. to so, the dbear forget can't attack him. at this moment the other friend try to climed too but he he dedon't know How to climed tree. Then he run again and suddenly reammdem dbear don't eat died body. The he held his breath and reacked like he died. ohs that moment bear come the died. Look at him closely and try to go away thinging . then he died.\n\nthe othe friend come to see him but and jokingly aksdasked what is the de bear say to you he replayed the bear say to not trust agany of you friend who leave you along to the denger.\n\nat this moment the other friend supunder stand what wrong he did. and then he say forgive him for that. I was too sceard.",
+      "pages": [
+        6,
+        7,
+        8
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "A friend in need friend indeed",
+      "notes": null
+    },
+    {
+      "question_number": "12",
+      "transcript": "My Annual prize-giving Day of my school started on 10:00am withe melad after Melad they give food to the people of who enter to the melad. after that, I go and watch since project i love that by seeing that someone make a mini computer i though it was the des best project but i go more biot see cook nice project. after that I go and see computer project saw some people making made small game and some people made Calclutator calculat latur. I go and saw sports but got third. I enjoy a lot. there was the result was at 4:30pm the show to everybody am announuesd headmoster give a storot first our out chef guest give a speech then the prize speech was started to first some people come and toke some table in front of of every body then the prize put on the table one by one. the our princpul started to calling For the winers some people didn't attend the clas prize-giving ceremoney and they did not get the prize. after sometime i feel like I didn't get any prize. but hopefullly I got some prize. That all hoppend to the prize giving ceremoney.",
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "Annual prize-giving Day",
+      "notes": null
+    },
+    {
+      "question_number": "13",
+      "transcript": "you farzad : hi, how are you sheila?\nsheila : i am fine and yoa?\nfarzad : I am fine and good. can you tell me, how you examination go?\nfarzad : I om fine, can you tell me about your annual examination result?\nsheila : oh it was really nice if you know you will be happy? I got gpa 5!\nFarzad : wow that really nice and good. you want to know how much i got?\nsheila : yes, I really want to know.\nFarzad : I got Gpa 5 too !\nsheila : That really nice\nFarzad : ok bye i need need to go. bye.\nsheila : ok bye. See you soon.\nFarzad : bye",
+      "pages": [
+        10,
+        11,
+        12
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    }
+  ],
+  "questions_not_found": [
+    "1",
+    "10"
+  ],
+  "overall_confidence": 0.85,
+  "extraction_warnings": [],
+  "_metadata": {
+    "script_id": "SE_07_Q1_0022",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_07_Q1",
+    "prompt_version": "extraction_prompt_c7_v1",
+    "prompt_file": "extraction_prompt_c7_v1.md",
+    "prompt_hash": "e2dd27e8b39c59d5a775a5d5d8bb0971b6e3b7711196aaa57f59718019ace134",
+    "cache_key": "71843fc874e5e37f8dc489320810d64222d15e22efd9a57eee8a36aeb7b04a3f",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-16T21:00:56.622601+00:00",
+    "wall_time_s": 342.735,
+    "pages_available": 12,
+    "total_input_tokens": 5754,
+    "total_output_tokens": 2517,
+    "total_cost_usd": 0.001331,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 12,
+        "input_tokens": 5754,
+        "output_tokens": 2517,
+        "cost_usd": 0.0013305,
+        "latency_ms": 342609,
+        "http_status": 200,
+        "attempt_number": 1
+      }
+    ]
+  }
+}

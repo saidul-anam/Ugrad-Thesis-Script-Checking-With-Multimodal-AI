@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the main narrative arc (test results, parental support, and resolution to work harder). However, there are factual inaccuracies: Raju is in class six, not five, and the candidate incorrectly groups Science with the subjects he did well in, whereas he actually performed poorly in Science.",
+      "evidence": "Raju is a student of class five. ... get good manks in Bangla, English and slince"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block and is well within the length constraint (approx 32% of the original text).",
+      "evidence": "Raju is a student of class five. ... now he trying hard to do better."
+    },
+    "language_mechanics": {
+      "rationale": "The mechanics are very weak. There are multiple spelling errors ('manks', 'slince', 'Scine', 'mothen') and severe syntactic failures, including missing verbs ('He a class test', 'he ba in ICT') and incorrect tense usage ('now he trying').",
+      "evidence": "He a class test and get good manks"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate has made a genuine effort to paraphrase the text; there is zero verbatim overlap with the source material.",
+      "evidence": "But his father and mothen motivated him."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors",
+      "Omission of auxiliary/main verbs",
+      "Factual inaccuracy regarding source text"
+    ],
+    "positive_aspects": [
+      "Strong paraphrasing/originality",
+      "Adherence to length and format constraints"
+    ]
+  },
+  "feedback_summary": "The candidate successfully summarized the main points of the passage using their own words and maintained an appropriate length. However, the score is limited by significant linguistic breakdowns—specifically missing verbs and numerous spelling mistakes—and a factual error regarding the student's grade and his performance in Science.",
+  "_metadata": {
+    "task_id": "SUMMARY_009",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0009",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1da53021467c864712d64fae7b842dea6e41b034e26a6c827c79e7a88e15867b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:33:06.520187+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0e683e65179779193d42d2bea8228e4f81757e31b42d1dfa0086a45fa550decb",
+    "input_tokens": 6098,
+    "output_tokens": 2582,
+    "thoughts_tokens": 1809,
+    "cost_usd": 0.001384,
+    "latency_ms": 227327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6098,
+        "output_tokens": 2582,
+        "thoughts_tokens": 1809,
+        "cost_usd": 0.001384,
+        "latency_ms": 227327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

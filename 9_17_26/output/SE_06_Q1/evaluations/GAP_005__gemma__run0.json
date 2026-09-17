@@ -1,0 +1,96 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored evaluation: (a) 'decant' is incorrect; (b) 'went went back' is marked correct as the intended answer 'went back' is clearly present; (c) 'went' does not fit the grammatical structure 'went to know'; (d) 'took' is not a synonym for 'sold' in this transactional context; (e) 'has' is grammatically incorrect.",
+      "evidence": "b. went went back"
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary misuse",
+      "Grammatical incompatibility"
+    ],
+    "positive_aspects": [
+      "Successfully identified the movement to Jaipur in item (b)"
+    ]
+  },
+  "feedback_summary": "Item (b) is correct. Items (a), (c), (d), and (e) are incorrect.",
+  "_metadata": {
+    "task_id": "GAP_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "b2421c7ae6aaf01e028be64deb0683ebfb7a821165045005406466dd2451adff",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:22:29.405360+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5e064384d198bb403a8aef85dea8ba14a3649c906637bdc5812b1d768cb1928e",
+    "input_tokens": 6321,
+    "output_tokens": 1604,
+    "thoughts_tokens": 1006,
+    "cost_usd": 0.001113,
+    "latency_ms": 841140,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6321,
+        "output_tokens": 1604,
+        "thoughts_tokens": 1006,
+        "cost_usd": 0.001113,
+        "latency_ms": 841140,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "None of the five items were answered correctly. The student failed to use the required 'Do you know' opening and did not maintain the meaning or the embedded clause structure required by the key. a: 0, b: 0, c: 0, d: 0, e: 0.",
+      "evidence": "a. the post officer aged b. the post emaper doing the epot c. The post emaps happy and dose d. children in a sehe e. THE POST OFFIE"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to follow the prompt's structural requirement ('Do you know')",
+      "Complete lack of syntactic coherence",
+      "Incorrect word usage"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "The candidate failed to follow the instructions for every item. None of the responses start with the required phrase 'Do you know', nor do they form coherent sentences. Items a, b, c, d, and e are all marked incorrect.",
+  "_metadata": {
+    "task_id": "TRANS_001",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0000",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "85e777377c10346e5cb35ba3effeae8a16be9fc4c8f2909dd3f3a0aec7c20fb7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:43:20.364235+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "52d74e843f3510e4dce6fd863ef65e464a64754c7725f7d93c932247dec21df9",
+    "input_tokens": 6132,
+    "output_tokens": 1712,
+    "thoughts_tokens": 1051,
+    "cost_usd": 0.001127,
+    "latency_ms": 137921,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6132,
+        "output_tokens": 1712,
+        "thoughts_tokens": 1051,
+        "cost_usd": 0.001127,
+        "latency_ms": 137921,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

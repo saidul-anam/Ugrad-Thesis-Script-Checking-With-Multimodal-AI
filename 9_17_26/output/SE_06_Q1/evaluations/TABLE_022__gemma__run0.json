@@ -1,0 +1,99 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct (Class six). Item (d) is correct (ICT, Science, and Religion). Item (b) is incoherent and does not list the subjects. Item (c) provides marks for weak subjects instead of the strong ones. Item (e) lists subjects instead of the marks.",
+      "evidence": "Raju reads in class six. ... Subject he did poorly in ICT, Science, and religion, ."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanical marks are not applicable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Information mismatch (placing answers in the wrong row)",
+      "Failure to identify the specific data requested (subjects vs marks)"
+    ],
+    "positive_aspects": [
+      "Correctly identified the class level",
+      "Correctly identified the subjects of poor performance"
+    ]
+  },
+  "feedback_summary": "Items (a) and (d) are marked correct. Items (b), (c), and (e) are marked wrong because they either contain incoherent phrasing or provide the wrong category of information (e.g., listing subjects where marks were requested).",
+  "_metadata": {
+    "task_id": "TABLE_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "c5046e37e7f4607b1516d221770269222cc3d1c03e146c6d4504e6ec63a3fdc3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:32:23.791402+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "573efa10542faaeeb521a6af84438c561b77d40f362e635b92cef72f4374cc13",
+    "input_tokens": 6434,
+    "output_tokens": 1487,
+    "thoughts_tokens": 833,
+    "cost_usd": 0.001089,
+    "latency_ms": 506891,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6434,
+        "output_tokens": 1487,
+        "thoughts_tokens": 833,
+        "cost_usd": 0.001089,
+        "latency_ms": 506891,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

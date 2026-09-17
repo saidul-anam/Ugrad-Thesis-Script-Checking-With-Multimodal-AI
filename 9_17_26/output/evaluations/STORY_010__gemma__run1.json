@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and seamless continuation of the provided stem, developing the plot sequentially from the initial conflict to the resolution.",
+      "evidence": "The mouse Promised to the lion that he would help him one day."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a suitable title and concludes with a clear, positive moral lesson, meeting all structural requirements for a story.",
+      "evidence": "A lion and a mouse [...] understand that not to Judge anyone by his height."
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive failure in tense consistency and basic verb conjugation. The student repeatedly confuses present and past tenses and uses incorrect verb forms (e.g., 'was fall').",
+      "evidence": "the mouse was fall into the lion. The lion woke up and see the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, memorized fable. While the sequence is correct, there is no evidence of creative phrasing, vivid description, or original narrative turns.",
+      "evidence": "He goes to the lion and cut the net by his teeth and rescue the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past)",
+      "Incorrect verb forms (e.g., 'was fall', 'was laughed')",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Complete plot development",
+      "Appropriate title and moral included"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the story with a coherent plot and the required structural elements (title and moral). However, the writing is severely undermined by poor linguistic mechanics, specifically a lack of control over past-tense narration and basic grammar. The content is a highly predictable, memorized fable lacking original expression.",
+  "_metadata": {
+    "task_id": "STORY_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "95b6aa4fc876a73433a5a7312cf0b0b039c9132a79ed7fe990d032b4f4a8e9cb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:37:53.161328+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8a1b09f3c39ced342965c530a3df4a9f49b43c282990c40357005099f6366ee1",
+    "input_tokens": 4417,
+    "output_tokens": 2368,
+    "thoughts_tokens": 1646,
+    "cost_usd": 0.001152,
+    "latency_ms": 66704,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4417,
+        "output_tokens": 2368,
+        "thoughts_tokens": 1646,
+        "cost_usd": 0.001152,
+        "latency_ms": 66704,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

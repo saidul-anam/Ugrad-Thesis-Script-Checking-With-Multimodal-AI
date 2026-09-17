@@ -1,0 +1,98 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "No items were answered correctly. Item (a) provides a synonym ('go back') when an antonym was required. Items (b), (c), (d), and (e) simply repeat the prompt word, which does not qualify as a synonym or antonym.",
+      "evidence": "go back / Museum / friend / Show / bought"
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion between synonym and antonym",
+      "Repeating the target word instead of providing a replacement"
+    ],
+    "positive_aspects": [
+      "Attempted all five items"
+    ]
+  },
+  "feedback_summary": "The candidate failed to identify any correct synonyms or antonyms. Item (a) is wrong (provided a synonym instead of an antonym), and items (b), (c), (d), and (e) are wrong because the candidate simply wrote the word from the question again.",
+  "_metadata": {
+    "task_id": "VOCAB_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "533cb031cd2e0a092408ff8c44221362a73eb1708e34b5aaaa5bb8b7855905d2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:34:07.897243+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f765d00897c6f0f3a9f769ca3fbd7fe6093fb47f12ec6843686635a6395ffd43",
+    "input_tokens": 6321,
+    "output_tokens": 1705,
+    "thoughts_tokens": 1095,
+    "cost_usd": 0.001144,
+    "latency_ms": 621171,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6321,
+        "output_tokens": 1705,
+        "thoughts_tokens": 1095,
+        "cost_usd": 0.001144,
+        "latency_ms": 621171,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

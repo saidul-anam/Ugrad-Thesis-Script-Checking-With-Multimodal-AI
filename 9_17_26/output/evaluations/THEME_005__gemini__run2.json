@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the primary contrast of the poem between passive dreamers and active dreamers who make their visions reality, though the abstract thematic depth is somewhat basic.",
+      "evidence": "Thore who dreams with the open eye and make their dreams come true are real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured properly as a concise, single-block theme statement that gets straight to the point without irrelevant filler.",
+      "evidence": "Everyone dreams but not in the same."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling mistakes ('drems', 'concious', 'Thore') and subject-verb agreement/syntax errors ('not in the same', 'who dreams') across a very short word count.",
+      "evidence": "Some drems while they sleep and some dreams while they are concious. Thore who dreams"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student successfully avoids verbatim copying from the poem and attempts independent paraphrasing, albeit using simple vocabulary.",
+      "evidence": "Some drems while they sleep and some dreams while they are concious."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies ('drems', 'concious', 'Thore')",
+      "Subject-verb agreement failure ('Thore who dreams')",
+      "Incomplete prepositional phrasing ('not in the same')"
+    ],
+    "positive_aspects": [
+      "0% verbatim overlap; rephrased entirely in candidate's own words",
+      "Accurately grasped the central contrast between passive and active dreamers",
+      "Adheres strictly to the concise single-paragraph format required for theme writing"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the poem's core theme, contrasting unconscious dreamers with proactive individuals who realize their ambitions. The writing is commendably concise and completely original without relying on direct quotation. However, mechanical errors—including spelling mistakes and agreement issues—detract from the overall quality, placing the script at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3e1f287ebb0c375d8063d4518a90a1f4ad75d1b265ff68a0b84c8870d9ea8b57",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:16:27.419032+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6855a55c5f04d4540aa3cc7772cf49688ff895b113c4e7ad30103933011b879f",
+    "input_tokens": 4263,
+    "output_tokens": 2600,
+    "thoughts_tokens": 1823,
+    "cost_usd": 0.007779,
+    "latency_ms": 15765,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4263,
+        "output_tokens": 2600,
+        "thoughts_tokens": 1823,
+        "cost_usd": 0.007779,
+        "latency_ms": 15765,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

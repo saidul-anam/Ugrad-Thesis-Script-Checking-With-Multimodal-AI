@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to synthesize the poem's central metaphorical idea objectively, instead drifting into irrelevant, personal moralizing and motivational commentary in the latter half.",
+      "evidence": "All the People have a hope about everything. never remore hope from all the good things. we should try about this. One day we can successful."
+    },
+    "structure_format_brevity": {
+      "rationale": "Although presented as a single paragraph block, internal logical progression is disjointed, jumping abruptly from disjointed lines of the poem into conversational preaching.",
+      "evidence": "It perches in the Soul. Hope is never stops at all. It sore must be the storm that could abash the little bird."
+    },
+    "language_mechanics": {
+      "rationale": "Displays multiple grammatical breakdowns, including double verbs ('is never stops'), missing copula ('can successful'), faulty article/determiner usage ('in the every situation'), spelling slips ('remore'), and inconsistent capitalization ('never', 'we').",
+      "evidence": "never remore hope from all the good things. we should try about this. One day we can successful. So, hope is most valuable things in the every situation of our life."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The initial half relies on verbatim fragments lifted directly from the source text with minimal reformulation, showing a lack of independent analytical paraphrasing.",
+      "evidence": "Hope is the thing with feathers. It kept so many warm. It sings the tune without the words that never stops at all."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Direct uncritical reproduction of poem lines without synthesizing meaning",
+      "Inclusion of personal opinions, advice, and conversational filler in a summary",
+      "Predicate structure errors ('is never stops', 'can successful')",
+      "Faulty mechanics in capitalization and determiner usage ('in the every situation')"
+    ],
+    "positive_aspects": [
+      "Retains single-block paragraph format",
+      "Demonstrates a basic awareness that the core topic is 'hope'"
+    ]
+  },
+  "feedback_summary": "The script attempts to summarize the poem but suffers from two critical flaws: direct lifting of line fragments in the first half and inappropriate subjective moralizing in the second half. A summary must remain objective and paraphrase the central metaphor entirely in the student's own words. Additionally, pervasive grammatical and mechanical slips place this script at the lower end of Band 2.",
+  "_metadata": {
+    "task_id": "SUMMARY_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "94578e4e4a7d39705ae62a7b40029d87ffef3900ba0ebbe5830b24926e07a562",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:33:45.383703+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b8ea4d048a754b5f0320e03fd6e61a9a70289a87a46250e0e894920d2ede5217",
+    "input_tokens": 4421,
+    "output_tokens": 2704,
+    "thoughts_tokens": 1862,
+    "cost_usd": 0.008086,
+    "latency_ms": 43125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4421,
+        "output_tokens": 2704,
+        "thoughts_tokens": 1862,
+        "cost_usd": 0.008086,
+        "latency_ms": 43125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

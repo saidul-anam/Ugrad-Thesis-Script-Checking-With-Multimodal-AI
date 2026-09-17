@@ -1,0 +1,101 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate attempts to answer the guiding questions by mentioning AI examples, its utility for poor students lacking private tutors, and negative aspects such as deepfakes and harmful video/photo editing.",
+      "evidence": "Like that face change, a kid video edit, create some bad pictures and many more prof problems are create by using AI."
+    },
+    "structure_format_brevity": {
+      "rationale": "The submission violates the strict single-block paragraph format by splitting into two distinct sub-paragraphs. The opening topic sentence is also weakly constructed.",
+      "evidence": "learn and children's is the future of our world."
+    },
+    "language_mechanics": {
+      "rationale": "Displays high error density across spelling ('softwor', 'proptems', 'ufe'), incorrect plurals/possessives ('childs', 'countrie's'), faulty passive voice ('problems are create'), and accidental word repetitions ('are are', 'to to', 'for for').",
+      "evidence": "In our world many countrie's childs are are poor economy. This reason ch many childs haven't enough money to to learn by a private teacher."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows an authentic and personal attempt to express thoughts rather than relying on a memorised template, but vocabulary is immature and transitional cohesion is weak.",
+      "evidence": "A Many naughty people use AI for for their need. so, We should we use AI for good gain knowledge"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling errors ('softwor', 'proptems', 'ufe', 'side-effectes', 'teauces')",
+      "Word duplications and false starts ('are are', 'to to', 'for for', 'teach teach')",
+      "Faulty passive voice and verb forms ('are create by using AI')",
+      "Incorrect pluralization and apostrophe usage ('childs', 'countrie's', 'people's')"
+    ],
+    "positive_aspects": [
+      "Addresses prompt requirements including AI applications and threats",
+      "Demonstrates authentic, non-memorised effort with concrete examples (ChatGPT, Deepfake)"
+    ]
+  },
+  "feedback_summary": "The candidate addresses the key prompt questions regarding AI's benefits in education and its potential for misuse. However, the response is split into two sub-paragraphs, triggering a structural hard cap at 5 marks. The script also exhibits high error density in spelling, grammar, and sentence structure, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "PARA_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e50dcd506cfadf0f574158fa337891fcd9fa9a79b1f5148c69b4b9925a73d735",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:02:47.042079+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "406537186a8177125300b2f6a949d3b1a6bd6b8095dd4cc67198496920869572",
+    "input_tokens": 4480,
+    "output_tokens": 2970,
+    "thoughts_tokens": 2099,
+    "cost_usd": 0.008769,
+    "latency_ms": 19000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 2970,
+        "thoughts_tokens": 2099,
+        "cost_usd": 0.008769,
+        "latency_ms": 19000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

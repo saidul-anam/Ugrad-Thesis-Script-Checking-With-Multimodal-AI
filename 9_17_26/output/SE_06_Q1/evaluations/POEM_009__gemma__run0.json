@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Sum of the first five attempted items: Item (a) is incorrect as 'fruit for everyone' does not match the poem's theme (0 marks). Item (b) correctly identifies Robin's hope and handling of sorrow (2 marks). Item (e) correctly identifies the lesson of hope (2 marks). Item (d), while mislabeled, provides a correct substance for question (g) regarding the playmate's distant land (2 marks). The final item (mislabeled as 'b'), provides a correct substance for question (h) regarding the moon peeping/looking in (2 marks). Total: 0+2+2+2+2=8.",
+      "evidence": "Robin is a hopfull bird because, she takes sorrows lightly and wait for happines... Robing teaches us take sorrows lightly... his playmate lives in another land... The moon comes there to every night to peep."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Mislabeling of question letters",
+      "Spelling errors (e.g., 'astumn', 'sonnows')"
+    ],
+    "positive_aspects": [
+      "Strong grasp of the thematic content of the poems",
+      "Ability to convey the central message of the 'Robin' poem"
+    ]
+  },
+  "feedback_summary": "The candidate successfully answered four out of the five attempted questions. Item (a) was incorrect. Items (b), (e), and the responses provided for (d) and the second (b) [corresponding to questions g and h] were marked correct based on substance. Total score: 8/10.",
+  "_metadata": {
+    "task_id": "POEM_009",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0009",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "e712df68f8376bed69148cab44d3d41a4e413942a7f6902a5fb19081db05d7c9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:49.907135+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2c1e611a1eace56556177d022f788d18064d7cd559f7428fb6d1dba9679c6c98",
+    "input_tokens": 6509,
+    "output_tokens": 1976,
+    "thoughts_tokens": 1216,
+    "cost_usd": 0.001244,
+    "latency_ms": 1459078,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6509,
+        "output_tokens": 1976,
+        "thoughts_tokens": 1216,
+        "cost_usd": 0.001244,
+        "latency_ms": 1459078,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

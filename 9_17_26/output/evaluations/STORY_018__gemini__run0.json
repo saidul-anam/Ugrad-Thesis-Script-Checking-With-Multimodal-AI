@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative successfully continues from the provided stem with a clear, logical sequence of events following the traditional Aesop fable.",
+      "evidence": "So, the mouse cut the trap by its teeth and freed the lion from the cage. Thus its helped the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "A positive conclusion and moral takeaway are provided, but the response entirely omits the required story title.",
+      "evidence": "From the story we came do understa uderstan- d that we should not uderestimate little thing."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of mechanical errors, including incorrect past-tense forms, typos, incomplete words, and awkward phrasing.",
+      "evidence": "White running It accidentally beated the lion. The lion woke up and caught the mouse. The lion became angry and threaten the mouse to it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies heavily on a predictable, formulaic plotline with basic phrasing and limited descriptive elaboration.",
+      "evidence": "Many days passa One day the lion was walking along the forest. Suddenly its step stepped in a trap of some animalcatcher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect irregular past-tense verb formation ('beated' instead of 'beat')",
+      "Spelling and typographical slips ('playi', 'White', 'passa', 'uderstan- d', 'uderestimate')",
+      "Missing prepositional and infinitive structures ('threaten the mouse to it', 'tried do escape')",
+      "Omission of the mandatory story title"
+    ],
+    "positive_aspects": [
+      "Sequential and complete narrative progression from the prompt stem",
+      "Explicit inclusion of a constructive moral takeaway at the end"
+    ]
+  },
+  "feedback_summary": "The response maintains coherent plot progression and successfully brings the narrative to a constructive moral conclusion. However, marks are lost due to the complete absence of a title, heavy reliance on a formulaic plot, and pervasive grammatical and spelling errors throughout the text.",
+  "_metadata": {
+    "task_id": "STORY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "60fb43a11dab9a851f079e80c94b7c8e710fc2e4ab3e0b473aed038bcb73e2d7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:13:24.575132+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "0e479d669e01cf8c7aa642d94c13f3b3bea048077d612bf2d067ee0a440da898",
+    "input_tokens": 4411,
+    "output_tokens": 2890,
+    "thoughts_tokens": 2120,
+    "cost_usd": 0.008548,
+    "latency_ms": 22061,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4411,
+        "output_tokens": 2890,
+        "thoughts_tokens": 2120,
+        "cost_usd": 0.008548,
+        "latency_ms": 22061,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

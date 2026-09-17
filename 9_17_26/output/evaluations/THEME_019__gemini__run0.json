@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core contrast between passive night dreaming and active daytime dreaming, interpreting the central theme of action and determination, though the philosophical explanation remains basic.",
+      "evidence": "Dreamers of the day are the real hero's and they take their dreams as Inspairication and motivation"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single unified paragraph, states the theme at the beginning, and maintains appropriate conciseness without unnecessary padding.",
+      "evidence": "The poem is about an inspiration named dream ."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical and mechanical errors are present, including subject-verb agreement errors, faulty punctuation, misspelled/invented words, and improper apostrophe usage.",
+      "evidence": "Inspairication and motivation And. also work hard to make it dreams truer."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script demonstrates genuine interpretation in the student's own words with zero verbatim copying from the poem, attempting an authentic explanation despite limited vocabulary.",
+      "evidence": "real dream is that which can unable to man to Sleep ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'Inspairication')",
+      "Faulty punctuation and capitalization (e.g., misplaced period in 'And.')",
+      "Subject-verb agreement and syntax breakdown (e.g., 'Someone dream', 'which can unable to man to Sleep')",
+      "Incorrect plural formation using apostrophe ('hero's')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Correctly identifies the central abstract theme of turning dreams into reality",
+      "Maintains single-paragraph structural unity"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the abstract theme of the poem by contrasting idle dreamers with those who actively work to fulfill their ambitions. The response is written entirely in the candidate's own words within a single concise block. However, the score is constrained to the lower end of Band 3 due to pervasive grammatical errors, punctuation flaws, and spelling mistakes.",
+  "_metadata": {
+    "task_id": "THEME_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "78c7e4d6426b44308318867daff79312fb0f49f78a049dd18c803fb20543ee85",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:27:52.938062+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b8cdfbe5306e49d86b54a58b0d0a1cebaabcd42f0caddc471ad643eb8e38406f",
+    "input_tokens": 4306,
+    "output_tokens": 2447,
+    "thoughts_tokens": 1660,
+    "cost_usd": 0.007409,
+    "latency_ms": 59750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4306,
+        "output_tokens": 2447,
+        "thoughts_tokens": 1660,
+        "cost_usd": 0.007409,
+        "latency_ms": 59750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

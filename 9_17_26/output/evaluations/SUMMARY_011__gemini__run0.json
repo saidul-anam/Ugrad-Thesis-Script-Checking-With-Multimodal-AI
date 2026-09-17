@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate attempts a literal, line-by-line gloss rather than synthesizing the central theme of hope's enduring nature, and introduces irrelevant filler and distortions.",
+      "evidence": "It sings the tune without the words that are not important."
+    },
+    "structure_format_brevity": {
+      "rationale": "While structured as a single paragraph, the response fails to achieve conciseness and actually exceeds the word count of the source poem.",
+      "evidence": "Hope is the with feathers that perches in the soul and mind."
+    },
+    "language_mechanics": {
+      "rationale": "The writing exhibits syntax errors, missing words, sentence fragments, and misreadings of the source vocabulary.",
+      "evidence": "that could abash the little bird that kept so many warm and happy."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response mirrors the linear sentence structure and phrasing of the source text closely rather than abstracting and summarizing the core message in original language.",
+      "evidence": "I have heard it in the chillest land. I also heard it on the strongest sea."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragment and lower-case sentence starter ('that could abash...')",
+      "Omission of critical nouns ('Hope is the with feathers')",
+      "Misinterpretation and distortion of source words ('sore' misconstrued as 'some', 'strangest' as 'strongest')",
+      "Inclusion of subjective commentary ('It is very beautiful')"
+    ],
+    "positive_aspects": [
+      "Maintained a single unified paragraph format",
+      "Demonstrated an attempt to engage with all parts of the poem"
+    ]
+  },
+  "feedback_summary": "The candidate attempts to summarize the poem but relies on a line-by-line mechanical paraphrase rather than extracting and synthesizing the underlying theme. The response introduces arbitrary filler, misinterprets several key words, and contains grammatical slips such as missing words and a sentence fragment. Consequently, it falls into Band 2 with a score of 4/10.",
+  "_metadata": {
+    "task_id": "SUMMARY_011",
+    "script_id": "SE_11_Q1_0011",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3d607e48fc5af2f1f45172e84d68653a301972c9f9fd06499b73360929089313",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:05:18.015392+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "6c53b0cf238d81e740d373229b218214d03f9171a84b0a5aabb63167b15ea37e",
+    "input_tokens": 4411,
+    "output_tokens": 3035,
+    "thoughts_tokens": 2268,
+    "cost_usd": 0.008911,
+    "latency_ms": 21172,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4411,
+        "output_tokens": 3035,
+        "thoughts_tokens": 2268,
+        "cost_usd": 0.008911,
+        "latency_ms": 21172,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

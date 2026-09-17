@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core idea of day-dreaming as an active force for success, though the interpretation of night dreamers is slightly simplified to those who do not have dreams.",
+      "evidence": "Those who dream by day it can work hand to achive their success and make the dream come true."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented in a single, concise paragraph with no extraneous filler, identifying the central focus in the opening sentence.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple spelling errors, agreement issues, and word duplication prevent the award of the mechanics mark.",
+      "evidence": "And the others who doesn't doesn't have a dream cannot shape their libes."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts authentic interpretation without copying lines directly from the poem (0% verbatim overlap), though the phrasing remains rudimentary.",
+      "evidence": "It helps people to make a happy and planm life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('achive', 'planm', 'libes')",
+      "Subject-verb agreement and pronoun misuse ('Those who dream by day it can', 'others who doesn't')",
+      "Word duplication ('doesn't doesn't')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source poem",
+      "Maintains single-paragraph structural format",
+      "Correctly identifies the abstract concept of active dreaming versus passive inaction"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the central thematic contrast between active pursuit of dreams and failure to realize them, presenting the response in a concise, single-block structure with original phrasing. However, the overall mark is constrained by frequent mechanical slips, including spelling mistakes ('achive', 'libes') and grammatical errors ('others who doesn't').",
+  "_metadata": {
+    "task_id": "THEME_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "06fca6e85ae6034abf25c383242697d75d00afb4386152fb111addcc0e9066bc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:16:43.447694+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "16c89bf0e3067c3b672da39ab2c979518f7bbd933a84242dcae51abbe8210fd3",
+    "input_tokens": 4293,
+    "output_tokens": 2721,
+    "thoughts_tokens": 1961,
+    "cost_usd": 0.00809,
+    "latency_ms": 18702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4293,
+        "output_tokens": 2721,
+        "thoughts_tokens": 1961,
+        "cost_usd": 0.00809,
+        "latency_ms": 18702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

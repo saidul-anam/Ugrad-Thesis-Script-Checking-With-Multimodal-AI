@@ -1,0 +1,97 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Only item (e) meets all three criteria: it contains the preposition, uses it correctly, and is a complete, intelligible sentence. Item (a) uses 'bottom of' incorrectly ('is bottom of in'); item (b) uses 'top of' incorrectly ('is top of'); item (c) is an unintelligible string of words; item (d) is an incomplete sentence ('the ro').",
+      "evidence": "we walk across the River."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanical marks are not applicable separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect prepositional phrasing",
+      "Incomplete sentence construction",
+      "Lack of syntactic coherence"
+    ],
+    "positive_aspects": [
+      "Correct usage of 'across'"
+    ]
+  },
+  "feedback_summary": "Item (a) Wrong: Incorrect usage ('is bottom of in'). Item (b) Wrong: Incorrect usage ('is top of'). Item (c) Wrong: Unintelligible. Item (d) Wrong: Incomplete sentence. Item (e) Right: Correct usage and structure.",
+  "_metadata": {
+    "task_id": "PREP_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "ce3d608951c793d7f4844cf36e6ac5cb9d934b02236d93397c5e978a85e80ead",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:08:36.683810+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a43ac7cd29a918cede591926f16312f93eae9c1fbc4689edf1eca2c07c310002",
+    "input_tokens": 6276,
+    "output_tokens": 1720,
+    "thoughts_tokens": 1068,
+    "cost_usd": 0.001144,
+    "latency_ms": 670407,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6276,
+        "output_tokens": 1720,
+        "thoughts_tokens": 1068,
+        "cost_usd": 0.001144,
+        "latency_ms": 670407,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

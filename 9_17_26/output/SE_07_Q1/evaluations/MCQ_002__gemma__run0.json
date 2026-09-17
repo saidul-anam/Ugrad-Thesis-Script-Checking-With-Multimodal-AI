@@ -1,0 +1,94 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified the correct option for every single item from a to g. In item (b), the use of 'works' instead of 'earns' is a negligible wording difference as option (ii) was clearly selected. In item (g), the addition of the article 'a' does not affect correctness.",
+      "evidence": "a) Ans: iii. rural area\nb) Ans: ii. He works irregularly for daily needs\nc) Ans: iv. Adverb\nd) Ans: i. from morning to night\ne) Ans: iv. Adjective\nf) Ans: iii. Rough\ng) Ans: ii. Household manager and a caregiver."
+    },
+    "structure_format_brevity": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy",
+      "Clear identification of options"
+    ]
+  },
+  "feedback_summary": "Items a, b, c, d, e, f, and g are all marked correct. Total score is 7 out of 7.",
+  "_metadata": {
+    "task_id": "MCQ_002",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0001",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "14bc294673372019c0aea11c379cf65466a05ee864a5dded4b436cd9ff252592",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:40:04.334224+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3e24657103f685c711b6a0d2e3696e1424af568c22d0eee4ab8a5d6284e6e67f",
+    "input_tokens": 6483,
+    "output_tokens": 1598,
+    "thoughts_tokens": 957,
+    "cost_usd": 0.001128,
+    "latency_ms": 186657,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6483,
+        "output_tokens": 1598,
+        "thoughts_tokens": 957,
+        "cost_usd": 0.001128,
+        "latency_ms": 186657,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

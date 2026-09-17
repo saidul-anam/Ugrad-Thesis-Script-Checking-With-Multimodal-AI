@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by explaining their future ambition to study computer engineering at an engineering university and improve their English skills.",
+      "evidence": "My childhood I have a plan to belong computer engineer . So, to q fullfill dream I have to get chance in a Engineering university"
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential components of an informal letter (heading date/address, salutation, body paragraphs, complimentary close, signature, and envelope address blocks) are present and properly positioned.",
+      "evidence": "Dear Messi,\n\nAt first take my heartiest love.\n...\nYour loving,\nMridul"
+    },
+    "language_mechanics": {
+      "rationale": "The response suffers from frequent spelling mistakes, awkward phrasing, and grammatical inaccuracies throughout the text.",
+      "evidence": "In the mentlime I can also developed my English Spiking and listining Skill to cope-up with the modern age ."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script relies heavily on formulaic, memorized opening and closing expressions, with rudimentary and disjointed sentence progression in the body.",
+      "evidence": "At first take my heartiest love. Hope you great by the grace of Almighty . I reci your letter just now."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (reci, affi, Exa, mentlime, Spiking, listining, parrants)",
+      "Incorrect verb forms and tense consistency (have a plan to belong, can also developed)",
+      "Punctuation anomalies (spacing before periods and full stop usage in 'So. thats')"
+    ],
+    "positive_aspects": [
+      "Complete informal letter layout including sender/receiver postal boxes",
+      "Directly addresses the prompt regarding post-HSC academic and skill development plans"
+    ]
+  },
+  "feedback_summary": "The letter maintains complete structural integrity with all formal components intact and directly addresses the topic. However, pervasive spelling errors, awkward grammatical phrasing, and heavy reliance on memorized introductory clichés limit the score to Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "9e2f17c3279a8a14d69b1748161c0baf99aff60f3174950b0034a43a1814ac13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:25:45.621157+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "a919957b6754b756a8cb02bbab75533e612068f831d568b763cc9392969da555",
+    "input_tokens": 4407,
+    "output_tokens": 3137,
+    "thoughts_tokens": 2361,
+    "cost_usd": 0.009165,
+    "latency_ms": 22016,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 3137,
+        "thoughts_tokens": 2361,
+        "cost_usd": 0.009165,
+        "latency_ms": 22016,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

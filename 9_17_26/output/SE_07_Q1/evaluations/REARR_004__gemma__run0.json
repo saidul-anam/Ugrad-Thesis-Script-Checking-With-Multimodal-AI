@@ -1,0 +1,93 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly placed every sentence in its correct position relative to the answer key (1.c, 2.f, 3.e, 4.g, 5.a, 6.h, 7.d, 8.b).",
+      "evidence": "1. C\n2. F\n3. E\n4. G\n5. A\n6. H\n7. D\n8. B"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 8.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect sequence accuracy"
+    ]
+  },
+  "feedback_summary": "All 8 items were marked correct as the student's sequence (C, F, E, G, A, H, D, B) matches the answer key exactly.",
+  "_metadata": {
+    "task_id": "REARR_004",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0003",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f1d113c37a3641a35b09ea8b3d9ff4e3906e36ee2240f450db99957b90ee6f30",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:19:32.650922+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6c0c86267e4cc3bd87c9db75b8c5dd9b515f7433c6616f7b4ad23605219756cd",
+    "input_tokens": 6280,
+    "output_tokens": 1325,
+    "thoughts_tokens": 741,
+    "cost_usd": 0.001026,
+    "latency_ms": 116734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1325,
+        "thoughts_tokens": 741,
+        "cost_usd": 0.001026,
+        "latency_ms": 116734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

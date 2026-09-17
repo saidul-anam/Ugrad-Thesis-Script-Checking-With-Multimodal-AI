@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct (independence/nine-month battle). Item (b) is marked correct based on the line labeled 'B' which identifies the gun salute at dawn. Item (c) is incomplete ('memorial imp') and does not explain the importance. Item (d) is correct (patriotic songs). Item (e) was not attempted. Total: 1+1+0+1+0 = 3.",
+      "evidence": "a. The war in 1971. Bangladesh got independence. after a nine-month -long. ... B. The day begins with a -gun solute at down ... d. recite patriotic songs and recall the sacrifices made by the nations hero."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incomplete responses",
+      "Incorrect item labeling",
+      "Spelling errors (solute, down)"
+    ],
+    "positive_aspects": [
+      "Correct recovery of key facts for items a, b, and d"
+    ]
+  },
+  "feedback_summary": "The student correctly answered three out of five items. Item (a) is correct; Item (b) is marked correct via the response labeled 'B'; Item (d) is correct. Item (c) was attempted but left as an incomplete fragment ('memorial imp'), and Item (e) was not attempted. Total score: 3/5.",
+  "_metadata": {
+    "task_id": "SHORT_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2fbd3281a2dd6dc4dba9322d914993d7947be23edeaf8a883e10c6b2da5ca117",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:20:45.509483+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c9f63c2960140cc9316b8a97e2ddc9efaccb5f1185063a9f6238f73a01539277",
+    "input_tokens": 6585,
+    "output_tokens": 2814,
+    "thoughts_tokens": 2106,
+    "cost_usd": 0.001503,
+    "latency_ms": 746390,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6585,
+        "output_tokens": 2814,
+        "thoughts_tokens": 2106,
+        "cost_usd": 0.001503,
+        "latency_ms": 746390,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

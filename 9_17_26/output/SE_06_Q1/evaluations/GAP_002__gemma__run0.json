@@ -1,0 +1,99 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. (a) 'told' is grammatically incomplete without an object; (b) 'event' is a noun and fails as a verb; (c) 'He had' creates a double subject and makes no sense; (d) 'gave' contradicts the context of receiving ten thousand rupees; (e) 'printed' is contextually irrelevant.",
+      "evidence": "(a) told. (b) event back. (c) He had. (d) gave. (e) printed."
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Wrong part of speech",
+      "Contextual irrelevance",
+      "Grammatical incoherence"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "The candidate attempted all items, but none are correct. Item (a) 'told' lacks an object; (b) 'event back' uses a noun instead of a verb; (c) 'He had' creates a redundant subject; (d) 'gave' is semantically incorrect for a sale; (e) 'printed' does not fit the sentence context.",
+  "_metadata": {
+    "task_id": "GAP_002",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0002",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "9403398533006f62fab0dd0e5bfca714931dd7f81644a3872827971229a18fea",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:19:37.737275+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "02b637cb20ade090e0a31b2358092ba9bc555c2496ba0b9e3d7cd17eb2ca0805",
+    "input_tokens": 6330,
+    "output_tokens": 2190,
+    "thoughts_tokens": 1523,
+    "cost_usd": 0.00129,
+    "latency_ms": 1045921,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6330,
+        "output_tokens": 2190,
+        "thoughts_tokens": 1523,
+        "cost_usd": 0.00129,
+        "latency_ms": 1045921,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

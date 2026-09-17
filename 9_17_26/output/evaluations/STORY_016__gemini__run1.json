@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative smoothly develops the given prompt with a complete and logical sequence of events following the classic fable structure.",
+      "evidence": "While running, it accidentally fell on th lion. This woke the lion up."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear, constructive resolution with an explicitly stated moral, but completely omits an opening title.",
+      "evidence": "Moral of the story: Size doesn't matter. Help can come from unexpected sources."
+    },
+    "language_mechanics": {
+      "rationale": "Contains recurring spelling errors ('monse', 'lite', 'langhed', 'dowards'), random typos ('pb'), and unjustified tense shifts from past to simple present.",
+      "evidence": "Then, the lion catches the monse and holds him in his palm. The monse pb pleads for his life and says"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Follows a conventional, highly predictable plotline, though it incorporates a few expressive phrases.",
+      "evidence": "One day, whilst roaming around the jungle, the lion fell into the hunter's slick trap."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'monse' for 'mouse', 'lite' for 'life', 'langhed' for 'laughed')",
+      "Tense inconsistency (shifting abruptly between past and present tense)",
+      "Missing story title"
+    ],
+    "positive_aspects": [
+      "Smooth and logical continuation of the stem narrative",
+      "Clear moral lesson and positive resolution at the end"
+    ]
+  },
+  "feedback_summary": "The candidate provides a coherent continuation of the story that concludes with a clear moral and positive resolution. However, marks are lost due to the omission of a title, sudden shifts into the present tense, and recurrent spelling mistakes throughout the text.",
+  "_metadata": {
+    "task_id": "STORY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c3d14c5df9ddab57739025a19caf8181a1a60831836298dccf8236e8fc1208f4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:53:59.825495+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "acbc5a9dc8608a5425d1889571f0bc64c4f788797e43720eab29dc0196b0cdc2",
+    "input_tokens": 4464,
+    "output_tokens": 2756,
+    "thoughts_tokens": 2029,
+    "cost_usd": 0.008229,
+    "latency_ms": 17109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4464,
+        "output_tokens": 2756,
+        "thoughts_tokens": 2029,
+        "cost_usd": 0.008229,
+        "latency_ms": 17109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'dreamt' matches key. Item (b) 'went back' matches key. Item (c) 'went' is unidiomatic and incorrect in the phrase 'went to know'. Item (d) 'brought' is factually incorrect as the context requires 'sold' to account for the money received. Item (e) 'kernx' is unintelligible.",
+      "evidence": "a) dreamt b) went back c) went d) brought e) kernx"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lexical inaccuracy",
+      "Unintelligible response"
+    ],
+    "positive_aspects": [
+      "Correct identification of early passage events"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a) and (b). Item (c) is marked wrong because 'went' is not a suitable fit for the idiom 'came to know'. Item (d) is wrong because 'brought' does not describe the transaction of selling the papers for money. Item (e) is unintelligible.",
+  "_metadata": {
+    "task_id": "GAP_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "bef491f1e30ab48299f3a52654cbd9a145ca2a7b054c72aaa3fa4d1451f6d10a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:57:37.047437+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4f4b6e8cd73f85e4a46af8128a06d6ee9a82b604edb2cfd2930dabf8f351a349",
+    "input_tokens": 6320,
+    "output_tokens": 1910,
+    "thoughts_tokens": 1256,
+    "cost_usd": 0.001205,
+    "latency_ms": 106500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6320,
+        "output_tokens": 1910,
+        "thoughts_tokens": 1256,
+        "cost_usd": 0.001205,
+        "latency_ms": 106500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

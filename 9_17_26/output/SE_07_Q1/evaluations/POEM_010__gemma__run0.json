@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (e) is correct as associating 'good habits' with childhood development aligns with the idea of shaping the person. Item (h) is correct as it captures the essence of pausing to appreciate nature. Item (f) is incorrect because the teacher's role is defined by knowledge and guidance, not by being a 'parent'. Item (g) is incorrect because nature is the object of leisure/beauty, not the 'role of leisure time'.",
+      "evidence": "Childhood Is important because in childhood chidren learn so many good habits... spend the leisure time with nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Conceptual misunderstanding of nature's role in 'Leisure'",
+      "Incorrect interpretation of the teacher's role in 'Whose Child is This?'"
+    ],
+    "positive_aspects": [
+      "Correctly identified the core importance of childhood",
+      "Understood the general message of the poem 'Leisure'"
+    ]
+  },
+  "feedback_summary": "Items (e) and (h) were marked correct. Items (f) and (g) were marked wrong. Total score: 2/5.",
+  "_metadata": {
+    "task_id": "POEM_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f52a5e54fd8f3f1697d14ff5c86b9fa1e04508563e2995beccd63cfa39284171",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:39:55.365323+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "49ad504287d6e6970f2cd3738e9cb935baddcbae77fc2cbfc48e3ef40184062e",
+    "input_tokens": 6418,
+    "output_tokens": 2146,
+    "thoughts_tokens": 1484,
+    "cost_usd": 0.001286,
+    "latency_ms": 111578,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6418,
+        "output_tokens": 2146,
+        "thoughts_tokens": 1484,
+        "cost_usd": 0.001286,
+        "latency_ms": 111578,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

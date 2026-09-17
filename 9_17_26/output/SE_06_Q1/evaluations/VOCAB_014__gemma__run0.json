@@ -1,0 +1,100 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct as 'come back' is a valid antonym for 'went back'. Item (e) is correct as 'Buy' is the base form synonym for 'bought'. Item (b) 'house' is too generic to be a synonym for museum. Item (c) 'coltherman' is unintelligible. Item (d) is unattempted.",
+      "evidence": "come back... Buy"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Unintelligible vocabulary (Item c)",
+      "Incorrect synonym choice (Item b)",
+      "Omission (Item d)"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonym in Item a",
+      "Correct meaning identification in Item e"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered 2 out of 5 items. Items (a) and (e) are marked correct. Items (b), (c), and (d) are marked wrong or omitted.",
+  "_metadata": {
+    "task_id": "VOCAB_014",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0014",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "43027aa44bbbb5cb36a0a6a14c202134cb5f5d53c862d8d08c4cd099e34e36b9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:49.730569+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "08b9483fa3ed5d937cd9cc3c62f5070561e0c5a8956616b238ab4e50c5f60011",
+    "input_tokens": 6321,
+    "output_tokens": 2008,
+    "thoughts_tokens": 1381,
+    "cost_usd": 0.001234,
+    "latency_ms": 497844,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6321,
+        "output_tokens": 2008,
+        "thoughts_tokens": 1381,
+        "cost_usd": 0.001234,
+        "latency_ms": 497844,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

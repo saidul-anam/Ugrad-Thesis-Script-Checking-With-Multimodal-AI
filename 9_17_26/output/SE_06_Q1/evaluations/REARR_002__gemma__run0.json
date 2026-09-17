@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned 7 out of 8 items: 1(b), 2(a), 3(d), 5(c), 6(h), 7(e), and 8(g). Position 4 is incorrect as 'p' is not a valid option from the list.",
+      "evidence": "1. b\n2. a\n3. d\n4.  p\n5. c\n6. h\n7. e\n8. g"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect item identifier at position 4"
+    ],
+    "positive_aspects": [
+      "Almost perfect sequence reconstruction"
+    ]
+  },
+  "feedback_summary": "The student scored 7 out of 8. Items at positions 1(b), 2(a), 3(d), 5(c), 6(h), 7(e), and 8(g) were correct. Item at position 4 was marked incorrect ('p').",
+  "_metadata": {
+    "task_id": "REARR_002",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0002",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3256346634d20ef52b858f91eb042c46a06df00eba947dd4722a890cd5f76d93",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:09:19.503289+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "129a49711ee3182e23028bbc70a7ed9855389dba4cf8db2d8e444e737b0ca6bf",
+    "input_tokens": 6436,
+    "output_tokens": 1466,
+    "thoughts_tokens": 828,
+    "cost_usd": 0.001083,
+    "latency_ms": 427687,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6436,
+        "output_tokens": 1466,
+        "thoughts_tokens": 828,
+        "cost_usd": 0.001083,
+        "latency_ms": 427687,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

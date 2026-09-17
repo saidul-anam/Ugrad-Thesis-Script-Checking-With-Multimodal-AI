@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the primary purpose of the letter and addresses the prompt by discussing future plans for university admission.",
+      "evidence": "Today I want to tell you about my plan after HSC exam. HSC exam is very significant exam in academic life. After completing this I want to admit in well known university."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script successfully includes nearly all essential structural components of an informal letter, including heading, date, salutation, body, close, signature, and an envelope outline.",
+      "evidence": "Azimpur, Dhaka\nDate: 26-06-26\n\nDear friend,"
+    },
+    "language_mechanics": {
+      "rationale": "Language mechanics are impaired by multiple spelling blunders, incorrect word spacing, and missing articles.",
+      "evidence": "pre paration. For this I want to make myself prepared for this admission bettle. No more today. Convergi my regards to all."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is overly brief and leans heavily on memorized, generic stock phrases with very limited original elaboration of the future plan.",
+      "evidence": "No more today. Convergi my regards to all."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('bettle' for 'battle', 'Convergi' for 'Convey', 'pre paration')",
+      "Missing articles and awkward syntax ('is very significant exam', 'admit in well known university')"
+    ],
+    "positive_aspects": [
+      "Maintains the correct standard informal letter format including address, date, and closing",
+      "Directly addresses the prompt topic without off-topic deviation"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates good awareness of informal letter layout, incorporating the required structural features and addressing the topic directly. However, the body is brief and weakened by multiple mechanical slips, including spelling errors ('Convergi', 'bettle') and grammatical inaccuracies, placing the script in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "17956f5c0ac921cfbc83d2872babe7528f9b39c146c6a52e8710496eab212f86",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:36:25.667344+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "8fcf9b98f65921a9b76215052d80521b493640e08c16517e82c4151dcbe067a9",
+    "input_tokens": 4301,
+    "output_tokens": 2967,
+    "thoughts_tokens": 2202,
+    "cost_usd": 0.008708,
+    "latency_ms": 17047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4301,
+        "output_tokens": 2967,
+        "thoughts_tokens": 2202,
+        "cost_usd": 0.008708,
+        "latency_ms": 17047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

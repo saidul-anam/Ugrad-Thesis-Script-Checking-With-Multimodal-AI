@@ -1,0 +1,97 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt questions regarding the definition of AI, its applications in education, and potential threats (e.g., deepfakes, misuse). However, the content remains simplistic and loosely developed.",
+      "evidence": "Artificial Intelligence means  it is a software programme and it helps many us by solve many problems. Like ChatGPT, Deepfake etc."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response violates the fundamental structural constraint of paragraph writing by splitting the text into two distinct sub-paragraphs. Sentence cohesion and structural transitions are also weak.",
+      "evidence": "gain knowledge.\n\n learn and children's is the future of our world."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of grammatical errors, including subject-verb agreement issues, non-standard plural forms, punctuation lapses, word duplications, and frequent spelling mistakes.",
+      "evidence": "In our world many countrie's childs are are poor economy. This reason ch many childs haven't enough money to  to learn by a private teacher."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing demonstrates authentic personal phrasing rather than relying on a memorised guide-book template, including real-world examples like video editing and face changing.",
+      "evidence": "Like that face change, a kid video edit, create some bad pictures and many more prof problems are create by using AI."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'teauces', 'softwor', 'tearing' for learning, 'side-effectes', 'bade', 'proptems', 'issurces')",
+      "Faulty grammatical structures and subject-verb agreement (e.g., 'problems are create', 'childs are are poor economy')",
+      "Repeated words and punctuation errors (e.g., 'are are', 'to to', 'for for', irregular lowercase/uppercase transitions after full stops)"
+    ],
+    "positive_aspects": [
+      "Attempts to answer the specific guiding questions from the prompt",
+      "Authentic, original expression without relying on stock memorised template openings"
+    ]
+  },
+  "feedback_summary": "The script attempts to cover the required questions about Artificial Intelligence with authentic ideas, citing modern examples like ChatGPT and deepfakes. However, the text violates the single-paragraph structural rule by splitting into two paragraphs, subjecting the script to a hard cap of 5 marks. In addition, persistent spelling, grammatical, and syntax errors significantly impair readability, placing the script in Band 2.",
+  "_metadata": {
+    "task_id": "PARA_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e50dcd506cfadf0f574158fa337891fcd9fa9a79b1f5148c69b4b9925a73d735",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:02:37.328121+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "bf7e709dea5f8f01b778e6fb78a208244789caebff0a99952b02bc5ab71088bd",
+    "input_tokens": 4480,
+    "output_tokens": 3384,
+    "thoughts_tokens": 2498,
+    "cost_usd": 0.009804,
+    "latency_ms": 21000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 3384,
+        "thoughts_tokens": 2498,
+        "cost_usd": 0.009804,
+        "latency_ms": 21000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

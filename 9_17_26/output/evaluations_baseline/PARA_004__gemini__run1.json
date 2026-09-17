@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script directly addresses the guiding questions, including defining AI, listing specific current tools, outlining academic use-cases, and highlighting threats like student dependency.",
+      "evidence": "Teacher's are also facilitis. gain on AI. They can teach our very easily. Yes, We see AI also threating for us. Because Student are don't work homework themself"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response has an identifiable introductory attempt and progression of ideas, but it fundamentally breaks the single-block paragraph rule by splitting the text into three separate sub-paragraphs.",
+      "evidence": "Teacher's are also facilitis. gain on AI."
+    },
+    "language_mechanics": {
+      "rationale": "Severe and pervasive errors in spelling, verb formation, tense consistency, and subject-verb agreement impede readability.",
+      "evidence": "Ardtfial Intelligence is mainly a software Which is solve any kind of Problem, creat anything like a human do and thought."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows genuine contemporary knowledge by referencing specific tools (ChatGPT, Claude, Gemini, DeepSeek, NotebookLM) rather than generic memorised template sentences, although expression is grammatically flawed.",
+      "evidence": "Deepseek is popular for resenable price. Claud is widely known as for Programming. Goole include their Nano Barmana with Gemini."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subdivision of paragraph into multiple blocks",
+      "Pervasive spelling errors (e.g., 'Ardtfial', 'creat', 'hidedenly', 'resenable')",
+      "Faulty verb complementation and auxiliary usage ('is solve', 'to thought', 'are don't work')",
+      "Incorrect punctuation and capitalisation"
+    ],
+    "positive_aspects": [
+      "Addresses all prompt questions thoroughly",
+      "Shows authentic, up-to-date awareness of current AI platforms and practical applications"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates good content awareness by answering the prompt questions with specific modern AI examples. However, the response violates the single-paragraph structural requirement by splitting into three sub-paragraphs, invoking a hard cap of 5/10. Heavy grammatical, spelling, and syntactic errors further restrict the score to Band 2.",
+  "_metadata": {
+    "task_id": "PARA_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a60fe4b1863b3f3d41d7455801cccc293e055fb06c44be1424e883153a61f9ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:16:38.624021+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "48f53fcf21bdd2118310474bb0f4e628b39b442e6f5182e0960c7aed268fffbd",
+    "input_tokens": 4553,
+    "output_tokens": 3385,
+    "thoughts_tokens": 2559,
+    "cost_usd": 0.009828,
+    "latency_ms": 21438,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4553,
+        "output_tokens": 3385,
+        "thoughts_tokens": 2559,
+        "cost_usd": 0.009828,
+        "latency_ms": 21438,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

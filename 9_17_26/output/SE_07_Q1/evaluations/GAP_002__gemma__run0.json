@@ -1,0 +1,96 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered correctly according to the provided answer key: (a) 'show' is correct, (b) 'great' is correct, (c) 'cheered' is correct, (d) 'enthusiasm' is correct, and (e) 'cheers' is correct.",
+      "evidence": "a) show b) great c) cheered d) enthusiasm e) cheers"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; no marks are allocated to structure.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; no marks are allocated to mechanics separately from the answer key.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; no marks are allocated to originality.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy across all items",
+      "Correct use of parts of speech"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered all five items: a (Correct), b (Correct), c (Correct), d (Correct), e (Correct). Total score is 5/5.",
+  "_metadata": {
+    "task_id": "GAP_002",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0001",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2d2195d0dfcd7af27d0211939406ca64162ac9fbc1e65793265371609042b02f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:45:35.071759+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3a1ccf77416b093bba813737d25bd3b9998fe790e00b88eb80bea6da8ada8f5e",
+    "input_tokens": 6220,
+    "output_tokens": 1398,
+    "thoughts_tokens": 792,
+    "cost_usd": 0.001041,
+    "latency_ms": 272625,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6220,
+        "output_tokens": 1398,
+        "thoughts_tokens": 792,
+        "cost_usd": 0.001041,
+        "latency_ms": 272625,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

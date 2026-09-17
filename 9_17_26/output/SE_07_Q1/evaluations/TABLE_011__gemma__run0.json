@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is correct (1), Item ii is correct (1), Item iii is incorrect as it provides a quote instead of the date/place (0), Item iv is correct (1), and Item v is incorrect as it provides the manner of watching rather than the location (0). Total = 3.",
+      "evidence": "i. began their journey to the moon. ii. Armstrong and Aldrin. iv. came back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misinterpretation of column requirements (providing quotes/manner instead of when/where)"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of event details and participant names"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered items i, ii, and iv. Item iii is incorrect because it provided a quote ('one giant leap for mankind') instead of the date or location required. Item v is incorrect because it described the emotion ('with great excitement') instead of the location ('All over the world').",
+  "_metadata": {
+    "task_id": "TABLE_011",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0010",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "dfbb6b799799c64a13f053f40b74f589434daa0376ff5ca2d708ea4ac43ed19c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:46:32.047148+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e9003be4d0fe8fcc5280145e2bb6bef813b9859805bb0700c1d0106dfbb5d2df",
+    "input_tokens": 6357,
+    "output_tokens": 1322,
+    "thoughts_tokens": 692,
+    "cost_usd": 0.001032,
+    "latency_ms": 179343,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6357,
+        "output_tokens": 1322,
+        "thoughts_tokens": 692,
+        "cost_usd": 0.001032,
+        "latency_ms": 179343,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

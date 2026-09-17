@@ -1,0 +1,99 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "None of the items earned a mark. (a) fails to use the prepositional phrase 'bottom of'. (b) uses 'top of' but the syntax is incorrect English. (c) lacks a verb and is unintelligible. (d) uses 'along' as an adjective ('along road') which is incorrect English. (e) lacks a verb and is unintelligible.",
+      "evidence": "a. bottom = He is close to the jar bottom. b. top of = He is going to the his building top of. c. through = Raju through the Stone. d. along = Raju running in the along road. e. across = Raju across in the ground."
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragments (missing verbs)",
+      "Incorrect prepositional syntax",
+      "Word order errors"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "All items scored 0. Item (a) missed the 'of'. Item (b) has incorrect syntax ('building top of'). Item (c) and (e) are not complete sentences (missing verbs). Item (d) uses 'along' incorrectly ('the along road').",
+  "_metadata": {
+    "task_id": "PREP_022",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0022",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "4598861e68079a38bc96859ebba405bc95d327151c7045efb10277de4a07a979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:36:59.653906+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c53b466bc725bc6b80c948748fe1b21b10fcbe846b064e03ac9f48a0bffd1b18",
+    "input_tokens": 6274,
+    "output_tokens": 2077,
+    "thoughts_tokens": 1393,
+    "cost_usd": 0.00125,
+    "latency_ms": 689108,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6274,
+        "output_tokens": 2077,
+        "thoughts_tokens": 1393,
+        "cost_usd": 0.00125,
+        "latency_ms": 689108,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

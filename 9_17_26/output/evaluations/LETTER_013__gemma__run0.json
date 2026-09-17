@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.25,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the email and provides a clear, relevant plan (becoming a doctor) with specific steps.",
+      "evidence": "You send me a email and wanted to know aboud my future plan after passing HSC Exam. Now, I am telling you about that."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows the email layout effectively, including the To, Subject, Salutation, Body, and Signature. Only the 'From' field is missing.",
+      "evidence": "To : sawda25671@gmail.com. Subject : Describing the future plan after HSC Exam."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling errors and grammatical failures, particularly in word choice and tense, though the meaning remains intelligible.",
+      "evidence": "I will admitted in Admission couching center to get a good preparation for madical exam."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The flow of ideas is logical and authentic, although the vocabulary is extremely basic and repetitive.",
+      "evidence": "I will increase my general knowledg and English language and grammare skill"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.25,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (madical, couching, grammare, poore, knowledg)",
+      "Verb tense and form (you are will, I will admitted, You send me)"
+    ],
+    "positive_aspects": [
+      "Strong adherence to email structure",
+      "Clear, logical progression of thoughts",
+      "Direct fulfillment of the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the email format and the prompt's requirements. The narrative flow is logical and the purpose is clear. However, the script is heavily marred by spelling mistakes and grammatical inaccuracies that prevent it from reaching Band 4. The layout is nearly complete, missing only one component.",
+  "_metadata": {
+    "task_id": "LETTER_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "86638f9b3411232f69f22a70fce6530414f5e28b22b5cdf93d1235ad7077e6e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:28:40.834691+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1eb7ca89f0e42806f999158c31653f0cc061d3f1cde31e383eddd78f7890b3f0",
+    "input_tokens": 4416,
+    "output_tokens": 2941,
+    "thoughts_tokens": 2181,
+    "cost_usd": 0.001324,
+    "latency_ms": 82202,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4416,
+        "output_tokens": 2941,
+        "thoughts_tokens": 2181,
+        "cost_usd": 0.001324,
+        "latency_ms": 82202,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

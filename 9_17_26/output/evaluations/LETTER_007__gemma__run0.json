@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student directly addresses the prompt, stating a clear future plan (engineering in Russia) immediately after the introduction.",
+      "evidence": "I like engineering so, I was thinking about moving to Russia after my HSC and continue my study there"
+    },
+    "structure_format_brevity": {
+      "rationale": "All necessary informal letter components are present: date, address, salutation, body, closing, and signature. The additional From/To section at the end is non-standard but does not invalidate the core structure.",
+      "evidence": "27th June, 2026\nAzimpur , Dhaka\n\nDear Siyom,"
+    },
+    "language_mechanics": {
+      "rationale": "The register is appropriately informal. However, there are minor mechanical errors, including a homophone error ('to' instead of 'too') and a truncated/incomplete sentence.",
+      "evidence": "I'm doing well to. ... In this fat letter I'll write about its"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic and personal, specifically referencing a previous conversation rather than relying solely on a memorized template.",
+      "evidence": "Remember our last conversation at your home? You asked me about my plans after HSC."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Homophone error (to/too)",
+      "Incomplete sentence/clerical error ('write about its')"
+    ],
+    "positive_aspects": [
+      "Full adherence to structural requirements",
+      "Natural, conversational flow and authentic phrasing"
+    ]
+  },
+  "feedback_summary": "A strong response that fully satisfies the prompt. The student demonstrates a good grasp of the informal letter format and maintains a natural tone. The score is positioned in the middle of Band 4 due to a few minor linguistic slips and one incomplete sentence, but the structural integrity and contextual relevance are excellent.",
+  "_metadata": {
+    "task_id": "LETTER_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a2e1d1854a08e9396c5c839168d1d0a72ebdeb259ab28d603968130fb6201867",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:13:39.833570+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2cda14c4a8b505d9c0ec0d6bef392e117bca652ce0dbc7d4880bffd9c7ed8ebd",
+    "input_tokens": 4426,
+    "output_tokens": 2243,
+    "thoughts_tokens": 1498,
+    "cost_usd": 0.001116,
+    "latency_ms": 62936,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4426,
+        "output_tokens": 2243,
+        "thoughts_tokens": 1498,
+        "cost_usd": 0.001116,
+        "latency_ms": 62936,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

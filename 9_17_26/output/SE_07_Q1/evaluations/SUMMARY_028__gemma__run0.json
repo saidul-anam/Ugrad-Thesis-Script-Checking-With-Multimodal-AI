@@ -1,0 +1,101 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student has captured all the essential points: the astronauts' names, the launch and landing dates, the primary achievement of Neil Armstrong, and the mission's overall significance.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin started their Journey... The mission showed us the power of science, teamwork and human courage."
+    },
+    "structure_format_brevity": {
+      "rationale": "The answer is presented as a single coherent block, which is correct. However, it fails the brevity requirement significantly; at 63% of the original text, it is far beyond the recommended 1/3rd length.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin started their Journey of landing the moon on July 16, 1969. After the four days letar , finally they landed on the moon on July 20, 1969. Neil Armstrong became the first person to walk on the moon. After their land they walked , took photos and collected rocks there. Then the astronauts came back safely to Earth on July 24, 1969. It was the first time that people visited moon . The mission showed us the power of science, teamwork and human courage."
+    },
+    "language_mechanics": {
+      "rationale": "The text is generally readable but contains several spelling errors ('Summare', 'letar') and grammatical awkwardness ('After their land', 'visited moon').",
+      "evidence": "After the four days letar"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the student uses some of their own phrasing, the sentence structure and sequence mirror the source text very closely, and the final sentence is nearly verbatim.",
+      "evidence": "The mission showed us the power of science, teamwork and human courage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Summare, letar)",
+      "Lack of brevity (length exceeds half of original text)",
+      "Omission of articles (visited moon)"
+    ],
+    "positive_aspects": [
+      "Accurate recall of all key facts and dates",
+      "Correct single-paragraph formatting"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a strong understanding of the text by including all key details. However, the summary is far too long, accounting for over 60% of the original source text. According to the marking rubric, any summary exceeding half the original length is subject to a hard cap of 2 marks. Additionally, the script contains several spelling and mechanical errors.",
+  "_metadata": {
+    "task_id": "SUMMARY_028",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0027",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4a880f4846cbe8447e51ed91b92fd9b719c835b8acb57e73c9158242973f2a8e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:11:31.417263+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "202509ed3cbf6609792ac7ce73cf6be2f95572ed5febd9c79dfbedca7d30a505",
+    "input_tokens": 6098,
+    "output_tokens": 2720,
+    "thoughts_tokens": 1831,
+    "cost_usd": 0.001426,
+    "latency_ms": 679733,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6098,
+        "output_tokens": 2720,
+        "thoughts_tokens": 1831,
+        "cost_usd": 0.001426,
+        "latency_ms": 679733,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

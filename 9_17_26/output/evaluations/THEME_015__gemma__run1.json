@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to identify an abstract governing theme (e.g., the power of determination or ambition). Instead, they provide a literal, surface-level paraphrase of the poem's content.",
+      "evidence": "Some one dream in the nigh after sleeping... But the dreemiers who dreem day"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single unified block and is concise, though it lacks a clear, early thematic statement.",
+      "evidence": "All of the people watch dream in their subconcious mind."
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe density of errors including spelling ('nigh', 'dreem', 'trive', 'heard'), subject-verb agreement ('Some one dream'), and poor syntax.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoided copying any lines from the poem verbatim, attempting to explain the concept in their own words.",
+      "evidence": "they want to see his dreem in reality so they work heard."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors",
+      "Subject-Verb Agreement",
+      "Conceptual confusion between summary and theme"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Basic understanding of the contrast presented in the poem"
+    ]
+  },
+  "feedback_summary": "The response is a literal paraphrase of the poem's plot rather than an analysis of its theme. While the candidate maintained a single-paragraph structure and avoided plagiarism (zero verbatim overlap), the writing is heavily compromised by pervasive grammatical and spelling errors. The student identifies the contrast between night and day dreamers but fails to elevate this to an abstract central idea.",
+  "_metadata": {
+    "task_id": "THEME_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b418e1baab05071ff9df8fb1d1baddd66f822930320703cefee116bc0edf9979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:49:07.862235+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d7218086ec787b2092a768b0d97e229019b7785d764586f89c9a9e2efd5609ba",
+    "input_tokens": 4287,
+    "output_tokens": 2416,
+    "thoughts_tokens": 1687,
+    "cost_usd": 0.001154,
+    "latency_ms": 67500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4287,
+        "output_tokens": 2416,
+        "thoughts_tokens": 1687,
+        "cost_usd": 0.001154,
+        "latency_ms": 67500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

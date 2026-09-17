@@ -1,0 +1,99 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct (False + correct correction). Item (b) is marked 0 because the correction 'Michael Collins stayed in the main ship along with Neil Armstrog and Edwin Aldbrin' is factually incorrect as it claims Armstrong and Aldrin also stayed in the ship, contradicting the passage. Item (c) is incorrect (marked True, should be False). Item (d) is correct (True). Item (e) is correct (False + correct correction). Total: 1+0+0+1+1 = 3.",
+      "evidence": "(a) False. Ans: Apl Apollo 11 was a spacecraft expedition to the Moon... (b) False. Answer : Michael Collins stayed in the main ship along with Neil Armstrog and Edwin Aldbrin. (c) True (d) True (e) False. Answer : The mission proved that humans had abready achiened interplanetary travel to the Moon before 1969"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in corrections",
+      "Incorrect True/False verdict"
+    ],
+    "positive_aspects": [
+      "Correctly identified the nature of the Apollo 11 expedition",
+      "Correctly identified the travel destination in item e"
+    ]
+  },
+  "feedback_summary": "The student scored 3 out of 5. Item (a) is correct. Item (b) is incorrect because the correction falsely states that Armstrong and Aldrin also stayed in the ship. Item (c) is incorrect (marked True instead of False). Item (d) is correct. Item (e) is correct.",
+  "_metadata": {
+    "task_id": "TF_015",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0014",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c4ea01e2c98c6d16b1ecda8f32766276bbf54ea8acc1531f01505c26ed969a98",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:37:29.772791+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9af3367c621ae0d2abeed3aab1782bcfdfa38742489a110a4c03a25f643d4c42",
+    "input_tokens": 6455,
+    "output_tokens": 1841,
+    "thoughts_tokens": 1077,
+    "cost_usd": 0.001198,
+    "latency_ms": 231594,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6455,
+        "output_tokens": 1841,
+        "thoughts_tokens": 1077,
+        "cost_usd": 0.001198,
+        "latency_ms": 231594,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

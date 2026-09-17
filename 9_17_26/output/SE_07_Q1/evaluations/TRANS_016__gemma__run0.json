@@ -1,0 +1,96 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were transformed correctly from direct questions to embedded clauses. Specifically: (a) 'post office is' (S+V), (b) 'postmaster does' (S+V), (c) 'postmaster is' (S+V), (d) 'children go' (S+V), and (e) 'post master comes' (S+V). All auxiliaries were removed and word order is correct.",
+      "evidence": "a) Do you know where the post office is? b) Do you know what the postmaster does? c) Do you know why the postmaster is so happy? d) Do you know where his children go to school? e) Do you know when the post master comes to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not awarded separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are evaluated only as part of the correctness of the transformation per the key.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not awarded separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect application of embedded clause word order",
+      "Correct removal of auxiliary verbs (does)"
+    ]
+  },
+  "feedback_summary": "The student correctly transformed all five sentences. Item (a) is correct. Item (b) is correct. Item (c) is correct. Item (d) is correct. Item (e) is correct (the minor spelling split in 'post master' does not cost the mark as the grammatical transformation is accurate).",
+  "_metadata": {
+    "task_id": "TRANS_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f033d7231b7aa67e42d29518e7edda42b2b9753697d1a79a6e6c6dc9335cccbc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:48:47.047974+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "68af9aeb0189ba9948b10e4cd5f699156c2c244f2d8afc68df130f633baf2513",
+    "input_tokens": 6157,
+    "output_tokens": 1640,
+    "thoughts_tokens": 923,
+    "cost_usd": 0.001108,
+    "latency_ms": 83983,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6157,
+        "output_tokens": 1640,
+        "thoughts_tokens": 923,
+        "cost_usd": 0.001108,
+        "latency_ms": 83983,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

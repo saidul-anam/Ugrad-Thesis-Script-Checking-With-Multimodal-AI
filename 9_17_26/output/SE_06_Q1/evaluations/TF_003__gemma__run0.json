@@ -1,0 +1,95 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. Item (a) correctly identifies 'False' and provides the correct fact about improvement. Item (b) correctly identifies 'False' and provides the correct Math score. Item (c) is correctly identified as 'True'. Item (d) correctly identifies 'False' and states the intent to work harder. Item (e) correctly identifies 'False' and notes the father's motivation/encouragement.",
+      "evidence": "a) False... He thinks that he can improve himself one day. b) False... He got 10 out of 10 in Mathematics c) True d) False... He plans to work harden next time. e) False... His father motivated him for his low marks."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural markers are not assessed separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are not assessed separately unless they obscure the answer's meaning.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not assessed.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy in both truth-value identification and correction"
+    ]
+  },
+  "feedback_summary": "The student achieved full marks. Item (a) is correct; Item (b) is correct; Item (c) is correct; Item (d) is correct (spelling 'harden' does not cost the mark as the intent and fact are clear); Item (e) is correct.",
+  "_metadata": {
+    "task_id": "TF_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "8f448fc1296a0f29aa166f80cd7c931061bbcccb6710e7cf7a6280c68cca1ddb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:07:26.874927+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "aab2ed42783a846421d4085ffe463f26a38488fb259c4f8fc365a9d2704a75f0",
+    "input_tokens": 6459,
+    "output_tokens": 1568,
+    "thoughts_tokens": 875,
+    "cost_usd": 0.001116,
+    "latency_ms": 315047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6459,
+        "output_tokens": 1568,
+        "thoughts_tokens": 875,
+        "cost_usd": 0.001116,
+        "latency_ms": 315047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

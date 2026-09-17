@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt directly, providing concrete details such as the date, location (auditorium), attendees, and the sequence of events. While basic, it covers the necessary components of the event.",
+      "evidence": "Annual pгize giving ceгemony day, at my School was held on 2nd Febгuαгy."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response adheres perfectly to the structural requirements: it is a single unified block of text and begins with a clear topic sentence.",
+      "evidence": "Annual pгize giving ceгemony day, at my School was held on 2nd Febгuαгy."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling errors (consistent substitution of characters, e.g., 'pгize' for 'prize') and grammatical slips in tense and agreement (e.g., 'was Start'), though the meaning remains legible.",
+      "evidence": "The pгogгam was beautisally decoгgated by the students and teacheгs."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic to a Class VII student rather than a memorized guide. It includes specific, though simple, references (e.g., 'PN college') and personal outcome.",
+      "evidence": "I got two pгizes."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Phonetic/character-based spelling errors",
+      "Tense inconsistency (Past/Present mix)",
+      "Subject-verb agreement"
+    ],
+    "positive_aspects": [
+      "Correct paragraph structure",
+      "Clear adherence to the prompt's topic",
+      "Effective use of a topic sentence"
+    ]
+  },
+  "feedback_summary": "The student has followed the structural requirements of a paragraph perfectly, presenting a single unified block with a clear opening. The content is relevant and covers the key aspects of a prize-giving day. However, the script is heavily marred by consistent spelling errors and basic grammatical failures. Despite this, the narrative flow is logical and the meaning is clear, placing the response in Band 3.",
+  "_metadata": {
+    "task_id": "PARA_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "3e019bdb9bb88823e47fbd8a7e0d080b14ac44da01af87e5ff59b512fe07875e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:00:20.576980+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fa7538cb6b56369c27152f4666cbd1860786798f9ac7b0e91a450ea90474f677",
+    "input_tokens": 5989,
+    "output_tokens": 1988,
+    "thoughts_tokens": 1194,
+    "cost_usd": 0.001195,
+    "latency_ms": 205641,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5989,
+        "output_tokens": 1988,
+        "thoughts_tokens": 1194,
+        "cost_usd": 0.001195,
+        "latency_ms": 205641,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

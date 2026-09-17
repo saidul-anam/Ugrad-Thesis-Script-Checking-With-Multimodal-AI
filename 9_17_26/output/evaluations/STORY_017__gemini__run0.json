@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the narrative arc from the given stem, developing a coherent sequence of events where the mouse is spared, the lion is trapped, and the mouse returns the favour.",
+      "evidence": "One day the lion cealking in the forest at once he trapped in a net he tried and tried but failed. So, he started goarning suddenly the mouse saw the lion he Fastly acent to the lion cuith his sharp teeth he cut the net and save the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative reaches a resolution, but the script completely omits a story title and concludes abruptly without an explicitly formulated moral lesson.",
+      "evidence": "The lion ashamed because because one he wanted to kill the mouse."
+    },
+    "language_mechanics": {
+      "rationale": "Severe orthographic and grammatical errors occur throughout, including heavy spelling distortions ('cuas' for was, 'acent' for went, 'cealking' for walking, 'goarning' for groaning/roaring, 'cuith' for with), run-on sentence structures, and improper capitalization.",
+      "evidence": "Once a lion cuas sleeping in a forest. suddenly, a mouse came there. It cuas in fact, playing on a pace quite happily and didn't notice the sleeping lion. While running he acent lion's face at once the lion awoke up and caught the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a standard, predictable retelling of a classic fable without creative embellishment, vivid descriptions, or elevated vocabulary.",
+      "evidence": "Mouse begged his life and said one day he will help the lion. The lion laughed and suddenly he Felt pity on mouse, so he didn't kill the mouse."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive phonetic/orthographic spelling mistakes ('cuas', 'acent', 'cealking', 'goarning', 'cuith')",
+      "Missing story title",
+      "Run-on sentences and improper capitalization/punctuation",
+      "Inconsistent past-tense usage and omitted auxiliary verbs ('lion cealking', 'he trapped', 'save the lion', 'lion ashamed')"
+    ],
+    "positive_aspects": [
+      "Complete plot progression maintaining the core narrative sequence of the fable",
+      "Clear thematic resolution where the mouse repays the lion's mercy"
+    ]
+  },
+  "feedback_summary": "The candidate effectively captures the narrative progression of the traditional fable, smoothly linking the prompt to the resolution. However, marks are significantly lost due to the lack of a mandatory title, the absence of an explicit moral, and persistent basic spelling, grammatical, and punctuation errors throughout the script.",
+  "_metadata": {
+    "task_id": "STORY_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c4c55dee58756769cdefa1c7f423e3773e183ddf44364e161304e2efdaea8f10",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:03:23.212538+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ed82566f0053c08cb4518a8399abdbb68a6e040523c2ab3e7c870c178cdd9181",
+    "input_tokens": 4392,
+    "output_tokens": 3367,
+    "thoughts_tokens": 2460,
+    "cost_usd": 0.009735,
+    "latency_ms": 22577,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4392,
+        "output_tokens": 3367,
+        "thoughts_tokens": 2460,
+        "cost_usd": 0.009735,
+        "latency_ms": 22577,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

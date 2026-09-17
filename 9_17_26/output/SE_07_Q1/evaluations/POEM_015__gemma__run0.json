@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 6 items; per instructions, only the first 5 are marked. Item (a) first attempt is correct (1). Item (b) is correct (1). Item (d) is correct (1). Item (a) second attempt is a duplicate of the first item and cannot earn a second mark (0). Item (e) is correct as it identifies the developmental importance of childhood (1). Total: 1+1+1+0+1 = 4.",
+      "evidence": "(a) The parent say to bathing, dressing about their responsibility... (b) The poet suggested that we should relax and enjoy the nature. (d) The poet parent shows bathing, dressing about the care for the child... (e) The childhood important according to the poem because it is time to learned to discipline, kindness and respect to elders."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Repetition of question items (answered 'a' twice)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of core themes in both poems",
+      "Appropriate conceptual understanding of parental responsibility and nature"
+    ]
+  },
+  "feedback_summary": "The student successfully answered 4 out of the first 5 attempted items. Items (a) [first instance], (b), (d), and (e) were marked correct. The second attempt at item (a) received 0 as marks cannot be awarded twice for the same question. The 6th item (h) was ignored per the marking guidelines.",
+  "_metadata": {
+    "task_id": "POEM_015",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0014",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "e862ffdaccc261310889ad2da60808273e54fdab6cd9578139f3f8b7ba2e1265",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:40:18.099616+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "34abef5e17c5eee0693c2e06ffdc507be44f0d2e5b8c86457c0f4f684113cac6",
+    "input_tokens": 6476,
+    "output_tokens": 2913,
+    "thoughts_tokens": 2173,
+    "cost_usd": 0.001521,
+    "latency_ms": 168327,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6476,
+        "output_tokens": 2913,
+        "thoughts_tokens": 2173,
+        "cost_usd": 0.001521,
+        "latency_ms": 168327,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is correct. Item ii is incorrect as it identifies the spacecraft instead of the people. Item iii is correct. Item iv is correct. Item v is incorrect as the text specifies people 'all over the world', not just 'in USA'.",
+      "evidence": "journey to the moon. ... July 20, 1969 ... came back to earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misidentification of entity (spacecraft instead of people)",
+      "Over-specification/Incorrect scope (USA instead of all over the world)"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of dates",
+      "Correct identification of primary events"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items i, iii, and iv. Item ii was marked wrong because the answer provided the name of the spacecraft (Apollo 11) instead of the astronauts who landed. Item v was marked wrong because 'in USA' does not match the passage's statement that people 'all over the world' watched the news.",
+  "_metadata": {
+    "task_id": "TABLE_025",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0024",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8797f9bfc492b73410c5d3f0b3d92d3a9f224e356e56e9c05a52c009dc9210a9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:39:00.074439+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6760bc88927958611b40f0549ec7ae0c50e86cdebe5d3d4c5fde0bc5f140b049",
+    "input_tokens": 6355,
+    "output_tokens": 1655,
+    "thoughts_tokens": 1013,
+    "cost_usd": 0.001132,
+    "latency_ms": 169296,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6355,
+        "output_tokens": 1655,
+        "thoughts_tokens": 1013,
+        "cost_usd": 0.001132,
+        "latency_ms": 169296,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

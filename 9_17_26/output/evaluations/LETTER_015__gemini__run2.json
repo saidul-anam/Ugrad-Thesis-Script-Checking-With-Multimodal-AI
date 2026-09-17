@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly introduces the letter's purpose and addresses the prompt by describing plans to study medicine after the HSC examination.",
+      "evidence": "In you letter you wanted to know about future plan after HSC exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout elements of an informal letter are present, including date, salutation, body, subscription, signature, and envelope block.",
+      "evidence": "From\nShovo\nAzimpur, BDR\n2no gate\n\nTo\nArif\nManiktgong,\nshimuliya-7"
+    },
+    "language_mechanics": {
+      "rationale": "The text contains a high density of spelling and grammatical errors, including non-standard verb forms and homophone misspellings.",
+      "evidence": "After passin HSC exam I prepared me to get gadmited in a renown medical collage."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies heavily on memorized stock introductory and concluding formulas with repetitive sentence structures.",
+      "evidence": "I hope you are well. I am also well. I recive your letter few days ago."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling errors ('recive', 'passin', 'gadmited', 'collage', 'dreem', 'gratest', 'heard')",
+      "Grammatical and pronoun slips ('In you letter', 'prepared me')",
+      "Incorrect article usage ('in the Bangladesh')"
+    ],
+    "positive_aspects": [
+      "Complete letter format with all mandatory components present",
+      "Immediate fulfillment of the writing prompt objective"
+    ]
+  },
+  "feedback_summary": "The letter satisfies all structural formatting criteria and directly addresses the assigned topic. However, severe spelling mistakes and reliance on memorized opening/closing templates limit mechanical and stylistic quality, resulting in a Band 3 score of 3 out of 5.",
+  "_metadata": {
+    "task_id": "LETTER_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d84cf414403c083c931160a53407ca39775af6d70f13f29f0356ee97af139af3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:46:42.283500+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "df9c9e0e494046ce156a3a8a5db41b6d3b9bbd07f8725778998efb0fdf0152a7",
+    "input_tokens": 4349,
+    "output_tokens": 3079,
+    "thoughts_tokens": 2333,
+    "cost_usd": 0.009002,
+    "latency_ms": 43890,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4349,
+        "output_tokens": 3079,
+        "thoughts_tokens": 2333,
+        "cost_usd": 0.009002,
+        "latency_ms": 43890,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

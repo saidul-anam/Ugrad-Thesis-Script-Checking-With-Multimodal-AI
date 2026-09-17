@@ -1,0 +1,101 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all the main points: the identity of the astronauts, the destination, the spacecraft, and the overall significance of the mission.",
+      "evidence": "Neil Armstrong, Michael Collins, and Ed win Aldrin three American astronauts began their journey to the moon."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is presented as a single coherent block, but it exceeds the ideal 1/3rd length constraint (approx 43.5% of the original text).",
+      "evidence": "Summary\n\nNeil Armstrong..."
+    },
+    "language_mechanics": {
+      "rationale": "There are minor errors in spacing ('Ed win') and a failure to capitalize the start of the final sentence ('the \"Apollo II\" mission').",
+      "evidence": "the \"Apollo II\" mission"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While not exceeding the 50% verbatim cap, the candidate relies heavily on the original phrasing for the opening and closing statements.",
+      "evidence": "showed the Power of science, team work, and human courage"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.5,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lack of sentence-start capitalization",
+      "Inaccurate detail (Apollo II instead of Apollo 11)",
+      "Typographical spacing error"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of key facts",
+      "Clear and logical sequence"
+    ]
+  },
+  "feedback_summary": "The candidate provided a comprehensive summary that captured all essential points of the text. However, the score is moderated due to a lack of original paraphrasing and minor linguistic slips, such as the failure to capitalize the final sentence and a spacing error in a name. The length is slightly over the target 1/3rd limit, though not enough to trigger a structural cap.",
+  "_metadata": {
+    "task_id": "SUMMARY_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ec158ce18f562cde333abcf7769335dd8f310b657ddeda9853beabdfc7c71882",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:29:24.029075+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9d38acf88a68c083fd72e898ee301ff3e30546bcdc59ed9b7ce47f8704a96cdf",
+    "input_tokens": 6044,
+    "output_tokens": 2473,
+    "thoughts_tokens": 1736,
+    "cost_usd": 0.001346,
+    "latency_ms": 285750,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6044,
+        "output_tokens": 2473,
+        "thoughts_tokens": 1736,
+        "cost_usd": 0.001346,
+        "latency_ms": 285750,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

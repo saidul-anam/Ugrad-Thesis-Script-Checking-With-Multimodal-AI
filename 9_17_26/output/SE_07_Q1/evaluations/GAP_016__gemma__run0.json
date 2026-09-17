@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (a) 'performance', (b) 'outstanding', (c) 'cheered', and (d) 'excitement' are all correct and align with the passage and key. Item (e) 'dim and bustle' is incorrect as it does not fit the context of loud sounds accompanying the show.",
+      "evidence": "a) performance b) outstanding c) cheered d) cheerin, excitement e) dim and bustle"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Contextual inaccuracy in final gap"
+    ],
+    "positive_aspects": [
+      "Strong vocabulary choice in gap (b)",
+      "Accurate comprehension of main events"
+    ]
+  },
+  "feedback_summary": "The candidate performed well, correctly identifying the required words for four out of five gaps. Item (a) 'performance', item (b) 'outstanding', item (c) 'cheered', and item (d) 'excitement' are marked as correct. Item (e) 'dim and bustle' is incorrect as it fails to describe the 'loud' sounds of the show described in the text.",
+  "_metadata": {
+    "task_id": "GAP_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "5e07548702f80ef11afb4ae010df9553447cac4976308e781d22a091ec7cbe57",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:50:13.027198+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d842de7ac491e30883269c01febbf78cb9aef47ae1b042175fed5218fcf20fa6",
+    "input_tokens": 6225,
+    "output_tokens": 1439,
+    "thoughts_tokens": 791,
+    "cost_usd": 0.001054,
+    "latency_ms": 564609,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6225,
+        "output_tokens": 1439,
+        "thoughts_tokens": 791,
+        "cost_usd": 0.001054,
+        "latency_ms": 564609,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

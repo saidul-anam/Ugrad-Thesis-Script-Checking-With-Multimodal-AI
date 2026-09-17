@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script addresses the key questions of the prompt by defining AI, noting its applications across education, science, and medicine, and discussing drawbacks such as overdependence and misinformation. However, ideas are frequently repeated rather than expanded.",
+      "evidence": "In education systam, AI is very important . Student get many benefits by using AI."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response adheres to the single-paragraph format requirement without paragraph breaks. However, the introductory topic sentence is clumsy and factually reversed, internal transitions are crude, and the expression is repetitive.",
+      "evidence": "Artificial intelligence is the short form of AI. AI is the a meachinge which is buit up by using human intelligence ."
+    },
+    "language_mechanics": {
+      "rationale": "High density of grammatical, spelling, and syntactic errors occurs across almost every line (e.g., incorrect prepositions, faulty subject-verb agreement, and misspelt common words), though the core message remains discernible.",
+      "evidence": "If students always use AI, they are become over dependes on AI. They can't solve any problems without AI even they can't do their assignment by thein ownself."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script demonstrates authentic personal expression, particularly in contrasting emotional empathy between human and AI teachers, but it suffers from excessive repetition of key phrases such as 'by using AI'.",
+      "evidence": "we can find emotion when there is a human teacher but we can't find any emotion in AI teacher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'meachinge', 'buit', 'systam', 'assingment', 'increse', 'opperation', 'distroy')",
+      "Faulty preposition usage and phrasing (e.g., 'by make their assingment', 'learn better in human teacher')",
+      "Subject-verb agreement and article errors (e.g., 'Student get', 'a AI', 'AI become harmful', 'That's mean')",
+      "Run-on sentences and broken syntax (e.g., 'A teacher can teach is Their are large difference')"
+    ],
+    "positive_aspects": [
+      "Maintained a single unified paragraph block throughout without structural division",
+      "Addressed all prompt questions authentically, offering a thoughtful comparison regarding the emotional limitations of AI teachers"
+    ]
+  },
+  "feedback_summary": "The candidate provides an authentic response covering all guiding questions, including applications, threats, and a relevant comparison between human and AI teachers within a single paragraph block. However, the script is placed in Band 2 due to a high density of spelling, grammatical, and syntactic errors, alongside severe repetition of sentence patterns and transitional phrases.",
+  "_metadata": {
+    "task_id": "PARA_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d0a0c09fe4284371db5994dfa153db2f99c226e28da58c8b620e854b0c24036",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:22:50.381804+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c4da0e6d2fbb8a1fb95e52fd58f54ba6de23b709ef5585f7b498dfc37ad824f9",
+    "input_tokens": 4665,
+    "output_tokens": 4885,
+    "thoughts_tokens": 3964,
+    "cost_usd": 0.013612,
+    "latency_ms": 40733,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4665,
+        "output_tokens": 4885,
+        "thoughts_tokens": 3964,
+        "cost_usd": 0.013612,
+        "latency_ms": 40733,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

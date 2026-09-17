@@ -1,0 +1,99 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "None of the five items are correct. Item (a) 'went get out' is not an antonym of 'went back'. Item (b) 'thinek hall' is not a recognized synonym for museum. Item (c) 'close friend' uses the target word itself. Item (d) 'fast' is not an antonym of 'show'. Item (e) 'buy' is simply a tense change of the target word 'bought' rather than a synonym.",
+      "evidence": "went get out | thinek hall | close friend | fast | buy"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect word relation (providing unrelated words)",
+      "Tautology (using the prompt word in the answer)",
+      "Tense substitution instead of synonymy"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "The student attempted all five items but failed to provide any correct synonyms or antonyms. Item (a) is incorrect. Item (b) is unintelligible/incorrect. Item (c) is incorrect as it repeats the prompt word 'friend'. Item (d) is incorrect. Item (e) is incorrect as 'buy' is the present tense of 'bought', not a distinct synonym.",
+  "_metadata": {
+    "task_id": "VOCAB_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "d3eacc53f1faf95df7e758ec2c58ac0e09d82238133d78d340b87025d06ba95e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:05:20.582406+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b23ad09a37e04d78118c4e8fcbaf1f096711a0d97c0b7a0e6c846d15c97fe95c",
+    "input_tokens": 6328,
+    "output_tokens": 2548,
+    "thoughts_tokens": 1840,
+    "cost_usd": 0.001397,
+    "latency_ms": 568592,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6328,
+        "output_tokens": 2548,
+        "thoughts_tokens": 1840,
+        "cost_usd": 0.001397,
+        "latency_ms": 568592,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

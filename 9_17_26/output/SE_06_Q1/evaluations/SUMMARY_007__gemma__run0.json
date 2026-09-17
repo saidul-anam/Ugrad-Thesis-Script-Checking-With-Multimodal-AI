@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures all core elements: Raju's academic performance across different subjects, his reaction, the support from his parents, and his resolve to improve.",
+      "evidence": "He got good marks in Banla, English, Mathematics. But he couldn't do well in ICT, Science, Religion."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the summary fails the brevity constraint significantly. At 60% of the original text length, it is nearly double the permitted 1/3rd limit.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are several spelling and morphological errors ('Last weeks', 'classtests', 'Banla', 'bathen', 'b elieves') which disrupt the flow, although the meaning remains clear.",
+      "evidence": "Last weeks, his school held classtests... His bathen said don't lose hope."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies heavily on the source text's sentence structures and wording, merely omitting a few words rather than paraphrasing.",
+      "evidence": "Raju is a student of class six."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors",
+      "Failure to paraphrase",
+      "Excessive length"
+    ],
+    "positive_aspects": [
+      "Comprehensive content coverage",
+      "Clear narrative sequence"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good understanding of the passage by including all key details. However, the response is too long (60% of the original) and relies too heavily on copying sentences from the text. Due to the length exceeding the 1/3rd threshold, a structural cap of 2 has been applied.",
+  "_metadata": {
+    "task_id": "SUMMARY_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f6c5d1f164e68baf897d557fc8406b93b59bdeb9f8fcdfcd4340f5f04f96485b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:28:41.173513+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "46b5528cce07081dc51d10fe4a9b2fa50854d740044c0d983644a6f9c7b93a5d",
+    "input_tokens": 6153,
+    "output_tokens": 2189,
+    "thoughts_tokens": 1458,
+    "cost_usd": 0.001272,
+    "latency_ms": 371750,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6153,
+        "output_tokens": 2189,
+        "thoughts_tokens": 1458,
+        "cost_usd": 0.001272,
+        "latency_ms": 371750,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

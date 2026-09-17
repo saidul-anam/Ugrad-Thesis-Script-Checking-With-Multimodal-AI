@@ -1,0 +1,94 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. (a) 'Went away' is an acceptable antonym for 'went back' (meaning to leave vs return); (b) 'Art Gallery' is a valid synonym for 'museum'; (c) 'Ally' is a valid synonym for 'friend'; (d) 'Hide' is the correct antonym for 'show'; (e) 'acquire' is a valid synonym for 'bought'.",
+      "evidence": "a. Went back | x | Went away\nb. Museum | Art Gallery | x\nc. Friend |  Ally | x\nd. Show | x | Hide\ne. Bought | acquire | x"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Accurate identification of both synonyms and antonyms",
+      "Strong vocabulary range for Class VI level"
+    ]
+  },
+  "feedback_summary": "The student correctly identified all five items: (a) Went away, (b) Art Gallery, (c) Ally, (d) Hide, and (e) acquire. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "VOCAB_008",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0008",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "32208c1fbd8ff7a16d96bfb0223c43ef18104eea5a5f4bbbf04568b7f2d4d806",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:37:04.413671+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1ad500556662d7802e0a923943863b36702ae0f842f9f855ed6b091ae34ca8b0",
+    "input_tokens": 6326,
+    "output_tokens": 1706,
+    "thoughts_tokens": 1059,
+    "cost_usd": 0.001144,
+    "latency_ms": 769437,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6326,
+        "output_tokens": 1706,
+        "thoughts_tokens": 1059,
+        "cost_usd": 0.001144,
+        "latency_ms": 769437,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

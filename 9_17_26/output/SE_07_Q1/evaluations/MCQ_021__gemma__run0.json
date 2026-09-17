@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered 4 items correctly: a (iii), b (ii - misspelling 'tineeds' ignored), d (i), and g (ii). Item c is incorrect (selected i instead of iv). Item e is incorrect (selected ii instead of iv). Item f is marked 0 because the student provided two options (iii and ii), which according to the rubric scores 0.",
+      "evidence": "a. iii rural area; b. ii He earns irregularly for daily tineeds; d. from morning to night; g. ii Household manager and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion over parts of speech (adverbs/adjectives)",
+      "Failure to select a single definitive answer (Item f)"
+    ],
+    "positive_aspects": [
+      "Good comprehension of the passage's narrative context",
+      "Correct identification of idioms and roles"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items a, b, d, and g. Items c and e were incorrect. Item f was awarded 0 marks because two conflicting options were provided.",
+  "_metadata": {
+    "task_id": "MCQ_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "16d69e2b65c4c5bdfee46f5769467e173898b4e375523b736b1811f86e642160",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:45:38.432012+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4bcfb82a15228b24c0171b497a413e15cee8ba9a1542a73a02365c6c58724cd7",
+    "input_tokens": 6464,
+    "output_tokens": 2066,
+    "thoughts_tokens": 1392,
+    "cost_usd": 0.001266,
+    "latency_ms": 236171,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6464,
+        "output_tokens": 2066,
+        "thoughts_tokens": 1392,
+        "cost_usd": 0.001266,
+        "latency_ms": 236171,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

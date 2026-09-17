@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately captures all data points from the chart and identifies the highest source, although the analysis remains a basic list rather than a synthesis of trends.",
+      "evidence": "the highest use of electricity is 46% and it's of source is coal"
+    },
+    "structure_format_brevity": {
+      "rationale": "While there is an introductory sentence, the response fails the critical structural requirement of avoiding personal opinions and external facts, devoting the entire final third of the text to moralizing about climate change.",
+      "evidence": "Environ- ment friendly source can reduce climate change. so, we all should concern about the use of electricity source."
+    },
+    "language_mechanics": {
+      "rationale": "High error density. There are significant issues with subject-verb agreement, spelling, and sentence construction. Tense is incorrectly kept in the present for 1980 data.",
+      "evidence": "it's of source is coal. Thought, though The 2nd highest source is Naturzal gas"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The vocabulary is extremely limited and repetitive. There is a total absence of precise comparative terminology (e.g., 'surpassed', 'minority', 'dominant').",
+      "evidence": "The source of oil use 12%. The source of Nuclear use 2%"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Naturzal)",
+      "Syntax breakdown (it's of source is)",
+      "Tense inconsistency (Present instead of Past)",
+      "Inclusion of subjective opinions"
+    ],
+    "positive_aspects": [
+      "Accurate transcription of numerical data",
+      "Presence of an introductory sentence"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extracted the data from the chart but failed to analyze it objectively. The response is heavily penalized for including personal opinions and environmental commentary, which is strictly forbidden in graph descriptions. Furthermore, the writing is marred by frequent grammatical errors and a lack of comparative vocabulary, placing it in Band 2. Although a structural cap of 6 applies due to the external opinions, the raw quality of the writing resulted in a score already below that cap.",
+  "_metadata": {
+    "task_id": "CHART_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f516c48e3e75de225dd1ff545b543d69e7d932aab8a663dff6295f78b8c83faa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:34:44.505515+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cdd9a0b6c9f96f47b0a2957c69adbcab12af3781e36c0346ed53bcba36f22d6c",
+    "input_tokens": 4381,
+    "output_tokens": 2179,
+    "thoughts_tokens": 1368,
+    "cost_usd": 0.001092,
+    "latency_ms": 60109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4381,
+        "output_tokens": 2179,
+        "thoughts_tokens": 1368,
+        "cost_usd": 0.001092,
+        "latency_ms": 60109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

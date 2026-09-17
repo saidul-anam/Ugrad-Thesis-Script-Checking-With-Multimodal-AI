@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to identify the poem's core theme (the contrast between passive dreamers and active, purposeful 'dreamers of the day'), offering only superficial, generic motivational statements about dreams and hard work.",
+      "evidence": "Everyone should have a dream. Without dream a man can't live. So, we should work hard."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is appropriately concise but loses structural coherence by splitting into an unnecessary stanza-like quote at the end.",
+      "evidence": "Because  Because, \n\n Today is Difficult, \nTomorrow is much more difficult \nBut Day after tomorrow is you Yours"
+    },
+    "language_mechanics": {
+      "rationale": "Severe and pervasive errors in spelling, grammar, word choice, and accidental word duplication across a very short script.",
+      "evidence": "Some times many opticals are try to destroy you. But you should never los hope. Always be Alamys try your best, and oneday you will success success"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "There is no authentic interpretation of the poem's imagery or ideas; the script relies entirely on generic clichés and an irrelevant external quotation.",
+      "evidence": "Today is Difficult, \nTomorrow is much more difficult \nBut Day after tomorrow is you Yours"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Malapropism and severe spelling errors ('opticals' for obstacles, 'los' for lose, 'Alamys')",
+      "Verb structure and part-of-speech errors ('are try to destroy', 'you will success')",
+      "Unedited word duplications ('success success', 'Because  Because')",
+      "Failure to engage with poetic text, substituting irrelevant external quotes"
+    ],
+    "positive_aspects": [
+      "Recognised the central keyword 'dream' from the source poem",
+      "Demonstrated an attempt to construct basic English sentences"
+    ]
+  },
+  "feedback_summary": "The candidate fails to grasp or explain the core theme of the poem, which contrasts passive nighttime dreamers with actionable daytime dreamers. Rather than interpreting the poem's text and imagery, the candidate provides generic motivational advice and appends an irrelevant external quotation. Due to pervasive grammatical errors, malapropisms ('opticals'), and severe mechanics issues, the response receives a Band 1 score of 2/8.",
+  "_metadata": {
+    "task_id": "THEME_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "53911b2fea66f273c27932d5a72d0948b68cc456e4d28ff79540c743ff1d6a76",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:05:44.802752+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "c22fd2fc4808d871c4b0c2b4f5938d2dff022df4a515345a0283ec9a769815bd",
+    "input_tokens": 4307,
+    "output_tokens": 3353,
+    "thoughts_tokens": 2514,
+    "cost_usd": 0.009675,
+    "latency_ms": 22155,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4307,
+        "output_tokens": 3353,
+        "thoughts_tokens": 2514,
+        "cost_usd": 0.009675,
+        "latency_ms": 22155,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

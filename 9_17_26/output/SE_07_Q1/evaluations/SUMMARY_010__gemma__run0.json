@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captured all primary factual elements: the dates of departure, landing, and return, the names of the astronauts, the spacecraft, and the ultimate outcome.",
+      "evidence": "1969 On July 16, three brave astronauts... 20 July they step on the moon. 24 juty that year they cameback"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block, but it exceeds the one-third length constraint (approx 40% of source), which is a structural failure.",
+      "evidence": "1969 On July 16... they made history."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors (thier, jouney, Florid, juty) and syntax issues (they were of Neil, they step, the moon the moon), though the meaning remains clear.",
+      "evidence": "thier jouney to the moon they were of Neil Armstrong... Florid USA"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoided verbatim copying of full sentences, using their own (albeit flawed) phrasing throughout.",
+      "evidence": "three brave astronauts began thier jouney to the moon"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling)",
+      "Tense inconsistency (step vs began)",
+      "Length constraint violation"
+    ],
+    "positive_aspects": [
+      "Strong factual retention",
+      "Good attempt at paraphrasing"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a strong understanding of the text by including all key dates and names. However, the summary is too long (exceeding 1/3 of the original text), which triggers a structural hard cap of 2 marks. Additionally, the writing is marred by several spelling and grammatical slips.",
+  "_metadata": {
+    "task_id": "SUMMARY_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "de7fb73fcba3fec1ec7291d518a9d360918e3a0022165e55f1c80ccfce2187c2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:40:56.434596+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a3177df52998ddcf053c74890aee7c6892a01d8b8df852e130d754ab179fc924",
+    "input_tokens": 6052,
+    "output_tokens": 2307,
+    "thoughts_tokens": 1563,
+    "cost_usd": 0.001297,
+    "latency_ms": 379250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6052,
+        "output_tokens": 2307,
+        "thoughts_tokens": 1563,
+        "cost_usd": 0.001297,
+        "latency_ms": 379250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

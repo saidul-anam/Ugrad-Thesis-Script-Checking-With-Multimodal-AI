@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between the two types of dreamers and the resulting outcomes, although the explanation leans closer to a summary than a high-level abstract theme.",
+      "evidence": "The poem reppresents two types of dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block that gets straight to the point without unnecessary padding.",
+      "evidence": "While night dreamers forget their dream in meningless but day dreamers's are powerful"
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in spelling ('reppresents', 'meningless'), punctuation ('dreamers's'), and syntax ('another those one is who').",
+      "evidence": "reppresents two types of dreamers. One those who passively dream at night, another those one is who actively dream at day."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids direct copying of the poem's lines, utilizing their own vocabulary to interpret the meaning.",
+      "evidence": "pursue their dream's with open eyes and make their dream successful"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'reppresents', 'meningless')",
+      "Syntax/Sentence fragmentation",
+      "Incorrect use of possessive apostrophes"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying of the source text",
+      "Accurate identification of the poem's central contrast"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's theme, correctly identifying the distinction between passive and active ambition. The structural requirement of a single coherent block is met, and the work is entirely original in phrasing. However, the submission is marred by significant linguistic errors, including poor spelling and broken syntax, which prevents it from reaching Band 4.",
+  "_metadata": {
+    "task_id": "THEME_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "5a2c7ad3443e8b106d88bf558cad17e6b310e13e3641dd4d7281cc86f1f656b8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:08:01.190917+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b267b177c5d10c9f7e586689f7cf2d9be220be296f19da4551e4affdc7e58478",
+    "input_tokens": 4286,
+    "output_tokens": 2129,
+    "thoughts_tokens": 1392,
+    "cost_usd": 0.001067,
+    "latency_ms": 60577,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4286,
+        "output_tokens": 2129,
+        "thoughts_tokens": 1392,
+        "cost_usd": 0.001067,
+        "latency_ms": 60577,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

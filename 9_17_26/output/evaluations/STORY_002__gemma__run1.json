@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the story from the stem and follows the logical progression of the known fable, although the phrasing is often clumsy.",
+      "evidence": "The mouse saw the lion and remember the lion who forgive captured in and him"
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive ending and establishes a moral of friendship; however, it fails the requirement to provide a proper title.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a significant failure in tense consistency (mixing present and past) and numerous grammatical errors in sentence construction.",
+      "evidence": "the lion wake up. with his roaring, he told him \"How dare you a tiny creature\""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a verbatim reproduction of a common fable with no original creative turns, although the student attempted to put it in their own words.",
+      "evidence": "cut the net with his sharp teeth"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (e.g., 'wake up' instead of 'woke up')",
+      "Subject-verb agreement",
+      "Incorrect word usage (e.g., 'laushed' for 'laughed')",
+      "Missing required structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Logical plot sequence",
+      "Positive resolution"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of story structure and completes the plot logically. However, the script is marred by pervasive grammatical errors, particularly in tense control, and fails to include a title as specifically requested in the prompt. The narrative is a standard fable without original creative input.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4382898e254607f85048422cc00c0d5980b17c504be8dff1f0b06f271add0c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:01:43.140415+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dfd63beaf32ed2a4864222cc97dd76c0123cf20144f749e1a5ec4fec25ca0c8a",
+    "input_tokens": 4554,
+    "output_tokens": 2883,
+    "thoughts_tokens": 2163,
+    "cost_usd": 0.00132,
+    "latency_ms": 80782,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4554,
+        "output_tokens": 2883,
+        "thoughts_tokens": 2163,
+        "cost_usd": 0.00132,
+        "latency_ms": 80782,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

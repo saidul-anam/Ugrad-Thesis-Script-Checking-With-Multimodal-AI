@@ -1,0 +1,99 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (i) is correct as it identifies the spacecraft Apollo 11, which matches the key's acceptable alternative. Item (ii) is a perfect match. Item (iii) is incorrect (July 24 instead of July 20). Item (iv) is incorrect (quote provided instead of the event of returning to Earth). Item (v) is incorrect (date provided instead of location 'All over the world'). Total: 1+1+0+0+0 = 2.",
+      "evidence": "(i) Their spacee craft  called Apollo 11. (ii) Armstrong and Aldrin"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect data retrieval (dates and locations)",
+      "Misidentifying event requirements"
+    ],
+    "positive_aspects": [
+      "Correctly identified the astronauts",
+      "Correctly identified the spacecraft"
+    ]
+  },
+  "feedback_summary": "The candidate scored 2 out of 5. Items (i) and (ii) were marked correct. Items (iii), (iv), and (v) were marked wrong due to incorrect dates, wrong event content, and providing a date where a location was required.",
+  "_metadata": {
+    "task_id": "TABLE_022",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0021",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9fbe382426668eb03d7cb87480d3e1a3f7f994339a8f12e7935a6d6c500af751",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:04:59.031318+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cff2b40bbfa55ef43b12932cd7a231712a24c896983642b009b24403e516bff5",
+    "input_tokens": 6385,
+    "output_tokens": 1445,
+    "thoughts_tokens": 765,
+    "cost_usd": 0.001072,
+    "latency_ms": 302609,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6385,
+        "output_tokens": 1445,
+        "thoughts_tokens": 765,
+        "cost_usd": 0.001072,
+        "latency_ms": 302609,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

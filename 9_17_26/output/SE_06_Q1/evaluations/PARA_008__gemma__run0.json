@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a comprehensive description of a rickshaw puller's life, covering employment, working conditions, living standards, and social needs. It exceeds the 120-word target significantly but remains on topic.",
+      "evidence": "He comes out on the road early in the morning and works with his rickshaw till the late hours of night. He pulls rickshaw in both sun and the rain."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the fundamental structural requirement of a paragraph by splitting the text into two distinct blocks.",
+      "evidence": "can't take rest.\n\nThe work of a rickshaw puller"
+    },
+    "language_mechanics": {
+      "rationale": "There are several spelling errors ('choses', 'dally basls', 'atown', 'hi food') and subject-verb agreement errors ('He usually don't'), though the meaning remains clear.",
+      "evidence": "he hires a rickshaw from its owner on dally basls."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies heavily on standard guide-book clichés common in local textbooks ('hand to mouth', 'two square meals', 'sad and miserable life'), showing limited original expression.",
+      "evidence": "he lives from hand to mouth. His demands are few, if he can man. two square meals for himself and his family, he be-comes happy."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Structural failure (sub-paragraphs)",
+      "Spelling errors",
+      "Subject-verb agreement",
+      "Reliance on formulaic phrases"
+    ],
+    "positive_aspects": [
+      "Strong content coverage",
+      "Logical flow of ideas",
+      "Appropriate vocabulary for the level"
+    ]
+  },
+  "feedback_summary": "The student demonstrates a good understanding of the topic and provides plenty of relevant detail. However, the response is disqualified from a higher band because it is written as two paragraphs instead of one single unified block, triggering a structural hard cap of 5. Additionally, there are noticeable spelling errors and a heavy reliance on memorized guide-text phrases.",
+  "_metadata": {
+    "task_id": "PARA_008",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0008",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "08288038156ac4cdf4c0b115d1986d9064b4847fb80eb249155162991022e140",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:34:58.459359+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2ec6bd0fc62fc95bbe2efb82f4ce3f6a152453095cba46d696d59cbf2dba7224",
+    "input_tokens": 6199,
+    "output_tokens": 1749,
+    "thoughts_tokens": 957,
+    "cost_usd": 0.001145,
+    "latency_ms": 424250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6199,
+        "output_tokens": 1749,
+        "thoughts_tokens": 957,
+        "cost_usd": 0.001145,
+        "latency_ms": 424250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

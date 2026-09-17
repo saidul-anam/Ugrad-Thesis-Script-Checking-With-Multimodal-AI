@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered all five items. Item (a): identifies the fight against Pakistan and the surrender date (1); Item (b): mentions the 31-gun salute and hoisting (1); Item (c): connects the memorial to remembering those who gave their lives (1); Item (d): identifies a specific patriotic song (1); Item (e): identifies the salute as representing the war/victory (1). Total = 5.",
+      "evidence": "a) During the war in 1971, we Fight with the Pakistani army. On the 16th December, the pakistan army surrendered b) ...begins with a 31-gun salute at dawn, followed by hoisting... c) ...it help to remembers us the martyrs' thing. They gave their lives. d) People sings \"Aman shonar Bangla\"... e) The 31 gun salute represent the Libaranation war"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions. Per rubric, grammar/spelling do not affect the mark if content is recoverable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling errors (e.g., 'governu-ment', 'Libaranation')",
+      "Grammatical slips (e.g., 'People sings')"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of all key facts from the passage",
+      "Ability to provide a specific example of a patriotic song"
+    ]
+  },
+  "feedback_summary": "All five items were marked correct. Item (a) correctly identifies the conflict and the date of surrender. Item (b) correctly identifies the salute and hoisting. Item (c) correctly describes the purpose of the memorial. Item (d) correctly identifies a patriotic song. Item (e) correctly links the salute to the liberation war. Although there are several mechanical and spelling errors, they do not impede the recovery of the correct content, and therefore do not cost marks for this item-scored task.",
+  "_metadata": {
+    "task_id": "SHORT_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1d9aa782f94d2996fada3dd8d5ebb8e89fd19acb2eedb5bb64b6e2f8112c05da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:39:29.338265+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dafb14781ea0b9a5297df055a8eba8312967e3fd583461c3d54c0ecef52c860f",
+    "input_tokens": 6650,
+    "output_tokens": 1923,
+    "thoughts_tokens": 1101,
+    "cost_usd": 0.001242,
+    "latency_ms": 241608,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6650,
+        "output_tokens": 1923,
+        "thoughts_tokens": 1101,
+        "cost_usd": 0.001242,
+        "latency_ms": 241608,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

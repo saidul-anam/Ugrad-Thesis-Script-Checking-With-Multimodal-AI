@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Comparing the candidate's sequence to the answer key: Position 1 (b vs c) is wrong; Position 2 (a vs f) is wrong; Position 3 (d vs e) is wrong; Position 4 (g vs g) is correct; Position 5 (h vs a) is wrong; Position 6 (f vs h) is wrong; Position 7 (e vs d) is wrong; Position 8 (c vs b) is wrong. Only one item is correctly positioned.",
+      "evidence": "4. g"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequencing of events"
+    ],
+    "positive_aspects": [
+      "Correct identification of the 4th sentence in the sequence"
+    ]
+  },
+  "feedback_summary": "The candidate failed to correctly sequence the narrative. Only item 4 (g) was placed in the correct position. All other items (1, 2, 3, 5, 6, 7, 8) were placed incorrectly according to the answer key.",
+  "_metadata": {
+    "task_id": "REARR_012",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0011",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "cc68d9428755af0ef96f2159a1a4240a6b14e6201622139abcd4cffb7e7bbc88",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:00:56.104503+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "03fe04b39b28f5f5c5c5f0561a55dbd82d72cdaf0da3a43bdb4814c29ed3fc1c",
+    "input_tokens": 6280,
+    "output_tokens": 1552,
+    "thoughts_tokens": 911,
+    "cost_usd": 0.001094,
+    "latency_ms": 87483,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1552,
+        "thoughts_tokens": 911,
+        "cost_usd": 0.001094,
+        "latency_ms": 87483,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

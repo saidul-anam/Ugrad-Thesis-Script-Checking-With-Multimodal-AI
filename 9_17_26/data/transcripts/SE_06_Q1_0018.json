@@ -1,0 +1,220 @@
+{
+  "script_id": null,
+  "pages_processed": 16,
+  "answers": [
+    {
+      "question_number": "1",
+      "transcript": "a) iv. actuality\nb) iv. pride and joy\nc) i. neglect\nd) ii. courageous\ne) ii. submitted\nf) iii. independently\ng) iv. all of i, ii and iii.",
+      "pages": [
+        1
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "2",
+      "transcript": "a) In 1971. the war during re markable day for Bangladeshi people.\nb) people celebrate Victory Day, they pride and enjoy enthusiasm across the country.\nc) the National Martyres Memorial is important for the Banglades victory day;\nd) At the National Martyrs Memorial is ~~savan for~~ {inserted: four} that people sing song in the this day.\ne) The 31-gun salute represent on Victory Day because the victory day celebrate with great enthusiasm across the contry.",
+      "pages": [
+        1,
+        2
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Q2d has a student insertion that is conceptually unclear ('four') but transcribed as written."
+    },
+    {
+      "question_number": "3",
+      "transcript": "a) search\nb) went\nc) the boys\nd) give\ne) ~~here here~~ ofcourse",
+      "pages": [
+        3
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "4",
+      "transcript": "a) went back —. went go front\nb) museum — House\nc) Friend — stranger\nd) show — blind\ne) Bought — bag",
+      "pages": [
+        3
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "5",
+      "transcript": "i) Raju reads in class six\nii) He did well in mathematics\niii) I c T, science and Religion those subjects he got only 6 markes.\niv) subjects he did poorly in Bangla, English and math.\ni) Raju reads in class 6.\nii) He did well in Bangla, English, mat\niii) He has 8 in Bangla, 7 in English and 10 in mathematics.\niv) Subjects he did poorly in I c T, science and Religion.\nv) he got 6 marks in I c T, Science and Religion.",
+      "pages": [
+        4,
+        5
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student wrote a first attempt of items i-iv and then a second attempt of i-iv before completing item v."
+    },
+    {
+      "question_number": "6",
+      "transcript": "a) False.\nAns: He believess that with more practice, he can improve all his subjects\nb) False.\nAns: He got 10 mark out of 10 in mathmatics.\nc) True\nd) False.\nAns: He belive he that more practice to improve all subjects\ne) False.\nAns: his father told his to not to lose hope.",
+      "pages": [
+        5
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "7",
+      "transcript": "Raju is a student. He dreads in class six. He has his exam result\n\nHe got 8 in Bangla, 7 in English and 10 in mathematics out of 10. but he got 6 marks in I c T, Science and Religion. His father told him not to lose hope, but he was very happy he did very well in Bangla, English and Math. He believes that with more practice, he can improve all his subjects.",
+      "pages": [
+        6
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "8",
+      "transcript": "a) the oils, fat food is bottom of the food list.\nb) The healthy food is top of the food list.\nc) Nine through out marched the streets\nd) he ate along with his dog.\ne) He is ~~off~~ across the line.",
+      "pages": [
+        7
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "9",
+      "transcript": "a) Once Hazrat Bayazid Bastami came home to see his ailing mother,\nb) So, he went to the well quite far from their house.\nc) But she again fell asleep.\nd) she woke up some hours later.\ne) she asked Bayazid to give her a glass of water, but he could not find any water in the pitcher.\nf) He filled the [cut: partial text]\nc) she woke up some hours later,\nd) she asked Bayazid to give her a glass of water, but he could not find any water in the pitcher.\ne) He filled the pitcher, came back and went to this mother with a glass of water.\nf) He ins tead of waking her up stood by her bed with the glass of water in his hand.\ng) As he was still standing by her bed, his mother drank the glass of water and blessed him from the core of heart.\nh) But she again fell asleep.",
+      "pages": [
+        7,
+        8,
+        9
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student repeated items c, d, e, and f. Transcribed in order of appearance."
+    },
+    {
+      "question_number": "10",
+      "transcript": "a) Robin say about autumn. the autumn is my favourite seoson.\nb) Robin is a happy bird because he fly in the [unclear: ebad] cloud and He sing song.\nc) Robin is a hope ful bird because He always happy.\nd) Robin gives for singing during the winter because the [unclear: theact] is cold.\nf) The Play mate come only on a rainy day because the Playmate loves to SIn Play in rainy day.",
+      "pages": [
+        10
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 2,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Some words ('ebad', 'theact') are illegible/unclear but transcribed as best reads."
+    },
+    {
+      "question_number": "11",
+      "transcript": "Once upon a time two friends went on a journey. They had to go through a forest on the way. As they they came through the wood, they saw a bear approaching. Suddenly one of them climbed the tree. The other one has not he lay on his face without breathing the bear come of the man the bear felt smell and go away.\n\nThen the other come of the tree and says is his friend to-what does the bear say into your whisper. his friend say the bear told me \"Do not trust a friend who lives you alone\".",
+      "pages": [
+        11,
+        12
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "A friend in indeed, is a friend in",
+      "notes": null
+    },
+    {
+      "question_number": "12",
+      "transcript": "A Rickshaw Puller is a familiar figure and hard workship. He pulls Rickshaw everyday and cities. He pulls Rickshaw everday. He earn hand to mought. Many rickshaw pullers lives is slums area with his wives and children. The rickhaw puller wake up early in the morning. Then they searcn of pasengers some of pasengers are good and some of bad.\n\nThe rickshaw puller pedal of hours of hours. They earn a little which is not often these of proper selter food, educatino and wises. we also respect the rickshaw pullers, we pay them fare price. The our government give him a lone and a basis education of traffic rules for leading a decent life and l",
+      "pages": [
+        13,
+        14
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "A Rickshaw-puller",
+      "notes": "Transcript ends mid-sentence at the end of the page."
+    },
+    {
+      "question_number": "13",
+      "transcript": "Doctor: Hi shahid, I can help you\nshahid: Yes, I have full of body Pain and fever, and also runny nose.\nDoctor: This a covid-19 symptoms. You test your covid-19 symptoms, As soon as Possible!\nshahid: Okay I test my covid-19 sumptoms, As soon as possibel.\nDoctor: How are you live ing\nshihab: I live in with my parents and a elder sister.\nDoctor: you r family members has fever\nshihab: Yes, my father has fever and also runny nose.\nDoctor: I request you to test all family members of your house.\nShihad: okay sure I will test every one. Thank you\nDoctor: you're welcome",
+      "pages": [
+        15,
+        16
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    }
+  ],
+  "questions_not_found": [],
+  "overall_confidence": 0.93,
+  "extraction_warnings": [],
+  "_metadata": {
+    "script_id": "SE_06_Q1_0018",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_06_Q1",
+    "prompt_version": "extraction_prompt_c6_v1",
+    "prompt_file": "extraction_prompt_c6_v1.md",
+    "prompt_hash": "f172ab06cd2b8256703c24aac7a3e69688981e106974ba6a4975feb8e0e852b6",
+    "cache_key": "8043cbc899093823acbdafeb28395e3de737c40036657a39da7bbb14dd9b57ea",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-17T03:54:04.087933+00:00",
+    "wall_time_s": 450.688,
+    "pages_available": 17,
+    "total_input_tokens": 7378,
+    "total_output_tokens": 2665,
+    "total_cost_usd": 0.001537,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 17,
+        "input_tokens": 7378,
+        "output_tokens": 2665,
+        "cost_usd": 0.0015373000000000001,
+        "latency_ms": 450562,
+        "http_status": 200,
+        "attempt_number": 3
+      }
+    ]
+  }
+}

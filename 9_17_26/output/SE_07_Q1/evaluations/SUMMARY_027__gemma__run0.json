@@ -1,0 +1,97 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate manages to mention the three main phases of the mission (departure, walking on the moon, and return), but the narrative is fragmented and lacks a cohesive summary of the central point.",
+      "evidence": "Th fiee American asthonauts began their Jouhney to the moon."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails both structural requirements: it is written in three separate segments rather than a single block, and the length (approx 50%) exceeds the one-third limit.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe breakdown in spelling and syntax that hinders readability, far exceeding the acceptable error density for Class VII.",
+      "evidence": "Mehican asthonauts is a Gheat Pheson."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate has essentially lifted sentences from the first and last paragraphs of the text, altering them only through misspelling rather than paraphrasing.",
+      "evidence": "The APDllo 11 mission showed the power of science mwonk, and human coupage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe orthographic failure (spelling)",
+      "Verbatim lifting",
+      "Structural fragmentation"
+    ],
+    "positive_aspects": [
+      "Attempted to follow the chronological sequence of the text"
+    ]
+  },
+  "feedback_summary": "The candidate attempted the summary but struggled significantly with language mechanics and structural constraints. The response consists of three fragmented paragraphs and exceeds the length limit. Most of the content is copied directly from the source text with numerous spelling errors (e.g., 'asthonauts', 'histoby', 'coupage'). While the basic timeline of the Apollo 11 mission is present, the lack of original phrasing and poor linguistic control results in a Band 1 score.",
+  "_metadata": {
+    "task_id": "SUMMARY_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "074a8f3976708947b462ebf147dcaae279f8ec944e8e682deb53b45cc83b0760",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:08:18.431861+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "664d24b924d4d8bc6d377718da7d11926a7232d119860bdfe7ddbf7280f8df8d",
+    "input_tokens": 6084,
+    "output_tokens": 1957,
+    "thoughts_tokens": 1224,
+    "cost_usd": 0.001195,
+    "latency_ms": 683516,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6084,
+        "output_tokens": 1957,
+        "thoughts_tokens": 1224,
+        "cost_usd": 0.001195,
+        "latency_ms": 683516,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

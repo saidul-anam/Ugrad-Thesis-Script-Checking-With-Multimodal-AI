@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered correctly. Items a, b, d, and e correctly identified as False with accurate corrections based on the passage; item c correctly identified as True. Minor spelling errors ('handelen' for harder, 'bathen' for father) do not penalize the score as the factual content is recoverable.",
+      "evidence": "a. False. Raju thinks he can improve his weak subject. b. False. Raju got 10 out of 10 in Mathematics. c. True. d. False. Raju plans to work handelen in next time. e. False. His bathen told him not to lose hope."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling slips (handelen, bathen)"
+    ],
+    "positive_aspects": [
+      "Perfect accuracy in identifying True/False verdicts",
+      "Correct factual corrections for all False statements"
+    ]
+  },
+  "feedback_summary": "The candidate answered all items correctly. Item (a) is correct; item (b) is correct; item (c) is correct; item (d) is correct (intent clearly recoverable); item (e) is correct (intent clearly recoverable). Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TF_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "cc100dc299ecaa153d2e3995d05db4d7a287c8f0b3de2de59e72c033dcfcf9a4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:41:55.807625+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "42d34a5b0e6a19c2c3871cd6453ed2e131b0d48c288f77ec0aec40e4b82dacf8",
+    "input_tokens": 6442,
+    "output_tokens": 1535,
+    "thoughts_tokens": 864,
+    "cost_usd": 0.001105,
+    "latency_ms": 189516,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6442,
+        "output_tokens": 1535,
+        "thoughts_tokens": 864,
+        "cost_usd": 0.001105,
+        "latency_ms": 189516,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

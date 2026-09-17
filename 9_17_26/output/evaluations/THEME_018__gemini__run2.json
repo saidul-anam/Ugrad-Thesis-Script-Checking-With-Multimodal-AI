@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core idea of active dreamers turning their visions into reality through effort, though oversimplifies the second category of dreamers as people who simply lack dreams.",
+      "evidence": "Those who dream by day it can work hand to achive their success and make the dream come true."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single, well-proportioned block of text that states the theme early and avoids unnecessary padding.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors including spelling mistakes ('achive', 'planm', 'libes'), repeated auxiliary words ('doesn't doesn't'), and grammatical slips ('work hand', 'others who doesn't').",
+      "evidence": "It helps people to make a happy and planm life. And the others who doesn't doesn't have a dream cannot shape their libes."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script contains zero verbatim text from the poem, attempting an authentic explanation entirely in the candidate's own words despite basic vocabulary.",
+      "evidence": "The poem tells us about 'Dream' which inspires people to work hard and achive success."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (achive, planm, libes)",
+      "Typographical/word duplication (doesn't doesn't)",
+      "Subject-verb agreement (others who doesn't)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim borrowing from the poem text",
+      "Correctly identifies the core concept of purposeful day-dreaming vs. inaction",
+      "Appropriate length and single-paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an understanding of the poem's central dichotomy between active and passive dreamers without relying on direct quotation. However, the response is undermined by notable spelling mistakes and basic grammatical errors, placing it at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "06fca6e85ae6034abf25c383242697d75d00afb4386152fb111addcc0e9066bc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:16:59.806748+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "0bcb3d67080a2484f75efeff2a68f2e6d00559728526a8072b7c05f19b0a29d7",
+    "input_tokens": 4293,
+    "output_tokens": 2474,
+    "thoughts_tokens": 1694,
+    "cost_usd": 0.007473,
+    "latency_ms": 16358,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4293,
+        "output_tokens": 2474,
+        "thoughts_tokens": 1694,
+        "cost_usd": 0.007473,
+        "latency_ms": 16358,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

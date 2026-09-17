@@ -1,0 +1,102 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt objective by explaining their plan to study medicine and become a doctor after passing the HSC examination.",
+      "evidence": "In you letter you wanted to know about future plan after HSC exam. After passin HSC exam I prepared me to get gadmited in a renown medical collage."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout components of an informal letter are present in the correct order: date, salutation, body paragraphs, complimentary close, signature, and envelope address blocks (From/To).",
+      "evidence": "Date: 27.6.2026\nMy dear Arif\n...\nYours ever\nShovo\n\nFrom\nShovo\nAzimpur, BDR\n2no gate\n\nTo\nArif\nManiktgong,\nshimuliya-7"
+    },
+    "language_mechanics": {
+      "rationale": "The response contains pervasive spelling mistakes, incorrect tense usage, and article errors across nearly every sentence, demonstrating weak mechanical control.",
+      "evidence": "After passin HSC exam I prepared me to get gadmited in a renown medical collage. So, I need to learn more after passing the HSC. Admitted into a medical collage I shall complete my course to be a doctor. It is my dreem to be a gratest doctor in the Bangladesh. So I need to work heard on my dreem."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate heavily relies on formulaic, rote-learned opening and closing lines, and the core ideas are expressed using very basic and repetitive phrasing.",
+      "evidence": "I hope you are well. I am also well. I recive your letter few days ago... No more today. Convey my salam to your parents"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('recive', 'passin', 'gadmited', 'collage', 'dreem', 'gratest', 'work heard')",
+      "Tense and reflexive verb errors ('I prepared me to get gadmited')",
+      "Superfluous definite article before country name ('in the Bangladesh')"
+    ],
+    "positive_aspects": [
+      "Complete inclusion of all required structural elements of an informal letter, including envelope details",
+      "Clear and direct focus on the required prompt topic"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid grasp of informal letter structure with all standard layout parts properly placed. However, the script is significantly weakened by frequent spelling mistakes, awkward grammar, and reliance on memorized conversational clichés.",
+  "_metadata": {
+    "task_id": "LETTER_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d84cf414403c083c931160a53407ca39775af6d70f13f29f0356ee97af139af3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:46:07.849249+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5cba062b814e58ebbd5922965ffda0ebe8dd8fca8523cb0dc758d1f51ca871ca",
+    "input_tokens": 4349,
+    "output_tokens": 3104,
+    "thoughts_tokens": 2212,
+    "cost_usd": 0.009065,
+    "latency_ms": 20032,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4349,
+        "output_tokens": 3104,
+        "thoughts_tokens": 2212,
+        "cost_usd": 0.009065,
+        "latency_ms": 20032,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

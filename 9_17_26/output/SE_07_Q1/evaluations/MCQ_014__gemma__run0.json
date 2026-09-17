@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered five items (a, b, d, e, g). Item c is incorrect (Adjective instead of Adverb). Item f is marked incorrect because the student provided two conflicting options ('iii Rough' and 'Stable') without indicating which was intended, which per rubric scores 0.",
+      "evidence": "a. iii rural area, b. ii He earn irregularly for daily need, d. i From morning to night, e. iv Adje d i v e, g. ii House hold manger and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Selection of incorrect grammatical category (Item c)",
+      "Providing multiple options for a single item (Item f)"
+    ],
+    "positive_aspects": [
+      "Accurate comprehension of reading passage details",
+      "Correct identification of option numbers"
+    ]
+  },
+  "feedback_summary": "Items a, b, d, e, and g were marked correct. Item c was incorrect. Item f was marked incorrect as two options were provided for a single item. Total: 5/7.",
+  "_metadata": {
+    "task_id": "MCQ_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ec9ead4e5c6e9ed7379410f21639d0d05fed91a654bcb18dea60870e91e967da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:17:43.846379+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7d7db928f481f5dc8aa910a7268ec79f11bee4e80eeac93ac970a1191b8c5cd3",
+    "input_tokens": 6466,
+    "output_tokens": 1732,
+    "thoughts_tokens": 1084,
+    "cost_usd": 0.001166,
+    "latency_ms": 164983,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6466,
+        "output_tokens": 1732,
+        "thoughts_tokens": 1084,
+        "cost_usd": 0.001166,
+        "latency_ms": 164983,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

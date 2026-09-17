@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Key False, Student True (0); Item b: Key False, Student False but correction is factually wrong as it claims Collins landed (0); Item c: Key False, Student True (0); Item d: Key True, Student True (1); Item e: Key False, Student True (0). Total = 1.",
+      "evidence": "(d) True"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is fixed at 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy",
+      "Incorrect True/False identification",
+      "Ineffective correction for False statements"
+    ],
+    "positive_aspects": [
+      "Attempted all questions",
+      "Correctly identified the True statement"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered only one item (d). Items (a), (c), and (e) were marked True despite being False. Item (b) was correctly identified as False, but the correction provided was factually incorrect, as it claimed Michael Collins landed on the Moon, which contradicts the passage.",
+  "_metadata": {
+    "task_id": "TF_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "80fce4dc01bea5b670e908a13d78f7bf7791cd4af88873d9cd71e0778978fedd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:28:56.763358+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8ab936832eaee4e36d1207917b187f08eca5fe47d05786d2d715326dcc3d5e0a",
+    "input_tokens": 6410,
+    "output_tokens": 1990,
+    "thoughts_tokens": 1343,
+    "cost_usd": 0.001238,
+    "latency_ms": 516078,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6410,
+        "output_tokens": 1990,
+        "thoughts_tokens": 1343,
+        "cost_usd": 0.001238,
+        "latency_ms": 516078,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

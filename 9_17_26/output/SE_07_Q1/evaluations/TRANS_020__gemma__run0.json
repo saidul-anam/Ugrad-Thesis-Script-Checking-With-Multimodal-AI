@@ -1,0 +1,96 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are transformed correctly into embedded clauses with the subject preceding the verb and no auxiliary 'do/does/did' in the clause. Item a: 'the Post it office is' (correct); Item b: 'the post master does' (correct); Item c: 'the post master is' (correct); Item d: 'his children go' (correct); Item e: 'the postmaster comes' (correct). Spelling variations like 'Post it office' or 'post master' do not penalize the mark as per the marking note.",
+      "evidence": "a. Do you know where the Post it office is? b. Do you know what the post master does? c. Do you know why the post master is so happy? d. Do you know where his children go to school? e. Do you know when the postmaster comes to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "This criterion is always 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This criterion is always 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This criterion is always 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect application of embedded clause word order",
+      "Consistent removal of auxiliary verbs in transformations"
+    ]
+  },
+  "feedback_summary": "The candidate correctly transformed all five sentences. Items a, b, c, d, and e all follow the required subject-verb word order for embedded questions. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TRANS_020",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0019",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "72bf6d64f4187169758b7b12d0045008cb5ddf9a2baa1b70c4c7fa985daf45bf",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:39:15.054226+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "657831662b45e6f193dd35be26216ab316d0f20362bdb11a9e70ca5ec6a7994d",
+    "input_tokens": 6158,
+    "output_tokens": 1416,
+    "thoughts_tokens": 718,
+    "cost_usd": 0.001041,
+    "latency_ms": 232265,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6158,
+        "output_tokens": 1416,
+        "thoughts_tokens": 718,
+        "cost_usd": 0.001041,
+        "latency_ms": 232265,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 10.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly with the required content in full sentences. Item a: correct [2]; Item b: correct [2]; Item c: correct [2]; Item d: correct [2]; Item e: correct [2].",
+      "evidence": "Joynul and Nazma live in a small village... Nazma sometimes sits With her children, and teaches them Bangla and English and some numbers."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions; minor slips in 'furnitures' and 'houseold' do not deduct marks per the rubric for Q2.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 10.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 10.0,
+    "capped_from": 10.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling error ('houseold')",
+      "Incorrect pluralization ('furnitures')"
+    ],
+    "positive_aspects": [
+      "Full content accuracy",
+      "Appropriate sentence construction"
+    ]
+  },
+  "feedback_summary": "The candidate has correctly answered all five items. Item (a) identifies the small village [2]; Item (b) correctly identifies the profession and types of furniture [2]; Item (c) correctly links financial difficulty to lack of daily work [2]; Item (d) covers household work [2]; Item (e) correctly details the teaching of alphabets and numbers [2]. Total: 10/10.",
+  "_metadata": {
+    "task_id": "SHORT_009",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0008",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "cd17b1717756e1509ff114eaf13ac4385b8a0130797ba1e640e0d84e46e4dd74",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:22:49.945185+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "50e57bcbdbe5d209fe36a39fdc7e1bdf9ac309b4d7ece0fbc17d9ae42c38e230",
+    "input_tokens": 6450,
+    "output_tokens": 1865,
+    "thoughts_tokens": 1186,
+    "cost_usd": 0.001205,
+    "latency_ms": 252469,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6450,
+        "output_tokens": 1865,
+        "thoughts_tokens": 1186,
+        "cost_usd": 0.001205,
+        "latency_ms": 252469,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

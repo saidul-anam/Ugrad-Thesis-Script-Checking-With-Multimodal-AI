@@ -1,0 +1,102 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student thoroughly addresses all prompt requirements: the duration of illness, specific symptoms (fever, headache, loss of taste), the doctor's diagnosis of Covid-19, and comprehensive advice regarding rest and diet.",
+      "evidence": "You have a few symptoms of covid-19."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script follows a genuine dialogue layout with clear speaker labels and alternating turns. It includes appropriate greetings and a closing. A slight inconsistency occurs where the name changes to 'Shahid Jamal', but the format remains intact.",
+      "evidence": "Doctor : What's your name?\nShahid : Shahid."
+    },
+    "language_mechanics": {
+      "rationale": "While generally clear and appropriate for Class VI, there are multiple minor errors: lowercase 'i' in 'i have been', an incomplete phrase 'a nose' (missing 'runny' or 'blocked'), and a run-on sentence in the doctor's advice.",
+      "evidence": "i have been suffering from a fever. Besides, I have a nose"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The turns are interactive and responsive rather than scripted monologues, showing a natural flow of conversation tailored to the specific medical context.",
+      "evidence": "Doctor : How is your taste ?\nShahid : I have no taste ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor capitalization errors",
+      "Lexical gaps (omitted adjectives)",
+      "Punctuation/Run-on sentences"
+    ],
+    "positive_aspects": [
+      "Complete coverage of prompt requirements",
+      "Effective and natural turn-taking",
+      "Appropriate register for a doctor-patient interaction"
+    ]
+  },
+  "feedback_summary": "The candidate produced a highly competent dialogue that fulfills all task requirements. The content is comprehensive, covering symptoms, diagnosis, and advice. The structure is correct, though there is a slight oddity in the speaker name changing to 'Shahid Jamal' in the final turns. Minor linguistic slips (e.g., 'i have been', 'a nose') prevent a full score, but the overall performance is well within Band 4 for a Class VI student.",
+  "_metadata": {
+    "task_id": "DIALOG_017",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0017",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "1316dddfc688ecbb1722b68cb9c735766c284d23001cfad4f199e1a0c6fbc172",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:15:58.667693+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "021169fd81d9bfa8c4bf5be5797752f64c4ff951a33f5580aeb01e8af8ea9fb9",
+    "input_tokens": 6227,
+    "output_tokens": 2648,
+    "thoughts_tokens": 1845,
+    "cost_usd": 0.001417,
+    "latency_ms": 795000,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6227,
+        "output_tokens": 2648,
+        "thoughts_tokens": 1845,
+        "cost_usd": 0.001417,
+        "latency_ms": 795000,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by stating and explaining their future plan to prepare for public university admission and pursue engineering.",
+      "evidence": "In your last letter, you wanted to know about my future plan after passing H.S.C."
+    },
+    "structure_format_brevity": {
+      "rationale": "All mandatory structural components of an informal letter are present and correctly sequenced: heading/date, address, salutation, body paragraphs, complimentary close, signature, and envelope.",
+      "evidence": "27 June 2026\nFaridabad,\nDhaka-1204\nDear Jarif,"
+    },
+    "language_mechanics": {
+      "rationale": "Shows notable spelling errors ('eingineer', 'momenterm', 'familys'), run-on punctuation ('Almighty In'), and minor grammatical inconsistencies.",
+      "evidence": "I want to be a eingineer and admitted into a Dhaka University so that's time is the most important momenterm to fullfill my dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The expression displays authentic personal intent and conviction rather than relying entirely on generic memorised stock phrases.",
+      "evidence": "I cannot stay in day dreaming. Instead I want to give my best for my own dream."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (e.g., 'eingineer', 'momenterm', 'familys')",
+      "Punctuation omission causing run-on sentences (missing period after 'Almighty')",
+      "Incorrect article usage ('admitted into a Dhaka University')"
+    ],
+    "positive_aspects": [
+      "Complete and flawless informal letter layout including envelope details",
+      "Direct relevance to the prompt topic with sincere personal expression"
+    ]
+  },
+  "feedback_summary": "The response fulfills all structural criteria for an informal letter with complete layout parts and addresses the prompt purpose clearly. While the flow of ideas is coherent and authentic, accuracy in spelling and punctuation needs improvement.",
+  "_metadata": {
+    "task_id": "LETTER_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f1b47b897410335b68604983298b0572f75125711f1f153025725be979e47",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:07:40.036957+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b3b5bdc6067fd5782d2f86b3a4515ad947e64834df98f9dc89c198c6d6c60a4e",
+    "input_tokens": 4406,
+    "output_tokens": 3053,
+    "thoughts_tokens": 2295,
+    "cost_usd": 0.008954,
+    "latency_ms": 27077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4406,
+        "output_tokens": 3053,
+        "thoughts_tokens": 2295,
+        "cost_usd": 0.008954,
+        "latency_ms": 27077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

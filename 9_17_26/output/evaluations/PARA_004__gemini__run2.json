@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the key prompt questions regarding AI's definition, applications, role in education, and potential threats with relevant content.",
+      "evidence": "Today's almost 50-60% Student are engaged with online education. And AI helps student a lot of. We can use it specially for creating Note."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the mandatory single-block formatting rule for paragraphs by splitting into three separate blocks, triggering a structural hard cap.",
+      "evidence": "Teacher's are also facilitis. gain on AI. They can teach our very easily. Yes, We see AI also threating for us."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent spelling mistakes, incorrect verb inflections, and flawed syntax are present throughout the script, though basic meaning remains comprehensible.",
+      "evidence": "Because Student are don't work homework themself, they use AI and AI can solve all kinds of question."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Demonstrates authentic modern knowledge of specific AI tools (ChatGPT, Gemini, DeepSeek, Claude, NotebookLM) rather than generic memorized templates.",
+      "evidence": "Chat GPT is the most popular ai software. Gemini is also now popular. Deepseek is popular for resenable price. Claud is widely known as for Programming."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'Ardtfial', 'creat', 'moder', 'genaration', 'hidedenly', 'resenable', 'threating')",
+      "Subject-verb agreement and auxiliary verb misuse (e.g., 'Which is solve', 'Student are don't work')",
+      "Punctuation and capitalization inconsistencies within sentences",
+      "Paragraph subdivision violating the single-paragraph constraint"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of prompt questions including benefits, tools, and threats",
+      "Authentic inclusion of contemporary AI platforms and real-world context"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates good contextual understanding of Artificial Intelligence, including contemporary tools and educational implications. However, the script violates the foundational structural requirement of paragraph writing by splitting the response into three separate paragraphs, resulting in a mandatory hard cap at 5 marks. Additionally, language mechanics suffer from high error density in spelling, tense formation, and sentence structure.",
+  "_metadata": {
+    "task_id": "PARA_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7a47e0d81064573dbf1eb8193b62d8b01757e376cd531c6ea87b4772646c6160",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:12:00.114185+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "3a9a83ace65b5259f55e81865e93c0aec7095433edeb9c1d95fb1d06eecadec4",
+    "input_tokens": 4553,
+    "output_tokens": 3034,
+    "thoughts_tokens": 2186,
+    "cost_usd": 0.008951,
+    "latency_ms": 22858,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4553,
+        "output_tokens": 3034,
+        "thoughts_tokens": 2186,
+        "cost_usd": 0.008951,
+        "latency_ms": 22858,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (c) and (d) are correctly transformed with the subject placed before the verb and the auxiliary removed. Item (a) retains the direct question word order ('where is the post office'). Item (b) keeps the auxiliary 'does'. Item (e) keeps the auxiliary 'does'. Total: 0+0+1+1+0 = 2.",
+      "evidence": "c. Do you know why the postmaster is so happy? d. Do you know where his children go to school"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to change word order in embedded clauses",
+      "Retention of auxiliary verbs (do/does) in indirect questions"
+    ],
+    "positive_aspects": [
+      "Correct application of embedded clause structure in two items"
+    ]
+  },
+  "feedback_summary": "The student correctly transformed items (c) and (d). Item (a) was incorrect due to direct-question word order. Items (b) and (e) were incorrect because the auxiliary 'does' was retained. Total marks: 2/5.",
+  "_metadata": {
+    "task_id": "TRANS_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "5abd30e7c90ba27fcc4b14493e9b032c728fe78e506293f3fcc55abe5beebf19",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:17:46.083101+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8acf03ee3784889429f45a57870a1b49867dc5d86cbf7a7087002801d7e46739",
+    "input_tokens": 6157,
+    "output_tokens": 1642,
+    "thoughts_tokens": 997,
+    "cost_usd": 0.001108,
+    "latency_ms": 420766,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6157,
+        "output_tokens": 1642,
+        "thoughts_tokens": 997,
+        "cost_usd": 0.001108,
+        "latency_ms": 420766,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

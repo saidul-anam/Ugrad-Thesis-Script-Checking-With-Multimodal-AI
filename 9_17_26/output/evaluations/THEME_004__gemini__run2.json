@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate vaguely grasps the central premise—differentiating between passive night dreaming and active day dreaming that turns into reality—but the interpretation is muddled with confused concepts.",
+      "evidence": "They are dangerous because this dreams will be gain they in their heal life."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single paragraph within reasonable length, but sentence progression is fragmented and poorly structured.",
+      "evidence": "Which have. no effact."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive grammatical faults, subject-verb disagreement, severe punctuation errors (sentence splits), and spelling/vocabulary mistakes ('heal' for 'real', 'effact', 'there').",
+      "evidence": "People are all see dream."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate makes an authentic attempt to paraphrase and interpret the poem in their own words without copying lines directly.",
+      "evidence": "Dreams are two kind of one is in subconcious mind and another is unsubconcious mind."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty verb construction and tense inconsistency ('are all see', 'will be gain', 'is helps')",
+      "Spelling and word-choice errors ('subconcious', 'unsubconcious', 'heal life', 'effact')",
+      "Incorrect punctuation causing sentence fragments ('Which have. no effact.')"
+    ],
+    "positive_aspects": [
+      "Zero direct verbatim copying from the poem",
+      "Identifies the basic contrast between passive dreamers and active dreamers"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a basic understanding of the core theme (the contrast between idle night dreams and active, achievable daytime dreams) without copying directly from the text. However, pervasive grammatical breakdowns, fragmented sentences, and severe vocabulary/spelling errors restrict the response to Band 2.",
+  "_metadata": {
+    "task_id": "THEME_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0a089c0f40e5817b18c20c07f700d8316defa2de03f98a9d2a6f4624b0524fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:36.904675+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "8884f8195267c04e79eeabbe64e2e66323e83723d4708e71e6f214d1cbebbab5",
+    "input_tokens": 4316,
+    "output_tokens": 2344,
+    "thoughts_tokens": 1607,
+    "cost_usd": 0.007155,
+    "latency_ms": 16187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4316,
+        "output_tokens": 2344,
+        "thoughts_tokens": 1607,
+        "cost_usd": 0.007155,
+        "latency_ms": 16187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is incorrect; it was marked 'True' while the statement is 'False'. Item (b) is correct with a valid correction. Item (c) is correct with a valid correction. Item (d) is correctly marked 'True'. Item (e) is correct with a valid correction replacing 'Mars' with 'Moon'. Total: 0+1+1+1+1 = 4.",
+      "evidence": "b) False Correct Answer: Michael Collins stayed on the ship while Neil Armstrong and Edwin Aldrin landed on the Moon. c) False Correct Answer: Neil Armstrong was the first person to walk on the Moon's surface d) True e) False Correct Answer: The mission proved that humans achieved interplanetary travel to the Moon"
+    },
+    "structure_format_brevity": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misidentification of a false statement as true (Item a)"
+    ],
+    "positive_aspects": [
+      "Consistent and accurate corrections for false statements",
+      "Good comprehension of the text regarding the specific roles of the astronauts"
+    ]
+  },
+  "feedback_summary": "The student scored 4/5. Item (a) was marked wrong (True instead of False). Items (b), (c), (d), and (e) were all correct, including the necessary corrections for the false statements.",
+  "_metadata": {
+    "task_id": "TF_029",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0028",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "71a3263c19c55a7def8e599af8ffa25b9b92b415b75abfd225620bbf5bc41edb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:05:14.225729+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "485f56e72d13276427eaa13bce086124d9de3513efa11cd04d88fcf8c1326e29",
+    "input_tokens": 6454,
+    "output_tokens": 1847,
+    "thoughts_tokens": 1141,
+    "cost_usd": 0.0012,
+    "latency_ms": 185828,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6454,
+        "output_tokens": 1847,
+        "thoughts_tokens": 1141,
+        "cost_usd": 0.0012,
+        "latency_ms": 185828,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

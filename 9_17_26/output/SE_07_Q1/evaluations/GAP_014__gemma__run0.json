@@ -1,0 +1,96 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is incorrect. Item (b) is correct as the word 'great' is provided. Item (c) is blank. Item (d) is illegible. Item (e) is not attempted.",
+      "evidence": "en cheered lodly great"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of answers",
+      "Lack of contextual relevance"
+    ],
+    "positive_aspects": [
+      "Correct identification of one keyword in item (b)"
+    ]
+  },
+  "feedback_summary": "The student awarded 1 mark for item (b) because 'great' matches the answer key. Item (a) is incorrect. Item (c) was left blank. Item (d) was marked as [illegible] in the transcript and cannot be awarded. Item (e) was not attempted.",
+  "_metadata": {
+    "task_id": "GAP_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c63cc17ab23ee262d9c4b5c2b52fb2941ce999ffdbf1489e3b3f5d1063c21e27",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:26:40.316953+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d763fe5dcc44ecfccc7f42a208becf5a970dfb7368f5e32cd7f884825151e9e7",
+    "input_tokens": 6240,
+    "output_tokens": 1605,
+    "thoughts_tokens": 1012,
+    "cost_usd": 0.001105,
+    "latency_ms": 536469,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6240,
+        "output_tokens": 1605,
+        "thoughts_tokens": 1012,
+        "cost_usd": 0.001105,
+        "latency_ms": 536469,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

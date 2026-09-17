@@ -1,0 +1,102 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies all primary factual elements: the names of the astronauts, the spacecraft, the dates of launch and landing, and the successful return.",
+      "evidence": "Three American Astronauts... were Neil Armstrong, Michael collins and Edwin Aldrin... came back safely to Earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the summary fails the brevity requirement completely. At 74% of the original length, it is a paraphrase/rewrite rather than a summary.",
+      "evidence": "student_word_count: 97"
+    },
+    "language_mechanics": {
+      "rationale": "There are several mechanical errors including a clumsy correction ('arewere'), a spelling error ('Jounney'), and a missing period between 'USA' and 'After'.",
+      "evidence": "arewere Neil Armstrong... their Jounney to Moon... Florida, USA After four days"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is heavily reliant on verbatim lifting, exceeding the 50% threshold. Most sentences are direct copies with negligible changes.",
+      "evidence": "the Apollo 11 mission showed the power of science, teamwork and human courage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting from source text",
+      "Failure to condense length",
+      "Spelling and punctuation slips"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of all key dates and names",
+      "Maintains a logical chronological sequence"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captured all key facts of the mission. However, the response is not a summary; it is far too long (nearly 75% of the original text) and consists largely of verbatim sentences copied from the source. Due to the length ratio (0.74) and the verbatim overlap (59%), a hard structural cap of 2 is applied as per the marking guidelines.",
+  "_metadata": {
+    "task_id": "SUMMARY_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "b80c87985cd73842d6cf4f49bce4997164cffe191f2f3bc3117e131375144044",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:24:18.066155+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0eeac5d7935d81f22841313a0866b6c08d3ee6f184bbebfd013657ef8b5325f6",
+    "input_tokens": 6122,
+    "output_tokens": 2133,
+    "thoughts_tokens": 1371,
+    "cost_usd": 0.001252,
+    "latency_ms": 223047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6122,
+        "output_tokens": 2133,
+        "thoughts_tokens": 1371,
+        "cost_usd": 0.001252,
+        "latency_ms": 223047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

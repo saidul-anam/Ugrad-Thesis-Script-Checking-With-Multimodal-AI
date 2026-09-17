@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all guided questions from the prompt thoroughly, covering the definition, various AI tools, educational impacts, and potential risks such as cognitive decline and job loss.",
+      "evidence": "AI has revolutionized teaching and learning. Teachers now use AI for researching about any subject to teach on next day."
+    },
+    "structure_format_brevity": {
+      "rationale": "Ideas flow logically with an appropriate introductory definition and concluding remark; however, the response is divided across two separate paragraphs rather than maintaining a single unified block.",
+      "evidence": "Deepseek is mainly used for text related academic question solves.\n\nAI has revolutionized teaching and learning."
+    },
+    "language_mechanics": {
+      "rationale": "There is a notable concentration of subject-verb agreement errors, spelling slips, and minor article/preposition errors throughout the text.",
+      "evidence": "people usually uses AI for seeking the answer of their questions."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing demonstrates genuine expression and authentic contextual knowledge by naming specific modern platforms rather than relying on memorized stock templates.",
+      "evidence": "Chatgpt is used for daily questions on photo editing. Gemini is used to have answers from different google websites and summarize them. Deepseek is mainly used for text related academic question solves."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors (e.g., 'people uses', 'students uses', 'people stops', 'AI get')",
+      "Spelling errors and typos (e.g., 'di desicions', 'beachers', 'it's' for possessive 'its')",
+      "Article and preposition misuse (e.g., 'a essential equipment', 'Despite of')"
+    ],
+    "positive_aspects": [
+      "Comprehensively answers all prompt questions with relevant and realistic details",
+      "Features authentic, contemporary references to specific AI models (ChatGPT, Gemini, DeepSeek)",
+      "Presents a balanced viewpoint considering both technological benefits and cognitive/economic threats"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates strong topical knowledge, addressing all guiding questions effectively and incorporating authentic contemporary references. However, the response displays frequent subject-verb agreement slips and spelling mistakes. Most significantly, because the script violates the mandatory single-paragraph structural rule by splitting into two paragraphs, the total score is subject to a hard cap of 5 marks (Band 2).",
+  "_metadata": {
+    "task_id": "PARA_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a60ae12f9c7d4f7ea7834cbd0d5e3d17f1a4b41006acb350e76cff8dace4a9be",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:30:02.244051+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "639a953b4ce4bd4c3bf339a57e142efc2a94ba1cda86d8b463e8c505c1873155",
+    "input_tokens": 4480,
+    "output_tokens": 4358,
+    "thoughts_tokens": 3516,
+    "cost_usd": 0.012239,
+    "latency_ms": 30967,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4480,
+        "output_tokens": 4358,
+        "thoughts_tokens": 3516,
+        "cost_usd": 0.012239,
+        "latency_ms": 30967,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

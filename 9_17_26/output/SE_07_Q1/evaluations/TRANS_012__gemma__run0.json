@@ -1,0 +1,100 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are incorrect. Item (a) replaces the required relative pronoun/structure with 'it'; items (b) and (e) fail by retaining the auxiliary 'does' and the direct question word order; item (c) is fragmented and incoherent; item (d) uses incorrect word order with the auxiliary placed at the end of the sentence.",
+      "evidence": "a) Ans: Do you know it the post office? b) Ans: Do you know what does the postmaster do? c) Ans: Do you know so ba so happ -y Do you know the post -mas ten is the, d) Ans: Do you know his children go to school do? e) Ans: Do you know When does the postmaster come to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to remove auxiliary 'does' in embedded clauses",
+      "Incorrect word order (maintaining interrogative structure)",
+      "Syntactic fragmentation"
+    ],
+    "positive_aspects": [
+      "Attempted all five items",
+      "Correctly identified the required introductory phrase 'Do you know'"
+    ]
+  },
+  "feedback_summary": "The candidate failed to apply the rules of embedded questions. Items a, b, c, d, and e are all marked incorrect: (a) invalid structure; (b) kept 'does'; (c) incoherent; (d) incorrect word order; (e) kept 'does'.",
+  "_metadata": {
+    "task_id": "TRANS_012",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0011",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2bbb5a03a68d85b805f718a40a7b7b9238c5220612aa54fce52908c3d53cd905",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:07:41.794090+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a44ad2bdfea14daf2d38af351a464859b2ec6b9d8842053450c67d09c253b38f",
+    "input_tokens": 6177,
+    "output_tokens": 1604,
+    "thoughts_tokens": 871,
+    "cost_usd": 0.001099,
+    "latency_ms": 586562,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6177,
+        "output_tokens": 1604,
+        "thoughts_tokens": 871,
+        "cost_usd": 0.001099,
+        "latency_ms": 586562,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

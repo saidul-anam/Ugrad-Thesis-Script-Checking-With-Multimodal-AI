@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered seven questions; only the first five are marked. Item (a) is incorrect as it mentions fruits and praise rather than the coming of winter (0). Item (b) correctly identifies the bird's cheerfulness across seasons (2). Item (c) correctly identifies the hope for spring's return (2). Item (d) is thin and phrasing is confused, but correctly identifies the act of singing during winter (1). Item (f) provides an incorrect reason regarding reflections in water rather than the boy's loneliness/imagination (0). Sum: 0+2+2+1+0 = 5.",
+      "evidence": "b. Robin is a happy bird because he sings all the 4 seconés cheertully c. Robin is a hopeful bird because he hopes that winter quickly and spring will soon."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are only considered if they impede the recovery of the answer's substance.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not a separate scoring criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Content inaccuracies in items (a) and (f)",
+      "Weak phrasing/syntax in item (d)"
+    ],
+    "positive_aspects": [
+      "Accurate understanding of the bird's happiness and hopefulness (items b and c)"
+    ]
+  },
+  "feedback_summary": "The candidate's performance was mixed across the first five attempted items. Items (b) and (c) were answered correctly (2 marks each). Item (d) was partially correct but thin (1 mark). Items (a) and (f) were incorrect (0 marks). Subsequent answers (g, h) were ignored as per examination rules. Total score: 5/10.",
+  "_metadata": {
+    "task_id": "POEM_012",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0012",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "25f1811a3b2e0a78cb00c5c04b1e6a49e0a7752d69c649025544db9ed2dc41d8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:50.337776+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "aea1ecfc1b0c67b8e3c71714976b5f7dd28a56b90774128eafe260c4fdaefb9c",
+    "input_tokens": 6555,
+    "output_tokens": 2123,
+    "thoughts_tokens": 1342,
+    "cost_usd": 0.001292,
+    "latency_ms": 755046,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6555,
+        "output_tokens": 2123,
+        "thoughts_tokens": 1342,
+        "cost_usd": 0.001292,
+        "latency_ms": 755046,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

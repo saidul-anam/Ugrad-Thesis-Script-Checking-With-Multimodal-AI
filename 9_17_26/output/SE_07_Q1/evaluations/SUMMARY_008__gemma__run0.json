@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Captures the central point (Apollo 11 mission) and the outcome (first time humans visited another world), though it omits the chronological flow of the journey.",
+      "evidence": "The Apollo 11 mission was mission where a spacecreaft from Florida, USA with three astronauts."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single block. While very close to the limit, it technically exceeds the one-third length requirement (34.35% vs 33.33%), which triggers the structural cap.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Several spelling errors and syntax slips ('was mission', 'spacecreaft', 'Neli', 'stadstanding') are present, which are slightly excessive for Class VII.",
+      "evidence": "spacecreaft from Florida, USA with three astronauts. Neli Armstrong"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The overlap is under 50%, but the candidate has lifted two significant phrases verbatim from the text, reducing the originality score.",
+      "evidence": "showed the power of science, teamwork and human courage"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (spelling)",
+      "Missing articles",
+      "Verbatim lifting"
+    ],
+    "positive_aspects": [
+      "Correct identification of core theme",
+      "Adherence to single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The student captures the main idea of the passage; however, the summary exceeds the one-third length limit, necessitating a structural cap of 2. Performance is further hindered by spelling mistakes ('spacecreaft', 'Neli', 'stadstanding') and the use of verbatim phrases from the source text.",
+  "_metadata": {
+    "task_id": "SUMMARY_008",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0007",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "a54fb8c2df77fd5994cece947c94d380a1cb5952dd3b94f0d47de56dd0e2039b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:11:10.263736+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7e8b7fc3f6cc554c76cadd6471af3350e890cf9073bd1a1604b10ec09ff4ed05",
+    "input_tokens": 6026,
+    "output_tokens": 2577,
+    "thoughts_tokens": 1839,
+    "cost_usd": 0.001376,
+    "latency_ms": 139125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6026,
+        "output_tokens": 2577,
+        "thoughts_tokens": 1839,
+        "cost_usd": 0.001376,
+        "latency_ms": 139125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

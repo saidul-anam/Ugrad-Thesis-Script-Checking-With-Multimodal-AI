@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The summary successfully captures all primary factual points: the astronauts' names, the mission name, the launch date, the landing, and the safe return.",
+      "evidence": "Three American astronauts, Neil Armstrong, Michael Collins, and Edwin Aldrin began their journey to the Moon by spacecraft Apollo-11 on July 16, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails the brevity requirement, exceeding one-third of the original length (45%), and contains a distracting repetition of the date.",
+      "evidence": "On July 20, On July 20, 1969"
+    },
+    "language_mechanics": {
+      "rationale": "The text is generally intelligible, but contains a significant spelling error ('shin' for 'ship') and an unnatural phrasing ('Early Earth').",
+      "evidence": "stayed in the main shin"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student uses their own words to combine sentences, avoiding direct verbatim copying of long passages, though the structural flow remains very similar to the source.",
+      "evidence": "began their journey to the Moon by spacecraft Apollo-11"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Word repetition",
+      "Spelling slips",
+      "Length constraint violation"
+    ],
+    "positive_aspects": [
+      "Comprehensive content coverage",
+      "Effective paraphrase of technical details"
+    ]
+  },
+  "feedback_summary": "The candidate has provided a comprehensive summary that captures all key events of the Apollo 11 mission. However, the response is too long (exceeding the one-third limit) and contains a clerical repetition of the date ('On July 20, On July 20'). While the meaning is clear, errors such as 'main shin' instead of 'ship' and 'Early Earth' prevent a higher score in language mechanics. No structural cap was applied as the length did not exceed 50% of the original text.",
+  "_metadata": {
+    "task_id": "SUMMARY_031",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0030",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ed7ec4697c17be76da2a9e0a09b1cf9f4724a8554ec234a657d96c18cc9010f0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:17:11.114211+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1545139c00b2babb9fe66ff6678a5ea0bbe22056472e60917f1438b8edbcfe23",
+    "input_tokens": 6073,
+    "output_tokens": 3867,
+    "thoughts_tokens": 3092,
+    "cost_usd": 0.001767,
+    "latency_ms": 474844,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6073,
+        "output_tokens": 3867,
+        "thoughts_tokens": 3092,
+        "cost_usd": 0.001767,
+        "latency_ms": 474844,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student failed to address the gap-fill task entirely. Instead of completing the passage regarding Rajendra and Ravi, the student provided a five-sentence biographical summary of Akbar. Consequently, items (a), (b), (c), (d), and (e) were not attempted.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This criterion is fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Off-topic response"
+    ],
+    "positive_aspects": [
+      "None"
+    ]
+  },
+  "feedback_summary": "The student provided a completely irrelevant response. Instead of completing the gap-fill exercise based on the provided text, they wrote a short biography of Emperor Akbar. All five items (a-e) are marked as incorrect/unattempted.",
+  "_metadata": {
+    "task_id": "GAP_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "690efe7c3fde48bc6d2398d1848a271b4176f3be27bc228a496786289a6cde83",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:10:29.596360+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cb5996018a022609bca1b61f15f19b7eaf4eca3004221fee035a0be8c8244bda",
+    "input_tokens": 6363,
+    "output_tokens": 1651,
+    "thoughts_tokens": 1067,
+    "cost_usd": 0.001132,
+    "latency_ms": 344421,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6363,
+        "output_tokens": 1651,
+        "thoughts_tokens": 1067,
+        "cost_usd": 0.001132,
+        "latency_ms": 344421,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

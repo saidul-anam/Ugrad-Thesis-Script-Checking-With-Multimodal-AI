@@ -1,0 +1,100 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides excellent concrete details, including a specific date, time, the identity of the chief guest (VC of BUET), and the specific types of prizes won. It thoroughly addresses the prompt.",
+      "evidence": "The VC of BUET was the chief guest of the ceremony. Many guardians and local eminent people came to see the ceremony."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response completely fails the structural requirement of a paragraph. Instead of a single unified block, the student wrote a multi-paragraph essay with four distinct sections.",
+      "evidence": "The annual prize giving cenemony of my school was held on 28 Janvany 2026 at 2pm."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors (e.g., 'cenemony', 'recieve', 'Janvany', 'oven' for over, 'congnadulated'). While the meaning remains clear, the frequency is high for Class VII.",
+      "evidence": "The annual prize giving cenemony is a special occasion at which the students recieve prizes"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student avoids generic guide-book templates by including specific, authentic-sounding details about their school's event and their own personal achievements.",
+      "evidence": "I got two prizes. One for academic achievement and the other for regular attendance."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors",
+      "Structural failure (multi-paragraph instead of single paragraph)"
+    ],
+    "positive_aspects": [
+      "Specific and authentic detail",
+      "Clear narrative flow",
+      "Strong adherence to topic"
+    ]
+  },
+  "feedback_summary": "The candidate's content is strong and authentic, providing specific details that move beyond a memorized template. However, the response is written as four separate paragraphs rather than a single unified paragraph as required by the task. This triggers a hard structural cap of 5. Additionally, the script contains frequent spelling errors throughout.",
+  "_metadata": {
+    "task_id": "PARA_029",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0028",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ab53b5479a43f0f40cdb76785adc5c74dc517a40feebd3e8d64a76aa4a10a104",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:08:31.595395+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d0c7f224fc7e3bdba16b9ab6840760abefcf98f2e5d825bb4aa1e35f884d387a",
+    "input_tokens": 6079,
+    "output_tokens": 2023,
+    "thoughts_tokens": 1252,
+    "cost_usd": 0.001215,
+    "latency_ms": 317155,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6079,
+        "output_tokens": 2023,
+        "thoughts_tokens": 1252,
+        "cost_usd": 0.001215,
+        "latency_ms": 317155,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

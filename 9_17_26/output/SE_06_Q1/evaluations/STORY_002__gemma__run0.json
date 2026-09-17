@@ -1,0 +1,103 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a seamless continuation of the stem with 11 new sentences, maintaining a clear and logical sequence of events from the bear's arrival to the final moral.",
+      "evidence": "Both of them be became frightened. But, suddenly one them climbed up a tree... He told that the bear said, 'Do not trust a friend who leaves you alone in danger.'"
+    },
+    "structure_format_brevity": {
+      "rationale": "A suitable title is provided and the story reaches a clear resolution. However, the pacing is abrupt, and the transition from the bear leaving to the conversation is slightly disjointed.",
+      "evidence": "A Friend in need, is a friend indeed, ... the bear took him to be death and and went away. Seeing the bear going up the other put do down to the tree."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent and basic errors in verb conjugation and tense consistency throughout the text, though the meaning remains intelligible for a Class VI student.",
+      "evidence": "two friends event to a journey... Both of them be became frightened... He give me a piece of good advice."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student retells a very common fable. While it is not a verbatim copy of a guide, there is almost no original descriptive detail or unique phrasing.",
+      "evidence": "The other finding no other alternative Lay flat down his body without breathing."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect verb conjugation (e.g., 'event', 'be became', 'give')",
+      "Omission of necessary words/articles (e.g., 'one them')",
+      "Syntactic fragments (e.g., 'Lay flat without breathing')"
+    ],
+    "positive_aspects": [
+      "Strict adherence to the minimum sentence count",
+      "Correct logical progression of the plot",
+      "Appropriate use of dialogue markers"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story, fulfilling the length requirement and providing a clear resolution and title. The narrative flow is logical. However, the script is held back by significant mechanical errors in verb forms and a lack of original descriptive detail, as it follows a standard fable template very closely. This performance aligns with Band 3.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0002",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "8840448ea0ef9f439b514be24e1fdf724798ae288b390a0f21a4cb08b6d7d813",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:22:45.077630+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5a050bc5610407cd5e8d02b3f008803005edccd9331f9a3404061e992fd5b38c",
+    "input_tokens": 6076,
+    "output_tokens": 4479,
+    "thoughts_tokens": 3662,
+    "cost_usd": 0.001951,
+    "latency_ms": 1233264,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6076,
+        "output_tokens": 4479,
+        "thoughts_tokens": 3662,
+        "cost_usd": 0.001951,
+        "latency_ms": 1233264,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

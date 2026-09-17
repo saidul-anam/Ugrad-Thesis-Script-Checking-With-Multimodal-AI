@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student identifies the contrast between the two types of dreams but fails to articulate an abstract governing theme (e.g., the power of willpower or ambition). The response is a plot summary rather than a thematic analysis.",
+      "evidence": "One is what we see while in deep sleep. And the other is what don't let us sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single concise block, but it lacks a clear, focused thematic statement at the beginning, starting instead with a generic observation.",
+      "evidence": "People dreams in their life."
+    },
+    "language_mechanics": {
+      "rationale": "The writing exhibits frequent foundational errors in subject-verb agreement and homophone usage.",
+      "evidence": "People dreams... Their are two types"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student successfully avoids verbatim copying and uses their own words, though the interpretation remains surface-level and lacks depth.",
+      "evidence": "struggle hard to make them come true."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.5,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement (e.g., 'People dreams')",
+      "Homophone Confusion (e.g., 'Their' instead of 'There')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Concise delivery"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the poem's content but confuses 'theme' with 'summary'. Instead of identifying the abstract idea of determination or ambition, they simply rephrased the poem's narrative. While the response is original and avoids copying, it is marred by frequent grammatical errors, particularly in subject-verb agreement.",
+  "_metadata": {
+    "task_id": "THEME_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c7a7ed79c238dab5243534e83db8748acd2287447d290bde5a5ba5541f73156f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:32:54.180809+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b984fb995091e6ad860a485a62915e53124f5504bbec7ae5cefb07be0b662241",
+    "input_tokens": 4277,
+    "output_tokens": 2198,
+    "thoughts_tokens": 1488,
+    "cost_usd": 0.001087,
+    "latency_ms": 61780,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 2198,
+        "thoughts_tokens": 1488,
+        "cost_usd": 0.001087,
+        "latency_ms": 61780,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

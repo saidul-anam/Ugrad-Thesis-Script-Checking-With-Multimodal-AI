@@ -1,0 +1,224 @@
+# =============================================================================
+# Extraction pipeline configuration.
+#
+# Model configuration is DATA, not code. Every field under `provider`,
+# `providers.*`, and `thinking_level` is stamped into every output record so a
+# transcript is always traceable to exactly how it was produced.
+# =============================================================================
+
+# Which provider block below is active. One of: openrouter | gemini | vertex
+provider: gemini
+
+# Stamped into every record. Passed through to the provider that supports it.
+thinking_level: medium
+
+providers:
+  # AI Studio / Gemini Developer API. Serves Gemma (gemma-4-31b-it) and Gemini.
+  gemini:
+    model_id: "gemma-4-31b-it"
+    api_base: null
+    api_key_env: "AI_STUDIO_API_KEY"
+    # Worked in rotation with the key above, each on its own quota window. The
+    # per-minute token budget is per PROJECT: keys from separate projects
+    # multiply throughput, keys from one project share a budget and add nothing.
+    # A listed var that is unset is skipped with a warning, not a failure.
+    api_key_envs: ["AI_STUDIO_API_KEY2", "AI_STUDIO_API_KEY3", "AI_STUDIO_API_KEY4"]
+    project: null
+    location: null
+
+  openrouter:
+    model_id: "google/gemma-4-31b-it"
+    api_base: "https://openrouter.ai/api/v1"
+    api_key_env: "OPENROUTER_API_KEY"     # read from environment, never stored here
+    project: null
+    location: null
+
+  vertex:
+    # Vertex AI express mode: authenticate with a Vertex AI API key (NOT an AI
+    # Studio key, and NOT ADC). project/location are unused in this mode.
+    model_id: "gemma-4-31b-it"
+    api_base: null
+    api_key_env: "VERTEX_API_KEY"
+    project: null
+    location: null
+
+# -----------------------------------------------------------------------------
+# PDF -> image conversion (Stage 1)
+# 300 DPI is deliberate: student blue/black ink and examiner red must stay
+# separable, and thin strikethroughs vanish at lower resolution.
+# -----------------------------------------------------------------------------
+pdf:
+  dpi: 300
+  image_format: png
+
+# -----------------------------------------------------------------------------
+# LLM call behaviour (Stages 2-3)
+# -----------------------------------------------------------------------------
+llm:
+  max_retries: 8          # tenacity attempts on 429 / 5xx. Gemma returns a fair
+                          # number of transient 500s on multi-page image payloads;
+                          # 5 attempts was not always enough to ride one out.
+  concurrency: 16         # parallel scripts in flight. A vision call takes ~4.5
+                          # min and the pool now spreads load over 4 keys, so
+                          # the per-key limiters are the real ceiling, not this.
+  request_timeout_s: 300
+  max_output_tokens: 32768  # handwritten transcripts are long; stamped into records
+  max_pages_per_call: 0     # 0 = send all pages in one call; >0 triggers chunking
+  chunk_overlap_pages: 2    # page overlap when a script must be chunked
+  # AI Studio free tier caps INPUT tokens per minute per model (16,000 for
+  # gemma-4-31b). Calls are paced client-side to stay under it; without this,
+  # concurrent workers collect 429s whose ~50s retryDelay outlasts the backoff
+  # and whole scripts fail. Set 0 on a paid tier to disable pacing.
+  tokens_per_minute: 16000
+  requests_per_minute: 30   # backstop: 5xx attempts are refunded token budget,
+                          # so this is what bounds retry volume
+
+# -----------------------------------------------------------------------------
+# Cost accounting (USD per 1,000,000 tokens). Stamped/aggregated per record.
+# Update to match the active provider's real rates.
+# -----------------------------------------------------------------------------
+cost:
+  input_per_million: 0.10
+  output_per_million: 0.30
+
+# =============================================================================
+# EXAM SETS
+#
+# One project holds several question papers. A script's set is its id minus the
+# trailing serial: SE_07_Q1_0003 -> SE_07_Q1. Everything that differs between
+# papers lives here — which questions exist, which prompt transcribes them,
+# which rubric grades them, and where the outputs land — so adding a class is a
+# config change, not a code change. Every stage takes `--set`, defaulting to
+# `default_exam_set` below.
+#
+# We TRANSCRIBE every answer found; `target_questions` are the ones grading
+# consumes, so validation can flag a missing one without hard-coding it.
+# =============================================================================
+exam_sets:
+  # Class XI. Section B (writing) only — six extended-response questions.
+  # eval_output_dir is the legacy flat `output/`, where this set's completed
+  # 720-record grading run already lives. Do not repoint it.
+  SE_11_Q1:
+    label: "Class XI English 1st Paper"
+    task_stems: data/Question/task_stems_SE_11_Q1.csv
+    prompt_file: prompts/extraction_prompt_v2.md
+    rubric_file: prompts/rubric_v2.txt
+    target_questions: [3, 7, 8, 9, 10, 11]
+    max_question: 11
+    extraction_csv: data/extraction.csv
+    extraction_runs_csv: data/extraction_runs.csv
+    eval_output_dir: output
+
+  # Class VII. The WHOLE paper — Section A reading (Q1-10, mostly item-scored
+  # against an answer key carried in the stems) plus Section B writing (Q11-13).
+  SE_07_Q1:
+    label: "Class VII English 1st Paper"
+    task_stems: data/Question/task_stems_SE_07_Q1.csv
+    prompt_file: prompts/extraction_prompt_c7_v1.md
+    rubric_file: prompts/rubric_c7_v1.txt
+    target_questions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    max_question: 13
+    extraction_csv: data/extraction_SE_07_Q1.csv
+    extraction_runs_csv: data/extraction_runs_SE_07_Q1.csv
+    eval_output_dir: output/SE_07_Q1
+
+  # Class VI. Same 13-question shape as Class VII, different marks: Q2 is 1x5
+  # (not 2x5), Q10 is 2x5 (not 1x5), and Q8 asks the student to compose
+  # sentences from given prepositions rather than transform given sentences.
+  SE_06_Q1:
+    label: "Class VI English 1st Paper"
+    task_stems: data/Question/task_stems_SE_06_Q1.csv
+    prompt_file: prompts/extraction_prompt_c6_v1.md
+    rubric_file: prompts/rubric_c6_v1.txt
+    target_questions: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    max_question: 13
+    extraction_csv: data/extraction_SE_06_Q1.csv
+    extraction_runs_csv: data/extraction_runs_SE_06_Q1.csv
+    eval_output_dir: output/SE_06_Q1
+
+default_exam_set: SE_07_Q1
+
+# -----------------------------------------------------------------------------
+# Paths (relative to the project root / this config file's directory)
+# -----------------------------------------------------------------------------
+paths:
+  raw_pdfs: data/raw_pdfs
+  images: data/images
+  transcripts: data/transcripts
+  cache: data/cache
+  logs: logs
+  prompt_file: prompts/extraction_prompt_v2.md   # fallback; a set's own wins
+
+# =============================================================================
+# EVALUATION STAGE — two graders score each extracted answer independently.
+# Both graders read the identical rubric + identical per-row prompt; the ONLY
+# difference between an A record and a B record is the model. No temperature /
+# top_p / top_k is ever sent (removed from Gemini 3.x; kept off both to keep the
+# parameter surface identical). thinking_level is identical for both and stamped
+# into every record.
+# =============================================================================
+evaluation:
+  thinking_level: high       # identical for both graders; stamped into every record.
+                             # Functionally only Grader A (gemini-3.7-flash) uses it
+                             # (accepts low|medium|high); gemma has no thinking. Switch
+                             # to medium to cut Grader A cost/latency.
+  k: 3                       # runs per model per answer — separates model-vs-model
+                             # disagreement from within-model sampling noise
+  concurrency: 32           # Once the token limiters bind, they — not this
+                            # number — set the request rate; extra workers just
+                            # queue in acquire(). Sized for the POOL: 4 keys x
+                            # ~2.3 calls/min, ~50% of which fail, is ~4.6
+                            # successes/min, and a call takes ~345s end to end,
+                            # so ~26 need to be in flight to keep the budget
+                            # spent. 32 leaves slack.
+  max_retries: 8            # a 429 here waits out the provider's ~50s retryDelay
+  request_timeout_s: 300
+  max_output_tokens: 32768
+  # Same free-tier ceiling as extraction. A grading call is ~6.3k input tokens
+  # (the whole rubric rides in every one), so this is the binding constraint on
+  # throughput: roughly 2 calls per minute.
+  tokens_per_minute: 16000
+  requests_per_minute: 30   # backstop: a 5xx attempt is refunded its token
+                            # budget, so this is what bounds retry volume
+
+  # Stage 1.5: below this source length the Summary 1/3-length cap is NOT applied
+  # (the rule is meant for prose passages, not a 69-word poem). 0 = literal rubric.
+  summary_length_cap_exempt_below_words: 100
+
+  # Which graders run when `--model` is not given. The Class VII run is
+  # gemma-only by instruction, so Grader A is off by default; pass
+  # `--model both` to bring gemini back in.
+  default_models: [gemma]
+
+  graders:
+    gemini:                          # Grader A
+      model_id: "gemini-3.7-flash"
+      provider: vertex               # Vertex AI
+      api_key_env: "VERTEX_API_KEY"
+    gemma:                           # Grader B
+      model_id: "gemma-4-31b-it"
+      provider: ai_studio            # Google AI Studio / Gemini Developer API
+      api_key_env: "AI_STUDIO_API_KEY"
+      api_key_envs: ["AI_STUDIO_API_KEY2", "AI_STUDIO_API_KEY3", "AI_STUDIO_API_KEY4"]
+
+  # USD per 1,000,000 tokens, keyed by grader. VERIFY against current pricing.
+  cost:
+    gemini:
+      input_per_million: 0.30
+      output_per_million: 2.50
+    gemma:
+      input_per_million: 0.10
+      output_per_million: 0.30
+
+  # extraction_csv, rubric_file, evaluations, evaluation_csv and
+  # evaluation_runs_csv are OVERRIDDEN by the selected exam set (see
+  # `exam_sets:` above); the values here are inert defaults. user_template and
+  # logs are shared by every set.
+  paths:
+    extraction_csv: data/extraction.csv
+    rubric_file: prompts/rubric_v2.txt
+    user_template: prompts/eval_user_template.md
+    evaluations: output/evaluations
+    evaluation_csv: output/evaluation.csv
+    evaluation_runs_csv: output/evaluation_runs.csv
+    logs: logs

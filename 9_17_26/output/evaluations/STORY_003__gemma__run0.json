@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate continues the stem logically, though the plot becomes slightly confused (referring to a 'cave' in a forest) and uses odd phrasing regarding the lion being a 'burden'.",
+      "evidence": "it got a clash with lion and the lion woke up."
+    },
+    "structure_format_brevity": {
+      "rationale": "A title is provided and there is a positive resolution where the lion is freed, but the title is grammatically nonsensical and the ending is abrupt.",
+      "evidence": "\" King in perfect with crown Not in the eitre it's just a clown \""
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in spelling, grammar, and tense. Several words are unintelligible ('wener napem', 'eitre', 'ensurt'), and subject-verb agreement is consistently ignored.",
+      "evidence": "when the lion take the mouse he asked \" whate are you doing here?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While based on a well-known fable, the candidate attempts an original variation by having the mouse initially refuse to help out of fear, showing some independent narrative thought.",
+      "evidence": "the mouse refused for the first time: he said if they kill him after helping"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling distortions",
+      "Tense inconsistency",
+      "Subject-verb agreement failure",
+      "Incorrect word choice/Lexical gaps"
+    ],
+    "positive_aspects": [
+      "Attempted to modify a standard fable plot",
+      "Followed basic prompt requirements (Title and Ending)"
+    ]
+  },
+  "feedback_summary": "The script earns a Band 2 score. While the candidate successfully extends the story stem and reaches a positive conclusion with a provided title, the linguistic quality is very poor. There are severe mechanical failures, including unintelligible vocabulary and inconsistent tenses, which significantly hinder readability. The narrative logic is also strained in places.",
+  "_metadata": {
+    "task_id": "STORY_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8bdf6f9cf0ab048aa06d5323d30478d3968cb530e36bd8be65021fed6cfa791f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:40:30.496583+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "564e24232a5c2db52ab956400e2d05c82146a28fc4a055d8da7df202686d21a5",
+    "input_tokens": 4489,
+    "output_tokens": 2234,
+    "thoughts_tokens": 1482,
+    "cost_usd": 0.001119,
+    "latency_ms": 62359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4489,
+        "output_tokens": 2234,
+        "thoughts_tokens": 1482,
+        "cost_usd": 0.001119,
+        "latency_ms": 62359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

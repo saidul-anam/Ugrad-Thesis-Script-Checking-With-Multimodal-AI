@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'show' is correct. Item (c) 'cheered' is correct. Item (b) 'their' is grammatically possible but contextually incorrect as the passage emphasizes the quality of the performance ('great job'). Item (d) 'jab' is irrelevant to the context. Item (e) 'and clap' is grammatically incorrect following the adjective 'loud'.",
+      "evidence": "a. show\nc. cheered"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect vocabulary choice",
+      "Grammatical part-of-speech error"
+    ],
+    "positive_aspects": [
+      "Accurate identification of correct terms for items (a) and (c)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a) and (c). Item (b) is incorrect as it fails to describe the quality of the performance. Item (d) is irrelevant, and item (e) is grammatically incorrect in the given sentence structure.",
+  "_metadata": {
+    "task_id": "GAP_011",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0010",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "d7dded135206290964d5802b235a57096bce89094bfd2af989caa3047a0bcb13",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:43:39.740535+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5c445b168c9188191260b0571e8837365c09b8e4268b76a0a30d96ae0ceb662f",
+    "input_tokens": 6221,
+    "output_tokens": 1661,
+    "thoughts_tokens": 1031,
+    "cost_usd": 0.00112,
+    "latency_ms": 163296,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6221,
+        "output_tokens": 1661,
+        "thoughts_tokens": 1031,
+        "cost_usd": 0.00112,
+        "latency_ms": 163296,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

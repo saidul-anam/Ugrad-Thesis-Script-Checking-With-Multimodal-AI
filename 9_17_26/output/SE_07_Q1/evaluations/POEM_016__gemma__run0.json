@@ -1,0 +1,96 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered 5 items. (a) captures the essence of parental responsibility; (b) correctly identifies the poet's suggestion to admire nature; (c) identifies the negative feeling (boring/poor life) associated with lack of time; (d) correctly identifies the act of caring; (h) correctly identifies the message of appreciating nature's beauty.",
+      "evidence": "The parent says that their responsibility is to help the child grow into an ideal person. ... the poet's suggestion about nature is to that humans are too busy to admire the beauty of it. ... the poet feels that life is borin without time for nature. ... The parent shows care for the child by taking care and helping the child grow. ... we should enjoy our lives and admire the beauty of nature"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Accurate understanding of both poems",
+      "Consistent ability to paraphrase key ideas"
+    ]
+  },
+  "feedback_summary": "The student attempted 5 items (a, b, c, d, h). All five items are marked correct as they carry the indicative content required by the answer key: (a) Correct, (b) Correct, (c) Correct, (d) Correct, (h) Correct. Total: 5/5.",
+  "_metadata": {
+    "task_id": "POEM_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "43ea392579e642320fedf3a211b122d7b0d01db70f5325f84d8f269d5cae2243",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:49:39.072310+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d8b56aa678693fc5ccf2a1dd8ac83469e87eb0d2e2301a40b627edad56193dc3",
+    "input_tokens": 6476,
+    "output_tokens": 1364,
+    "thoughts_tokens": 666,
+    "cost_usd": 0.001057,
+    "latency_ms": 108187,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6476,
+        "output_tokens": 1364,
+        "thoughts_tokens": 666,
+        "cost_usd": 0.001057,
+        "latency_ms": 108187,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

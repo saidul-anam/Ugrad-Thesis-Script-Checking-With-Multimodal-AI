@@ -1,0 +1,97 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, ii, iii, and iv are correct according to the answer key. Item v is scored 0 because the candidate provided two different options for a single item without indicating which was the intended answer, which triggers a 0 mark for that specific item per the marking rules.",
+      "evidence": "i. began their journey to the moon. ii. Armstrong and Aldrin iii. in July 20, 1969 iv. came back safely to Earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Multiple answers provided for a single item"
+    ],
+    "positive_aspects": [
+      "High accuracy in information retrieval from the text for the majority of items"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered items i, ii, iii, and iv. Item v was marked as incorrect because two separate answers were provided for a single blank ('in July 24, 1969 from Earth' and 'all over the world'), and the rules for item-scored questions dictate that providing two options without specifying the intended one results in 0 marks for that item.",
+  "_metadata": {
+    "task_id": "TABLE_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4a55553f2e804a084445f90a91e835fffc30ebcba73249e8ea93dc2cb6bce207",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:18:52.659525+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bac3d9145294467ec2f98241b09a42a19ea0337f8bec3081572bd95142760c1f",
+    "input_tokens": 6376,
+    "output_tokens": 2071,
+    "thoughts_tokens": 1400,
+    "cost_usd": 0.001259,
+    "latency_ms": 160125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6376,
+        "output_tokens": 2071,
+        "thoughts_tokens": 1400,
+        "cost_usd": 0.001259,
+        "latency_ms": 160125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

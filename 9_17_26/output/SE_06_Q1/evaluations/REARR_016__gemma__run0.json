@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items 1(b), 2(a), 3(d), 4(f), 6(h), 7(e), and 8(g) are in the correct positions. Item 5 is incorrect ('e' instead of 'c').",
+      "evidence": "1. b\n2. a\n3. d\n4. f\n5. e\n6. h\n7. e\n8. g"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sequence error at position 5"
+    ],
+    "positive_aspects": [
+      "Accurate placement of 7 out of 8 sentences"
+    ]
+  },
+  "feedback_summary": "The student correctly positioned 7 out of 8 sentences. Items 1, 2, 3, 4, 6, 7, and 8 match the answer key. Item 5 was marked incorrect as the student provided 'e' instead of 'c'.",
+  "_metadata": {
+    "task_id": "REARR_016",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0016",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "095fe3fc5ebde352070fe8ebbb4b0d9ff09cdd16205f92e2a1887f86d9ee05cd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:59:23.367861+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5dd6ac83e85ff4bc3105cb3ff0ee99b2984c282a8b6d64bed12c25e5e9d46083",
+    "input_tokens": 6435,
+    "output_tokens": 1308,
+    "thoughts_tokens": 681,
+    "cost_usd": 0.001036,
+    "latency_ms": 106328,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6435,
+        "output_tokens": 1308,
+        "thoughts_tokens": 681,
+        "cost_usd": 0.001036,
+        "latency_ms": 106328,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

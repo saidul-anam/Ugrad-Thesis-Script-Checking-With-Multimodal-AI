@@ -1,0 +1,95 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items 1 through 5 are incorrectly positioned. Items 6, 7, and 8 match the answer key perfectly.",
+      "evidence": "6. h\n7. d\n8. b"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect sequencing of initial narrative events"
+    ],
+    "positive_aspects": [
+      "Correctly identified the resolution sequence (last three sentences)"
+    ]
+  },
+  "feedback_summary": "The student failed to correctly sequence the first five items: Item 1 (a), Item 2 (c), Item 3 (f), Item 4 (e), and Item 5 (g) are all in the wrong positions. However, the student correctly placed Item 6 (h), Item 7 (d), and Item 8 (b). Total score is the sum of correct positions: 3/8.",
+  "_metadata": {
+    "task_id": "REARR_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6e2287c8ef363002511eb9b352c8dd1b6a8dafcdf28a7020ef5476ac65ad29c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:48:34.223538+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d8b019d09ebf398bdd75965c0ce82babace71261fda354568a1a9b70d2524fab",
+    "input_tokens": 6280,
+    "output_tokens": 1393,
+    "thoughts_tokens": 792,
+    "cost_usd": 0.001046,
+    "latency_ms": 290921,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1393,
+        "thoughts_tokens": 792,
+        "cost_usd": 0.001046,
+        "latency_ms": 290921,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

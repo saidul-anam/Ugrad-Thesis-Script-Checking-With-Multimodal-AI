@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct (casualties of the war). Item (b) is incorrect as 'with great enthusiasm' describes the mood, not the methods/activities of celebration. Item (c) is correct (dedicated to soldiers/civilians). Item (d) is correct (patriotic songs). Item (e) is incorrect as it lists the order of events rather than what the salute represents.",
+      "evidence": "millions of people  were killed by and thousands of women were assaulted by the Pakistani army... dedicated to the soldiers and civilians who lost their lives during the war... recite patriotic songs"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; linguistic mechanics are not assessed separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; originality is not assessed separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misinterpreting 'how' as 'mood' in item b",
+      "Confusing the representation of a symbol with the sequence of events in item e"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of factual details for items a, c, and d"
+    ]
+  },
+  "feedback_summary": "Items a, c, and d were marked correct. Item b was marked wrong because it describes the enthusiasm of the people rather than the specific activities of celebration. Item e was marked wrong because it describes the events following the salute instead of explaining what the salute represents.",
+  "_metadata": {
+    "task_id": "SHORT_017",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0017",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "59c9c7e9cab4214727cd12f0a6c741ef314db8dacf0975560afeaea4cbf32e74",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:00:46.022495+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7c5c5afdf4987c17f1bec80c1ffcef53190c2ca2c9d2be63be67fa3c6ddcd80d",
+    "input_tokens": 6625,
+    "output_tokens": 2080,
+    "thoughts_tokens": 1395,
+    "cost_usd": 0.001286,
+    "latency_ms": 124250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6625,
+        "output_tokens": 2080,
+        "thoughts_tokens": 1395,
+        "cost_usd": 0.001286,
+        "latency_ms": 124250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

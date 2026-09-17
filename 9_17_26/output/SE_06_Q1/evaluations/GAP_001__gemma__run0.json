@@ -1,0 +1,97 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct. Item (b) 'go' is the wrong tense for the past-tense narrative. Item (c) was not attempted. Item (d) 'saw' does not fit the sentence meaning or grammar ('saw... to the museum'). Item (e) was not attempted.",
+      "evidence": "a. dreamt"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are evaluated within the item's correctness.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency",
+      "Vocabulary inaccuracy",
+      "Omission of items"
+    ],
+    "positive_aspects": [
+      "Correctly identified the first gap"
+    ]
+  },
+  "feedback_summary": "Item (a) is correct. Item (b) is incorrect due to the use of present tense 'go' in a past-tense context. Item (c) was not attempted. Item (d) is incorrect as 'saw' does not fit the contextual meaning of selling papers to a museum. Item (e) was not attempted.",
+  "_metadata": {
+    "task_id": "GAP_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "25e14f754716f4ed690927a53656b17724f4c7597762c2723d07afe2667cc1ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:09:41.107673+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "74b85dc33ea7a3a83c0217ef35c30b75f6a34c23a3ea9485561551c30a33b1f1",
+    "input_tokens": 6309,
+    "output_tokens": 1754,
+    "thoughts_tokens": 1115,
+    "cost_usd": 0.001157,
+    "latency_ms": 449296,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6309,
+        "output_tokens": 1754,
+        "thoughts_tokens": 1115,
+        "cost_usd": 0.001157,
+        "latency_ms": 449296,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

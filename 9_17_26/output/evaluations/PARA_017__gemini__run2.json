@@ -1,0 +1,101 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all prompt questions systematically, covering the definition of AI, its applications in industry and education, and its potential threats such as job loss and diminishing human creativity.",
+      "evidence": "In Factory and company owner owner Fully depend on AI as a result many people don't get job. Fully pelience on AI people lose their creativity and become lazy."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single continuous paragraph with a discernible opening topic sentence, logical progression from benefits to drawbacks, and a concluding thought.",
+      "evidence": "Artificial Intelligence is a sophisticated com technology of a modern modern computer science performing various task of human requine like Business."
+    },
+    "language_mechanics": {
+      "rationale": "The response suffers from heavy mechanical flaws, including multiple unrecognizable spelling errors, repeated words, improper punctuation, and pervasive subject-verb agreement issues.",
+      "evidence": "AI solve accurately any math and physies question so student's can assupoe that their answer cuas high or armyong."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing demonstrates authentic individual expression and meaningful cause-effect connectors rather than relying on memorized stock templates.",
+      "evidence": "Sometime AI give answer uhich is not fair and kind because AI work based on data, history, logie."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling errors (e.g., 'requine', 'physies', 'assupoe', 'armyong', 'pelience', 'uhich', 'logie')",
+      "Subject-verb agreement failures (e.g., 'AI become', 'AI solve', 'AI give', 'AI work')",
+      "Word duplication and incomplete editing (e.g., 'modern modern', 'owner owner', 'AI Sometime AI')",
+      "Incorrect pluralization and apostrophe misuse (e.g., 'student's can', 'student's use')"
+    ],
+    "positive_aspects": [
+      "Maintains single-paragraph formatting throughout without paragraph breaks",
+      "Directly and relevantly addresses all guided questions in the prompt",
+      "Demonstrates authentic thought and logical development of ideas"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a solid understanding of the topic by answering all guiding questions in a unified single paragraph. Ideas flow logically from definitions and educational uses to drawbacks such as unemployment and reduced creativity. However, the overall mark is heavily constrained by severe spelling corruptions, word repetitions, and frequent subject-verb agreement errors.",
+  "_metadata": {
+    "task_id": "PARA_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b257563db8d7e7c68ea26f36a91fb5a2027fa5bed209215f94b8dab69e325182",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:00:10.432540+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f609baae636005fff1eb0314453a5e0c7b64e4140012185e10d743e442cbd164",
+    "input_tokens": 4481,
+    "output_tokens": 4091,
+    "thoughts_tokens": 3219,
+    "cost_usd": 0.011572,
+    "latency_ms": 32483,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4481,
+        "output_tokens": 4091,
+        "thoughts_tokens": 3219,
+        "cost_usd": 0.011572,
+        "latency_ms": 32483,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

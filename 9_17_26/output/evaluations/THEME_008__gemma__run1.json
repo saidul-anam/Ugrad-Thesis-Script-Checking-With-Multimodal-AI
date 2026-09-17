@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between day and night dreamers and correctly attributes success to the former, though the interpretation of 'dangerous' as 'not normal' is slightly off-target.",
+      "evidence": "Those people who dreams under light works hard to achieve it."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block and concise, but it lacks a formal statement of the theme (e.g., 'The theme of the poem is...'), jumping straight into a description.",
+      "evidence": "People who dreams with wide open eye in the morning are not normal like people who dreams at night."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive subject-verb agreement errors throughout the entire text ('People who dreams', 'dreams under light works').",
+      "evidence": "People who dreams"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids verbatim copying, though the vocabulary is very basic and repetitive.",
+      "evidence": "They are the real successful people"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Noun number/pluralization"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Accurate identification of the central contrast"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the central contrast of the poem and avoided copying lines directly. However, the script is severely weakened by consistent grammatical errors, particularly subject-verb agreement. The response acts more as a simple summary than an abstract thematic explanation.",
+  "_metadata": {
+    "task_id": "THEME_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8ea0d5a019c65a6412550dcb301a1c4b6336257b82aa6f7925f901b6a8a34725",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:23:49.731419+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6bb33da348452204dbd6854f3bdc36befd15512d04feada0447b4d6d5832789e",
+    "input_tokens": 4271,
+    "output_tokens": 1843,
+    "thoughts_tokens": 1172,
+    "cost_usd": 0.00098,
+    "latency_ms": 52000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4271,
+        "output_tokens": 1843,
+        "thoughts_tokens": 1172,
+        "cost_usd": 0.00098,
+        "latency_ms": 52000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

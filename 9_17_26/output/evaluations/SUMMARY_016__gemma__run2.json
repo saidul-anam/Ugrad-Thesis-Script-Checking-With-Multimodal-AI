@@ -1,0 +1,96 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all primary elements of the poem: hope as a persistent bird, its presence in hardship, and its selflessness.",
+      "evidence": "Hope can be heard in the chillest land and on the strangest Sea."
+    },
+    "structure_format_brevity": {
+      "rationale": "While a single block, the candidate failed to 'summarize' in the sense of synthesis; it is a line-by-line rewrite that almost matches the original length, lacking conciseness.",
+      "evidence": "Hope is a feathery thing which perches the soul."
+    },
+    "language_mechanics": {
+      "rationale": "There are clear mechanical errors, including a spelling mistake ('crump') and a missing preposition ('perches [in] the soul').",
+      "evidence": "asks for a crump"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student successfully avoids verbatim copying (below 50%), but the phrasing is basic and mirrors the poem's structure too closely to be considered an original synthesis.",
+      "evidence": "It hardly even stops and continues singing without any words."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (crump)",
+      "Prepositional omission (perches the soul)"
+    ],
+    "positive_aspects": [
+      "Full thematic coverage",
+      "Avoidance of direct plagiarism"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the poem's meaning and avoids direct copying. However, the work is a paraphrase rather than a summary, as it follows the poem's linear progression and retains nearly the same length. Linguistic slips ('crump', 'perches the soul') and basic syntax place the response in Band 3.",
+  "_metadata": {
+    "task_id": "SUMMARY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "4c4be18ed66d41e7b74a28006537c6d5303107f92425ddd318f16f224eaa6596",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:50:37.368890+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d5f42a56ce293baf1f11b12f2e691d44045abfcda234a41299e095d3e856fb46",
+    "input_tokens": 4380,
+    "output_tokens": 2337,
+    "thoughts_tokens": 1634,
+    "cost_usd": 0.001139,
+    "latency_ms": 65672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4380,
+        "output_tokens": 2337,
+        "thoughts_tokens": 1634,
+        "cost_usd": 0.001139,
+        "latency_ms": 65672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

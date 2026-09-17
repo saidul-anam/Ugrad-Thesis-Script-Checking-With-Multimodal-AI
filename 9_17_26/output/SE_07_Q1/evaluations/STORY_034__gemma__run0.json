@@ -1,0 +1,104 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully continues the stem and meets the minimum length requirement (11 new sentences). The sequence of events is logically sound and follows the fable's plot, though some phrasing is confusing.",
+      "evidence": "The bear goes near to him and smelt him... the bear thought he was dead so he went away."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear resolution with a moral lesson, but it fails to provide a title, which is a requirement for this task.",
+      "evidence": "Don't belive a friend who throw you to the problem."
+    },
+    "language_mechanics": {
+      "rationale": "There is significant tense inconsistency, shifting between past and present throughout. There are several spelling and grammatical errors that hinder flow, though the meaning remains mostly clear.",
+      "evidence": "first friend know how to climb a tree but second one doesn't know... he definetly blaid on the without breathi"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a reproduction of a well-known guide story/fable. There is very little original descriptive detail, though some attempts at unique phrasing are present.",
+      "evidence": "He gave me a very important advise."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past)",
+      "Spelling errors (e.g., 'blaid', 'breathi', 'belive')",
+      "Missing structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Correct plot progression",
+      "Meets minimum sentence length",
+      "Clear delivery of the story's moral"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the plot and successfully completes the story with the required length and a clear moral. However, the absence of a title and frequent shifts in verb tense (e.g., 'know' instead of 'knew', 'goes' instead of 'went') prevent a higher score. The writing is a standard reproduction of a known fable with some mechanical errors in spelling and syntax.",
+  "_metadata": {
+    "task_id": "STORY_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "31dd0f88506824cea715e10a6247e5c6f11816d5c2e41b7ab421544d0157a889",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:28:39.865115+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fa13ffe6e9f030a93922efafb4e15b407b25c55a81ff66f9ea94272f433b411e",
+    "input_tokens": 6003,
+    "output_tokens": 2772,
+    "thoughts_tokens": 1992,
+    "cost_usd": 0.001432,
+    "latency_ms": 384609,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6003,
+        "output_tokens": 2772,
+        "thoughts_tokens": 1992,
+        "cost_usd": 0.001432,
+        "latency_ms": 384609,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

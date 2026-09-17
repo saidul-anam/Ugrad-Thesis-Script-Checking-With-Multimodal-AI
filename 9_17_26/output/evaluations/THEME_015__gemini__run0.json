@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the primary contrast between passive night dreamers and active day dreamers who work to realize their goals, though it is expressed at a surface level rather than as an abstract governing theme.",
+      "evidence": "But the dreemiers who dreem day they want to see his dreem in reality so they work heard."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented in a single compact paragraph without padding, but it lacks a clear formal topic sentence that explicitly states the central theme.",
+      "evidence": "All of the people watch dream in their subconcious mind."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling errors, unnatural collocations, subject-verb agreement issues, and pronoun inconsistency impede mechanical fluency.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate does not copy lines verbatim from the poem and attempts an authentic interpretation using their own vocabulary.",
+      "evidence": "This hind of dreem is valueless and in it will not come trive in reality."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('nigh', 'hind', 'dreem', 'trive', 'dreemiers', 'heard')",
+      "Incorrect verb-noun collocations ('watch dream')",
+      "Pronoun-antecedent disagreement ('the dreemiers... his dreem')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source poem",
+      "Successfully identifies the core contrast between idle dreaming and actionable effort",
+      "Maintained a concise single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate grasps the core idea of the poem—contrasting unproductive dreaming with active effort to make dreams come true—and writes entirely in their own words without copying verbatim text. However, the explanation remains a basic summary rather than an abstract thematic analysis, and heavy spelling and grammatical errors significantly weaken the overall quality.",
+  "_metadata": {
+    "task_id": "THEME_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b418e1baab05071ff9df8fb1d1baddd66f822930320703cefee116bc0edf9979",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:47:58.968145+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b2d0d57dfb9adf52d38f10e868880fb95882119580a513d5abd695b0f31bbc70",
+    "input_tokens": 4286,
+    "output_tokens": 3189,
+    "thoughts_tokens": 2419,
+    "cost_usd": 0.009258,
+    "latency_ms": 27250,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4286,
+        "output_tokens": 3189,
+        "thoughts_tokens": 2419,
+        "cost_usd": 0.009258,
+        "latency_ms": 27250,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

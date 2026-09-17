@@ -1,0 +1,100 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between the two types of dreams mentioned in the poem and correctly notes that one can become reality, though it describes the poem's logic rather than articulating an abstract theme.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single block that gets straight to the point without filler.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep. Those dream we see while sleeping is not for us. Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits high error density: pluralization errors ('two kind'), subject-verb agreement issues ('Those dream... is'), punctuation failures (fragmented sentences), and a significant spelling error ('fata').",
+      "evidence": "two kind of dream... Those dream we see while sleeping is not for us... possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own words and avoids verbatim copying, but the interpretation is rudimentary and lacks depth.",
+      "evidence": "Those which take our sleep is our real. dream"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement",
+      "Pluralization",
+      "Punctuation/Sentence Fragmentation",
+      "Spelling"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the text",
+      "Correct conceptual grasp of the contrast in the poem"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a satisfactory understanding of the poem's central contrast between night dreams and day dreams. The response is entirely original in its phrasing, avoiding any copying. However, the overall quality is significantly lowered by poor linguistic mechanics, specifically regarding grammar and punctuation. As the syntax is basic and contains multiple errors, the score is set at the lower end of Band 3.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "75951cd15996cf2b8348e8c762da773fd37bff4c1844c0a956c97456ca2a5306",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:13:45.138207+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2fd16692812f4f1a6fea918394c5c44aa6a0919ee93864d8cfe8d78d8d82a720",
+    "input_tokens": 4277,
+    "output_tokens": 2192,
+    "thoughts_tokens": 1411,
+    "cost_usd": 0.001085,
+    "latency_ms": 63704,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4277,
+        "output_tokens": 2192,
+        "thoughts_tokens": 1411,
+        "cost_usd": 0.001085,
+        "latency_ms": 63704,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

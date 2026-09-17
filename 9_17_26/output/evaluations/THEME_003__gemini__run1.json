@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate vaguely grasps the distinction between passive sleep dreaming and purposeful waking ambition, but fails to explore the central theme of active execution and the figurative imagery ('dreamers of the day', 'dusty recesses').",
+      "evidence": "Dreams are that which make our path of life. Future life is depending on dream that refers to goal of human life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written in a single block, but it is underdeveloped at only 36 words and lacks analytical depth or supporting interpretation.",
+      "evidence": "Dreams still are not the sleeping part, which we for got after woke up."
+    },
+    "language_mechanics": {
+      "rationale": "The response contains multiple grammatical, tense, and spelling errors ('for got', 'after woke up', 'is depending on') within a very short word count, demonstrating poor mechanical control.",
+      "evidence": "which we for got after woke up. Dreams are that which make our path of life. Future life is depending on dream"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses their own phrasing with 0% verbatim copying, but relies on a simplistic, cliché formulation rather than engaging in genuine textual interpretation.",
+      "evidence": "Dreams still are not the sleeping part, which we for got after woke up."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling and word division error ('for got' instead of 'forgot')",
+      "Tense and prepositional construction errors ('after woke up' instead of 'after waking up')",
+      "Awkward syntactic phrasing and subject-verb agreement issues ('is depending on dream that refers to goal')"
+    ],
+    "positive_aspects": [
+      "Composed entirely in the candidate's own words with zero direct verbatim copying from the poem",
+      "Correctly senses that the poem contrasts sleep-state dreams with life goals"
+    ]
+  },
+  "feedback_summary": "The candidate makes an authentic attempt to articulate the underlying idea in their own words rather than copying the poem verbatim. However, the theme is only partially and superficially addressed, syntax is basic and clumsy with several mechanical errors, and the response is too brief to provide adequate thematic analysis.",
+  "_metadata": {
+    "task_id": "THEME_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3b35fceeed7d42beba44e316381317323e058921a9596e04183c6289eaead081",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:10:55.545194+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "33c28a353bf8e68ab5ae92b93f35ff4102c74b0886276ba94973323aee13f43e",
+    "input_tokens": 4262,
+    "output_tokens": 2939,
+    "thoughts_tokens": 2139,
+    "cost_usd": 0.008626,
+    "latency_ms": 24077,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4262,
+        "output_tokens": 2939,
+        "thoughts_tokens": 2139,
+        "cost_usd": 0.008626,
+        "latency_ms": 24077,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

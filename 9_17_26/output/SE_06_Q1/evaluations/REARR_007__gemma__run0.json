@@ -1,0 +1,97 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned 6 out of 8 items. Correct positions: 1(b), 2(a), 3(d), 6(h), 7(e), 8(g). Incorrect positions: 4(c) and 5(f), which are swapped relative to the answer key.",
+      "evidence": "1. b 2. a 3. d 4. c 5. f 6. h 7. e 8. g"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sequence error: items 4 and 5 are transposed"
+    ],
+    "positive_aspects": [
+      "Accurate identification of the story's introduction and resolution"
+    ]
+  },
+  "feedback_summary": "The student correctly placed 6 items. Item 1 (b), Item 2 (a), Item 3 (d), Item 6 (h), Item 7 (e), and Item 8 (g) are correct. Item 4 was answered as 'c' (should be 'f') and Item 5 was answered as 'f' (should be 'c').",
+  "_metadata": {
+    "task_id": "REARR_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f8675936686e7412aa55582075e7bbc1ca4e80c8f15a881a383638f77ef6d3cc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:26:53.243769+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "455fd7b001eac0bd772b9e8bffe21896f73bad627f89104cc8203870329aedf1",
+    "input_tokens": 6435,
+    "output_tokens": 1698,
+    "thoughts_tokens": 1039,
+    "cost_usd": 0.001153,
+    "latency_ms": 259969,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6435,
+        "output_tokens": 1698,
+        "thoughts_tokens": 1039,
+        "cost_usd": 0.001153,
+        "latency_ms": 259969,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

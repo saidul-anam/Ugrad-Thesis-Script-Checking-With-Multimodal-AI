@@ -1,0 +1,94 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": true
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is marked as [illegible] and therefore cannot be verified against the answer key. Items (b), (c), (d), and (e) were not attempted.",
+      "evidence": "[illegible]"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Missing responses",
+      "Illegibility"
+    ],
+    "positive_aspects": []
+  },
+  "feedback_summary": "The student failed to provide any verifiable correct answers. Item (a) was rendered illegible during transcription and cannot be marked correct. Items (b), (c), (d), and (e) were left blank.",
+  "_metadata": {
+    "task_id": "GAP_021",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0021",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "94d1ad5ad4e7ae9a995e209bcd3c9ece1e1013474ae0680812d86acad449ade6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:24:28.770933+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b1ef3d632623bc9bc4966b6cdad3598bd35993e70287dcf0db77854bd8b58ddc",
+    "input_tokens": 6305,
+    "output_tokens": 1501,
+    "thoughts_tokens": 932,
+    "cost_usd": 0.001081,
+    "latency_ms": 258750,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6305,
+        "output_tokens": 1501,
+        "thoughts_tokens": 932,
+        "cost_usd": 0.001081,
+        "latency_ms": 258750,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

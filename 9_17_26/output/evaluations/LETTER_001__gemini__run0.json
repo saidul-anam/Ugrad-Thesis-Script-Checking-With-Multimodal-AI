@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly and clearly addresses the prompt topic by outlining specific post-HSC plans (freelancing, video editing, and AI work) without topic drift.",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural layout components of an informal letter (sender address, date, salutation, body paragraphs, complimentary close, signature, and envelope details) are present and correctly positioned.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical errors are present, including spelling mistakes, improper apostrophe usage, and faulty punctuation/sentence boundaries.",
+      "evidence": "beggining of the letter take my salam and the best wishes from the core of my heart"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Despite a conventional Bangladeshi letter opening, the core explanation of freelancing skills and aiming for self-reliance shows authentic and coherent individual thought.",
+      "evidence": "After my HSC Exam I will get a lot of free time which I am thinking to use for freelancing."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('beggining', 'self-relient')",
+      "Incorrect apostrophe insertion ('I'am', 'Your's ever')",
+      "Punctuation and sentence fragmentation (full stop before 'such as', colon misused)",
+      "Uncountable noun agreement ('so many works')"
+    ],
+    "positive_aspects": [
+      "Complete and fully intact informal letter layout including envelope details",
+      "Direct relevance to the prompt with a clear and practical future plan",
+      "Good overall communicative flow despite minor mechanical slips"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a solid grasp of informal letter structure, featuring all necessary layout parts and an envelope. The content directly fulfills the prompt by describing a realistic post-exam plan in freelancing. However, frequent mechanical slips (spelling errors like 'beggining' and 'self-relient', apostrophe errors in 'Your's' and 'I'am', and fragmented punctuation) prevent the script from achieving the maximum mark of 5.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e49f72906fc8002de80bd1cc1b24eb489b9824abceb27c38910ec3b35532bde1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:39:40.584289+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2576f826099189ef362092a4b5acc50cd1bdc2dc6ce629fb2dbc601f32a9a082",
+    "input_tokens": 4403,
+    "output_tokens": 2896,
+    "thoughts_tokens": 2063,
+    "cost_usd": 0.008561,
+    "latency_ms": 22047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4403,
+        "output_tokens": 2896,
+        "thoughts_tokens": 2063,
+        "cost_usd": 0.008561,
+        "latency_ms": 22047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

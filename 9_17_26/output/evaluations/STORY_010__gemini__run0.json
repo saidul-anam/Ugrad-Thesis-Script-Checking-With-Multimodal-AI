@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative logically extends the provided stem and follows a complete, sequential plot where the mouse promises assistance and later rescues the trapped lion.",
+      "evidence": "The mouse Promised to the lion that he would help him one day."
+    },
+    "structure_format_brevity": {
+      "rationale": "A relevant title is supplied and the story reaches a constructive moral conclusion, though the formatting and structural transitions remain quite rudimentary.",
+      "evidence": "A lion and a mouse"
+    },
+    "language_mechanics": {
+      "rationale": "The script demonstrates pervasive grammatical flaws, including persistent tense shifting between past and simple present, incorrect verb forms ('was fall', 'was laughed'), and mid-sentence capitalisation errors.",
+      "evidence": "While running, the mouse was fall into the lion. The lion woke up and see the mouse."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response reproduces a predictable, traditional fable with minimal authentic description, basic vocabulary, and standard formulaic phrasing.",
+      "evidence": "The mouse suddenly see the lion. He goes to the lion and cut the net by his teeth and rescue the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty auxiliary verb usage and distorted past forms ('was fall', 'was laughed')",
+      "Tense inconsistency across past and present forms ('see', 'goes', 'rescue', 'become')",
+      "Prepositional and lexical inaccuracies ('by his teeth', 'Judge anyone by his height')"
+    ],
+    "positive_aspects": [
+      "Maintains a clear narrative sequence that connects logically to the prompt",
+      "Supplies a relevant title and a clear positive moral resolution"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete narrative continuation with a recognizable plot arc, suitable title, and an explicit moral lesson. However, the score is constrained to the lower end of Band 3 due to pervasive tense shifts, faulty verb structures, and elementary vocabulary.",
+  "_metadata": {
+    "task_id": "STORY_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "95b6aa4fc876a73433a5a7312cf0b0b039c9132a79ed7fe990d032b4f4a8e9cb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:36:18.132433+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "59261379cd8cd66908a1e0cea4609f8673cf33f3b7c676796380f6e3ab4b64ba",
+    "input_tokens": 4416,
+    "output_tokens": 3372,
+    "thoughts_tokens": 2631,
+    "cost_usd": 0.009755,
+    "latency_ms": 24359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4416,
+        "output_tokens": 3372,
+        "thoughts_tokens": 2631,
+        "cost_usd": 0.009755,
+        "latency_ms": 24359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

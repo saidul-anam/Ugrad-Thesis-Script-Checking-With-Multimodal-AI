@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate covers all required elements of the prompt (date, decoration, guest, prizes) with concrete details, though some expressions are generic.",
+      "evidence": "We decorated every corner of our school with festoons, green leaves and many things."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is strictly a single unified paragraph as required, with a clear opening topic sentence.",
+      "evidence": "The annual prize giving ceremony of a school is really enjoyable for all"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in spelling ('cheif', 'acoruded'), tense ('come' instead of 'came'), and severe syntactic breakdowns ('sibilization were come').",
+      "evidence": "The people of our school area sibilization were come on the function."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is basic and functional, but contains repetitive transitions and several unnatural expressions.",
+      "evidence": "then then cheif guest gave us the prizes"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (cheif, acoruded)",
+      "Tense inconsistency (come instead of came)",
+      "Incorrect word choice/Syntax (sibilization were come)"
+    ],
+    "positive_aspects": [
+      "Correct structural adherence to a single paragraph",
+      "Complete coverage of the topic content"
+    ]
+  },
+  "feedback_summary": "The student successfully followed the structural constraints of the paragraph task, maintaining a single block of text with a relevant topic sentence. Content-wise, the prompt is well-addressed with a logical sequence of events. However, the score is limited by significant linguistic errors, including poor spelling and awkward phrasing ('remain my heart fresh'), which prevent the script from reaching Band 4.",
+  "_metadata": {
+    "task_id": "PARA_007",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0006",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "33404f517140e97bb961f985918d99ce1e2e03bcd675c0def2072ef62b0eb2bf",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:03:43.805601+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2c57fd60e66d3e99d27a8eafb77a1c006d2437ca1685f059395f8c1efd0c1b22",
+    "input_tokens": 5948,
+    "output_tokens": 3093,
+    "thoughts_tokens": 2379,
+    "cost_usd": 0.001523,
+    "latency_ms": 240483,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5948,
+        "output_tokens": 3093,
+        "thoughts_tokens": 2379,
+        "cost_usd": 0.001523,
+        "latency_ms": 240483,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

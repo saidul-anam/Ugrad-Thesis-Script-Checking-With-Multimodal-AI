@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student follows the plot of the bear and the two friends accurately, providing a logical sequence of events. However, the response fails the requirement of 'at least ten new sentences', providing only about 9 new sentences.",
+      "evidence": "One of the friend climb a free. But second friend don't know how to climb a tree. so he stop breathing and lay on the floor."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a resolved ending with a clear moral lesson, but the student failed to provide a suitable title as required by the prompt.",
+      "evidence": "the friend answer \" they are not friend who leave you alone in a danger!\""
+    },
+    "language_mechanics": {
+      "rationale": "There is a consistent failure to use the past tense ('climb', 'stop', 'come', 'smell' instead of 'climbed', 'stopped', 'came', 'smelled') and significant errors in word choice ('free' for tree, 'death' for dead).",
+      "evidence": "One of the friend climb a free... let he think the boy is death."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student provides a standard, predictable version of a common fable. While not a verbatim guide copy, it lacks any original descriptive detail or mature expression.",
+      "evidence": "The bear smell the laying boy and let he think the boy is death."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present instead of Past)",
+      "Vocabulary/Spelling errors (e.g., 'free' for 'tree')",
+      "Missing title"
+    ],
+    "positive_aspects": [
+      "Clear plot resolution",
+      "Appropriate moral conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the story's plot and provides a coherent resolution with a moral lesson. However, the script is penalized for failing the length requirement (under 10 sentences) and the omission of a title. Language mechanics are significantly weak, characterized by persistent tense errors and basic vocabulary slips.",
+  "_metadata": {
+    "task_id": "STORY_035",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0034",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c4cb88ac35828081ca75a7921f275f13539d5454753776f41037a4025665bd37",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:35:33.614096+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f5e278e2eab1c7fe24048b856e27e3a90a4e47c818a04e73c3984849a91dd725",
+    "input_tokens": 5934,
+    "output_tokens": 2837,
+    "thoughts_tokens": 2046,
+    "cost_usd": 0.001445,
+    "latency_ms": 601375,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5934,
+        "output_tokens": 2837,
+        "thoughts_tokens": 2046,
+        "cost_usd": 0.001445,
+        "latency_ms": 601375,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

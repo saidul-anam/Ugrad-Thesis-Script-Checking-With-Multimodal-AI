@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully captures all central points: Raju's status as a student, his success in specific subjects, his failure in others, and his commitment to improve.",
+      "evidence": "He did well in Bangla, English, and Mathemetics. He cannot do well in ICT, Scince and Religion. Raju made a Plan to give more times in these subjects."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is a single coherent block, but it slightly exceeds the one-third length constraint (51 words compared to the 43-word target), aligning with the Band 3 description of being 'slightly over length'.",
+      "evidence": "Raju is a student of class six... He belives he can do well in this subjects."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors (Mathemetics, Scince, belives) and grammatical slips in agreement (this subjects) and usage (more times), though meaning remains clear for Class VI.",
+      "evidence": "He cannot do well in ICT, Scince and Religion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response relies heavily on the original phrasing, specifically lifting the opening sentence and the lists of subjects verbatim from the source text.",
+      "evidence": "Raju is a student of class six."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (Mathemetics, Scince, belives)",
+      "Noun-number agreement (this subjects)",
+      "Verbatim lifting of introductory sentences"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of all key plot points",
+      "Correct adherence to the single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The student has produced a competent summary that captures all the essential information from the text. However, the score is limited to Band 3 because the response relies on verbatim lifting for the opening and lists, contains several spelling and agreement errors, and slightly exceeds the ideal length for a summary.",
+  "_metadata": {
+    "task_id": "SUMMARY_015",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0015",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "51640eb6c5af912e136a81204f01d576097192404dad37ffa3e9c57326cfb385",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:57:26.274938+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c48c7ca3de22b6485f322b68ba1f6d70ee9267a107cf2021967067f8e6cadec8",
+    "input_tokens": 6111,
+    "output_tokens": 3732,
+    "thoughts_tokens": 2962,
+    "cost_usd": 0.001731,
+    "latency_ms": 134702,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6111,
+        "output_tokens": 3732,
+        "thoughts_tokens": 2962,
+        "cost_usd": 0.001731,
+        "latency_ms": 134702,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

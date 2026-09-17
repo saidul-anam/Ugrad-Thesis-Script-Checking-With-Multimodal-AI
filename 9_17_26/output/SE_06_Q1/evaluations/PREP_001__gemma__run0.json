@@ -1,0 +1,81 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": false,
+    "is_blank_or_unintelligible": true
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": []
+  },
+  "feedback_summary": "Not attempted; synthesised Band 0 record (no API call).",
+  "_metadata": {
+    "task_id": "PREP_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "7b0ec4ccc61aaef2e775c410a78bb3f3e96e018c317cfcc08b7e71a7fac3da3a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:02:11.806349+00:00",
+    "provider": null,
+    "model_id": null,
+    "cache_key": "synthesised",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "thoughts_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0,
+    "attempt_number": 0,
+    "http_status": null,
+    "evidence_not_found": [],
+    "synthesised": true,
+    "calls": []
+  }
+}

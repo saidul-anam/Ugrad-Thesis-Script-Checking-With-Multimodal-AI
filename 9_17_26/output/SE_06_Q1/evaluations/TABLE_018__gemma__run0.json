@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provided two sets of answers. Evaluating the more complete second set: (i) is correct ('class 6'); (ii) is correct ('Bangla, English, mat'); (iii) is incorrect as the mark for English is listed as 7 instead of 9; (iv) is correct ('I c T, science and Religion'); (v) is correct ('6 marks'). Total: 4/5.",
+      "evidence": "i) Raju reads in class 6. ii) He did well in Bangla, English, mat iv) Subjects he did poorly in I c T, science and Religion. v) he got 6 marks in I c T, Science and Religion."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are not scored separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not applicable and verbatim lifting is encouraged.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in marks (item iii)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of subjects and class",
+      "Correct retrieval of marks for weak subjects"
+    ]
+  },
+  "feedback_summary": "The student attempted the question twice. Based on the second, more complete attempt: items (i), (ii), (iv), and (v) are correct. Item (iii) is marked wrong because the student wrote '7 in English' instead of the '9' specified in the text.",
+  "_metadata": {
+    "task_id": "TABLE_018",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0018",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "a2fe2bb49fdf440dc96a6cae91d928a5c32d7b839718ab4d80caac58a9741de2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:08:28.851026+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6938781f425a245ad35a767e99d638ea14680c1dcb80811fe9c6bd101ffcb542",
+    "input_tokens": 6489,
+    "output_tokens": 1853,
+    "thoughts_tokens": 1147,
+    "cost_usd": 0.001205,
+    "latency_ms": 204109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6489,
+        "output_tokens": 1853,
+        "thoughts_tokens": 1147,
+        "cost_usd": 0.001205,
+        "latency_ms": 204109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

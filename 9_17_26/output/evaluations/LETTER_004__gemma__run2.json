@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, providing specific and logical future plans including a vacation, academic goals (BUET), and social work.",
+      "evidence": "Now, I will share my future Plan after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "The letter contains most structural components (Address, Date, Salutation, Body, Close), but the authoritative metrics indicate one missing component.",
+      "evidence": "27 June, 2026\nBhuighan-107, Dhaka\nDear Alif,"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and grammatical slips, particularly in technical words and basic verb forms.",
+      "evidence": "compliting our HSC Examination... addmitted myshelf in Bangladesh university of Engeoneiering and Technology"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the future plans are personal, the opening and closing sentences are heavily reliant on memorized guide templates.",
+      "evidence": "I hope you are well. I am also well by the grace of Almighty Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic/Spelling errors (e.g., 'engeoneiering', 'compliting', 'plane')",
+      "Formulaic/Template-based phrasing",
+      "Syntax errors in temporal expressions"
+    ],
+    "positive_aspects": [
+      "Clear adherence to the prompt",
+      "Logical progression of ideas"
+    ]
+  },
+  "feedback_summary": "The student demonstrates a good understanding of the task and provides a relevant response with a clear sequence of plans. However, the overall quality is hindered by pervasive spelling mistakes and the use of generic, memorized phrases. The structure is largely correct, missing only one component, placing the script firmly in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d9e382573f2e56a9e366272a99d828aac1d4a86f9a9935ddaba9f041341ddfeb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:45:39.964991+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ba84d37470d9a147ec0134cdd66444b5223dabf0a16d1d20f763b555d03e154a",
+    "input_tokens": 4463,
+    "output_tokens": 2556,
+    "thoughts_tokens": 1807,
+    "cost_usd": 0.001213,
+    "latency_ms": 71812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4463,
+        "output_tokens": 2556,
+        "thoughts_tokens": 1807,
+        "cost_usd": 0.001213,
+        "latency_ms": 71812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

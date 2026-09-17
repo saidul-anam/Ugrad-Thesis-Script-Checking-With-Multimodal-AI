@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the basic timeline (departure, landing, return) and the significance of the mission. However, there is a severe factual hallucination claiming the American astronauts are scientists from Bangladesh.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin is one of the greatest sciencetist of Bangladesh."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single coherent block. However, the length (71 words) exceeds half of the source text (131 words), failing the brevity requirement.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are several errors in subject-verb agreement ('is' for three people), spelling ('sciencetist', 'anothe'), and preposition use ('safely of Earth'). While readable, the density of errors is high for a summary.",
+      "evidence": "safely of Earth. It was the first time humans had visited anothe world."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The summary is almost entirely composed of verbatim sentences lifted from the source text, with negligible paraphrasing.",
+      "evidence": "They walked, took photos, and collected rocks. On July 24, 1969 the astronauts came back safely of Earth."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Factual hallucination",
+      "Spelling and agreement errors"
+    ],
+    "positive_aspects": [
+      "Correct chronological sequence of events",
+      "Adherence to single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate has attempted the summary but relied heavily on copying sentences directly from the text (over 70% verbatim overlap). Furthermore, the summary exceeds the required length (over 50% of the original). A significant factual error was made regarding the nationality of the astronauts. Due to the high verbatim overlap and length, a structural hard cap of 2 was applied, which matches the merit score.",
+  "_metadata": {
+    "task_id": "SUMMARY_018",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0017",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8754c37c2fc8ffcd512b2ba830dd014019d507fde97ac1f73edc5514a5023798",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:14:26.097852+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "fd019141909406605b7ff1e03a1f1069482730a4b7a42880fb1436a27055839c",
+    "input_tokens": 6078,
+    "output_tokens": 2473,
+    "thoughts_tokens": 1698,
+    "cost_usd": 0.00135,
+    "latency_ms": 269375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6078,
+        "output_tokens": 2473,
+        "thoughts_tokens": 1698,
+        "cost_usd": 0.00135,
+        "latency_ms": 269375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

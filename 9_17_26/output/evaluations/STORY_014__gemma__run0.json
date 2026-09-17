@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and complete continuation of the stem, following the traditional plot of the lion and the mouse correctly.",
+      "evidence": "The mouse cut the net by it's oil sharp theeth. The lion got free from the trap."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response includes a title and concludes with a clear, constructive moral lesson as required by the rubric.",
+      "evidence": "Size doesn't Matter to help. ... moral: we should not understimet anyone by his/her size or cover."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and grammatical slips, including tense inconsistency (shifting from past to present).",
+      "evidence": "Onece a lion was sleeping in a forzest... subconsinsly... The lion understand that small in size can help the big size."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, memorized fable. While the student uses their own words, the narrative is predictable and lacks creative flourish.",
+      "evidence": "The lion thanked the mouse and they made friendship with each other."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (e.g., 'Onece', 'forzest', 'understimet')",
+      "Grammatical/Tense inconsistency",
+      "Incorrect word choice (e.g., 'subconsinsly', 'oil sharp theeth')"
+    ],
+    "positive_aspects": [
+      "Full narrative resolution",
+      "Compliance with structural requirements (Title and Moral)"
+    ]
+  },
+  "feedback_summary": "The candidate successfully developed the stem into a complete story with a logical plot and a clear moral ending. However, the script is significantly weakened by poor linguistic mechanics, including frequent spelling errors and unstable tense control. The content is a predictable, memorized fable, which limits the originality score.",
+  "_metadata": {
+    "task_id": "STORY_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e9a64d2ab4c0832707ce350d7f26cfec67565ad6a9ea29e9da466f0828b3768b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:35:59.208635+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a469993b720f89f00e2dda5c9e9ee0d87464b58821ad8a364cb7347c7a9196b4",
+    "input_tokens": 4437,
+    "output_tokens": 2182,
+    "thoughts_tokens": 1440,
+    "cost_usd": 0.001098,
+    "latency_ms": 62484,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4437,
+        "output_tokens": 2182,
+        "thoughts_tokens": 1440,
+        "cost_usd": 0.001098,
+        "latency_ms": 62484,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: 'bottom of water' is incorrect usage/unintelligible. Item b: 'the cat top of the fan' is an incomplete sentence lacking a verb. Item c: 'through the wood' is a correct prepositional usage in an intelligible sentence (1 mark). Item d: 'alonge' is used as a misspelling of 'alone' (adjective) rather than the preposition 'along'. Item e: 'Anika across the road' is an incomplete sentence lacking a verb.",
+      "evidence": "The bean came through through the wood."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question: structure is not measured separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question: mechanics are not measured separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question: originality is not measured separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Sentence fragmentation (missing verbs)",
+      "Semantic confusion (confusing 'along' with 'alone')"
+    ],
+    "positive_aspects": [
+      "Correct usage of 'through' in item c"
+    ]
+  },
+  "feedback_summary": "The student correctly used the preposition in item (c) only. Item (a) is unintelligible; items (b) and (e) are fragments lacking verbs; item (d) confuses the preposition 'along' with the adjective 'alone'.",
+  "_metadata": {
+    "task_id": "PREP_019",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0019",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3969a3c839d4314276f7f190d416bdca7507237eb4a2239626b90e965ca74d4b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:16:26.231464+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "593878f50f2ca3a92a28ce7dd4058b48917ee04ff1947978d0938ae8c9a71eac",
+    "input_tokens": 6280,
+    "output_tokens": 1513,
+    "thoughts_tokens": 853,
+    "cost_usd": 0.001082,
+    "latency_ms": 143453,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6280,
+        "output_tokens": 1513,
+        "thoughts_tokens": 853,
+        "cost_usd": 0.001082,
+        "latency_ms": 143453,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

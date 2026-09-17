@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student directly addresses the topic and provides concrete, relevant details about the life of a rickshaw puller, including poverty and social struggle. The inclusion of a specific person ('Jilani') demonstrates a level of detail beyond a generic response.",
+      "evidence": "I know a rikshaw puller named Jilani. He works so hard for his family."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single, unified block of text with a clear, identifying topic sentence, adhering perfectly to the paragraph format requirements.",
+      "evidence": "A rickshaw puller is a person who earns his livehoody by pulling rikshaw."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors ('livehoody', 'rikshaw', 'possen gerts', 'lps') and subject-verb agreement issues ('If he become sick'), though the meaning remains clear for a Class VI level.",
+      "evidence": "Sometimes, he gets cheated by his own possen gerts."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing feels authentic and personal rather than a memorized guide text, evidenced by specific observations like taking naps on the rickshaw and eating on the footpath.",
+      "evidence": "Sometimes, he takes nap on his rickshaw."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling",
+      "Subject-Verb Agreement"
+    ],
+    "positive_aspects": [
+      "Authentic detailing",
+      "Correct structural layout",
+      "Consistent focus on topic"
+    ]
+  },
+  "feedback_summary": "The student has produced a strong, authentic paragraph that avoids generic template phrasing by incorporating a specific example (Jilani). The structure is correct, maintaining a single-block format with a clear opening. The score is slightly reduced due to recurring spelling mistakes ('possen gerts' for passengers, 'livehoody' for livelihood) and basic grammatical slips, but the overall expression is mature and appropriate for a Class VI candidate.",
+  "_metadata": {
+    "task_id": "PARA_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "15a2732f7ed1555d1178814e55446235641747b50a363f17b255aee25f28772f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:45:05.157209+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cac9e8211c7df0b53cbc5e1ef9cdc1ee49dc0e74a1548974718e2fcfcd773f32",
+    "input_tokens": 6078,
+    "output_tokens": 2600,
+    "thoughts_tokens": 1836,
+    "cost_usd": 0.001388,
+    "latency_ms": 378875,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6078,
+        "output_tokens": 2600,
+        "thoughts_tokens": 1836,
+        "cost_usd": 0.001388,
+        "latency_ms": 378875,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

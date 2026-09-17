@@ -1,0 +1,96 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student did not write any sentences. Instead of using the provided prepositions in original sentences, they wrote labels of parts of speech. All five items (a-e) are incorrect.",
+      "evidence": "a. preposition b. preposition c. verb d. adjective e. adjective"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to follow task instructions",
+      "Providing part-of-speech labels instead of sentences"
+    ],
+    "positive_aspects": []
+  },
+  "feedback_summary": "The student failed to perform the task. Rather than composing original sentences using the required prepositions, they merely wrote grammatical categories. Item a: 0, Item b: 0, Item c: 0, Item d: 0, Item e: 0. Total: 0.",
+  "_metadata": {
+    "task_id": "PREP_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "e55e3103fa13c1d3ad12d62c22cdfb79354e2488f707413617809177e649c95b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:13:21.647072+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "32b4ceb833a439ede820e9e24025c05afacc6ae4773d52d695cd33d4ebcec682",
+    "input_tokens": 6232,
+    "output_tokens": 1546,
+    "thoughts_tokens": 961,
+    "cost_usd": 0.001087,
+    "latency_ms": 169592,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6232,
+        "output_tokens": 1546,
+        "thoughts_tokens": 961,
+        "cost_usd": 0.001087,
+        "latency_ms": 169592,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

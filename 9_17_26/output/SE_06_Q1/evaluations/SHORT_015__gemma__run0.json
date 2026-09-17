@@ -1,0 +1,97 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: 0 marks. The student merely restates that a war happened, failing to describe what happened during it (battle/independence). Item b: 0 marks. The student describes the mood ('great enthusiasm') rather than the specific ways people celebrate. Item c: 1 mark. Correctly identifies the memorial as a focal point for respect for those who lost lives. Item d: 1 mark. Correctly identifies patriotic songs. Item e: 1 mark. Correctly identifies that the salute marks the start of the day at dawn.",
+      "evidence": "The National Martyrs Memorial is important because our soldiers and civilians who lost their lives during the war, becomes a focal point for citizens to pay their respect. People recite patriotic songs in National Martroys me Memorial. The day begins with a 31 gun salute dawn"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Insufficient detail in items a and b (providing generic statements rather than specific answers)"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of information for items c, d, and e"
+    ]
+  },
+  "feedback_summary": "Items c, d, and e were marked correct. Item a was marked wrong as it merely restated that a war happened without explaining the events/outcome. Item b was marked wrong as it described the spirit of the celebration rather than the actual activities.",
+  "_metadata": {
+    "task_id": "SHORT_015",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0015",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f4b102a524f3f71576f6c6a32e9ca6f2ce378f8f74a98651445e0b7be3bd2b35",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:58:41.768091+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c7f78f9f9a7afa5a2dbbe0790aced8afc57db6bbade0518125357e682c2d9270",
+    "input_tokens": 6604,
+    "output_tokens": 1994,
+    "thoughts_tokens": 1288,
+    "cost_usd": 0.001259,
+    "latency_ms": 308812,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6604,
+        "output_tokens": 1994,
+        "thoughts_tokens": 1288,
+        "cost_usd": 0.001259,
+        "latency_ms": 308812,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

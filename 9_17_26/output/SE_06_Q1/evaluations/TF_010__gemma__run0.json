@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered 4 out of 5 items. Item (a) is correct (False + valid correction). Item (b) is incorrect because the correction '10 marks out of 20' is factually wrong (should be 10 out of 10). Item (c) is correct (True). Item (d) is correct (False + valid correction). Item (e) is correct (False + valid correction, despite the omission of the word 'told').",
+      "evidence": "a) false Correct Answer: Raju thinks he can improve all his subjects. ... c) True. ... d) false Correct answer: Raju plans to give more time to those subjects. ... e) False Correct answer: His father to him not to lose hope."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structure does not contribute to the mark.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; language mechanics do not contribute to the mark independently.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality does not contribute to the mark.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in correction for item (b)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of True/False status for all items",
+      "Correct factual corrections for items (a), (d), and (e)"
+    ]
+  },
+  "feedback_summary": "The student scored 4 out of 5. Items (a), (c), (d), and (e) were marked correct. Item (b) was marked incorrect because, although the student identified the statement as 'False', the provided correction ('10 marks out of 20') contradicts the passage, which states he got 10 out of 10.",
+  "_metadata": {
+    "task_id": "TF_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3679cb9905b6001b1fa62902f886b86d381e4e2fec3dc82650c81daabce4f7b6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:43:47.252699+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d6c56b5ab6fc14827669f772a519675298e53823387bbd1843c56a66746be73f",
+    "input_tokens": 6453,
+    "output_tokens": 1651,
+    "thoughts_tokens": 897,
+    "cost_usd": 0.001141,
+    "latency_ms": 640734,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6453,
+        "output_tokens": 1651,
+        "thoughts_tokens": 897,
+        "cost_usd": 0.001141,
+        "latency_ms": 640734,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

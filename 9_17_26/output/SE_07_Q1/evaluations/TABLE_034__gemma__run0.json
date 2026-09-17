@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is correct (1); Item ii is correct (1); Item iii is correct (1); Item iv is incorrect (0); Item v is incorrect (0). Total: 3/5.",
+      "evidence": "i) Journey to moon. ii) Armstrong and Aldrin iii) on July 20, 1969"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect data extraction for events (iv)",
+      "Incorrect data extraction for location (v)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of names and dates for the first three items"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identified the event for item (i), the people for item (ii), and the date for item (iii). However, item (iv) was marked wrong as the response provided the spacecraft name instead of the event (returning to Earth), and item (v) was marked wrong as the response provided a date instead of the location (all over the world).",
+  "_metadata": {
+    "task_id": "TABLE_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "36e67c5b922a3d7c30f5bace13d9751c6c3ac071cd525f2e16368453b026d0a8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:25:00.709935+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7b9c809f86ca41adbdbc2082e27d9090caf12d74d4eff430d9a8b93f296b86e1",
+    "input_tokens": 6364,
+    "output_tokens": 1455,
+    "thoughts_tokens": 803,
+    "cost_usd": 0.001073,
+    "latency_ms": 295108,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6364,
+        "output_tokens": 1455,
+        "thoughts_tokens": 803,
+        "cost_usd": 0.001073,
+        "latency_ms": 295108,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

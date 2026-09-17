@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core mission, the key personnel, the dates, and the outcome, successfully capturing the central point of the passage.",
+      "evidence": "On July 16, 1969 Neil Armstrong, Michael Collins and Edwin Aldrin stopted their journey to the moon."
+    },
+    "structure_format_brevity": {
+      "rationale": "While written as a single block, the response fails the brevity constraint, exceeding one-third of the original passage length (56%).",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are significant mechanical errors including double superlatives, non-existent words, and spelling mistakes.",
+      "evidence": "most greatest missions... stopted... craftship... bak sake safely"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The summary relies heavily on verbatim lifting, with over 50% overlap, including an exact copy of the final concluding sentence.",
+      "evidence": "The Apollo 11 mission showed the power of science, teamwork and human courage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim copying",
+      "Spelling/Lexical errors (stopted, craftship)",
+      "Grammatical errors (most greatest)"
+    ],
+    "positive_aspects": [
+      "Core factual accuracy",
+      "Correct date identification"
+    ]
+  },
+  "feedback_summary": "The candidate successfully captured the essential facts of the Apollo 11 mission. However, the response is disqualified from a higher score due to structural failures: it exceeds the length limit and contains over 50% verbatim lifting from the source text. Furthermore, there are several spelling and grammatical errors typical of a struggling Class VII student. A structural cap of 2 was applied.",
+  "_metadata": {
+    "task_id": "SUMMARY_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "06c2f615740bc51900418bbbaa9e091c63cc89f6024f1da2a47cbc0288705229",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:21:57.227034+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "df34a3dc97f53caa38c8e05024166e1cc20298bd6e77d3a2a65e33ec13ea13b5",
+    "input_tokens": 6089,
+    "output_tokens": 1988,
+    "thoughts_tokens": 1267,
+    "cost_usd": 0.001205,
+    "latency_ms": 242983,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6089,
+        "output_tokens": 1988,
+        "thoughts_tokens": 1267,
+        "cost_usd": 0.001205,
+        "latency_ms": 242983,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

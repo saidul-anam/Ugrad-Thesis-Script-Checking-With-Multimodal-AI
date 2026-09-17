@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate reports all five data points from the chart and identifies the highest (Coal) and lowest (Nuclear) sources, though there is an initial garbled mix-up of data before clarifying.",
+      "evidence": "Coal which was the highest 46% of the total sources. It was the highest demand for generating electricity. After that Natural gas the second highest option for generating electricity which was 24%."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory sentence and sequential presentation are present, but the script is divided into two paragraphs and introduces an external moralistic conclusion not present in the data, triggering the external facts cap.",
+      "evidence": "So, we can make a col conclusion that they stued so much non-renewal energy which are limited in nature. If we want to save these natural ressource we should increase the use of renewabl enery."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple spelling errors, fused/run-on sentences, and phrasing inaccuracies that impede fluency.",
+      "evidence": "In the given pie-chart we can see that the sources of the USA electricity in 1980 In 1980 The main sourcee of generation electricity in USA was 41% Natural gas Coal which was the highest 46%"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Comparative phrasing is simple and repetitive ('highest', 'second highest option', 'least used one') with basic sentence structures.",
+      "evidence": "Then it was Hydro-electric powere which was 16% of total. 12% electricity was generated from oil. A Now the least used one was Nuclear only 2%."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('sourcee', 'powere', 'stued', 'ressource', 'renewabl enery')",
+      "Run-on sentence structures and missing punctuation in the opening lines",
+      "Incorporation of outside knowledge and prescriptive recommendations (renewable vs. non-renewable energy) not shown in the chart"
+    ],
+    "positive_aspects": [
+      "Correctly extracts and reports all five categories with accurate percentages",
+      "Clearly identifies the highest and lowest electricity generation sources"
+    ]
+  },
+  "feedback_summary": "The script covers all data points from the chart and correctly highlights the maximum and minimum sources of electricity generation. However, it suffers from noticeable mechanical errors, typos, and run-on phrasing. Crucially, the final paragraph introduces external opinions and conservation advice not present in the chart, invoking the Graph/Chart hard cap of 6.",
+  "_metadata": {
+    "task_id": "CHART_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fa86707c99b449d255da2cce195d25313d2ea1dbf365f3b17ce4d9a9f98951ea",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:36:20.564714+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "2e2234443a9ccde2fbec4bc7af2a8541bbee990784e60aa3b02f2b0311870b6f",
+    "input_tokens": 4404,
+    "output_tokens": 3660,
+    "thoughts_tokens": 2766,
+    "cost_usd": 0.010471,
+    "latency_ms": 36577,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3660,
+        "thoughts_tokens": 2766,
+        "cost_usd": 0.010471,
+        "latency_ms": 36577,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate grasps the core conceptual contrast of the poem (passive night dreams vs. active, reality-shaping daytime dreams), interpreting it through a popular conceptual framework, though the explanation lacks depth.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written in a single brief paragraph and states the core theme immediately, though sentence demarcation is slightly fragmented.",
+      "evidence": "There are two kind of dream."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical and mechanical errors are present in a short span, including noun-number disagreement ('two kind'), subject-verb disagreement ('Those dream... is'), an erroneous mid-sentence full stop ('real. dream'), and an unedited/garbled word ('fata').",
+      "evidence": "Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies entirely on their own words with 0% verbatim copying from the source text, though the phrasing is simplistic.",
+      "evidence": "Those dream we see while sleeping is not for us."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb and plural agreement errors (e.g., 'two kind', 'Those dream... is')",
+      "Punctuation and lexical errors (e.g., rogue period in 'real. dream', garbled word 'fata')"
+    ],
+    "positive_aspects": [
+      "Completely avoids verbatim copying (0.0% overlap)",
+      "Correctly identifies the abstract distinction between passive and actionable dreams"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the central thematic dichotomy of the poem using their own words without copying source lines. However, the score is limited by multiple mechanical issues, including faulty agreement, punctuation slips, and an garbled word.",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "75951cd15996cf2b8348e8c762da773fd37bff4c1844c0a956c97456ca2a5306",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:13:12.042017+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f5407fa591951b239308d6f556c3939ec38ee20329e4e8678b264ad58088626d",
+    "input_tokens": 4276,
+    "output_tokens": 2889,
+    "thoughts_tokens": 2132,
+    "cost_usd": 0.008505,
+    "latency_ms": 54734,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 2889,
+        "thoughts_tokens": 2132,
+        "cost_usd": 0.008505,
+        "latency_ms": 54734,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

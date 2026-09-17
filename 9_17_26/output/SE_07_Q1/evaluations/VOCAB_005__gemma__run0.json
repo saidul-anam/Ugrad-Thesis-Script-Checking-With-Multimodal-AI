@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct (Ugly). Item b is incorrect as 'Confident' is not a synonym for 'Brave'. Item c is correct (Fresh is an acceptable synonym for Clean at this level). Item d is incorrect (scattered). Item e is correct (Noisy). Total: 1+0+1+0+1 = 3.",
+      "evidence": "a. Beautiful (A) - Ugly\nb. Brave(S) - Confident\nc. Clean(S) - Fresh\nd. old(S) -  scattered\ne. Quiet(A) - Noisy"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary inaccuracy (item d)",
+      "Confusion between related but distinct meanings (item b)"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonyms",
+      "Appropriate synonym choice for 'Clean'"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items a, c, and e. Item b ('Confident') is not a direct synonym for 'Brave', and item d ('scattered') is incorrect. Total score: 3/5.",
+  "_metadata": {
+    "task_id": "VOCAB_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8e69e7c5e705cb42462ab192fbc8e12a8ca0997c9a5818cc6daf11ba0c8a56c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:33:48.274224+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b23b8bf7f53fe2a6eaf4859224e74a3e24d559d84948df05d6d4f1b38c4b2e35",
+    "input_tokens": 6239,
+    "output_tokens": 1483,
+    "thoughts_tokens": 825,
+    "cost_usd": 0.001069,
+    "latency_ms": 613140,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6239,
+        "output_tokens": 1483,
+        "thoughts_tokens": 825,
+        "cost_usd": 0.001069,
+        "latency_ms": 613140,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

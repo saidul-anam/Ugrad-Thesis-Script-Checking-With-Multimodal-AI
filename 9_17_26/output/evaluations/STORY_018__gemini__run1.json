@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a logical and smooth continuation from the prompt stem, successfully developing the complete narrative arc of the captured mouse and the later rescue of the lion.",
+      "evidence": "Immediately it saw the lion. He remembered the kindness of the lion. So, the mouse cut the trap by its teeth and freed the lion from the cage."
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a clear, positive resolution accompanied by a constructive moral lesson, but entirely omits the mandatory title specified in the prompt.",
+      "evidence": "From the story we came do understa uderstan- d that we should not uderestimate little thing."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of mechanical errors, including incorrect irregular past tense formations, spelling mistakes, run-on fragments, and malformed words.",
+      "evidence": "White running It accidentally beated the lion. The lion woke up and caught the mouse. The lion became angry and threaten the mouse to it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies on a highly conventional, predictable retelling of the traditional fable with basic phrasing and limited descriptive engagement.",
+      "evidence": "Many days passa One day the lion was walking along the forest. Suddenly its step stepped in a trap"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect past tense verb forms (e.g., 'beated', 'threaten', 'though' for thought)",
+      "Spelling and word malformations (e.g., 'playi', 'passa', 'uderstan- d', 'uderestimate')",
+      "Omission of the required story title"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot progression from the opening stem",
+      "Inclusion of an appropriate moral takeaway and constructive ending"
+    ]
+  },
+  "feedback_summary": "The response maintains coherent narrative momentum from the stem and successfully delivers a constructive moral resolution. However, the score is placed at the lower end of Band 3 (4/7) due to the complete omission of a title and pervasive grammatical, tense, and spelling errors throughout the text.",
+  "_metadata": {
+    "task_id": "STORY_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "60fb43a11dab9a851f079e80c94b7c8e710fc2e4ab3e0b473aed038bcb73e2d7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:13:45.700614+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "dd0a75e928bf69f00a7c9698bceb18976f1dce8b7c6c1a6f86184009309812bc",
+    "input_tokens": 4411,
+    "output_tokens": 3253,
+    "thoughts_tokens": 2462,
+    "cost_usd": 0.009456,
+    "latency_ms": 36500,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4411,
+        "output_tokens": 3253,
+        "thoughts_tokens": 2462,
+        "cost_usd": 0.009456,
+        "latency_ms": 36500,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

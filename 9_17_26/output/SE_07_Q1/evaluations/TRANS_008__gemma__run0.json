@@ -1,0 +1,97 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Four out of five items are correctly transformed. Items a, c, d, and e successfully transition from direct to embedded word order with correct verb forms. Item b is incorrect because the verb 'do' fails to agree with the singular subject 'the postmaster' (required: 'does').",
+      "evidence": "a. Do you Know where the post office is ? ... c. Do you Know why the postmaster is so happy ? ... d. Do you Know where his children go to school ? ... e. Do you know when the postmaster comes to the post office"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement (3rd person singular)"
+    ],
+    "positive_aspects": [
+      "Consistent application of embedded clause word order (subject before verb)"
+    ]
+  },
+  "feedback_summary": "The student correctly transformed items a, c, d, and e. Item b is marked incorrect because the verb form 'do' was used instead of 'does' for the singular subject 'the postmaster'. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "TRANS_008",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0007",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "7f461f070e6f895293141f596f8504fe5d26fc035edcbbec2b92daa2661a383b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:19:54.160593+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b462d63eeec211b42b270f11e978f279f02832db96369bf7f823972b99f4a142",
+    "input_tokens": 6157,
+    "output_tokens": 2055,
+    "thoughts_tokens": 1401,
+    "cost_usd": 0.001232,
+    "latency_ms": 600234,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6157,
+        "output_tokens": 2055,
+        "thoughts_tokens": 1401,
+        "cost_usd": 0.001232,
+        "latency_ms": 600234,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

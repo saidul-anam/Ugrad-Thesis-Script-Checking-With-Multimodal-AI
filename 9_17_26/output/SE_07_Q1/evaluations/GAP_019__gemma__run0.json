@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (a) 'show', (b) 'great', (c) 'cheered', and (e) 'cheering' are all correct and align with the answer key. Item (d) 'shouting' is incorrect as it does not fit the required meaning of 'excitement' or 'interest' and is grammatically unnatural in the phrase 'created great shouting'.",
+      "evidence": "a. show b. great c. cheered d. shouting e. cheering"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vocabulary mismatch in item (d)"
+    ],
+    "positive_aspects": [
+      "Accurate comprehension of the text",
+      "Correct part-of-speech usage for most gaps"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered four out of five items. Items (a), (b), (c), and (e) are marked right. Item (d) is marked wrong as 'shouting' is contextually and grammatically inappropriate.",
+  "_metadata": {
+    "task_id": "GAP_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8d5beb6fcc3a16b7ee56dcb98f653e6ed1ca53bc5879720922e9f8857e73a686",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:23:43.385261+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9381983083b14b3b69dbb0dad22c4ecd4d1ac7c331c3045df57e0c8b3600de58",
+    "input_tokens": 6222,
+    "output_tokens": 1499,
+    "thoughts_tokens": 860,
+    "cost_usd": 0.001072,
+    "latency_ms": 500421,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6222,
+        "output_tokens": 1499,
+        "thoughts_tokens": 860,
+        "cost_usd": 0.001072,
+        "latency_ms": 500421,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

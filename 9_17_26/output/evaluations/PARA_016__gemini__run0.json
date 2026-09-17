@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate comprehensively addresses all guiding questions in the prompt, covering the definition, core features, daily life applications, educational revolution, and ethical/existential threats of AI.",
+      "evidence": "AI has also revolutionized the teaching and learning sector. AI can solve any math problem faster than a man can, students are using AI as their personal tutor, to whom they can ask- any problem and get the solution."
+    },
+    "structure_format_brevity": {
+      "rationale": "A clear topic sentence introduces the theme effectively, but the response violates the single-paragraph constraint by splitting the text into two distinct sub-paragraphs.",
+      "evidence": "AI has also revolutionized the teaching and learning sector."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple orthographic and lexical errors are present ('abont', 'varions', 'Beconse', 'amounut', 'humnan', 'do' instead of 'to'), along with repeated possessive apostrophe confusion ('it's' for 'its') and punctuation/capitalization slips.",
+      "evidence": "Beconse of it having access to a large amounut of data, it can answer almost every question, can do any and solve any math problems."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response demonstrates authentic phrasing, practical examples, and logical progression of ideas without relying on rote-learned guide templates.",
+      "evidence": "One can tell AI do make a daily routine for them and it will create a daily routine tailored just for them, It can also organize a person's daily chores, set up and iterate schedule etc."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes ('abont', 'varions', 'Beconse', 'amounut', 'humnan', 'do' used for 'to')",
+      "Apostrophe misuse in possessive pronouns ('it's' instead of 'its')",
+      "Capitalization and punctuation errors (mid-sentence comma splice and lowercase start of sentences)",
+      "Structural format violation: splitting a paragraph into multiple blocks"
+    ],
+    "positive_aspects": [
+      "Complete thematic relevance with thorough coverage of all prompt questions",
+      "Engaging, authentic expression and practical modern examples of AI use in education and daily life"
+    ]
+  },
+  "feedback_summary": "The candidate produced a thoughtful, contextually rich response answering all guiding questions with genuine expression. However, the response is divided into two separate sub-paragraphs, which violates the fundamental structural rule of paragraph writing under NCTB standards, invoking a mandatory hard cap at 5 marks. Additionally, frequent spelling slips and punctuation errors need attention.",
+  "_metadata": {
+    "task_id": "PARA_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b7e32c8c8b3431764033b278c6d68d9b8fc9c90600f8493d34f57f94b6b5b5fa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:51:03.647128+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "02083123e8a1938bdff68432b81b65f89d3b9aabfd68a56044dd567da7beeebc",
+    "input_tokens": 4521,
+    "output_tokens": 3425,
+    "thoughts_tokens": 2531,
+    "cost_usd": 0.009919,
+    "latency_ms": 40469,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4521,
+        "output_tokens": 3425,
+        "thoughts_tokens": 2531,
+        "cost_usd": 0.009919,
+        "latency_ms": 40469,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

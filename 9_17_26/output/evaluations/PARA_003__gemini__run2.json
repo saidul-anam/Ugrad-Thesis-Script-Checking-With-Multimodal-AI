@@ -1,0 +1,99 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The script directly addresses all the prompt's guiding questions, discussing definitions, applications, educational benefits, and threats such as laziness and loss of creativity.",
+      "evidence": "AI in in also helping in the field of teaching and learning. Nowadays Students are preparing their lessons through AI."
+    },
+    "structure_format_brevity": {
+      "rationale": "Maintains a single block structure without paragraph breaks, opens with a topical definition, and follows a logical sequence from utilities to drawbacks.",
+      "evidence": "Artificial Intelligence or AI is a computer based prograne which, can do any types of software command we give it."
+    },
+    "language_mechanics": {
+      "rationale": "Severely compromised by pervasive spelling errors, faulty verb forms, erroneous prepositions, and poor subject-verb agreement throughout almost every sentence.",
+      "evidence": "Creativits is hardly finded in students nowaday, Everything is working within a blink of eye. So, After some years, people will litter depended on AI."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows authentic student phrasing and personal examples rather than a memorised template, though expression is heavily constrained by limited vocabulary.",
+      "evidence": "office worker are repearing their files, Student making notes and influencen getting ideas from AI."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Extensive spelling mistakes (e.g., 'prograne', 'prvous', 'calculat', 'repearing', 'influencen', 'developped', 'generatn', 'Elecctrical', 'revalationized', 'medica', 'Engeniering', 'Impactfut', 'Creativits', 'nevalutionary')",
+      "Incorrect past participle and passive forms (e.g., 'finded', 'can be simplify', 'is alr revalationized')",
+      "Subject-verb agreement failures (e.g., 'It make', 'office worker are', 'Student making')",
+      "Faulty collocations and preposition choices (e.g., 'many too much helpful', 'litter depended on')"
+    ],
+    "positive_aspects": [
+      "Strictly maintained single-paragraph format meeting NCTB presentation guidelines",
+      "Systematic coverage of all five guiding questions provided in the question prompt",
+      "Authentic composition without reliance on pre-memorised guide filler"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the prompt by covering the definition, diverse applications, role in education, and potential risks of Artificial Intelligence in a single paragraph. However, the script suffers from very high mechanical error density, including non-standard verb forms ('finded'), agreement flaws, and widespread spelling errors, which limits the overall achievement to Band 2.",
+  "_metadata": {
+    "task_id": "PARA_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "709123dcdacc174e69a7d712bb73d438f674f594533af852b979d58f18956efa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:09:00.720832+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "206038cfb818406d4480d526d33bcf46027728e15b0c4dd0925af34f3e2af5ec",
+    "input_tokens": 4564,
+    "output_tokens": 3403,
+    "thoughts_tokens": 2486,
+    "cost_usd": 0.009877,
+    "latency_ms": 31640,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4564,
+        "output_tokens": 3403,
+        "thoughts_tokens": 2486,
+        "cost_usd": 0.009877,
+        "latency_ms": 31640,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

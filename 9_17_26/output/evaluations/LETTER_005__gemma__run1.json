@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately states the purpose of the letter and provides specific plans (vacation and university preparation) as requested by the prompt.",
+      "evidence": "Now I'll tell you what I'll do after passing exams. I'm thinking of going on a vacation after the exam ends. Then I'll start prep study for university."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components for an informal letter (Address, Date, Salutation, Body, Close, Signature) are present and correctly positioned.",
+      "evidence": "Jatrabari, Dhaka\n27/06/2026\nDear Shiba,\n... Yours ever\nKuddus."
+    },
+    "language_mechanics": {
+      "rationale": "The informal register is maintained correctly, but there are multiple grammatical and spelling errors including subject-verb agreement and typos.",
+      "evidence": "family is well... you will regred in future... NO more tody."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The sequence of thoughts is logical and the phrasing is authentic, although it relies on very basic vocabulary and a common student letter template.",
+      "evidence": "I hope you and your family is well by the grace of Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (regred, tody)",
+      "Subject-verb agreement (family is)"
+    ],
+    "positive_aspects": [
+      "Perfect structural layout",
+      "Direct adherence to the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong understanding of the informal letter format, including all necessary structural elements. The purpose is stated clearly and the prompt is fully addressed. However, the score is limited by several linguistic slips in spelling and basic grammar. Because the structure and context are flawless, the script remains in Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bffa11fad08d1449a0c8115ab40cf6d33a4fe0d253b4f251f8788b28495ce6ca",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:49:12.499666+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "9b2032e67580e5460635d64e18b387e57b05fabf60dd8fcf016bc130dde061d2",
+    "input_tokens": 4334,
+    "output_tokens": 2827,
+    "thoughts_tokens": 2086,
+    "cost_usd": 0.001282,
+    "latency_ms": 79359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4334,
+        "output_tokens": 2827,
+        "thoughts_tokens": 2086,
+        "cost_usd": 0.001282,
+        "latency_ms": 79359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

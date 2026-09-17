@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate vaguely grasps the contrast between passive night dreaming and active daytime dreaming, but relies on flawed terminology ('subconcious' vs 'unsubconcious') and struggles to articulate an abstract governing theme.",
+      "evidence": "Dreams are two kind of one is in subconcious mind and another is unsubconcious mind. Who dreams at night to close there eyes Which have. no effact. It's vanish in the next morning."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented as a single paragraph without external fluff, but internal coherence is weakened by fragmented sentences and mid-sentence full stops.",
+      "evidence": "Who dreams at night to close there eyes Which have. no effact."
+    },
+    "language_mechanics": {
+      "rationale": "Severe and pervasive grammatical errors throughout, including incorrect verb forms ('are all see', 'It's vanish', 'is helps'), faulty punctuation ('have. no effact'), homophone confusion ('there' for 'their', 'heal' for 'real'), and non-standard vocabulary ('unsubconcious').",
+      "evidence": "People are all see dream. Dreams are two kind of one is in subconcious mind and another is unsubconcious mind."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts to interpret the poem entirely in their own words rather than copying lines verbatim, achieving 0.0% overlap, though limited vocabulary restricts effective expression.",
+      "evidence": "And this dreams in their subconcious mind Which is helps to fulfill their dreams."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty verb phrase construction and subject-verb agreement (e.g., 'are all see dream', 'Which is helps')",
+      "Erratic punctuation and sentence fragmentation (e.g., 'Which have. no effact.')",
+      "Spelling, homophone, and word formation errors ('there' vs 'their', 'heal' for 'real', 'unsubconcious')"
+    ],
+    "positive_aspects": [
+      "Avoided direct verbatim copying from the source poem",
+      "Attempted to capture the contrast between purposeful action and passive daydreaming"
+    ]
+  },
+  "feedback_summary": "The candidate makes a genuine attempt to state the theme in their own words without copying lines from the poem. However, the explanation is severely hindered by pervasive grammatical breakdowns, fragmented sentence structures, and awkward terminology. While the core contrast of the poem is partially recognized, the overall response falls into Band 2 due to heavy linguistic inaccuracies.",
+  "_metadata": {
+    "task_id": "THEME_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0a089c0f40e5817b18c20c07f700d8316defa2de03f98a9d2a6f4624b0524fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:13:35.885828+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "94d53cc690ad58ff562cc73c7a837706a1d28eb5955823c429a29cd02edba4e4",
+    "input_tokens": 4316,
+    "output_tokens": 3331,
+    "thoughts_tokens": 2458,
+    "cost_usd": 0.009622,
+    "latency_ms": 24344,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4316,
+        "output_tokens": 3331,
+        "thoughts_tokens": 2458,
+        "cost_usd": 0.009622,
+        "latency_ms": 24344,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

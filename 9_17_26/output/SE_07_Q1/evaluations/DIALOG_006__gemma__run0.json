@@ -1,0 +1,102 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fully addresses the prompt by discussing the results of both speakers, mentioning specific GPAs, best subjects, and their parents' reactions.",
+      "evidence": "Sheila: I has done very well. I got GPA 5.00. What about your result Myself: Congratulations. I have also do well. I has got GPA 4.89."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response follows the correct dialogue format with clear speaker labels, alternating turns, and a proper opening and closing.",
+      "evidence": "Myself: Hello Sheila, how are you?\nSheila: I am fine what about youyou?"
+    },
+    "language_mechanics": {
+      "rationale": "There are significant errors in subject-verb agreement, auxiliary verb usage, and spelling. However, the meaning remains clear for a Class VII level.",
+      "evidence": "A diabugie between me and sheila... I has done very well... do your parents were happy"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue feels authentic and student-generated rather than a memorized guide text, featuring simple, direct interaction.",
+      "evidence": "They suggest me to improve my Mathematics. And what about your parents?"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-Verb Agreement (e.g., 'I has')",
+      "Auxiliary verb misuse (e.g., 'do your parents were')",
+      "Spelling errors (e.g., 'diabugie', 'resultt')"
+    ],
+    "positive_aspects": [
+      "Correct dialogue structural layout",
+      "Full adherence to the prompt's content requirements",
+      "Natural conversational flow"
+    ]
+  },
+  "feedback_summary": "The candidate has successfully followed the prompt and the structural requirements of a dialogue. The content is complete, covering both students' results and parents' reactions. However, the script is marred by frequent grammatical errors, particularly in verb tense and agreement. In accordance with the Band 4 tiebreaker, the lowest value of the band (8) is awarded because while the structure and content are strong, the mechanics show multiple errors.",
+  "_metadata": {
+    "task_id": "DIALOG_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "cf29da7124b04244c06dfc86f29169e14eaa42745987c3d0e687389b12ca081f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:47:48.444979+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ef4aa68deaf9ce933b2ffb1878e1ea3992114a8e4f40aafc0b9a69967fbd666c",
+    "input_tokens": 6010,
+    "output_tokens": 2063,
+    "thoughts_tokens": 1272,
+    "cost_usd": 0.00122,
+    "latency_ms": 101546,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6010,
+        "output_tokens": 2063,
+        "thoughts_tokens": 1272,
+        "cost_usd": 0.00122,
+        "latency_ms": 101546,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

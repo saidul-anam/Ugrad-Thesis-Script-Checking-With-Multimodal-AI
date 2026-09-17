@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 5 items (b, c, d, e, h). All five carry the core meaning required by the key: (b) correctly identifies the suggestion to spend time with nature; (c) correctly identifies a life without nature as 'meaningless' (equivalent to 'poor/not worth living'); (d) identifies physical care actions like dressing, which align with the key's care/clothing; (e) notes that childhood makes one 'wise' and 'disciplined', aligning with the shaping of the person; (h) correctly captures the message of spending leisure time with nature.",
+      "evidence": "b. Ans. In the poem \"Leisure\" the poet's suggestion about nature is that is we should spend our leisure time with nature. c. Ans. ...their life is meaningless less. d. Ans. The parents show care on for the child by bathing, dressing and comb this child hair... e. Ans. ...because it makes his life with decipline, beautiful and makes his wise. h. Ans. The poet's message in the poem \"Leisure\" that is we should spend our leisure time with nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Syntax errors",
+      "Spelling mistakes (e.g., 'decipline')"
+    ],
+    "positive_aspects": [
+      "Accurate comprehension of the poems",
+      "Consistent ability to convey core ideas despite linguistic slips"
+    ]
+  },
+  "feedback_summary": "Items (b), (c), (d), (e), and (h) were all marked correct as they align with the indicative content of the answer key. Total score is the sum of these 5 correct items.",
+  "_metadata": {
+    "task_id": "POEM_031",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0030",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6912cf0d0976faaa7dacb006fa40074a250543097742dba6e664e0786c9e1972",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:12:19.654113+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7d73858ac16404fc54bcb14b54838c95773c679b24d500b6b380e4dd36139574",
+    "input_tokens": 6512,
+    "output_tokens": 1745,
+    "thoughts_tokens": 969,
+    "cost_usd": 0.001175,
+    "latency_ms": 151250,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6512,
+        "output_tokens": 1745,
+        "thoughts_tokens": 969,
+        "cost_usd": 0.001175,
+        "latency_ms": 151250,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

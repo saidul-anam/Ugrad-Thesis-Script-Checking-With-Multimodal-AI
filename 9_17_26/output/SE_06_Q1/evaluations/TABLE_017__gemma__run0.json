@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct based on the answer key: (i) identifies class 6, (ii) lists the three subjects he did well in, (iii) lists the marks for those subjects, (iv) lists the three subjects he did poorly in, and (v) identifies the marks for the weak subjects.",
+      "evidence": "class 6; Bangla, English, Mathematics; 8, 9, 10 marks; ICT, Science, Religion; marks 6 in each"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are not scored separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not applicable as lifting from the text is correct.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy in data retrieval",
+      "Concise and clear responses"
+    ]
+  },
+  "feedback_summary": "The candidate answered all five items correctly. Item (i) is correct; Item (ii) is correct; Item (iii) is correct; Item (iv) is correct; Item (v) is correct. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TABLE_017",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0017",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "6a643649a4c32053030552cf93926d902e609bff8b4a2cd3a3b2ba378b51b02d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:02:32.436116+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d77571eb2ec83d94d30790afa480f3deb87179098cc9c44a237cb21b6bdaf170",
+    "input_tokens": 6421,
+    "output_tokens": 1632,
+    "thoughts_tokens": 993,
+    "cost_usd": 0.001132,
+    "latency_ms": 189062,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6421,
+        "output_tokens": 1632,
+        "thoughts_tokens": 993,
+        "cost_usd": 0.001132,
+        "latency_ms": 189062,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

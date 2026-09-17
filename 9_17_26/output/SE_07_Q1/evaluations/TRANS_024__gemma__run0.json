@@ -1,0 +1,98 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (c) and (d) are correctly transformed into embedded clauses with subject before verb. Item (a) retains direct question word order ('where is the post office'). Item (b) incorrectly retains the auxiliary 'does'. Item (e) incorrectly retains the auxiliary 'does'.",
+      "evidence": "c) Do you know why the postmaster is so happy? d) Do you know where his children go to school?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored tasks; mechanics are integrated into the correctness of the item transformation.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Retention of direct question word order (verb-subject inversion)",
+      "Failure to remove auxiliary 'do/does' in embedded clauses"
+    ],
+    "positive_aspects": [
+      "Successful transformation of two items (c and d)"
+    ]
+  },
+  "feedback_summary": "The student scored 2 out of 5. Items (c) and (d) were correct. Item (a) was incorrect as it kept the direct question order. Items (b) and (e) were incorrect because the auxiliary 'does' was not removed from the embedded clause.",
+  "_metadata": {
+    "task_id": "TRANS_024",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0023",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "a5420546dda044c63f9eb372e491a881508017910362cb893c8d1c2f41e2d576",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:44:20.286960+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "126f22f66b61b0cdc7f19d7502ae6c1c3ef8d357fecdfacc74f397c2ad6afa7e",
+    "input_tokens": 6160,
+    "output_tokens": 1771,
+    "thoughts_tokens": 1121,
+    "cost_usd": 0.001147,
+    "latency_ms": 746092,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6160,
+        "output_tokens": 1771,
+        "thoughts_tokens": 1121,
+        "cost_usd": 0.001147,
+        "latency_ms": 746092,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

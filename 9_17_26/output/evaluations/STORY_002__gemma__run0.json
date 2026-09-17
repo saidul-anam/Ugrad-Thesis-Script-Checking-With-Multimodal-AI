@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.75,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the plot from the stem, following the logical progression of the fable: the lion catches the mouse, the mouse begs for mercy, and the mouse later saves the lion. The narrative arc is complete.",
+      "evidence": "The mouse saw the lion and remember the lion who forgive captured in and him The mouse told faint voice\" Friend! Don't be afraid, I will help you."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and implies a moral of mutual help. However, the candidate completely failed to provide a proper title, which is a mandatory structural requirement of the task.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive errors in tense consistency (mixing present and past) and severe issues with dialogue punctuation and sentence fragments. Basic subject-verb agreement is often missing.",
+      "evidence": "the lion wake up. with his roaring, he told him \"How dare you a tiny creature,\""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a highly formulaic reproduction of a well-known fable. There are no creative additions, vivid descriptions, or original turns of phrase.",
+      "evidence": "and cut the net with his sharp teeth. Then the lion be free."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 0.75,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (e.g., 'wake up' instead of 'woke up')",
+      "Missing punctuation/capitalization in dialogue",
+      "Syntactic fragmentation"
+    ],
+    "positive_aspects": [
+      "Complete plot progression",
+      "Consistent narrative flow"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the plot and successfully concludes the story with a positive resolution. However, the writing is severely hampered by a lack of a title and pervasive grammatical failures, particularly regarding verb tenses and dialogue structure. The content is highly formulaic with little to no creative expression.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4382898e254607f85048422cc00c0d5980b17c504be8dff1f0b06f271add0c5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:35:23.551289+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8526661fce53c341ea4d3b168744c87205ec205ad9eafd86f8028285bf2c3a58",
+    "input_tokens": 4554,
+    "output_tokens": 2199,
+    "thoughts_tokens": 1425,
+    "cost_usd": 0.001115,
+    "latency_ms": 62125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4554,
+        "output_tokens": 2199,
+        "thoughts_tokens": 1425,
+        "cost_usd": 0.001115,
+        "latency_ms": 62125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

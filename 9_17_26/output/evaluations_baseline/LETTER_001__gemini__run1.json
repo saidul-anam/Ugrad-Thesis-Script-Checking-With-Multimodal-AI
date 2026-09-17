@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by discussing clear post-HSC plans involving freelancing and developing digital skills.",
+      "evidence": "After my HSC Exam I will get a lot of free time which I am thinking to use for freelancing."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential informal letter layout components are fully present and accurately positioned: sender's address, date, salutation, body, complimentary close, signature, and envelope.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple spelling mistakes, faulty punctuation, and incorrect apostrophe usages occur throughout the letter, preventing full marks in mechanics.",
+      "evidence": "At the beggining of the letter take my salam and the best wishes from the core of my heart"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response features genuine and contemporary personal thoughts regarding freelancing, AI, and graphic design rather than reciting a rigid memorized template.",
+      "evidence": "There are so many works which can be done in Freelancing. such as video editing.  graphic design, AI work and many more other works :"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'beggining', 'self-relient')",
+      "Apostrophe misuse in contractions and possessives (e.g., 'I\\'am', 'Your\\'s')",
+      "Punctuation and run-on/fragmented sentences (e.g., 'Freelancing. such as', 'works :')"
+    ],
+    "positive_aspects": [
+      "Complete and accurate layout structure with all 6 components and envelope included",
+      "Engaging and modern subject-matter relevant to the prompt"
+    ]
+  },
+  "feedback_summary": "The letter follows all formal structural conventions required for an informal letter and addresses the prompt directly with relevant, contemporary ideas. However, multiple mechanical issues—such as spelling errors, incorrect apostrophe placements, and sentence fragments—limit the mechanics score, placing the script at the baseline of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "11149c364f116c540ed2fa80e5e2d31f4b081f57668961df2d4067775140f015",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:10:48.665048+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "b7438626358c663db2b4dd917fdc4ca8f0c647b5d8fa4cb886d6bf4ef084295b",
+    "input_tokens": 4403,
+    "output_tokens": 2723,
+    "thoughts_tokens": 1919,
+    "cost_usd": 0.008128,
+    "latency_ms": 17312,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4403,
+        "output_tokens": 2723,
+        "thoughts_tokens": 1919,
+        "cost_usd": 0.008128,
+        "latency_ms": 17312,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

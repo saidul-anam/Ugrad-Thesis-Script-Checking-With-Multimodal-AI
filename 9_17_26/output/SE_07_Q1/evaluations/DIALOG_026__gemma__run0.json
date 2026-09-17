@@ -1,0 +1,98 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student addresses the prompt by discussing the annual exam results of both characters. However, there is a logical contradiction: the prompt states the student's own performance was 'very nice', but the candidate writes 'But my Тgesult not good'.",
+      "evidence": "But my Тgesult not good."
+    },
+    "structure_format_brevity": {
+      "rationale": "The dialogue format is executed perfectly with clear speaker labels, alternating turns, a proper opening greeting, and a closing farewell.",
+      "evidence": "Tamanna: Hello Sheila!. How агse you?\nSheila: Hi! I am Sine and you?"
+    },
+    "language_mechanics": {
+      "rationale": "There is extreme error density. Systematic spelling failures (e.g., 'Sine' for 'fine', 'Тgesult' for 'the result', 'агse' for 'are', 'vегsy' for 'very') and broken syntax make the script difficult to read, although the general meaning is discernable.",
+      "evidence": "Btaw Sheila whose агse youгs examination Тgesult?"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The turns respond to one another, showing an original attempt to create a conversation rather than copying a template, though the vocabulary is very limited and repetitive.",
+      "evidence": "Sheila: No! Youгs Тgesult is good. But my suggestion please to you Тgead the book."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Systemic spelling errors (phonetic/character substitution)",
+      "Incorrect sentence structure in questions",
+      "Contradiction of prompt constraints"
+    ],
+    "positive_aspects": [
+      "Excellent adherence to dialogue structural layout",
+      "Coherent conversational flow despite linguistic errors"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong understanding of the dialogue format, including proper labels and turn-taking. However, the script is marred by severe, systemic spelling and grammatical errors throughout. While the conversation is logically sequenced, the candidate contradicts the prompt's premise by stating their results were not good. The score is carried primarily by the structural integrity of the response.",
+  "_metadata": {
+    "task_id": "DIALOG_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6b2dc44eaf58def90f252e0cdae2eea996875c176bda18ac1df114babb3a6227",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:03:26.155435+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d800080876cbd18f85aaf44e6eb096fb1d8f46568a8eb2d8017e3c124e106208",
+    "input_tokens": 6106,
+    "output_tokens": 3190,
+    "thoughts_tokens": 2387,
+    "cost_usd": 0.001568,
+    "latency_ms": 391233,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6106,
+        "output_tokens": 3190,
+        "thoughts_tokens": 2387,
+        "cost_usd": 0.001568,
+        "latency_ms": 391233,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

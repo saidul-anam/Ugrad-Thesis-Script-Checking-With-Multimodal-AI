@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The story develops logically and sequentially from the stem, successfully detailing the confrontation, the plea, the release, and the subsequent rescue.",
+      "evidence": "Then the mouse came cut the net and helped the lion to escape."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate brings the plot to a positive conclusion, but fails to provide a mandatory title and omits an explicit concluding moral lesson.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits multiple mechanical errors including tense inconsistency (present/past mixing), spelling errors, and faulty dialogue punctuation.",
+      "evidence": "The lion laugh and said, \"How could a small mouse will save him\"."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies on a basic, familiar retelling with simple phrasing and conversational expressions rather than descriptive narrative flair.",
+      "evidence": "Anyways the lion didn't eat the mouse."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inconsistent past-tense verb usage (e.g., 'crashes', 'laugh', 'fall')",
+      "Spelling errors (e.g., 'neutritious', 'hanters', 'faild')",
+      "Missing story title and incorrect dialogue punctuation"
+    ],
+    "positive_aspects": [
+      "Coherent and logical continuation of the provided stem",
+      "Clear sequential plot progression leading to a positive resolution"
+    ]
+  },
+  "feedback_summary": "The candidate completes the story with a coherent and logical narrative arc, following all major plot points of the fable to a positive ending. However, the score is limited to the lower end of Band 3 due to the omission of a title, lack of an explicit moral, frequent tense shifting, and spelling/punctuation slips.",
+  "_metadata": {
+    "task_id": "STORY_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a1ad5590a399ddcb097e6fd95cbc3ab4b4e80b31fab6f53a9e7b2750a24cc40e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:15:36.857355+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "154ef89151fbccf2a9e107fcc939829bb9cefd135417d5e6da14d4f251944f24",
+    "input_tokens": 4365,
+    "output_tokens": 3035,
+    "thoughts_tokens": 2323,
+    "cost_usd": 0.008897,
+    "latency_ms": 19515,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4365,
+        "output_tokens": 3035,
+        "thoughts_tokens": 2323,
+        "cost_usd": 0.008897,
+        "latency_ms": 19515,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

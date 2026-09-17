@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative seamlessly picks up from the prompt's stem and maintains a logical, sequential plot covering the lion's capture and the mouse's rescue.",
+      "evidence": "While running he suddenly slip into lion's nose. The lion woke up and became very angry and about to kill that mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear resolution and positive conclusion, but fails to provide a title as explicitly instructed by the prompt.",
+      "evidence": "From that day, that lion and mouse became best friends."
+    },
+    "language_mechanics": {
+      "rationale": "Contains multiple tense consistency errors (slip, will help, can help), missing auxiliary verbs (about to kill), and incorrect preposition usage (by his sharp teeth).",
+      "evidence": "He also said that he will help the lion in future if he let him go."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot follows a highly predictable, pre-memorised retelling of Aesop's fable with standard vocabulary and no distinctive creative elements.",
+      "evidence": "One day, the lion was walking into the forest and fell in a hunter's net trap."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Past tense inconsistency (e.g., 'slip', 'will help')",
+      "Omission of required story title",
+      "Preposition errors ('fell in a hunter's net trap', 'by his sharp teeth')"
+    ],
+    "positive_aspects": [
+      "Smooth sequential continuation from the prompt stem",
+      "Clear, positive moral ending and friendship resolution"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete and coherent continuation of the story with a clear sequential plot and positive resolution. However, the mandatory story title was omitted, and the writing contains recurring past-tense and grammatical slips. Due to standard syntax and memorised phrasing, the script is placed at the lower end of Band 3 (4/7).",
+  "_metadata": {
+    "task_id": "STORY_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e68e531becbf9d0b5842ab905e5a4c0e3772b975678e702f3aa59ad1e0eee06",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:32:56.469426+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "3a852e6050209d8916da1efabbe490e2f1b4349f5ff187a9a507b0f6d4ffd7b8",
+    "input_tokens": 4474,
+    "output_tokens": 3859,
+    "thoughts_tokens": 3106,
+    "cost_usd": 0.01099,
+    "latency_ms": 27000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4474,
+        "output_tokens": 3859,
+        "thoughts_tokens": 3106,
+        "cost_usd": 0.01099,
+        "latency_ms": 27000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

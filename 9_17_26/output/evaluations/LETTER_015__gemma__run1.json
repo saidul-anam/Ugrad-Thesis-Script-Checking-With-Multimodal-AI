@@ -1,0 +1,103 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly identifies the purpose of the letter and describes a specific future plan (medical college), directly fulfilling the prompt.",
+      "evidence": "In you letter you wanted to know about future plan after HSC exam. After passin HSC exam I prepared me to get gadmited in a renown medical collage."
+    },
+    "structure_format_brevity": {
+      "rationale": "All necessary components (Date, Salutation, Body, Closing, Signature) are present. However, the 'From' and 'To' blocks are placed at the bottom of the script, which is a structural positioning error.",
+      "evidence": "From Shovo Azimpur, BDR 2no gate To Arif Maniktgong, shimuliya-7"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of basic spelling and tense errors throughout the text, though the overall meaning remains understandable.",
+      "evidence": "I recive your letter few days ago... gratest doctor... work heard on my dreem."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter relies heavily on common, memorized templates for the opening and closing sections.",
+      "evidence": "I hope you are well. I am also well... Convey my salam to your parents"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (collage, dreem, gratest, heard, gadmited)",
+      "Tense consistency (recive instead of received)",
+      "Non-standard layout (From/To blocks at the end)"
+    ],
+    "positive_aspects": [
+      "Directly addresses the prompt",
+      "Clear goal stated",
+      "Complete set of structural components"
+    ]
+  },
+  "feedback_summary": "The candidate successfully addresses the prompt by stating a clear future goal of attending medical college. While all structural elements of a letter are present, the positioning of the sender and recipient addresses at the end is unconventional. The writing is significantly marred by frequent spelling and grammatical errors, and the tone is overly dependent on memorized formulas. The script is readable and fits the criteria for Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d84cf414403c083c931160a53407ca39775af6d70f13f29f0356ee97af139af3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:47:36.114852+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2fa8727551a2e162d81454a2ea609e78b8b1e17590c2d604023862f991c52406",
+    "input_tokens": 4350,
+    "output_tokens": 2929,
+    "thoughts_tokens": 2126,
+    "cost_usd": 0.001314,
+    "latency_ms": 82280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4350,
+        "output_tokens": 2929,
+        "thoughts_tokens": 2126,
+        "cost_usd": 0.001314,
+        "latency_ms": 82280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

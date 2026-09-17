@@ -1,0 +1,99 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct. Item (b) uses 'top of' correctly in context, with 'gets' being a minor verb slip acceptable for Class VI. Item (c) is unintelligible ('through a honest one the way') and earns 0. Item (d) uses 'along' correctly to indicate a location. Item (e) uses 'across' correctly to describe movement, with 'jump' being a minor agreement slip.",
+      "evidence": "a. bottom of the niver; b. top of her class; d. along Bin danger; e. across the tree"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored questions have a fixed score of 0 for this criterion.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored questions have a fixed score of 0 for this criterion.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored questions have a fixed score of 0 for this criterion.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Unintelligible phrasing in item (c)",
+      "Minor subject-verb agreement slips"
+    ],
+    "positive_aspects": [
+      "Correct usage of 4 out of 5 target prepositions",
+      "Able to construct simple, intelligible sentences"
+    ]
+  },
+  "feedback_summary": "The student successfully used four of the five prepositions. Items (a), (b), (d), and (e) are marked correct; minor spelling ('niver') and grammar slips ('jump' vs 'jumps') were ignored per the marking guidelines. Item (c) is marked wrong as the sentence is unintelligible.",
+  "_metadata": {
+    "task_id": "PREP_007",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0007",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f212efab20054efb174d9c90b825c944fc54f23934a9518e53d3f88c36f3cbea",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:28:04.017459+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c6b9510b55b8f424c03579d42d7b3657c7862282aedd93035310601bc8a68858",
+    "input_tokens": 6281,
+    "output_tokens": 1815,
+    "thoughts_tokens": 1106,
+    "cost_usd": 0.001173,
+    "latency_ms": 334421,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6281,
+        "output_tokens": 1815,
+        "thoughts_tokens": 1106,
+        "cost_usd": 0.001173,
+        "latency_ms": 334421,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

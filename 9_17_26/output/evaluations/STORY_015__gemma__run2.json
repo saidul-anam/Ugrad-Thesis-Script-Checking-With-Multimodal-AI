@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a smooth continuation of the stem and follows the sequential plot of the classic fable accurately from the mouse's plea to the eventual rescue of the lion.",
+      "evidence": "Then the mouse cut the net to save the life of the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a satisfying positive conclusion. However, the candidate completely failed to provide a title, which is a mandatory requirement for this task.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe breakdown in language mechanics. Tense consistency is non-existent (mixing present and past), and there are numerous spelling/lexical errors that hinder fluency.",
+      "evidence": "the lion wake up and contrineously roar... I were surely finish you... the lion lought at to hapired his."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a predictable retelling of a memorized fable with no creative turns or vivid descriptive details; phrasing is basic and often corrupted.",
+      "evidence": "The mous go there and see saw the lion was merginalized by a hunter net."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present 'come/wake' with past 'replied/forgave')",
+      "Severe spelling/lexical errors ('contrineously', 'merginalized', 'lought')",
+      "Incorrect sentence construction ('I were surely finish you')"
+    ],
+    "positive_aspects": [
+      "Strong adherence to plot sequence",
+      "Clear resolution of the conflict"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the plot of the story with a logical sequence and a positive ending. However, the score is significantly lowered by the total absence of a title and a very high density of grammatical and spelling errors. Tense control is poor throughout the script. Because the plot development is complete and logical, it remains in Band 3, but the lack of linguistic precision prevents a higher score.",
+  "_metadata": {
+    "task_id": "STORY_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8e6d4f291e4d35dd47e1fc312467c7a86136c98673207d1b8fa6ccef80b94998",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:45:58.391071+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4ffb3c150ee80cdb1b67c52a18d8ea7f7688e8f6171b74f812f6d27c3e21784f",
+    "input_tokens": 4442,
+    "output_tokens": 2425,
+    "thoughts_tokens": 1662,
+    "cost_usd": 0.001172,
+    "latency_ms": 68797,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4442,
+        "output_tokens": 2425,
+        "thoughts_tokens": 1662,
+        "cost_usd": 0.001172,
+        "latency_ms": 68797,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

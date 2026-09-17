@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a seamless continuation of the stem with clear sequential plot development that logically resolves the conflict.",
+      "evidence": "he followed the sound and saw that the lion was trappen in a net which was put there by the hunters."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive conclusion and includes a moral lesson, but it fails to provide a required title.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors and basic grammatical mistakes, although the past tense is mostly maintained.",
+      "evidence": "forrest, trappen, greatful, worek, the mouse have saved"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, memorized retelling of the 'Lion and the Mouse' fable with no creative turns or vivid descriptions.",
+      "evidence": "The lion caught the mouse. The mouse got scared and told the lion to eat to let him free"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies (e.g., 'forrest', 'trappen', 'worek')",
+      "Subject-verb agreement ('the mouse have saved')",
+      "Missing structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Logical and complete plot progression",
+      "Clear moral conclusion"
+    ]
+  },
+  "feedback_summary": "The candidate successfully continues the prompt and brings the story to a satisfying close with a clear moral. However, the mark is limited by the omission of a title and a high density of spelling and grammatical errors. Furthermore, the story is a generic retelling of a common fable, lacking the original descriptive detail required for a higher band.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "fd076f122deeacd3ba814d3bfacc9eed8b173f736c2c40684d79a70051ff9df1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:10:52.187689+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "3862d9dfe04b7137c57996fef7fcc2edbc30612244ef73a002d832ce0dd196ca",
+    "input_tokens": 4405,
+    "output_tokens": 2855,
+    "thoughts_tokens": 2134,
+    "cost_usd": 0.001297,
+    "latency_ms": 81045,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4405,
+        "output_tokens": 2855,
+        "thoughts_tokens": 2134,
+        "cost_usd": 0.001297,
+        "latency_ms": 81045,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

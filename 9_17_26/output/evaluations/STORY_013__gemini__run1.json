@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the narrative from the given prompt, maintaining a logical and sequential plot development based on the familiar fable.",
+      "evidence": "While running, the mouse get into the sleeping lion nose. As a result, the lion  woke up and chased the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive resolution with mutual gratitude, but the candidate completely omits the required title and does not explicitly state a moral lesson.",
+      "evidence": "The lion was very greatful to the mouse. The lion thanked the mouse to help him."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent grammatical errors, inappropriate verb forms, inconsistent past tense usage, spelling mistakes, and punctuation anomalies significantly hinder fluency.",
+      "evidence": "The lion was started to laughing because the mouse was so small how he could help, the lion."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows a generic and predictable retelling of a classic fable without distinctive descriptive elements or creative stylistic turns.",
+      "evidence": "He came and eat the met and free the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Faulty verb forms and auxiliary usage (e.g., 'was started to laughing', 'mouse get into')",
+      "Spelling errors (e.g., 'happity', 'thim', 'jangle', 'greatful', 'met')",
+      "Punctuation and syntax issues (e.g., 'In that moment ; a the mouse', missing possessive in 'lion nose')"
+    ],
+    "positive_aspects": [
+      "Logical sequence of events following the prompt stem",
+      "Achieves a clear and constructive positive ending"
+    ]
+  },
+  "feedback_summary": "The candidate produces a complete and sequential story following the provided prompt with a clear positive resolution. However, marks are deducted for omitting the story title and displaying pervasive grammatical, spelling, and tense errors throughout the response.",
+  "_metadata": {
+    "task_id": "STORY_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ab428952ba0c2cc4fae2fc8cc780d4b8ba2bea283c6112f5368416d8b026fa9e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:25:49.690809+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "434c378d27b842218b69e6a9067fdccafdbba4877a02a1578f0c68520c33b5b4",
+    "input_tokens": 4456,
+    "output_tokens": 3309,
+    "thoughts_tokens": 2559,
+    "cost_usd": 0.009609,
+    "latency_ms": 21640,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4456,
+        "output_tokens": 3309,
+        "thoughts_tokens": 2559,
+        "cost_usd": 0.009609,
+        "latency_ms": 21640,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

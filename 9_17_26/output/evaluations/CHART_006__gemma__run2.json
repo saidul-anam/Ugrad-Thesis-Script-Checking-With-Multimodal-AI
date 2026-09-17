@@ -1,0 +1,99 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies all data points from the chart and correctly identifies the highest (coal) and lowest (nuclear) sources.",
+      "evidence": "the percentage of coal was 46% Lastly, natural gas was 24%... the lowest percentage was nuclear. That is 2%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response contains an introductory sentence and a concluding summary, but the body is a fragmented, repetitive list rather than a grouped analytical description.",
+      "evidence": "The pie chart describes about the sources of the USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Severe linguistic failures are present, including poor syntax, incorrect word usage, and significant spelling/typographical errors that hinder readability.",
+      "evidence": "So, in the grap chart we see that in eel electricity USA wed"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies on extremely basic comparative terms ('highest', 'lowest') and lacks the precise analytical vocabulary required for Band 3 or 4.",
+      "evidence": "the most useful thing was coal"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Syntax/Sentence construction",
+      "Lexical choice (word usage)",
+      "Spelling/Typos"
+    ],
+    "positive_aspects": [
+      "Accurate data retrieval",
+      "Correct identification of peaks and troughs"
+    ]
+  },
+  "feedback_summary": "The candidate successfully extracted all data points and identified the primary trends (highest/lowest). However, the writing is severely hampered by poor grammatical control and a lack of analytical structure. The response reads as a list of facts rather than a cohesive analysis, and the linguistic errors in the final paragraph are significant. No structural cap was applied as the candidate stayed within the provided data.",
+  "_metadata": {
+    "task_id": "CHART_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "7e1e796ea9dcfbeaf32d4129bbd367e910739cb983ac26e54da1c5917d4ab5ac",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:05:54.958692+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cd4030ad8528248912e2619b8307fd87f6842e52d785eecd8b181d7a946c560c",
+    "input_tokens": 4393,
+    "output_tokens": 2617,
+    "thoughts_tokens": 1873,
+    "cost_usd": 0.001224,
+    "latency_ms": 74266,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4393,
+        "output_tokens": 2617,
+        "thoughts_tokens": 1873,
+        "cost_usd": 0.001224,
+        "latency_ms": 74266,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

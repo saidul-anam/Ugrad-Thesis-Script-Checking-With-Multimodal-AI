@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides a detailed, specific set of future plans (village visit, Japan, AI studies).",
+      "evidence": "After HSC exam, I want to spend a month in my village. Then I want to prepare for a foreign student visa."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six essential components of an informal letter (address, date, salutation, body, close, signature) are clearly present.",
+      "evidence": "27 June, 2026\nDonia, Dhaka-1236\n\nDear Habib,"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of errors including spelling (Japanesse, bussiness), missing verbs (want to about), and homophone confusion (settle their).",
+      "evidence": "Japanesse national universitys... settle their... bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content is authentic and avoids common memorized templates, though the sentence structures are repetitive and basic.",
+      "evidence": "My main target is to apply for Japanesse national universitys. I also want to study in AI and software technology"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (Japanesse, bussiness, universitys)",
+      "Syntax/Grammar omissions (want to about, want participate)",
+      "Homophone error (their vs there)"
+    ],
+    "positive_aspects": [
+      "Complete adherence to structural layout",
+      "Concrete and original career/educational goals"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the letter's structural requirements and provides a personalized, relevant response to the prompt. While the narrative flow is logical and the content is original, the script is hindered by frequent mechanical errors in spelling and grammar. In accordance with the Band 4 tiebreaker, the lowest value of the band is awarded because the flawless structure is offset by multiple linguistic slips.",
+  "_metadata": {
+    "task_id": "LETTER_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "50e76c73e1093f8f7102087f4038383a4d402bcbcb70edb483f1548885973793",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:36:49.794209+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "de7bcf5a9464dd20b8b4f2876fb65d85313395e6ab32e29afbe8026ade2dd82f",
+    "input_tokens": 4402,
+    "output_tokens": 3010,
+    "thoughts_tokens": 2239,
+    "cost_usd": 0.001343,
+    "latency_ms": 84452,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4402,
+        "output_tokens": 3010,
+        "thoughts_tokens": 2239,
+        "cost_usd": 0.001343,
+        "latency_ms": 84452,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

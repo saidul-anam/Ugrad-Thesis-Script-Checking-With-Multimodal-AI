@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly identifies the purpose of the letter immediately and provides a specific future plan (University admission and Engineering).",
+      "evidence": "In your last letter, you wanted to know about my future plan after passing H.S.C. Now, I describe about it."
+    },
+    "structure_format_brevity": {
+      "rationale": "All mandatory layout components for an informal letter are present, including address, date, salutation, body, complimentary close, and signature.",
+      "evidence": "27 June 2026\nFaridabad,\nDhaka-1204\nDear Jarif,"
+    },
+    "language_mechanics": {
+      "rationale": "The text is generally readable, but contains several spelling errors and grammatical slips (e.g., 'eingineer', 'momenterm', and 'familys').",
+      "evidence": "I want to be a eingineer... most important momenterm to fullfill my dream... take care yourself and your familys."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The central content is original and specific, but the framing (opening and closing) relies on common, memorized templates.",
+      "evidence": "Hope you are well by the grace of Almighty... No more today."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'eingineer', 'momenterm')",
+      "Formulaic greeting/closing templates"
+    ],
+    "positive_aspects": [
+      "Perfect structural adherence",
+      "Direct and relevant response to the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates excellent structural awareness, including all necessary parts of an informal letter. The response is on-topic and clear. However, the final score is moderated due to basic spelling mistakes and a reliance on cliché phrases for the introduction and conclusion.",
+  "_metadata": {
+    "task_id": "LETTER_002",
+    "script_id": "SE_11_Q1_0002",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e22f1b47b897410335b68604983298b0572f75125711f1f153025725be979e47",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:36:51.942880+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b1697cea7c6d4db750989274ad3c8e0e5edfeec5026ffa08d274878702907704",
+    "input_tokens": 4407,
+    "output_tokens": 3212,
+    "thoughts_tokens": 2476,
+    "cost_usd": 0.001404,
+    "latency_ms": 88390,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4407,
+        "output_tokens": 3212,
+        "thoughts_tokens": 2476,
+        "cost_usd": 0.001404,
+        "latency_ms": 88390,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

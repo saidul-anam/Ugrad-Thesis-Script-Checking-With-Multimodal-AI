@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (c) is correct. Item (e) 'cheer' is acceptable as it fits the sense of the sentence. Item (a) 'perform' is a verb where a noun is required. Item (b) 'all the best' is an idiomatic phrase that does not fit the adjective slot for 'performances'. Item (d) 'performence' (performance) is the wrong word choice; the show creates excitement among the people, not a performance among the people.",
+      "evidence": "(c) cheered (e) cheer."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect part of speech (verb used instead of noun)",
+      "Semantic word choice error"
+    ],
+    "positive_aspects": [
+      "Accurately identified the word 'cheered' from the text"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (c) and (e). Items (a), (b), and (d) were marked incorrect due to grammatical misalignment (wrong part of speech) and incorrect word choice relative to the passage's context.",
+  "_metadata": {
+    "task_id": "GAP_031",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0030",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2f6f2ab61258612bcda2bf14562a7236237aa31b66de442eac670cba1d8ae8f9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:12:46.273443+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dfcb1c8f586a10a86a7c3cf8a7f3e74eecedb8e3c73fcb91de3dc77c40ec4497",
+    "input_tokens": 6232,
+    "output_tokens": 1919,
+    "thoughts_tokens": 1262,
+    "cost_usd": 0.001199,
+    "latency_ms": 267842,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6232,
+        "output_tokens": 1919,
+        "thoughts_tokens": 1262,
+        "cost_usd": 0.001199,
+        "latency_ms": 267842,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

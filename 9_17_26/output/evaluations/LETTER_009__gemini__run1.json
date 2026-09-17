@@ -1,0 +1,96 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly and clearly addresses the prompt by stating immediate purpose and describing post-HSC medical and university admission preparation.",
+      "evidence": "In your letter you wanted to know about my future plan after HSC. In this letter, I'm going to discribe my plan."
+    },
+    "structure_format_brevity": {
+      "rationale": "Includes all essential layout components of an informal letter (Date, Address, Salutation, Body, Complimentary Close, Signature, and Envelope) in correct sequence.",
+      "evidence": "27 June, 2026\n7/A Dhanmondi 32, Dhaka\nDear Luffy,"
+    },
+    "language_mechanics": {
+      "rationale": "Shows multiple lexical and punctuation slips ('discribe', 'addmission', 'litte', 'students dream', 'Your ever') which prevents awarding the mechanics mark.",
+      "evidence": "As you know I wanted to become a doctor from the very litte. So I will prepare myself for medical exam."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Presents an authentic and pragmatic perspective on having a backup admission plan rather than relying on a rigid memorized template.",
+      "evidence": "Since many students dream is to become a doctor, they all can't become doctor. Losing hope of life after that is a foolish mindset."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling slips ('discribe', 'addmission', 'litte')",
+      "Layout/grammar inaccuracies ('Your ever' instead of 'Yours ever', omitted possessive apostrophe in 'students dream')"
+    ],
+    "positive_aspects": [
+      "Complete 6-part informal letter layout including sender/receiver envelope address boxes",
+      "Authentic and mature personal reflection on future academic plans"
+    ]
+  },
+  "feedback_summary": "The candidate has produced a fully structured informal letter with clear purpose and authentic content concerning post-HSC admission plans. Minor spelling and grammatical slips keep the script at the lower end of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_009",
+    "script_id": "SE_11_Q1_0009",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2c562c70a50a9e58d5bdd933832902a6bab9b1dbc5fbe46307343d7611456e77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:30:17.940816+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "52c1ca65a4dbad80b4582373382660af0d1f15258cbaaefdbfa9cc44968aa832",
+    "input_tokens": 4429,
+    "output_tokens": 3283,
+    "thoughts_tokens": 2521,
+    "cost_usd": 0.009536,
+    "latency_ms": 21202,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4429,
+        "output_tokens": 3283,
+        "thoughts_tokens": 2521,
+        "cost_usd": 0.009536,
+        "latency_ms": 21202,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items a, b, d, f, and g are correct. Item c is marked 0 because two options were provided with no indication of which was intended. Item e is marked 0 because two options were provided with no indication of which was intended.",
+      "evidence": "a) (iv) actuality\nb) (iv) pride and joy\nd) i) defended (ii) courageous\nf) iv) unitedly\ng) iv) all of i, ii & iii"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Providing multiple options for a single item without indicating the choice"
+    ],
+    "positive_aspects": [
+      "High accuracy on most items",
+      "Clear use of Roman numerals and text"
+    ]
+  },
+  "feedback_summary": "Items a, b, d, f, and g are correct. Item c is marked wrong because two options were given with no indication of the intended answer. Item e is marked wrong because two options were given with no indication of the intended answer.",
+  "_metadata": {
+    "task_id": "MCQ_006",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0006",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3a01a6ba0dec187315bfe96e6bcb22af9c107027812fcde1ab600f9e3c6378f2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:27:07.891039+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "76e54264934572433c4eea7a7bedb8371d68fa0f2ac6d96fcf0cd270c67ce201",
+    "input_tokens": 6694,
+    "output_tokens": 2010,
+    "thoughts_tokens": 1379,
+    "cost_usd": 0.001272,
+    "latency_ms": 909515,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6694,
+        "output_tokens": 2010,
+        "thoughts_tokens": 1379,
+        "cost_usd": 0.001272,
+        "latency_ms": 909515,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

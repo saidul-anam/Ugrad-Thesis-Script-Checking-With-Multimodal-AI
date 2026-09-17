@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt directly, clearly detailing a future plan to educate and support villagers regarding hygiene, disease prevention, and basic literacy after the HSC exam.",
+      "evidence": "so, I make decission after passing HSC exam I go to village people cuith my some friends and tell them how to Fight cuith dises and how to prevent them"
+    },
+    "structure_format_brevity": {
+      "rationale": "The letter includes writer address, salutation, body, complimentary close, signature, and envelope box, but omits the date. Salutation also uses a period instead of a comma.",
+      "evidence": "1231 Joynag Road, Dhaka\n\nDear Toufa."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent grammatical errors, tense inconsistencies (present tense used for future intention), spelling mistakes ('decission', 'dieses', 'cuith', 'knoculedge', 'Noae'), and punctuation slips throughout.",
+      "evidence": "They also zeno knowledge about hygiene and balance food. They lead unhealthy life most of them suffer many dieses."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows authentic, thoughtful development of an altruistic post-exam plan rather than a purely rote, cliché formula.",
+      "evidence": "tell them how to Fight cuith dises and how to prevent them I also teach them basic knoculedge of education, how to keep healthy and fit."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'decission', 'dieses'/'dises', 'cuith', 'knoculedge', 'Noae')",
+      "Tense inconsistency and missing modal/future auxiliary verbs (e.g., 'I go', 'I make decission', 'I also teach')",
+      "Missing structural layout component (Date omitted below address)",
+      "Punctuation and capitalization faults (period after salutation, lower-case proper nouns like 'shariatpur')"
+    ],
+    "positive_aspects": [
+      "Immediate fulfillment of the prompt topic",
+      "Meaningful and noble personal narrative for post-HSC plans",
+      "Presence of core letter components including sender/receiver envelope layout"
+    ]
+  },
+  "feedback_summary": "The script clearly conveys the candidate's post-HSC plans to help villagers with health and literacy. While the communicative intent is fulfilled, the omission of the date and significant spelling and grammatical inaccuracies limit the score to Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "14635fae7008c34e7a50cc90cb6470d59364bdabd5e499a14b46c9b453199387",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:05:15.037924+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ceeaa5a6f48a252d3cf588d60cffe7bee826b10e2e18848a6df60b2929d11bc9",
+    "input_tokens": 4377,
+    "output_tokens": 2844,
+    "thoughts_tokens": 1978,
+    "cost_usd": 0.008423,
+    "latency_ms": 19515,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4377,
+        "output_tokens": 2844,
+        "thoughts_tokens": 1978,
+        "cost_usd": 0.008423,
+        "latency_ms": 19515,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

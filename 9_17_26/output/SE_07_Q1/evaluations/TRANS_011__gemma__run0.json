@@ -1,0 +1,98 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item-scored based on answer key. (a) Incorrect: omitted 'where' and 'is'. (b) Incorrect: omitted 'what'. (c) Incorrect: omitted 'why' and 'is'. (d) Incorrect: omitted 'where'. (e) Incorrect: omitted 'when'. Total score: 0+0+0+0+0=0.",
+      "evidence": "a. Do you know the post office? b. Do you know the postmaster do? c. Do you know the post master so happy d. Do you know his children go to scho e. Do you know the postmaster come to I the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of interrogative pronouns/adverbs (where, what, why, when)",
+      "Failure to form correct embedded clauses"
+    ],
+    "positive_aspects": [
+      "Attempted all five items"
+    ]
+  },
+  "feedback_summary": "The candidate failed to correctly transform any of the sentences. In every instance, the necessary question word (where, what, why, when) was omitted, and several verbs were either missing or incorrectly conjugated, meaning none of the items met the required word order for an embedded clause. Items a, b, c, d, and e all scored 0.",
+  "_metadata": {
+    "task_id": "TRANS_011",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0010",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "899b9ee4c113a422cd5277a845401bd5ed1422cf528eb0c7858602aea01d86fb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:47:48.640186+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "effc26ffa669b9720d114cbf37c9b32c8758c995fb242393f59755da2452fbc9",
+    "input_tokens": 6149,
+    "output_tokens": 1816,
+    "thoughts_tokens": 1120,
+    "cost_usd": 0.00116,
+    "latency_ms": 76594,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6149,
+        "output_tokens": 1816,
+        "thoughts_tokens": 1120,
+        "cost_usd": 0.00116,
+        "latency_ms": 76594,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

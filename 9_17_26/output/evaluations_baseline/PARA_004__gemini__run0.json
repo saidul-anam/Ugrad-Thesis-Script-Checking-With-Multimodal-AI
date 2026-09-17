@@ -1,0 +1,96 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses all prompt questions, covering the definition of AI, real-world applications, educational benefits, and potential threats.",
+      "evidence": "AI helps student a lot of. We can use it specially for creating Note. AI save us many times and also help us with working our study question Practicing."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response violates the fundamental rule of paragraph writing by splitting the text into three separate sub-paragraphs instead of maintaining a single continuous block.",
+      "evidence": "Teacher's are also facilitis. gain on AI. They can teach our very easily. Yes, We see AI also threating for us."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent grammatical breakdowns, incorrect verb forms, spelling errors, and faulty sentence constructions occur throughout the script.",
+      "evidence": "Which is solve any kind of Problem, creat anything like a human do and thought."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate demonstrates authentic personal knowledge by naming contemporary AI models and use cases rather than relying on memorised stock templates, though vocabulary is basic.",
+      "evidence": "Deepseek is popular for resenable price. Claud is widely known as for Programming."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement and auxiliary verb errors (e.g., 'Which is solve', 'AI open', 'Student are don't work')",
+      "Spelling and word formation mistakes (e.g., 'Ardtfial', 'moder', 'biger bigen', 'hidedenly', 'resenable', 'threating')"
+    ],
+    "positive_aspects": [
+      "Covers all guiding questions systematically (definition, features, tools, impact on learning, threats)",
+      "Uses authentic, relevant real-world examples (ChatGPT, Gemini, DeepSeek, Claude, NotebookLM)"
+    ]
+  },
+  "feedback_summary": "The response covers all required points of the prompt with authentic examples of modern AI tools. However, the script is split into multiple paragraphs (triggering a hard cap of 5 marks) and exhibits pervasive grammatical, syntactic, and spelling errors.",
+  "_metadata": {
+    "task_id": "PARA_004",
+    "script_id": "SE_11_Q1_0004",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a60fe4b1863b3f3d41d7455801cccc293e055fb06c44be1424e883153a61f9ad",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:16:49.539558+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "efa7e2cbead277a6a3641a3615c3f60282c3bf59084dc292367b2e312f24f09c",
+    "input_tokens": 4553,
+    "output_tokens": 4597,
+    "thoughts_tokens": 3802,
+    "cost_usd": 0.012858,
+    "latency_ms": 32359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4553,
+        "output_tokens": 4597,
+        "thoughts_tokens": 3802,
+        "cost_usd": 0.012858,
+        "latency_ms": 32359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

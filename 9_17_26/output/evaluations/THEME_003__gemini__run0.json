@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides only a partial and simplistic interpretation of the theme, attempting to define dreams as life goals rather than sleep illusions, but missing the deeper contrast between idle night dreamers and active daytime dreamers who realise their visions.",
+      "evidence": "Future life is depending on dream that refers to goal of human life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is structured as a single block and is brief, but it is severely underdeveloped and lacks supporting analytical explanation.",
+      "evidence": "Dreams still are not the sleeping part, which we for got after woke up."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive mechanical and grammatical errors within a very short text, including split spelling ('for got'), incorrect verb form following a preposition ('after woke up'), and awkward tense usage ('is depending on dream').",
+      "evidence": "which we for got after woke up. Dreams are that which make our path of life. Future life is depending on dream"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is written entirely in the candidate's own words with 0% verbatim overlap, though the expression and vocabulary remain basic.",
+      "evidence": "Dreams are that which make our path of life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling/word splitting error ('for got' instead of 'forgot')",
+      "Verb form error after preposition ('after woke up' instead of 'after waking up')",
+      "Faulty syntax and non-idiomatic phrasing ('Future life is depending on dream')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the prompt; entirely in student's own words",
+      "Correctly identifies the abstract idea that dreams represent active goals rather than mere sleep"
+    ]
+  },
+  "feedback_summary": "The candidate understands the basic premise that true dreams are conscious life aspirations rather than passive night dreams. However, the explanation is overly brief, lacks depth of interpretation regarding the poem's imagery, and suffers from multiple basic grammatical and mechanical errors. Under Band 2 criteria, the lower score value (3/8) is awarded due to basic syntax and grammatical slips.",
+  "_metadata": {
+    "task_id": "THEME_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3b35fceeed7d42beba44e316381317323e058921a9596e04183c6289eaead081",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:10:57.407447+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "a0f393e9aa7e0c5ef7a754462ca3ae7e13f79b8026df0fcabd15ae006c43e7b1",
+    "input_tokens": 4262,
+    "output_tokens": 3526,
+    "thoughts_tokens": 2731,
+    "cost_usd": 0.010094,
+    "latency_ms": 27390,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4262,
+        "output_tokens": 3526,
+        "thoughts_tokens": 2731,
+        "cost_usd": 0.010094,
+        "latency_ms": 27390,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

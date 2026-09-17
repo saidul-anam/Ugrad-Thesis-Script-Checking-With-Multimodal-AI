@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified items b, c, and g. Items a, d, e, and f were incorrect according to the answer key.",
+      "evidence": "b. iv. pride and joy\nc. ii. honour\ng. iv. all of i ii & iii"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect vocabulary selection for synonyms/meanings (a, d, e, f)"
+    ],
+    "positive_aspects": [
+      "Correct identification of factual/contextual options (b, g)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items b, c, and g. Items a, d, e, and f were incorrect. Total score: 3/7.",
+  "_metadata": {
+    "task_id": "MCQ_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3643e9d1f188a781c15fc41d6b1c90d8e5fb7856141873e921f5b8928415c379",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:15:24.387584+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0c9c47b7f22467a7436ee24454be65658cc052c19dc26877d4698261a0cde7a3",
+    "input_tokens": 6680,
+    "output_tokens": 1572,
+    "thoughts_tokens": 1001,
+    "cost_usd": 0.00114,
+    "latency_ms": 477500,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6680,
+        "output_tokens": 1572,
+        "thoughts_tokens": 1001,
+        "cost_usd": 0.00114,
+        "latency_ms": 477500,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures the central point and all primary supporting facts: the identity of the astronauts, the timeline of the mission, their activities on the moon, and the mission's significance.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin started their journey to moon on July 16, 1969 and reached there on 20 July."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block. While the length (51 words) slightly exceeds one-third of the original text (approx 44 words), it is well within the acceptable range for the level and far below the 50% hard-cap threshold.",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin started their journey to moon on July 16, 1969 and reached there on 20 July."
+    },
+    "language_mechanics": {
+      "rationale": "The meaning is clear, but there are multiple grammatical slips including a missing article ('to moon'), a singular noun where a plural is needed ('collected rock'), an idiomatic error ('made a history'), and a double superlative ('most greatest').",
+      "evidence": "It was one of the most greatest success to mankind."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student demonstrates some ability to condense the text, but relies heavily on lifting key phrases directly from the source rather than fully paraphrasing.",
+      "evidence": "showed the power of science and teamwork"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Double superlatives",
+      "Article omission",
+      "Non-idiomatic phrasing"
+    ],
+    "positive_aspects": [
+      "Complete content coverage",
+      "Good adherence to summary length"
+    ]
+  },
+  "feedback_summary": "The student has provided a comprehensive summary that covers all the key events and the overall significance of the Apollo 11 mission. The structure and length are appropriate. The score is placed at the lower end of Band 4 due to several linguistic errors (notably 'most greatest' and 'made a history') and the use of verbatim phrases from the source text.",
+  "_metadata": {
+    "task_id": "SUMMARY_003",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0002",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f062c4dc332d8bc442c78741444db561d6d82edf2be51ff4d4a4feaf616e824d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:09:10.098128+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "708906974e1b6e91907c22eda1bed69945ddab7c8c6e8940b72e377726b45331",
+    "input_tokens": 6041,
+    "output_tokens": 2952,
+    "thoughts_tokens": 2152,
+    "cost_usd": 0.00149,
+    "latency_ms": 282389,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6041,
+        "output_tokens": 2952,
+        "thoughts_tokens": 2152,
+        "cost_usd": 0.00149,
+        "latency_ms": 282389,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate continues the narrative smoothly from the provided stem, provides the required number of sentences, and maintains a clear sequence of events.",
+      "evidence": "The other friend find no other alternative, so he lay flat on his mouth without breathing."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a proper resolution and includes a clear moral lesson, but the student failed to provide a title as requested by the prompt.",
+      "evidence": "The other friend sayed, \"Never trust on that who live you alone in a denger\"."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in tense consistency (using present tense like 'think' and 'go' instead of 'thought' and 'went') and spelling/agreement errors (e.g., 'sayed', 'denger', 'two friend').",
+      "evidence": "The bear came come and put down his head to smell the boy but as he lay flat without breathing the bear think he is dead and go away."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student tells the familiar version of the fable. While it is not a verbatim guide copy, it is very predictable and lacks descriptive detail or original phrasing.",
+      "evidence": "The bear gave me a good advice"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Past-tense inconsistency",
+      "Spelling errors (e.g., 'denger')",
+      "Incorrect verb forms (e.g., 'sayed')"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Successful inclusion of a moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate has successfully completed the story with a coherent plot and a clear resolution. However, the score is limited by the omission of a title and significant weaknesses in linguistic mechanics, specifically the failure to maintain consistent past tense and several spelling mistakes typical of the grade level.",
+  "_metadata": {
+    "task_id": "STORY_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "850b3a48e317e06a0c7d6ac14c637a607e54dba8e90e1ac789a3ecf15dcb5229",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:52:19.341166+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2c1351122a6d85b9cd045a10d445826a24d1e437e1ebcfdfcc7e3b7dd602082b",
+    "input_tokens": 5975,
+    "output_tokens": 2670,
+    "thoughts_tokens": 1925,
+    "cost_usd": 0.001399,
+    "latency_ms": 437860,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5975,
+        "output_tokens": 2670,
+        "thoughts_tokens": 1925,
+        "cost_usd": 0.001399,
+        "latency_ms": 437860,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

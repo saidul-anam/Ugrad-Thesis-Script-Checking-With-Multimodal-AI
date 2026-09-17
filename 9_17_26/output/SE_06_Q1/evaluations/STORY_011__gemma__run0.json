@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem and meets the minimum requirement of ten new sentences. The narrative follows a logical sequence of events leading to the required conclusion.",
+      "evidence": "Both of them were frightened. Suddenly, one of them climbed a tree. The other has no alternative; he lay on his head without breathing."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a definitive resolution with a clear moral lesson; however, the candidate failed to provide a title as explicitly requested in the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is severe instability in tense, frequently switching between past and present (e.g., 'bear come', 'bear go out', 'other says'). There are also significant grammatical errors and awkward phrasings that impede flow.",
+      "evidence": "Soon, the bear come and down his head. As he without breath the bear took him dead."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student utilizes a standard, well-known fable plot, which is acceptable. The phrasing is the candidate's own rather than a verbatim guide copy, though it lacks descriptive detail.",
+      "evidence": "The other has no alternative; he lay on his head without breathing."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Past/Present mix)",
+      "Missing required structural element (Title)",
+      "Subject-Verb agreement"
+    ],
+    "positive_aspects": [
+      "Successful plot resolution",
+      "Meets minimum sentence count requirement",
+      "Coherent narrative sequence"
+    ]
+  },
+  "feedback_summary": "The candidate provided a logically sequenced continuation of the story that meets the sentence count requirement and ends with a clear moral. However, the score is limited by the omission of a title and significant linguistic failures, particularly regarding tense consistency and basic sentence structure. The result falls within Band 2.",
+  "_metadata": {
+    "task_id": "STORY_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "cb30cfceb3c0be730f148effe220e25bdbcc59ecd64206d2edc6ff02b917adbd",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:42:30.968792+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b7e8ec6e56959c149949b0124b63be173cde561659b02e1f4cd1e66df3139779",
+    "input_tokens": 6061,
+    "output_tokens": 3028,
+    "thoughts_tokens": 2277,
+    "cost_usd": 0.001515,
+    "latency_ms": 155280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6061,
+        "output_tokens": 3028,
+        "thoughts_tokens": 2277,
+        "cost_usd": 0.001515,
+        "latency_ms": 155280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

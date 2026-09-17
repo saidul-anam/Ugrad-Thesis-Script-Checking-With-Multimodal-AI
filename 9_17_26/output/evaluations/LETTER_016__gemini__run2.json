@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by detailing specific future plans after the HSC examination, including admission coaching, military selection, and language preparation.",
+      "evidence": "In your last letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All mandatory informal letter layout components are present and positioned correctly: sender address, date, salutation, body paragraphs, complimentary close, signature, and postal address box.",
+      "evidence": "Road-6, Avenue-7,\nMirpur-DOHS, Dhaka\n27 June, 2026\n\nDear Abrar,"
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors occur throughout the body text, including missing prepositions ('going do', 'trying improve'), uncapitalised pronouns/proper adjectives ('i', 'im', 'english'), a spelling typo ('abort' for 'about'), and awkward verb structures ('I'm vowed').",
+      "evidence": "So, I thought why not write abort it to you. Well, first of all, I'm getting admitted to a coaching centre from where i will prepare for my university admission exam, I'm planning to crack one of the many engineering universities in the country. So, I'm vowed to work hard for it. In the meanwhile, I'm going do the gym"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter exhibits authentic personal expression and natural communicative flow rather than relying on memorised textbook boilerplate.",
+      "evidence": "I'm planning to crack one of the many engineering universities in the country. So, I'm vowed to work hard for it."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of the infinitive marker 'to' ('going do', 'trying improve')",
+      "Inconsistent capitalization of the personal pronoun 'I' and the proper adjective 'English'",
+      "Spelling slip ('abort' instead of 'about')"
+    ],
+    "positive_aspects": [
+      "Complete structural formatting with all essential letter components",
+      "Clear, relevant, and personalized response addressing future academic and career plans"
+    ]
+  },
+  "feedback_summary": "The candidate delivers a fully structured informal letter containing all required format conventions (address, date, salutation, body, close, signature, envelope). The content is genuine, realistic, and directly answers the prompt. However, repeated minor mechanical errors (omitted prepositions, lowercase 'i', and typo) prevent a top-of-band score, placing the script at the lower boundary of Band 4 (4/5).",
+  "_metadata": {
+    "task_id": "LETTER_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "748c3de50ecdc1dcbd9a1f82f7553d9fd834f19a31e0d792ec47af6d348352e9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:55:40.116499+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d838ffd262122a274a148afbc9cfab647551163003ea58e9be6d2997a172b29f",
+    "input_tokens": 4452,
+    "output_tokens": 3206,
+    "thoughts_tokens": 2313,
+    "cost_usd": 0.009351,
+    "latency_ms": 24233,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4452,
+        "output_tokens": 3206,
+        "thoughts_tokens": 2313,
+        "cost_usd": 0.009351,
+        "latency_ms": 24233,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

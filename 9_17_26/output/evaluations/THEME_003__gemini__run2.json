@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the essential abstract idea of the poem by distinguishing between passive nocturnal dreams and active life goals, though the thematic elaboration is brief and simplistic.",
+      "evidence": "Dreams are that which make our path of life. Future life is depending on dream that refers to goal of human life."
+    },
+    "structure_format_brevity": {
+      "rationale": "Written as a single compact block with no fluff, but the supporting explanation is underdeveloped.",
+      "evidence": "Dreams still are not the sleeping part, which we for got after woke up."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical, tense, and spelling errors within a very short text, including split words ('for got'), faulty prepositional clauses ('after woke up'), and awkward verb forms ('is depending on dream that refers to').",
+      "evidence": "which we for got after woke up."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response shows complete independence from the poem's wording (0% verbatim overlap) and attempts an original interpretation, though expressed in rudimentary vocabulary.",
+      "evidence": "Dreams still are not the sleeping part"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling separation ('for got' instead of 'forget/forgot')",
+      "Incorrect verb form after preposition ('after woke up' instead of 'after waking up')",
+      "Clunky phrasing and article omission ('Future life is depending on dream')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the poem text",
+      "Correctly identifies the abstract distinction between passive sleeping dreams and active life aspirations"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a fair understanding of the poem's underlying theme, distinguishing sleep-state dreaming from purposeful life goals. While completely written in the candidate's own words with no verbatim copying, the response is very brief and suffers from noticeable grammatical errors and awkward phrasing.",
+  "_metadata": {
+    "task_id": "THEME_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "3b35fceeed7d42beba44e316381317323e058921a9596e04183c6289eaead081",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:10:53.166081+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "37c19d88bca1fd0255e985b46a25bffbf93235af5a61b49e9cbf52cb01664c41",
+    "input_tokens": 4262,
+    "output_tokens": 2683,
+    "thoughts_tokens": 1946,
+    "cost_usd": 0.007986,
+    "latency_ms": 21077,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4262,
+        "output_tokens": 2683,
+        "thoughts_tokens": 1946,
+        "cost_usd": 0.007986,
+        "latency_ms": 21077,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

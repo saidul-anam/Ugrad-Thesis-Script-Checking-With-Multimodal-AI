@@ -1,0 +1,98 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Graph_External_Facts"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the primary sources along with the highest and lowest contributors, but misreports hydro-electric power as 15% instead of 16% and introduces irrelevant external speculation.",
+      "evidence": "From the chart we can see that the source Hydro-electric power is 15%. , Nuclear 2%. Oil 12%. coal 46%. and natural gas 24%."
+    },
+    "structure_format_brevity": {
+      "rationale": "Although an introductory lead sentence is present, the script breaks the analysis into fragmented paragraphs and incorporates extraneous outside opinions about modern resource availability.",
+      "evidence": "In 1980, natural elements are available that time. so, the sources have perfect amount. but nowadays, the amount of natural elements are inc decrease day by day."
+    },
+    "language_mechanics": {
+      "rationale": "Frequent mechanical errors are present, including faulty punctuation within data listing, random mid-sentence capitalisation, and ungrammatical sentence structures.",
+      "evidence": "is 15%. , Nuclear 2%. Oil 12%. coal 46%. and natural gas 24%."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies on a memorised opening formula and simply lists numbers without analytical comparative vocabulary (e.g., 'accounted for', 'followed by', 'in contrast to').",
+      "evidence": "It Provides us a crystal clear idea about the sources of the USA electricity in 1980."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inappropriate external facts and personal speculation not found in the chart",
+      "Punctuation faults (periods and commas combined incorrectly inside listed items)",
+      "Erratic capitalisation ('Provides', 'coal', 'natural gas', 'Perfect')",
+      "Inaccurate data reproduction (15% for Hydro-electric power instead of 16%)"
+    ],
+    "positive_aspects": [
+      "Correctly identifies the highest (coal) and lowest (nuclear) energy sources",
+      "Includes an introductory overview identifying the chart topic and year"
+    ]
+  },
+  "feedback_summary": "The response identifies the key maximum and minimum data points from the chart but resorts to listing numbers mechanically. A hard cap of 6 applies due to the inclusion of external facts and personal assumptions in the final paragraph; however, the raw merit score of 5 falls within Band 2 due to punctuation breakdown, an inaccurate data point, and a lack of comparative analysis.",
+  "_metadata": {
+    "task_id": "CHART_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d37fc4c1bdba5a00b1b1b8ecc5895c204d9d3c3e8499cdeb22492ba9312fa369",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:35:14.620687+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "f960289301d4c3ddd2070a14b2c5b403e91558f379fd6daffe1d7aa7f1051bd3",
+    "input_tokens": 4387,
+    "output_tokens": 3411,
+    "thoughts_tokens": 2543,
+    "cost_usd": 0.009844,
+    "latency_ms": 21766,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4387,
+        "output_tokens": 3411,
+        "thoughts_tokens": 2543,
+        "cost_usd": 0.009844,
+        "latency_ms": 21766,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt and includes relevant details such as the puller's role, the difficulty of the work in various weather, and the issue of vehicle ownership.",
+      "evidence": "They work very hard in the rain and in the sun."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is split into two distinct blocks of text (sub-paragraphs), and the second block repeats the introduction and several points from the first block almost verbatim, failing the single-unified-paragraph requirement.",
+      "evidence": "A rickshaw puller plays an important role in our communcaition seanter... [Block 1] ... A rickshaw puller plays an important role in our communcaition seanter... [Block 2]"
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of spelling errors and subject-verb agreement issues that hinder the flow, though the meaning remains generally recoverable.",
+      "evidence": "communcaition seanter carrying passenagers... availober... They pulls... rickshy"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The phrasing is extremely basic and formulaic, and the internal repetition suggests a lack of planning or an attempt to pad the length.",
+      "evidence": "An illirate unskilled and unemployed rickshaw pullers are availobar"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling inaccuracies",
+      "Subject-verb agreement errors",
+      "Structural repetition and failure to maintain a single paragraph"
+    ],
+    "positive_aspects": [
+      "Remains on topic throughout",
+      "Includes concrete details about the working conditions of a rickshaw puller"
+    ]
+  },
+  "feedback_summary": "The candidate's response is on-topic but suffers from severe structural and linguistic issues. The most significant structural error is the division of the text into two blocks, with the second block largely repeating the first. Additionally, there are pervasive spelling errors (e.g., 'communcaition', 'availobar', 'rickshy') and basic grammatical mistakes. While the content is relevant, the lack of cohesion and the repetition result in a Band 2 score.",
+  "_metadata": {
+    "task_id": "PARA_012",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0012",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "5714c1841f5f81ed828e19b5dd70d61b4d3074c2f50e2d3e5ec3992f76e85cfa",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:59:07.549164+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "cb324bd924ebb9d2866770cdc484328e502c35a70d0642be5b678b4a0c231419",
+    "input_tokens": 6113,
+    "output_tokens": 3010,
+    "thoughts_tokens": 2208,
+    "cost_usd": 0.001514,
+    "latency_ms": 932641,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6113,
+        "output_tokens": 3010,
+        "thoughts_tokens": 2208,
+        "cost_usd": 0.001514,
+        "latency_ms": 932641,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

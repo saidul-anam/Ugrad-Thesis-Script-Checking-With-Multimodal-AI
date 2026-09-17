@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provided responses that are entirely unrelated to the reading passage. No items (i-v) match the answer key regarding Raju's school and marks.",
+      "evidence": "How important Physical exercise is!"
+    },
+    "structure_format_brevity": {
+      "rationale": "This criterion is always 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This criterion is always 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This criterion is always 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Irrelevant content",
+      "Complete failure to address the prompt"
+    ],
+    "positive_aspects": [
+      "Attempted to provide responses for the letters"
+    ]
+  },
+  "feedback_summary": "All items (i-v) are marked incorrect (0/5). The candidate's responses are completely off-topic, discussing physical exercise rather than extracting information about Raju from the provided text.",
+  "_metadata": {
+    "task_id": "TABLE_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "00f2a41d93ea419b47a757c29e68d9859165c5fe1353f7aa71bc9e106e514253",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:17:28.444066+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b29f515bded6afff736535fa0b69de71c892ea318652ee0f5604a5b565b97f0a",
+    "input_tokens": 6422,
+    "output_tokens": 1584,
+    "thoughts_tokens": 1015,
+    "cost_usd": 0.001117,
+    "latency_ms": 719516,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6422,
+        "output_tokens": 1584,
+        "thoughts_tokens": 1015,
+        "cost_usd": 0.001117,
+        "latency_ms": 719516,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

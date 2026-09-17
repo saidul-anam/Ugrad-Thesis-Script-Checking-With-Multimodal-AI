@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified three items: b (iv), c (ii), and f (iv). Items a, d, e, and g were answered incorrectly. Per the marking notes, the misspelling of 'honour' as 'honoun' in item c does not cost the mark.",
+      "evidence": "b. iv)  pride and joy. c. ii) honoun. f. iv) unitedly"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection in 4 out of 7 items"
+    ],
+    "positive_aspects": [
+      "Correct identification of synonyms and context for items b, c, and f"
+    ]
+  },
+  "feedback_summary": "Items b, c, and f were marked correct. Items a, d, e, and g were marked incorrect. Total score: 3/7.",
+  "_metadata": {
+    "task_id": "MCQ_015",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0015",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "5c308fc3be17848b871098b90b6ddfeb721c98d2766be38efb6c7d6cfdb880c1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:30.319504+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8d139de0c5ff66e96ce79b0817b5750a63a0375cbd5bfca705d8182b78fdfba7",
+    "input_tokens": 6684,
+    "output_tokens": 1639,
+    "thoughts_tokens": 1020,
+    "cost_usd": 0.00116,
+    "latency_ms": 188546,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6684,
+        "output_tokens": 1639,
+        "thoughts_tokens": 1020,
+        "cost_usd": 0.00116,
+        "latency_ms": 188546,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

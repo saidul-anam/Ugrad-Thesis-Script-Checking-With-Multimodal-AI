@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core events (the journey, landing, first man on the moon, and return), but includes a factual error regarding the start date of the journey (July 20 instead of July 16).",
+      "evidence": "Neil Armstrong, Michael Collins and Edwin Aldrin began their journey to the moon on July 20, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is written as a single coherent block and is very close to the target length (approx. 37% of source), falling well under the hard cap threshold of half the original length.",
+      "evidence": "It was the greatest achievement for humans... People watched the news excitemently."
+    },
+    "language_mechanics": {
+      "rationale": "The text is generally readable for Class VII, but contains a non-standard word formation ('excitemently') and a capitalization error ('Apollo Landed').",
+      "evidence": "People watched the news excitemently."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student successfully paraphrased the text with very low verbatim overlap, avoiding the copying of full sentences from the source.",
+      "evidence": "It was the greatest achievement for humans."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy regarding start date",
+      "Non-standard adverb formation (excitemently)"
+    ],
+    "positive_aspects": [
+      "Strong paraphrasing",
+      "Concise and unified structure"
+    ]
+  },
+  "feedback_summary": "The candidate produced a well-structured summary that avoids verbatim copying and remains concise. While the overall narrative flow is correct, there is a significant factual error regarding the date the journey began, and a minor linguistic error in the final sentence ('excitemently'). Despite these, the work demonstrates a solid grasp of the source text's main ideas.",
+  "_metadata": {
+    "task_id": "SUMMARY_030",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0029",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "68d4268856d087806b8fa57c9cc8b5f80b3fb5be5b2d21b8483f2622387708a0",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:09:19.087038+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "43abfe2dcfff2c9ba71467483f8bd495bea35e1756e6025ad6f3c4967ced8381",
+    "input_tokens": 6056,
+    "output_tokens": 3302,
+    "thoughts_tokens": 2558,
+    "cost_usd": 0.001596,
+    "latency_ms": 249921,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6056,
+        "output_tokens": 3302,
+        "thoughts_tokens": 2558,
+        "cost_usd": 0.001596,
+        "latency_ms": 249921,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

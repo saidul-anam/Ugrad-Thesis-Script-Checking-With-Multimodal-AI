@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the core contrast between passive 'night' dreamers and active 'day' dreamers, although the explanation is more of a summary than an abstract thematic statement.",
+      "evidence": "poet shows that the people who dreams while sleeping, their dreams had no value, that is just a vanity. But the people who dreams with open eyes, are the real dreamers."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a single coherent block and is concise without any unnecessary padding.",
+      "evidence": "In this poem, poet shows... by at any cost."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive basic errors, including subject-verb agreement ('people who dreams') and incorrect prepositional phrasing ('by at any cost').",
+      "evidence": "people who dreams"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoided verbatim copying (0% overlap), but the interpretation is shallow, essentially just paraphrasing the poem's lines rather than synthesising a theme.",
+      "evidence": "They make their dream come true by at any cost."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Awkward prepositional usage"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Accurate identification of the poem's central contrast"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a clear understanding of the poem's meaning and avoids plagiarism. However, the response functions as a summary of the poem's narrative rather than an analysis of its abstract theme. The score is significantly hindered by basic grammatical failures, particularly in subject-verb agreement.",
+  "_metadata": {
+    "task_id": "THEME_020",
+    "script_id": "SE_11_Q1_0020",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e0c877a0d6745a50207bd5f2635a2806b85dd46783327bab96086487f9587e5d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:38:01.856221+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "aa2ed0ff587ab603a9df62417e98faaa2b882f4fb4e7146d7681e29971636608",
+    "input_tokens": 4276,
+    "output_tokens": 2248,
+    "thoughts_tokens": 1550,
+    "cost_usd": 0.001102,
+    "latency_ms": 63109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 2248,
+        "thoughts_tokens": 1550,
+        "cost_usd": 0.001102,
+        "latency_ms": 63109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

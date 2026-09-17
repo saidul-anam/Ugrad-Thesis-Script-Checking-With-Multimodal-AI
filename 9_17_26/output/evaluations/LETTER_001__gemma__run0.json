@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The purpose of the letter is stated immediately and the candidate directly describes a specific future plan (freelancing), fulfilling the prompt objective.",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six essential components of an informal letter (Address, Date, Salutation, Body, Close, Signature) are present and correctly positioned.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "The informal register is consistent and appropriate for a friend, but the script contains multiple minor spelling and punctuation errors.",
+      "evidence": "beggining... I'am... self-relient... Your's ever"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response avoids memorized 'guide' templates and presents an authentic plan, although the phrasing is somewhat repetitive and basic.",
+      "evidence": "There are so many works which can be done in Freelancing... and many more other works"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (beggining, self-relient)",
+      "Punctuation errors (Your's, I'am)"
+    ],
+    "positive_aspects": [
+      "Full adherence to formal letter layout",
+      "Authentic, non-formulaic content"
+    ]
+  },
+  "feedback_summary": "The candidate has successfully met all structural requirements and addressed the prompt with an original and relevant plan. However, the total score is placed at the lowest value of Band 4 due to frequent minor linguistic slips in spelling and punctuation. The content is logically sequenced and the register is appropriate for the intended recipient.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e49f72906fc8002de80bd1cc1b24eb489b9824abceb27c38910ec3b35532bde1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:41:14.865708+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "256320276fd98948141f631b9f68ce746aa0c7f28b501afd3dbdf9e03fa6c28f",
+    "input_tokens": 4404,
+    "output_tokens": 3334,
+    "thoughts_tokens": 2600,
+    "cost_usd": 0.001441,
+    "latency_ms": 94265,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3334,
+        "thoughts_tokens": 2600,
+        "cost_usd": 0.001441,
+        "latency_ms": 94265,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

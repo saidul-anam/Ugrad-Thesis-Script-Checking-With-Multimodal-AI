@@ -1,0 +1,98 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Five items (a, b, d, f, g) match the answer key. Two items (c, e) are incorrect. Items a (iii), b (ii), d (i), f (iii), and g (ii) are correct. Item c (i) is wrong as the key is (iv); item e (iii) is wrong as the key is (iv).",
+      "evidence": "a) iii rural area\nb) ii He earns irregulary for daily needs\nd) i From morning to night\nf) iii Rough\ng) ii Household manager an and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Parts of speech identification"
+    ],
+    "positive_aspects": [
+      "Correct textual comprehension",
+      "Accurate understanding of idiomatic expressions"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 5 out of 7 items. Correct: a, b, d, f, g. Incorrect: c, e. The errors were specifically in identifying the grammatical categories of 'sometimes' and 'all'.",
+  "_metadata": {
+    "task_id": "MCQ_034",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0033",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "87d084d4152cb0fb63ebd9df870817c95a369a010302498a8ff0c338ed1ebc8b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:24:38.278547+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "68565978e1e63e5281c1ea2b0182d629eadba3742e450b90f0435187fee986e1",
+    "input_tokens": 6463,
+    "output_tokens": 1891,
+    "thoughts_tokens": 1244,
+    "cost_usd": 0.001214,
+    "latency_ms": 355515,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6463,
+        "output_tokens": 1891,
+        "thoughts_tokens": 1244,
+        "cost_usd": 0.001214,
+        "latency_ms": 355515,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

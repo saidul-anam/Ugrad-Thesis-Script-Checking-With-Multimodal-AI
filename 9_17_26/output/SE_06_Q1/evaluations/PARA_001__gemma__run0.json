@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student addresses the topic but the content is very thin and underdeveloped. It fails significantly to meet the length requirement of 120 words (only 53 words provided), providing only the most basic details.",
+      "evidence": "He pulls a riekshaw and no carries passengers from one place to anther place"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is correctly formatted as a single block (no sub-paragraphs) and includes a clear, albeit misspelled, topic sentence.",
+      "evidence": "A Riekshaw Puller is improtant and comon perzon in our eountry."
+    },
+    "language_mechanics": {
+      "rationale": "There is an extremely high density of spelling and grammatical errors in every sentence (e.g., 'improtant', 'perzon', 'wonks', 'ebd waethen'), which severely hinders the quality of the writing.",
+      "evidence": "He works in hot sun, rainy day and ebd waethen,"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears to be the student's own attempt rather than a memorised guide, though the phrasing is very primitive.",
+      "evidence": "His dati daliy routing is very hand"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe phonetic spelling errors",
+      "Incorrect negative construction ('no carries')",
+      "Under-length response"
+    ],
+    "positive_aspects": [
+      "Correct single-paragraph layout",
+      "Basic adherence to the topic"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a basic understanding of the paragraph format and the topic. However, the response is far too short (53 words) compared to the 120-word requirement. The work is marred by pervasive spelling and grammatical errors that reflect a very low level of linguistic control, though it is an original attempt.",
+  "_metadata": {
+    "task_id": "PARA_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "99d779446a511d24fb96bc246ab418cda3192bfa2529889523f6137c7a013fd4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:15:05.441967+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "289cfd2024781ec5d0584a50625dda7620cef4b0b3997509dccf4b7a1f184421",
+    "input_tokens": 5939,
+    "output_tokens": 2299,
+    "thoughts_tokens": 1552,
+    "cost_usd": 0.001284,
+    "latency_ms": 773625,
+    "attempt_number": 5,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5939,
+        "output_tokens": 2299,
+        "thoughts_tokens": 1552,
+        "cost_usd": 0.001284,
+        "latency_ms": 773625,
+        "attempt_number": 5,
+        "http_status": 200
+      }
+    ]
+  }
+}

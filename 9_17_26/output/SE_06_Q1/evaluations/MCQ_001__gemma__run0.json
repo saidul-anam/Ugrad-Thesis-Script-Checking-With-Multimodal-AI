@@ -1,0 +1,98 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items b, c, and g are correct. Item a is incorrect (i vs iv). Item d is incorrect (iv vs ii). Item e is an unintelligible character 't'. Item f is an unintelligible character '+'.",
+      "evidence": "b. iv) pride and joy\nc. ii) honour\ng. iv) all of it, i; and iii"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection",
+      "Unintelligible responses for items e and f"
+    ],
+    "positive_aspects": [
+      "Accurate identification of options for b, c, and g"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 3 out of 7 items. Correct: b, c, g. Incorrect: a, d. Unintelligible/Wrong: e, f.",
+  "_metadata": {
+    "task_id": "MCQ_001",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0001",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "73fb77ad0ad51d72259a2887794b734ebb644e12eeb55fa1fc67b5c49abe05da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:03:11.612258+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2e27efa240f409de15a1c4d0f4f2eb26b03ed329a3c000c365bb133ff4408e5b",
+    "input_tokens": 6679,
+    "output_tokens": 1139,
+    "thoughts_tokens": 536,
+    "cost_usd": 0.00101,
+    "latency_ms": 59812,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6679,
+        "output_tokens": 1139,
+        "thoughts_tokens": 536,
+        "cost_usd": 0.00101,
+        "latency_ms": 59812,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

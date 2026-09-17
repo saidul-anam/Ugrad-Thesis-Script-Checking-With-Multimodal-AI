@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item b is correct (1). Item d is correct (1). Item c is correct (1). Item a is incorrect as the student provided an answer about nature rather than the parent's responsibility (0). Item h is correct (1). Total: 4/5.",
+      "evidence": "The poet suggests us spend time in nature. [b] ... The parents show care by bathing the child, nurturing him [d] ... The poet feels life is empty and meaningless without time for nature [c] ... The poet's message in 'leisure' is to enjoy the small joys of life. [h]"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored tasks.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Contextual misalignment (Answered wrong question for item a)"
+    ],
+    "positive_aspects": [
+      "Correct identification of themes in 'Leisure'",
+      "Clear and concise responses"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 4 out of 5 attempted items. Items b, c, d, and h are correct. Item a is incorrect because the response discussed nature instead of the parent's responsibility as required by the prompt. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "POEM_004",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0003",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "0b8691a2dbb52d2f4eb28d994d6981562017d213996fbd31423eefde4fbbb112",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:20:53.338072+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8bd58914f678fb6b76e994482c17e78a9228d70ef6d0b0f1e63e4c3897a608df",
+    "input_tokens": 6446,
+    "output_tokens": 2070,
+    "thoughts_tokens": 1395,
+    "cost_usd": 0.001266,
+    "latency_ms": 117062,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6446,
+        "output_tokens": 2070,
+        "thoughts_tokens": 1395,
+        "cost_usd": 0.001266,
+        "latency_ms": 117062,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt by explaining their future aim to become a doctor, enter medical college, and serve poor communities through medical camps.",
+      "evidence": "my aim is to be an honest and wise doctore. So, I will take admission in a renwed medical college after pas HSC"
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential structural layout components of an informal letter (sender address, date, salutation, body paragraphs, complimentary close, signature, and envelope) are correctly positioned and intact.",
+      "evidence": "Asulia, Savar\n27-06-2026\n\nDear friend,"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple recurring spelling and syntax errors (e.g., 'doctore', 'renwed', 'pas HSC', 'wanted to about', missing subject before 'will join', incorrect term 'medical camping').",
+      "evidence": "wanted to about my future plan after passing HSC exam. You are well known about that, my aim is to be an honest and wise doctore. So, I will take admission in a renwed medical college after pas HSC : After passing from the Medical college, will join in a medical camping"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The letter relies heavily on memorised formulaic opening/closing phrases and displays clumsy, unidiomatic expression throughout the main message.",
+      "evidence": "How are you? Hope you are good by the grace of almighty Allah. In last letter you wanted to about"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('doctore', 'renwed', 'pas')",
+      "Omission of grammatical elements (missing infinitive verb 'know' in 'wanted to about', missing subject pronoun 'I' in 'will join')",
+      "Faulty collocation/vocabulary ('medical camping' instead of 'medical camp')",
+      "Erratic punctuation (unnecessary colon after 'pas HSC :')"
+    ],
+    "positive_aspects": [
+      "Complete informal letter layout including proper sender address, date, closing, and envelope details",
+      "Clear intent to fulfill the prompt topic regarding post-HSC career plans"
+    ]
+  },
+  "feedback_summary": "The letter demonstrates full adherence to structural format and fulfills the prompt by describing plans to study medicine after HSC. However, frequent spelling mistakes, awkward phrasing, and syntactic omissions lower the mechanical and qualitative quality, placing the response in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "66fbb49268653cba6f99b9995a3b3f5334080e31808dc8ea9f2946672135614e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:16:03.199822+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "4a5c97eb6267658569887d4a4efc1a1811a8a01f893c4e81a3a0b66ae2f95d48",
+    "input_tokens": 4355,
+    "output_tokens": 3364,
+    "thoughts_tokens": 2497,
+    "cost_usd": 0.009716,
+    "latency_ms": 56983,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4355,
+        "output_tokens": 3364,
+        "thoughts_tokens": 2497,
+        "cost_usd": 0.009716,
+        "latency_ms": 56983,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

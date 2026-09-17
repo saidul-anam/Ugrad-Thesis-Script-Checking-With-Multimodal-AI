@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student successfully captures all key elements of the passage: the date, the names of the astronauts, the spacecraft, and the thematic conclusion.",
+      "evidence": "three amirikan landed on Moon. Neil Armstrong, and Micale Colling, and Edwin Aldrin was successfully landed on the Moon"
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is presented as a single block, but it fails the length constraint significantly, exceeding half of the original passage length (length ratio 0.5344).",
+      "evidence": "Summary\nThis is the greates success..."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling and syntax errors ('greates', 'amirikan', 'to lend Moon', 'Micale Colling') that hinder the flow, though the meaning remains discernible.",
+      "evidence": "This is the greates success made history to lend Moon."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student avoids verbatim lifting of the majority of the text, using their own (albeit flawed) phrasing to convey the facts.",
+      "evidence": "three amirikan landed on Moon"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'greates', 'amirikan')",
+      "Syntactic failure (e.g., 'to lend Moon')"
+    ],
+    "positive_aspects": [
+      "Comprehensive coverage of factual data",
+      "Avoidance of direct verbatim copying"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a good understanding of the source text by including all primary facts. However, the summary is far too long, exceeding half the length of the original text, which triggers a structural hard cap of 2. Additionally, the writing is marred by significant spelling and grammatical errors typical of a struggling Class VII learner.",
+  "_metadata": {
+    "task_id": "SUMMARY_007",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0006",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "025ca798099f5d7620040b3406bc8b822b4925d9c1cb36e297b5e93274a23a19",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:58:58.224039+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a36c88261082043ce8ea11c88c4eeb2d7ed248d3e647a8b8b1b1a7c410bd8a84",
+    "input_tokens": 6068,
+    "output_tokens": 2333,
+    "thoughts_tokens": 1596,
+    "cost_usd": 0.001307,
+    "latency_ms": 114546,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6068,
+        "output_tokens": 2333,
+        "thoughts_tokens": 1596,
+        "cost_usd": 0.001307,
+        "latency_ms": 114546,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

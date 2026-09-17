@@ -1,0 +1,96 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted five questions. All five carry the correct indicative content: Item 1 (responding to e) identifies the importance of guidance in childhood; Item 2 (responding to f) correctly identifies the teacher's role in guidance and character; Item 3 (responding to d) lists care activities (loving, clothing); Item 4 (responding to a) acknowledges parental responsibility; Item 5 (responding to c) correctly identifies the poor quality of life without nature. Each earns 1 mark.",
+      "evidence": "According to the poem \"Whose child is this\" Childhood is the best... boring and unhappy Without time for nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; no separate marks for structure.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; mechanics are integrated into content correctness. Spelling errors like 'gentel' and 'littel' do not cost marks as the content is clear.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; no separate marks for originality.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Strong comprehension of the themes in both poems",
+      "Accurate identification of key characters' roles"
+    ]
+  },
+  "feedback_summary": "The student answered 5 items. Item 1 (answering e) is correct; Item 2 (answering f) is correct; Item 3 (answering d) is correct; Item 4 (answering a) is correct; Item 5 (answering c) is correct. Total: 5/5.",
+  "_metadata": {
+    "task_id": "POEM_009",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0008",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "09c1aa76011bc8ad4172c895ae91f9f8e5674ee7e4fcd77a40eac284fa426610",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:27:53.836605+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c3a2a17ab48780b4636239c2004e1adfa85db3d343490ee4851b52ebdfdcc9b5",
+    "input_tokens": 6500,
+    "output_tokens": 2208,
+    "thoughts_tokens": 1507,
+    "cost_usd": 0.001312,
+    "latency_ms": 185344,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6500,
+        "output_tokens": 2208,
+        "thoughts_tokens": 1507,
+        "cost_usd": 0.001312,
+        "latency_ms": 185344,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

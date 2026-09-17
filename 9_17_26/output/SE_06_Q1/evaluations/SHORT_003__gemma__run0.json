@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct. Item b is incorrect as it provides a general sentiment ('great enthusiasm') rather than listing the celebration activities required by the key. Item c is correct. Item d is correct (the national anthem is a patriotic song). Item e is incorrect as it attributes the salute to 'hard work' rather than the start of the day or honoring martyrs/victory.",
+      "evidence": "Bangladeshi People battled against Pakistani Army... its monument dedicated to the soldiers and civilians who lost their lives during the war and it's a focal paint to pay their respect... People signs national anthem"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Vague responses (Item b)",
+      "Factual inaccuracy regarding text content (Item e)"
+    ],
+    "positive_aspects": [
+      "Successful identification of key facts in the majority of items",
+      "Ability to paraphrase (Item a)"
+    ]
+  },
+  "feedback_summary": "Item a: Right. Item b: Wrong (does not list activities). Item c: Right. Item d: Right. Item e: Wrong.",
+  "_metadata": {
+    "task_id": "SHORT_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "ede82ddab7c4015640318523e5dcb44482143c09933b9c48bc035630b12fd960",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:04:31.613541+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "562dd7dd856c73e14dc303a614951587eaefe5248466ef6d84e4be6259d0d209",
+    "input_tokens": 6617,
+    "output_tokens": 2040,
+    "thoughts_tokens": 1385,
+    "cost_usd": 0.001274,
+    "latency_ms": 139782,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6617,
+        "output_tokens": 2040,
+        "thoughts_tokens": 1385,
+        "cost_usd": 0.001274,
+        "latency_ms": 139782,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

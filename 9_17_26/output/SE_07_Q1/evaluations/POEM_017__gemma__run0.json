@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted five items (a, c, e, f, d). Item (a) correctly identifies the parent's responsibility (dressing); Item (c) correctly identifies that life is 'poor' without nature; Item (e) correctly identifies childhood as a time for learning/development; Item (f) correctly identifies the teacher's role as providing education; Item (d) correctly identifies the parent's care through kindness and taking care. All five answers align with the indicative content of the answer key.",
+      "evidence": "a) ...bathing, dressing... b) c) Ans. The poet feels that life is poor... e) ...time of learning and developement. f) ...providing proper education. d) ...takingcare, learning decipline and kindness"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling errors (e.g., 'patnet', 'deseipline')"
+    ],
+    "positive_aspects": [
+      "Strong understanding of the core themes of both poems",
+      "Correctly addressed five separate items"
+    ]
+  },
+  "feedback_summary": "The student attempted items a, c, e, f, and d. All five responses capture the indicative content required by the answer key. Item b was skipped (the response provided for b/c only answered c). As an item-scored task, spelling errors did not deduct marks. Total: 5/5.",
+  "_metadata": {
+    "task_id": "POEM_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "f8e8afed18f1f93fc236108d11b751c36cfc24a8442349f47aff46329e1f1717",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:08:05.301276+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0f6f2d80c7dab0f3e45b38a15487ed0dc0da39575c9450002d8e71ba42f1a1d7",
+    "input_tokens": 6459,
+    "output_tokens": 2369,
+    "thoughts_tokens": 1632,
+    "cost_usd": 0.001357,
+    "latency_ms": 738858,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6459,
+        "output_tokens": 2369,
+        "thoughts_tokens": 1632,
+        "cost_usd": 0.001357,
+        "latency_ms": 738858,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

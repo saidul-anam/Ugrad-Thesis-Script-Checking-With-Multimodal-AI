@@ -1,0 +1,97 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate successfully continues the stem and completes the plot sequence of the fable logically, covering all key narrative beats.",
+      "evidence": "Mouse begged his life and said one day he will help the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails to provide a required title and does not explicitly state a moral lesson, although the ending is positive.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling errors ('cuas' for was, 'acent' for ascended/climbed, 'cuith' for with) and grammatical failures including missing verbs and incorrect adverb usage.",
+      "evidence": "Fastly acent to the lion cuith his sharp teeth"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, memorized version of a common fable with no creative deviation or vivid descriptive detail.",
+      "evidence": "he cut the net and save the lion"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling distortions (cuas, acent, cuith, cealking)",
+      "Subject-verb agreement and tense inconsistency",
+      "Missing structural elements (Title)"
+    ],
+    "positive_aspects": [
+      "Coherent plot progression",
+      "Clear understanding of the story's arc"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good understanding of the story's plot and provides a logically complete narrative. However, the score is significantly lowered by the total absence of a title and pervasive linguistic errors in spelling and grammar. The work reflects a memorized template rather than original creative writing.",
+  "_metadata": {
+    "task_id": "STORY_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c4c55dee58756769cdefa1c7f423e3773e183ddf44364e161304e2efdaea8f10",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:04:55.506655+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7f6a1022feb31930d967e54404af1346a12e798e67f31fcb62802023a7793b55",
+    "input_tokens": 4393,
+    "output_tokens": 2373,
+    "thoughts_tokens": 1684,
+    "cost_usd": 0.001151,
+    "latency_ms": 66328,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4393,
+        "output_tokens": 2373,
+        "thoughts_tokens": 1684,
+        "cost_usd": 0.001151,
+        "latency_ms": 66328,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

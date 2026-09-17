@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by outlining both short-term recreational plans and long-term social goals after the HSC examination.",
+      "evidence": "Today I describe you about the future Plan after Passing HSC Exam!"
+    },
+    "structure_format_brevity": {
+      "rationale": "All standard structural components of an informal letter are present and correctly positioned, including date, heading, salutation, body paragraphs, closing, signature, and envelope details.",
+      "evidence": "27 June, 2026\nDonia,Dhaka-1236\nDear Sadia,"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple mechanical weaknesses are evident, including spelling errors ('hare', 'Parunts'), irregular capitalization ('Plan', 'Passing', 'cox's'), and tense/form inconsistencies ('came', 'educated them').",
+      "evidence": "Many days hare passed since we met last. Today I describe you about the future Plan after Passing HSC Exam! ... so, I want to help them and educated them"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response presents an authentic, personalized plan (traveling to Cox's Bazar followed by literacy work in the village) rather than relying solely on a fixed template.",
+      "evidence": "After my Hsc Exam, I would Plan with my friends for going cox's Bazar. If you want, you can Join with us! And then, I came to my village. I have a Plan for poor People at my village."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'hare' instead of 'have', 'Parunts' instead of 'parents')",
+      "Random capitalization within sentences (e.g., 'Plan', 'Passing', 'People')",
+      "Tense and verb form slips (e.g., 'I came to my village', 'and educated them')"
+    ],
+    "positive_aspects": [
+      "Complete structural layout matching informal letter conventions",
+      "Direct relevance to prompt with realistic and thoughtful future plans",
+      "Good paragraph organization and friendly informal tone"
+    ]
+  },
+  "feedback_summary": "The letter satisfies all layout and contextual requirements with a clear plan divided into leisure and social commitment. All six key structural elements are intact. Marks are deducted under language mechanics due to frequent spelling slips, irregular capitalization, and minor verb tense inconsistencies, placing the script at the lowest score of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_010",
+    "script_id": "SE_11_Q1_0010",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c8de56b33916a8332411fcd8e0bcb0497be43425e9166cdc0eeb80ff5721ee1a",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:37:37.053751+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "481c6216fc89445a281a81e6df3491792df39b483d4c69175f66ff997a11939d",
+    "input_tokens": 4439,
+    "output_tokens": 3089,
+    "thoughts_tokens": 2236,
+    "cost_usd": 0.009054,
+    "latency_ms": 22780,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4439,
+        "output_tokens": 3089,
+        "thoughts_tokens": 2236,
+        "cost_usd": 0.009054,
+        "latency_ms": 22780,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

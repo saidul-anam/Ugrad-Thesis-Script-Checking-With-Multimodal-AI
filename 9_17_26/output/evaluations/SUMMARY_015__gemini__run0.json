@@ -1,0 +1,98 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the core theme and main ideas across all three stanzas (the bird in the soul, providing comfort during hardships, asking for nothing in return).",
+      "evidence": "Even in difficult time hope gives us courage, comfort and inpiration. Yet, it never ask for anything in return"
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is written as a single, well-structured, compact paragraph without extraneous filler or structural breakdown.",
+      "evidence": "The poemashows that the hope is always alive in the human heart."
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical and mechanical slips occur, notably subject-verb agreement errors ('poet compare', 'never ask', 'is sings') and spelling mistakes ('contrineously', 'inpiration', 'leaving life' for 'living life', 'poemashows').",
+      "evidence": "The poet compare hope to a little bird that is sings contrineously in our soul."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is composed entirely in the student's own words with 0% verbatim copying from the poem, translating poetic metaphors into clear explanatory statements.",
+      "evidence": "hope is the inspiration of leaving life. Even in difficult time hope gives us courage, comfort and inpiration."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement errors ('poet compare', 'never ask')",
+      "Spelling and typographical errors ('contrineously', 'inpiration', 'poemashows')",
+      "Lexical/confusable word error ('leaving life' instead of 'living life')"
+    ],
+    "positive_aspects": [
+      "100% original paraphrasing with zero direct copying from the source text",
+      "Accurate comprehension and condensation of the poem's central theme and progression",
+      "Maintained single-paragraph summary structure"
+    ]
+  },
+  "feedback_summary": "The student demonstrated a good analytical understanding of Emily Dickinson's poem, capturing all central ideas in their own words without copying verbatim lines. The score is placed in Band 3 (7/10) due to several grammatical and spelling errors (such as subject-verb agreement and word choice) which hinder linguistic precision.",
+  "_metadata": {
+    "task_id": "SUMMARY_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "54330c9eb35d4f2c142ea4143fd419f1ac439714a24d199d2f6f6b1f5c4f9705",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T23:39:00.370465+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5f8f8771ecdc9e9ca213615c49a43b3e4071c1c71dfe0f97fba13d81848ad7a3",
+    "input_tokens": 4386,
+    "output_tokens": 3121,
+    "thoughts_tokens": 2309,
+    "cost_usd": 0.009118,
+    "latency_ms": 19859,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4386,
+        "output_tokens": 3121,
+        "thoughts_tokens": 2309,
+        "cost_usd": 0.009118,
+        "latency_ms": 19859,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

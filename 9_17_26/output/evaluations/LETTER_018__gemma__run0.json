@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The purpose of the letter is stated immediately and the student clearly outlines their future goal of becoming a doctor.",
+      "evidence": "my aim is to be an honest and wise doctore"
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components (Address, Date, Salutation, Body, Closing, and Signature) are present and correctly positioned.",
+      "evidence": "Asulia, Savar\n27-06-2026\n\nDear friend,\n...\nYours ever\nEva"
+    },
+    "language_mechanics": {
+      "rationale": "There are significant spelling and grammatical errors throughout the text, including missing verbs and repetitive words.",
+      "evidence": "renwed medical college after pas HSC : After passing from the Medical college, will join in a medical camping for helping poor and sick peopote people beside continui continuing"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The introduction and conclusion rely heavily on memorized templates, but the specific detail about 'medical camping' shows some authentic thought.",
+      "evidence": "will join in a medical camping for helping poor and sick peopote people"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (doctore, renwed, peopote)",
+      "Syntax and word omission (wanted to about, pas HSC)",
+      "Redundancy (peopote people, continui continuing)"
+    ],
+    "positive_aspects": [
+      "Full structural compliance",
+      "Direct adherence to the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the letter's formal layout, including all six necessary components. The content is relevant and addresses the prompt directly. However, the writing is hindered by frequent spelling mistakes and grammatical lapses. According to the tiebreaker rules for Band 4, because language mechanics show multiple errors, the score is set at the lowest value of the band (4).",
+  "_metadata": {
+    "task_id": "LETTER_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "66fbb49268653cba6f99b9995a3b3f5334080e31808dc8ea9f2946672135614e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:16:04.127891+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "391ad309ef009b4f4af98f62a00f87205ff6d2088f7e097f6ccb7c928af2ee78",
+    "input_tokens": 4356,
+    "output_tokens": 1948,
+    "thoughts_tokens": 1187,
+    "cost_usd": 0.00102,
+    "latency_ms": 55484,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4356,
+        "output_tokens": 1948,
+        "thoughts_tokens": 1187,
+        "cost_usd": 0.00102,
+        "latency_ms": 55484,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

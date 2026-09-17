@@ -1,0 +1,96 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered correctly against the answer key. a: Ugly (Antonym) - Correct; b: Bold (Synonym) - Correct; c: spot-less (Synonym) - Correct; d: an Anchent (Synonym) - Correct (spelling slip 'Anchent' for 'Ancient' is permitted); e: loud (Antonym) - Correct.",
+      "evidence": "a. Beautiful - Ugly\nb. Brave - Bold\nc. Clean - spot-less\nd. Old - an Anchent\ne. Quiet - loud"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling slips ('Anchent', 'spot-less')"
+    ],
+    "positive_aspects": [
+      "Accurate identification of synonyms and antonyms",
+      "Completed all required items"
+    ]
+  },
+  "feedback_summary": "The student scored full marks. Items a, b, c, d, and e are all correct. In accordance with the marking guidelines for item-scored vocabulary tasks, spelling slips in 'spot-less' and 'Anchent' were ignored as the intended correct words were clear.",
+  "_metadata": {
+    "task_id": "VOCAB_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "4af346bb130d53063fa270e8b08efdc052d28ad93b273d0db8f50f1cd07fca77",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:14:58.868651+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "151b0c8be3ed2426e28acdc3419f765448ba47481964d7164548d920f9851e75",
+    "input_tokens": 6224,
+    "output_tokens": 1657,
+    "thoughts_tokens": 982,
+    "cost_usd": 0.00112,
+    "latency_ms": 437062,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6224,
+        "output_tokens": 1657,
+        "thoughts_tokens": 982,
+        "cost_usd": 0.00112,
+        "latency_ms": 437062,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct: verdict 'False' and correction 'NASA expedition' correctly identifies it was not marine. Item (b) is correct: verdict 'False' and correction correctly notes Collins stayed in the ship. Item (c) is correct: verdict 'False' and correction correctly identifies Armstrong as the first person. Items (d) and (e) were omitted.",
+      "evidence": "a. False. Apollo 11 was a NASA expedition... b. False. Michael Collins stayed in the main ship... c. False. Neil Armstrong was The first person..."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of items (d) and (e)"
+    ],
+    "positive_aspects": [
+      "Correct verdict and factual correction for all attempted items",
+      "Accurate understanding of the passage content"
+    ]
+  },
+  "feedback_summary": "The student correctly identified and corrected items (a), (b), and (c). Items (d) and (e) were not attempted. Total score: 3/5.",
+  "_metadata": {
+    "task_id": "TF_013",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0012",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "9ec01fdc2f1f52986ce3cee07e507cacd67a1448b273a0e41d11b33865bf708f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:13:07.396816+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f84ad31fa0d5dc6e71ad845a2b189120713acfe1f6b66ca486ab22c045952a05",
+    "input_tokens": 6426,
+    "output_tokens": 1877,
+    "thoughts_tokens": 1239,
+    "cost_usd": 0.001206,
+    "latency_ms": 206969,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6426,
+        "output_tokens": 1877,
+        "thoughts_tokens": 1239,
+        "cost_usd": 0.001206,
+        "latency_ms": 206969,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

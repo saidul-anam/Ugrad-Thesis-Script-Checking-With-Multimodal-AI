@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) 'clapped' is contextually and grammatically incorrect. Item (b) 'gneat' is a misspelling of 'great' and earns the mark. Item (c) 'cheered' is correct. Item (d) 'job' is contextually incorrect. Item (e) 'cheeerced' is a misspelling of 'cheered', which is a verb and grammatically incorrect in a position requiring a noun (e.g., 'cheers'). Total: 0+1+1+0+0 = 2.",
+      "evidence": "a. clapped. b. gneat: c. cheered d. job e. cheeerced:"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Wrong part of speech",
+      "Contextual misunderstanding"
+    ],
+    "positive_aspects": [
+      "Correct identification of key vocabulary in items (b) and (c)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (b) and (c), earning 2 marks. Item (b) was awarded despite the misspelling 'gneat'. Item (a) was incorrect. Item (d) was incorrect. Item (e) was marked wrong as 'cheeerced' (cheered) is a verb and does not fit the grammatical requirement of the sentence.",
+  "_metadata": {
+    "task_id": "GAP_012",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0011",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "aec67dd7b7d2741e794d0df73e2187c364067feca2fdaac13c454d0b25436ee5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:59:28.617374+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7cd810ebb4fa547112ef62a6dd80059c7c092a7f0a1ba4bdbaba72b1cd4b307a",
+    "input_tokens": 6227,
+    "output_tokens": 2252,
+    "thoughts_tokens": 1533,
+    "cost_usd": 0.001298,
+    "latency_ms": 289891,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6227,
+        "output_tokens": 2252,
+        "thoughts_tokens": 1533,
+        "cost_usd": 0.001298,
+        "latency_ms": 289891,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

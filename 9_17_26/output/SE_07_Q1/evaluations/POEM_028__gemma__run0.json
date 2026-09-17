@@ -1,0 +1,99 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted 6 questions; only the first 5 (a-e) are marked. (a) is an incomplete sentence with no content (0). (b) correctly identifies the need to 'stand and stare' and keep time for nature (1). (c) captures the idea that humans are too busy for nature (1). (d) mentions choosing clothes and physical care, aligning with the key (1). (e) mentions learning behavior and character, which aligns with shaping the person (1). Total: 0+1+1+1+1 = 4.",
+      "evidence": "b. The poet's suggestion about nature is we should keep time for nature. We should stand and stare... d. The parents show cane for the child by bath their hand, combed hair, choose the cloths etc e. The childhood is important for learn good behavers , rules and chereacter."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incomplete response (Item a)",
+      "Spelling/Grammar errors (e.g., 'cane' for 'care', 'behavers' for 'behavior')"
+    ],
+    "positive_aspects": [
+      "Accurately captured the core themes of both poems",
+      "Provided sufficient detail in answers b, d, and e"
+    ]
+  },
+  "feedback_summary": "The student attempted six questions, but per marking rules, only the first five were evaluated. Item (a) was left incomplete and scored 0. Items (b), (c), (d), and (e) all carried the correct indicative content from the poems and were awarded 1 mark each. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "POEM_028",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0027",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c3613e4113c021bd9d63d9cdf58b13f9bfcf5e92dbb8dc1aeddaa4d2b50aa0e8",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:03:09.443877+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1ffc8166ccd1d226637a548311c643f30fa10dcf39c4f0cb535c644222c97d9a",
+    "input_tokens": 6535,
+    "output_tokens": 1936,
+    "thoughts_tokens": 1158,
+    "cost_usd": 0.001234,
+    "latency_ms": 166358,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6535,
+        "output_tokens": 1936,
+        "thoughts_tokens": 1158,
+        "cost_usd": 0.001234,
+        "latency_ms": 166358,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

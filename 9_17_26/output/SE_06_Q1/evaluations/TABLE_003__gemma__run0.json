@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly against the key. (i) identifies class six; (ii) names all three subjects he did well in; (iii) provides the correct marks for those subjects; (iv) lists the correct weak subjects; (v) identifies that he got 6 marks in those subjects.",
+      "evidence": "six... 8 in Bangla, 9 in English and 10 in Mathematics... 8 in Bangla, 9 in English and 10 in Mathematics... ICT, science and Religion... 6 at all weak subjects"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics do not affect the mark if content is recoverable.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; lifting from the passage is correct and not penalised.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Accurate data extraction",
+      "Complete response for all items"
+    ]
+  },
+  "feedback_summary": "The student correctly identified all required information from the text. Item (i) is correct ('six'); Item (ii) is correct as it lists all three subjects; Item (iii) is correct; Item (iv) is correct; and Item (v) is correct ('6 at all weak subjects'). Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TABLE_003",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0003",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "18414835aca4e418892f286b89100d2ef1a8b18729128894460e55d0e418d417",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:11:59.322267+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b17ee813f34556888d5871668be98314605c43fb68a0dcca53651d92b8f5ea67",
+    "input_tokens": 6466,
+    "output_tokens": 2247,
+    "thoughts_tokens": 1575,
+    "cost_usd": 0.001321,
+    "latency_ms": 587500,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6466,
+        "output_tokens": 2247,
+        "thoughts_tokens": 1575,
+        "cost_usd": 0.001321,
+        "latency_ms": 587500,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

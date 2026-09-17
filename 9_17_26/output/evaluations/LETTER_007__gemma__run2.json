@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly states their future plan to study engineering in Russia, directly fulfilling the prompt objective.",
+      "evidence": "I want to go abroad for studies. I like engineering so, I was thinking about moving to Russia after my HSC"
+    },
+    "structure_format_brevity": {
+      "rationale": "All required structural components are present: date, address, salutation, body, close, and signature, although the full address blocks are placed at the end.",
+      "evidence": "27th June, 2026... Dear Siyom... your best friend Ritom"
+    },
+    "language_mechanics": {
+      "rationale": "There are several linguistic slips, including homophone errors ('to' for 'too'), an odd word choice ('fat letter'), and spelling errors in the address ('chittbagong').",
+      "evidence": "doing well to... In this fat letter I'll write about its... chittbagong"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The opening is a standard memorized template, but the core content regarding Russia and engineering shows authentic planning and individual thought.",
+      "evidence": "Hope you're doing well by the grace of Allah."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling/Typos",
+      "Homophone confusion",
+      "Incomplete phrasing"
+    ],
+    "positive_aspects": [
+      "Complete structural layout",
+      "Specific and relevant content"
+    ]
+  },
+  "feedback_summary": "The script is a successful attempt that fully addresses the prompt with a specific future plan. All structural components of a letter are present, preventing any layout caps. However, the score is moderated to the lower end of Band 4 due to multiple minor linguistic errors (e.g., 'doing well to', 'chittbagong') and a reliance on common templates for the introductory sentence.",
+  "_metadata": {
+    "task_id": "LETTER_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "a2e1d1854a08e9396c5c839168d1d0a72ebdeb259ab28d603968130fb6201867",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:13:40.454172+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "df80100dc29c7483177ad4923640a046485729649356b116f39835156a7df420",
+    "input_tokens": 4426,
+    "output_tokens": 2135,
+    "thoughts_tokens": 1394,
+    "cost_usd": 0.001083,
+    "latency_ms": 60125,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4426,
+        "output_tokens": 2135,
+        "thoughts_tokens": 1394,
+        "cost_usd": 0.001083,
+        "latency_ms": 60125,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

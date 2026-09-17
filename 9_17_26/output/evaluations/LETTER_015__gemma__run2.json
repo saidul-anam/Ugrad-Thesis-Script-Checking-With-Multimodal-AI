@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student immediately identifies the purpose of the letter and provides a clear future plan (medical college), fulfilling the prompt's requirements.",
+      "evidence": "In you letter you wanted to know about future plan after HSC exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All required components (Address, Date, Salutation, Body, Close, Signature) are present, but the layout is non-standard as the Address and Recipient sections are placed at the bottom of the page.",
+      "evidence": "From Shovo Azimpur, BDR 2no gate To Arif Maniktgong, shimuliya-7"
+    },
+    "language_mechanics": {
+      "rationale": "The text exhibits a high density of spelling and grammatical errors, including significant orthographic mistakes ('collage' for college, 'dreem' for dream, 'gadmited' for admitted).",
+      "evidence": "I recive your letter few days ago... gadmited in a renown medical collage... dreem to be a gratest doctor... work heard on my dreem."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies on common, memorized templates for the opening and closing, showing limited authentic expression.",
+      "evidence": "I hope you are well. I am also well."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling inaccuracies (collage, dreem, gadmited, gratest, heard)",
+      "Subject-verb agreement and tense slips (I recive, After passin)"
+    ],
+    "positive_aspects": [
+      "Complete inclusion of all structural components",
+      "Clear adherence to the prompt topic"
+    ]
+  },
+  "feedback_summary": "The candidate successfully addresses the prompt and includes all necessary formal components of a letter. However, the overall quality is hampered by an unconventional layout (address and recipient details at the bottom) and a high frequency of spelling and grammatical errors. The use of formulaic phrases further limits the score.",
+  "_metadata": {
+    "task_id": "LETTER_015",
+    "script_id": "SE_11_Q1_0015",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "d84cf414403c083c931160a53407ca39775af6d70f13f29f0356ee97af139af3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:47:51.287621+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8e2a1c5593550bd00e58c761bc9632bc2cce4b4114345de4f214642b3084b574",
+    "input_tokens": 4350,
+    "output_tokens": 2457,
+    "thoughts_tokens": 1687,
+    "cost_usd": 0.001172,
+    "latency_ms": 69000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4350,
+        "output_tokens": 2457,
+        "thoughts_tokens": 1687,
+        "cost_usd": 0.001172,
+        "latency_ms": 69000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

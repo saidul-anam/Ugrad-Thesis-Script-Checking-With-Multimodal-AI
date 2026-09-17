@@ -1,0 +1,96 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were transformed correctly. Each sentence follows the rule of placing the subject before the verb and removing the auxiliary 'do/does' in the embedded clause. Item a: Correct; Item b: Correct; Item c: Correct; Item d: Correct; Item e: Correct.",
+      "evidence": "A. Do you know where the post office is? B. Do you know what the postmaster does? C. Do you know why the postmaster is so happy? D. Do you  know where his children go to school? E. Do you know when the postmaster comes to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions; mechanics are evaluated as part of item correctness.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect adherence to embedded clause word order",
+      "Consistent removal of auxiliary verbs"
+    ]
+  },
+  "feedback_summary": "The candidate correctly transformed all five sentences. Items a, b, c, d, and e all demonstrate the correct subject-verb order and removal of the auxiliary 'do/does' required for the embedded clause. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TRANS_004",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0003",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "07c0b54b9d277d538f3f08442d33c316fad6a6a67bd1c102250384c48c402075",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:21:43.328218+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0d3424f28a77ff66bf36506ce05ca71bff634689e6b8b51a3a8b71a40626ee90",
+    "input_tokens": 6158,
+    "output_tokens": 1543,
+    "thoughts_tokens": 892,
+    "cost_usd": 0.001079,
+    "latency_ms": 303812,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6158,
+        "output_tokens": 1543,
+        "thoughts_tokens": 892,
+        "cost_usd": 0.001079,
+        "latency_ms": 303812,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

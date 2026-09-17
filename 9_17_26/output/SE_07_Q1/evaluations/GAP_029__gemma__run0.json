@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are correct. (a) matches the key. (b) 'outstanding' is a suitable synonym for great/excellent. (c) matches the key. (d) 'cumiosity' is a clear misspelling of 'curiosity', which fits the sense of 'interest' required by the key. (e) 'cheen' is a misspelling of 'cheering' or 'cheers', which fits the context of loud applause mentioned in the text.",
+      "evidence": "a) show b) outstanding c) cheered d) cumiosity e) cheen"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions; spelling is handled within the item-scoring logic as per instructions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (cumiosity, cheen)"
+    ],
+    "positive_aspects": [
+      "Strong contextual understanding",
+      "Effective use of synonyms (outstanding)"
+    ]
+  },
+  "feedback_summary": "The student correctly identified the required words for all five gaps. Items (a) and (c) match the key exactly; item (b) uses an appropriate synonym. Items (d) and (e) contain spelling errors ('cumiosity' for 'curiosity' and 'cheen' for 'cheering/cheers'), but as these are clearly intended correct words that fit the grammatical and contextual requirements of the passage, full marks are awarded for each.",
+  "_metadata": {
+    "task_id": "GAP_029",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0028",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "38d83d05c487c62dd8b5b72304885c4e62f15682482e59e8b5e15d69a73f100e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:22:16.924318+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1b4bd8eb61112fb20d4d375faefd1ce2434c1abd11b869280218b9dea07e323b",
+    "input_tokens": 6222,
+    "output_tokens": 1849,
+    "thoughts_tokens": 1144,
+    "cost_usd": 0.001177,
+    "latency_ms": 1229358,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6222,
+        "output_tokens": 1849,
+        "thoughts_tokens": 1144,
+        "cost_usd": 0.001177,
+        "latency_ms": 1229358,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

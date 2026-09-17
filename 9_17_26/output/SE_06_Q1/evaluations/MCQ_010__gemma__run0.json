@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identified the answers for items b, c, e, and g. Item g is marked correct because the student provided the correct text of the option despite the incorrect roman numeral label. Items a, d, and f were answered incorrectly.",
+      "evidence": "b) iv) pride and joy, c) (ii) honour, e) (ii) submitted, g) (iii) all of i, ii and iii"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural marks are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; language mechanics are not scored separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality marks are not applicable.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect option selection for vocabulary/synonym items"
+    ],
+    "positive_aspects": [
+      "Accurate identification of multiple correct options"
+    ]
+  },
+  "feedback_summary": "The student correctly answered 4 items: b, c, e, and g. Items a, d, and f were answered incorrectly. Total score is 4/7.",
+  "_metadata": {
+    "task_id": "MCQ_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "475990444cbbe09662e71ff47dbe3afc397afa1dba3d7697579667d4db93c5d2",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:40:47.286850+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5375f1cfca7ff81ca539dc9070d8b7e653832fcdc26a6a8fadd47877f6842808",
+    "input_tokens": 6685,
+    "output_tokens": 2226,
+    "thoughts_tokens": 1614,
+    "cost_usd": 0.001336,
+    "latency_ms": 491671,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6685,
+        "output_tokens": 2226,
+        "thoughts_tokens": 1614,
+        "cost_usd": 0.001336,
+        "latency_ms": 491671,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

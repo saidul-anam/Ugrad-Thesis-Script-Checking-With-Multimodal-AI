@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Paragraph_Subdivisions"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt and covers the basic lifestyle and routine of a rickshaw puller, but the response is short (87 words vs 120) and lacks detailed development.",
+      "evidence": "A rickshaw puller lives with his family in a slum or a rented house."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate failed the core structural requirement of writing a single unified paragraph, splitting the text into two distinct blocks.",
+      "evidence": "In morning, A rickshaw pul wake up"
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent errors in spelling ('bat' for 'but', 'pul' for 'puller'), subject-verb agreement ('he play', 'puller work'), and sentence fragments.",
+      "evidence": "who pulls rickshaw For earn money."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing appears authentic and not copied from a guide, though it is very basic in its expression.",
+      "evidence": "Government should help them."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Spelling errors",
+      "Sentence fragmentation"
+    ],
+    "positive_aspects": [
+      "On-topic content",
+      "Authentic student voice"
+    ]
+  },
+  "feedback_summary": "The candidate provides a relevant response that covers the essential aspects of a rickshaw puller's life. However, the work is undermined by frequent grammatical slips and a failure to adhere to the word count. Most importantly, the student split the writing into two paragraphs, which violates the structural requirement for a single-paragraph task, resulting in a hard cap of 5 marks.",
+  "_metadata": {
+    "task_id": "PARA_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "12",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "3d894efb4d88b3996001695cd7e39e8d394794208ab8370548e0639e17fef188",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:55:50.529022+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "128c6e98a68e5e79b7141e283dc394218d3acfa4eb165309fd875af8bee65a05",
+    "input_tokens": 5980,
+    "output_tokens": 2135,
+    "thoughts_tokens": 1437,
+    "cost_usd": 0.001239,
+    "latency_ms": 945905,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5980,
+        "output_tokens": 2135,
+        "thoughts_tokens": 1437,
+        "cost_usd": 0.001239,
+        "latency_ms": 945905,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

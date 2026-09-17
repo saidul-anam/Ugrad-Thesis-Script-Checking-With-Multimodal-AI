@@ -1,0 +1,80 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": false,
+    "is_blank_or_unintelligible": true
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not attempted; verified blank.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": []
+  },
+  "feedback_summary": "Not attempted; synthesised Band 0 record (no API call).",
+  "_metadata": {
+    "task_id": "STORY_006",
+    "script_id": "SE_11_Q1_0006",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ff504ad660ac14a3e299c577a4ab37847cf9c6de10bda21e359bd9f4df63fbc3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:05:22.623645+00:00",
+    "provider": null,
+    "model_id": null,
+    "cache_key": "synthesised",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "thoughts_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0,
+    "attempt_number": 0,
+    "http_status": null,
+    "evidence_not_found": [],
+    "synthesised": true,
+    "calls": []
+  }
+}

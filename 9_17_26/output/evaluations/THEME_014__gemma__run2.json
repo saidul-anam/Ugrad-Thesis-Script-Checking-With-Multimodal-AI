@@ -1,0 +1,99 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate identifies the core contrast between night dreams and day dreams and understands that day dreams lead to goal achievement, though the analysis is superficial.",
+      "evidence": "Day dream can reache help people to reach goal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The theme is stated early in a single block, but the student unnecessarily includes a location and date header, which is incorrect for a theme analysis task.",
+      "evidence": "Nazipur, Naogaon, Date: 27-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive errors in subject-verb agreement, pluralization, and spelling.",
+      "evidence": "this are only subconsus activity"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student avoids copying the poem directly (0% overlap), but the vocabulary is extremely basic and lacks interpretive depth.",
+      "evidence": "The poem is about the power of dream."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb agreement",
+      "Spelling errors (subconsus, reache)",
+      "Incorrect task formatting (Letter header)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Basic comprehension of the poem's central premise"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identifies the main theme—the efficacy of day dreams over night dreams—without copying from the text. However, the score is limited by significant linguistic failures and a confusion in formatting, evidenced by the inclusion of a letter-style address and date. The writing is functional but lacks the mechanical precision and depth required for higher bands.",
+  "_metadata": {
+    "task_id": "THEME_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "626f017fdef24047c80e7cbe5432b263c7dd8123349227121f740ccdbe8fe2d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:39:01.860522+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "70cfd7922aeb7f4ff78f88ae5e2f7c035916511b1f23b944cef1e9df31e52cdc",
+    "input_tokens": 4291,
+    "output_tokens": 2127,
+    "thoughts_tokens": 1435,
+    "cost_usd": 0.001067,
+    "latency_ms": 59265,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4291,
+        "output_tokens": 2127,
+        "thoughts_tokens": 1435,
+        "cost_usd": 0.001067,
+        "latency_ms": 59265,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

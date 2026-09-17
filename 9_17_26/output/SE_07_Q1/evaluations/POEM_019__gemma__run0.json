@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student attempted six items; per instructions, only the first five (a, b, d, e, f) are marked. Item (a) is correct; Item (b) is incomplete and earns 0; Items (d), (e), and (f) are correct as they convey the indicative content of the key. Total: 1+0+1+1+1 = 4.",
+      "evidence": "The parent says that their and responsibility is to care of the child... The parent show care for the child by bathing the child... Childhood is important because it is the time to learn good behavior... The teacher's role is to teach the child good behavior and guide him."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applied.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; linguistic mechanics are not scored separately unless they render the answer incorrect.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not scored separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incomplete response (Item b)"
+    ],
+    "positive_aspects": [
+      "Accurate understanding of poetic themes",
+      "Ability to paraphrase key concepts"
+    ]
+  },
+  "feedback_summary": "The student correctly answered four out of the first five attempted items. Items a, d, e, and f were marked right. Item b was marked wrong as it was left as a fragment. Item g was ignored as it was the sixth attempt.",
+  "_metadata": {
+    "task_id": "POEM_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "58fd57fe47a1ecfd6db457c5a8f5e5f920b67407b880da5e48ea3105fb607c20",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:23:00.127748+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a6a31e7eea10bbf0660e59c943ec25617e6c4ca4f4e6b8cdd3fa1281ac253918",
+    "input_tokens": 6469,
+    "output_tokens": 2084,
+    "thoughts_tokens": 1388,
+    "cost_usd": 0.001272,
+    "latency_ms": 152234,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6469,
+        "output_tokens": 2084,
+        "thoughts_tokens": 1388,
+        "cost_usd": 0.001272,
+        "latency_ms": 152234,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

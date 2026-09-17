@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt and fulfills the core objective by outlining a clear plan to support and educate villagers after the HSC examination.",
+      "evidence": "From your last letter you wanted to know the future plan after passing H.S.c Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "Most structural elements (address, salutation, body, complimentary close, signature, envelope) are present, but the date is omitted and there is a period after the salutation.",
+      "evidence": "1231 Joynag Road, Dhaka\n\nDear Toufa."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling mistakes ('zeno', 'dieses', 'decission', 'cuith', 'knoculedge'), subject-verb/tense errors ('I go', 'I teach'), and capitalization issues.",
+      "evidence": "They also zeno knowledge about hygiene and balance food. They lead unhealthy life most of them suffer many dieses. so, I make decission"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response provides an authentic and thoughtful personal idea regarding community service rather than relying solely on memorized generic templates.",
+      "evidence": "I go to village people cuith my some friends and tell them how to Fight cuith dises and how to prevent them"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'zeno', 'dieses', 'decission', 'cuith', 'knoculedge')",
+      "Tense inconsistency (using simple present instead of future tense 'will go'/'will teach')",
+      "Punctuation and capitalization slips (period after salutation, uncapitalized sentence start 'so, I make')"
+    ],
+    "positive_aspects": [
+      "Clear fulfillment of the letter's purpose with a constructive, socially responsible plan",
+      "Inclusion of key letter components including address block and envelope layout"
+    ]
+  },
+  "feedback_summary": "The letter clearly and constructively addresses the prompt with a meaningful future plan. While the layout includes most necessary components, the date is missing. Language mechanics require improvement due to frequent spelling errors and inconsistent tense usage.",
+  "_metadata": {
+    "task_id": "LETTER_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "14635fae7008c34e7a50cc90cb6470d59364bdabd5e499a14b46c9b453199387",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:05:34.104683+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "ee8174c52ce4f1108da27211e456058fc8b237249bf3126f23cd64efc6499a77",
+    "input_tokens": 4377,
+    "output_tokens": 2494,
+    "thoughts_tokens": 1690,
+    "cost_usd": 0.007548,
+    "latency_ms": 25015,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4377,
+        "output_tokens": 2494,
+        "thoughts_tokens": 1690,
+        "cost_usd": 0.007548,
+        "latency_ms": 25015,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

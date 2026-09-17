@@ -1,0 +1,100 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies all data points and values from the chart (Coal 46%, Natural gas 24%, Hydro-electric 16%, Oil 12%, Nuclear 2%), noting the highest and lowest sources. However, data presentation is repetitive, listing coal and nuclear twice across the description.",
+      "evidence": "In the chart, USA produced 16% of its e elec tricity using hydro- electric power of its total. After that there is neucleane which was the least amount of percentage to generate electricity at USA in 1980, which is only 2%."
+    },
+    "structure_format_brevity": {
+      "rationale": "An introductory sentence and a general concluding observation are included in a single paragraph block, but the internal organization is somewhat haphazard due to redundant sequences ('Lastly Second most... Lastly, thein is').",
+      "evidence": "The chart in the passage declares us the source of USA electricity in 1980."
+    },
+    "language_mechanics": {
+      "rationale": "Past tense is largely maintained for historical reporting, but frequent spelling and mechanical slips occur throughout ('neuclean', 'neucleane', 'thein', 'declares us', 'e elec tricity', 'it's total').",
+      "evidence": "And it is also clear that the least amount of electricity was made using neuclean."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Includes useful comparative expressions such as 'massive amount', 'least amount', 'second most main source', and 'covers almost half', though the overall phrasing remains basic and formulaic.",
+      "evidence": "Lastly, thein is coal which covers almost half of our the chart and the percentage is 46%."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'neuclean', 'neucleane', 'thein')",
+      "Collocation and word choice awkwardness ('declares us', 'least amount of percentage')",
+      "Punctuation and apostrophe confusion ('it's total' instead of 'its total')",
+      "Disorganized sequencing and repetition of items (mentioning coal and nuclear multiple times)"
+    ],
+    "positive_aspects": [
+      "100% accurate extraction of all chart figures and categories",
+      "Good identification of extreme values (highest and lowest sources)",
+      "Consistent use of past tense for historical 1980 data",
+      "Helpful comparative phrasing ('almost half', 'second most main source')"
+    ]
+  },
+  "feedback_summary": "The script demonstrates a clear understanding of the chart by accurately reporting every data figure and identifying both the highest (coal) and lowest (nuclear) sources. Basic comparative language is used effectively. However, the score is limited to the lower end of Band 3 (6/10) due to repetitive sequencing of points and noticeable mechanical errors in spelling, word choice, and punctuation.",
+  "_metadata": {
+    "task_id": "CHART_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "85a04beac66f49ee0396ea180b32d9547fe584f23193d0afd7d1eac398a24fa7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:19:01.208571+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "49f97cad56ecea87c4f30f7e24483fff8634474dd2700ec9b6aa0a533c0c4c3b",
+    "input_tokens": 4429,
+    "output_tokens": 3103,
+    "thoughts_tokens": 2144,
+    "cost_usd": 0.009086,
+    "latency_ms": 20375,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4429,
+        "output_tokens": 3103,
+        "thoughts_tokens": 2144,
+        "cost_usd": 0.009086,
+        "latency_ms": 20375,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

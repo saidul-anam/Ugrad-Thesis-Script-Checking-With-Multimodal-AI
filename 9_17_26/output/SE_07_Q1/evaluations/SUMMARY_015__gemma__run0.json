@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures all essential facts: the astronauts' names, the dates of departure and return, the mission name, and the concluding lesson.",
+      "evidence": "Neil Armstrong, Michael collins and Edwin Aldbrin three American astronauts began their journy to the Moon on July 16, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is a single coherent block, but the length (47%) significantly exceeds the ideal target of one-third (33%) of the original text.",
+      "evidence": "In passage, Neil Armstrong... and to human courage."
+    },
+    "language_mechanics": {
+      "rationale": "There are several spelling errors ('journy', 'Aldbrin') and significant grammatical failures in the final sentences ('Their made history', 'and to human courage').",
+      "evidence": "Their made history. They showed the power of science, teamwork and to human courage."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student has essentially lifted sentences directly from the source text, making only trivial changes or introducing errors; there is almost no paraphrasing.",
+      "evidence": "Their space- craft was called Apollo 11."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Verbatim lifting",
+      "Spelling errors",
+      "Pronoun/Verb agreement"
+    ],
+    "positive_aspects": [
+      "Factual accuracy",
+      "Complete coverage of main points"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified and included all key information from the passage. However, the summary relies almost entirely on lifting sentences verbatim from the source. There are several spelling and grammatical errors toward the end of the response, and the length is slightly too long for a concise summary. No structural cap was applied as the verbatim overlap and length remained under 50%.",
+  "_metadata": {
+    "task_id": "SUMMARY_015",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0014",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "eb4e88995d23bbb1507bea6b22cdd7deb8e5ce530ad3d2927f0ef7ce3aacf3ce",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:38:16.177569+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "36d2aa22e1755a4178d418a94204ed5639bbdae46df023cf0909f2a9ec2492a2",
+    "input_tokens": 6069,
+    "output_tokens": 2938,
+    "thoughts_tokens": 2201,
+    "cost_usd": 0.001488,
+    "latency_ms": 222967,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6069,
+        "output_tokens": 2938,
+        "thoughts_tokens": 2201,
+        "cost_usd": 0.001488,
+        "latency_ms": 222967,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

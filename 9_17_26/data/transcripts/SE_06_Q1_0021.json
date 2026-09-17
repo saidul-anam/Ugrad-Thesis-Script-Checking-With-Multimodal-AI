@@ -1,0 +1,196 @@
+{
+  "script_id": null,
+  "pages_processed": 11,
+  "answers": [
+    {
+      "question_number": "1",
+      "transcript": "a. (i) experience.\nb. ~~(ii) favoun~~ {inserted: (ii) sow knows andjoy.\nc. (iii) favoun\nd. (iii) fearful\ne. (i) defended.\nf. (iv) unitedly.\ng. (ii) Independence.",
+      "pages": [
+        1
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "2",
+      "transcript": "a) on this day in 1971 : Bangladesh got independence ~~a~~ after a nine-month-long blood-soaked battle against the pakistani army,\nb) The Victory Day is celebrated with great enthusiasm across the contry.\nc) Differen nt political, cultural and educational programmes ane organ ised to pay homage to the man tryns of the wan,\nd) The day begins with ~~a 31-gu~~ 31-Jun salute at dawn, followed by the hoisting of the national flag at govemmment buildings and private institution",
+      "pages": [
+        1,
+        2
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "3",
+      "transcript": "a) [illegible]",
+      "pages": [
+        2
+      ],
+      "confidence": 0.4,
+      "illegible_count": 1,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": "Student's response is mostly scribbled out"
+    },
+    {
+      "question_number": "4",
+      "transcript": "a) wentback — went come.\nb)\nc)\nd)\ne) bought — buy",
+      "pages": [
+        3
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "5",
+      "transcript": "(i) Raju reads in class six.\n(ii) He dd well in Batngla, English, and mathematics subject.\n(iii) He got in those subject 8, 9, and 10\n(iv) He did poorly in ICT and science.\n(v) He got in weak subject ICT and science .",
+      "pages": [
+        3,
+        4
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "6",
+      "transcript": "a) false. correct answer: Raju can improve all weak subject.\nb) False. correct answer: He got 10 markes out of 10 in mathematics.\nc) ~~False~~ correct answer: (C) True,\nd) false. correct answer: Raju plan to give more time to those subject\ne)",
+      "pages": [
+        4,
+        5
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "9",
+      "transcript": "1. b\n2. a\n3. d\n4. f\n5. c\n6. h\n7. e\n8. g",
+      "pages": [
+        5
+      ],
+      "confidence": 1.0,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "10",
+      "transcript": "b) Rabin is a happy bind beacouse ~~beacouse~~ beacause he sings the seasons all his might\nc) the playmate come only on a rainy day beacause the play mate see the rains wat then .\nd) the boy thinks the play mate lives in an other land beaucase the ma playmate was the down lagys\ne) the moon came there to peep",
+      "pages": [
+        6,
+        7
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "11",
+      "transcript": "once upon atime two friends went on a journey. they had to go through a forest on the way. As they came through the wood, they saw a bear approaching hism. ~~the~~ one friend",
+      "pages": [
+        8
+      ],
+      "confidence": 0.9,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": "Danger time your friend can't help you",
+      "notes": "Story ends abruptly"
+    },
+    {
+      "question_number": "12",
+      "transcript": "A Rickshaw-pullen has an im portent work in our contry. He carrying passen passenders for of one plecee for ano other: The rickshaw pullen pulls rick shaw for money. The rickshaw pullens are avabit {inserted: avlabil} in our contry. actualy many reick pullens have no rick shaw.\n\nThe y treat the rickshaw his owners. they work very hard. beaucas the summer seasons is very handen so the term ~~temprecha~~ bemprechen esane hige . so summen season is very handen for rickshaw pullens, they cam {inserted: can't} nest any any time. the work s very late. They work s very night. The rick shaw can't suver eat food propenily.",
+      "pages": [
+        9,
+        10,
+        11
+      ],
+      "confidence": 0.7,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    },
+    {
+      "question_number": "13",
+      "transcript": "Shahid: Hello docton.\ndocton: Hi pleeses sit down.\nShahid: ok docton\ndocton: ~~wat~~ wats younn problam.\nShahid: I feel bad. I have nunhinoice.",
+      "pages": [
+        11
+      ],
+      "confidence": 0.8,
+      "illegible_count": 0,
+      "unclear_count": 0,
+      "ambiguous_authorship": [],
+      "student_title": null,
+      "notes": null
+    }
+  ],
+  "questions_not_found": [
+    "7",
+    "8"
+  ],
+  "overall_confidence": 0.8,
+  "extraction_warnings": [],
+  "_metadata": {
+    "script_id": "SE_06_Q1_0021",
+    "provider": "gemini",
+    "model_id": "gemma-4-31b-it",
+    "thinking_level": "medium",
+    "exam_set": "SE_06_Q1",
+    "prompt_version": "extraction_prompt_c6_v1",
+    "prompt_file": "extraction_prompt_c6_v1.md",
+    "prompt_hash": "f172ab06cd2b8256703c24aac7a3e69688981e106974ba6a4975feb8e0e852b6",
+    "cache_key": "ba07d84e86261b87935fd23a9b313902ada0522c77c431f4aa7e313ae39f4b5b",
+    "from_cache": false,
+    "chunked": false,
+    "timestamp": "2026-09-17T04:01:30.726086+00:00",
+    "wall_time_s": 790.625,
+    "pages_available": 11,
+    "total_input_tokens": 5830,
+    "total_output_tokens": 1824,
+    "total_cost_usd": 0.00113,
+    "settings": {
+      "thinking_level": "medium",
+      "max_output_tokens": 32768
+    },
+    "calls": [
+      {
+        "chunk_index": 0,
+        "pages_sent": 11,
+        "input_tokens": 5830,
+        "output_tokens": 1824,
+        "cost_usd": 0.0011302,
+        "latency_ms": 790532,
+        "http_status": 200,
+        "attempt_number": 4
+      }
+    ]
+  }
+}

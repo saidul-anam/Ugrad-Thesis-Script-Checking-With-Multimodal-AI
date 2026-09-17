@@ -1,0 +1,97 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly transformed four out of five sentences (a, b, c, d) by placing the subject before the verb and removing the auxiliary. Item e is incorrect as the subject 'the postmaster' was omitted, resulting in a broken clause.",
+      "evidence": "a. Do you know where the post office is? b. Do you know what the postmaster does? c. Do you know why the postmaster is so happy? d. Do you know where his children go to school?"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of subject in embedded clause (Item e)"
+    ],
+    "positive_aspects": [
+      "Perfect mastery of word order in embedded questions for 80% of the task"
+    ]
+  },
+  "feedback_summary": "The student performed very well, correctly transforming items a, b, c, and d (1 mark each). Item e was marked wrong (0) because the subject 'the postmaster' was missing from the transformed sentence. Total score: 4/5.",
+  "_metadata": {
+    "task_id": "TRANS_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c9ef41ecfed7a91985e66ac6a427aef894c2898d34193a3f2075c7ce9d75b944",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:47:40.659479+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5ab35ce9d6176681ebf84f8daacb28e0fa23f608d02c2a220de0d0a1997fb3c1",
+    "input_tokens": 6154,
+    "output_tokens": 1308,
+    "thoughts_tokens": 661,
+    "cost_usd": 0.001008,
+    "latency_ms": 1739515,
+    "attempt_number": 7,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6154,
+        "output_tokens": 1308,
+        "thoughts_tokens": 661,
+        "cost_usd": 0.001008,
+        "latency_ms": 1739515,
+        "attempt_number": 7,
+        "http_status": 200
+      }
+    ]
+  }
+}

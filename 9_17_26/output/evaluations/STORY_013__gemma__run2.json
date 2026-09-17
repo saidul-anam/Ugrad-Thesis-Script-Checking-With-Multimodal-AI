@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a logical and sequential continuation of the stem, following the plot of the fable accurately from the conflict to the resolution.",
+      "evidence": "the mouse get into the sleeping lion nose. As a result, the lion woke up and chased the mouse."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story concludes with a positive, grateful ending, but the student completely failed to provide a title as required by the prompt.",
+      "evidence": "The lion was very greatful to the mouse. The lion thanked the mouse to help him."
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive lack of past-tense consistency (mixing present and past) and multiple spelling errors that hinder the professional quality of the writing.",
+      "evidence": "the mouse get into the sleeping lion nose... the lion agree with the mouse... eat the met"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a memorized version of a common Aesop fable. While the student attempts to paraphrase, there is no creative variation or authentic narrative detail.",
+      "evidence": "the mouse said, if the lion forgave him, one day, the mouse will help the lion."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (mixing present and past tense)",
+      "Spelling errors (e.g., 'happity', 'jangle', 'met')"
+    ],
+    "positive_aspects": [
+      "Clear sequential plot development",
+      "Appropriate positive resolution"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the story with a coherent and logical sequence of events. However, the work is marred by a missing title and significant grammatical weaknesses, particularly in tense control (e.g., using 'get' and 'agree' in a past-tense narrative). The content is a standard retelling of a well-known fable with little evidence of original creative expression.",
+  "_metadata": {
+    "task_id": "STORY_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "ab428952ba0c2cc4fae2fc8cc780d4b8ba2bea283c6112f5368416d8b026fa9e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:27:04.520798+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "4c686138f722c0fe8ce9a9729bcc634d441bfe56ad233b232bdd69ec3429991e",
+    "input_tokens": 4457,
+    "output_tokens": 2475,
+    "thoughts_tokens": 1733,
+    "cost_usd": 0.001188,
+    "latency_ms": 69672,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4457,
+        "output_tokens": 2475,
+        "thoughts_tokens": 1733,
+        "cost_usd": 0.001188,
+        "latency_ms": 69672,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

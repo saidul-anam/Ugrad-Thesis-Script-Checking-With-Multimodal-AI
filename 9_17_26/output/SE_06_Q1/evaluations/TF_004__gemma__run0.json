@@ -1,0 +1,95 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provided text that is entirely unrelated to the prompt. None of the items (a, b, c, d, or e) were answered. Therefore, no marks are awarded for any item.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Task misalignment (candidate wrote unrelated text instead of answering the True/False questions)"
+    ],
+    "positive_aspects": [
+      "The written text, while irrelevant, is grammatically intelligible."
+    ]
+  },
+  "feedback_summary": "The candidate failed to attempt the requested task. Items a, b, c, d, and e were all left unanswered, as the candidate instead provided a short narrative about their morning routine. Total score: 0/5.",
+  "_metadata": {
+    "task_id": "TF_004",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0004",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "b9884f1000a21de714f2bd46dedb9304d20d39d7f730cd910cefd6d327ee22ca",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:08:19.126104+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "82f3c2a503321e3cd541921353aa99f55b34331a312d3aab683766de3abd45d5",
+    "input_tokens": 6409,
+    "output_tokens": 1410,
+    "thoughts_tokens": 818,
+    "cost_usd": 0.001064,
+    "latency_ms": 142703,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6409,
+        "output_tokens": 1410,
+        "thoughts_tokens": 818,
+        "cost_usd": 0.001064,
+        "latency_ms": 142703,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

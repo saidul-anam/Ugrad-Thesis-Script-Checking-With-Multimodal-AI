@@ -1,0 +1,99 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Identifies the central subject (hope), but completely omits the core metaphor of hope as a bird that sings through storms without asking for anything in return. Instead, introduces ungrounded external details.",
+      "evidence": "the grass, leves of a tree, the waves of seas are the source of hope."
+    },
+    "structure_format_brevity": {
+      "rationale": "Maintained in a single concise block without paragraph breaks, though the response functions more like an external commentary than a proper textual summary.",
+      "evidence": "So it's the part and pencerl for human life."
+    },
+    "language_mechanics": {
+      "rationale": "Displays multiple mechanical errors in a very short text, including spelling mistakes ('leves', 'pencerl'), missing sentence capitalization ('the grass'), and incorrect preposition usage ('living at hope').",
+      "evidence": "the grass, leves of a tree, the waves of seas are the source of hope. So it's the part and pencerl"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Written entirely in the candidate's own words with zero verbatim overlap, but relies on fabricated ideas rather than paraphrasing the source poem's imagery.",
+      "evidence": "No one can live without this. Every moment we are living at hope."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('leves', 'pencerl')",
+      "Faulty preposition usage ('living at hope')",
+      "Capitalization error ('the grass' starting a sentence)",
+      "Inclusion of external commentary/facts not present in the poem"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source text",
+      "Correctly identifies the broad subject of hope",
+      "Written within a single unified block"
+    ]
+  },
+  "feedback_summary": "The candidate recognizes the central theme of 'hope' and expresses it in their own words without copying directly from the poem. However, the summary fails to represent the actual content and metaphors of Dickinson's poem (the bird, the storm, extremity, crumbs), instead drifting into generic external commentary and personal assertion. Mechanical errors in spelling, capitalization, and preposition usage further limit the score to Band 2.",
+  "_metadata": {
+    "task_id": "SUMMARY_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "f004136e90b64ceaa821e63121a1bab62e6595509411dea148d48d2937299c3c",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T21:08:15.752918+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "fd9c22ae952af62e6a233cbdc43585da71155c9127ba4c9b77ada9ea9f9a8f9b",
+    "input_tokens": 4365,
+    "output_tokens": 2689,
+    "thoughts_tokens": 1882,
+    "cost_usd": 0.008032,
+    "latency_ms": 18906,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4365,
+        "output_tokens": 2689,
+        "thoughts_tokens": 1882,
+        "cost_usd": 0.008032,
+        "latency_ms": 18906,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

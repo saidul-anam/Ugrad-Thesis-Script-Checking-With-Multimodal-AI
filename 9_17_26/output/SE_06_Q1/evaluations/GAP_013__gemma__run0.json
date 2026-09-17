@@ -1,0 +1,99 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is correct ('dreamt'). Item b was omitted. Item c is incorrect ('went' does not fit the idiom 'came to know'). Item d is correct ('sold'). Item e ('unowing') is a misspelling of 'knowing', which is a valid synonym for 'hearing' in this context and therefore earns the mark per the rubric.",
+      "evidence": "a. dreamt; d. sold; e. unowing"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of answer (Item b)",
+      "Incorrect word choice (Item c)",
+      "Spelling error (Item e)"
+    ],
+    "positive_aspects": [
+      "Correct identification of key verbs ('dreamt', 'sold')"
+    ]
+  },
+  "feedback_summary": "The student correctly answered three items: a (dreamt), d (sold), and e (unowing, interpreted as 'knowing'). Item b was left blank, and item c (went) was incorrect as it did not match the required phrase 'came to know'.",
+  "_metadata": {
+    "task_id": "GAP_013",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0013",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "2184133064765c03130d1f3c6fdfed388986bf0e8b8da0bb425b7531970a703e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:47:31.890574+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "12ef56cf4607f73be01df18bb2572e222ab1a931a5500d80fe72c19aa7f84e85",
+    "input_tokens": 6320,
+    "output_tokens": 1988,
+    "thoughts_tokens": 1350,
+    "cost_usd": 0.001228,
+    "latency_ms": 221921,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6320,
+        "output_tokens": 1988,
+        "thoughts_tokens": 1350,
+        "cost_usd": 0.001228,
+        "latency_ms": 221921,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

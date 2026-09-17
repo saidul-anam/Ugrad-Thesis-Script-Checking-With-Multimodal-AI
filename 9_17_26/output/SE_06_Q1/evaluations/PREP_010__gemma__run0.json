@@ -1,0 +1,99 @@
+{
+  "task_type": "Preposition_Use",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) fails as it does not contain the required preposition 'bottom of'. Item (b) is not a complete sentence. Item (c) is correct. Item (d) is correct (grammatical slip 'He walking' is ignored per rubric). Item (e) uses 'across' as a verb, which is not correct English.",
+      "evidence": "c) Through = They came through the wood on a journey; d) Along = He walking along the road."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Omission of target preposition",
+      "Sentence fragments",
+      "Incorrect part-of-speech usage (using preposition as verb)"
+    ],
+    "positive_aspects": [
+      "Correct usage of 'through' and 'along'"
+    ]
+  },
+  "feedback_summary": "Items (c) and (d) are marked correct. Item (a) is wrong because the preposition 'bottom of' is missing. Item (b) is wrong as it is not a sentence. Item (e) is wrong because 'across' is used incorrectly as a verb.",
+  "_metadata": {
+    "task_id": "PREP_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "8",
+    "question_type": "Preposition_Use",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "f347e18b80d3f895f9746e4076b3546c88078c68530159ee4711a863378aaa97",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:40:23.193181+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0fca2ee88cee3b254c0fd46ad794cd8c7dcf785cd527286f692e7f1d6580a81f",
+    "input_tokens": 6268,
+    "output_tokens": 1729,
+    "thoughts_tokens": 1079,
+    "cost_usd": 0.001146,
+    "latency_ms": 367796,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6268,
+        "output_tokens": 1729,
+        "thoughts_tokens": 1079,
+        "cost_usd": 0.001146,
+        "latency_ms": 367796,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

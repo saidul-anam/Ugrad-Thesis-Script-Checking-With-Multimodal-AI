@@ -1,0 +1,97 @@
+{
+  "task_type": "Graph_Chart",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately includes all five data values from the chart and correctly identifies the highest (coal) and lowest (nuclear) energy sources, though reporting is mostly a simple list without deeper analytical groupings.",
+      "evidence": "The highes amount of electricity generatet by caal and the percentage is 46%."
+    },
+    "structure_format_brevity": {
+      "rationale": "Contains an introductory statement and a concluding summary, but wastes significant space on irrelevant, memorized boilerplate and fails to group data analytically.",
+      "evidence": "This graph effective illustrate the progression of data hightlith highlighting the variation."
+    },
+    "language_mechanics": {
+      "rationale": "High error density characterized by frequent misspellings, adverb/adjective confusion, and flawed sentence structures throughout the script.",
+      "evidence": "2%. neucklear is used for it."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Relies heavily on formulaic template phrases and presents data line-by-line with minimal comparative vocabulary beyond basic rankings.",
+      "evidence": "Natural gass's percentage is 22 24% percent which is 2nd highest."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent orthographic/spelling mistakes ('generatet', 'caal', 'neucklear', 'portrayas', 'peruspective', 'gass's')",
+      "Grammatical errors and word-form slips ('effective illustrate', 'Different part', 'the large contribute')",
+      "Over-reliance on generic memorized template sentences"
+    ],
+    "positive_aspects": [
+      "Accurately captures all percentage values from the given chart without hallucinating figures",
+      "Correctly identifies the primary extremes (highest and lowest sources)"
+    ]
+  },
+  "feedback_summary": "The response accurately covers all data points and identifies the key maximum and minimum values from the chart. However, it relies heavily on pre-memorized generic opening filler, lists values mechanically rather than synthesizing trends, and exhibits pervasive spelling and grammatical errors, placing it in Band 2.",
+  "_metadata": {
+    "task_id": "CHART_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "8",
+    "question_type": "Graph_Chart",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d299ba34e59dfccf17ee24d10018d4c885a2f55ece0a91ddb0592c057ba36f3",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:14:57.931296+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d74ff5b1d57c7906f2ca06c1183fcf421e6cc8c60bbb6f193b515c8140ff7221",
+    "input_tokens": 4391,
+    "output_tokens": 3621,
+    "thoughts_tokens": 2849,
+    "cost_usd": 0.01037,
+    "latency_ms": 20967,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4391,
+        "output_tokens": 3621,
+        "thoughts_tokens": 2849,
+        "cost_usd": 0.01037,
+        "latency_ms": 20967,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

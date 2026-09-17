@@ -1,0 +1,99 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item i is correct (event of starting journey). Item ii is incorrect because it states 'The astronauts' generally, whereas only Armstrong and Aldrin landed. Item iii is correct. Item iv is correct. Item v is incorrect because 'with great excitement' describes the mood, not the 'When/Where' required by the table header.",
+      "evidence": "i) went to the Moon, ii) The astronauts, iii) in July 20, 1969, iv) came back safely to Earth, v) with great excitement"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structure is not assessed separately.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are not assessed separately.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not assessed separately.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lack of specificity in identification",
+      "Incorrect category retrieval (manner instead of location)"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of dates",
+      "Correct identification of the return event"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items i, iii, and iv. Item ii was marked wrong because it failed to specify that only Armstrong and Aldrin landed (the general term 'The astronauts' includes Collins, who did not land). Item v was marked wrong because the answer provided a description of emotion rather than the required location ('all over the world'). Total: 3/5.",
+  "_metadata": {
+    "task_id": "TABLE_016",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0015",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ff05f9a70aae956fecb70a3c50e8a71baf4bd5f2b6cf15577ec33f1daf3fab99",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:44:17.411067+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f20af4673a34d36d330fedeff6856dd45dcd12d70f902a5f37e96fa15b02f849",
+    "input_tokens": 6354,
+    "output_tokens": 1813,
+    "thoughts_tokens": 1121,
+    "cost_usd": 0.001179,
+    "latency_ms": 147343,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6354,
+        "output_tokens": 1813,
+        "thoughts_tokens": 1121,
+        "cost_usd": 0.001179,
+        "latency_ms": 147343,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

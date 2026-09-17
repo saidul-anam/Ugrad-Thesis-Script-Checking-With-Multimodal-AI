@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately extracts all key information: Raju's grade, his high scores in three subjects, his low scores in three others, and his resolution to work harder.",
+      "evidence": "There was a boy named Raju who read in class six. He got 8 in in Bangla, 9 in English, and 10 in Mathematics. But he got 6 in ICT, Science, and Religion"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response fails both structural requirements: it is not a single coherent block (it contains paragraph breaks and a listed 'moral') and the length (55.8%) exceeds the 50% hard-cap threshold.",
+      "evidence": "The motval of story is: -> \"Work hard as you can!\""
+    },
+    "language_mechanics": {
+      "rationale": "Syntax is poor, characterized by a stutter at the start and severe spelling and grammatical errors in the latter half, which does not meet the 'clean syntax' requirement.",
+      "evidence": "possiable... motval... you have to tried hundred!"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying of sentences, with a very low overlap percentage, showing a genuine effort to paraphrase the events.",
+      "evidence": "he wanted to work hard in the weak subject as hard as possiable"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 2.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (possiable, motval)",
+      "Structural failure (multiple paragraphs/sections)",
+      "Syntactic breakdown in conclusion"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of data from the passage",
+      "Low reliance on verbatim lifting"
+    ]
+  },
+  "feedback_summary": "The candidate identifies the central facts and supporting details of the passage correctly and avoids copying sentences directly. However, the response fails the structural requirements of a summary: it is not a single block of text and it exceeds half the length of the original passage (55.8%), which triggers a hard cap of 2 marks. Additionally, the writing contains several spelling and grammatical errors in the final section.",
+  "_metadata": {
+    "task_id": "SUMMARY_011",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0011",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "68ec2f9ad6a76d1f90590663e1faa42129c00c02755818146b3a1d193841c3cb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:56:02.990522+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2fdb84f261a2965dfb446b12d9cb49382fc2b9be50a869a86b155f6bdc0166f0",
+    "input_tokens": 6148,
+    "output_tokens": 2386,
+    "thoughts_tokens": 1598,
+    "cost_usd": 0.001331,
+    "latency_ms": 1112515,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6148,
+        "output_tokens": 2386,
+        "thoughts_tokens": 1598,
+        "cost_usd": 0.001331,
+        "latency_ms": 1112515,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

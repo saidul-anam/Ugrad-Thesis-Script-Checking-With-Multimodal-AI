@@ -1,0 +1,95 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": true
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The response is completely irrelevant to the provided text about the Apollo 11 moon landing. It contains no information from the source passage.",
+      "evidence": ""
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written as a list (a, b, c, d) rather than a single coherent summary paragraph as required by the task.",
+      "evidence": "a. urganapea"
+    },
+    "language_mechanics": {
+      "rationale": "The text contains gibberish ('urganapea') and incorrect grammar ('He is very ripen'), making it unintelligible as a piece of English writing.",
+      "evidence": "urganapea"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While the text is not copied from the passage, it is not a paraphrase because it does not relate to the content of the passage at all.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Complete lack of contextual relevance",
+      "Incorrect task format",
+      "Use of gibberish/unintelligible text"
+    ],
+    "positive_aspects": []
+  },
+  "feedback_summary": "The candidate's response is entirely unrelated to the prompt. Instead of summarizing the passage about the Apollo 11 mission, the student has provided a list of four unconnected and largely nonsensical phrases. This indicates a total failure to engage with the text or a mistake in answering the wrong question.",
+  "_metadata": {
+    "task_id": "SUMMARY_001",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0000",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "5e68136d4eef1a9ae38221f88f45ba16727fbce3b93860746c715f228103fe59",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:44:47.903874+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "f53c5bb86df7e1f213871e8149a702c398c535159f0465407838c17cb9d121ac",
+    "input_tokens": 5991,
+    "output_tokens": 1707,
+    "thoughts_tokens": 1066,
+    "cost_usd": 0.001111,
+    "latency_ms": 225453,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5991,
+        "output_tokens": 1707,
+        "thoughts_tokens": 1066,
+        "cost_usd": 0.001111,
+        "latency_ms": 225453,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

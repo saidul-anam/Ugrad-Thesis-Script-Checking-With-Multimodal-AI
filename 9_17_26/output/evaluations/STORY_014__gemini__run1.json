@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The narrative smoothly continues from the stem, maintaining logical continuity and sequential plot progression with the lion getting trapped and the mouse coming to the rescue.",
+      "evidence": "suddenly he was caught by a hunter's net. The lion roared and cried. At at time that mouse attended there and asked the lion if she could help him."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script includes a title, reaches a positive resolution, and provides a clear moral; however, the title is syntactically unrefined and formatting is somewhat basic.",
+      "evidence": "Size doesn't Matter to help."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling mistakes, tense inconsistencies, and misuse of prepositions/pronouns throughout the script.",
+      "evidence": "Onece a lion was sleeping in a forzest. suddenly a mouse came there It was, in fact, playing on a race quite happily and didn't notice the sleeping mouse lion. while running, the mouse entered the lion's nose by it's subconsinsly."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative relies on a highly predictable, conventional retelling of the Aesop fable with basic vocabulary and awkward phrasing rather than creative descriptive detail.",
+      "evidence": "The lion understand that small in size can help the big size. The lion thanked the mouse and they made friendship with each other."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'Onece', 'forzest', 'subconsinsly', 'theeth', 'understimet', 'clas')",
+      "Punctuation and capitalization slips (e.g., missing sentence stops, lowercase sentence starters 'suddenly', 'while')",
+      "Tense inconsistency and subject-verb agreement (e.g., 'The lion understand')",
+      "Incorrect possessive pronoun form (e.g., 'it's' instead of 'its')"
+    ],
+    "positive_aspects": [
+      "Story plot logically follows the prompt stem to completion",
+      "Reaches a positive resolution with an explicit constructive moral lesson",
+      "Includes an attempted relevant title"
+    ]
+  },
+  "feedback_summary": "The candidate provides a complete and coherent continuation of the provided story stem, incorporating an appropriate title, a constructive moral, and a clear resolution. However, the score falls into the lower end of Band 3 (4/7) due to basic syntax and frequent mechanical errors, including pervasive spelling mistakes ('forzest', 'theeth', 'understimet') and tense inconsistencies.",
+  "_metadata": {
+    "task_id": "STORY_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e9a64d2ab4c0832707ce350d7f26cfec67565ad6a9ea29e9da466f0828b3768b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:35:04.121806+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "18fbaecdecb868eb43050b8b485442c20249854f8002063238925cc1a3a80a65",
+    "input_tokens": 4436,
+    "output_tokens": 3671,
+    "thoughts_tokens": 2783,
+    "cost_usd": 0.010508,
+    "latency_ms": 20000,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4436,
+        "output_tokens": 3671,
+        "thoughts_tokens": 2783,
+        "cost_usd": 0.010508,
+        "latency_ms": 20000,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

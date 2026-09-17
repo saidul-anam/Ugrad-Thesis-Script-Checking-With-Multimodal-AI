@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items were answered incorrectly. Item a: student said True (misspelled 'Thue'), key is False. Item b: student said True ('Thue'), key is False. Item c: student said True ('Thue'), key is False. Item d: student said False, key is True. Item e: student said True ('Thue'), key is False.",
+      "evidence": "a. Thue b. Thue c. Thue d. False; It was launched From Florida, USA. people all over the wohld watched the news with great excitement. e. Thue"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy",
+      "Spelling of 'True'"
+    ],
+    "positive_aspects": [
+      "Attempted all five items"
+    ]
+  },
+  "feedback_summary": "The candidate failed all five items. Item a: Wrong (Thue); Item b: Wrong (Thue); Item c: Wrong (Thue); Item d: Wrong (False); Item e: Wrong (Thue). Total score: 0/5.",
+  "_metadata": {
+    "task_id": "TF_027",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0026",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "394a517bb3a3de46097a86b3dcc301d705c1332a4252793f5e06bdc2bf3023e4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:00:11.446834+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "d7568f192cede55ea5732746915f38882bb7e9a4011946dc46dbe289ac6b1a54",
+    "input_tokens": 6405,
+    "output_tokens": 1696,
+    "thoughts_tokens": 1047,
+    "cost_usd": 0.001149,
+    "latency_ms": 196530,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6405,
+        "output_tokens": 1696,
+        "thoughts_tokens": 1047,
+        "cost_usd": 0.001149,
+        "latency_ms": 196530,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

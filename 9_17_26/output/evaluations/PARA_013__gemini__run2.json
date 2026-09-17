@@ -1,0 +1,98 @@
+{
+  "task_type": "Paragraph",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Directly addresses the prompt by discussing definitions, applications in education and healthcare, and threats such as over-dependence and misinformation, though the points are explained quite simply.",
+      "evidence": "In education systam, AI is very important . Student get many benefits by using AI."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate maintains a single unified block, but the opening topic sentence is logically inverted, and internal cohesion suffers from heavy repetition and fragmented run-on structures.",
+      "evidence": "Artificial intelligence is the short form of AI."
+    },
+    "language_mechanics": {
+      "rationale": "Displays a high density of spelling errors ('meachinge', 'buit', 'systam', 'assingment', 'opperation', 'distroy'), missing auxiliary verbs, and broken clause constructions, though the core meaning remains understandable.",
+      "evidence": "AI is the a meachinge which is buit up by using human intelligence ."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Shows genuine, authentic reasoning rather than a rote memorized template (notably the comparison between emotional human teachers and AI), but vocabulary is basic and overly reliant on the phrase 'by using AI'.",
+      "evidence": "we can find emotion when there is a human teacher but we can't find any emotion in AI teacher."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling mistakes (e.g., 'meachinge', 'buit', 'systam', 'assingment', 'opperation', 'distroy', 'benifits')",
+      "Faulty syntax and fused clauses (e.g., 'A teacher can teach is Their are large difference', 'Human being can many dangerous work')",
+      "Excessive repetition of transition structures ('by using AI' repeated over eight times)"
+    ],
+    "positive_aspects": [
+      "Successfully touches upon all prompt guide questions within a single block",
+      "Authentic attempt at contrasting human teacher empathy with AI limitations",
+      "No off-topic drift or generic guide-book filler"
+    ]
+  },
+  "feedback_summary": "The response stays fully on-topic and maintains the required single-paragraph format while addressing all prompt questions. However, the score is limited to Band 2 due to a high density of mechanical and spelling errors, poor sentence structures, and persistent lexical repetition.",
+  "_metadata": {
+    "task_id": "PARA_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "7",
+    "question_type": "Paragraph",
+    "max_mark": 10,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "2d0a0c09fe4284371db5994dfa153db2f99c226e28da58c8b620e854b0c24036",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:23:01.590812+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "80fd31b9c7979996c02e6393faa46c25bb76505163166ede7528bdea049de090",
+    "input_tokens": 4665,
+    "output_tokens": 4416,
+    "thoughts_tokens": 3582,
+    "cost_usd": 0.012439,
+    "latency_ms": 27281,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4665,
+        "output_tokens": 4416,
+        "thoughts_tokens": 3582,
+        "cost_usd": 0.012439,
+        "latency_ms": 27281,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

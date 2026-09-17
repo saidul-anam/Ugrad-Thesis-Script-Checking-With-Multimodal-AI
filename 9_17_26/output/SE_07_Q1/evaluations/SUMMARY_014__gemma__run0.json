@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the essential facts: the date, the names of the astronauts, the name of the spacecraft, and the act of collecting rocks.",
+      "evidence": "On July 16, 1969, tree Armstrong began their journey to the Moon. They were Neil Armstrong; Michael collins and Edwin Aldrin. Their space craft was called Apollo 11."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is a single coherent block, but it exceeds the one-third length constraint (51 words vs the allowed ~44).",
+      "evidence": "On July 16, 1969... proud of there work."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent mechanical errors, including spelling ('Elorida'), syntax ('After the day four day'), and tense inconsistency ('collect rocks').",
+      "evidence": "launched for Elorida, USA. After the day four day, they reached the Moon and collect rocks."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate relies heavily on the source text's phrasing for the first half of the summary, though it stays under the 50% verbatim cap.",
+      "evidence": "Their space craft was called Apollo 11."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 3.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'Elorida')",
+      "Syntax/Word order errors ('After the day four day')",
+      "Tense inconsistency ('collect rocks')"
+    ],
+    "positive_aspects": [
+      "Accurately identified key names and dates",
+      "Maintained a single paragraph structure"
+    ]
+  },
+  "feedback_summary": "The candidate successfully identified the core details of the passage. However, the response is slightly over the required length limit and contains several grammatical and spelling errors. Because the length exceeds one-third of the original text, a structural hard cap of 2 was applied to the total score.",
+  "_metadata": {
+    "task_id": "SUMMARY_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "3882de71ac9c2b51d2ae6c5a44cc62b52f885f7b66ef1445ac04d98c9217a90b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:24:01.762639+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dc2c410cf7e4ca6ccf10ff8f03fb34612bfc3121a8b430803de94244f37e0c9f",
+    "input_tokens": 6047,
+    "output_tokens": 2132,
+    "thoughts_tokens": 1357,
+    "cost_usd": 0.001244,
+    "latency_ms": 210656,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6047,
+        "output_tokens": 2132,
+        "thoughts_tokens": 1357,
+        "cost_usd": 0.001244,
+        "latency_ms": 210656,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

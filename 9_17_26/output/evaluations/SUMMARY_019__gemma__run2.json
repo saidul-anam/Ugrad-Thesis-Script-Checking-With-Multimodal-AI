@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.5,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate correctly identifies the bird metaphor and the concept of strength, but misses the poem's specific focus on resilience during storms and the selfless nature of hope. Some parts are generic filler not found in the text.",
+      "evidence": "Hope courage us to take step in brilliant work"
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is presented as a single block. While the logic is generally sequential, the sentence flow is choppy.",
+      "evidence": "The text is about... being successful ."
+    },
+    "language_mechanics": {
+      "rationale": "High density of errors including spelling ('passag', 'cann't'), incorrect word forms ('courage' instead of 'encourages'), and subject-verb agreement issues ('sound inspire').",
+      "evidence": "In the passag the poet compare the hope with the little bird, which chirping sound inspire us"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids verbatim copying entirely, using their own words to interpret the text, though the phrasing is occasionally awkward.",
+      "evidence": "which chirping sound inspire us to do something and. being successful ."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.5,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (passag, cann't)",
+      "Grammatical word-class errors (use of 'courage' as a verb)",
+      "Subject-Verb Agreement (sound inspire)"
+    ],
+    "positive_aspects": [
+      "Total absence of verbatim copying",
+      "Successful identification of the central bird metaphor"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a commendable level of originality, entirely paraphrasing the source material and identifying the core metaphor of the bird. However, the score is limited by significant weaknesses in linguistic mechanics, specifically in spelling and syntax. Furthermore, the content drifts into generic interpretations ('brilliant work') rather than focusing on the poem's specific themes of persistence and selflessness.",
+  "_metadata": {
+    "task_id": "SUMMARY_019",
+    "script_id": "SE_11_Q1_0019",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e4df6f2d03f255c79f7cd4dfb3f3900dfa776b077083e584e05bf45eaaa666f4",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-25T00:19:53.373175+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "dc3877b99b46caaa82279c67ca85d975b4607d91d2a49f85387736365df36ae1",
+    "input_tokens": 4394,
+    "output_tokens": 2850,
+    "thoughts_tokens": 2087,
+    "cost_usd": 0.001294,
+    "latency_ms": 79813,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4394,
+        "output_tokens": 2850,
+        "thoughts_tokens": 2087,
+        "cost_usd": 0.001294,
+        "latency_ms": 79813,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

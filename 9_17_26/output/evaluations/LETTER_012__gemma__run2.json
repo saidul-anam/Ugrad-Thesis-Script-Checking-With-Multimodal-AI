@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately identifies the purpose of the letter and provides specific future plans (studying abroad and starting a business), fully satisfying the prompt.",
+      "evidence": "In your letter you have wanted to know about my future planning after HSC."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required components of an informal letter (Address, Date, Salutation, Body, Closing, and Signature) are present and correctly positioned.",
+      "evidence": "27/06/26\nTatibazer, Dhaka\nDear, Arnob... youres ever\nSneha."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains a high density of basic orthographic errors that impede professional quality, though the text remains legible.",
+      "evidence": "wrutting, syllebus, litle, thing about starding, bussiness, youres ever"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While there is a brief original thought regarding the job market, the overall letter relies on highly formulaic, memorized templates for the introduction and conclusion.",
+      "evidence": "I hope you are well. I am also fine. I got your letter yesterday."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling/orthographic errors",
+      "Punctuation errors in salutation"
+    ],
+    "positive_aspects": [
+      "Perfect structural layout",
+      "Direct and relevant response to the prompt"
+    ]
+  },
+  "feedback_summary": "The candidate has a perfect understanding of the letter's structural requirements, successfully including all necessary layout components. The content is relevant and addresses the prompt directly. However, the score is significantly limited by a high frequency of basic spelling errors and the use of generic, memorized templates for the opening and closing. These mechanical failures preclude a Band 4 award.",
+  "_metadata": {
+    "task_id": "LETTER_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1023ff9c2066afb1efcfc25a34f3a345611b201f662f28f6e83e9160de989774",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:19:50.353596+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "17d3a8ffa6421b464c153de59414c1eacca8882ada58727eea6d9201ef2a9eda",
+    "input_tokens": 4376,
+    "output_tokens": 3774,
+    "thoughts_tokens": 3044,
+    "cost_usd": 0.00157,
+    "latency_ms": 105077,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4376,
+        "output_tokens": 3774,
+        "thoughts_tokens": 3044,
+        "cost_usd": 0.00157,
+        "latency_ms": 105077,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student continues the plot logically and covers all main events of the fable. However, they produced 9 new sentences, falling just short of the 'at least ten' requirement.",
+      "evidence": "Both of them be came scared. Suddenly, one of the friend climbed up a tree. The other finding no other alternatives, lay Flat on his face and stopped breathing."
+    },
+    "structure_format_brevity": {
+      "rationale": "A suitable title is provided, and the story reaches a definitive resolution with a clear moral lesson.",
+      "evidence": "Title: A friend in need, is a friend indeed. ... \"Do not trust a friend who le you in a danger.\""
+    },
+    "language_mechanics": {
+      "rationale": "Tense is generally consistent, but there are several spelling errors (foorest, wisper, s aid) and grammatical slips (one of the friend) typical of Class VI but preventing a full score.",
+      "evidence": "the bear wisper into your ears? Then, the other friend s aid"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student tells the standard version of the fable in their own simple words. There is a lack of descriptive detail, but it is not a verbatim guide copy.",
+      "evidence": "The bear smelled his body as he lay flat without breathing the bear went away."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling mistakes (e.g., 'foorest', 'wisper')",
+      "Noun-number agreement (e.g., 'one of the friend')",
+      "Punctuation/Spacing (e.g., 'be came', 's aid')"
+    ],
+    "positive_aspects": [
+      "Clear understanding of plot and resolution",
+      "Appropriate title selection",
+      "Consistent use of past tense"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical sequence of events and a clear moral resolution. The title is appropriate. However, the response fell slightly short of the required ten-sentence minimum (providing 9). While the narrative is coherent, the score is moderated by frequent spelling errors and minor grammatical slips in agreement and phrasing.",
+  "_metadata": {
+    "task_id": "STORY_008",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0008",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "999116883f0f110150aa70451752e22b86d1d20aad4cfd380bebceea59650591",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:36:35.695101+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "70c0129d23236900cb6447d2941b9cfe458061eea4ecdc44aaffb64b85a00e49",
+    "input_tokens": 6092,
+    "output_tokens": 1864,
+    "thoughts_tokens": 1068,
+    "cost_usd": 0.001168,
+    "latency_ms": 524250,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6092,
+        "output_tokens": 1864,
+        "thoughts_tokens": 1068,
+        "cost_usd": 0.001168,
+        "latency_ms": 524250,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

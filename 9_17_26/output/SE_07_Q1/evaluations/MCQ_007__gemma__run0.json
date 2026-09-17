@@ -1,0 +1,99 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Four items are correct: (a) matches key; (b) matches key (misspelling 'irregular' is ignored); (d) matches key by text despite the wrong numeral; (g) matches key. Item (c) is wrong. Item (e) is contradictory (correct numeral 'iv' but incorrect text 'Pronoun'), which scores 0. Item (f) was not attempted.",
+      "evidence": "iii rural area; ii He earns irregular for daily needs; ii From morning to night; ii Household manager and caregiver"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Contradictory selection (mixing numeral and text in item e)",
+      "Omission of item f"
+    ],
+    "positive_aspects": [
+      "Accurate identification of rural context",
+      "Correct interpretation of the 'hand to mouth' idiom"
+    ]
+  },
+  "feedback_summary": "The student scored 4 out of 7. Items (a), (b), (d), and (g) were marked correct. Item (c) was incorrect. Item (e) was marked wrong because the candidate provided contradictory information (the correct numeral 'iv' but the incorrect text 'Pronoun'). Item (f) was not attempted.",
+  "_metadata": {
+    "task_id": "MCQ_007",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0006",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "2f11c71f22a8027375bc8f5330b5bb3ef15752b717d90ffffdcac6c1dcef1f55",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:00:01.745466+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5aab0481a55b36d2ee973ae4a6b9fb153ecf1d74884c73bdbe44d0f2a6e88e8a",
+    "input_tokens": 6459,
+    "output_tokens": 2384,
+    "thoughts_tokens": 1707,
+    "cost_usd": 0.001361,
+    "latency_ms": 755625,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6459,
+        "output_tokens": 2384,
+        "thoughts_tokens": 1707,
+        "cost_usd": 0.001361,
+        "latency_ms": 755625,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

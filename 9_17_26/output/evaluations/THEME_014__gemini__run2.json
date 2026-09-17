@@ -1,0 +1,98 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate understands the basic contrast between passive night dreaming and active daydreaming to achieve goals, though the thematic interpretation remains superficial.",
+      "evidence": "Night dream is not real dream this are only subconsus activity. Day dream is real dream. Day dream can reache help people to reach goal."
+    },
+    "structure_format_brevity": {
+      "rationale": "The theme is expressed concisely in a single block, but the response mistakenly includes an informal letter heading (place and date), demonstrating structural confusion.",
+      "evidence": "Nazipur, Naogaon,\nDate: 27-06-26"
+    },
+    "language_mechanics": {
+      "rationale": "The script exhibits multiple grammatical and mechanical errors, including spelling mistakes, agreement errors, missing determiners, and an uncorrected editing slip.",
+      "evidence": "this are only subconsus activity. Day dream is real dream. Day dream can reache help people to reach goal."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate attempts an original interpretation in their own words with zero verbatim copying, but relies on repetitive phrasing and basic vocabulary.",
+      "evidence": "Dream can make us strong. Night dream is not real dream this are only subconsus activity."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Inclusion of irrelevant letter heading (address and date)",
+      "Spelling errors (e.g., 'subconsus')",
+      "Subject-verb/pronoun agreement errors (e.g., 'this are')",
+      "Omission of articles/determiners and uncorrected editing slips ('reache help')"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying from the source poem",
+      "Identifies the core contrast between passive and action-oriented dreaming"
+    ]
+  },
+  "feedback_summary": "The candidate grasps the core conceptual contrast of the poem (the difference between passive night dreams and actionable daydreams) and writes entirely in their own words. However, the response includes an inappropriate letter heading, contains several grammatical and spelling mistakes ('subconsus', 'this are'), and lacks depth in thematic elaboration.",
+  "_metadata": {
+    "task_id": "THEME_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "626f017fdef24047c80e7cbe5432b263c7dd8123349227121f740ccdbe8fe2d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:38:02.589707+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "9dc94f04a12523f402b7c08f01d7315bce2055358a71554836ea3d185c438d6a",
+    "input_tokens": 4290,
+    "output_tokens": 3253,
+    "thoughts_tokens": 2469,
+    "cost_usd": 0.009419,
+    "latency_ms": 18109,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4290,
+        "output_tokens": 3253,
+        "thoughts_tokens": 2469,
+        "cost_usd": 0.009419,
+        "latency_ms": 18109,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

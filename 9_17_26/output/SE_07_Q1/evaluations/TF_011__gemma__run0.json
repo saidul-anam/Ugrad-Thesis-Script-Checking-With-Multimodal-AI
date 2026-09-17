@@ -1,0 +1,96 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Only item (d) is correct. Items (a) and (b) have incorrect verdicts. Items (c) and (e) have the correct verdict ('False') but fail to provide the mandatory correction, thus scoring 0 per the marking guidelines.",
+      "evidence": "d. T"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect True/False verdicts",
+      "Failure to provide corrections for False statements"
+    ],
+    "positive_aspects": [
+      "Correctly identified the True statement in item (d)"
+    ]
+  },
+  "feedback_summary": "The student correctly answered item (d). Items (a) and (b) were marked incorrect. Items (c) and (e) were marked 'False' but received 0 marks because no correction was provided, which is a requirement for scoring marks on False statements.",
+  "_metadata": {
+    "task_id": "TF_011",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0010",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "638f494319bfe17a73ebba536dcf35cee7868dd1fa3dab798630506e5cc6ee4c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:47:30.546023+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "41d9874add702b2603d76dc6df6e843a0a23686e4d01d0b1a9324082693c657d",
+    "input_tokens": 6379,
+    "output_tokens": 1688,
+    "thoughts_tokens": 1081,
+    "cost_usd": 0.001144,
+    "latency_ms": 230796,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6379,
+        "output_tokens": 1688,
+        "thoughts_tokens": 1081,
+        "cost_usd": 0.001144,
+        "latency_ms": 230796,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

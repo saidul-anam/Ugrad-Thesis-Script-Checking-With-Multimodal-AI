@@ -1,0 +1,100 @@
+{
+  "task_type": "Sentence_Transformation",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 0.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "None of the five items were transformed correctly. Every item retained the direct question word order (verb before subject) or kept the auxiliary 'does' or 'is', which is explicitly marked as incorrect according to the marking note. Item a: 'where is the post office' (Wrong order); Item b: 'what does the postmaster do' (Auxiliary kept); Item c: 'why is the post master' (Wrong order); Item d: 'where is his children go' (Incorrect structure); Item e: 'when does the postmaster come' (Auxiliary kept).",
+      "evidence": "Do you know where is the post office? Do you know what does the postmaster do? Do you know why is the post master so happy? Do you know where is his children go to school? Do you know when does the postmaster come to the post office?"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 0.0,
+    "capped_from": 0.0
+  },
+  "performance_band": "Band 0",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to convert direct questions to embedded clauses",
+      "Retention of auxiliary verbs in indirect speech",
+      "Incorrect subject-verb inversion in embedded clauses"
+    ],
+    "positive_aspects": [
+      "Attempted all items",
+      "Correctly used the opening phrase 'Do you know'"
+    ]
+  },
+  "feedback_summary": "The student failed to apply the rules of embedded questions. In all five items (a-e), the student simply appended the original direct question to the opening phrase without changing the word order or removing the auxiliaries. Therefore, every item is marked 0.",
+  "_metadata": {
+    "task_id": "TRANS_006",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0005",
+    "question_no": "8",
+    "question_type": "Sentence_Transformation",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "38d61accaf1c530e0a5666774c91cae5a109c7957157d7e640488bd5b99608c6",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:46:06.887127+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "424d746ff34b54146ec83b15a8575a9985f25d50371f3c28088270d9e0b741b5",
+    "input_tokens": 6160,
+    "output_tokens": 1547,
+    "thoughts_tokens": 792,
+    "cost_usd": 0.00108,
+    "latency_ms": 201296,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6160,
+        "output_tokens": 1547,
+        "thoughts_tokens": 792,
+        "cost_usd": 0.00108,
+        "latency_ms": 201296,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

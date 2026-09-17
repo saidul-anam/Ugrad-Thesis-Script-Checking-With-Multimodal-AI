@@ -1,0 +1,97 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (b), (d), and (g) are correct according to the answer key. Items (a), (c), (e), and (f) are incorrect.",
+      "evidence": "(b) iv) pride and joy. (d) ii) courageous. (2) iv) all of i, ii and iii."
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect selection of synonyms/meanings"
+    ],
+    "positive_aspects": [
+      "Correct identification of Victory Day sentiment and the general historical context of 1971"
+    ]
+  },
+  "feedback_summary": "The student answered 3 out of 7 items correctly. Correct: (b), (d), (g). Incorrect: (a), (c), (e), (f).",
+  "_metadata": {
+    "task_id": "MCQ_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "fdfdb77f3ed7b70490bd5058bfa0cdd265332217a48744b1e56534d0f860ff26",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:30:25.059737+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a035c138579606ea8c8c33975ee7883e2492c521507c44f218b4aae9d9b1791c",
+    "input_tokens": 6698,
+    "output_tokens": 1443,
+    "thoughts_tokens": 861,
+    "cost_usd": 0.001103,
+    "latency_ms": 932953,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6698,
+        "output_tokens": 1443,
+        "thoughts_tokens": 861,
+        "cost_usd": 0.001103,
+        "latency_ms": 932953,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

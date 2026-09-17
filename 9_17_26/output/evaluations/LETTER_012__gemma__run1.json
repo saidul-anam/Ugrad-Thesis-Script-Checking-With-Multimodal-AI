@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly and clearly addresses the prompt by detailing two specific future plans: studying abroad and starting a business.",
+      "evidence": "After HSC I am willing to move abroad for educational purpose."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components (Date, Address, Salutation, Body, Close, Signature) are present and correctly positioned.",
+      "evidence": "27/06/26 Tatibazer, Dhaka Dear, Arnob ... youres ever Sneha."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and grammatical slips that impede the professional quality of the writing, though the meaning remains clear.",
+      "evidence": "Now I am wrutting about it... I am also thing about starding a small - bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate avoids rote templates and provides an authentic rationale for their business plan based on the national job market.",
+      "evidence": "You know the current situation of the job market of our country. We all should generate new opportunities."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., wrutting, syllebus, litle, bussiness)",
+      "Grammatical/Tense errors (e.g., 'I am also thing')"
+    ],
+    "positive_aspects": [
+      "Perfect structural adherence",
+      "Direct relevance to prompt",
+      "Original and critical thinking regarding the job market"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a strong grasp of the letter's structural requirements and provides a relevant, original response to the prompt. However, the script contains numerous spelling and mechanical errors. According to the Within-Band Precision Tiebreaker, since the mechanics show multiple errors, the score is awarded the lowest value of Band 4.",
+  "_metadata": {
+    "task_id": "LETTER_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1023ff9c2066afb1efcfc25a34f3a345611b201f662f28f6e83e9160de989774",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:19:09.232574+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0bb2db5c899088a9a7746f5c20e8a3e7e8fd450cff5e5a8f509f8689e02c37bd",
+    "input_tokens": 4376,
+    "output_tokens": 2404,
+    "thoughts_tokens": 1670,
+    "cost_usd": 0.001159,
+    "latency_ms": 68717,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4376,
+        "output_tokens": 2404,
+        "thoughts_tokens": 1670,
+        "cost_usd": 0.001159,
+        "latency_ms": 68717,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by outlining their ambition to become a doctor and detailing their post-HSC preparation plan.",
+      "evidence": "You send me a email and wanted to know aboud my future plan after passing HSC Exam. Now, I am telling you about that."
+    },
+    "structure_format_brevity": {
+      "rationale": "Adopts a functional email structure containing To, Subject, Salutation, coherent body paragraphs, Complimentary Close, and Signature, with only the sender line omitted.",
+      "evidence": "To : sawda25671@gmail.com.\nSubject : Describing the future plan after HSC Exam."
+    },
+    "language_mechanics": {
+      "rationale": "Pervasive spelling mistakes and grammatical errors throughout the script severely impair language mechanics, including verb tense errors, awkward syntax, and misspelled core vocabulary.",
+      "evidence": "I will admitted in Admission couching center to get a good preparation for madical exam. In this, admission period, I will increase my general knowledg and English language and grammare skill"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The script develops authentic personal reasoning and logical progression regarding medical coaching rather than relying solely on empty memorised filler.",
+      "evidence": "You know, I alway wanted to be a great doctor. I want to give free treatment to the poore people."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Frequent spelling errors in basic and thematic vocabulary ('madical', 'grammare', 'knowledg', 'couching', 'poore', 'aboud')",
+      "Grammatical and voice construction errors ('I will admitted', 'You send me a email', 'are will')",
+      "Incorrect complimentary close phrasing ('Yours friend')"
+    ],
+    "positive_aspects": [
+      "Immediate addressing of the prompt topic and purpose",
+      "Logical paragraph division and thematic development"
+    ]
+  },
+  "feedback_summary": "The candidate effectively fulfills the communicative purpose of the task by detailing plans to join a medical coaching program after the HSC examination. The structural format of an email is largely respected. However, frequent and persistent errors in spelling and basic grammar significantly limit the overall language quality, keeping the script within Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_013",
+    "script_id": "SE_11_Q1_0013",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "86638f9b3411232f69f22a70fce6530414f5e28b22b5cdf93d1235ad7077e6e7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:27:07.643160+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "346ee8d0e99177f8a804ff0e0e5a332c79ce9f5c9e4518e8116c40868448373b",
+    "input_tokens": 4415,
+    "output_tokens": 3084,
+    "thoughts_tokens": 2278,
+    "cost_usd": 0.009034,
+    "latency_ms": 16047,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4415,
+        "output_tokens": 3084,
+        "thoughts_tokens": 2278,
+        "cost_usd": 0.009034,
+        "latency_ms": 16047,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, iii, and iv are correct. Item i is correct as 'lonced' is a clear misspelling of 'launched'. Item ii is incorrect because Michael Collins did not land on the moon. Item v is incorrect as it provides a date instead of the location 'all over the world'.",
+      "evidence": "i. lonced their spacecraft, iii. July 20, 1969, iv. came back safely to Earth"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy (including non-landing astronaut)",
+      "Misidentification of required data type (date instead of location)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of key dates",
+      "Correct extraction of return event"
+    ]
+  },
+  "feedback_summary": "Item i: Correct (intent for 'launched' is clear). Item ii: Incorrect (Michael Collins stayed in the ship and did not land). Item iii: Correct. Item iv: Correct. Item v: Incorrect (provided a date instead of 'all over the world'). Total score: 3/5.",
+  "_metadata": {
+    "task_id": "TABLE_028",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0027",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ea1779de411c2c80cbe4d5ddc200d4ab6a6e6cb563995cb7eb17e584ecd0b239",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:09:03.688223+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "10d2187f0a4920ef025762ab4cfebf918cc225b3f071c791eb0536191c30c524",
+    "input_tokens": 6365,
+    "output_tokens": 1561,
+    "thoughts_tokens": 902,
+    "cost_usd": 0.001105,
+    "latency_ms": 588360,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6365,
+        "output_tokens": 1561,
+        "thoughts_tokens": 902,
+        "cost_usd": 0.001105,
+        "latency_ms": 588360,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

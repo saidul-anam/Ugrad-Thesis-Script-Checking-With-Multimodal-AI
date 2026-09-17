@@ -1,0 +1,98 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly answered four items. Item (a) had the correct verdict and correction. Item (b) had the correct verdict and correction (spelling slips ignored). Item (c) had the correct verdict and correction. Item (d) had the correct verdict. Item (e) provided the correct verdict ('False'), but the correction failed to address the specific factual error regarding Mars or the timeline, offering instead a generic statement about science and courage.",
+      "evidence": "a) False Corr. Ans: Apple 11 was a space expedition... b) False Corr. Ans: Michealb Colllinst stayed in the main ship... c) False Corr. Ans: Neil Armstrong was the first person... d) True"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Insufficient correction in item (e)"
+    ],
+    "positive_aspects": [
+      "Accurate identification of True/False verdicts",
+      "Strong comprehension of the primary text events"
+    ]
+  },
+  "feedback_summary": "Items (a), (b), (c), and (d) are marked correct. Item (e) is marked incorrect because the correction provided does not refute the specific claim about Mars or the date, which is required for the mark.",
+  "_metadata": {
+    "task_id": "TF_002",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0001",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "a0c32fa0efdf0b23dce661cd8eafca5186209e2556cc47058e2c9260e6429c60",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:48:27.277450+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "ff8ee28c24f85fc04ed95b93b098d7b10e745a5a338b502a32dac9aff7fe3770",
+    "input_tokens": 6483,
+    "output_tokens": 2082,
+    "thoughts_tokens": 1408,
+    "cost_usd": 0.001273,
+    "latency_ms": 306921,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6483,
+        "output_tokens": 2082,
+        "thoughts_tokens": 1408,
+        "cost_usd": 0.001273,
+        "latency_ms": 306921,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

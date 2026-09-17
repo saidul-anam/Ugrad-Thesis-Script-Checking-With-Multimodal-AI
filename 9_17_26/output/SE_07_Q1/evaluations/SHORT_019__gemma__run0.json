@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 9.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: 2 (Correct content and sentence). Item b: 2 (Correct content and sentence). Item c: 2 (Correct content and sentence). Item d: 2 (Correct content and sentence). Item e: 1 (Partly correct; the student explains why she is able to teach—her own education—but fails to describe how she contributes—teaching alphabets and numbers). Total = 9.",
+      "evidence": "a. Joynul and Nazma live in a small village. b. Joynul is hired by the villagers to make chairs, tables, pira and furniture because he is a carpenter. He is also asked to do small repair work. c. Joynul Ali faces financial difficulties because he does not find work everyday. d. Nazma works at home and teaches Mitu and Nitu. e. Nazma contributes to her children's early education because she could study only up to class 5."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 9.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion between 'how' and 'why' in response to item e"
+    ],
+    "positive_aspects": [
+      "Consistent use of full, understandable sentences",
+      "Accurate extraction of factual data for the majority of items"
+    ]
+  },
+  "feedback_summary": "The candidate performed very well, providing accurate and complete sentences for almost all items. Items a, b, c, and d were marked correct (2 marks each). Item e received 1 mark because it provided the reason for Nazma's capability (her education level) rather than the specific method of her contribution (teaching alphabets and numbers).",
+  "_metadata": {
+    "task_id": "SHORT_019",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0018",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "c310ac0cb304fde23f7d24dc7221d527731dbbb6fce5f0507854e9ff71208b23",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:17:43.568032+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "53d60a4d49acf8d0cec176721da8cabf9825e4912efdc14ecbfc9f1d74eecc94",
+    "input_tokens": 6467,
+    "output_tokens": 2545,
+    "thoughts_tokens": 1779,
+    "cost_usd": 0.00141,
+    "latency_ms": 197469,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6467,
+        "output_tokens": 2545,
+        "thoughts_tokens": 1779,
+        "cost_usd": 0.00141,
+        "latency_ms": 197469,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

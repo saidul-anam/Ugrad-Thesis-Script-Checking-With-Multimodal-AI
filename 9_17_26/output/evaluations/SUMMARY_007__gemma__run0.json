@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate captures the general sentiment of hope but fails to summarize the poem's specific content or imagery (the bird, the storm, the lack of demand). It is more of a personal reflection than a summary.",
+      "evidence": "Hope is what keeps humans alive."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written in a single coherent block. Per the cap_note, the length ratio is not penalized for this poem.",
+      "evidence": "Hope is what keeps... keeps us alive"
+    },
+    "language_mechanics": {
+      "rationale": "The text contains a spelling error ('sweestest'), a sentence fragment ('If our hope dies or our soul dies too'), and repetitive phrasing.",
+      "evidence": "sweestest"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate successfully avoids all verbatim copying of the source text, though the 'originality' manifests as external opinion rather than a paraphrase of the poem.",
+      "evidence": "Sometimes It might get a little rough but we shouldn't give up"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.5,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors",
+      "Sentence fragments",
+      "Content drift (generic reflection instead of summary)"
+    ],
+    "positive_aspects": [
+      "Zero verbatim copying",
+      "Correct single-paragraph format"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates a good ability to paraphrase without copying the source text, but fails the primary objective of a summary by providing a general moral essay on hope instead of summarizing the specific imagery and themes of the poem. Linguistic precision is low, evidenced by spelling mistakes and a significant sentence fragment.",
+  "_metadata": {
+    "task_id": "SUMMARY_007",
+    "script_id": "SE_11_Q1_0007",
+    "question_no": "3",
+    "question_type": "Summary",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "38056983af6dc6b56a8a22b62714fbd805889922830cb08648809304863d8aee",
+    "cap_exempt_applied": true,
+    "cap_threshold": 100,
+    "cap_note": "\n  cap_note: Source text is 69 words. The 1/3 length rule is designed for prose\n  passages and is NOT applied here. Do not apply the Summary length cap. The\n  verbatim-copying cap still applies normally.",
+    "timestamp": "2026-08-24T22:08:17.267962+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c2252615bf3b0d16659e8edee4a50972df894eabaa3442df295f612505738020",
+    "input_tokens": 4378,
+    "output_tokens": 2243,
+    "thoughts_tokens": 1535,
+    "cost_usd": 0.001111,
+    "latency_ms": 63359,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "structure_format_brevity"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4378,
+        "output_tokens": 2243,
+        "thoughts_tokens": 1535,
+        "cost_usd": 0.001111,
+        "latency_ms": 63359,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

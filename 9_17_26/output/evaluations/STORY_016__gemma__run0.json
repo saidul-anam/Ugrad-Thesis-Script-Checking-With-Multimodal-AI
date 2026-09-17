@@ -1,0 +1,98 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a seamless continuation of the stem and develops the plot logically through to a conclusion.",
+      "evidence": "The monse came, he saw and he cut the net and rescued the lion."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a positive ending with a clear moral lesson, but the candidate completely failed to provide a title as specifically requested in the prompt.",
+      "evidence": "Moral of the story: Size doesn't matter."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors ('monse' for mouse, 'lite' for life, 'langhed' for laughed) and inconsistent tense usage, shifting between present and past.",
+      "evidence": "The lion catches the monse and holds him in his palm... The lion langhed hysterically."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, formulaic retelling of a common fable with minimal original descriptive detail.",
+      "evidence": "After that, they became allies and went on living a happy life."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.5,
+    "capped_from": 4.5
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling inaccuracies (e.g., monse, lite)",
+      "Tense inconsistency (mixing present and past)"
+    ],
+    "positive_aspects": [
+      "Logical plot progression",
+      "Correct identification of moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the story with a logical sequence of events and a positive moral. However, the total score is lowered due to the omission of a title and significant linguistic weaknesses, specifically repetitive spelling errors and inconsistent tense control.",
+  "_metadata": {
+    "task_id": "STORY_016",
+    "script_id": "SE_11_Q1_0016",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "c3d14c5df9ddab57739025a19caf8181a1a60831836298dccf8236e8fc1208f4",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:55:09.531525+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "169883a851c1c22d0da01959153ff2703202c4f7e3f8bd7f7e409d497a9feb90",
+    "input_tokens": 4465,
+    "output_tokens": 2866,
+    "thoughts_tokens": 2179,
+    "cost_usd": 0.001306,
+    "latency_ms": 80422,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4465,
+        "output_tokens": 2866,
+        "thoughts_tokens": 2179,
+        "cost_usd": 0.001306,
+        "latency_ms": 80422,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

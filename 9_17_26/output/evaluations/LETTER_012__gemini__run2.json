@@ -1,0 +1,97 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly fulfills the prompt by outlining post-HSC plans, including going abroad for higher education and starting a business with their brother.",
+      "evidence": "After HSC I am willing to move abroad for educational purpose. I want to go there for higher study."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout components of an informal letter are present in the correct order: date, sender's place, salutation, body, closing, signature, and an address envelope block.",
+      "evidence": "27/06/26\nTatibazer, Dhaka\nDear, Arnob"
+    },
+    "language_mechanics": {
+      "rationale": "The script contains a high density of basic spelling and lexical errors ('wrutting', 'syllebus', 'litle', 'thing' for thinking, 'starding', 'bussiness', 'youres') and misplaced salutation punctuation ('Dear, Arnob').",
+      "evidence": "Now I am wrutting about it. After HSC I am willing to move abroad for educational purpose. I want to go there for higher study. So beside the academic syllebus, I am taking a litle preparation for this. Perhaps I am also thing about starding a small - bussiness"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The opening and closing sections rely heavily on formulaic, memorised introductory filler sentences rather than authentic phrasing.",
+      "evidence": "I hope you are well. I am also fine. I got your letter yesterday. In your letter you have wanted to know about my future planning after HSC."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling mistakes ('wrutting', 'syllebus', 'litle', 'starding', 'bussiness', 'youres')",
+      "Incorrect word choice/form ('thing' instead of 'thinking')",
+      "Punctuation errors in salutation ('Dear, Arnob')"
+    ],
+    "positive_aspects": [
+      "Complete structural layout with all 6 informal letter components intact",
+      "Direct response to the prompt topic with relevant core ideas"
+    ]
+  },
+  "feedback_summary": "The response fulfills the prompt requirement and demonstrates full command of informal letter layout conventions. However, frequent spelling mistakes and reliance on memorised template openings detract from the overall quality, placing it in Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_012",
+    "script_id": "SE_11_Q1_0012",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1023ff9c2066afb1efcfc25a34f3a345611b201f662f28f6e83e9160de989774",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:18:05.266816+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "d520f082e8aba04c2dccafb8013329d8c6b7e86ebcd4e5b57ce077a600398eb6",
+    "input_tokens": 4375,
+    "output_tokens": 3692,
+    "thoughts_tokens": 2848,
+    "cost_usd": 0.010542,
+    "latency_ms": 20437,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4375,
+        "output_tokens": 3692,
+        "thoughts_tokens": 2848,
+        "cost_usd": 0.010542,
+        "latency_ms": 20437,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

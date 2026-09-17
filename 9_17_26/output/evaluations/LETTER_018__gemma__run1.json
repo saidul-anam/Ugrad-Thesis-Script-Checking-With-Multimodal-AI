@@ -1,0 +1,100 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly identifies their future plan to become a doctor and mentions specific goals like joining medical camps, directly fulfilling the prompt's objective.",
+      "evidence": "my aim is to be an honest and wise doctore. So, I will take admission in a renwed medical college"
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate has included all six necessary components: address, date, salutation, body, complimentary close, and signature.",
+      "evidence": "Asulia, Savar\n27-06-2026\n\nDear friend,\n...\nYours ever\nEva"
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling and grammatical errors throughout the body, including typos and incorrect word forms, which prevents a positive score in this category.",
+      "evidence": "doctore... renwed... pas HSC... peopote people beside continui continuing"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The writing relies on common, memorized templates for the opening and closing, lacking authentic personal expression.",
+      "evidence": "How are you? Hope you are good by the grace of almighty Allah... No more today. Take care."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (Spelling)",
+      "Formulaic/Templatized phrasing"
+    ],
+    "positive_aspects": [
+      "Perfect structural adherence",
+      "Clear and relevant content"
+    ]
+  },
+  "feedback_summary": "The script is structurally sound and addresses the prompt immediately and clearly. However, the overall quality is brought down by frequent spelling mistakes (e.g., 'doctore', 'renwed', 'peopote') and a heavy reliance on memorized, generic phrases for the introduction and conclusion.",
+  "_metadata": {
+    "task_id": "LETTER_018",
+    "script_id": "SE_11_Q1_0018",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "66fbb49268653cba6f99b9995a3b3f5334080e31808dc8ea9f2946672135614e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:16:53.064332+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "e7b134c3881f1612116b801d2aab8755772612ed82da172bacba8211db31d9f4",
+    "input_tokens": 4356,
+    "output_tokens": 3371,
+    "thoughts_tokens": 2648,
+    "cost_usd": 0.001447,
+    "latency_ms": 94467,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics",
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4356,
+        "output_tokens": 3371,
+        "thoughts_tokens": 2648,
+        "cost_usd": 0.001447,
+        "latency_ms": 94467,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

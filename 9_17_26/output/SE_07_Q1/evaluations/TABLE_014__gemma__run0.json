@@ -1,0 +1,96 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly according to the key. i: correct; ii: correct (identifies Armstrong and Aldrin); iii: correct date; iv: correct; v: correct.",
+      "evidence": "i. began their journey to the Moon. ii. Armstrong and Aldrin landed iii. 20 July, 1969 iv. came back safely to Earth v. all over the world"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy in information retrieval",
+      "Complete coverage of all items"
+    ]
+  },
+  "feedback_summary": "The student has correctly identified all five pieces of information required for the table. Item i is correct, item ii correctly identifies the astronauts, item iii provides the correct date, item iv correctly describes the return, and item v identifies the location correctly. Total score: 5/5.",
+  "_metadata": {
+    "task_id": "TABLE_014",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0013",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "1af6741158bc2c64cc0db990179ca0d8a2bf0314c02f229f1f4b239fd8b974da",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T00:20:31.105613+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "7291c3895bf01ca74cb8e3b17222f5ca6cfa0866efe42184bc6d331955c23ec5",
+    "input_tokens": 6360,
+    "output_tokens": 1408,
+    "thoughts_tokens": 805,
+    "cost_usd": 0.001058,
+    "latency_ms": 68280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6360,
+        "output_tokens": 1408,
+        "thoughts_tokens": 805,
+        "cost_usd": 0.001058,
+        "latency_ms": 68280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items are answered correctly according to the key. (a) Correctly identifies independence and the nine-month battle. (b) Correctly lists the 31-gun salute and flag hoisting. (c) Correctly links the memorial to those who lost their lives. (d) Correctly identifies patriotic songs. (e) Correctly identifies the salute as the start of the day's events.",
+      "evidence": "(a) ...Bangladesh got independence after a nine-month-long blood-soaked battle... (b) ...31-gun salute at dawn, followed by the hosting of the nation flag... (c) ...because they lost their lives during the war... (d) ...recite patriotic song... (e) The day begins with a 31-gun salute at dawn"
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; structural criteria are not applicable.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; mechanics are only relevant to whether the content is recoverable, which it is.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; originality is not assessed.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Minor spelling errors (e.g., 'pakist', 'importent', 'victoryday')",
+      "Subject-verb agreement (e.g., 'day begin')"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of information from the text",
+      "Complete answers for all five prompts"
+    ]
+  },
+  "feedback_summary": "The student correctly answered all five short-answer questions. Item (a) is correct; item (b) is correct; item (c) is correct; item (d) is correct; item (e) is correct. Total score is 5/5.",
+  "_metadata": {
+    "task_id": "SHORT_020",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0020",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "955c6ae0ab976b5024f82dea58dfb873ecafb3fc7891abbadcb4cac859451a6e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:29:32.123996+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c8fea58f19fc16088450ccf8b9e48ce23832afb03384d16423f0be985bd030ae",
+    "input_tokens": 6680,
+    "output_tokens": 1598,
+    "thoughts_tokens": 845,
+    "cost_usd": 0.001147,
+    "latency_ms": 879750,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6680,
+        "output_tokens": 1598,
+        "thoughts_tokens": 845,
+        "cost_usd": 0.001147,
+        "latency_ms": 879750,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

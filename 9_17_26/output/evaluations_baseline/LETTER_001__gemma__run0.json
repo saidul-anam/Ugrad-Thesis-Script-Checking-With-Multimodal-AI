@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate directly addresses the prompt, clearly stating the purpose of the letter and detailing a specific plan (freelancing in video editing, graphic design, and AI).",
+      "evidence": "In your letter you wanted to know about my future plan after passing the HSC Exam."
+    },
+    "structure_format_brevity": {
+      "rationale": "All six required structural components (address, date, salutation, body, close, signature) are present and correctly positioned. The addition of the envelope layout further demonstrates structural awareness.",
+      "evidence": "Jatrabari, Dhaka-1204\n27-06-2026\n\nDear Saiful,"
+    },
+    "language_mechanics": {
+      "rationale": "The text is readable and maintains a consistent informal register, but it contains frequent basic errors in spelling, punctuation, and noun countability.",
+      "evidence": "At the beggining... I'am... so many works... self-relient... Your's ever"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The opening and closing are heavily reliant on memorized templates common in guidebooks, although the specific mention of AI work adds a touch of authenticity.",
+      "evidence": "At the beggining of the letter take my salam and the best wishes from the core of my heart"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling (beggining, self-relient)",
+      "Countability (works)",
+      "Punctuation (Your's, I'am)"
+    ],
+    "positive_aspects": [
+      "Flawless structural layout",
+      "Clear adherence to prompt objective"
+    ]
+  },
+  "feedback_summary": "The candidate has demonstrated a strong grasp of the formal requirements for a letter, providing all necessary layout components. The content is relevant and fulfills the prompt. However, the writing is weakened by multiple mechanical errors and the use of cliché, memorized templates for the introduction and conclusion. In accordance with the tiebreaker for Band 4, the lowest value of the band is awarded due to the frequency of minor linguistic slips.",
+  "_metadata": {
+    "task_id": "LETTER_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "11149c364f116c540ed2fa80e5e2d31f4b081f57668961df2d4067775140f015",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:12:22.978729+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "190617ecad2487f0a6be2d5934cf13b03c6275a26c5466cc3fc99bfcc2787a8a",
+    "input_tokens": 4404,
+    "output_tokens": 3200,
+    "thoughts_tokens": 2409,
+    "cost_usd": 0.0014,
+    "latency_ms": 90797,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4404,
+        "output_tokens": 3200,
+        "thoughts_tokens": 2409,
+        "cost_usd": 0.0014,
+        "latency_ms": 90797,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

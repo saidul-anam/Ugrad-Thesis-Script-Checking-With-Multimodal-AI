@@ -1,0 +1,101 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 8.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student addresses the annual results for both participants. However, they contradict the prompt's specific premise that the student's own performance was 'very nice' by claiming to be 'disappointed' and having 'messed up maths', though they still report a high overall average.",
+      "evidence": "I messed up maths... my overall average is 81.27%."
+    },
+    "structure_format_brevity": {
+      "rationale": "The script adheres perfectly to dialogue conventions: speaker labels are used, turns alternate correctly, and there are clear opening and closing exchanges.",
+      "evidence": "Myself: Good afternoon.\nsheila: Good afternoon."
+    },
+    "language_mechanics": {
+      "rationale": "There are pervasive spelling and syntax errors that are significant even for Class VII. Phrases are often awkward or incorrectly formed, although the meaning remains discernible.",
+      "evidence": "Pongraculations... let's go to eat grubb some burgens... Your sound is a plan."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue feels authentic and original; the speakers respond to each other's specific points rather than delivering memorized monologues from a guide.",
+      "evidence": "Oh, I'm soory to hear that. We all have touch all subjects."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 8.0,
+    "capped_from": 8.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (e.g., 'dialouge', 'soory', 'Pongraculations')",
+      "Malformed idioms/collocations (e.g., 'Your sound is a plan')",
+      "Grammatical slips in verb forms (e.g., 'had have been helping')"
+    ],
+    "positive_aspects": [
+      "Excellent adherence to the structural requirements of a dialogue",
+      "Natural conversational flow and interaction"
+    ]
+  },
+  "feedback_summary": "The candidate has demonstrated a strong grasp of dialogue structure, using appropriate labels and alternating turns. The content is original and generally follows the prompt, although the student contradicts the 'very nice performance' instruction by introducing a failure in Mathematics. The score is significantly limited by linguistic mechanics, with numerous spelling mistakes ('Pongraculations', 'burgens') and awkward phrasing. Due to the high density of these errors, the score is placed at the lowest end of Band 4.",
+  "_metadata": {
+    "task_id": "DIALOG_017",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0016",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "87e5ecd33fedc88d0abfe351d9b2d4af75f7e72452b827d2c3fa57201c31186d",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:13:05.761780+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "eef6b2d807d99d0ebc51de837617a85ea9ec0add915d682291217b5b150bde47",
+    "input_tokens": 6060,
+    "output_tokens": 2430,
+    "thoughts_tokens": 1615,
+    "cost_usd": 0.001335,
+    "latency_ms": 849437,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6060,
+        "output_tokens": 2430,
+        "thoughts_tokens": 1615,
+        "cost_usd": 0.001335,
+        "latency_ms": 849437,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

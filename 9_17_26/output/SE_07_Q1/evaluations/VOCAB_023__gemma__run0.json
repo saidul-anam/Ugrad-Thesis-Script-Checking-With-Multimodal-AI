@@ -1,0 +1,96 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is marked correct as 'unbeautifull' clearly intends the antonym 'unbeautiful' despite the spelling error. Item (b) 'superbrave' is an intensifier, not a synonym. Item (c) 'Cleare' is either a misspelling of the prompt word or 'clear', which is not a standard synonym for 'clean' (tidy). Item (d) 'oldest' is the superlative form of the prompt word, not a synonym. Item (e) 'start' is not an antonym for 'quiet'.",
+      "evidence": "beautifull = unbeautifull."
+    },
+    "structure_format_brevity": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "This is an item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect identification of synonyms (using superlative or intensifiers instead)",
+      "Incorrect antonym selection"
+    ],
+    "positive_aspects": [
+      "Correct use of negative prefix for antonym in item (a)"
+    ]
+  },
+  "feedback_summary": "Item (a) is correct. Items (b), (c), (d), and (e) are incorrect.",
+  "_metadata": {
+    "task_id": "VOCAB_023",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0022",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "94ab07111b7cb999f8fbfd58d62afb7cb4b4a1575852f3746af69bd5e8ca475e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:37:21.168243+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8d2a4965af3834a7601e1d7d75dfd6e93da73644d402f352b94ba11143ddb7d0",
+    "input_tokens": 6253,
+    "output_tokens": 1793,
+    "thoughts_tokens": 1132,
+    "cost_usd": 0.001163,
+    "latency_ms": 327031,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6253,
+        "output_tokens": 1793,
+        "thoughts_tokens": 1132,
+        "cost_usd": 0.001163,
+        "latency_ms": 327031,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

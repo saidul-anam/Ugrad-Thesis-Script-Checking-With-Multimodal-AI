@@ -1,0 +1,99 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "raw_total": 9.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The dialogue fully addresses the prompt; both speakers discuss their annual examination results (GPA 5), their class positions, and their parents' reactions.",
+      "evidence": "I also got GPA 5 on every subject and secured the highest marks in my class."
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate uses a correct dialogue layout with clear speaker labels, alternating turns, and appropriate opening and closing conventions.",
+      "evidence": "Myself : Hello! Sheila! How are you?\nSheila : I am fine. What about you?"
+    },
+    "language_mechanics": {
+      "rationale": "While the meaning is always clear, there are frequent errors in grammar (e.g., 'study more hard' instead of 'harder'), punctuation (incorrect apostrophes in 'parent's are'), and syntax ('what position do you secured any').",
+      "evidence": "they want me to study more hard and get a very good result."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The dialogue exhibits genuine interaction where speakers respond directly to each other's queries rather than delivering memorized monologues.",
+      "evidence": "What position do you secured any in your Class?\nSheila : I got 1st position"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 3.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 2.0,
+    "total_score": 9.0,
+    "capped_from": 9.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Comparative adjective errors (more hard)",
+      "Subject-verb agreement and tense in questions (do you secured)",
+      "Punctuation/Possessive errors (parent's are)"
+    ],
+    "positive_aspects": [
+      "Perfect adherence to dialogue formatting",
+      "Complete coverage of all prompt requirements",
+      "Natural flow of conversation"
+    ]
+  },
+  "feedback_summary": "A very strong attempt that perfectly follows the dialogue format and addresses all parts of the prompt. The student successfully conveys the required information about the results and parents. The score is kept at 9 rather than 10 due to recurring grammatical errors in adjective forms and question syntax, which prevent it from being an 'exceptional' script, although it is highly competent for Class VII.",
+  "_metadata": {
+    "task_id": "DIALOG_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "431af2c3bfba9ab9ca3f47639ba1f8dc156381fc6eaf8bb29b2981d617e0da24",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:58:58.593657+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "5a00a7e12e356c48eb82755d9101c3fdb91ae4b545fdab71ce8768997335516f",
+    "input_tokens": 6163,
+    "output_tokens": 1904,
+    "thoughts_tokens": 1135,
+    "cost_usd": 0.001188,
+    "latency_ms": 1510327,
+    "attempt_number": 6,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6163,
+        "output_tokens": 1904,
+        "thoughts_tokens": 1135,
+        "cost_usd": 0.001188,
+        "latency_ms": 1510327,
+        "attempt_number": 6,
+        "http_status": 200
+      }
+    ]
+  }
+}

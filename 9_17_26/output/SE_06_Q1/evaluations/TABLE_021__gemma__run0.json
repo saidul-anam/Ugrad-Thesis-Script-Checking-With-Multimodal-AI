@@ -1,0 +1,99 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items (i), (ii), and (iii) are correct. Item (iv) is incorrect because it omits 'Religion', and the rubric states that naming only some of the required items does not earn the mark. Item (v) is incorrect because it lists the subjects instead of the marks (6) requested by the prompt.",
+      "evidence": "(i) Raju reads in class six. (ii) He dd well in Batngla, English, and mathematics subject. (iii) He got in those subject 8, 9, and 10"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incomplete information (missing one subject in item iv)",
+      "Incorrect data category (provided subjects instead of marks in item v)"
+    ],
+    "positive_aspects": [
+      "Correctly identified class",
+      "Correctly identified strong subjects and corresponding marks"
+    ]
+  },
+  "feedback_summary": "The candidate scored 3 out of 5. Item (i) is correct. Item (ii) is correct (spelling errors ignored). Item (iii) is correct. Item (iv) is marked wrong as 'Religion' was omitted. Item (v) is marked wrong as the candidate listed subjects instead of the marks.",
+  "_metadata": {
+    "task_id": "TABLE_021",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0021",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "112618f54aed112cfa38a8c821b528d0ef19ac001c093d84b401285b5c6013fc",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:36:23.232978+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "961fd9ba269937a7f971a0081c838880c928396bb61a612e0174c982d93c8fd2",
+    "input_tokens": 6435,
+    "output_tokens": 1577,
+    "thoughts_tokens": 898,
+    "cost_usd": 0.001117,
+    "latency_ms": 846530,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6435,
+        "output_tokens": 1577,
+        "thoughts_tokens": 898,
+        "cost_usd": 0.001117,
+        "latency_ms": 846530,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

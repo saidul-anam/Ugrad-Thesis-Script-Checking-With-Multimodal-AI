@@ -1,0 +1,99 @@
+{
+  "task_type": "True_False",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a is incorrect (marked True instead of False). Item b is correct (False with a factual correction). Item c is correct (False with a factual correction). Item d is correct (True). Item e is incorrect; while marked False, the provided 'correction' is a general statement from the text and does not correct the specific error regarding Mars/interplanetary travel.",
+      "evidence": "b. False Correct Answer : Michael Collins stayed in the main ship . and Neill Annstrong and Edwin Aldrin landed on the moon c. False Correct Answer : Neil Annstrong was the first person to walk in the moon. d. True"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy (Item a)",
+      "Incorrect correction logic (Item e)"
+    ],
+    "positive_aspects": [
+      "Accurate identification and correction of complex items (b and c)",
+      "Correct identification of True statement (d)"
+    ]
+  },
+  "feedback_summary": "The student scored 3 out of 5. Items b, c, and d were correct. Item a was marked as True when it should have been False. Item e was marked False, but the candidate failed to provide a correct factual correction regarding the Mars travel error, instead providing a general summary statement.",
+  "_metadata": {
+    "task_id": "TF_021",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0020",
+    "question_no": "6",
+    "question_type": "True_False",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "6bd29223ee816250a65cccb82330f9c1df00b93a8fb2832d90def4def610f1c1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:54:07.025980+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "994236128fb78b7631fb448f3e7db6218fd4b0cf91ff9b22547a2e2246841c20",
+    "input_tokens": 6440,
+    "output_tokens": 1814,
+    "thoughts_tokens": 1130,
+    "cost_usd": 0.001188,
+    "latency_ms": 318375,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6440,
+        "output_tokens": 1814,
+        "thoughts_tokens": 1130,
+        "cost_usd": 0.001188,
+        "latency_ms": 318375,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

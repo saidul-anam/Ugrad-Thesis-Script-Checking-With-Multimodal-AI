@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student provides a smooth continuation with 12 new sentences, exceeding the requirement of ten, and follows a logical sequence of events from the encounter to the resolution.",
+      "evidence": "Both of them became frightened... He promised to never betray anyone again."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a resolved ending with a clear moral lesson ('a friend in need is a friend indeed'), but the student failed to provide a suitable title.",
+      "evidence": "The bear told me that a friend in need is a friend indeed."
+    },
+    "language_mechanics": {
+      "rationale": "While past-tense consistency is generally maintained, there are notable lexical and syntactic errors ('assured his tree', 'cannot suspect for attack dead bodies', 'bother friend') that hinder fluency.",
+      "evidence": "assured his tree"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student competently reproduces a well-known fable. While not a verbatim guide-book copy, it lacks original descriptive detail, relying on a standard plot progression.",
+      "evidence": "The other friend, having no time and not knowing how to climb, lay flat on his face without breathing or movement."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lexical choice errors",
+      "Syntactic breakdowns in complex sentences"
+    ],
+    "positive_aspects": [
+      "Consistent past-tense usage",
+      "Clear narrative progression"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical flow and a clear moral. The total score is limited by the absence of a title and several awkward phrasing errors (e.g., 'assured his tree' and 'bother friend'). However, the work is appropriate for Class VII and effectively resolves the prompt.",
+  "_metadata": {
+    "task_id": "STORY_002",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0001",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8e37fb187a15620075fc566e37688c2ef357def56146e3bacf47519ac58fdc32",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T21:58:27.068513+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "83e0643775f96d4d501f7ee608a0fe5257afeb30e388e610c4ff89671102c7c0",
+    "input_tokens": 6009,
+    "output_tokens": 2558,
+    "thoughts_tokens": 1847,
+    "cost_usd": 0.001368,
+    "latency_ms": 274125,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6009,
+        "output_tokens": 2558,
+        "thoughts_tokens": 1847,
+        "cost_usd": 0.001368,
+        "latency_ms": 274125,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

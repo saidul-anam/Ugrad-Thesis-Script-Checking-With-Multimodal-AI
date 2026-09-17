@@ -1,0 +1,100 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The story follows a logical sequence and completes the stem, although the transition 'entered the lion's nose' is logically awkward.",
+      "evidence": "the mouse entered the lion's nose by it's subconsinsly"
+    },
+    "structure_format_brevity": {
+      "rationale": "The candidate provided a title, a positive resolution, and a clearly stated moral lesson as required.",
+      "evidence": "moral: we should not understimet anyone by his/her size or cover."
+    },
+    "language_mechanics": {
+      "rationale": "There is a high density of spelling errors and inconsistent tense usage throughout the script.",
+      "evidence": "forzest... subconsinsly... oil sharp theeth... The lion understand"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The plot is a standard, memorized fable with no creative additions, vivid descriptions, or authentic narrative turns.",
+      "evidence": "The mouse cut the net by it's oil sharp theeth. The lion got free from the trap."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.5,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Orthographic errors (Spelling)",
+      "Tense inconsistency",
+      "Awkward phrasing/word choice"
+    ],
+    "positive_aspects": [
+      "Adherence to story structure",
+      "Clear moral conclusion",
+      "Successful plot resolution"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a clear plot and a positive moral. However, the work relies heavily on a memorized template and is marred by significant linguistic errors in spelling ('forzest', 'theeth') and grammar. While structurally sound, the lack of originality and poor mechanical control place it in Band 3.",
+  "_metadata": {
+    "task_id": "STORY_014",
+    "script_id": "SE_11_Q1_0014",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 2,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e9a64d2ab4c0832707ce350d7f26cfec67565ad6a9ea29e9da466f0828b3768b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T23:36:08.609322+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "c152df3f9821f65e368c42775b3f18569bc3a510b40a0ee99a67f55980b267ec",
+    "input_tokens": 4437,
+    "output_tokens": 2163,
+    "thoughts_tokens": 1457,
+    "cost_usd": 0.001093,
+    "latency_ms": 60842,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4437,
+        "output_tokens": 2163,
+        "thoughts_tokens": 1457,
+        "cost_usd": 0.001093,
+        "latency_ms": 60842,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

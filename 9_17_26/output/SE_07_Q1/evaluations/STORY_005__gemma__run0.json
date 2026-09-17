@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student continues the story smoothly from the stem, provides approximately 10 new sentences, and maintains a clear sequence of events that lead to the resolution.",
+      "evidence": "The other friend finding no other alternative lay flat on his mouth without breathing."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a definitive resolution with a clear moral lesson; however, the candidate failed to provide a title as explicitly requested in the prompt.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There is significant inconsistency in tense, shifting between present ('turns', 'climb') and past ('lay', 'came'). Several word-choice and spelling errors occur ('bother' for 'one/brother', 'lives' for 'leaves', 'than' for 'then').",
+      "evidence": "to don't trust a friend who lives you alone in danger."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative follows the standard, well-known version of the fable. While competent, it lacks original descriptive detail or creative phrasing, remaining very close to a guide-style reproduction.",
+      "evidence": "the bear thought that he was dead because he was not breathing."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present/Past mix)",
+      "Vocabulary slips (lives vs leaves, bother vs brother)",
+      "Missing structural element (Title)"
+    ],
+    "positive_aspects": [
+      "Clear plot progression",
+      "Accurate delivery of the story's moral",
+      "Adequate sentence count"
+    ]
+  },
+  "feedback_summary": "The student successfully completes the story with a logical sequence of events and a clear moral. However, the total score is limited by the omission of a title and frequent grammatical errors, particularly regarding tense consistency and word choice (e.g., using 'lives' instead of 'leaves').",
+  "_metadata": {
+    "task_id": "STORY_005",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0004",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8d9c6c96618e5c680d5d62be9fed636253884d357a172ee15815e3e270713003",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T22:36:09.370925+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "bb0bc1a0069c80c2b8e1743fc1a77609a1b5dcb63ad00fa1ebe03e0a551816e3",
+    "input_tokens": 5994,
+    "output_tokens": 2232,
+    "thoughts_tokens": 1492,
+    "cost_usd": 0.001269,
+    "latency_ms": 399280,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5994,
+        "output_tokens": 2232,
+        "thoughts_tokens": 1492,
+        "cost_usd": 0.001269,
+        "latency_ms": 399280,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

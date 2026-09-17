@@ -1,0 +1,98 @@
+{
+  "task_type": "Gap_Fill",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) is correct ('Show'). Item (b) is correct as 'excellent' fits the key. Item (c) 'cheeгsed' is a clear misspelling of 'cheered' and earns the mark per the rubric. Item (d) provides two words ('enjoying', 'iSluence') neither of which fit grammatically or contextually as a noun. Item (e) 'audience noise' is too generic and does not align with the specific positive 'cheers/applause' described in the text.",
+      "evidence": "a) The Show. b) Then excellent. c) cheeгsed."
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 3.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Lexical imprecision in later items",
+      "Spelling errors"
+    ],
+    "positive_aspects": [
+      "Correct identification of core vocabulary in the first three gaps"
+    ]
+  },
+  "feedback_summary": "The student correctly answered items (a), (b), and (c). Item (c) was accepted despite a spelling error as the intent was clear. Items (d) and (e) were marked incorrect as they did not match the context or grammatical requirements of the gaps.",
+  "_metadata": {
+    "task_id": "GAP_026",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0025",
+    "question_no": "3",
+    "question_type": "Gap_Fill",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "ae3920076792ea6d30ecef824e590c94b6c6e433e3e9b13fb9b24c1f747598d1",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T02:59:15.324123+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "0c30c76bff5b041a4536c7244c022680109459e33ca43ad8a43535a3a324c924",
+    "input_tokens": 6235,
+    "output_tokens": 1934,
+    "thoughts_tokens": 1266,
+    "cost_usd": 0.001204,
+    "latency_ms": 140405,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6235,
+        "output_tokens": 1934,
+        "thoughts_tokens": 1266,
+        "cost_usd": 0.001204,
+        "latency_ms": 140405,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

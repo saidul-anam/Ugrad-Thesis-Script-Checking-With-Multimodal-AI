@@ -1,0 +1,99 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item a: Correct (independence and Pakistani army's actions). Item b: Correct (mentions salutes, flag hoisting, programs, and banners). Item c: Correct (mentions sacrifice of lives). Item d: Correct (mentions singing songs). Item e: Incorrect (claims the salute represents the hoisting of the flag, whereas the text presents these as two sequential events). Total: 1+1+1+1+0 = 4.",
+      "evidence": "a) In 1971, Bangladesh got independence... b) People et celebrate victory day... with a 37 gun salute... hoisting of the national flag... c) National martyres is memorial beufo because they lost their lives... d) people sing songs... e) The 37-gun Salutes salute represents the hoisting of the national flag"
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question: this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Factual inaccuracy in item (e)",
+      "Spelling errors (e.g., 'assau lited', 'mantyrs', 'beufo')"
+    ],
+    "positive_aspects": [
+      "Accurate extraction of core facts for most questions",
+      "Complete attempts for all items"
+    ]
+  },
+  "feedback_summary": "The candidate correctly answered four out of five items. Items (a), (b), (c), and (d) were awarded 1 mark each as they contained the required content despite spelling errors. Item (e) was marked 0 because it misidentified the meaning of the 31-gun salute, confusing it with the act of hoisting the flag.",
+  "_metadata": {
+    "task_id": "SHORT_010",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0010",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "b8c67650889ab3d686a769b6fe7c41bfa3e6e6318a69235b80037633df98aec5",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:35:27.732054+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "866574789c4022ca99ef97a211e174ee00395f84a440d89c7f3bf64842d09cdb",
+    "input_tokens": 6688,
+    "output_tokens": 1888,
+    "thoughts_tokens": 1124,
+    "cost_usd": 0.001235,
+    "latency_ms": 169546,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6688,
+        "output_tokens": 1888,
+        "thoughts_tokens": 1124,
+        "cost_usd": 0.001235,
+        "latency_ms": 169546,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

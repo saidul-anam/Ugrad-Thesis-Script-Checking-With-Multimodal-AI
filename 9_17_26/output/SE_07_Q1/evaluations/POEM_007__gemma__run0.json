@@ -1,0 +1,98 @@
+{
+  "task_type": "Poem_Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (a) scores 0 as it merely repeats the question without specifying the parent's responsibilities. Item (b) scores 1 for correctly noting that being busy causes one to miss the beauty of nature. Item (h) scores 1 for correctly capturing the message of taking time to enjoy nature and not being too busy. Total: 0+1+1 = 2.",
+      "evidence": "(b) The poet suggestion about nature's beauty we are busy so we can miss the beauty of nature. (h) Ans: The poet's message is to time and rebze in the nature and not bring busy for enjoyin nature."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Repetition of question stem without answering (Item a)",
+      "Grammatical errors and spelling slips"
+    ],
+    "positive_aspects": [
+      "Core conceptual understanding of the poem 'Leisure'"
+    ]
+  },
+  "feedback_summary": "The student attempted three items. Item (a) was marked wrong (0) because it did not provide the content required by the key. Item (b) was marked right (1) and item (h) was marked right (1). Items (c), (d), (e), (f), and (g) were not attempted (0). Total score: 2/5.",
+  "_metadata": {
+    "task_id": "POEM_007",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0006",
+    "question_no": "10",
+    "question_type": "Poem_Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "8da4a7379cdcbe5e7819259939eae314d8f3ad9dbdcbd8ee2a1af4fd5380dad7",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:04:05.298111+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "68e8de9e3ffe1e4c2caaf1a31cd4947853d5187e30dc3a98d63cd926faea88c6",
+    "input_tokens": 6422,
+    "output_tokens": 2043,
+    "thoughts_tokens": 1331,
+    "cost_usd": 0.001255,
+    "latency_ms": 307078,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6422,
+        "output_tokens": 2043,
+        "thoughts_tokens": 1331,
+        "cost_usd": 0.001255,
+        "latency_ms": 307078,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_type": "Theme",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate accurately identifies the core distinction in the poem between passive nocturnal dreaming and purposeful, active dreaming that can be realized, though the idea is articulated at a basic level.",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response is written in a single block without padding, but sentence progression is choppy and abruptly terminated.",
+      "evidence": "Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "language_mechanics": {
+      "rationale": "The script contains multiple grammatical and mechanical breakdowns, including number/agreement errors ('two kind', 'Those dream... is'), missing capitalization, an errant full stop ('real. dream'), and an unintelligible word ('fata').",
+      "evidence": "There are two kind of dream. one which we see while we sleep and another because of which we can not sleep. Those dream we see while sleeping is not for us. Those which take our sleep is our real. dream and these are possible to fata come true."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate does not copy any line from the poem (0% verbatim overlap) and attempts an independent interpretation, though the phrasing is unrefined.",
+      "evidence": "Those dream we see while sleeping is not for us."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Subject-verb and number agreement errors ('two kind of dream', 'Those dream... is')",
+      "Faulty punctuation and errant mid-sentence period ('real. dream')",
+      "Corrupted/garbled phrasing ('fata come true')"
+    ],
+    "positive_aspects": [
+      "Complete absence of direct line copying from the poem (0% verbatim overlap)",
+      "Captures the thematic contrast between idle night dreams and actionable day dreams"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrates an authentic conceptual grasp of the poem's theme by differentiating between passive dreams and purposeful ambition without copying from the text. However, severe mechanical errors, including agreement faults, misplaced punctuation, and a corrupted word, limit the script to Band 2 (4/8).",
+  "_metadata": {
+    "task_id": "THEME_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "11",
+    "question_type": "Theme",
+    "max_mark": 8,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "e191280e2479814d83562f9fd6108c34c80f83c36b34ad5d01f2cb3007534351",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:41:38.352046+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "a89439fa1f5a9170ff51b03765fef1b8537de3fb4dbd86b4e1618bf4eb8d074b",
+    "input_tokens": 4276,
+    "output_tokens": 3351,
+    "thoughts_tokens": 2541,
+    "cost_usd": 0.00966,
+    "latency_ms": 23468,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4276,
+        "output_tokens": 3351,
+        "thoughts_tokens": 2541,
+        "cost_usd": 0.00966,
+        "latency_ms": 23468,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

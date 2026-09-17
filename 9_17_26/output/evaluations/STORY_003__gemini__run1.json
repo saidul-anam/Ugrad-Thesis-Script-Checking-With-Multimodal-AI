@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate smoothly continues the narrative from the provided stem, developing a clear sequential plot aligned with the traditional fable where the mouse repays the lion.",
+      "evidence": "At that moment the mouse arrived the place. the lion requested him to help, but the mouse refused for the first time: he said if they kill him after helping"
+    },
+    "structure_format_brevity": {
+      "rationale": "The narrative achieves a complete and positive resolution where the lion is freed, but the candidate failed to supply a proper title at the top of the story, appending only an unclear rhyming couplet at the end.",
+      "evidence": "\" King in perfect with crown Not in the eitre it's just a clown \""
+    },
+    "language_mechanics": {
+      "rationale": "Severe mechanical breakdown is evident throughout, including past tense inconsistency, missing capital letters, unpunctuated dialogue, and garbled spelling errors.",
+      "evidence": "when the lion take the mouse he asked \" whate are you doing here? I'll just kill you for disturbing me \""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The story follows the standard predictable storyline with basic phrasing and several unnatural expressions, lacking descriptive depth.",
+      "evidence": "the mouse guiltly answered the lion that he was playing and lion was a burden for the mouse."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Pervasive spelling mistakes ('cathed', 'ensurt', 'dit', 'befor', 'whate')",
+      "Tense inconsistency and subject-verb agreement errors ('lion take', 'he dit')",
+      "Missing initial capitalization and quotation formatting slips"
+    ],
+    "positive_aspects": [
+      "Logical plot progression from the stem to completion",
+      "Successful delivery of a constructive moral conclusion and positive resolution"
+    ]
+  },
+  "feedback_summary": "The response provides a complete and coherent continuation of the story, successfully fulfilling the narrative sequence where the mouse rescues the lion. However, the score is held at the lower end of Band 3 due to the omission of an opening title and extensive grammatical and spelling errors throughout the text.",
+  "_metadata": {
+    "task_id": "STORY_003",
+    "script_id": "SE_11_Q1_0003",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "8bdf6f9cf0ab048aa06d5323d30478d3968cb530e36bd8be65021fed6cfa791f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:09:52.209929+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "09624557e9c85553e30cf25d85edbf688deabc543514171e5f348a5940c48b2a",
+    "input_tokens": 4488,
+    "output_tokens": 3020,
+    "thoughts_tokens": 2240,
+    "cost_usd": 0.008896,
+    "latency_ms": 21109,
+    "attempt_number": 2,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4488,
+        "output_tokens": 3020,
+        "thoughts_tokens": 2240,
+        "cost_usd": 0.008896,
+        "latency_ms": 21109,
+        "attempt_number": 2,
+        "http_status": 200
+      }
+    ]
+  }
+}

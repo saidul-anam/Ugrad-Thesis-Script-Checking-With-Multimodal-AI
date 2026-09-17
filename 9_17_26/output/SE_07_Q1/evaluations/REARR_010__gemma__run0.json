@@ -1,0 +1,99 @@
+{
+  "task_type": "Rearrange",
+  "max_mark_applied": 8,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 6.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly positioned six sentences: 1(c), 2(f), 3(e), 4(g), 5(a), and 6(h). Sentence 5 contains a splicing error with text from sentence (b), but the core of sentence (a) is in the correct position. Sentences 7 and 8 are swapped (student placed (b) then (d), whereas the key requires (d) then (b)).",
+      "evidence": "Suddenly , I noticed two large Yellow eyes approaching me. At first , I was frightened... But soon I realized... As it come closer... I waved my torch bybut the car didn't stop . growing impatient, I made a quick decision."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 6.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 6.0,
+    "capped_from": 6.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Incorrect positioning of the final two sentences (inverted order)",
+      "Splicing/copying error in the fifth sentence"
+    ],
+    "positive_aspects": [
+      "Correct sequence for the first six items",
+      "Maintained narrative flow for the majority of the text"
+    ]
+  },
+  "feedback_summary": "The student scored 6 out of 8. The items in positions 1(c), 2(f), 3(e), 4(g), 5(a), and 6(h) were correctly placed. Items 7 and 8 were incorrect as the student swapped the order of (d) and (b).",
+  "_metadata": {
+    "task_id": "REARR_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "9",
+    "question_type": "Rearrange",
+    "max_mark": 8,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "df0f9d3acd69c5791df1c9941b7af5b4c461df808605263874c860de23f90070",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:49:11.020417+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "2396be619b3428be47cd5ec7d5fb916660d0d6002e40d655336a9c6a8228ad65",
+    "input_tokens": 6377,
+    "output_tokens": 2791,
+    "thoughts_tokens": 2059,
+    "cost_usd": 0.001475,
+    "latency_ms": 715890,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6377,
+        "output_tokens": 2791,
+        "thoughts_tokens": 2059,
+        "cost_usd": 0.001475,
+        "latency_ms": 715890,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

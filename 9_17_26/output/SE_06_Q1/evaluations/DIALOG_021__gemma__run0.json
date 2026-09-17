@@ -1,0 +1,101 @@
+{
+  "task_type": "Dialogue",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 0.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.25,
+    "raw_total": 2.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate fails to address the core requirements of the prompt. There is no mention of the duration of the illness (one week), the specific symptoms (Covid-19), a diagnosis, or any medical advice from the doctor.",
+      "evidence": "I feel bad."
+    },
+    "structure_format_brevity": {
+      "rationale": "The response uses the correct dialogue layout with speaker labels and alternating turns and includes a basic greeting. However, it is extremely underdeveloped and lacks a closing turn.",
+      "evidence": "Shahid: Hello docton. / docton: Hi pleeses sit down."
+    },
+    "language_mechanics": {
+      "rationale": "There is a severe density of spelling and grammatical errors. Words are written phonetically and are often nearly unintelligible, indicating a struggle with basic Class VI vocabulary.",
+      "evidence": "docton, pleeses, wats younn problam, nunhinoice"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "While not a memorized template, the interaction is too brief to demonstrate narrative or conversational development.",
+      "evidence": "Shahid: ok docton"
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 0.5,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.25,
+    "originality_comparisons_paraphrase": 0.25,
+    "total_score": 2.0,
+    "capped_from": 2.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe phonetic spelling errors",
+      "Incomplete response to prompt",
+      "Lack of narrative resolution"
+    ],
+    "positive_aspects": [
+      "Correct use of dialogue labels",
+      "Basic alternating turn structure"
+    ]
+  },
+  "feedback_summary": "The candidate has made a very minimal attempt at the dialogue. While the structural layout (labels and turns) is present, the content is severely lacking, missing all the key medical details required by the prompt. The spelling is significantly below the expected standard for Class VI, making parts of the text difficult to decipher. The score is placed in Band 1 due to the fragmented nature of the response and severe linguistic corruption.",
+  "_metadata": {
+    "task_id": "DIALOG_021",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0021",
+    "question_no": "13",
+    "question_type": "Dialogue",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "11e9eda49c863c076d9718eeab6b5a44673b585b392665e23b27b29f78a2d393",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:26:14.780510+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6ddfc2ce4344b12169d9afb0ea3a0756e97ca0b0b3dbccb653d1a1f50267a6bd",
+    "input_tokens": 5938,
+    "output_tokens": 3515,
+    "thoughts_tokens": 2764,
+    "cost_usd": 0.001648,
+    "latency_ms": 173280,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "structure_format_brevity",
+      "language_mechanics"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5938,
+        "output_tokens": 3515,
+        "thoughts_tokens": 2764,
+        "cost_usd": 0.001648,
+        "latency_ms": 173280,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

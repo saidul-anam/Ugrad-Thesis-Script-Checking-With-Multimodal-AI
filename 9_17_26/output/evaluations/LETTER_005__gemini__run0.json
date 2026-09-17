@@ -1,0 +1,99 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate addresses the prompt directly, stating their plans for after the HSC examination (vacation and university admission preparation) clearly without off-topic deviation.",
+      "evidence": "I'm thinking of going on a vacation after the exam ends. Then I'll start prep study for university."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential layout elements of an informal letter are correctly positioned and present: address, date, salutation, body paragraphs, complimentary close, signature, and postal envelope details.",
+      "evidence": "Jatrabari, Dhaka\n27/06/2026\n\nDear Shiba,"
+    },
+    "language_mechanics": {
+      "rationale": "The text contains multiple spelling errors ('regred', 'tody') and faulty capitalisation ('If', 'SO', 'NO'), which prevents awarding the mark for mechanics.",
+      "evidence": "I think If you don't use this time properly you will regred in future. SO use your time wisely.\n\nNO more tody."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The candidate uses authentic, straightforward phrasing and logical sequencing rather than relying strictly on memorised boilerplate templates.",
+      "evidence": "Now I'll tell you what I'll do after passing exams. I'm thinking of going on a vacation after the exam ends."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('regred' for 'regret', 'tody' for 'today')",
+      "Erratic mid-sentence and sentence-initial capitalisation ('If', 'SO', 'NO')"
+    ],
+    "positive_aspects": [
+      "Complete structural layout including envelope box details",
+      "Direct and relevant response to the writing prompt",
+      "Natural and authentic informal tone"
+    ]
+  },
+  "feedback_summary": "The response is structurally complete and fully satisfies the prompt objectives. It achieves the lower threshold of Band 4 (4/5) due to several minor orthographic and capitalisation errors in an otherwise well-formed letter.",
+  "_metadata": {
+    "task_id": "LETTER_005",
+    "script_id": "SE_11_Q1_0005",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "bffa11fad08d1449a0c8115ab40cf6d33a4fe0d253b4f251f8788b28495ce6ca",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T21:15:55.561371+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "5bc889fd8ac1ed49e6d80d176670c85aa3076188c736c17fe2879a58fe85f9c9",
+    "input_tokens": 4333,
+    "output_tokens": 2610,
+    "thoughts_tokens": 1833,
+    "cost_usd": 0.007825,
+    "latency_ms": 17483,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4333,
+        "output_tokens": 2610,
+        "thoughts_tokens": 1833,
+        "cost_usd": 0.007825,
+        "latency_ms": 17483,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

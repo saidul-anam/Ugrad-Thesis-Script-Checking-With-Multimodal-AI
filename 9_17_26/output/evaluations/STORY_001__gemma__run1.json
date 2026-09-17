@@ -1,0 +1,99 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate provides a seamless continuation of the stem with a logical, sequential plot that follows the classic fable's trajectory.",
+      "evidence": "The lion caught the mouse. The mouse got scared and told the lion to eat to let him free, one day he might save the lion's life."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story reaches a clear positive conclusion with a constructive moral, but the candidate completely failed to provide a title as required by the prompt.",
+      "evidence": "Then he the lion size doesn't matter to do any worek."
+    },
+    "language_mechanics": {
+      "rationale": "There are frequent spelling errors (forrest, trappen, greatful, worek) and significant grammatical lapses in tense and syntax, particularly in the concluding sentence.",
+      "evidence": "the mouse have saved his life. Then he the lion size doesn't matter to do any worek."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The narrative is a standard, memorized version of 'The Lion and the Mouse' with no original creative turns or vivid descriptive details.",
+      "evidence": "He went to the lion and cut the net with his sharp teeth."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (phonetic misspelling)",
+      "Subject-verb agreement/Tense consistency",
+      "Syntax breakdown in closing sentence"
+    ],
+    "positive_aspects": [
+      "Strong grasp of plot sequence",
+      "Successful inclusion of a moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completed the story with a logical plot and a positive moral. However, the score is limited by the omission of a required title and a high density of linguistic errors, including frequent spelling mistakes and poor syntax in the final sentence. The narrative lacks originality, following a memorized template.",
+  "_metadata": {
+    "task_id": "STORY_001",
+    "script_id": "SE_11_Q1_0001",
+    "question_no": "9",
+    "question_type": "Story",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "b0e788379019ad8c4d8df0147446961f907193b58f950b3f75c88fa7f2bbb34f",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T20:39:29.512352+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "6596f8b579d9f9695a4b4710e20a4aa4c03e3b504e761852288c79a90bc7b435",
+    "input_tokens": 4405,
+    "output_tokens": 2622,
+    "thoughts_tokens": 1893,
+    "cost_usd": 0.001227,
+    "latency_ms": 74140,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "originality_comparisons_paraphrase"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4405,
+        "output_tokens": 2622,
+        "thoughts_tokens": 1893,
+        "cost_usd": 0.001227,
+        "latency_ms": 74140,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

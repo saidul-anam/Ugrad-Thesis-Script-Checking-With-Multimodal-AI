@@ -1,0 +1,98 @@
+{
+  "task_type": "Short_Answer",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "All five items (a-e) are correct based on the answer key. Item a identifies the 1971 independence and the cost of war. Item b identifies celebrations (banners/parades). Item c identifies the memorial as a focal point for respect. Item d identifies patriotic songs. Item e identifies the salute's timing at dawn.",
+      "evidence": "a) In 1971 Bangladesh got independence... b) People celebrate victory day with colourful plags, banners and parades. c) The National Mantyns' Memorial is important because our monument... becomes a focal point for citizens to pay their respect. d) People sings recite patriotic songs... e) The 31-gun salute represent the day at dawn"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 5.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors (e.g., 'ammy' for 'army', 'plags' for 'flags', 'Mantyns' for 'Martyrs')"
+    ],
+    "positive_aspects": [
+      "Precise information retrieval from the text",
+      "Full completion of all required items"
+    ]
+  },
+  "feedback_summary": "The candidate successfully answered all five items correctly. Item a: Correct. Item b: Correct. Item c: Correct. Item d: Correct. Item e: Correct. Per the marking guidelines for item-scored questions, the frequent spelling errors do not result in mark deductions as the content remains fully recoverable.",
+  "_metadata": {
+    "task_id": "SHORT_006",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0006",
+    "question_no": "2",
+    "question_type": "Short_Answer",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "cd7247bc39f68f109a4e2ddf5c27327b6a9993b70db9471258181a361b39820b",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:23:08.468275+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a877f0dfd91730454f373c0db12671daee5082f7c3c311ca6117350c793d6dee",
+    "input_tokens": 6635,
+    "output_tokens": 1984,
+    "thoughts_tokens": 1270,
+    "cost_usd": 0.001259,
+    "latency_ms": 669141,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6635,
+        "output_tokens": 1984,
+        "thoughts_tokens": 1270,
+        "cost_usd": 0.001259,
+        "latency_ms": 669141,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

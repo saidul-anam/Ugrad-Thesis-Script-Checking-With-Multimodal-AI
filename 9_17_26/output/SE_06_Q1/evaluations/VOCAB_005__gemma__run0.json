@@ -1,0 +1,97 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (d) is correct as 'hide' is a valid antonym for 'show'. Item (a) 'come back' is a synonym, not an antonym. Item (b) is omitted. Item (c) provided an unintelligible response. Item (e) provided 'day', which is unrelated to 'bought'.",
+      "evidence": "show - hide"
+    },
+    "structure_format_brevity": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Criterion fixed at 0 for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion between synonym and antonym (Item a)",
+      "Irrelevant response (Item e)",
+      "Omission (Item b)"
+    ],
+    "positive_aspects": [
+      "Correct identification of antonym for 'show'"
+    ]
+  },
+  "feedback_summary": "The student correctly answered item (d). Items (a), (b), (c), and (e) were marked incorrect: (a) provided a synonym instead of an antonym, (b) was left blank, (c) was unintelligible, and (e) provided an unrelated word.",
+  "_metadata": {
+    "task_id": "VOCAB_005",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0005",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "b8e2bf2b08527d7563528c112a001c588f7f38d9c6feb17bbf6e89337c15b9f9",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:20:27.705611+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b79d58c00521a4a4e71a20cca0194c34e89251ee60ed9a15681e0a9a820af1bb",
+    "input_tokens": 6321,
+    "output_tokens": 1711,
+    "thoughts_tokens": 1074,
+    "cost_usd": 0.001145,
+    "latency_ms": 697452,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6321,
+        "output_tokens": 1711,
+        "thoughts_tokens": 1074,
+        "cost_usd": 0.001145,
+        "latency_ms": 697452,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

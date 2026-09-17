@@ -1,0 +1,101 @@
+{
+  "task_type": "Story",
+  "max_mark_applied": 10,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 5.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate continues the narrative logically and follows the sequence of the known fable. However, the requirement for 'at least ten new sentences' is barely met or slightly missed (approx 9 sentences), and the development is very basic.",
+      "evidence": "One of the climb the tree and another coudt couldn't find any oppurtunity to survive he lay down and stop breathing."
+    },
+    "structure_format_brevity": {
+      "rationale": "The story has a clear resolution and provides a discernible moral lesson, but it fails a key structural requirement: there is no title provided.",
+      "evidence": "The bear said to me that you shouldn't make that type of friend who leaves in danger"
+    },
+    "language_mechanics": {
+      "rationale": "There is a pervasive failure in tense consistency, frequently switching between past and present (e.g., 'isn't breathing', 'go away', 'say'). Spelling errors are present but do not impede basic understanding.",
+      "evidence": "He isn't breathing so , the bear took him to be dead and go away ."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The response is a standard reproduction of a common fable. There is very little descriptive detail or original phrasing beyond the errors.",
+      "evidence": "The friend who climbed the tree he jumped from the tree."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 1.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 5.0,
+    "capped_from": 5.0
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Tense inconsistency (Present/Past mix)",
+      "Missing structural element (Title)",
+      "Spelling errors (oppurtunity, repiled)"
+    ],
+    "positive_aspects": [
+      "Clear plot resolution",
+      "Coherent narrative sequence",
+      "Accurate delivery of the moral lesson"
+    ]
+  },
+  "feedback_summary": "The candidate successfully completes the story with a logical sequence and a clear moral. However, the score is limited by the total absence of a title and significant grammatical instability, particularly regarding tense consistency. The narrative is a very basic version of a known fable with minimal descriptive effort.",
+  "_metadata": {
+    "task_id": "STORY_010",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0009",
+    "question_no": "11",
+    "question_type": "Story",
+    "max_mark": 10,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "10e0826b13a0e2c85c7c23f13efc2e713ca6a2e601566f8424ee7ec02a253dbb",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-16T23:40:13.810249+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "51d41e4d9e5e96c2fd0bfd16bb5a4332ce552981fb792fa02c67c7fd2b59f5d1",
+    "input_tokens": 5961,
+    "output_tokens": 2678,
+    "thoughts_tokens": 1920,
+    "cost_usd": 0.001399,
+    "latency_ms": 129562,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 5961,
+        "output_tokens": 2678,
+        "thoughts_tokens": 1920,
+        "cost_usd": 0.001399,
+        "latency_ms": 129562,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

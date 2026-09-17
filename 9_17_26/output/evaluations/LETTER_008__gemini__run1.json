@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate immediately addresses the prompt by explicitly stating their future plans following the HSC examination without irrelevant drift.",
+      "evidence": "My HSC examination is going to finish in next month and I want to discuss about my future plan with you."
+    },
+    "structure_format_brevity": {
+      "rationale": "All essential components of an informal letter are included in the correct layout sequence: date, address, salutation, body paragraphs, complimentary close, signature, and an envelope format.",
+      "evidence": "27 June, 2026\nAzimpur, Dhaka\n\nDear Juliya,"
+    },
+    "language_mechanics": {
+      "rationale": "Multiple grammatical and spelling errors are present, including preposition redundancy ('discuss about'), faulty verb complementation ('thinking to learn'), awkward phrasing ('Hoping you to stay well'), and spelling slips ('prespective', 'Addres', 'Roud').",
+      "evidence": "give me suggestions in your prespective should I do this or not."
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content avoids memorised guide-book filler and provides an authentic, creative personal aspiration regarding learning AI.",
+      "evidence": "I want to learn some skill, I am thinking to learn how to make an AI of my own and if it goes well I'll publish it online and make it free for others too."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 2.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 1.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Spelling errors ('prespective', 'Addres', 'Roud')",
+      "Preposition redundancy ('discuss about')",
+      "Awkward non-finite verb syntax ('thinking to learn', 'Hoping you to stay well')"
+    ],
+    "positive_aspects": [
+      "Direct and immediate fulfillment of the writing prompt",
+      "Complete structural formatting for an informal letter including envelope details",
+      "Original and authentic ideas free from boilerplate memorized templates"
+    ]
+  },
+  "feedback_summary": "The letter follows proper informal formatting with a clear date, address, greeting, organized paragraphs, and an envelope address block. The content is authentic and directly discusses the student's post-HSC aspirations. However, marks were lost in language mechanics due to recurrent spelling mistakes and minor grammatical inaccuracies.",
+  "_metadata": {
+    "task_id": "LETTER_008",
+    "script_id": "SE_11_Q1_0008",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemini",
+    "thinking_level": "high",
+    "run_index": 1,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "1a65e59e4bd13d171db731e72fe53ecfeac70ece39f87a02b8ce6179feb7d813",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-24T22:21:44.758557+00:00",
+    "provider": "vertex",
+    "model_id": "gemini-3.7-flash",
+    "cache_key": "0e22d0d64feacfe8e3ae359587fb56d98864dba55e3ba3360dfb86c773fa9cc3",
+    "input_tokens": 4400,
+    "output_tokens": 2971,
+    "thoughts_tokens": 2169,
+    "cost_usd": 0.008748,
+    "latency_ms": 21063,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4400,
+        "output_tokens": 2971,
+        "thoughts_tokens": 2169,
+        "cost_usd": 0.008748,
+        "latency_ms": 21063,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

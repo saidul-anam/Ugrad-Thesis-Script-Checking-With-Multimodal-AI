@@ -1,0 +1,100 @@
+{
+  "task_type": "Summary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": true,
+    "applied_cap_reason": "Summary_Verbatim_Length"
+  },
+  "raw_subscores": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 2.5
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student correctly identifies the astronauts, the spacecraft, the launch and landing dates, and the overall significance of the mission.",
+      "evidence": "Three American astronauts Neil Anmstrong, Michael Collins and Edwin Aldnin began their journey to the Moon on July 16, 1969."
+    },
+    "structure_format_brevity": {
+      "rationale": "The summary is far too long, comprising nearly 70% of the original text, which fails the requirement to be approximately one-third of the source length.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "There are multiple spelling errors in proper nouns (Anmstrong, Aldnin) and a significant breakdown in syntax in the third sentence.",
+      "evidence": "they the spacecraft lauched they had Finally reached the Moon"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The student relies heavily on the source text's phrasing and sequence, essentially deleting words rather than paraphrasing ideas.",
+      "evidence": "The mission showed the power of science,teamwork and human courage."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 2.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 2.0,
+    "capped_from": 2.5
+  },
+  "performance_band": "Band 2",
+  "error_analysis": {
+    "frequent_errors": [
+      "Failure to condense length",
+      "Spelling of proper nouns",
+      "Syntactic fragmentation"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of key facts",
+      "Correct chronological sequencing"
+    ]
+  },
+  "feedback_summary": "The candidate demonstrated a good understanding of the text by capturing all key factual points. However, the response fails the primary objective of a summary by remaining far too long (69% of the original length), which triggers a structural cap of 2. Furthermore, the writing is marred by several spelling mistakes in names and a fragmented sentence in the middle of the paragraph. Phrasing remains too close to the original text.",
+  "_metadata": {
+    "task_id": "SUMMARY_029",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0028",
+    "question_no": "7",
+    "question_type": "Summary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "107694ab492957e28681776e8b54ba23640bd31d4d032895f4ae9986f5ef5aed",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T03:31:05.299431+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "95bf9006b6b3cd75420f72ab3e60132d7ad1df39c81ae3557a83868220963820",
+    "input_tokens": 6120,
+    "output_tokens": 2663,
+    "thoughts_tokens": 1936,
+    "cost_usd": 0.001411,
+    "latency_ms": 1729391,
+    "attempt_number": 4,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6120,
+        "output_tokens": 2663,
+        "thoughts_tokens": 1936,
+        "cost_usd": 0.001411,
+        "latency_ms": 1729391,
+        "attempt_number": 4,
+        "http_status": 200
+      }
+    ]
+  }
+}

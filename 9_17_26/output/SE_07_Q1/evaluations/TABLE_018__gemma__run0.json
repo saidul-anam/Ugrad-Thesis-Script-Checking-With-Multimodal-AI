@@ -1,0 +1,98 @@
+{
+  "task_type": "Table_Completion",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 4.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Items i, ii, iii, and iv are correct based on the answer key. Item v is incorrect because the table column asks for 'When/Where', but the student provided the manner/emotion ('With great excitement') instead of the location ('All over the world').",
+      "evidence": "i. began their journey to the moon. ii. Neil Armstrong and Aldrin iii. on July 20, 1969 iv. come back safely to Earth."
+    },
+    "structure_format_brevity": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Item-scored question; this criterion is always 0.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 4.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 4.0,
+    "capped_from": 4.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [
+      "Misinterpretation of the target category (Where vs How) in item v"
+    ],
+    "positive_aspects": [
+      "Accurate retrieval of chronological and biographical data",
+      "Correct mapping of events to the provided table structure"
+    ]
+  },
+  "feedback_summary": "The student correctly completed 4 out of 5 items. Item i (journey start), item ii (astronaut names), item iii (date of moon landing), and item iv (return to Earth) are all correct. Item v is marked incorrect because the student provided the manner in which people watched the news ('With great excitement') instead of the location ('All over the world') as required by the 'When/Where' column header.",
+  "_metadata": {
+    "task_id": "TABLE_018",
+    "exam_set": "SE_07_Q1",
+    "script_id": "SE_07_Q1_0017",
+    "question_no": "5",
+    "question_type": "Table_Completion",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "854bb0c31e180f76d51e2b7f601c7342e82b379a63e24dc795d2296626761ccc",
+    "prompt_hash": "1c1dea63f55086f4e884f1cb7dcd156e1af0560ddc2faefcbcc22a475f6fa148",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T01:09:56.714597+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "1df83d6016a2627992197a7006723065582b792f32365b8ffdcb3d9826fff5a5",
+    "input_tokens": 6361,
+    "output_tokens": 2000,
+    "thoughts_tokens": 1314,
+    "cost_usd": 0.001236,
+    "latency_ms": 111391,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6361,
+        "output_tokens": 2000,
+        "thoughts_tokens": 1314,
+        "cost_usd": 0.001236,
+        "latency_ms": 111391,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}

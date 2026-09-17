@@ -1,0 +1,96 @@
+{
+  "task_type": "Vocabulary",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 1.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "Item (c) 'classmate' is an acceptable synonym for 'friend' at the Class VI level. Item (a) 'come back' is a synonym, not the requested antonym. Item (b) 'Library' is not a synonym for 'Museum'. Item (d) 'see/watch' are related actions but not antonyms of 'show' (hide). Item (e) 'tight' is irrelevant to 'bought'.",
+      "evidence": "(c) Friend | classmate"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 1.0,
+    "capped_from": 1.0
+  },
+  "performance_band": "Band 1",
+  "error_analysis": {
+    "frequent_errors": [
+      "Confusion between synonym and antonym requirements",
+      "Incorrect lexical association"
+    ],
+    "positive_aspects": [
+      "Attempted all items"
+    ]
+  },
+  "feedback_summary": "Item (c) was marked correct. Items (a), (b), (d), and (e) were marked incorrect.",
+  "_metadata": {
+    "task_id": "VOCAB_019",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0019",
+    "question_no": "4",
+    "question_type": "Vocabulary",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "78fe9b8250431bfeb1b5ff439090466ed83324292c0fd49886eac4d7eef8f48c",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T05:27:32.914282+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "b895b20609cfe1cbed3cd7d85e764371c8cac9d61a6b328458d94283344c2bc5",
+    "input_tokens": 6332,
+    "output_tokens": 1829,
+    "thoughts_tokens": 1230,
+    "cost_usd": 0.001182,
+    "latency_ms": 1078858,
+    "attempt_number": 8,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6332,
+        "output_tokens": 1829,
+        "thoughts_tokens": 1230,
+        "cost_usd": 0.001182,
+        "latency_ms": 1078858,
+        "attempt_number": 8,
+        "http_status": 200
+      }
+    ]
+  }
+}

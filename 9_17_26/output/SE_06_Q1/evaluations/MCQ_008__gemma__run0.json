@@ -1,0 +1,95 @@
+{
+  "task_type": "MCQ",
+  "max_mark_applied": 7,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "raw_total": 7.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The student answered all seven MCQ items correctly according to the provided answer key.",
+      "evidence": "a. iv actuality b. iv Pride and joy c. ii honour d. ii courageous e. ii Submitted f. iv Unitedly g. iv all of i, ii & iii"
+    },
+    "structure_format_brevity": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "language_mechanics": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "Not applicable for item-scored questions.",
+      "evidence": ""
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 7.0,
+    "structure_format_brevity": 0.0,
+    "language_mechanics": 0.0,
+    "originality_comparisons_paraphrase": 0.0,
+    "total_score": 7.0,
+    "capped_from": 7.0
+  },
+  "performance_band": "Band 4",
+  "error_analysis": {
+    "frequent_errors": [],
+    "positive_aspects": [
+      "Perfect accuracy across all items"
+    ]
+  },
+  "feedback_summary": "The candidate correctly identified the correct options for all items: a (iv), b (iv), c (ii), d (ii), e (ii), f (iv), and g (iv). Full marks awarded.",
+  "_metadata": {
+    "task_id": "MCQ_008",
+    "exam_set": "SE_06_Q1",
+    "script_id": "SE_06_Q1_0008",
+    "question_no": "1",
+    "question_type": "MCQ",
+    "max_mark": 7,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3e778992ef209eccded4c0295312d7733662ec81064c0a092bec51673432259e",
+    "prompt_hash": "bc5afe58af03af4e001a725ae6f026068f5cae82a6f7f754811b2c9cb9c5693e",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-09-17T04:34:38.258502+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "8679c0b7e5da16f01f6f92c2c9f177a47cfc716659331df5ace25c0635d28f13",
+    "input_tokens": 6675,
+    "output_tokens": 1248,
+    "thoughts_tokens": 696,
+    "cost_usd": 0.001042,
+    "latency_ms": 667562,
+    "attempt_number": 3,
+    "http_status": 200,
+    "evidence_not_found": [
+      "context_content_data"
+    ],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 6675,
+        "output_tokens": 1248,
+        "thoughts_tokens": 696,
+        "cost_usd": 0.001042,
+        "latency_ms": 667562,
+        "attempt_number": 3,
+        "http_status": 200
+      }
+    ]
+  }
+}

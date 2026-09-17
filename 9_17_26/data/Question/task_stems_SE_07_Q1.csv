@@ -1,0 +1,181 @@
+question_no,task_type,marks,prompt_given,stimulus_data,source_text
+1,MCQ,7,"Read the passage. Then answer the question no. 1: Now choose the correct answer to each question from the given alternatives. (1 x 7 = 7)
+a. Joynul and Nazma live in — area. i. urban area  ii. municipal area  iii. rural area  iv. civic area
+b. The phrase “lives from hand to mouth” indicates— i. He is very rich  ii. He earns irregularly for daily needs  iii. He saves a lot of money  iv. He works in a factory
+c. In the sentence “Sometimes she sits with Mitu and Nitu,” the word ‘sometimes’ is a — i. Adjective  ii. Preposition  iii. Pronoun  iv. Adverb
+d. Nazma’s working schedule is described as — i. From morning to night  ii. Limited to mornings only  iii. Only in the evening  iv. Occasionally
+e. In the sentence “Nazma does all the work at home,” the word ‘all’ is a — i. Pronoun  ii. Conjuction  iii. Adverb  iv. Adjective
+f. Which word best describes Joynul’s income condition? i. Stable  ii. Lofty  iii. Rough  iv. Fixed
+g. Nazma’s role in the family is mainly — i. Financial provider  ii. Household manager and caregiver  iii. Business owner  iv. Farmer","READING PASSAGE (questions 1 and 2):
+Mrs Nazma and Mr Joynul Ali live in a small village with their daughters, Mitu aged 7 and Nitu aged 5. Joynul is a carpenter. He is hired by the villagers to make chairs, tables, pira (low stool) and other furniture. He is also asked to do small repair work. But Joynul does not find work every day. He lives from hand to mouth.
+Nazma does all the work at home from morning to night, rain or shine. Sometimes she sits with Mitu and Nitu, and teaches them Bangla and English alphabets and some numbers. They do not go to school. Nazma could study only up to class 5. Joynul could not study.
+
+ANSWER KEY (1 mark per item, no part marks):
+a. iii. rural area
+b. ii. He earns irregularly for daily needs
+c. iv. Adverb
+d. i. From morning to night
+e. iv. Adjective
+f. iii. Rough
+g. ii. Household manager and caregiver
+
+Accept the option written as the roman numeral alone (“iii”), as the option text alone (“rural area”), or as both. Misspelling a correctly chosen option does NOT cost the mark.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+2,Short_Answer,10,"Answer the following questions from the passage above. (2 x 5 = 10)
+a. Where do Joynul and Nazma live?
+b. What types of work does Joynul do for the villagers?
+c. Why does Joynul Ali face financial difficulties?
+d. What does Nazma do throughout the day?
+e. How does Nazma contribute to her children’s early education?","READING PASSAGE (questions 1 and 2):
+Mrs Nazma and Mr Joynul Ali live in a small village with their daughters, Mitu aged 7 and Nitu aged 5. Joynul is a carpenter. He is hired by the villagers to make chairs, tables, pira (low stool) and other furniture. He is also asked to do small repair work. But Joynul does not find work every day. He lives from hand to mouth.
+Nazma does all the work at home from morning to night, rain or shine. Sometimes she sits with Mitu and Nitu, and teaches them Bangla and English alphabets and some numbers. They do not go to school. Nazma could study only up to class 5. Joynul could not study.
+
+ANSWER KEY — indicative content, 2 marks per item:
+a. They live in a small village (a rural area).
+b. He is a carpenter; he is hired to make chairs, tables, pira (low stools) and other furniture, and to do small repair work.
+c. He does not find work every day, so his income is irregular and he lives from hand to mouth.
+d. She does all the work at home from morning to night, rain or shine.
+e. She sits with Mitu and Nitu and teaches them the Bangla and English alphabets and some numbers, since they do not go to school.
+
+PART MARKS APPLY on this question: 2 = the required content is there in a sentence of the student’s own that a reader understands (a spelling slip or small grammatical error does not cost the second mark); 1 = partly correct, or the right content lifted word-for-word as a bare fragment, or a sentence so broken that the content survives only by inference; 0 = wrong or omitted. Wording need not match the key — any answer carrying the same content is correct. Put the sum of the five item marks (0–10) in context_content_data and leave the other three criteria at 0.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+3,Gap_Fill,5,"Read the passage. Then answer the question no. 3: Fill in each gap with a suitable word based on the information of the text above. (1 x 5 = 5)
+The audience watched the (a) — very carefully. The performers gave (b) — performances. Everyone clapped and (c) — loudly. The stage was decorated with lights. The show created great (d) — among the people. The show continued with loud (e) —.","READING PASSAGE (questions 3 and 4):
+The show went very smoothly. The audience clapped and cheered, and all the performer did a great job. At last it was Pratap's turn. He walked onto the stage and everyone clapped. He was wearing a green robe and a tall pointed hat painted with stars and crescent moons. He looked like a real magician. But what was he going to do?
+'Good evening, ladies and gentlemen', said Pratap. ""Tonight I am going to perform a vanishing trick. I'm not going to make a coin disappear. I'm not going to make an egg disappear. No. I'm going to make my dog, Smokey, disappear!' Everyone cheered loudly.
+
+ANSWER KEY (1 mark per gap). No clue words are supplied, so ANY word that fits the sentence grammatically and agrees with the passage is correct:
+a. show / performance / magic show
+b. great / excellent / wonderful / fine
+c. cheered
+d. excitement / enthusiasm / interest
+e. cheers / applause / cheering / clapping
+
+A word that fits the sense but is misspelled still earns the mark. A word of the wrong part of speech, or one that contradicts the passage, does not.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+4,Vocabulary,5,"Read the above passage and write the antonyms or synonyms of the words as directed below. (1 x 5 = 5)
+a. Beautiful (Antonym), b. Brave (synonym), c. Clean (synonym), d. Old (synonym), e. Quiet (Antonym)","READING PASSAGE (questions 3 and 4):
+The show went very smoothly. The audience clapped and cheered, and all the performer did a great job. At last it was Pratap's turn. He walked onto the stage and everyone clapped. He was wearing a green robe and a tall pointed hat painted with stars and crescent moons. He looked like a real magician. But what was he going to do?
+'Good evening, ladies and gentlemen', said Pratap. ""Tonight I am going to perform a vanishing trick. I'm not going to make a coin disappear. I'm not going to make an egg disappear. No. I'm going to make my dog, Smokey, disappear!' Everyone cheered loudly.
+
+ANSWER KEY (1 mark per item). Any correct word of the required relation is acceptable; the words below are indicative, not exhaustive:
+a. Beautiful (Antonym): ugly / hideous / unattractive
+b. Brave (Synonym): courageous / bold / valiant / fearless
+c. Clean (Synonym): tidy / neat / spotless / pure
+d. Old (Synonym): aged / ancient / elderly / antique
+e. Quiet (Antonym): noisy / loud / boisterous
+
+Giving a synonym where an antonym was asked (or the reverse) scores 0 for that item. A correct word that is misspelled still earns the mark.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+5,Table_Completion,5,"Read the passage below and answer the question no. 5: Complete the following table with the information given in the passage. (1 x 5 = 5)
+| Who? | Event | When/Where |
+| Neil Armstrong, Michael Collins, and Edwin Aldrin | i. — | July 16, 1969 |
+| ii. — | Landed on the moon | July 20, 1969 |
+| Neil Armstrong | Became the first person to walk on the moon | iii. — |
+| The astronauts | iv. — | July 24, 1969 |
+| People | Watched the news | v. — |","READING PASSAGE (questions 5, 6 and 7):
+On July 16, 1969, three American astronauts began their journey to the Moon. They were Neil Armstrong, Michael Collins, and Edwin Aldrin. Their spacecraft was called Apollo 11. It was launched from Florida, USA. People all over the world watched the news with great excitement.
+After four days, on July 20, 1969, their spacecraft reached the Moon. Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the Moon. Neil Armstrong was the first person to walk there. He said. ""That's one small step for man, one giant leap for mankind."" They walked, took photos, and collected rocks.
+On July 24, 1969, the astronauts came back safely to Earth. Their success made history. It was the first time humans had visited another world. The Apollo 11 mission showed the power of science, teamwork, and human courage.
+
+ANSWER KEY (1 mark per blank):
+i. Began their journey to the Moon (their spacecraft Apollo 11 was launched from Florida, USA)
+ii. Armstrong and Aldrin (Neil Armstrong and Edwin Aldrin)
+iii. July 20, 1969 (on the Moon)
+iv. Came back safely to Earth
+v. All over the world
+
+This question asks for information lifted from the passage, so copying the passage’s wording is CORRECT here and must not be penalised.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+6,True_False,5,"Read the following statements. Write ‘True’ in your answer script if the statement is true. Write ‘False’ if the statement is false. If false, give the correct answer. (1 x 5 = 5)
+a. Apollo 11 was a marine expedition to the Moon that began in 1969.
+b. Michael Collins landed on the Moon along with Neil Armstrong and Edwin Aldrin.
+c. Neil Armstrong was the final person to walk on the Moon’s surface.
+d. The spacecraft was propelled from Florida, USA, carrying three astronauts.
+e. The mission proved that humans had already achieved interplanetary travel to Mars before 1969.","READING PASSAGE (questions 5, 6 and 7):
+On July 16, 1969, three American astronauts began their journey to the Moon. They were Neil Armstrong, Michael Collins, and Edwin Aldrin. Their spacecraft was called Apollo 11. It was launched from Florida, USA. People all over the world watched the news with great excitement.
+After four days, on July 20, 1969, their spacecraft reached the Moon. Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the Moon. Neil Armstrong was the first person to walk there. He said. ""That's one small step for man, one giant leap for mankind."" They walked, took photos, and collected rocks.
+On July 24, 1969, the astronauts came back safely to Earth. Their success made history. It was the first time humans had visited another world. The Apollo 11 mission showed the power of science, teamwork, and human courage.
+
+ANSWER KEY (1 mark per item):
+a. False — Apollo 11 was a space expedition (a spaceflight to the Moon), not a marine expedition.
+b. False — Michael Collins stayed in the main ship; only Armstrong and Aldrin landed on the Moon.
+c. False — Neil Armstrong was the FIRST person to walk on the Moon’s surface.
+d. True
+e. False — the mission was the first time humans visited another world, the Moon; it had nothing to do with travel to Mars.
+
+A ‘False’ verdict with NO correction, or with a wrong correction, scores 0 for that item — the question requires both. The correction need not match the key’s wording; any correction carrying the right fact is accepted.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+7,Summary,5,Summarize the text in your own words. (5),"TEXT TO BE SUMMARIZED (questions 5, 6 and 7):
+On July 16, 1969, three American astronauts began their journey to the Moon. They were Neil Armstrong, Michael Collins, and Edwin Aldrin. Their spacecraft was called Apollo 11. It was launched from Florida, USA. People all over the world watched the news with great excitement.
+After four days, on July 20, 1969, their spacecraft reached the Moon. Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the Moon. Neil Armstrong was the first person to walk there. He said. ""That's one small step for man, one giant leap for mankind."" They walked, took photos, and collected rocks.
+On July 24, 1969, the astronauts came back safely to Earth. Their success made history. It was the first time humans had visited another world. The Apollo 11 mission showed the power of science, teamwork, and human courage.","On July 16, 1969, three American astronauts began their journey to the Moon. They were Neil Armstrong, Michael Collins, and Edwin Aldrin. Their spacecraft was called Apollo 11. It was launched from Florida, USA. People all over the world watched the news with great excitement.
+After four days, on July 20, 1969, their spacecraft reached the Moon. Michael Collins stayed in the main ship, and Armstrong and Aldrin landed on the Moon. Neil Armstrong was the first person to walk there. He said. ""That's one small step for man, one giant leap for mankind."" They walked, took photos, and collected rocks.
+On July 24, 1969, the astronauts came back safely to Earth. Their success made history. It was the first time humans had visited another world. The Apollo 11 mission showed the power of science, teamwork, and human courage."
+8,Sentence_Transformation,5,"Rewrite the following sentences using “Do you know” at the beginning. (1 x 5 = 5)
+a. Where is the post office?
+b. What does the postmaster do?
+c. Why is the postmaster so happy?
+d. Where do his children go to school?
+e. When does the postmaster come to the post office?","ANSWER KEY (1 mark per item). The transformation must turn the direct question into an embedded clause — subject before verb, no auxiliary do/does/did, question mark retained:
+a. Do you know where the post office is?
+b. Do you know what the postmaster does?
+c. Do you know why the postmaster is so happy?
+d. Do you know where his children go to school?
+e. Do you know when the postmaster comes to the post office?
+
+The mark is for the WORD ORDER of the embedded clause. An item that keeps the direct-question order (“Do you know where is the post office?”) or keeps the auxiliary (“…what does the postmaster do?”) is incorrect. A correct transformation with a spelling slip or a missing question mark still earns the mark.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+9,Rearrange,8,"Rearrange the following sentences in correct order and write them in a paragraph. (1 x 8 = 8)
+a. I waved my torch desperately, but the car did not stop.
+b. Feeling relieved and safe, I politely began to request the owner to drop me near Lalpur.
+c. Suddenly, I noticed two large yellow eyes approaching me.
+d. As the car passed by, I opened the door and jumped inside without hesitation.
+e. But soon, I realized the eyes were too large for that.
+f. At first, I was frightened and wondered if it was a tiger.
+g. As it came closer, I discovered it was a slow-moving Baby Austin car.
+h. Growing impatient, I made a quick decision.","ANSWER KEY — correct order (8 positions, 1 mark each):
+1. c  (Suddenly, I noticed two large yellow eyes approaching me.)
+2. f  (At first, I was frightened and wondered if it was a tiger.)
+3. e  (But soon, I realized the eyes were too large for that.)
+4. g  (As it came closer, I discovered it was a slow-moving Baby Austin car.)
+5. a  (I waved my torch desperately, but the car did not stop.)
+6. h  (Growing impatient, I made a quick decision.)
+7. d  (As the car passed by, I opened the door and jumped inside without hesitation.)
+8. b  (Feeling relieved and safe, I politely began to request the owner to drop me near Lalpur.)
+
+Award 1 mark for each sentence the student places in its correct POSITION in the sequence above — a position-by-position comparison: c in slot 1 earns a mark, c anywhere else does not. The student may write the letters, the full sentences, or both; mark the order either way, and do not penalise copying slips inside the sentences.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+10,Poem_Short_Answer,5,"Answer any 5 (five) of the following questions from poems. (1 x 5 = 5)
+a. What does the parent say about their responsibility in the poem “Whose Child is This”?
+b. What is the poet’s suggestion about nature in the poem “Leisure”?
+c. How does the poet feel about life without time for nature in the poem “Leisure”?
+d. How does the parent show care for the child in the poem “Whose Child is This”?
+e. Why is the childhood important according to the poem “Whose Child is This”?
+f. How does the teacher describe his role in the poem “Whose Child is This”?
+g. What role does nature play in the poem “Leisure”?
+h. What is the poet’s message in the poem “Leisure”?","ANSWER KEY — indicative content, 1 mark per answer. The poems are W. H. Davies’s “Leisure” and “Whose Child is This?”, in which a parent, a teacher and the community each claim the child in turn.
+a. The parent claims the child as their own and accepts responsibility for loving, feeding, clothing and protecting the child.
+b. The poet suggests we should stop and enjoy the beauty of nature instead of hurrying past it.
+c. He calls such a life poor — a life full of care with no time to stand and stare is not worth living.
+d. By feeding, clothing, nursing, loving and guiding the child day after day.
+e. Because the care, love and teaching a child receives in childhood shape the person the child becomes.
+f. The teacher claims the child too — as a learner to be taught, guided and helped to grow in knowledge and character.
+g. Nature is the source of beauty and joy — boughs, sheep and cows, squirrels, streams full of stars, Beauty’s dance — that busy people never notice.
+h. Life is impoverished if we are too busy with worldly cares to pause and appreciate the beauty around us.
+
+ANY FIVE answers count, and only five are marked: if the student answers more than five, mark the FIRST five attempted and ignore the rest; if fewer than five, the unanswered ones score 0. Wording need not match the key — award the mark for any answer carrying the same idea. Award 0 for an answer about the wrong poem or one that merely repeats the question.
+
+MARKING NOTE: this question is ITEM-SCORED. Mark each lettered item against the key and put the SUM of the item marks in context_content_data, leaving structure_format_brevity, language_mechanics and originality_comparisons_paraphrase at 0. Nothing is awarded or deducted for handwriting, style, or spelling beyond what the key requires. An item the student did not attempt scores 0 for that item only. No structural cap is ever applied to an item-scored question.",
+11,Story,10,"Section-B : Writing. Read the opening of a story below and write at least ten new sentences to complete it. Give your story a suitable title. (10)
+Once upon a time two friends went on a journey. They had to go through a forest on the way. As they went the wood they saw a bear………",,
+12,Paragraph,10,Write a paragraph on “Annual Prize-Giving Day of Your School” in about 150 words. (10),,
+13,Dialogue,10,"Suppose, your friend Sheila has done very well in the last annual examination result. Your own performance is also very nice. Now write a dialogue between you two about your results. (10)",,

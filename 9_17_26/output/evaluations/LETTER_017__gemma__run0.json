@@ -1,0 +1,98 @@
+{
+  "task_type": "Letter_Email",
+  "max_mark_applied": 5,
+  "attempt_status": {
+    "is_attempted": true,
+    "is_blank_or_unintelligible": false
+  },
+  "structural_audit": {
+    "cap_applied": false,
+    "applied_cap_reason": "None"
+  },
+  "raw_subscores": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "raw_total": 3.0
+  },
+  "criterion_reasoning": {
+    "context_content_data": {
+      "rationale": "The candidate clearly identifies the purpose of the letter and provides a specific future plan (helping illiterate villagers with hygiene and education), fulfilling the prompt objectives.",
+      "evidence": "From your last letter you wanted to know the future plan after passing H.S.c Exam. Noae I'm describing it."
+    },
+    "structure_format_brevity": {
+      "rationale": "The letter includes the address, salutation, body, closing, and signature. However, it is missing the date. The addition of 'To/From' blocks at the end is non-standard for an informal letter.",
+      "evidence": "1231 Joynag Road, Dhaka"
+    },
+    "language_mechanics": {
+      "rationale": "There is a very high density of spelling and grammatical errors (e.g., 'cuith', 'zeno', 'dieses', 'knoculedge'). While the meaning is discernible, the mechanics are poor.",
+      "evidence": "I go to village people cuith my some friends and tell them how to Fight cuith dises"
+    },
+    "originality_comparisons_paraphrase": {
+      "rationale": "The content follows a common theme, but the phrasing is authentic to the student's own voice rather than a memorized textbook template, though it is hampered by linguistic errors.",
+      "evidence": "They also zeno knowledge about hygiene and balance food."
+    }
+  },
+  "score_breakdown": {
+    "context_content_data": 1.0,
+    "structure_format_brevity": 1.0,
+    "language_mechanics": 0.5,
+    "originality_comparisons_paraphrase": 0.5,
+    "total_score": 3.0,
+    "capped_from": 3.0
+  },
+  "performance_band": "Band 3",
+  "error_analysis": {
+    "frequent_errors": [
+      "Severe spelling mistakes (cuith, noae, zeno, dieses)",
+      "Subject-verb agreement and tense errors",
+      "Missing date in layout"
+    ],
+    "positive_aspects": [
+      "Clear adherence to the prompt",
+      "Authentic, non-templated expression of ideas",
+      "Logical progression of thought"
+    ]
+  },
+  "feedback_summary": "The candidate successfully addressed the prompt with a clear, altruistic future plan. The structure is mostly correct, though the date is missing. The primary weakness is the high frequency of spelling and grammatical errors, which significantly impacts the linguistic quality. However, since the meaning remains clear and the structure is largely intact, it falls into Band 3.",
+  "_metadata": {
+    "task_id": "LETTER_017",
+    "script_id": "SE_11_Q1_0017",
+    "question_no": "10",
+    "question_type": "Letter_Email",
+    "max_mark": 5,
+    "model": "gemma",
+    "thinking_level": "high",
+    "run_index": 0,
+    "rubric_hash": "3cacb8adcdf2fa1d15f75df5fbb49279824697964a40f149c310b8d7c19feb18",
+    "prompt_hash": "14635fae7008c34e7a50cc90cb6470d59364bdabd5e499a14b46c9b453199387",
+    "cap_exempt_applied": false,
+    "cap_threshold": 100,
+    "cap_note": "",
+    "timestamp": "2026-08-25T00:06:31.164874+00:00",
+    "provider": "ai_studio",
+    "model_id": "gemma-4-31b-it",
+    "cache_key": "a6ee88e0afda4cc49474355d25c17787c57cb8c470b8ae30d65111a2fb49f70b",
+    "input_tokens": 4378,
+    "output_tokens": 2694,
+    "thoughts_tokens": 1900,
+    "cost_usd": 0.001246,
+    "latency_ms": 76155,
+    "attempt_number": 1,
+    "http_status": 200,
+    "evidence_not_found": [],
+    "synthesised": false,
+    "calls": [
+      {
+        "input_tokens": 4378,
+        "output_tokens": 2694,
+        "thoughts_tokens": 1900,
+        "cost_usd": 0.001246,
+        "latency_ms": 76155,
+        "attempt_number": 1,
+        "http_status": 200
+      }
+    ]
+  }
+}
