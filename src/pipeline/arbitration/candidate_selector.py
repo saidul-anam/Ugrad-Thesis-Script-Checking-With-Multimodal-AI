@@ -64,7 +64,8 @@ def differing_token_pairs(erroneous: str, correction: str, max_edits: int = 2) -
         for a, b in zip(e_toks, c_toks):
             if a == b:
                 continue
-            if levenshtein(a, b) > max_edits:
+            is_cursive_w_split = (a.replace("cu", "w") == b or b.replace("cu", "w") == a)
+            if levenshtein(a, b) > max_edits and not is_cursive_w_split:
                 return []
             pairs.append((a, b))
         return pairs
@@ -91,7 +92,8 @@ def differing_token_pairs(erroneous: str, correction: str, max_edits: int = 2) -
         if tag != "replace" or (i2 - i1) != (j2 - j1):
             return []
         for a, b in zip(e_toks[i1:i2], c_toks[j1:j2]):
-            if levenshtein(a, b) > max_edits:
+            is_cursive_w_split = (a.replace("cu", "w") == b or b.replace("cu", "w") == a)
+            if levenshtein(a, b) > max_edits and not is_cursive_w_split:
                 return []
             pairs.append((a, b))
     return pairs
@@ -107,10 +109,11 @@ CULTURAL_NCTB_TERMS: Set[str] = {
 
 
 HANDWRITING_INITIAL_CONFUSIONS = {
-    "r": ["v"],
+    "r": ["v", "re"],
     "v": ["r"],
-    "c": ["e"],
+    "c": ["e", "w"],
     "e": ["c"],
+    "w": ["cu", "c"],
     "d": ["cl"],
     "m": ["rn", "nn", "n"],
     "n": ["u", "m"],
@@ -179,7 +182,7 @@ def lexicon_candidates(
         pool = {w for w in (q_vocab | answer_lex) if abs(len(w) - len(low)) <= max_edits and len(w) >= 3}
         pool.update(difflib.get_close_matches(low, [w for w in lexicon if w[:1] == low[:1] and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=5, cutoff=0.8))
         for alt in HANDWRITING_INITIAL_CONFUSIONS.get(low[:1], []):
-            pool.update(difflib.get_close_matches(low, [w for w in lexicon if w.startswith(alt) and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=3, cutoff=0.7))
+            pool.update(difflib.get_close_matches(low, [w for w in lexicon if w.startswith(alt) and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=3, cutoff=0.6))
         best, best_d = None, max_edits + 1
         if pool:
             cand_w = min(pool, key=_rank)

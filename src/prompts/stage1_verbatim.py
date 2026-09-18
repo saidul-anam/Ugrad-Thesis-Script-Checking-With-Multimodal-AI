@@ -13,7 +13,7 @@ Transcribe only the student's original answer, written in the student's own ink 
 Rules:
 1. Transcribe every word exactly as written, including spelling mistakes, grammar errors, and incorrect word choices. Do NOT fix them.
 2. Preserve the student's original sentence structure and word order, even if grammatically incorrect.
-3. If a word or phrase is struck through, transcribe it anyway and mark it as [struck: original text].
+3. Struck-Through / Crossed-Out Text: If a word or phrase has a horizontal line, diagonal slash, cross-out stroke, or scribble through it (e.g. started writing a word and crossed it out before writing the intended word, such as striking through 'grap' before 'pie-chart', or striking through 'possi' before 'positively'), transcribe it and mark it as [struck: original text] (e.g. '[struck: grap] pie-chart', '[struck: possi] positively'). NEVER transcribe struck-through words as plain active text.
 4. If text is illegible, write [illegible] rather than guessing.
 5. If ambiguous but you can make a plausible reading, write it as [unclear: your reading].
 6. Preserve line breaks and paragraph structure as they appear.
@@ -24,6 +24,7 @@ Rules:
     - Handwritten 'm' has 3 downward legs/humps: transcribe as single 'm', NOT double 'mm' (e.g., 'Storm', NOT 'Stormm').
     - Terminal horizontal/upward flourish on 'r' or 'w' is a pen exit stroke, NOT an added letter 'e' (e.g., 'over', NOT 'overe'; 'Dear', NOT 'Deare').
     - Rounded cursive 'v' in common words ('have', 'over', 'never', 'remove') is the letter 'v', NOT 'r' ('have', NOT 'hare'; 'remove', NOT 'remore').
+    - Curvy or arched cursive 's' (e.g. in 'his', 'this', 'is', 'shows') has an entry curve and rounded base: transcribe as 's', NOT 'n' (e.g., 'with his sharp teeth', NOT 'with hin'; 'this chart', NOT 'thin chart'; 'it is divided', NOT 'it in divided').
 
 Now transcribe the attached image."""
 

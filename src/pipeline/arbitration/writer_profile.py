@@ -36,6 +36,9 @@ class WriterProfile(BaseModel):
     pair_counts: Dict[str, int] = Field(default_factory=dict, description="'intended>read' -> count")
     anchors: List[str] = Field(default_factory=list, description="This writer's high-frequency lexicon words")
     evidence: List[Dict[str, Any]] = Field(default_factory=list)
+    discovered_allographs: Dict[str, str] = Field(default_factory=dict, description="Discovered script-level allographs, e.g. {'terminal_y': 's', 'curvy_s': 's'}")
+    adapted_words: Dict[str, str] = Field(default_factory=dict, description="Script-wide adapted words mapping non-words to dictionary words")
+    stitched_splits: List[Dict[str, Any]] = Field(default_factory=list, description="List of stitched pen-lift tokens")
 
     def add_pair(self, key: str, source: str, token: str = "", anchor: str = "", weight: int = 1) -> None:
         if not key:
@@ -49,6 +52,30 @@ class WriterProfile(BaseModel):
         if not keys:
             return 0
         return min(self.pair_counts.get(k, 0) for k in keys)
+
+    def is_writer_allograph(self, candidate_token: str, intended_token: str) -> bool:
+        """Check if candidate pair matches a discovered allograph rule for this script."""
+        c_low = candidate_token.lower()
+        i_low = intended_token.lower()
+        if c_low in self.adapted_words:
+            return True
+        for split in self.stitched_splits:
+            orig_parts = split.get("original", "").lower().split()
+            if c_low in orig_parts:
+                return True
+        for rule_key, tgt in self.discovered_allographs.items():
+            if rule_key == "terminal_y" and tgt == "s":
+                if c_low.endswith("y") and i_low.endswith("s") and c_low[:-1] == i_low[:-1]:
+                    return True
+                if c_low.replace("ey", "ess") == i_low or c_low.replace("y", "s") == i_low:
+                    return True
+            if rule_key == "curvy_s" and tgt == "s":
+                if (c_low.replace("n", "s") == i_low or i_low.replace("n", "s") == c_low):
+                    return True
+            if rule_key == "cursive_vr" and tgt == "v":
+                if (c_low.replace("r", "v") == i_low or c_low.replace("rumore", "remove") == i_low):
+                    return True
+        return False
 
 
 def _select_anchors(tokens: List[str], lexicon: Set[str], top_n: int = 40, min_freq: int = 2) -> List[str]:

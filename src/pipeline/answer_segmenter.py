@@ -24,7 +24,7 @@ HEADER_NORMALIZATION_RULES = [
     (re.compile(r'Anseve?r', re.IGNORECASE), 'Answer'),
     (re.compile(r'\bAns(?:i?to|i\s*to)\b', re.IGNORECASE), 'Ans to'),
     (re.compile(r'\bAnsi\b', re.IGNORECASE), 'Ans'),
-    (re.compile(r'\b(?:Ans\s+(?:to\s+(?:the\s+)?)?)(?:que|due)\b', re.IGNORECASE), 'Ans to the Q'),
+    (re.compile(r'\b(?:Ans\s*[:\s]*(?:to\s+(?:the\s+)?)?)(?:ques?|dues?)\b', re.IGNORECASE), 'Ans to the Q'),
     (re.compile(r'\$?\s*\\?i?ghtarrow\s*\$?', re.IGNORECASE), ' -> '),
 ]
 
@@ -42,26 +42,36 @@ def to_arabic_digits(text: str) -> str:
 
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
-    # English question headers (handles Ans/Answer/Dans/Que/due, optional colons, etc.)
-    r'(?:\n|\A)\s*(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]*(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    # English question headers (handles Ans/Answer/Dans/Que/due/Ques/dues/Qn, optional colons, etc.)
+    r'(?:\n|\A)\s*(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s\.\-]*(?:to\s+(?:the\s+)?)?(?:(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]*)?(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
     r'(?:\n|\A)\s*Ans[:\s]+(?:to\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
-    r'(?:\n|\A)\s*(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]+(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
-    # Bengali question headers
-    r'(?:\n|\A)\s*(?:[০-৯0-9]{1,2}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*প্রশ্নের?\s*উত্তর)|'
-    r'(?:\n|\A)\s*(?:প্রশ্নের?\s*উত্তর\s*[:\-]?\s*[০-৯0-9]{1,2})|'
+    r'(?:\n|\A)\s*(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]+(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    r'(?:\n|\A)\s*No[\s\.\,\:\-]+\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    # Standalone question subpart headers: 1(A), 1(B), 1(a), 1(b)
+    r'(?:\n|\A)\s*[0-9০-৯]{1,2}\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)|'
+    # Bengali question headers: supports '১ নং উত্তর', '১(ক) নং প্রশ্নের উত্তর', 'উত্তর: ১', 'উত্তর নং ১'
+    r'(?:\n|\A)\s*(?:[০-৯0-9]{1,2}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*(?:প্রশ্নের?\s*)?উত্তর)|'
+    r'(?:\n|\A)\s*(?:(?:প্রশ্নের?\s*)?উত্তর\s*(?:নং|নম্বর)?\s*[:\-]?\s*[০-৯0-9]{1,2})|'
     # Subparts: (A), (B), (ক), (খ), circled letters Ⓐ-Ⓓ, or standalone A/B line before sub-items
     r'(?:\n|\A)\s*[\(（](?:[A-Da-d]|[ক-ঘ])[\)）]\s*(?:\n|\r\n|Ans|Answer)|'
     r'(?:\n|\A)\s*[Ⓐ-Ⓓ]\s*(?:\n|\r\n|Ans|Answer)|'
     r'(?:\n|\A)\s*[A-B]\s*(?:\n|\r\n)\s*(?=[a-e][\)\.]|\([a-e]\))|'
-    # Theme/Poem headers
-    r'(?:\n|\A)\s*Theme:\s+The\s+poem'
+    # Structural headers (Flowchart, Theme, Rearrange, Summary, Story, Chart)
+    r'(?:\n|\A)\s*Flow[\s\-]*chart\s*[:\-]|'
+    r'(?:\n|\A)\s*Theme\s*:\s+|'
+    r'(?:\n|\A)\s*Summary\s*:\s+|'
+    r'(?:\n|\A)\s*Rearrange\s*[:\-]|'
+    r'(?:\n|\A)\s*(?:The\s+graph|The\s+chart)\s+shows\b|'
+    r'(?:\n|\A)\s*Once\s+upon\s+a\s+time\b'
     r'))',
     re.IGNORECASE
 )
 
 HEADER_EXTRACT_REGEX = re.compile(
-    r'(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s]*(?:to\s+(?:the\s+)?)?(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]*(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}\s*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'(?:Q(?:uestion|ue)?|due)[\s\.\,\:\-]+(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}\s*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'^\s*(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s\.\-]*(?:to\s+(?:the\s+)?)?(?:(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]*)?(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'^\s*(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]*(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'^\s*(?:No[\s\.\,\:\-]+)\s*([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?)\b|'
+    r'^\s*([0-9]{1,2})[ \t]*[\(（]([A-Za-z0-9])[\)）]\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*[\(（]([A-B])[\)）]\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*([ⒶⒷ])\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*([A-B])\s*$',
@@ -84,27 +94,166 @@ _KEYWORD_STOPWORDS = {
 }
 
 
-def _extract_explicit_english_header(arabic_lines: str) -> Optional[str]:
-    """Canonical q_no from an explicit 'Ans to the Q No ...' style header, else None."""
+def _extract_explicit_english_header(arabic_lines: str, valid_q_order: Optional[List[str]] = None) -> Optional[str]:
+    """Canonical q_no from an explicit English question header, else None."""
     match = HEADER_EXTRACT_REGEX.search(arabic_lines)
     if not match:
         return None
-    for g in match.groups():
-        if g:
-            val = g.strip().upper()
-            clean_val = re.sub(r'\b0+(\d+)', r'\1', val)
-            if clean_val in ["1", "1A", "1(A)", "A", "Ⓐ"]:
-                return "1(A)"
-            elif clean_val in ["1B", "1(B)", "B", "Ⓑ"]:
-                return "1(B)"
-            elif clean_val in ["Z", "N"]:
-                return "7"
-            elif clean_val in [str(i) for i in range(1, 25)]:
-                return clean_val
-            sub_m = re.match(r'^([0-9]{1,2})\s*\(([A-Za-z0-9])\)$', clean_val)
-            if sub_m:
-                return f"{sub_m.group(1)}({sub_m.group(2).upper()})"
-            return clean_val
+    groups = [g for g in match.groups() if g]
+    if not groups:
+        return None
+    # If matched regex group for '1(B)' as two groups (e.g. ('1', 'B'))
+    if len(groups) >= 2 and groups[0].isdigit() and len(groups[1]) == 1 and groups[1].isalpha():
+        clean_val = f"{int(groups[0])}({groups[1].upper()})"
+    else:
+        val = groups[0].strip().upper()
+        clean_val = re.sub(r'\b0+(\d+)', r'\1', val)
+
+    has_1a = valid_q_order and any(q in ("1(A)", "1A") for q in valid_q_order)
+    has_plain_1 = valid_q_order and "1" in valid_q_order and not has_1a
+
+    if clean_val in ["1", "1A", "1(A)", "A", "Ⓐ"]:
+        return "1" if has_plain_1 else "1(A)"
+    elif clean_val in ["1B", "1(B)", "B", "Ⓑ"]:
+        return "1(B)"
+    elif clean_val in ["Z", "N"]:
+        return "7"
+    elif clean_val in [str(i) for i in range(1, 25)]:
+        return clean_val
+    sub_m = re.match(r'^([0-9]{1,2})\s*\(([A-Za-z0-9])\)$', clean_val)
+    if sub_m:
+        return f"{sub_m.group(1)}({sub_m.group(2).upper()})"
+    return clean_val
+
+
+def detect_structural_fingerprint(
+    section_text: str,
+    question_obj: Optional[ExtractedQuestion] = None,
+    valid_q_order: Optional[List[str]] = None,
+    current_parent: Optional[str] = None
+) -> Optional[str]:
+    """
+    Detect question attribution from structural layout, notation, or compositional fingerprints.
+    Covers: Flowcharts (->, boxes), Rearrange tables (| 1 | 2 | 3 |), Letter/Email envelopes,
+    Statistical data charts (%, years), Narrative stories, and Poem Themes.
+    """
+    if not section_text or not section_text.strip():
+        return None
+
+    # Map question types to q_no using question_obj catalog if available, else standard defaults
+    q_map = {
+        "flowchart": "2",
+        "summary": "3",
+        "cloze_clues": "4",
+        "cloze_no_clues": "5",
+        "rearrange": "6",
+        "paragraph": "7",
+        "graph": "8",
+        "story": "9",
+        "letter": "10",
+        "theme": "11",
+    }
+    if question_obj and question_obj.sub_questions:
+        for sq in question_obj.sub_questions:
+            sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
+            name_lower = str(sq.get("name") or sq.get("title") or "").lower()
+            if not sq_no or not name_lower:
+                continue
+            if "flow" in name_lower or ("chart" in name_lower and "pie" not in name_lower and "bar" not in name_lower):
+                q_map["flowchart"] = sq_no
+            elif "rearrange" in name_lower or "jumbled" in name_lower or "order" in name_lower:
+                q_map["rearrange"] = sq_no
+            elif "summary" in name_lower or "summariz" in name_lower:
+                q_map["summary"] = sq_no
+            elif "graph" in name_lower or "chart" in name_lower or "diagram" in name_lower:
+                q_map["graph"] = sq_no
+            elif "story" in name_lower or "completing" in name_lower:
+                q_map["story"] = sq_no
+            elif "letter" in name_lower or "email" in name_lower:
+                q_map["letter"] = sq_no
+            elif "theme" in name_lower or "poem" in name_lower:
+                q_map["theme"] = sq_no
+            elif "paragraph" in name_lower or "composition" in name_lower:
+                q_map["paragraph"] = sq_no
+
+    sec_lower = section_text.lower()
+    first_lines = "\n".join(section_text.strip().split("\n")[:5]).lower()
+
+    # 1. Flowchart: Directional arrows (->, →, ↓, \rightarrow), multiple boxes with numbered/roman steps
+    arrows_count = section_text.count("->") + section_text.count("→") + section_text.count("↓") + len(re.findall(r'\\?i?ghtarrow', section_text, re.I))
+    has_flow_kw = bool(re.search(r'\b(?:flow[\s\-]*chart)\b', first_lines, re.I))
+    has_flow_boxes = (arrows_count >= 2) and bool(re.search(r'[\(\[]?(?:i|1|ii|2)[\)\]]', section_text, re.I))
+    if has_flow_kw or has_flow_boxes:
+        return q_map["flowchart"]
+
+    # 2. Rearranging: Sequence table (| 1 | 2 | 3 |), sequence arrows, or rearrange keywords
+    has_rearrange_kw = bool(re.search(r'\b(?:re[\s\-]*arrange|rearranging|order\s+of\s+events)\b', first_lines, re.I))
+    has_rearrange_table = bool(re.search(r'\|\s*1\s*\|\s*2\s*\|\s*3\s*\|', section_text)) or bool(re.search(r'\b(?:1\s*\+\s*[a-j]|i\s*->\s*[ivx]+)', section_text, re.I))
+    if has_rearrange_kw or has_rearrange_table:
+        return q_map["rearrange"]
+
+    # 3. Informal Letter / Email: Envelope box, [STAMP], salutation + sign-off
+    has_envelope = bool(re.search(r'\b(?:\[?STAMP\]?|envelope)\b', section_text, re.I)) and bool(re.search(r'\b(?:from|to)\b', section_text, re.I))
+    has_salutation = bool(re.search(r'\b(?:dear\s+[a-z]+|my\s+dear)\b', first_lines, re.I))
+    has_signoff = bool(re.search(r'\b(?:yours\s+(?:ever|loving|faithfully|sincerely|truly)|lovingly\s+yours|your\s+friend)\b', sec_lower, re.I))
+    if has_envelope or (has_salutation and has_signoff):
+        return q_map["letter"]
+
+    # 4. Data Chart / Graph: Statistical description with percentages and years
+    has_chart_kw = bool(re.search(r'\b(?:graph|chart|pie\s*chart|bar\s*chart|diagram)\b', first_lines, re.I))
+    has_stats = bool(re.search(r'\b(?:percent|percentage|\%)\b', sec_lower, re.I)) and bool(re.search(r'\b(?:19[89]\d|20[0-2]\d)\b', sec_lower))
+    if (has_chart_kw and has_stats) or bool(re.search(r'\b(?:the\s+graph\s+shows|the\s+chart\s+shows|the\s+pie\s+chart\s+shows)\b', first_lines, re.I)):
+        return q_map["graph"]
+
+    # 5. Completing Story: Narrative openings or common story motifs
+    has_story_opening = bool(re.search(r'\b(?:once\s+upon\s+a\s+time|once\s+there\s+(?:was|lived)|there\s+lived\s+a)\b', first_lines, re.I))
+    has_story_titles = bool(re.search(r'\b(?:the\s+lion\s+and\s+the\s+mouse|grapes\s+are\s+sour|a\s+clever\s+crow|a\s+thirsty\s+crow|the\s+shepherd\s+boy|liar\s+shepherd|honesty\s+is\s+the\s+best\s+policy)\b', first_lines, re.I))
+    if has_story_opening or has_story_titles:
+        return q_map["story"]
+
+    # 6. Poem Theme: Theme keyword, poem analysis phrasing
+    has_theme_kw = bool(re.search(r'\b(?:theme\s*[:\-]|\bthe\s+poem\s+(?:deals\s+with|is\s+about|focuses\s+on)|the\s+central\s+theme\s+of\s+the\s+poem)\b', first_lines, re.I))
+    if has_theme_kw or ("theme:" in first_lines and any(w in first_lines for w in ["poem", "poet", "dream", "dreams", "beauty"])):
+        return q_map["theme"]
+
+    # 7. Summary: Explicit summary keyword
+    has_summary_kw = bool(re.search(r'\b(?:summary\s*[:\-]|\bthe\s+passage\s+(?:deals\s+with|is\s+about|summarizes))\b', first_lines, re.I))
+    if has_summary_kw:
+        return q_map["summary"]
+
+    # 8. Semantic Source-Text Fingerprint for Headless Answers (Q3 Summary & Q11 Theme)
+    # When a student writes NO header (no "Ans 3", no "3.", no "Summary:"), we match the text
+    # against the source poem/passage printed on the question paper.
+    if question_obj and getattr(question_obj, "question_text", None):
+        from src.pipeline.stage4_modes import source_text_for_question
+        sec_words = section_text.split()
+        sec_tokens = {
+            w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', section_text)
+            if w.lower() not in _KEYWORD_STOPWORDS
+        }
+
+        # Check Q3 Summary source passage overlap
+        q3_source = source_text_for_question(q_map["summary"], question_obj.question_text)
+        if q3_source and sec_tokens and (20 <= len(sec_words) <= 200):
+            q3_tokens = {
+                w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q3_source)
+                if w.lower() not in _KEYWORD_STOPWORDS
+            }
+            overlap_q3 = q3_tokens & sec_tokens
+            if len(overlap_q3) >= 3 and current_parent in ("2", "1(B)", "1", None):
+                return q_map["summary"]
+
+        # Check Q11 Theme source poem overlap
+        q11_source = source_text_for_question(q_map["theme"], question_obj.question_text)
+        if q11_source and sec_tokens and (15 <= len(sec_words) <= 150):
+            q11_tokens = {
+                w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q11_source)
+                if w.lower() not in _KEYWORD_STOPWORDS
+            }
+            overlap_q11 = q11_tokens & sec_tokens
+            if len(overlap_q11) >= 3:
+                return q_map["theme"]
+
     return None
 
 
@@ -116,7 +265,8 @@ def extract_header_qno(
 ) -> Optional[str]:
     """
     Extract canonical question number from the leading lines of a text section.
-    Supports English & Bengali headers, dynamic schema keywords, and sub-parts.
+    Supports English & Bengali headers, dynamic schema keywords, sub-parts,
+    and structural & semantic content fingerprinting.
     """
     first_lines = "\n".join(section_text.strip().split("\n")[:4])
     normalized = normalize_header_text(first_lines)
@@ -125,12 +275,36 @@ def extract_header_qno(
 
     # 1. Explicit numeric English header first (an explicit "Ans to the Q No 11" must never be
     #    overridden by topic keywords). Keyword matching (below) only runs when no header is present.
-    explicit = _extract_explicit_english_header(arabic_lines)
+    explicit = _extract_explicit_english_header(arabic_lines, valid_q_order=valid_q_order)
     if explicit:
         return explicit
 
-    # 1b. Dynamic Keyword/Topic Matching from question_obj: best-matching sub-question wins,
-    #     stop words are ignored, and at least two distinctive words must match.
+    # 2. Bengali Question Header Matching (supports '১ নং উত্তর', '১(ক) নং', '১ নং প্রশ্নের উত্তর (ক)', 'উত্তর: ১')
+    beng_m = re.search(
+        r'([0-9]{1,2})\s*(?:[\(（]([\u0980-\u09FFA-Za-z0-9]+)[\)）]\s*)?(?:নং|নম্বর)?\s*(?:প্রশ্নের?\s*)?উত্তর(?:\s*[\(（]([\u0980-\u09FFA-Za-z0-9]+)[\)）])?',
+        arabic_lines
+    )
+    if not beng_m:
+        beng_m = re.search(
+            r'(?:(?:প্রশ্নের?\s*)?উত্তর)\s*(?:নং|নম্বর)?\s*[:\-]?\s*([0-9]{1,2})\s*(?:[\(（]([\u0980-\u09FFA-Za-z0-9]+)[\)）])?',
+            arabic_lines
+        )
+    if beng_m:
+        q_num = beng_m.group(1)
+        sub_part = beng_m.group(2) or (beng_m.group(3) if len(beng_m.groups()) >= 3 else None)
+        if sub_part:
+            ascii_sub = BENGALI_SUBPART_MAP.get(sub_part, sub_part.upper())
+            return f"{q_num}({ascii_sub})"
+        return q_num
+
+    # 3. Subpart (B) following (A) or subpart (খ) following (ক)
+    if current_parent in ["1", "1(A)", "1A"]:
+        if re.search(r'^\s*(?:[\(（](?:B|খ)[\)）]|[Ⓑ]|B(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
+            return "1(B)"
+        if re.search(r'^\s*(?:[\(（](?:A|ক)[\)）]|[Ⓐ]|A(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
+            return "1(A)"
+
+    # 4. Dynamic Keyword/Topic Matching from question_obj: best-matching sub-question wins
     if question_obj and question_obj.sub_questions:
         best_q, best_score = None, 0.0
         for sq in question_obj.sub_questions:
@@ -145,40 +319,32 @@ def extract_header_qno(
             if not words:
                 continue
             matches = sum(1 for w in set(words) if w in first_lines_lower)
-            if matches >= 2 and any(h in first_lines_lower for h in ["ans", "q", "title", "theme", "paragraph", "topic", "no"]):
+            is_strong_match = False
+            if matches >= 2:
+                is_strong_match = True
+            elif matches == 1:
+                matched_w = [w for w in set(words) if w in first_lines_lower]
+                if matched_w and len(matched_w[0]) >= 6 and matched_w[0] not in {"english", "second", "paper", "write", "passage"}:
+                    top_line = first_lines.split("\n")[0].lower()
+                    if any(h in first_lines_lower for h in ["ans", "q", "title", "theme", "paragraph", "topic", "no"]) or matched_w[0] in top_line:
+                        is_strong_match = True
+            if is_strong_match:
                 score = matches / len(set(words))
                 if score > best_score:
                     best_q, best_score = sq_no, score
         if best_q:
             return best_q
 
-    # 2. Bengali Question Header Matching (supports both '১(ক) নং' and '১ নং প্রশ্নের উত্তর (ক)')
-    beng_m = re.search(
-        r'([0-9]{1,2})\s*(?:[\(（]([\u0980-\u09FFA-Za-z0-9]+)[\)）]\s*)?(?:নং|নম্বর)?\s*প্রশ্নের?\s*উত্তর(?:\s*[\(（]([\u0980-\u09FFA-Za-z0-9]+)[\)）])?',
-        arabic_lines
-    )
-    if beng_m:
-        q_num = beng_m.group(1)
-        sub_part = beng_m.group(2) or beng_m.group(3)
-        if sub_part:
-            ascii_sub = BENGALI_SUBPART_MAP.get(sub_part, sub_part.upper())
-            return f"{q_num}({ascii_sub})"
-        return q_num
+    # 5. Structural & Semantic Content Fingerprinting (Flowchart, Rearrange table, Letter, Graph, Story, Theme)
+    fp = detect_structural_fingerprint(section_text, question_obj=question_obj, valid_q_order=valid_q_order, current_parent=current_parent)
+    if fp:
+        return fp
 
-    # 3. (explicit English header already handled in step 1)
-
-    # 4. Subpart (B) following (A) or subpart (খ) following (ক)
-    if current_parent in ["1", "1(A)", "1A"]:
-        if re.search(r'^\s*(?:[\(（](?:B|খ)[\)）]|[Ⓑ]|B(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
-            return "1(B)"
-        if re.search(r'^\s*(?:[\(（](?:A|ক)[\)）]|[Ⓐ]|A(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
-            return "1(A)"
-
-    # 5. Backward compatibility heuristics for English HSC
+    # 6. Backward compatibility heuristics for English HSC
     if "theme:" in first_lines_lower and ("dream" in first_lines_lower or "poem" in first_lines_lower):
         return "11"
     if "artificial" in first_lines_lower or "indelligence" in first_lines_lower or re.search(r'\b(ai|a\.i\.)\b', first_lines_lower):
-        if re.search(r'\b(ans|q|question|no)\b', first_lines_lower):
+        if re.search(r'\b(ans|q|question|no)\b', first_lines_lower) or "artificial intelligence" in first_lines_lower:
             return "7"
 
     return None
@@ -280,7 +446,7 @@ def segment_script_into_questions(
     for q in ordered_keys:
         combined_texts[q] = "\n\n".join(answer_buckets[q]["text_parts"]).strip()
 
-    # Attribute errors to questions accurately using question_no and context
+    # Attribute errors to questions accurately using context, erroneous text, and question_no
     question_errors: Dict[str, List[Dict[str, Any]]] = {q: [] for q in ordered_keys}
     for err in all_extracted_errors:
         qn = str(err.get("question_no") or "").strip().upper()
@@ -288,28 +454,28 @@ def segment_script_into_questions(
         ctx = str(err.get("context_sentence") or "").strip().lower()
 
         matched_q = None
-        # 1. Match by explicit question_no
-        if qn:
-            for q in ordered_keys:
-                clean_q = q.upper().replace("(", "").replace(")", "").strip()
-                clean_qn = qn.replace("(", "").replace(")", "").strip()
-                if q.upper() == qn or clean_q == clean_qn:
-                    matched_q = q
-                    break
-
-        # 2. Match by context sentence presence in answer text
-        if not matched_q and ctx:
+        # 1. Match by context sentence presence in answer text (highest ground-truth precision)
+        if ctx:
             for q in ordered_keys:
                 q_txt = combined_texts[q].lower()
                 if ctx[:30] in q_txt or (len(ctx) > 15 and ctx[-20:] in q_txt):
                     matched_q = q
                     break
 
-        # 3. Match by erroneous_text within word boundaries in answer text
+        # 2. Match by erroneous_text within word boundaries in answer text
         if not matched_q and needle:
             for q in ordered_keys:
                 q_txt = combined_texts[q].lower()
                 if re.search(r'\b' + re.escape(needle) + r'\b', q_txt):
+                    matched_q = q
+                    break
+
+        # 3. Match by explicit question_no
+        if not matched_q and qn:
+            for q in ordered_keys:
+                clean_q = q.upper().replace("(", "").replace(")", "").strip()
+                clean_qn = qn.replace("(", "").replace(")", "").strip()
+                if q.upper() == qn or clean_q == clean_qn:
                     matched_q = q
                     break
 
@@ -322,6 +488,7 @@ def segment_script_into_questions(
                     break
 
         if matched_q:
+            err["question_no"] = matched_q
             question_errors[matched_q].append(err)
 
     for q in ordered_keys:

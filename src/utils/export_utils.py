@@ -144,7 +144,16 @@ def export_extraction_summary_markdown(result: ExtractionResult, output_path: st
             "| --- | --- | --- |"
         ])
         for diff in result.stage2_verification.silent_corrections_fixed:
-            md_lines.append(f"| `{diff.stage1_output}` | `{diff.actual_handwritten}` | {diff.reason} |")
+            if hasattr(diff, "stage1_output"):
+                s1, act, rsn = diff.stage1_output, diff.actual_handwritten, diff.reason
+            elif isinstance(diff, dict):
+                s1, act, rsn = diff.get("stage1_output", ""), diff.get("actual_handwritten", ""), diff.get("reason", "")
+            elif isinstance(diff, str) and "->" in diff:
+                parts = diff.split("->", 1)
+                s1, act, rsn = parts[0].strip(), parts[1].strip(), "Global handwriting calibration"
+            else:
+                s1, act, rsn = str(diff), "", "Global handwriting calibration"
+            md_lines.append(f"| `{s1}` | `{act}` | {rsn} |")
         md_lines.append("")
 
     md_lines.extend([
@@ -519,7 +528,16 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
             "| --- | --- | --- |"
         ])
         for diff in report.stage2_verification.silent_corrections_fixed:
-            md_lines.append(f"| `{diff.stage1_output}` | `{diff.actual_handwritten}` | {diff.reason} |")
+            if hasattr(diff, "stage1_output"):
+                s1, act, rsn = diff.stage1_output, diff.actual_handwritten, diff.reason
+            elif isinstance(diff, dict):
+                s1, act, rsn = diff.get("stage1_output", ""), diff.get("actual_handwritten", ""), diff.get("reason", "")
+            elif isinstance(diff, str) and "->" in diff:
+                parts = diff.split("->", 1)
+                s1, act, rsn = parts[0].strip(), parts[1].strip(), "Global handwriting calibration"
+            else:
+                s1, act, rsn = str(diff), "", "Global handwriting calibration"
+            md_lines.append(f"| `{s1}` | `{act}` | {rsn} |")
         md_lines.append("")
 
     md_lines.extend([

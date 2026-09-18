@@ -200,11 +200,39 @@ class Stage4Evaluator:
               f"({'rubric-driven modes A/B/C' if rubric_driven else 'generic prompt'}; answer key: {'yes' if answer_key else 'none'})...")
 
         answered: set = set()
+        missing_qs: List[str] = []
         for idx, ans in enumerate(answers, 1):
             q_prompt_text, q_max_marks = get_sub_question_prompt_and_marks(ans.q_no, question_obj)
             q_canon = canonicalize_question_key(ans.q_no)
             answered.add(q_canon)
             spec = specs.get(q_canon) if rubric_driven else None
+
+            # Fast-path for blank / empty answers: certify 0.0 marks unattempted without LLM call
+            if ans.word_count == 0 or not ans.answer_text.strip():
+                print(f"[Stage 4 Modular] [{idx}/{len(answers)}] Q{ans.q_no} is blank/empty -> 0.0 marks (unattempted)")
+                gt_val = gt_canon.get(q_canon)
+                qe = QuestionEvaluationItem(
+                    q_no=ans.q_no,
+                    q_name=ans.q_name or f"Question {ans.q_no}",
+                    page_numbers=ans.page_numbers,
+                    max_marks=q_max_marks,
+                    awarded_marks=0.0,
+                    scoring_status="missing",
+                    task_mode=({"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[spec.mode] if spec else "generic"),
+                    task_type=(spec.task_type if spec else None),
+                    human_ground_truth=gt_val,
+                    content_raw_score=0.0,
+                    linguistic_penalty=0.0,
+                    examiner_feedback="No answer written for this question (unattempted by student). 0 marks awarded.",
+                )
+                if gt_val is not None:
+                    qe.delta = round(abs(0.0 - gt_val), 2)
+                    deltas_incl.append(qe.delta)
+                question_evaluations.append(qe)
+                missing_qs.append(ans.q_no)
+                total_max += q_max_marks
+                continue
+
             if spec is not None:
                 key_section, key_entry = key_for_question(answer_key, q_canon)
                 print(f"[Stage 4 Modular] [{idx}/{len(answers)}] Q{ans.q_no} mode {spec.mode} ({spec.task_type}, {ans.word_count} words, max {q_max_marks:g}, key: {'yes' if key_entry else 'no'})...")
@@ -332,9 +360,14 @@ class Stage4Evaluator:
             total_raw_content += content_raw
             total_linguistic_deductions += penalty
 
-        # Questions expected by the rubric or the ground truth but absent from the segmentation
+        # Questions expected by the rubric, question paper, or ground truth but absent from the segmentation
         expected = set(specs.keys()) | set(gt_canon.keys())
-        missing_qs: List[str] = []
+        if question_obj and question_obj.sub_questions:
+            for sq in question_obj.sub_questions:
+                sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
+                if sq_no:
+                    expected.add(canonicalize_question_key(sq_no))
+
         for q in sorted(expected, key=lambda x: (len(x), x)):
             if q in answered:
                 continue
@@ -346,7 +379,7 @@ class Stage4Evaluator:
                 q_no=q, q_name=f"Question {q}", page_numbers=[], max_marks=max_mark, awarded_marks=0.0,
                 scoring_status="missing", task_mode=({"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[spec.mode] if spec else None),
                 task_type=(spec.task_type if spec else None), human_ground_truth=gt_val,
-                examiner_feedback="No answer segment found for this question (unattempted or segmentation miss).",
+                examiner_feedback="No answer segment found for this question (unattempted by student). 0 marks awarded.",
             )
             if gt_val is not None:
                 qe.delta = round(abs(0.0 - gt_val), 2)
@@ -356,7 +389,7 @@ class Stage4Evaluator:
             total_max += max_mark
         unscored_qs = [qe.q_no for qe in question_evaluations if qe.scoring_status == "unscored"]
         if missing_qs:
-            print(f"[Stage 4 Modular] Missing answer segments for: {', '.join(missing_qs)}")
+            print(f"[Stage 4 Modular] Missing/unattempted questions: {', '.join(missing_qs)}")
         if unscored_qs:
             print(f"[Stage 4 Modular] Unscored (unparseable model output): {', '.join(unscored_qs)}")
 
@@ -367,7 +400,7 @@ class Stage4Evaluator:
         # Build overall synthesis feedback
         feedback_summary = (
             f"Modular evaluation completed across {len(question_evaluations)} questions "
-            f"({len(question_evaluations) - len(missing_qs) - len(unscored_qs)} scored, {len(missing_qs)} missing, {len(unscored_qs)} unscored). "
+            f"({len(question_evaluations) - len(missing_qs) - len(unscored_qs)} scored, {len(missing_qs)} missing/unattempted, {len(unscored_qs)} unscored). "
             f"Total awarded score: {total_awarded:.1f} out of {total_max:.1f} ({percentage:.1f}%)."
         )
         if mae_vs_human is not None:

@@ -10,6 +10,7 @@ ablated offline without GPU.
 
 import json
 import os
+import re
 from typing import Any, Callable, Dict, List, Optional, Set, Tuple
 
 from PIL import Image
@@ -53,6 +54,7 @@ class EvidenceArbitrationGate:
         question_vocab: Optional[Set[str]] = None,
         language: str = "en",
         verbose: bool = True,
+        profile: Optional[WriterProfile] = None,
     ):
         self.engine = engine
         self.cfg = cfg
@@ -64,7 +66,7 @@ class EvidenceArbitrationGate:
         self.lexicon = lexicon or set()
         self.question_vocab = {w.lower() for w in (question_vocab or set())}
         self._lexicon_indices: set = set()
-        self.profile: WriterProfile = build_writer_profile(script_id, full_transcript, lexicon, question_vocab)
+        self.profile: WriterProfile = profile if profile is not None else build_writer_profile(script_id, full_transcript, lexicon, question_vocab)
         crop_dir = os.path.join(output_dir, "arbitration_crops") if cfg.save_crops else None
         self.localizer = LineLocalizer(
             engine=engine,
@@ -192,19 +194,135 @@ class EvidenceArbitrationGate:
         score = fuse(ev, self.cfg.weights)
         if (ev.consensus_agreement_intended or 0.0) >= 0.8 and (ev.consensus_agreement_candidate or 0.0) <= 0.2:
             score = max(score, self.cfg.threshold_ambiguity)
+
+        # Visual Evidence Supremacy: If high-resolution consensus re-reads and forced-choice
+        # judge both unanimously confirm the candidate token in the physical ink, the handwriting
+        # is visually verified beyond doubt. Machine transcription did not glitch.
+        visual_confirms_candidate = (
+            crop is not None
+            and (ev.consensus_agreement_candidate or 0.0) >= 0.7
+            and ev.forced_choice == "candidate"
+            and (ev.consensus_agreement_intended or 0.0) <= 0.2
+        )
+
+        # Cursive Handwriting Safeguards (Palmer r, looped s, asymmetric w, blind loop e/c)
+        c_low = cand.candidate_token.lower()
+        i_low = cand.intended_token.lower()
+
+        is_w_cu_split = (c_low.replace("cu", "w") == i_low or i_low.replace("cu", "w") == c_low)
+
+        is_palmer_r_re = False
+        if "r" in c_low and "r" in i_low:
+            # Palmer cursive 'r' has an elevated plateau/shoulder often transcribed as 're', 'ro', 'er', or 'or'
+            c_norm = re.sub(r'r[eo]|[eo]r', 'r', c_low)
+            i_norm = re.sub(r'r[eo]|[eo]r', 'r', i_low)
+            if c_norm == i_norm or re.sub(r'ro|re|er|or', 'r', c_low) == i_low or re.sub(r'ro|re|er|or', 'r', i_low) == c_low:
+                is_palmer_r_re = True
+
+        is_looped_s = False
+        # Looped 's' is an orthographic handwriting artifact where an inner loop or flourish on a handwritten 's'
+        # causes OCR to misread it as an extra letter (e.g. 'examis' for 'exams', 'sourcees' for 'sources').
+        # It ONLY applies when:
+        # - The candidate token contains 's' and is an out-of-vocabulary non-word
+        # - It ends in an 's' cluster like 'is', 'es', 'se', 'so', 'ss'
+        # It NEVER applies to valid dictionary words that lack 's' (e.g. 'go' vs 'goes', 'feel' vs 'feels').
+        if ("s" in c_low or c_low.endswith("s")) and c_low not in self.lexicon:
+            s_suffixes = ("es", "is", "se", "so", "ss", "s")
+            for suff in s_suffixes:
+                if c_low.endswith(suff) and c_low[:-len(suff)] == i_low.rstrip("s"):
+                    is_looped_s = True
+                    break
+
+        is_e_c_swap = False
+        if levenshtein(c_low, i_low) == 1:
+            ops = align_chars(c_low, i_low)
+            non_match = [o for o in ops if o.op != "match"]
+            if len(non_match) == 1 and set([non_match[0].src, non_match[0].tgt]) == {"e", "c"}:
+                is_e_c_swap = True
+
+        # Cursive 'v' <-> 'r' ligature confusion (e.g. remove <-> remore / rumore, have <-> hare, every <-> erery, village <-> rillage)
+        is_v_r_swap = False
+        if ("v" in i_low or "r" in i_low or "v" in c_low or "r" in c_low):
+            c_vr = c_low.replace("r", "v").replace("u", "e").replace("o", "e")
+            i_vr = i_low.replace("r", "v").replace("u", "e").replace("o", "e")
+            if c_vr == i_vr:
+                is_v_r_swap = True
+
+        # Cursive 's' <-> 'n' stroke confusion (curvy/looped s misread as n: e.g. hin <-> his, thin <-> this, in <-> is, shoun <-> shows)
+        is_s_n_swap = False
+        if levenshtein(c_low, i_low) == 1:
+            ops = align_chars(c_low, i_low)
+            non_match = [o for o in ops if o.op != "match"]
+            if len(non_match) == 1 and set([non_match[0].src, non_match[0].tgt]) == {"s", "n"}:
+                is_s_n_swap = True
+
+        is_cursive_glyph_variant = is_w_cu_split or is_palmer_r_re or is_looped_s or is_e_c_swap or is_v_r_swap or is_s_n_swap
+        if is_cursive_glyph_variant:
+            reasons = []
+            if is_w_cu_split: reasons.append("asymmetric 'w'<->'cu' split")
+            if is_palmer_r_re: reasons.append("Palmer cursive 'r'<->'re' shelf")
+            if is_looped_s: reasons.append("looped base 's' variant")
+            if is_e_c_swap: reasons.append("blind loop 'e'<->'c' ligature")
+            if is_v_r_swap: reasons.append("cursive 'v'<->'r' ligature stroke")
+            if is_s_n_swap: reasons.append("curvy 's'<->'n' stroke confusion")
+            ev.notes.append(f"Cursive glyph safeguard triggered: {', '.join(reasons)}")
+
+            # If visual evidence strongly confirms candidate (unanimous re-reads + forced choice),
+            # the ink is verified; do not elevate genuine linguistic errors.
+            if not visual_confirms_candidate:
+                if i_low in self.lexicon or i_low in self.question_vocab or is_writer_anchor:
+                    # If candidate is a non-word in English or visual signals corroborate, elevate to AMBIGUITY
+                    if c_low not in self.lexicon or (ev.consensus_agreement_intended or 0.0) >= 0.3 or ev.forced_choice in ("intended", "neither"):
+                        score = max(score, self.cfg.threshold_ambiguity)
+                    elif score < self.cfg.threshold_genuine:
+                        score = max(score, self.cfg.threshold_genuine)  # Elevate from GENUINE to at least UNCERTAIN
+
+        # Discovered Writer Profile Allograph check (e.g. terminal_y -> s, curvy_s -> s, cursive_vr -> v)
+        is_profile_allograph = getattr(self.profile, "is_writer_allograph", lambda c, i: False)(c_low, i_low)
+        if is_profile_allograph:
+            ev.notes.append(f"Writer allograph rule matched in profile: '{cand.candidate_token}' -> '{cand.intended_token}'")
+            score = max(score, self.cfg.threshold_ambiguity)
+
+        # Struck-through / aborted word safeguard:
+        # If student began writing a word, struck it out, and wrote the full word immediately after
+        # (e.g. 'possi positively', 'grap pie-chart'), or token is enclosed in strike marks:
+        is_aborted_draft = False
+        words_in_ctx = re.findall(r'[A-Za-z]+(?:-[A-Za-z]+)*', cand.context_sentence.lower())
+        for idx, w in enumerate(words_in_ctx[:-1]):
+            if w == c_low:
+                next_w = words_in_ctx[idx+1]
+                if (len(c_low) >= 2 and next_w.startswith(c_low[:3])) or next_w in ("pie-chart", "pie", "chart", "graph", "table", "positively"):
+                    is_aborted_draft = True
+                    break
+        if is_aborted_draft:
+            ev.notes.append(f"Aborted / struck-through draft token '{cand.candidate_token}' followed by corrected word: Benefit of Doubt applied")
+            score = max(score, self.cfg.threshold_ambiguity)
+
         verdict = quantize(score, self.cfg.threshold_ambiguity, self.cfg.threshold_genuine)
-        if is_writer_anchor and levenshtein(cand.candidate_token.lower(), cand.intended_token.lower()) == 1:
+        if (
+            cand.error_type == "spelling"
+            and c_low not in self.lexicon
+            and is_writer_anchor
+            and levenshtein(cand.candidate_token.lower(), cand.intended_token.lower()) == 1
+            and not visual_confirms_candidate
+        ):
             # Benefit of the Doubt / Anchor Consistency Rule:
             # If the intended word is a demonstrated anchor word of the writer (used correctly elsewhere in the script),
-            # and the discrepancy is a single-character substitution (e.g. cursive 'v' resembling 'r' in 'rillage' vs 'village'),
+            # and the discrepancy is a single-character substitution on an OOV token (e.g. cursive 'v' resembling 'r' in 'rillage' vs 'village'),
             # the student has demonstrated orthographic competence. Under NCTB/Cambridge assessment rules,
             # single cursive stroke deformations on known vocabulary are not penalized as genuine spelling errors.
             ev.notes.append(f"Writer anchor word '{cand.intended_token}' (mastery demonstrated elsewhere in script): Benefit of Doubt applied")
             if verdict == GENUINE:
                 verdict = UNCERTAIN
+
+        if is_cursive_glyph_variant and (i_low in self.lexicon or is_writer_anchor) and not visual_confirms_candidate:
+            if verdict == GENUINE:
+                verdict = UNCERTAIN
+
         if crop is None or ev.forced_choice == "neither":
             # no ink evidence or crop failed to capture the word: benefit of the doubt / human review
-            verdict = UNCERTAIN
+            if verdict == GENUINE:
+                verdict = UNCERTAIN
         ev.model_calls = 0  # filled by caller from deltas
         return ArbitrationRecord(candidate=cand, evidence=ev, ambiguity_score=round(score, 4), verdict=verdict, mode="evidence")
 

@@ -564,6 +564,77 @@ class ScriptCheckingPipeline:
             )
 
         # ---------------------------------------------------------
+        # Global Script Calibration & Pen-Lift Split Stitching
+        # ---------------------------------------------------------
+        from src.pipeline.allograph_calibrator import AllographCalibrator
+        from src.pipeline.split_token_stitcher import stitch_pen_lift_splits
+        from src.pipeline.arbitration.writer_profile import save_writer_profile
+
+        subject_name = "Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English"
+        arb_lexicon = get_english_lexicon() if subject_name == "English" else set()
+
+        allograph_calibrator = AllographCalibrator(min_support=2)
+        writer_profile = allograph_calibrator.calibrate(
+            script_id=script_id,
+            transcript=combined_verified,
+            lexicon=arb_lexicon,
+            question_vocab=set(question_vocab or [])
+        )
+
+        # 1. Apply discovered allographs to transcript
+        calibrated_verified, allograph_diffs = allograph_calibrator.apply_adaptations(
+            combined_verified,
+            writer_profile
+        )
+
+        # 2. Stitch intra-word pen-lift splits (e.g. "elec tricity", "pro blems", "Hy dro - electric")
+        stitched_verified, stitch_diffs = stitch_pen_lift_splits(
+            calibrated_verified,
+            lexicon=arb_lexicon,
+            question_vocab=set(question_vocab or []),
+            allograph_map=writer_profile.discovered_allographs
+        )
+        writer_profile.stitched_splits = stitch_diffs
+
+        if allograph_diffs or stitch_diffs:
+            print(f"[Extraction] ✍️ Global Calibration: {len(allograph_diffs)} allograph adaptation(s), {len(stitch_diffs)} stitched split(s).")
+            combined_verified = stitched_verified
+            aggregated_stage2.verified_transcript = combined_verified
+            from src.core.schemas import AutocorrectionDiffItem
+
+            all_added_diffs = [
+                AutocorrectionDiffItem(
+                    stage1_output=d["original"],
+                    actual_handwritten=d["adapted"],
+                    reason="Script-wide allograph calibration",
+                    context_snippet=d["adapted"],
+                )
+                for d in allograph_diffs
+            ] + [
+                AutocorrectionDiffItem(
+                    stage1_output=d["original"],
+                    actual_handwritten=d["stitched"],
+                    reason=f"Pen-lift split stitching: {d.get('reason', 'syllable split')}",
+                    context_snippet=d["stitched"],
+                )
+                for d in stitch_diffs
+            ]
+            aggregated_stage2.silent_corrections_fixed.extend(all_added_diffs)
+            aggregated_stage2.total_corrections_count = len(aggregated_stage2.silent_corrections_fixed)
+
+            # Propagate stitched & calibrated text back to individual page_results
+            page_chunks = combined_verified.split("\n\n--- Page Break ---\n\n")
+            if len(page_chunks) == len(page_results):
+                for p_idx, p_res in enumerate(page_results):
+                    p_res.stage2_verification.verified_transcript = page_chunks[p_idx]
+
+        # Save writer profile artifact
+        try:
+            save_writer_profile(writer_profile, os.path.join(script_output_dir, "writer_profile.json"))
+        except Exception:
+            pass
+
+        # ---------------------------------------------------------
         # Question-Aware Stage 3: Alignment & Targeted Error Extraction
         # ---------------------------------------------------------
         print(f"\n[Extraction] [3/3] Question-Aware Alignment & Error Extraction ({len(combined_verified)} chars, {aggregated_stage1.word_count} words)...")
@@ -618,6 +689,7 @@ class ScriptCheckingPipeline:
                 question_vocab=(set(question_vocab or [])
                                 | ({w.lower() for w in re.findall(r"[A-Za-z]+", question_obj.question_text)} if question_obj else set())),
                 language="bn" if subject_name == "Bangla" else "en",
+                profile=writer_profile,
             )
             print(f"[Extraction] [3b/3] Evidence gate ready (writer profile: {len(gate.profile.pair_counts)} confusion pairs from {len(gate.profile.anchors)} anchor words)")
 
