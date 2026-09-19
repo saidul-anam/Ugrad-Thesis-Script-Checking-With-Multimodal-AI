@@ -60,14 +60,14 @@ arbitration:
   projection_search_window: 3      # lines either side of the expected line position to try in fallback
   crop_pad_px: 14
   crop_min_height_px: 96
-  consensus_samples: 5             # augmented re-reads of the line crop
-  consensus_use_sampling_variant: true
-  consensus_temperature: 0.7
+  consensus_samples: 1             # reduced from 5 to 1 (bloat fix: eliminates 4 redundant re-reads per candidate)
+  consensus_use_sampling_variant: false
+  consensus_temperature: 0.0
   writer_profile_min_count: 2      # a confusion pair must be seen this often in the script before it counts
   threshold_ambiguity: 0.65        # ambiguity_score >= this  -> HANDWRITING_AMBIGUITY (benefit of the doubt)
   threshold_genuine: 0.35          # ambiguity_score <= this  -> GENUINE_ERROR ; in between -> UNCERTAIN (human review)
   save_crops: true
-  lexicon_scan: true            # also gate non-dictionary tokens Stage 3 missed (dictionary lookup, no letter rules)
+  lexicon_scan: false              # disabled (bloat fix: only gate errors flagged by Stage 3, prevents candidate flooding)
   weights:                         # provisional; replace with fitted values (see above)
     bias: -0.3
     phonetic: 0.6

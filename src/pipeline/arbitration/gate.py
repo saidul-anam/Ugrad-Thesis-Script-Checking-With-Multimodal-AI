@@ -139,37 +139,38 @@ class EvidenceArbitrationGate:
             ev.localization_match_ratio = round(crop.match_ratio, 3)
             ev.crop_path = crop.path
             # 3a. augmented consensus
-            try:
-                cres = self.consensus.run(
-                    crop.image,
-                    crop.transcript or cand.context_sentence,
-                    cand.candidate_token,
-                    cand.intended_token,
-                    context_sentence=cand.context_sentence,
-                )
-                ev.consensus_samples = [s for s in cres.get("samples", [])]
-                ev.consensus_agreement_candidate = cres.get("agreement_candidate")
-                ev.consensus_agreement_intended = cres.get("agreement_intended")
-                ev.consensus_word_confidence = cres.get("word_confidence")
-                ev.consensus_signal = cres.get("signal")
-                ev.consensus_token = cres.get("consensus_token")
-                ev.consensus_token_agreement = cres.get("consensus_token_agreement")
-                res = cres.get("consensus")
-                if res is not None and res.n >= 2:
-                    add_consensus_disagreements(self.profile, res.columns, res.majority)
+            if getattr(self.cfg, "consensus_samples", 1) > 0:
+                try:
+                    cres = self.consensus.run(
+                        crop.image,
+                        crop.transcript or cand.context_sentence,
+                        cand.candidate_token,
+                        cand.intended_token,
+                        context_sentence=cand.context_sentence,
+                    )
+                    ev.consensus_samples = [s for s in cres.get("samples", [])]
+                    ev.consensus_agreement_candidate = cres.get("agreement_candidate")
+                    ev.consensus_agreement_intended = cres.get("agreement_intended")
+                    ev.consensus_word_confidence = cres.get("word_confidence")
+                    ev.consensus_signal = cres.get("signal")
+                    ev.consensus_token = cres.get("consensus_token")
+                    ev.consensus_token_agreement = cres.get("consensus_token_agreement")
+                    res = cres.get("consensus")
+                    if res is not None and res.n >= 2:
+                        add_consensus_disagreements(self.profile, res.columns, res.majority)
 
-                # Open Multimodal Consensus:
-                # If visual re-reads strongly agree (>= 60%) on a reading that differs from the candidate,
-                # adopt the visual consensus reading as the intended token!
-                cons_tok = cres.get("consensus_token")
-                cons_agr = cres.get("consensus_token_agreement") or 0.0
-                if cons_tok and cons_agr >= 0.6 and cons_tok != cand.candidate_token.lower():
-                    if cand.intended_token.lower() != cons_tok:
-                        cand.intended_token = cons_tok
-                        ev.consensus_agreement_intended = cons_agr
-                        ev.consensus_signal = min(1.0, max(0.5, 0.5 + 0.5 * cons_agr))
-            except Exception as ex:
-                ev.notes.append(f"consensus failed: {ex}")
+                    # Open Multimodal Consensus:
+                    # If visual re-reads strongly agree (>= 60%) on a reading that differs from the candidate,
+                    # adopt the visual consensus reading as the intended token!
+                    cons_tok = cres.get("consensus_token")
+                    cons_agr = cres.get("consensus_token_agreement") or 0.0
+                    if cons_tok and cons_agr >= 0.6 and cons_tok != cand.candidate_token.lower():
+                        if cand.intended_token.lower() != cons_tok:
+                            cand.intended_token = cons_tok
+                            ev.consensus_agreement_intended = cons_agr
+                            ev.consensus_signal = min(1.0, max(0.5, 0.5 + 0.5 * cons_agr))
+                except Exception as ex:
+                    ev.notes.append(f"consensus failed: {ex}")
             # 3b. forced choice
             try:
                 fc = self.judge.judge(crop.image, cand.candidate_token, cand.intended_token,
@@ -180,9 +181,9 @@ class EvidenceArbitrationGate:
                 ev.forced_choice_order = fc.get("order", "")
                 ev.forced_choice_signal = fc.get("signal")
 
-                # Consensus override: If visual consensus strongly agrees (>= 0.8) on intended token,
+                # Consensus override: If multi-sample consensus strongly agrees (>= 0.8) on intended token,
                 # a contradictory forced-choice call cannot veto unanimous visual re-reads.
-                if (ev.consensus_agreement_intended or 0.0) >= 0.8 and ev.forced_choice == "candidate":
+                if len(ev.consensus_samples) >= 3 and (ev.consensus_agreement_intended or 0.0) >= 0.8 and ev.forced_choice == "candidate":
                     ev.notes.append(f"Consensus agreement ({ev.consensus_agreement_intended:.2f}) on '{cand.intended_token}' overrules forced-choice '{cand.candidate_token}'")
                     ev.forced_choice_signal = 0.5  # neutralize veto
             except Exception as ex:

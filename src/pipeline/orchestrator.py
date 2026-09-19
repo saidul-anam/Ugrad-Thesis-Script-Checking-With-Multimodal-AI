@@ -111,6 +111,39 @@ def _attribute_errors_to_pages(
         )
 
 
+def _chunk_text_by_sentences(text: str, target_words: int = 120) -> List[str]:
+    """
+    Split long text into sentence-bounded chunks of ~100-140 words.
+    Avoids cutting sentences across chunks.
+    """
+    sentences = re.split(r"(?<=[.!?\n])\s+", text.strip())
+    sentences = [s.strip() for s in sentences if s.strip()]
+    if not sentences:
+        return [text] if text.strip() else []
+
+    chunks = []
+    current_chunk = []
+    current_count = 0
+
+    for s in sentences:
+        s_words = len(s.split())
+        if current_chunk and (current_count + s_words > target_words):
+            chunks.append(" ".join(current_chunk))
+            current_chunk = [s]
+            current_count = s_words
+        else:
+            current_chunk.append(s)
+            current_count += s_words
+
+    if current_chunk:
+        if chunks and current_count < 30:
+            chunks[-1] = chunks[-1] + " " + " ".join(current_chunk)
+        else:
+            chunks.append(" ".join(current_chunk))
+
+    return chunks
+
+
 def _token_pattern(word: str) -> "re.Pattern":
     return re.compile(r"(?<!\w)" + re.escape(word) + r"(?!\w)", re.IGNORECASE)
 
@@ -708,19 +741,58 @@ class ScriptCheckingPipeline:
                     ans.errors = []
                     continue
 
-                q_err_res = self.stage3.run(
-                    verified_transcript=ans_text,
-                    question_vocab=set(question_vocab) if question_vocab else None,
-                    subject="Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English",
-                    temperature=decoding.temperature,
-                    top_p=decoding.top_p,
-                    max_new_tokens=min(decoding.max_new_tokens, 1536),
-                    thinking_mode=active_thinking
-                )
-                usage = self.engine.get_last_usage()
-                u3_prompt += usage.get("prompt_tokens", 0)
-                u3_comp += usage.get("completion_tokens", 0)
-                u3_total += usage.get("total_tokens", 0)
+                ans_words = len(ans_text.split())
+                if ans_words > 150:
+                    chunks = _chunk_text_by_sentences(ans_text, target_words=120)
+                    chunk_errors: List[LinguisticErrorItem] = []
+                    for chunk in chunks:
+                        c_err_res = self.stage3.run(
+                            verified_transcript=chunk,
+                            question_vocab=set(question_vocab) if question_vocab else None,
+                            subject="Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English",
+                            temperature=decoding.temperature,
+                            top_p=decoding.top_p,
+                            max_new_tokens=min(decoding.max_new_tokens, 3072),
+                            thinking_mode=active_thinking
+                        )
+                        chunk_errors.extend(c_err_res.errors)
+                        usage = self.engine.get_last_usage()
+                        u3_prompt += usage.get("prompt_tokens", 0)
+                        u3_comp += usage.get("completion_tokens", 0)
+                        u3_total += usage.get("total_tokens", 0)
+
+                    # Deduplicate chunk errors
+                    seen_errs = set()
+                    deduped: List[LinguisticErrorItem] = []
+                    for e in chunk_errors:
+                        key = (e.error_type.lower(), e.erroneous_text.lower().strip(), e.suggested_correction.lower().strip())
+                        if key not in seen_errs:
+                            seen_errs.add(key)
+                            deduped.append(e)
+
+                    q_err_res = Stage3ErrorResult(
+                        errors=deduped,
+                        spelling_error_count=sum(1 for e in deduped if "spell" in e.error_type.lower()),
+                        grammar_error_count=sum(1 for e in deduped if "gram" in e.error_type.lower()),
+                        syntax_error_count=sum(1 for e in deduped if "synt" in e.error_type.lower()),
+                        punctuation_error_count=0,
+                        total_error_count=len(deduped),
+                        linguistic_summary=f"Extracted across {len(chunks)} chunks for long answer ({ans_words} words)."
+                    )
+                else:
+                    q_err_res = self.stage3.run(
+                        verified_transcript=ans_text,
+                        question_vocab=set(question_vocab) if question_vocab else None,
+                        subject="Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English",
+                        temperature=decoding.temperature,
+                        top_p=decoding.top_p,
+                        max_new_tokens=min(decoding.max_new_tokens, 3072),
+                        thinking_mode=active_thinking
+                    )
+                    usage = self.engine.get_last_usage()
+                    u3_prompt += usage.get("prompt_tokens", 0)
+                    u3_comp += usage.get("completion_tokens", 0)
+                    u3_total += usage.get("total_tokens", 0)
 
                 # -------------------------------------------------------------
                 # STAGE 3b: Handwriting Ambiguity Arbitration (Benefit of the Doubt)

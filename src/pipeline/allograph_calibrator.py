@@ -177,6 +177,81 @@ class AllographCalibrator:
                 "examples": list(cu_w_matches.items())[:6]
             })
 
+        # 5. Generalized Dynamic 26-Letter Allograph Discovery
+        # For remaining OOV words, find closest dictionary words within Levenshtein <= 2
+        # and accumulate character substitution pairs across the script.
+        already_adapted = set(prof.adapted_words.keys())
+        remaining_oov = [w for w in oov_words if w.lower() not in already_adapted]
+
+        vocab_by_len: Dict[int, List[str]] = defaultdict(list)
+        for vw in combined_vocab:
+            if len(vw) >= 3:
+                vocab_by_len[len(vw)].append(vw)
+
+        # Collect candidate substitutions per word
+        word_cand_subs: Dict[str, List[Tuple[str, str, str]]] = defaultdict(list)
+        for w in remaining_oov:
+            w_low = w.lower()
+            w_len = len(w_low)
+            cand_pool = vocab_by_len[w_len] + vocab_by_len[w_len - 1] + vocab_by_len[w_len + 1]
+
+            d1_matches = []
+            for dw in cand_pool:
+                if levenshtein(w_low, dw) == 1:
+                    ops = align_chars(w_low, dw)
+                    subs = [o for o in ops if o.op == "sub"]
+                    non_matches = [o for o in ops if o.op != "match"]
+                    if len(subs) == 1 and len(non_matches) == 1:
+                        src_c = subs[0].src
+                        tgt_c = subs[0].tgt
+                        if src_c and tgt_c and src_c.isalpha() and tgt_c.isalpha():
+                            d1_matches.append((dw, src_c, tgt_c))
+
+            if d1_matches:
+                word_cand_subs[w_low] = d1_matches
+            else:
+                for dw in cand_pool:
+                    if levenshtein(w_low, dw) == 2:
+                        ops = align_chars(w_low, dw)
+                        subs = [o for o in ops if o.op == "sub"]
+                        non_matches = [o for o in ops if o.op != "match"]
+                        if len(subs) == 1 and len(non_matches) == 1:
+                            src_c = subs[0].src
+                            tgt_c = subs[0].tgt
+                            if src_c and tgt_c and src_c.isalpha() and tgt_c.isalpha():
+                                word_cand_subs[w_low].append((dw, src_c, tgt_c))
+
+        # Count how many distinct words support each (src_c, tgt_c)
+        pair_word_support: Dict[Tuple[str, str], Set[str]] = defaultdict(set)
+        for w_low, matches in word_cand_subs.items():
+            for dw, src_c, tgt_c in matches:
+                pair_word_support[(src_c, tgt_c)].add(w_low)
+
+        # Promote rules with support >= min_support (default 2)
+        promoted_rules = {
+            pair: words for pair, words in pair_word_support.items()
+            if len(words) >= min(self.min_support, 2)
+        }
+
+        for (src_c, tgt_c), supporting_words in promoted_rules.items():
+            rule_name = f"allograph_{src_c}_{tgt_c}"
+            prof.discovered_allographs[rule_name] = tgt_c
+            prof.add_pair(f"{tgt_c}>{src_c}", source="allograph_discovery", weight=len(supporting_words))
+
+            rule_examples = []
+            for w_low in supporting_words:
+                matching_dws = [dw for dw, sc, tc in word_cand_subs[w_low] if (sc, tc) == (src_c, tgt_c)]
+                if matching_dws:
+                    best_dw = matching_dws[0]
+                    prof.adapted_words[w_low] = best_dw
+                    rule_examples.append((w_low, best_dw))
+
+            prof.evidence.append({
+                "rule": f"{src_c} <-> {tgt_c}",
+                "support_count": len(supporting_words),
+                "examples": rule_examples[:6]
+            })
+
         return prof
 
     def apply_adaptations(

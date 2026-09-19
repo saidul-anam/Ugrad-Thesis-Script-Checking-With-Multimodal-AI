@@ -192,6 +192,12 @@ class Stage3ErrorAnalyzer:
                 subject=subject
             )
 
+            # Diagnostic logging if substantial answer produces zero errors
+            word_count = len(clean_transcript.split())
+            if word_count > 50 and len(validated_errors) == 0:
+                snippet = (response[:200] + "...") if len(response) > 200 else response
+                print(f"[Stage 3 Error Analyzer] WARNING: Transcript of {word_count} words yielded 0 errors. Model snippet: {snippet!r}")
+
             spelling_cnt = sum(1 for e in validated_errors if "spell" in e.error_type.lower())
             grammar_cnt = sum(1 for e in validated_errors if "gram" in e.error_type.lower())
             syntax_cnt = sum(1 for e in validated_errors if "synt" in e.error_type.lower())
@@ -207,6 +213,8 @@ class Stage3ErrorAnalyzer:
             )
 
         # Fallback if no errors identified or parsing raw string
+        snippet = (response[:200] + "...") if len(response) > 200 else response
+        print(f"[Stage 3 Error Analyzer] WARNING: Failed to extract valid JSON from Stage 3 response. Raw snippet: {snippet!r}")
         return Stage3ErrorResult(
             errors=[],
             spelling_error_count=0,

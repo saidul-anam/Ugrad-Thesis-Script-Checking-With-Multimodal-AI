@@ -180,3 +180,49 @@ def test_arbitration_gate_with_allograph_profile(english_lexicon):
         # Should be classified as HANDWRITING_AMBIGUITY (0 deduction)
         assert rec.verdict == "HANDWRITING_AMBIGUITY"
         assert any("Writer allograph" in note for note in rec.evidence.notes)
+
+
+def test_dynamic_26_letter_allograph_discovery(english_lexicon):
+    """Verify that arbitrary repeated character substitutions (e.g. 'b' <-> 'f') are dynamically discovered."""
+    english_lexicon.update({"feature", "features", "famous", "fortune", "farmer", "forest", "hospital", "house", "horse"})
+    transcript = """
+    The beature was presented in the bamous city with great bortune.
+    This beature has many advantages in the bamous world.
+    A single random typo like hoss does not repeat.
+    """
+    calibrator = AllographCalibrator(min_support=2)
+    profile = calibrator.calibrate(
+        script_id="test_dynamic",
+        transcript=transcript,
+        lexicon=english_lexicon
+    )
+    # Should discover allograph_b_f
+    assert "allograph_b_f" in profile.discovered_allographs
+    assert profile.discovered_allographs["allograph_b_f"] == "f"
+    assert profile.adapted_words.get("beature") == "feature"
+    assert profile.adapted_words.get("bamous") == "famous"
+    assert profile.adapted_words.get("bortune") == "fortune"
+    # Single isolated error should NOT be promoted as a rule
+    assert "allograph_s_r" not in profile.discovered_allographs
+
+
+def test_sentence_chunking_integrity():
+    """Verify sentence-bounded long answer chunking does not drop sentences or words."""
+    from src.pipeline.orchestrator import _chunk_text_by_sentences
+
+    sentences = [
+        "Artificial intelligence is rapidly transforming modern education across the world.",
+        "Students can now access personalized learning tutors whenever they require assistance with complex topics.",
+        "Teachers are able to automate grading and spend significantly more time mentoring students individually.",
+        "However there are ethical considerations including student privacy and algorithm bias that require strict guidelines.",
+        "In developing countries infrastructure and electrical access remain formidable bottlenecks to broad adoption.",
+        "Future policy must balance rapid technological integration with equal educational accessibility."
+    ]
+    full_text = " ".join(sentences)
+
+    chunks = _chunk_text_by_sentences(full_text, target_words=40)
+    assert len(chunks) >= 2
+    # Reconstructed words should match the original words completely
+    reconstructed = " ".join(chunks)
+    assert reconstructed.split() == full_text.split()
+
