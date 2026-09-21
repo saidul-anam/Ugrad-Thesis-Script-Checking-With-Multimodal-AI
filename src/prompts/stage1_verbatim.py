@@ -13,7 +13,10 @@ Transcribe only the student's original answer, written in the student's own ink 
 Rules:
 1. Transcribe every word exactly as written, including spelling mistakes, grammar errors, and incorrect word choices. Do NOT fix them.
 2. Preserve the student's original sentence structure and word order, even if grammatically incorrect.
-3. Struck-Through / Crossed-Out Text: If a word or phrase has a horizontal line, diagonal slash, cross-out stroke, or scribble through it (e.g. started writing a word and crossed it out before writing the intended word, such as striking through 'grap' before 'pie-chart', or striking through 'possi' before 'positively'), transcribe it and mark it as [struck: original text] (e.g. '[struck: grap] pie-chart', '[struck: possi] positively'). NEVER transcribe struck-through words as plain active text.
+3. Struck-Through / Crossed-Out Text & Deletions:
+   - If a word, prefix, or phrase has a horizontal strike line, diagonal slash, scribble, or cross-out stroke through it (e.g. starting a word and crossing it out, such as striking 'grap' before 'pie-chart', or striking 'possi' before 'positively', or 'w-' before 'would'), mark it as [struck: text] (e.g. '[struck: grap] pie-chart', '[struck: possi] positively'). NEVER transcribe struck-through words as plain active text.
+   - MULTI-LINE & PARAGRAPH CROSS-OUTS: If multiple words, an entire line, or a whole paragraph is crossed out with a continuous horizontal line, large 'X', or diagonal slash, enclose the crossed-out content in [struck: ...]. NEVER absorb crossed-out text into the student's active answer.
+   - PROTECTED FUNCTION-WORDS: If an auxiliary verb, pronoun, or preposition (e.g. 'was', 'were', 'is', 'are', 'in', 'on', 'at', 'to', 'for', 'the') is crossed out and substituted, ensure it is enclosed in [struck: ...] and not transcribed as active text.
 4. If text is illegible, write [illegible] rather than guessing.
 5. If ambiguous but you can make a plausible reading, write it as [unclear: your reading].
 6. Preserve line breaks and paragraph structure as they appear.
@@ -25,6 +28,8 @@ Rules:
     - Terminal horizontal/upward flourish on 'r' or 'w' is a pen exit stroke, NOT an added letter 'e' (e.g., 'over', NOT 'overe'; 'Dear', NOT 'Deare').
     - Rounded cursive 'v' in common words ('have', 'over', 'never', 'remove') is the letter 'v', NOT 'r' ('have', NOT 'hare'; 'remove', NOT 'remore').
     - Curvy or arched cursive 's' (e.g. in 'his', 'this', 'is', 'shows') has an entry curve and rounded base: transcribe as 's', NOT 'n' (e.g., 'with his sharp teeth', NOT 'with hin'; 'this chart', NOT 'thin chart'; 'it is divided', NOT 'it in divided').
+11. Right-Edge / Margin Truncation: If a word is visibly cut off at the right edge of the page, margin, binding gutter, or photo frame (where ink strokes or letters exit the visible area and the word is clearly incomplete, e.g. 'renewabl', 'wor', 'pro', 'villa'), append [truncated] immediately after the partial word (e.g. 'renewabl[truncated]', 'wor[truncated]'). If a hyphen is visible before the edge, preserve it (e.g. 'Universi-[truncated]'). This distinguishes physical page-boundary clipping from student spelling mistakes.
+12. Ink-Density & Blank Space Awareness: Transcribe ONLY lines where genuine physical ink strokes are visible. If a portion of the page (e.g. bottom half) is blank paper with zero ink, STOP transcribing. NEVER invent, extrapolate, or hallucinate text to fill empty space.
 
 Now transcribe the attached image."""
 

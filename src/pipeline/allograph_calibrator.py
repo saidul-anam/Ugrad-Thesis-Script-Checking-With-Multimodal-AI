@@ -26,12 +26,17 @@ from src.pipeline.arbitration.symbolic_evidence import align_chars
 _ALPHA_WORD = re.compile(r"^[A-Za-z]+$")
 _PUNCT_STRIP = re.compile(r"^[^\w]+|[^\w]+$")
 
-# Cultural NCTB Terms / Names to avoid false-positive calibration
+# Cultural NCTB Terms / Names / Acronyms / Exam Abbreviations to avoid false-positive calibration
 CULTURAL_TERMS = {
     "gaza", "gazan", "dhaka", "lalbagh", "mukit", "tawhid", "udvash", "bengali",
     "bangla", "bangladesh", "rajshahi", "mirganj", "hsc", "ssc", "bkruet", "ruet",
-    "kuet", "buet", "ju", "ru", "cu", "du", "pto", "ai"
+    "kuet", "buet", "ju", "ru", "cu", "du", "pto", "ai",
+    # Exam structural abbreviations and common proper acronyms
+    "ans", "answ", "answer", "ques", "question", "qno", "no", "para", "sec",
+    "usa", "uk", "uae", "un", "who"
 }
+
+FORBIDDEN_ALLOGRAPH_TARGETS = {"ass"}
 
 
 class AllographCalibrator:
@@ -69,8 +74,8 @@ class AllographCalibrator:
         raw_words = []
         for line in transcript.split("\n"):
             line_s = line.strip()
-            # Ignore headers and tables
-            if not line_s or line_s.startswith("|") or line_s.startswith("---") or line_s.startswith("Ans to"):
+            # Ignore headers, tables, and question title lines
+            if not line_s or line_s.startswith("|") or line_s.startswith("---") or re.match(r'^(?:ans|answer|dans|q(?:uestion)?|no)\b', line_s, re.IGNORECASE):
                 continue
             for raw in line_s.split():
                 clean = _PUNCT_STRIP.sub("", raw)
@@ -102,7 +107,7 @@ class AllographCalibrator:
             if w_low.endswith("y"):
                 # Case 1: Simple plural/verb 's' (e.g. sources, dreamers, algorithms, features)
                 cand_s = w_low[:-1] + "s"
-                if cand_s in combined_vocab:
+                if cand_s in combined_vocab and cand_s not in FORBIDDEN_ALLOGRAPH_TARGETS:
                     terminal_y_matches[w_low] = cand_s
                     continue
                 # Case 2: Suffix 'ey' -> 'ess' (e.g. sickney -> sickness, businesy -> business)
@@ -114,14 +119,14 @@ class AllographCalibrator:
                     continue
                 # Case 3: Medial 'y' -> 's' in short word (e.g. eaye -> easy)
                 cand_med = w_low.replace("y", "s")
-                if cand_med in combined_vocab and len(cand_med) >= 4:
+                if cand_med in combined_vocab and len(cand_med) >= 4 and cand_med not in FORBIDDEN_ALLOGRAPH_TARGETS:
                     terminal_y_matches[w_low] = cand_med
                     continue
 
             # Hypothesis B: Medial/terminal 's' <-> 'n' stroke confusion (e.g. hin -> his, thin -> this)
             if "n" in w_low:
                 cand_sn = w_low.replace("n", "s")
-                if cand_sn in combined_vocab and levenshtein(w_low, cand_sn) == 1:
+                if cand_sn in combined_vocab and levenshtein(w_low, cand_sn) == 1 and cand_sn not in FORBIDDEN_ALLOGRAPH_TARGETS:
                     curvy_s_matches[w_low] = cand_sn
                     continue
 
@@ -243,6 +248,8 @@ class AllographCalibrator:
                 matching_dws = [dw for dw, sc, tc in word_cand_subs[w_low] if (sc, tc) == (src_c, tgt_c)]
                 if matching_dws:
                     best_dw = matching_dws[0]
+                    if best_dw in FORBIDDEN_ALLOGRAPH_TARGETS or w_low in CULTURAL_TERMS:
+                        continue
                     prof.adapted_words[w_low] = best_dw
                     rule_examples.append((w_low, best_dw))
 

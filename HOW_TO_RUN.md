@@ -126,6 +126,11 @@ python3 scripts/extract_scripts.py --lang bangla --top 3 --mock -y
 > [!NOTE]
 > **Page Checkpointing & Resume**: Extracted pages are saved to disk immediately (`checkpoints/page_<N>.json`). If an extraction is interrupted, re-running the command automatically resumes from the last completed page.
 
+```bash
+# Check Character Error Rate (CER) and Word Error Rate (WER) against ground truth
+python3 scripts/evaluate_transcription.py --lang english --script SE_11_Q1_0002
+```
+
 ---
 
 ### ⚖️ Stage C: Rubric Evaluation with Question Matching

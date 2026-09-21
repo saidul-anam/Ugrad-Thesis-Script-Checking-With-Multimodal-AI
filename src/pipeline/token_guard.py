@@ -63,7 +63,7 @@ def normalize_roman_numeral(token: str) -> Optional[str]:
 
 def is_token_in_protected_tag(token: str, full_text: str) -> bool:
     """
-    Check if a candidate token resides within [struck: ...] or [unclear: ...].
+    Check if a candidate token resides within [struck: ...], [unclear: ...], or [truncated].
     Protected tokens must never incur language mark deductions.
     """
     if not token or not full_text:
@@ -73,6 +73,13 @@ def is_token_in_protected_tag(token: str, full_text: str) -> bool:
     protected_spans = []
     for m in re.finditer(r'\[(struck|unclear):([^\]]+)\]', full_text, re.IGNORECASE):
         protected_spans.append((m.start(), m.end(), m.group(2)))
+
+    # Also find word[truncated] or [truncated: word]
+    for m in re.finditer(r'(\b\w+)?\s*\[truncated(?::\s*([^\]]+))?\]', full_text, re.IGNORECASE):
+        if m.group(1):
+            protected_spans.append((m.start(), m.end(), m.group(1)))
+        if m.group(2):
+            protected_spans.append((m.start(), m.end(), m.group(2)))
 
     token_lower = token.strip().lower()
     for start, end, inner in protected_spans:

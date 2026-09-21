@@ -226,3 +226,32 @@ def test_sentence_chunking_integrity():
     reconstructed = " ".join(chunks)
     assert reconstructed.split() == full_text.split()
 
+
+def test_ans_and_acronym_immunity(english_lexicon):
+    """Verify that 'Ans', 'USA', and other cultural terms are never adapted to 'Ass' or 'Use'."""
+    transcript = """
+    Ans to the Question No-1
+    Ans to the Question No-2
+    The USA is a country with high energy usage.
+    Ans of Question Number - 7
+    USA electricity production was high in 1980.
+    """
+    calibrator = AllographCalibrator(min_support=2)
+    profile = calibrator.calibrate(
+        script_id="SE_11_Q1_0001",
+        transcript=transcript,
+        lexicon=english_lexicon
+    )
+
+    # Neither "ans" nor "usa" should ever be adapted
+    assert "ans" not in profile.adapted_words
+    assert "usa" not in profile.adapted_words
+    # "ass" must never be an adapted target
+    assert "ass" not in profile.adapted_words.values()
+
+    calibrated_text, diffs = calibrator.apply_adaptations(transcript, profile)
+    assert "Ans" in calibrated_text
+    assert "Ass" not in calibrated_text
+    assert "USA" in calibrated_text
+
+

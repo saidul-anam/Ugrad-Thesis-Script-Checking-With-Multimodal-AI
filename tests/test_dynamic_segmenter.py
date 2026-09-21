@@ -186,3 +186,106 @@ def test_question_aware_error_attribution_and_markdown():
     assert "### Question 10: Informal Letter `[Subjective Writing]`" in md_text
     assert "familyes" in md_text
     assert "families" in md_text
+
+
+def test_bangladeshi_exam_header_variations():
+    """Verify robust extraction across diverse Bangladeshi exam headings and OCR artifacts."""
+    valid_order = ["1(A)", "1(B)", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    
+    assert extract_header_qno("Ans of Question Number - 7\nIn our country...", valid_q_order=valid_order) == "7"
+    assert extract_header_qno("Answer of the Question Number-2\n(i) -> Taking care", valid_q_order=valid_order) == "2"
+    assert extract_header_qno("Ans of Question Number- 3\nSummary of the text", valid_q_order=valid_order) == "3"
+    assert extract_header_qno("Ass of the Question Number- 1 (A)\na) -> ii", valid_q_order=valid_order) == "1(A)"
+    assert extract_header_qno("1 (B)\nAns: The writer describes...", current_parent="1(A)", valid_q_order=valid_order) == "1(B)"
+    assert extract_header_qno("Ansl. Answer of the Question Number-4\n(a) through (b) by", valid_q_order=valid_order) == "4"
+    assert extract_header_qno("Ans to the Question No- 05\n(a) education", valid_q_order=valid_order) == "5"
+    assert extract_header_qno("Question Number - 7\nParagraph about AI", valid_q_order=valid_order) == "7"
+    assert extract_header_qno("No. 8\nThe pie chart indicates", valid_q_order=valid_order) == "8"
+    assert extract_header_qno("Ans to the Question No. Z\nAI is good", valid_q_order=valid_order) == "7"
+    assert extract_header_qno("Ans: 1\n(A) MCQ", valid_q_order=valid_order) == "1(A)"
+    assert extract_header_qno("Ans: 10\nDear friend,", valid_q_order=valid_order) == "10"
+    assert extract_header_qno("Ans to the Qhe o. No. 1(B)\n(a) Answer", valid_q_order=valid_order) == "1(B)"
+
+
+def test_anti_overmatching_on_body_text():
+    """Ensure body text containing numbers, dates, and percentages is never falsely parsed as headers."""
+    valid_order = ["1(A)", "1(B)", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+
+    body1 = "In 1980 the main source was Coal which was 46%."
+    body2 = "From 1980 to 2000, 15 different power plants operated across the region."
+    body3 = "The rate increased by 2% in the second quarter."
+    body4 = "There are 3 major factors influencing this situation."
+    body5 = "The answer lies in the fact that 5 people were involved."
+
+    assert extract_header_qno(body1, valid_q_order=valid_order) is None
+    assert extract_header_qno(body2, valid_q_order=valid_order) is None
+    assert extract_header_qno(body3, valid_q_order=valid_order) is None
+    assert extract_header_qno(body4, valid_q_order=valid_order) is None
+    assert extract_header_qno(body5, valid_q_order=valid_order) is None
+
+
+def test_se_11_q1_0001_full_segmentation():
+    """Test full multi-page segmentation with realistic SE_11_Q1_0001 headers."""
+    q_schema = ExtractedQuestion(
+        question_id="SE_11_Q1",
+        language="english",
+        question_text="HSC English 1st Paper",
+        sub_questions=[
+            {"q_no": "1(A)", "name": "Multiple Choice Questions", "marks": 5.0},
+            {"q_no": "1(B)", "name": "Short Answer Questions", "marks": 10.0},
+            {"q_no": "2", "name": "Flow Chart", "marks": 10.0},
+            {"q_no": "3", "name": "Summary Writing", "marks": 10.0},
+            {"q_no": "4", "name": "Cloze Test with Clues", "marks": 5.0},
+            {"q_no": "5", "name": "Cloze Test without Clues", "marks": 10.0},
+            {"q_no": "6", "name": "Rearranging Sentences", "marks": 10.0},
+            {"q_no": "7", "name": "Paragraph Writing", "marks": 15.0},
+            {"q_no": "8", "name": "Interpreting Graph / Chart", "marks": 15.0},
+            {"q_no": "9", "name": "Completing a Story", "marks": 15.0},
+            {"q_no": "10", "name": "Informal Letter", "marks": 10.0},
+            {"q_no": "11", "name": "Theme of Poem", "marks": 8.0}
+        ]
+    )
+
+    pages_data = [
+        (1, "Ans of the Question Number- 1 (A)\n(a) -> i\n(b) -> ii\n\n1 (B)\n(a) Answer B"),
+        (2, "Answer of the Question Number-2\n(i) -> Education -> (ii) -> Knowledge"),
+        (3, "Ans of Question Number- 3\nIn this passage the author summarizes the impact."),
+        (4, "Ansl. Answer of the Question Number-4\n(a) development (b) society"),
+        (5, "Ans to Question Number - 5\n(a) resource (b) vital"),
+        (6, "Ans of Question Number - 7\nArtificial Intelligence is a branch of computer science."),
+        (7, "Ans to Question Number - 8\nThe pie chart represents electricity production in 1980."),
+        (8, "Ans of Question Number - 9\nOnce upon a time an old farmer lived in a village."),
+        (9, "Ans of Question Number - 10\nDear Rahim,\nI hope you are doing well."),
+        (10, "Ans of Question Number - 11\nTheme: The poem reflects on the beauty of nature.")
+    ]
+
+    page_objs = []
+    for p_no, text in pages_data:
+        page_objs.append(PageExtractionResult(
+            page_no=p_no,
+            image_path=f"page_{p_no}.png",
+            has_red_ink=False,
+            red_pixel_count=0,
+            stage1_transcription=Stage1TranscriptionResult(raw_transcript=text, word_count=len(text.split())),
+            stage2_verification=Stage2VerificationResult(verified_transcript=text, total_corrections_count=0),
+            stage3_errors=Stage3ErrorResult(errors=[])
+        ))
+
+    extraction = ExtractionResult(
+        script_id="SE_11_Q1_0001",
+        image_path="SE_11_Q1_0001.pdf",
+        timestamp="2026-09-20T00:00:00",
+        pages=page_objs,
+        stage1_transcription=Stage1TranscriptionResult(raw_transcript="", word_count=0),
+        stage2_verification=Stage2VerificationResult(verified_transcript="", total_corrections_count=0),
+        stage3_errors=Stage3ErrorResult(errors=[])
+    )
+
+    aligned = segment_script_into_questions(extraction, question_obj=q_schema)
+    segmented_q_nos = [item.q_no for item in aligned]
+
+    # Exactly the 11 attempted questions must be segmented cleanly
+    expected_qs = ["1(A)", "1(B)", "2", "3", "4", "5", "7", "8", "9", "10", "11"]
+    for eq in expected_qs:
+        assert eq in segmented_q_nos, f"Expected {eq} to be segmented, but got {segmented_q_nos}"
+

@@ -447,13 +447,22 @@ class ScriptCheckingPipeline:
             # ---------------------------------------------------------
             # STAGE 2: Autocorrection Verification & Audit
             # ---------------------------------------------------------
-            if skip_stage2:
-                print(f"[Extraction] [2/3] Stage 2: Skipped (Fast Mode enabled). Preserving Stage 1 verbatim. [Context: 0 tokens (bypassed)]")
+            is_clean_page = (
+                stage1_result.unclear_count == 0
+                and stage1_result.illegible_count == 0
+                and "[unclear:" not in stage1_result.raw_transcript
+                and "[illegible]" not in stage1_result.raw_transcript
+            )
+            conditional_stage2 = getattr(self.cfg.pipeline, "stage2_conditional", True) if hasattr(self, "cfg") and hasattr(self.cfg, "pipeline") else True
+
+            if skip_stage2 or (conditional_stage2 and is_clean_page):
+                bypass_reason = "Fast mode enabled" if skip_stage2 else "Stage 1 transcript clean (0 unclear/illegible markers)"
+                print(f"[Extraction] [2/3] Stage 2: Skipped ({bypass_reason}). Preserving Stage 1 verbatim. [Context: 0 tokens (bypassed)]")
                 stage2_result = Stage2VerificationResult(
                     verified_transcript=stage1_result.raw_transcript,
                     silent_corrections_fixed=[],
                     total_corrections_count=0,
-                    verification_notes="Fast mode: Stage 2 verification skipped; Stage 1 verbatim preserved."
+                    verification_notes=f"Conditional bypass ({bypass_reason}); Stage 1 verbatim preserved."
                 )
                 u2 = {}
             else:
@@ -769,6 +778,15 @@ class ScriptCheckingPipeline:
                         if key not in seen_errs:
                             seen_errs.add(key)
                             deduped.append(e)
+
+                    # Post-filter against full answer text to catch line-end edge truncations
+                    from src.utils.linguistic_sanitizer import verify_and_filter_stage3_errors
+                    deduped = verify_and_filter_stage3_errors(
+                        errors=deduped,
+                        question_vocab=set(question_vocab) if question_vocab else None,
+                        subject="Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English",
+                        transcript=ans_text
+                    )
 
                     q_err_res = Stage3ErrorResult(
                         errors=deduped,

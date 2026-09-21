@@ -42,6 +42,7 @@ class Stage1Transcriber:
         # Parse tags
         illegible_matches = re.findall(r"\[illegible\]", raw_text, re.IGNORECASE)
         unclear_matches = re.findall(r"\[unclear:[^\]]+\]", raw_text, re.IGNORECASE)
+        struck_matches = re.findall(r"\[struck:[^\]]+\]", raw_text, re.IGNORECASE)
 
         # Detect script
         has_bangla = bool(re.search(r"[\u0980-\u09FF]", raw_text))
@@ -60,6 +61,7 @@ class Stage1Transcriber:
             raw_transcript=raw_text,
             illegible_count=len(illegible_matches),
             unclear_count=len(unclear_matches),
+            struck_count=len(struck_matches),
             character_count=len(raw_text),
             word_count=len(words),
             detected_script=detected_script

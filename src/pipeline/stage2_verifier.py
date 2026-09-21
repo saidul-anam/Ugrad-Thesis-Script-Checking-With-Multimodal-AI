@@ -109,10 +109,9 @@ class Stage2Verifier:
         max_new_tokens: int = 3072,
         thinking_mode: bool = False
     ) -> Stage2VerificationResult:
-        # Truncate prompt text if extremely long to avoid exceeding context window
-        clipped_text = stage1_transcript[:3000] if len(stage1_transcript) > 3000 else stage1_transcript
+        # Prompt with full transcript without artificial string clipping
         prompt = build_stage2_prompt(
-            stage1_transcript=clipped_text,
+            stage1_transcript=stage1_transcript,
             question_syllabus=question_syllabus,
             question_reference_vocab=question_reference_vocab
         )
@@ -124,7 +123,7 @@ class Stage2Verifier:
                 system_prompt=STAGE2_SYSTEM_PROMPT,
                 temperature=temperature,
                 top_p=top_p,
-                max_new_tokens=min(max_new_tokens, 1536),
+                max_new_tokens=max_new_tokens,
                 thinking_mode=thinking_mode
             )
         except Exception as e:
@@ -137,7 +136,7 @@ class Stage2Verifier:
             )
 
         parsed_data = _extract_json_from_text(response)
-        if parsed_data and "verified_transcript" in parsed_data:
+        if parsed_data and ("verified_transcript" in parsed_data or "silent_corrections_fixed" in parsed_data):
             diffs = []
             declared_items = parsed_data.get("silent_corrections_fixed", [])
 

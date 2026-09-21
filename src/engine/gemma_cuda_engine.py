@@ -38,9 +38,8 @@ class GemmaCudaEngine(BaseVLMEngine):
         
         self.model = None
         self.processor = None
-        self.tokenizer = None
-        self.context_window = 4096
-        self.max_context_window = 4096
+        self.context_window = 16384
+        self.max_context_window = 16384
         self.last_usage = {}
         import threading
         self._inference_lock = threading.Lock()
@@ -287,6 +286,21 @@ class GemmaCudaEngine(BaseVLMEngine):
 
         self.model.eval()
         print(f"[GemmaCudaEngine] Model successfully initialized on CUDA.")
+
+        # Dynamically set context window from model configuration with safe operational ceiling
+        detected_pos = None
+        if hasattr(self.model, "config"):
+            detected_pos = getattr(self.model.config, "max_position_embeddings", None)
+            if detected_pos is None and hasattr(self.model.config, "text_config"):
+                detected_pos = getattr(self.model.config.text_config, "max_position_embeddings", None)
+
+        if detected_pos and isinstance(detected_pos, int) and detected_pos > 0:
+            self.context_window = min(detected_pos, 32768)
+            self.max_context_window = min(detected_pos, 32768)
+        else:
+            self.context_window = 16384
+            self.max_context_window = 16384
+        print(f"[GemmaCudaEngine] Active context window set to {self.context_window} tokens.")
 
 
     def generate_multimodal(

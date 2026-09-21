@@ -187,3 +187,111 @@ def test_objective_question_deduction_policy():
     prompt = build_modular_question_prompt(ans_q2, "Complete the flowchart", max_marks=10.0)
     assert "ZERO LINGUISTIC PENALTY" in prompt
     assert '"linguistic_penalty": 0.0' in prompt
+
+
+def test_verify_and_filter_right_edge_truncations():
+    """Verify that edge-truncated words at line ends are suppressed, while mid-line errors are kept."""
+    transcript = (
+        "we should increase the use of renewabl\n"
+        "energy in our daily life.\n"
+        "In 1980 the highest energy was pro\n"
+        "duced from coal.\n"
+        "They also lived in a small villa\n"
+        "near the river.\n"
+        "He will renewabl energy and see their familyes tomorrow.\n"
+    )
+
+    errors = [
+        # Line-end spelling truncation
+        LinguisticErrorItem(
+            error_type="spelling",
+            erroneous_text="renewabl",
+            suggested_correction="renewable",
+            context_sentence="we should increase the use of renewabl",
+            explanation="Orthographic error; missing final vowel."
+        ),
+        # Line-end grammar truncation
+        LinguisticErrorItem(
+            error_type="grammar",
+            erroneous_text="pro",
+            suggested_correction="produced",
+            context_sentence="In 1980 the highest energy was pro",
+            explanation="Incomplete verb form"
+        ),
+        # Line-end spelling truncation
+        LinguisticErrorItem(
+            error_type="spelling",
+            erroneous_text="villa",
+            suggested_correction="village",
+            context_sentence="They also lived in a small villa",
+            explanation="Spelling error"
+        ),
+        # Mid-line genuine spelling error (same word 'renewabl', but mid-line!)
+        LinguisticErrorItem(
+            error_type="spelling",
+            erroneous_text="renewabl",
+            suggested_correction="renewable",
+            context_sentence="He will renewabl energy and see their familyes tomorrow.",
+            explanation="Spelling error"
+        ),
+        # End-of-line genuine spelling error (not a truncation prefix!)
+        LinguisticErrorItem(
+            error_type="spelling",
+            erroneous_text="familyes",
+            suggested_correction="families",
+            context_sentence="He will renewabl energy and see their familyes tomorrow.",
+            explanation="Spelling error"
+        )
+    ]
+
+    filtered = verify_and_filter_stage3_errors(errors, transcript=transcript, subject="English")
+
+    # Only genuine non-edge-truncated errors should remain:
+    # 1. 'renewabl' when mid-line
+    # 2. 'familyes' (wrong suffix, not prefix truncation)
+    assert len(filtered) == 2
+    err_texts = [e.erroneous_text for e in filtered]
+    assert "familyes" in err_texts
+    assert "renewabl" in err_texts  # Mid-line occurrence preserved
+
+
+def test_se_11_q1_0001_renewabl_truncation_case():
+    """Verify that the exact line 92 'renewabl' from SE_11_Q1_0001 is suppressed."""
+    canonical_transcript_q8 = """
+In the given pie-chart we can see that
+the sources of the Use electricity in
+1980.
+
+In 1980 The main source of generation
+electricity in Use was [struck: 24%] Natural
+Coal which was the highest 46% of
+gas
+
+--- Page Break ---
+
+the total sources . It was the
+highest demand for generating electricity.
+After that Natural gas the second
+highest option for generating electricity
+which was 24 %. Then it was 16 power which was 16% of total .
+12% electricity a was generated from
+oil . A Now the least used one was
+Nuclear only 2%.
+
+So, we can make a [struck: col] conclusion that
+they [struck: used] used so much non-renewal
+energy which are limited in nature. If
+we want to save these natural resources
+we should increase the use of renewabl
+energy.
+"""
+    error = LinguisticErrorItem(
+        error_type="spelling",
+        erroneous_text="renewabl",
+        suggested_correction="renewable",
+        context_sentence="we should increase the use of renewabl energy",
+        explanation="Orthographic error; missing final vowel."
+    )
+
+    filtered = verify_and_filter_stage3_errors([error], transcript=canonical_transcript_q8, subject="English")
+    assert len(filtered) == 0  # Fully suppressed as right-edge truncation!

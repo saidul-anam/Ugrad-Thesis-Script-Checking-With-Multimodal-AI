@@ -189,7 +189,8 @@ class Stage3ErrorAnalyzer:
             validated_errors = verify_and_filter_stage3_errors(
                 errors=raw_errors,
                 question_vocab=q_vocab_set,
-                subject=subject
+                subject=subject,
+                transcript=verified_transcript
             )
 
             # Diagnostic logging if substantial answer produces zero errors

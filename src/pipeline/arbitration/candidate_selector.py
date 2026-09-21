@@ -201,21 +201,37 @@ def lexicon_candidates(
     return out
 
 
+FUNCTION_WORDS_SET: Set[str] = {
+    "at", "in", "on", "by", "for", "with", "from", "as", "than"
+}
+
+
 def select_candidates(
     errors: List[LinguisticErrorItem],
     q_no: Optional[str] = None,
     max_edits: int = 2,
 ) -> List[ArbitrationCandidate]:
-    """Build ArbitrationCandidate objects for every gate-able token pair in the error list."""
+    """
+    Build ArbitrationCandidate objects for genuine handwriting stroke ambiguities in the error list.
+    Bypasses pure grammatical function-word substitutions and syntax errors to prevent candidate flooding.
+    """
     cands: List[ArbitrationCandidate] = []
     q_key = str(q_no) if q_no is not None else "ALL"
     for idx, err in enumerate(errors):
+        err_type = (err.error_type or "spelling").lower()
+        if err_type == "syntax":
+            continue
+
         pairs = differing_token_pairs(err.erroneous_text or "", err.suggested_correction or "", max_edits)
         for p_idx, (read_tok, intended_tok) in enumerate(pairs):
+            # Bypass pure grammatical function word substitutions (e.g. at -> in, was -> were)
+            if err_type == "grammar" and (read_tok in FUNCTION_WORDS_SET or intended_tok in FUNCTION_WORDS_SET):
+                continue
+
             cands.append(ArbitrationCandidate(
                 candidate_id=f"{q_key}:{idx}:{p_idx}",
                 error_index=idx,
-                error_type=(err.error_type or "spelling").lower(),
+                error_type=err_type,
                 erroneous_text=err.erroneous_text or "",
                 suggested_correction=err.suggested_correction or "",
                 candidate_token=read_tok,

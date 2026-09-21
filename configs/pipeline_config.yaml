@@ -28,6 +28,7 @@ pipeline:
   stage0b_teacher_marks: true  # Toggle Stage 0b red-ink teacher mark extraction on/off
   stage1_verbatim: true
   stage2_verification: true
+  stage2_conditional: true  # Only verify pages with unclear/illegible markers (bypasses clean pages, saves ~13 VLM passes)
   stage3_error_extraction: true
   stage4_rubric_evaluation: true
   # Separate cap for stage 4: 2048 tokens gives thinking models enough budget for reasoning + full JSON

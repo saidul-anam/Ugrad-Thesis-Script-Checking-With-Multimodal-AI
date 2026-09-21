@@ -12,8 +12,9 @@ This guide details the complete, step-by-step workflow for:
 | Your Immediate Goal | Do You Need Human Transcription? | Time Required | Steps to Follow |
 | :--- | :--- | :--- | :--- |
 | **Evaluate AI Marking Accuracy against Teachers** | **No** (Uses `gt.txt` marks) | ~1 minute per script | Follow **Track A (Sections 1 & 3)** |
-| **Validate Transcription & Model Autocorrection (CER/WER)** | **Yes** (Proofread 3–5 pages) | ~5 minutes per page | Follow **Track B (Section 2)** |
+| **Validate Transcription & Model Autocorrection (CER/WER)** | **Yes** (Proofread 24 continuous pages, 1/script) | ~2–3 mins/page (~1 hr total) | Follow **Track B (Section 2)** |
 | **Validate Visual Arbitration Gate (Penmanship vs Error)** | **No** (Glance-level crop tags) | ~15 minutes for 50 crops | Follow **Track C (Section 4)** |
+| **Fix Question Segmentation / LaTeX / Red Marks** | **No** (Automated script tools) | ~1 minute | Follow **Section 5** |
 
 ---
 
@@ -71,14 +72,20 @@ Character Error Rate (CER) measures how closely the model's raw (Stage 1) and au
 > You do not need to transcribe from scratch or upload files from Google Drive. The system generates side-by-side draft text files and image crops directly from the extracted checkpoints.
 
 ### Step 2.1: Generate the Ground Truth Workspace
+
+#### Recommended Sampling Strategy: 24 Pages Total (1 Page per Script)
+- **100% Handwriting Diversity**: Transcribe exactly 1 continuous-writing page from each of the 24 student scripts. This guarantees every single student's handwriting style, penmanship quirks, and slant are represented in your CER/WER and Allograph calibration benchmarks.
+- **Statistical Power**: 24 pages $\times$ ~150 words $\approx$ 3,600 words / 20,000 characters. In academic HTR/OCR literature (e.g., ICDAR, IAM), a test set of 3,500+ words across 24 distinct writers provides solid confidence intervals.
+- **Time Required**: Because the tool gives you pre-filled machine drafts, proofreading 1 page takes only ~2–3 minutes. You can finish all 24 scripts in ~1 hour.
+
 Run `make_transcription_gt.py` to automatically extract page images and pre-fill transcript drafts:
 
 ```bash
-# Option A: Create drafts for specific continuous-writing pages (recommended: 3 to 5 pages)
-python3 scripts/make_transcription_gt.py --lang english --pages SE_11_Q1_0010:3,4,5
+# 🎯 Recommended for Thesis: Automatically select 1 continuous-writing page across all 24 scripts
+python3 scripts/make_transcription_gt.py --lang english --max-pages 24
 
-# Option B: Automatically select continuous-writing pages across extracted scripts (capped at 5 pages)
-python3 scripts/make_transcription_gt.py --lang english --max-pages 5
+# Option B: Create drafts for specific continuous-writing pages
+python3 scripts/make_transcription_gt.py --lang english --pages SE_11_Q1_0010:3,4,5
 ```
 
 This populates:
@@ -122,9 +129,13 @@ Change `"status"` from `"DRAFT - needs human correction"` to `"CORRECTED"`.
 > The evaluation script skips any file where status starts with `DRAFT` so that machine drafts are never scored against themselves.
 
 ### Step 2.4: Calculate CER, WER, and Silent-Correction Rate
-Run the evaluation script:
+Run the evaluation script across all corrected scripts, or focus on a single script:
 ```bash
+# Evaluate all corrected ground truth scripts
 python3 scripts/evaluate_transcription.py --lang english
+
+# Evaluate a single script only (e.g. SE_11_Q1_0002 or shorthand 0002)
+python3 scripts/evaluate_transcription.py --lang english --script SE_11_Q1_0002
 ```
 
 #### What this produces:
@@ -199,13 +210,54 @@ If you want to validate the **Stage 3b Visual Arbitration Gate** (which decides 
 
 ---
 
-## 🚀 Quick Command Cheat-Sheet
+## 🔧 Section 5: Fixing Extractions Properly Across All 24 Scripts
 
-| Task | Command |
-| :--- | :--- |
-| **Extract 1 Script** | `python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english --api --fast -y` |
-| **Create CER Drafts** | `python3 scripts/make_transcription_gt.py --lang english --pages SE_11_Q1_0010:3,4,5` |
-| **Calculate CER Benchmark** | `python3 scripts/evaluate_transcription.py --lang english` |
-| **Sync `gt.txt` Marks** | `python3 scripts/sync_ground_truth.py` |
-| **Grade Script vs `gt.txt`** | `python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0010 --lang english --api --eval-mode modular --force-evaluate -y` |
-| **Batch Evaluate All** | `python3 scripts/evaluate_scripts.py --top 5 --lang english --api --eval-mode modular -y` |
+If you notice extraction issues, broken formatting, or segmentation misalignments across the 24 scripts, **never re-run the 10+ hour VLM pipeline from scratch**. Use these targeted, instant utilities:
+
+### 5.1 Re-segment Answer Boundaries (Segmentation Fixes)
+If the model merged two questions or missed a cursive question header (e.g., `Ans to Question No - 3`):
+1. Open the script's `outputs/extracted/english/<script_id>/stage2_verified_transcript.txt` or `checkpoints/page_<n>.json` and ensure the `Ans to Question No - X` header line is clean.
+2. Run the dynamic answer segmenter to instantly recalculate aligned answers:
+```bash
+# Re-segment a single script:
+python3 scripts/resegment_extraction.py --lang english --script SE_11_Q1_0010
+
+# Re-segment ALL 24 scripts in batch:
+python3 scripts/resegment_extraction.py --lang english
+```
+
+### 5.2 Repair LaTeX Formatting & Dropped Struck Tags
+If flowchart questions (Q2) contain malformed LaTeX arrows (e.g., `\rightarrow` parsing glitches) or Stage 2 dropped student `[struck: ...]` strike-through tags:
+```bash
+# Scan and repair checkpoints across all 24 scripts:
+python3 scripts/repair_stage2_checkpoints.py --lang english
+```
+
+### 5.3 Correct Teacher Red-Ink Marks (Stage 0b Override)
+If the VLM missed or misread a teacher mark in the margins:
+1. Simply add the correct score in `gt.txt` under the script ID.
+2. Sync the marks into all extracted directories, metadata, and research CSV datasets:
+```bash
+python3 scripts/sync_ground_truth.py
+```
+
+### 5.4 Correcting OCR Glitches on a Specific Page
+If the model hallucinated or misread handwriting on a messy page:
+1. Open `outputs/extracted/english/<script_id>/checkpoints/page_<n>.json`.
+2. Edit `stage2_verification.verified_transcript` directly to match the student's actual ink.
+3. Re-run `python3 scripts/resegment_extraction.py --lang english --script <script_id>`.
+
+---
+
+## 🚀 Quick Command Cheat-Sheet (Full 24-Script Suite)
+
+| Task | Scope | Command |
+| :--- | :--- | :--- |
+| **Generate CER Workspace** | 24 Scripts (1 pg/script) | `python3 scripts/make_transcription_gt.py --lang english --max-pages 24` |
+| **Calculate CER / WER Benchmark** | All Corrected Pages | `python3 scripts/evaluate_transcription.py --lang english` |
+| **Repair LaTeX & Struck Tags** | All 24 Scripts | `python3 scripts/repair_stage2_checkpoints.py --lang english` |
+| **Re-segment Answer Boundaries** | All 24 Scripts | `python3 scripts/resegment_extraction.py --lang english` |
+| **Sync `gt.txt` Marks to Datasets** | All 24 Scripts | `python3 scripts/sync_ground_truth.py` |
+| **Grade Single Script vs `gt.txt`** | Single Script | `python3 scripts/evaluate_scripts.py --script-name SE_11_Q1_0010 --lang english --api --eval-mode modular --force-evaluate -y` |
+| **Batch Evaluate All Scripts** | All 24 Scripts | `python3 scripts/evaluate_scripts.py --top 24 --lang english --api --eval-mode modular -y` |
+

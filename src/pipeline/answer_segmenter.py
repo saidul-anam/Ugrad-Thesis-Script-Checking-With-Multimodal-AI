@@ -17,14 +17,15 @@ from src.core.schemas import (
 
 # Canonical header normalization mappings
 HEADER_NORMALIZATION_RULES = [
+    (re.compile(r'\b(?:Ass|Ansl)\b', re.IGNORECASE), 'Ans'),
     (re.compile(r'No[.,\s]*[Zz]\b', re.IGNORECASE), 'No. 7'),
-    (re.compile(r'\bDans\b', re.IGNORECASE), 'Ans: to the Q. No. 1(B)'),
+    (re.compile(r'\bDans\s*(?:to\s+(?:the\s+)?[Qq]|:)?', re.IGNORECASE), 'Ans: to the Q. No. 1(B)'),
     (re.compile(r'\bdo the [Qq]\b', re.IGNORECASE), 'to the Q'),
     (re.compile(r'Qhe o\.', re.IGNORECASE), 'Q. No.'),
     (re.compile(r'Anseve?r', re.IGNORECASE), 'Answer'),
     (re.compile(r'\bAns(?:i?to|i\s*to)\b', re.IGNORECASE), 'Ans to'),
     (re.compile(r'\bAnsi\b', re.IGNORECASE), 'Ans'),
-    (re.compile(r'\b(?:Ans\s*[:\s]*(?:to\s+(?:the\s+)?)?)(?:ques?|dues?)\b', re.IGNORECASE), 'Ans to the Q'),
+    (re.compile(r'\b(?:Ans\s*[:\s]*(?:(?:to|of)\s+(?:the\s+)?)?)(?:ques?|dues?)\b', re.IGNORECASE), 'Ans to the Q'),
     (re.compile(r'\$?\s*\\?i?ghtarrow\s*\$?', re.IGNORECASE), ' -> '),
 ]
 
@@ -42,11 +43,9 @@ def to_arabic_digits(text: str) -> str:
 
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
-    # English question headers (handles Ans/Answer/Dans/Que/due/Ques/dues/Qn, optional colons, etc.)
-    r'(?:\n|\A)\s*(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s\.\-]*(?:to\s+(?:the\s+)?)?(?:(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]*)?(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
-    r'(?:\n|\A)\s*Ans[:\s]+(?:to\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
-    r'(?:\n|\A)\s*(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]+(?:No[\s\.\,\:\-]*)?\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
-    r'(?:\n|\A)\s*No[\s\.\,\:\-]+\s*[0-9০-৯]{1,2}\s*(?:\([A-Za-z0-9\u0980-\u09FF]\))?|'
+    # English question headers (handles Ans/Answer/Dans/Ass/Ansl, to/of the, Question/Ques/Q/No/Number)
+    r'(?:\n|\A)\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}[0-9০-৯]{1,2}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
+    r'(?:\n|\A)\s*Ans[:\s]+(?:(?:to|of)\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
     # Standalone question subpart headers: 1(A), 1(B), 1(a), 1(b)
     r'(?:\n|\A)\s*[0-9০-৯]{1,2}\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)|'
     # Bengali question headers: supports '১ নং উত্তর', '১(ক) নং প্রশ্নের উত্তর', 'উত্তর: ১', 'উত্তর নং ১'
@@ -68,15 +67,18 @@ HEADER_SPLIT_REGEX = re.compile(
 )
 
 HEADER_EXTRACT_REGEX = re.compile(
-    r'^\s*(?:Ans(?:i?to|i\s*to)?|Answer|Dans)[:\s\.\-]*(?:to\s+(?:the\s+)?)?(?:(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]*)?(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'^\s*(?:Q(?:uestion|uest|ues|ue|n)?|due|dues)[\s\.\,\:\-]*(?:No[\s\.\,\:\-]*)?\s*([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'^\s*(?:No[\s\.\,\:\-]+)\s*([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?)\b|'
+    r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
     r'^\s*([0-9]{1,2})[ \t]*[\(（]([A-Za-z0-9])[\)）]\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*[\(（]([A-B])[\)）]\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*([ⒶⒷ])\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*([A-B])\s*$',
     re.IGNORECASE | re.MULTILINE
 )
+
+VALID_HEADER_INTERMEDIATE_WORDS = {
+    "to", "of", "the", "question", "questions", "ques", "que", "qn", "no", "number", "num", "n", "q", "qhe", "o", "ans", "answer"
+}
+
 
 
 def normalize_header_text(text: str) -> str:
@@ -94,36 +96,121 @@ _KEYWORD_STOPWORDS = {
 }
 
 
-def _extract_explicit_english_header(arabic_lines: str, valid_q_order: Optional[List[str]] = None) -> Optional[str]:
-    """Canonical q_no from an explicit English question header, else None."""
-    match = HEADER_EXTRACT_REGEX.search(arabic_lines)
-    if not match:
-        return None
-    groups = [g for g in match.groups() if g]
-    if not groups:
-        return None
-    # If matched regex group for '1(B)' as two groups (e.g. ('1', 'B'))
-    if len(groups) >= 2 and groups[0].isdigit() and len(groups[1]) == 1 and groups[1].isalpha():
-        clean_val = f"{int(groups[0])}({groups[1].upper()})"
-    else:
-        val = groups[0].strip().upper()
-        clean_val = re.sub(r'\b0+(\d+)', r'\1', val)
+def _extract_explicit_english_header(
+    arabic_lines: str,
+    valid_q_order: Optional[List[str]] = None,
+    current_parent: Optional[str] = None
+) -> Optional[str]:
+    """
+    Schema-Constrained Canonical Anchor-and-Validate Header Parser.
+    
+    1. Checks for standalone subparts e.g. (A), (B), (a), (b), Ⓐ, Ⓑ.
+    2. Detects header intent anchors (ans, answer, dans, ass, ansl, q, ques, question, no, number, num).
+    3. Extracts candidate question number and subpart.
+    4. Validates candidate against valid_q_order from question_obj to eliminate false positives.
+    """
+    first_lines = "\n".join(arabic_lines.strip().split("\n")[:4])
 
-    has_1a = valid_q_order and any(q in ("1(A)", "1A") for q in valid_q_order)
-    has_plain_1 = valid_q_order and "1" in valid_q_order and not has_1a
+    # 1. Standalone subparts following Question 1 or active parent
+    if current_parent in ["1", "1(A)", "1A"]:
+        sub_m = re.search(r'^\s*[\(（]([A-Da-d])[\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', first_lines, re.MULTILINE)
+        if sub_m:
+            return f"1({sub_m.group(1).upper()})"
+        sub_circle = re.search(r'^\s*([Ⓐ-Ⓓ])\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', first_lines, re.MULTILINE)
+        if sub_circle:
+            circle_map = {'Ⓐ': 'A', 'Ⓑ': 'B', 'Ⓒ': 'C', 'Ⓓ': 'D'}
+            return f"1({circle_map.get(sub_circle.group(1), 'A')})"
 
-    if clean_val in ["1", "1A", "1(A)", "A", "Ⓐ"]:
-        return "1" if has_plain_1 else "1(A)"
-    elif clean_val in ["1B", "1(B)", "B", "Ⓑ"]:
-        return "1(B)"
-    elif clean_val in ["Z", "N"]:
+    # 2. Extract non-empty, non-structural leading lines
+    clean_lines = []
+    for l in first_lines.split("\n"):
+        l_str = l.strip()
+        if not l_str or l_str.startswith("|") or l_str.startswith("---"):
+            continue
+        clean_lines.append(l_str)
+
+    if not clean_lines:
+        return None
+
+    top_line = clean_lines[0]
+
+    # Special case: OCR artifact 'No. Z' -> 7
+    if re.search(r'\bNo[.,\s]*[Zz]\b', top_line, re.IGNORECASE):
         return "7"
-    elif clean_val in [str(i) for i in range(1, 25)]:
-        return clean_val
-    sub_m = re.match(r'^([0-9]{1,2})\s*\(([A-Za-z0-9])\)$', clean_val)
-    if sub_m:
-        return f"{sub_m.group(1)}({sub_m.group(2).upper()})"
-    return clean_val
+
+    # Standalone question subpart format e.g. "1(A)" or "1 (B)" or "1(b)"
+    standalone_m = re.match(r'^\s*([0-9]{1,2})\s*[\(（]([A-Za-z])[\)）]\s*[\:\.\-]?', top_line)
+    if standalone_m:
+        candidate = f"{int(standalone_m.group(1))}({standalone_m.group(2).upper()})"
+        if not valid_q_order or candidate in valid_q_order:
+            return candidate
+        return None
+
+    # Connected header anchor pattern: requires anchor (Ans/Answer/Dans/Ass/Q/No) connected to a number
+    # through valid header connectors (to, of, the, question, no, punctuation).
+    # This strictly prevents body sentences like "The answer lies in the fact that 5 people were involved"
+    header_m = re.match(
+        r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b([^\n\r0-9]{0,40})([0-9]{1,2})\s*(?:[\(（\.\s]*([A-Za-z0-9])[\)）]?)?',
+        top_line,
+        re.IGNORECASE
+    )
+
+    if header_m:
+        intermediate = header_m.group(1)
+        inter_words = [w.lower() for w in re.findall(r'[A-Za-z]+', intermediate)]
+        if any(w not in VALID_HEADER_INTERMEDIATE_WORDS for w in inter_words):
+            header_m = None
+
+    if not header_m:
+        # Check if line has subpart letter like "Ans (A)" or "Ans: B"
+        sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-B])[\)）]|([A-B])\b)', top_line, re.IGNORECASE)
+        if sub_letter_m:
+            let = (sub_letter_m.group(1) or sub_letter_m.group(2)).upper()
+            return f"1({let})"
+        return None
+
+    raw_num = str(int(header_m.group(2)))
+    sub_letter = header_m.group(3).upper() if header_m.group(3) else None
+
+
+    # If subpart wasn't on the same line, check if the immediately following line specifies the subpart
+    # e.g.:
+    # Line 1: Ans: to the Q. No. 1
+    # Line 2: (A)
+    if not sub_letter and len(clean_lines) > 1:
+        next_line = clean_lines[1].strip()
+        next_sub = re.match(r'^\s*(?:[\(（]([A-Da-d])[\)）]|([Ⓐ-Ⓓ]))\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', next_line)
+        if next_sub:
+            if next_sub.group(1):
+                sub_letter = next_sub.group(1).upper()
+            elif next_sub.group(2):
+                circle_map = {'Ⓐ': 'A', 'Ⓑ': 'B', 'Ⓒ': 'C', 'Ⓓ': 'D'}
+                sub_letter = circle_map.get(next_sub.group(2), 'A')
+
+    candidate = f"{raw_num}({sub_letter})" if sub_letter and sub_letter in ["A", "B", "C", "D", "E"] else raw_num
+
+    # 4. Schema-Constrained Validation
+    if valid_q_order:
+        if candidate in valid_q_order:
+            return candidate
+
+        if candidate == "1":
+            if any(q in ("1(A)", "1A") for q in valid_q_order) and "1" not in valid_q_order:
+                return "1(A)"
+            elif "1" in valid_q_order:
+                return "1"
+
+        if sub_letter:
+            normalized_cand = f"{raw_num}({sub_letter})"
+            if normalized_cand in valid_q_order:
+                return normalized_cand
+
+        return None
+
+    if raw_num.isdigit() and 1 <= int(raw_num) <= 25:
+        return candidate
+
+    return None
 
 
 def detect_structural_fingerprint(
@@ -275,7 +362,7 @@ def extract_header_qno(
 
     # 1. Explicit numeric English header first (an explicit "Ans to the Q No 11" must never be
     #    overridden by topic keywords). Keyword matching (below) only runs when no header is present.
-    explicit = _extract_explicit_english_header(arabic_lines, valid_q_order=valid_q_order)
+    explicit = _extract_explicit_english_header(arabic_lines, valid_q_order=valid_q_order, current_parent=current_parent)
     if explicit:
         return explicit
 

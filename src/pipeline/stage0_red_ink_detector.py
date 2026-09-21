@@ -101,18 +101,29 @@ class RedInkDetector:
         margin_has_red_ink = margin_red_pixel_count >= self.margin_pixel_threshold
         body_has_red_ink = body_red_pixel_count >= 400
 
-        # 6. Inpaint body checkmarks to generate a clean student handwriting canvas for Stage 1
+        # 6. Luminance-preserving suppression of body checkmarks to generate a clean student handwriting canvas for Stage 1
         clean_pil_image = None
         if self.enable_inpainting and body_has_red_ink:
             try:
-                inpaint_mask = np.zeros_like(filtered_mask)
-                # Slight dilation to cover tick edges cleanly
+                # Dilate body mask slightly to cover stroke fringes
                 dilate_kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
                 dilated_body = cv2.dilate(body_mask, dilate_kernel, iterations=1)
-                inpaint_mask[:, margin_w:] = dilated_body
 
-                inpainted_bgr = cv2.inpaint(image_bgr, inpaint_mask, inpaintRadius=3, flags=cv2.INPAINT_TELEA)
-                clean_pil_image = Image.fromarray(cv2.cvtColor(inpainted_bgr, cv2.COLOR_BGR2RGB))
+                # Estimate background paper luminance from high-value non-text pixels
+                gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY)
+                paper_val = int(np.median(gray[gray > 180])) if np.any(gray > 180) else 235
+
+                # Suppress red ticks on blank paper, but preserve dark student handwriting strokes underneath
+                clean_bgr = image_bgr.copy()
+                body_region = clean_bgr[:, margin_w:]
+                body_gray = gray[:, margin_w:]
+
+                # Pure red marks on paper have higher luminance; overlapping student strokes are dark (gray < 35)
+                pure_teacher_mask = (dilated_body > 0) & (body_gray >= 35)
+                body_region[pure_teacher_mask] = [paper_val, paper_val, paper_val]
+                clean_bgr[:, margin_w:] = body_region
+
+                clean_pil_image = Image.fromarray(cv2.cvtColor(clean_bgr, cv2.COLOR_BGR2RGB))
             except Exception:
                 clean_pil_image = Image.fromarray(cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB))
         else:

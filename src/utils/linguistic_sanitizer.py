@@ -12,6 +12,10 @@ import re
 import difflib
 from typing import List, Set, Optional
 from src.core.schemas import LinguisticErrorItem
+from src.utils.edge_truncation_detector import (
+    stitch_cross_line_truncations,
+    is_right_edge_truncation
+)
 
 
 # Standard English dictionary loader with fallback
@@ -87,21 +91,12 @@ def sanitize_transcript_for_linguistic_analysis(text: str) -> str:
     if not text:
         return ""
 
-    # 1. Stitch hyphenated line-wraps across line breaks (e.g. "Universi-\nty" -> "University")
-    stitched = re.sub(r"(\b[a-zA-Z]{3,})-\s*\n\s*([a-zA-Z]{2,}\b)", r"\1\2", text)
-
-    # 2. Stitch margin breaks where a word is broken without a hyphen (e.g. "Universi\nty" in tight margins)
-    # Only if the combined word forms a valid English word
+    # 1. Stitch cross-line word breaks (hyphenated, [truncated] tagged, or unhyphenated splits)
     lexicon = get_english_lexicon()
-    def _stitch_unhyphenated(match):
-        part1 = match.group(1)
-        part2 = match.group(2)
-        combined = (part1 + part2).lower()
-        if combined in lexicon and len(part1) >= 3 and len(part2) >= 2:
-            return part1 + part2
-        return match.group(0)
+    stitched, _ = stitch_cross_line_truncations(text, lexicon)
 
-    stitched = re.sub(r"(\b[a-zA-Z]{3,})\s*\n\s*([a-zA-Z]{2,}\b)", _stitch_unhyphenated, stitched)
+    # 2. Clean residual [truncated] tags so brackets do not generate syntax/punctuation noise
+    stitched = re.sub(r'\[truncated(?::\s*[^\]]+)?\]', '', stitched, flags=re.IGNORECASE)
 
     # 3. Strip exam header prefixes at the beginning of lines (e.g. "Dans: The author..." -> "The author...")
     # Use [ \t] instead of \s to prevent consuming newlines
@@ -130,21 +125,23 @@ def sanitize_transcript_for_linguistic_analysis(text: str) -> str:
 def verify_and_filter_stage3_errors(
     errors: List[LinguisticErrorItem],
     question_vocab: Optional[Set[str]] = None,
-    subject: str = "English"
+    subject: str = "English",
+    transcript: Optional[str] = None
 ) -> List[LinguisticErrorItem]:
     """
     Post-process and validate errors extracted by Stage 3 LLM.
     
     Rules enforced:
     1. Header Filter: Discards errors stemming from exam prefixes (e.g. 'Dans', 'Ans', 'Q. No').
-    2. OCR Artifact Detection: Cursive OCR slips (e.g. 'thad' -> 'that', 'beals' -> 'beats') are suppressed.
-    3. Proper Noun / Question Whitelist: If the word or suggested correction is in the question paper
+    2. Edge Truncation Gate: Suppresses false spelling/grammar errors on words cut off at right margins/photo edges.
+    3. OCR Artifact Detection: Cursive OCR slips (e.g. 'thad' -> 'that', 'beals' -> 'beats') are suppressed.
+    4. Proper Noun / Question Whitelist: If the word or suggested correction is in the question paper
        vocabulary (e.g. 'Pasteur', 'Gaza', 'Joseph Meister'), immune from spelling penalties.
-    4. Dictionary Gate: If erroneous_text is a valid dictionary word (e.g. 'really' in 'really of Gaza'),
+    5. Dictionary Gate: If erroneous_text is a valid dictionary word (e.g. 'really' in 'really of Gaza'),
        it CANNOT be a spelling error. Reclassifies to 'grammar' or 'syntax'.
-    5. Single-Word Precision: For spelling errors, erroneous_text must be exactly 1 word. If multiple
+    6. Single-Word Precision: For spelling errors, erroneous_text must be exactly 1 word. If multiple
        words are provided, reclassifies to 'syntax' or 'grammar'.
-    6. Compound Words / Hyphenations: Common closed compounds in note-taking (e.g. 'healthrisk') are
+    7. Compound Words / Hyphenations: Common closed compounds in note-taking (e.g. 'healthrisk') are
        demoted or filtered.
     """
     if not errors:
@@ -179,13 +176,19 @@ def verify_and_filter_stage3_errors(
         if any(h in err_clean.lower().split() for h in ["dans", "qno"]):
             continue
 
-        # 2. Check proper nouns and question paper vocabulary
+        # 2. Check right-edge / margin truncation across all error categories
+        # (Catches spelling like 'renewabl' -> 'renewable', 'wor' -> 'words', 'villa' -> 'village',
+        # and grammar like 'pro' -> 'produced', 'co' -> 'comes', 'w' -> 'which')
+        if is_right_edge_truncation(err_clean, corr_clean, context_sentence=err.context_sentence, transcript=transcript, lexicon=lexicon):
+            continue
+
+        # 3. Check proper nouns and question paper vocabulary
         if err_clean.lower() in q_vocab or corr_clean.lower() in q_vocab:
             # If word is from question paper, it is not a student spelling error
             if "spell" in etype:
                 continue
 
-        # 3. Spelling Error Gate
+        # 4. Spelling Error Gate
         if "spell" in etype:
             # Rule A: Multi-word phrase cannot be a spelling error
             if len(words) > 1:
@@ -203,11 +206,9 @@ def verify_and_filter_stage3_errors(
                     # Valid compound spacing in notes, do not penalize as spelling
                     continue
 
-            # Rule D: Line-break truncation fragments (e.g. "Universi" for "University")
-            if corr_clean.lower().startswith(single_token) and len(corr_clean) - len(single_token) <= 3:
-                # Suspected margin break truncation
-                if single_token in ["universi", "organi", "technolo"]:
-                    continue
+            # Rule D: Line-break truncation fragments (e.g. "Universi" for "University", "renewabl" for "renewable")
+            if is_right_edge_truncation(single_token, corr_clean, context_sentence=err.context_sentence, transcript=transcript, lexicon=lexicon):
+                continue
 
             # Rule E: Dictionary Check - If erroneous word is actually a valid English word,
             # it is a grammatical / lexical choice error (e.g., "really" instead of "reality"),

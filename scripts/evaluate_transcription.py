@@ -42,6 +42,7 @@ def main() -> None:
     ap.add_argument("--extracted-dir", default=None, help="default: outputs/extracted/<lang>")
     ap.add_argument("--out-dir", default="outputs/benchmarks")
     ap.add_argument("--tag", default="", help="label for this run (e.g. ablation name)")
+    ap.add_argument("--script", "--script-id", default=None, help="Filter evaluation to a single script ID (e.g. SE_11_Q1_0002 or 0002)")
     ap.add_argument("--include-drafts", action="store_true")
     args = ap.parse_args()
 
@@ -53,10 +54,19 @@ def main() -> None:
         print(f"No ground truth at {gt_dir}. Run scripts/make_transcription_gt.py and correct the drafts first.")
         sys.exit(1)
 
+    target_script = args.script.strip().replace(".pdf", "") if args.script else None
+    available_scripts = sorted(p.name for p in gt_dir.iterdir() if p.is_dir())
+    if target_script and not any(target_script == s or target_script in s for s in available_scripts):
+        print(f"Error: Script '{args.script}' not found in ground truth directory {gt_dir}.")
+        print(f"Available ground truth scripts: {', '.join(available_scripts)}")
+        sys.exit(1)
+
     rows: List[Dict[str, Any]] = []
     skipped_drafts = 0
     for script_dir in sorted(p for p in gt_dir.iterdir() if p.is_dir()):
         script_id = script_dir.name
+        if target_script and (target_script != script_id and target_script not in script_id):
+            continue
         for txt in sorted(script_dir.glob("page_*.txt"), key=lambda p: int(re.findall(r"\d+", p.stem)[0])):
             n = int(re.findall(r"\d+", txt.stem)[0])
             meta_path = script_dir / f"page_{n}.meta.json"

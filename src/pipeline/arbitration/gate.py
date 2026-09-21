@@ -63,6 +63,7 @@ class EvidenceArbitrationGate:
         self.language = language
         self.verbose = verbose
         self.page_transcripts = page_transcripts
+        self.full_transcript = full_transcript or "\n\n".join(page_transcripts.values()) if page_transcripts else ""
         self.lexicon = lexicon or set()
         self.question_vocab = {w.lower() for w in (question_vocab or set())}
         self._lexicon_indices: set = set()
@@ -297,6 +298,19 @@ class EvidenceArbitrationGate:
                     break
         if is_aborted_draft:
             ev.notes.append(f"Aborted / struck-through draft token '{cand.candidate_token}' followed by corrected word: Benefit of Doubt applied")
+            score = max(score, self.cfg.threshold_ambiguity)
+
+        # Right-Edge / Margin Truncation Safeguard:
+        # If candidate token is cut off at the right margin/line end or page boundary
+        from src.utils.edge_truncation_detector import is_right_edge_truncation
+        if is_right_edge_truncation(
+            erroneous_text=cand.candidate_token,
+            suggested_correction=cand.intended_token,
+            context_sentence=cand.context_sentence,
+            transcript=self.full_transcript,
+            lexicon=self.lexicon
+        ):
+            ev.notes.append(f"Right-edge / margin truncation detected for '{cand.candidate_token}' -> '{cand.intended_token}': Benefit of Doubt applied")
             score = max(score, self.cfg.threshold_ambiguity)
 
         verdict = quantize(score, self.cfg.threshold_ambiguity, self.cfg.threshold_genuine)
