@@ -25,6 +25,7 @@ from src.core.schemas import (
 )
 from src.pipeline.arbitration.candidate_selector import select_candidates, lexicon_candidates, levenshtein
 from src.pipeline.arbitration.symbolic_evidence import align_chars, phonetic_plausibility
+from src.utils.strikethrough_collision_resolver import COMMON_PREPOSITIONS
 from src.pipeline.arbitration.writer_profile import (
     WriterProfile,
     build_writer_profile,
@@ -285,19 +286,50 @@ class EvidenceArbitrationGate:
             ev.notes.append(f"Writer allograph rule matched in profile: '{cand.candidate_token}' -> '{cand.intended_token}'")
             score = max(score, self.cfg.threshold_ambiguity)
 
-        # Struck-through / aborted word safeguard:
+        # Struck-through / aborted word & collision safeguard:
         # If student began writing a word, struck it out, and wrote the full word immediately after
-        # (e.g. 'possi positively', 'grap pie-chart'), or token is enclosed in strike marks:
+        # (e.g. 'possi positively', 'grap pie-chart'), duplicate word stutter ('are are'),
+        # preposition collision ('by for'), or token is enclosed in strike marks:
         is_aborted_draft = False
         words_in_ctx = re.findall(r'[A-Za-z]+(?:-[A-Za-z]+)*', cand.context_sentence.lower())
         for idx, w in enumerate(words_in_ctx[:-1]):
             if w == c_low:
                 next_w = words_in_ctx[idx+1]
+                # Stutter / duplicate word (e.g. 'are are')
+                if w == next_w:
+                    is_aborted_draft = True
+                    break
+                # Adjacent preposition collision (e.g. 'by for')
+                if w in COMMON_PREPOSITIONS and next_w in COMMON_PREPOSITIONS and w != next_w:
+                    is_aborted_draft = True
+                    break
+                # Partial fragment followed by word start
                 if (len(c_low) >= 2 and next_w.startswith(c_low[:3])) or next_w in ("pie-chart", "pie", "chart", "graph", "table", "positively"):
                     is_aborted_draft = True
                     break
-        if is_aborted_draft:
-            ev.notes.append(f"Aborted / struck-through draft token '{cand.candidate_token}' followed by corrected word: Benefit of Doubt applied")
+        if "[struck:" in cand.context_sentence.lower():
+            is_aborted_draft = True
+
+        # Optical Strikethrough Detection on Candidate Crop:
+        crop_has_strike = False
+        if crop is not None and getattr(crop, "image", None) is not None:
+            try:
+                from src.pipeline.stage0_strikethrough_detector import StrikethroughDetector
+                s_det = StrikethroughDetector(min_line_width=15, max_line_height=8)
+                s_res = s_det.detect(crop.image)
+                if s_res.has_strikethrough:
+                    crop_has_strike = True
+                    ev.notes.append(f"Optical strikethrough confirmed on crop across '{cand.candidate_token}': {s_res.details}")
+            except Exception as ex:
+                ev.notes.append(f"crop strike detection failed: {ex}")
+
+        if cand.error_type == "strikethrough_suspect":
+            if crop_has_strike or is_aborted_draft or ev.forced_choice in ("intended", "neither"):
+                ev.notes.append(f"Strikethrough suspect confirmed for '{cand.candidate_token}': Benefit of Doubt applied")
+                score = max(score, self.cfg.threshold_ambiguity)
+
+        if is_aborted_draft or crop_has_strike:
+            ev.notes.append(f"Aborted / struck-through draft token '{cand.candidate_token}': Benefit of Doubt applied")
             score = max(score, self.cfg.threshold_ambiguity)
 
         # Right-Edge / Margin Truncation Safeguard:
@@ -405,6 +437,26 @@ class EvidenceArbitrationGate:
         confirmed: List[LinguisticErrorItem] = []
         cleared: List[Dict[str, Any]] = []
         for idx, err in enumerate(errors):
+            # Strikethrough / abandoned draft collision immunity
+            err_clean = (err.erroneous_text or "").strip().lower()
+            err_parts = err_clean.split()
+            is_collision = (
+                (len(err_parts) == 2 and err_parts[0] == err_parts[1])
+                or (len(err_parts) == 2 and err_parts[0] in COMMON_PREPOSITIONS and err_parts[1] in COMMON_PREPOSITIONS and err_parts[0] != err_parts[1])
+                or ("[struck:" in (err.context_sentence or "").lower())
+            )
+            if is_collision:
+                cleared.append({
+                    "candidate": err.erroneous_text,
+                    "intended_word": err.suggested_correction,
+                    "verdict": AMBIGUITY,
+                    "reason": "Strikethrough / abandoned draft collision. Zero mark deduction.",
+                    "normalize": False,
+                    "candidate_id": f"{q_no or 'ALL'}:{idx}:0",
+                })
+                self._log(f"Q{q_no or '-'} '{err.erroneous_text}' cleared as Strikethrough Collision (zero deduction).")
+                continue
+
             recs = by_error.get(idx)
             if not recs:
                 if idx not in self._lexicon_indices:
@@ -416,14 +468,15 @@ class EvidenceArbitrationGate:
                 continue
             # all pairs AMBIGUITY/UNCERTAIN -> drop the deduction
             for r in recs:
+                is_strike_suspect = (r.candidate.error_type == "strikethrough_suspect")
                 if r.verdict == AMBIGUITY:
                     cleared.append({
                         "candidate": r.candidate.candidate_token,
                         "intended_word": r.candidate.intended_token,
                         "verdict": AMBIGUITY,
                         "reason": f"ambiguity={r.ambiguity_score:.2f} (loc={r.evidence.localization_method}, "
-                                  f"fc={r.evidence.forced_choice}, writer_n={r.evidence.writer_pair_count})",
-                        "normalize": True,
+                                  f"fc={r.evidence.forced_choice}, writer_n={r.evidence.writer_pair_count})" if not is_strike_suspect else "Strikethrough / abandoned draft verified on crop. Zero mark deduction.",
+                        "normalize": not is_strike_suspect,
                         "candidate_id": r.candidate.candidate_id,
                     })
                 else:

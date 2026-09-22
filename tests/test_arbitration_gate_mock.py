@@ -118,3 +118,45 @@ def test_gate_adopts_consensus_token():
     assert cand.intended_token == "verry"
     assert rec.evidence.consensus_agreement_intended == 1.0
     assert rec.evidence.consensus_signal == 1.0
+
+
+def test_gate_clears_strikethrough_suspect_on_crop():
+    import numpy as np
+    import cv2
+    
+    # Create image crop with a horizontal strike line through letters
+    arr = np.full((100, 200), 255, dtype=np.uint8)
+    cv2.putText(arr, "many", (20, 60), cv2.FONT_HERSHEY_SIMPLEX, 1.0, 0, 2)
+    cv2.line(arr, (15, 52), (120, 52), 0, 2)
+    crop_img = Image.fromarray(arr)
+
+    gate = EvidenceArbitrationGate(
+        engine=MockGemmaEngine(), cfg=ArbitrationConfig(), script_id="test", output_dir="/tmp",
+        page_images=[(1, Image.new("RGB", (100, 100)), "p1.png")],
+        page_transcripts={1: "it helps many us"}, clean_image_fn=None, full_transcript="it helps many us",
+        lexicon={"it", "helps", "us", "many"}
+    )
+    class StrikeCrop:
+        image = crop_img
+        transcript = "it helps many us"
+        method = "bbox"
+        match_ratio = 1.0
+        path = "/tmp/crop.png"
+    gate.localizer.locate = lambda c: StrikeCrop()
+
+    cand = ArbitrationCandidate(
+        candidate_id="7:0:strike",
+        error_index=0,
+        error_type="strikethrough_suspect",
+        erroneous_text="helps many us",
+        suggested_correction="helps many of us",
+        candidate_token="many",
+        intended_token="[struck]",
+        context_sentence="it is a software programme and it helps many us by solve many problems",
+        page_no=1,
+    )
+    rec = gate._score_candidate(cand)
+    assert rec.verdict == "HANDWRITING_AMBIGUITY"
+    assert rec.ambiguity_score >= 0.85
+    assert any("Optical strikethrough" in note for note in rec.evidence.notes)
+

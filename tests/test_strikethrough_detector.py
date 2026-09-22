@@ -43,3 +43,19 @@ def test_strikethrough_detector_rejects_bottom_underline():
 
     # Underline without ink below should not be treated as a strikethrough traversing letters
     assert res.region_count == 0
+
+
+def test_strikethrough_detector_multi_word():
+    detector = StrikethroughDetector(min_line_width=20, max_line_height=8)
+    arr = np.full((400, 600), 255, dtype=np.uint8)
+
+    # Long text line with strike across multiple words
+    cv2.putText(arr, "In 1980 the percentage was", (40, 150), cv2.FONT_HERSHEY_SIMPLEX, 1.0, 0, 2)
+    cv2.line(arr, (30, 142), (450, 142), 0, 2)
+
+    img = Image.fromarray(arr)
+    res = detector.detect(img)
+
+    assert res.has_strikethrough
+    assert res.multi_word_count >= 1
+    assert any(r.is_multi_word for r in res.regions)

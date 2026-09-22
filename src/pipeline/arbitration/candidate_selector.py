@@ -206,19 +206,86 @@ FUNCTION_WORDS_SET: Set[str] = {
 }
 
 
+def find_strikethrough_suspect(err: LinguisticErrorItem) -> Optional[Tuple[str, str, str]]:
+    """
+    Identifies if a grammar or syntax error is likely caused by an un-tagged strikethrough
+    (e.g., student crossed out a word on paper that leaked into transcription).
+
+    Returns:
+        (suspect_word, intended_word, reason) or None
+    """
+    err_text = (err.erroneous_text or "").strip()
+    corr_text = (err.suggested_correction or "").strip()
+    ctx = (err.context_sentence or "").strip()
+
+    e_toks = tokenize(err_text)
+    c_toks = tokenize(corr_text)
+    if not e_toks or not c_toks:
+        return None
+
+    # Case 1: Preposition Bridge Insertion (e.g. "helps many us" -> "helps many of us")
+    # A preposition was inserted between two tokens where the first is an awkward draft
+    if len(c_toks) == len(e_toks) + 1:
+        sm = difflib.SequenceMatcher(a=e_toks, b=c_toks, autojunk=False)
+        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+            if tag == "insert" and (j2 - j1) == 1:
+                inserted_tok = c_toks[j1]
+                if inserted_tok in ("of", "to", "for", "in", "by", "on", "at", "with"):
+                    if i1 > 0:
+                        suspect = e_toks[i1 - 1]
+                        return (suspect, "[struck]", f"Preposition bridge '{inserted_tok}' inserted after suspect un-struck word '{suspect}'")
+
+    # Case 2: Complete Word Deletion (e.g. "helps many us" -> "helps us")
+    if len(e_toks) == len(c_toks) + 1:
+        sm = difflib.SequenceMatcher(a=e_toks, b=c_toks, autojunk=False)
+        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+            if tag == "delete" and (i2 - i1) == 1:
+                deleted_tok = e_toks[i1]
+                return (deleted_tok, "[struck]", f"Word '{deleted_tok}' omitted in suggested correction")
+
+    # Case 3: Duplicate Copula/Auxiliary Verb in Clause (e.g. "percentage was Hydro-electrice power was 16%")
+    for copula in ("was", "is", "are", "were", "had", "can"):
+        matches = list(re.finditer(r'\b' + copula + r'\b', ctx.lower()))
+        if len(matches) >= 2:
+            first_match_end = matches[0].end()
+            second_match_start = matches[1].start()
+            if 0 < (second_match_start - first_match_end) <= 60:
+                return (copula, "[struck]", f"Duplicate predicate verb '{copula}' in clause: suspect un-tagged cross-out")
+
+    return None
+
+
 def select_candidates(
     errors: List[LinguisticErrorItem],
     q_no: Optional[str] = None,
     max_edits: int = 2,
 ) -> List[ArbitrationCandidate]:
     """
-    Build ArbitrationCandidate objects for genuine handwriting stroke ambiguities in the error list.
-    Bypasses pure grammatical function-word substitutions and syntax errors to prevent candidate flooding.
+    Build ArbitrationCandidate objects for genuine handwriting stroke ambiguities and strikethrough suspects.
+    Bypasses pure grammatical function-word substitutions and standard syntax errors.
     """
     cands: List[ArbitrationCandidate] = []
     q_key = str(q_no) if q_no is not None else "ALL"
     for idx, err in enumerate(errors):
         err_type = (err.error_type or "spelling").lower()
+
+        # 1. Check for strikethrough suspect first (catches grammar & syntax cross-out leaks)
+        suspect_info = find_strikethrough_suspect(err)
+        if suspect_info is not None:
+            suspect_tok, intended_tok, reason = suspect_info
+            cands.append(ArbitrationCandidate(
+                candidate_id=f"{q_key}:{idx}:strike",
+                error_index=idx,
+                error_type="strikethrough_suspect",
+                erroneous_text=err.erroneous_text or "",
+                suggested_correction=err.suggested_correction or "",
+                candidate_token=suspect_tok,
+                intended_token=intended_tok,
+                context_sentence=err.context_sentence or "",
+                question_no=str(q_no) if q_no is not None else getattr(err, "question_no", None),
+            ))
+            continue
+
         if err_type == "syntax":
             continue
 

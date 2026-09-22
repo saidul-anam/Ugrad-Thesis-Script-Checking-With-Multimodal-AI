@@ -39,9 +39,11 @@ from src.utils.export_utils import (
 from src.rag.context_provider import RAGContextProvider
 
 from src.pipeline.stage0_red_ink_detector import RedInkDetector, RedInkDetectionResult
+from src.pipeline.stage0_strikethrough_detector import StrikethroughDetector
 from src.pipeline.stage0b_teacher_marks import Stage0bTeacherMarkExtractor, Stage0bResult
 from src.pipeline.stage1_transcriber import Stage1Transcriber
 from src.pipeline.stage2_verifier import Stage2Verifier
+from src.utils.strikethrough_collision_resolver import resolve_strikethrough_collisions
 from src.pipeline.stage3_error_analyzer import Stage3ErrorAnalyzer
 from src.pipeline.arbitration import EvidenceArbitrationGate
 from src.utils.linguistic_sanitizer import get_english_lexicon
@@ -254,6 +256,7 @@ class ScriptCheckingPipeline:
 
         # Stage Processors
         self.stage0 = RedInkDetector()
+        self.stage0_strikethrough = StrikethroughDetector()
         self.stage0b = Stage0bTeacherMarkExtractor(self.engine)
         self.stage1 = Stage1Transcriber(self.engine)
         self.stage2 = Stage2Verifier(self.engine)
@@ -420,21 +423,27 @@ class ScriptCheckingPipeline:
             print(f"\n--- Processing Page {page_no}/{len(page_images)} ---")
 
             # ---------------------------------------------------------
-            # STAGE 0: OpenCV Red-Ink Detection
+            # STAGE 0 & 0.5: OpenCV Red-Ink & Strikethrough Pre-Detection
             # ---------------------------------------------------------
             print(f"[Extraction] [0/3] Stage 0: Running OpenCV HSV Red-Ink Detection (Page {page_no})...")
             stage0_res = self.stage0.detect(p_img)
             print(f"[Extraction] [0/3] Stage 0 Result -> has_red_ink={stage0_res.has_red_ink} ({stage0_res.red_pixel_count} px, {stage0_res.red_pixel_ratio*100:.3f}%) [Context: 0/4,096 tokens (0.0%)]")
 
+            stage1_input_img = stage0_res.clean_image if getattr(stage0_res, "clean_image", None) is not None else p_img
+            stage0_strike_res = self.stage0_strikethrough.detect(stage1_input_img)
+            if stage0_strike_res.has_strikethrough:
+                print(f"[Extraction] [0.5/3] Stage 0.5 Strikethrough Prior -> Detected {stage0_strike_res.region_count} candidate cross-out stroke(s) on Page {page_no}")
+
             # ---------------------------------------------------------
             # STAGE 1: Verbatim Transcription (Ignoring Teacher Red Ink)
             # ---------------------------------------------------------
             print(f"[Extraction] [1/3] Stage 1: Verbatim Transcription (Page {page_no})...")
-            stage1_input_img = stage0_res.clean_image if getattr(stage0_res, "clean_image", None) is not None else p_img
             stage1_result = self.stage1.run(
                 image=stage1_input_img,
                 question_reference_vocab=question_vocab if question_obj else None,
                 question_syllabus=question_obj.sub_questions if question_obj else None,
+                strikethrough_detected=stage0_strike_res.has_strikethrough,
+                strikethrough_region_count=stage0_strike_res.region_count,
                 temperature=decoding.temperature,
                 top_p=decoding.top_p,
                 max_new_tokens=decoding.max_new_tokens,
@@ -638,9 +647,14 @@ class ScriptCheckingPipeline:
         )
         writer_profile.stitched_splits = stitch_diffs
 
-        if allograph_diffs or stitch_diffs:
-            print(f"[Extraction] ✍️ Global Calibration: {len(allograph_diffs)} allograph adaptation(s), {len(stitch_diffs)} stitched split(s).")
-            combined_verified = stitched_verified
+        # 3. Resolve un-tagged strikethrough collisions and false-start stutters (e.g. "are are", "by for")
+        resolved_collisions, collision_diffs = resolve_strikethrough_collisions(
+            stitched_verified
+        )
+
+        if allograph_diffs or stitch_diffs or collision_diffs:
+            print(f"[Extraction] ✍️ Global Calibration: {len(allograph_diffs)} allograph adaptation(s), {len(stitch_diffs)} stitched split(s), {len(collision_diffs)} struck collision(s).")
+            combined_verified = resolved_collisions
             aggregated_stage2.verified_transcript = combined_verified
             from src.core.schemas import AutocorrectionDiffItem
 
@@ -660,6 +674,14 @@ class ScriptCheckingPipeline:
                     context_snippet=d["stitched"],
                 )
                 for d in stitch_diffs
+            ] + [
+                AutocorrectionDiffItem(
+                    stage1_output=d["original"],
+                    actual_handwritten=d["resolved"],
+                    reason=f"Strikethrough collision resolved: {d.get('type', 'stutter')}",
+                    context_snippet=d["resolved"],
+                )
+                for d in collision_diffs
             ]
             aggregated_stage2.silent_corrections_fixed.extend(all_added_diffs)
             aggregated_stage2.total_corrections_count = len(aggregated_stage2.silent_corrections_fixed)

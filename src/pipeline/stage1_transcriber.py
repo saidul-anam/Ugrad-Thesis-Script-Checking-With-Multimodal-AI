@@ -18,6 +18,8 @@ class Stage1Transcriber:
         few_shot_examples: Optional[List[Dict[str, str]]] = None,
         question_reference_vocab: Optional[List[str]] = None,
         question_syllabus: Optional[List[Dict[str, Any]]] = None,
+        strikethrough_detected: bool = False,
+        strikethrough_region_count: int = 0,
         temperature: float = 0.0,
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
@@ -26,7 +28,9 @@ class Stage1Transcriber:
         prompt = build_stage1_prompt(
             few_shot_examples=few_shot_examples,
             question_reference_vocab=question_reference_vocab,
-            question_syllabus=question_syllabus
+            question_syllabus=question_syllabus,
+            strikethrough_detected=strikethrough_detected,
+            strikethrough_region_count=strikethrough_region_count,
         )
         
         raw_text = self.engine.generate_multimodal(

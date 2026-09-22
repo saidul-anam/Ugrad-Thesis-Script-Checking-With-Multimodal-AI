@@ -60,6 +60,17 @@ def test_select_candidates_any_error_type():
     assert (0, "want", "wants") in ids
     assert (0, "do", "to") in ids
     assert (1, "powerdul", "powerful") in ids
-    assert all(c.error_index != 2 for c in cands)
     assert cands[0].candidate_id.startswith("7:0:")
     assert cands[0].question_no == "7"
+
+
+def test_select_candidates_strikethrough_suspects():
+    errors = [
+        _err("grammar", "helps many us", "helps many of us", ctx="it is a software and it helps many us by solve many problems"),
+        _err("syntax", "the percentage was Hydro-electrice power was 16%", "Hydro-electric power was 16%", ctx="According to the graph, In 1980 the percentage was Hydro-electrice power was 16%."),
+    ]
+    cands = select_candidates(errors, q_no="7")
+    suspects = [(c.error_type, c.candidate_token, c.intended_token) for c in cands]
+    assert ("strikethrough_suspect", "many", "[struck]") in suspects
+    assert ("strikethrough_suspect", "was", "[struck]") in suspects
+

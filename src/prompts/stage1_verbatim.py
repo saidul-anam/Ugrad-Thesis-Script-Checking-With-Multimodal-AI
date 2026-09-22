@@ -37,13 +37,26 @@ Now transcribe the attached image."""
 def build_stage1_prompt(
     few_shot_examples: Optional[List[Dict[str, str]]] = None,
     question_reference_vocab: Optional[List[str]] = None,
-    question_syllabus: Optional[List[Dict[str, Any]]] = None
+    question_syllabus: Optional[List[Dict[str, Any]]] = None,
+    strikethrough_detected: bool = False,
+    strikethrough_region_count: int = 0,
 ) -> str:
     """
     Construct Stage 1 verbatim prompt incorporating strict rules, optional few-shot examples,
-    question syllabus context for header digit disambiguation, and reference vocabulary.
+    question syllabus context for header digit disambiguation, reference vocabulary, and
+    optical strikethrough directives.
     """
     prompt = STAGE1_BASE_PROMPT
+
+    if strikethrough_detected:
+        count_desc = f" ({strikethrough_region_count} candidate cross-out stroke(s))" if strikethrough_region_count > 0 else ""
+        prompt += (
+            f"\n\n--- OPTICAL STRIKETHROUGH DIRECTIVE ---\n"
+            f"Physical strikethrough lines were optically detected on this page{count_desc}.\n"
+            f"HIGH-PRIORITY INSTRUCTION: Look very carefully for words or phrases crossed out with horizontal lines, diagonal slashes, "
+            f"or scribble strokes (especially cancelled prepositions like 'by for', repeated words like 'are are', or crossed-out attempts "
+            f"before corrections). You MUST enclose all crossed-out text in [struck: ...]. NEVER transcribe struck-through words as active text."
+        )
 
     if question_syllabus:
         syllabus_lines = []
