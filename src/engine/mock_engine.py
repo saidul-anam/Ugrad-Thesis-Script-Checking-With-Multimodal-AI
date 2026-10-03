@@ -13,8 +13,8 @@ class MockGemmaEngine(BaseVLMEngine):
 
     def __init__(self, model_id: str = "mock-google/gemma-4-31b-it"):
         self.model_id = model_id
-        self.context_window = 4096
-        self.max_context_window = 4096
+        self.context_window = 16384
+        self.max_context_window = 16384
         self.last_usage = {}
 
     def _update_mock_usage(self, prompt: str, response: str):

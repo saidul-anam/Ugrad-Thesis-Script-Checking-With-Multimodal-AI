@@ -292,7 +292,7 @@ def test_token_usage_persistence_in_reports_and_csv():
         row = rows[0]
         assert len(row) == 13
         assert "tokens:" in row["ocr_flags"]
-        assert "4096" in row["ocr_flags"]
+        assert "16384" in row["ocr_flags"]
 
 
 def test_toggle_teacher_marks():

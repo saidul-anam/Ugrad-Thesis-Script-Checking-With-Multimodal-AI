@@ -21,7 +21,7 @@ class LocalAPIEngine(BaseVLMEngine):
     ):
         self.api_url = api_url.rstrip("/")
         self.timeout = timeout
-        self.context_window = 4096
+        self.context_window = 16384
         self.last_usage: Dict[str, Any] = {}
         self.model_id = self._resolve_model_id(model_id)
         print(f"[LocalAPIEngine] Connected to {self.api_url} (model: '{self.model_id}', ctx: {self.context_window})")

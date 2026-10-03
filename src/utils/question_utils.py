@@ -416,3 +416,46 @@ def extract_question_vocab(
             break
 
     return vocab
+
+
+def extract_question_reference_numerals(question: Optional[ExtractedQuestion]) -> List[str]:
+    """
+    Extract reference numerals, percentages, and statistical figures from question papers.
+    Used as an optical reference to disambiguate cursive handwritten digit loops
+    (e.g., distinguishing open-top '6' from double-loop '8', '4' vs '9', '1' vs '7').
+    """
+    if not question:
+        return []
+
+    corpus_parts = []
+    if question.question_text:
+        corpus_parts.append(question.question_text)
+
+    for sq in question.sub_questions or []:
+        sq_text = str(sq.get("name", "")) + " " + str(sq.get("title", "")) + " " + str(sq.get("text", ""))
+        corpus_parts.append(sq_text)
+
+    corpus = " ".join(corpus_parts)
+
+    numerals: List[str] = []
+    seen = set()
+
+    # 1. Percentages (e.g. 46%, 24%, 15%, 12%, 2%)
+    for pct in re.findall(r'\b\d+(?:\.\d+)?%', corpus):
+        if pct not in seen:
+            seen.add(pct)
+            numerals.append(pct)
+
+    # 2. Years / Dates (e.g. 1980, 2020)
+    for year in re.findall(r'\b(?:18|19|20)\d{2}\b', corpus):
+        if year not in seen:
+            seen.add(year)
+            numerals.append(year)
+
+    # 3. Decimals and distinct statistical measurements (e.g. 3.5, 10.5)
+    for dec in re.findall(r'\b\d+\.\d+\b', corpus):
+        if dec not in seen:
+            seen.add(dec)
+            numerals.append(dec)
+
+    return numerals

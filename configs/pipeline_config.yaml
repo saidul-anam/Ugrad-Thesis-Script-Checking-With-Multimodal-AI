@@ -7,6 +7,8 @@ model:
   torch_dtype: "bfloat16"
   # Quantization mode: "4bit" (recommended for 32GB VRAM ~18GB footprint), "8bit", or "none"
   quantization: "4bit"
+  # Operational context window ceiling (16k native tokens)
+  context_window: 16384
   # Automatic GPU device map allocation
   device_map: "auto"
   trust_remote_code: true
@@ -20,7 +22,7 @@ decoding:
   max_new_tokens: 4096      # Maximum response length per stage
   do_sample: false          # Deterministic generation
   
-  # Ablation flag: validate whether thinking/reasoning mode helps or quietly corrects errors
+  # Ablation flag: fallback global reasoning mode toggle
   thinking_mode: false
 
 pipeline:
@@ -31,6 +33,13 @@ pipeline:
   stage2_conditional: true  # Only verify pages with unclear/illegible markers (bypasses clean pages, saves ~13 VLM passes)
   stage3_error_extraction: true
   stage4_rubric_evaluation: true
+
+  # Granular Stage-Level Thinking Mode Routing
+  stage1_thinking_mode: false  # STRICTLY False: guarantees 100% pure verbatim student text without preamble
+  stage2_thinking_mode: false  # False: structured reasoning handled via 'reason' JSON field
+  stage3b_thinking_mode: true  # TRUE: allows deep deliberation on allograph vs genuine error
+  stage4_thinking_mode: true   # TRUE: allows analytical criteria deliberation before rubric band scoring
+
   # Separate cap for stage 4: 2048 tokens gives thinking models enough budget for reasoning + full JSON
   stage4_max_new_tokens: 2048
   # Hard cutoff so generation cannot appear stuck indefinitely

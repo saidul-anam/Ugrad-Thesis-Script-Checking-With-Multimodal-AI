@@ -137,7 +137,7 @@ def test_verify_and_filter_stage3_errors():
 def test_is_spurious_reversion_and_flowchart_filtering():
     from src.pipeline.stage2_verifier import is_spurious_reversion
     assert is_spurious_reversion("work", "woork") is True
-    assert is_spurious_reversion("gaza", "graza") is True
+    assert is_spurious_reversion("have", "hare") is True
     assert is_spurious_reversion("which", "cohich") is True
     assert is_spurious_reversion("that", "thad") is True
 
@@ -295,3 +295,61 @@ energy.
 
     filtered = verify_and_filter_stage3_errors([error], transcript=canonical_transcript_q8, subject="English")
     assert len(filtered) == 0  # Fully suppressed as right-edge truncation!
+
+
+def test_sanitize_transcript_strips_struck_text():
+    from src.utils.linguistic_sanitizer import sanitize_transcript_for_linguistic_analysis
+    raw = "The most useful thing was coal. [struck: and the] % percentage of coal was 46%."
+    sanitized = sanitize_transcript_for_linguistic_analysis(raw)
+    assert "[struck:" not in sanitized
+    assert "and the" not in sanitized
+    assert "useful thing was coal. % percentage of coal was 46%." in sanitized
+
+
+def test_verify_and_filter_stage3_errors_strips_struck_mistakes():
+    from src.utils.linguistic_sanitizer import verify_and_filter_stage3_errors
+    transcript = (
+        "According to the graph, [struck: In 1980 the percentage was] Hydro-electrice power was 16%.\n"
+        "and this is [struck: the low percentage] lowest percentage.\n"
+        "and it helps [struck: many] us by solve many problems."
+    )
+    errors = [
+        # Student struck out "low percentage" and wrote "lowest percentage"
+        LinguisticErrorItem(
+            error_type="grammar",
+            erroneous_text="low percentage",
+            suggested_correction="lowest percentage",
+            context_sentence="and this is the low percentage lowest percentage.",
+            explanation="Incorrect adjective degree."
+        ),
+        # Student struck out "In 1980 the percentage was"
+        LinguisticErrorItem(
+            error_type="syntax",
+            erroneous_text="In 1980 the percentage was",
+            suggested_correction="In 1980, the percentage",
+            context_sentence="In 1980 the percentage was Hydro-electrice power",
+            explanation="Syntax fragment."
+        ),
+        # Active genuine error not struck out
+        LinguisticErrorItem(
+            error_type="grammar",
+            erroneous_text="by solve",
+            suggested_correction="by solving",
+            context_sentence="and it helps us by solve many problems.",
+            explanation="Preposition requires gerund."
+        )
+    ]
+    filtered = verify_and_filter_stage3_errors(errors, transcript=transcript, subject="English")
+    # Both struck-out errors should be dropped; only genuine 'by solve' should remain
+    assert len(filtered) == 1
+    assert filtered[0].erroneous_text == "by solve"
+
+
+def test_stage2_is_spurious_reversion_allows_struck_tags():
+    from src.pipeline.stage2_verifier import is_spurious_reversion
+    # Tag addition must NOT be rejected as spurious ligature artifact
+    assert not is_spurious_reversion("many", "[struck: many]")
+    assert not is_spurious_reversion("was", "[struck: was]")
+    assert not is_spurious_reversion("the", "[struck: the]")
+    assert not is_spurious_reversion("word", "[unclear: word]")
+

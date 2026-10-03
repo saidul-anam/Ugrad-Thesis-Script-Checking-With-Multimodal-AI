@@ -40,20 +40,22 @@ from src.rag.context_provider import RAGContextProvider
 
 from src.pipeline.stage0_red_ink_detector import RedInkDetector, RedInkDetectionResult
 from src.pipeline.stage0_strikethrough_detector import StrikethroughDetector
-from src.pipeline.stage0b_teacher_marks import Stage0bTeacherMarkExtractor, Stage0bResult
+from src.pipeline.stage0b_teacher_marks import Stage0bTeacherMarkExtractor, Stage0bResult, reconcile_document_teacher_marks
 from src.pipeline.stage1_transcriber import Stage1Transcriber
-from src.pipeline.stage2_verifier import Stage2Verifier
+from src.pipeline.stage2_verifier import Stage2Verifier, run_stage2_pre_analysis, Stage2PreAnalysisReport
 from src.utils.strikethrough_collision_resolver import resolve_strikethrough_collisions
 from src.pipeline.stage3_error_analyzer import Stage3ErrorAnalyzer
 from src.pipeline.arbitration import EvidenceArbitrationGate
 from src.utils.linguistic_sanitizer import get_english_lexicon
+from src.pipeline.token_guard import clean_rubric_answer
 from src.pipeline.stage4_evaluator import Stage4Evaluator
 from src.pipeline.answer_segmenter import segment_script_into_questions, extract_header_qno
 from src.prompts.stage4_modular import is_objective_question
 from src.utils.question_utils import (
     load_question_for_script,
     ExtractedQuestion,
-    extract_question_vocab
+    extract_question_vocab,
+    extract_question_reference_numerals
 )
 from src.utils.ground_truth import (
     get_ground_truth_for_script,
@@ -146,14 +148,41 @@ def _chunk_text_by_sentences(text: str, target_words: int = 120) -> List[str]:
     return chunks
 
 
+from src.pipeline.arbitration.candidate_selector import levenshtein
+from src.pipeline.stage2_verifier import PROTECTED_FUNCTION_WORDS
+from src.pipeline.allograph_calibrator import check_cursive_topology
+
+
+def _has_consecutive_duplicates(cand_text: str, target: str) -> bool:
+    clean_t = re.sub(r'^[^\w]+|[^\w]+$', '', target)
+    if not clean_t:
+        return False
+    pat = re.compile(r'\b(' + re.escape(clean_t) + r')\s+\1\b', re.IGNORECASE)
+    return bool(pat.search(cand_text))
+
+
 def _token_pattern(word: str) -> "re.Pattern":
     return re.compile(r"(?<!\w)" + re.escape(word) + r"(?!\w)", re.IGNORECASE)
 
 
 def _replace_token_preserving_case(text: str, c_word: str, i_word: str, count: int = 0) -> str:
     def repl(m: "re.Match") -> str:
+        pos = m.start()
+        # Avoid double-wrapping if already inside [struck: ...]
+        last_open = text.rfind("[struck:", 0, pos)
+        last_close = text.rfind("]", 0, pos)
+        if last_open > last_close:
+            return m.group(0)
+
         src = m.group(0)
+        if i_word.startswith("[struck:") and i_word.endswith("]"):
+            inner = i_word[len("[struck:"): -1].strip()
+            cased_inner = (inner[:1].upper() + inner[1:]) if src[:1].isupper() else inner
+            return f"[struck: {cased_inner}]"
+        elif i_word.startswith("[struck:"):
+            return i_word
         return (i_word[:1].upper() + i_word[1:]) if src[:1].isupper() else i_word
+
     return _token_pattern(c_word).sub(repl, text, count=count)
 
 
@@ -171,8 +200,23 @@ def _normalize_token_in_context(
     other 'do' on the page. If the span cannot be found, a page-wide replacement is done only when
     the misread token is not a dictionary word (i.e. it can only be this misread).
     """
-    if not text or not c_word or not i_word or c_word.lower() == i_word.lower():
+    if not text or not c_word or not i_word or c_word.strip().lower() == i_word.strip().lower():
         return text
+    c_word = c_word.strip()
+    i_word = i_word.strip()
+    c_low = c_word.lower()
+    i_low = i_word.lower()
+
+    # Rule A: Never replace protected function words/verbs with another function word (e.g. 'see' -> 'the')
+    if c_low in PROTECTED_FUNCTION_WORDS and not i_word.startswith("[struck:"):
+        if i_low in PROTECTED_FUNCTION_WORDS or levenshtein(c_low, i_low) > 1:
+            return text
+
+    # Rule B: Levenshtein distance cap (cannot replace completely dissimilar words unless supported by cursive topology)
+    is_cursive = (check_cursive_topology(c_low, lexicon or set()) is not None)
+    if not i_word.startswith("[struck:") and not is_cursive and levenshtein(c_low, i_low) > 2:
+        return text
+
     for needle in (context, erroneous_text):
         needle = " ".join((needle or "").split())
         if len(needle) < 3:
@@ -180,11 +224,24 @@ def _normalize_token_in_context(
         span_re = re.compile(r"\s+".join(re.escape(t) for t in needle.split()), re.IGNORECASE)
         m = span_re.search(text)
         if m:
+            # Rule C: If c_word is a valid dictionary word, do not mutate it inside the span
+            # unless it's an explicit strikethrough or single-edit allograph
+            if lexicon is not None and c_low in lexicon and not i_word.startswith("[struck:"):
+                if levenshtein(c_low, i_low) > 1:
+                    return text
+
             new_span = _replace_token_preserving_case(m.group(0), c_word, i_word, count=1)
+            # Rule D: Block replacements that create duplicate consecutive words (e.g. 'the the', 'in in')
+            if _has_consecutive_duplicates(new_span, i_word):
+                return text
             return text[:m.start()] + new_span + text[m.end():]
+
     if lexicon is not None and c_word.lower() in lexicon:
         return text
-    return _replace_token_preserving_case(text, c_word, i_word)
+    candidate_res = _replace_token_preserving_case(text, c_word, i_word)
+    if _has_consecutive_duplicates(candidate_res, i_word):
+        return text
+    return candidate_res
 
 
 def _apply_normalizations(
@@ -199,19 +256,21 @@ def _apply_normalizations(
     for amb in cleared:
         if not amb.get("normalize", True):
             continue
-        c_word = str(amb.get("candidate") or "")
-        i_word = str(amb.get("intended_word") or "")
+        c_word = str(amb.get("candidate") or "").strip()
+        i_word = str(amb.get("intended_word") or "").strip()
         if not c_word or not i_word or c_word.lower() == i_word.lower():
             continue
-        err_text, ctx = "", ""
-        cid = str(amb.get("candidate_id") or "")
-        try:
-            e_idx = int(cid.split(":")[1]) if cid.count(":") >= 2 else -1
-            if 0 <= e_idx < len(errors):
-                err_text = getattr(errors[e_idx], "erroneous_text", "") or ""
-                ctx = getattr(errors[e_idx], "context_sentence", "") or ""
-        except Exception:
-            pass
+        err_text = str(amb.get("erroneous_text") or "").strip()
+        ctx = str(amb.get("context_sentence") or "").strip()
+        if not ctx and not err_text:
+            cid = str(amb.get("candidate_id") or "")
+            try:
+                e_idx = int(cid.split(":")[1]) if cid.count(":") >= 2 else -1
+                if 0 <= e_idx < len(errors):
+                    err_text = getattr(errors[e_idx], "erroneous_text", "") or ""
+                    ctx = getattr(errors[e_idx], "context_sentence", "") or ""
+            except Exception:
+                pass
         if not ctx and not err_text:
             for e in errors:
                 if c_word.lower() in (getattr(e, "erroneous_text", "") or "").lower():
@@ -222,6 +281,10 @@ def _apply_normalizations(
             ans.answer_text = _normalize_token_in_context(ans.answer_text, c_word, i_word, err_text, ctx, lexicon)
         targets = [p for p in page_results if ans is None or not ans.page_numbers or p.page_no in ans.page_numbers]
         for p in targets:
+            # ONLY normalize per-page verified_transcript if c_word is an out-of-vocabulary non-word or strikethrough!
+            # Stage 2 verified_transcript is authoritative and must not be mutated for valid dictionary words.
+            if lexicon is not None and c_word.lower() in lexicon and not i_word.startswith("[struck:"):
+                continue
             p.stage2_verification.verified_transcript = _normalize_token_in_context(
                 p.stage2_verification.verified_transcript, c_word, i_word, err_text, ctx, lexicon
             )
@@ -342,9 +405,11 @@ class ScriptCheckingPipeline:
         valid_paper_questions: List[str] = []
         question_max_marks: Dict[str, float] = {}
         question_vocab: List[str] = []
+        question_numerals: List[str] = []
 
         if question_obj:
             question_vocab = extract_question_vocab(question_obj)
+            question_numerals = extract_question_reference_numerals(question_obj)
             for sq in question_obj.sub_questions:
                 q_num = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
                 if q_num:
@@ -352,10 +417,20 @@ class ScriptCheckingPipeline:
                     max_m = sq.get("max_marks") or sq.get("marks")
                     if max_m is not None:
                         try:
-                            question_max_marks[q_num] = float(max_m)
+                            val = float(max_m)
+                            question_max_marks[q_num] = val
+                            canon = canonicalize_question_key(q_num)
+                            if canon:
+                                question_max_marks[canon] = val
+                            # Also register base number for subparts (e.g. '1' for '1(A)')
+                            base_num = re.sub(r'\(.*?\)', '', q_num).strip()
+                            if base_num and base_num not in question_max_marks:
+                                question_max_marks[base_num] = val
+                            elif base_num:
+                                question_max_marks[base_num] = max(question_max_marks[base_num], val)
                         except (ValueError, TypeError):
                             pass
-            print(f"[Extraction] 📘 Matched Question Context: '{question_obj.question_id}' ({len(valid_paper_questions)} sub-questions, {len(question_vocab)} vocab tokens)")
+            print(f"[Extraction] 📘 Matched Question Context: '{question_obj.question_id}' ({len(valid_paper_questions)} sub-questions, {len(question_vocab)} vocab tokens, {len(question_numerals)} reference numerals)")
         else:
             print(f"[Extraction] ℹ️ No question context matched for '{script_id}'. Proceeding with standard visual extraction.")
 
@@ -365,15 +440,24 @@ class ScriptCheckingPipeline:
         # 2. Extract or Load Pages
         page_images: List[tuple[int, Image.Image, str]] = []  # (page_no, PIL Image, image_path)
 
+        is_pre_cleaned = False
+        pdf_to_render = input_source
+
         if isinstance(input_source, str) and is_pdf(input_source):
-            print(f"[Extraction] Input is PDF '{input_source}'. Rendering pages to image(s)...")
+            clean_candidate = os.path.join("data/cleaned_pdfs", paper, f"{script_id}.pdf")
+            if os.path.exists(clean_candidate):
+                print(f"[Extraction] 🧼 Using pre-cleaned PDF: {clean_candidate}")
+                pdf_to_render = clean_candidate
+                is_pre_cleaned = True
+
+            print(f"[Extraction] Input is PDF '{pdf_to_render}'. Rendering pages to image(s)...")
             pdf_pages = extract_images_from_pdf(
-                input_source,
+                pdf_to_render,
                 output_dir=os.path.join(pdf_samples_dir, script_id),
                 dpi=200
             )
             if not pdf_pages:
-                raise ValueError(f"No pages extracted from PDF: {input_source}")
+                raise ValueError(f"No pages extracted from PDF: {pdf_to_render}")
             for p_no, p_img, saved_path in pdf_pages:
                 p_path = saved_path or os.path.join(pdf_samples_dir, script_id, f"page_{p_no}.png")
                 page_images.append((p_no, p_img, p_path))
@@ -383,9 +467,15 @@ class ScriptCheckingPipeline:
 
         decoding = self.config.decoding
         active_thinking = decoding.thinking_mode if thinking_mode is None else thinking_mode
+        stage1_thinking = getattr(self.config.pipeline, "stage1_thinking_mode", False) if thinking_mode is None else thinking_mode
+        stage2_thinking = getattr(self.config.pipeline, "stage2_thinking_mode", False) if thinking_mode is None else thinking_mode
+        stage0b_thinking = active_thinking
+        stage3b_thinking = getattr(self.config.pipeline, "stage3b_thinking_mode", True) if thinking_mode is None else thinking_mode
 
         # Resolve teacher marks extraction toggle
-        if extract_teacher_marks is None:
+        if is_pre_cleaned:
+            extract_teacher_marks = False
+        elif extract_teacher_marks is None:
             extract_teacher_marks = getattr(self.config.pipeline, "stage0b_teacher_marks", True)
 
         # Dedicated output directory for this script
@@ -425,12 +515,28 @@ class ScriptCheckingPipeline:
             # ---------------------------------------------------------
             # STAGE 0 & 0.5: OpenCV Red-Ink & Strikethrough Pre-Detection
             # ---------------------------------------------------------
-            print(f"[Extraction] [0/3] Stage 0: Running OpenCV HSV Red-Ink Detection (Page {page_no})...")
-            stage0_res = self.stage0.detect(p_img)
-            print(f"[Extraction] [0/3] Stage 0 Result -> has_red_ink={stage0_res.has_red_ink} ({stage0_res.red_pixel_count} px, {stage0_res.red_pixel_ratio*100:.3f}%) [Context: 0/4,096 tokens (0.0%)]")
+            if is_pre_cleaned:
+                print(f"[Extraction] [0/3] Stage 0: Pre-cleaned canvas -> Bypassing red-ink detection for Page {page_no}.")
+                stage0_res = RedInkDetectionResult(
+                    has_red_ink=False,
+                    red_pixel_count=0,
+                    red_pixel_ratio=0.0,
+                    margin_has_red_ink=False,
+                    margin_red_pixel_count=0,
+                    body_has_red_ink=False,
+                    body_red_pixel_count=0,
+                    details="Pre-cleaned canvas bypassed red-ink detection"
+                )
+                stage1_input_img = p_img
+                stage0_strike_res = self.stage0_strikethrough.detect(p_img, teacher_mask=None)
+            else:
+                print(f"[Extraction] [0/3] Stage 0: Running OpenCV HSV Red-Ink Detection (Page {page_no})...")
+                stage0_res = self.stage0.detect(p_img)
+                print(f"[Extraction] [0/3] Stage 0 Result -> has_red_ink={stage0_res.has_red_ink} ({stage0_res.red_pixel_count} px, {stage0_res.red_pixel_ratio*100:.3f}%) [Context: 0/4,096 tokens (0.0%)]")
+                stage1_input_img = stage0_res.clean_image if getattr(stage0_res, "clean_image", None) is not None else p_img
+                t_mask = getattr(stage0_res, "teacher_mask", None)
+                stage0_strike_res = self.stage0_strikethrough.detect(stage1_input_img, teacher_mask=t_mask)
 
-            stage1_input_img = stage0_res.clean_image if getattr(stage0_res, "clean_image", None) is not None else p_img
-            stage0_strike_res = self.stage0_strikethrough.detect(stage1_input_img)
             if stage0_strike_res.has_strikethrough:
                 print(f"[Extraction] [0.5/3] Stage 0.5 Strikethrough Prior -> Detected {stage0_strike_res.region_count} candidate cross-out stroke(s) on Page {page_no}")
 
@@ -441,54 +547,72 @@ class ScriptCheckingPipeline:
             stage1_result = self.stage1.run(
                 image=stage1_input_img,
                 question_reference_vocab=question_vocab if question_obj else None,
+                question_reference_numerals=question_numerals if question_obj else None,
                 question_syllabus=question_obj.sub_questions if question_obj else None,
                 strikethrough_detected=stage0_strike_res.has_strikethrough,
                 strikethrough_region_count=stage0_strike_res.region_count,
+                strikethrough_regions=stage0_strike_res.regions,
                 temperature=decoding.temperature,
                 top_p=decoding.top_p,
                 max_new_tokens=decoding.max_new_tokens,
-                thinking_mode=active_thinking
+                thinking_mode=stage1_thinking
             )
             u1 = self.engine.get_last_usage()
             ctx1 = self.engine.format_last_usage()
             print(f"[Extraction] [1/3] Stage 1 Transcribed -> {stage1_result.word_count} words (illegible: {stage1_result.illegible_count}, unclear: {stage1_result.unclear_count}, struck: {stage1_result.struck_count}) {ctx1}")
 
             # ---------------------------------------------------------
-            # STAGE 2: Autocorrection Verification & Audit
+            # STAGE 2: Autocorrection Verification & Audit (Delta-Only Redesign)
             # ---------------------------------------------------------
-            is_clean_page = (
-                stage1_result.unclear_count == 0
-                and stage1_result.illegible_count == 0
-                and "[unclear:" not in stage1_result.raw_transcript
-                and "[illegible]" not in stage1_result.raw_transcript
+            pre_analysis = run_stage2_pre_analysis(
+                stage1_transcript=stage1_result.raw_transcript,
+                strikethrough_regions=stage0_strike_res.regions if stage0_strike_res.has_strikethrough else None,
+                question_vocab=set(question_vocab) if question_vocab else None
             )
+
             conditional_stage2 = getattr(self.cfg.pipeline, "stage2_conditional", True) if hasattr(self, "cfg") and hasattr(self.cfg, "pipeline") else True
 
-            if skip_stage2 or (conditional_stage2 and is_clean_page):
-                bypass_reason = "Fast mode enabled" if skip_stage2 else "Stage 1 transcript clean (0 unclear/illegible markers)"
+            if skip_stage2 or (conditional_stage2 and not pre_analysis.should_trigger_stage2 and not force_extract):
+                bypass_reason = "Fast mode enabled" if skip_stage2 else "Stage 1 transcript clean (0 OCR glitches, 0 strike gaps, 0 split tokens, 0 unclear markers)"
                 print(f"[Extraction] [2/3] Stage 2: Skipped ({bypass_reason}). Preserving Stage 1 verbatim. [Context: 0 tokens (bypassed)]")
                 stage2_result = Stage2VerificationResult(
                     verified_transcript=stage1_result.raw_transcript,
                     silent_corrections_fixed=[],
+                    proposed_patches=[],
                     total_corrections_count=0,
                     verification_notes=f"Conditional bypass ({bypass_reason}); Stage 1 verbatim preserved."
                 )
                 u2 = {}
             else:
-                print(f"[Extraction] [2/3] Stage 2: Autocorrection Verification (Page {page_no})...")
+                audit_triggers = []
+                if pre_analysis.strike_gap_count > 0:
+                    audit_triggers.append(f"strike gap ({pre_analysis.strike_gap_count} unverified strokes)")
+                if pre_analysis.likely_glitches:
+                    audit_triggers.append(f"{len(pre_analysis.likely_glitches)} OCR ligature glitches")
+                if pre_analysis.split_candidates:
+                    audit_triggers.append(f"{len(pre_analysis.split_candidates)} split tokens")
+                if "[unclear:" in stage1_result.raw_transcript or "[illegible]" in stage1_result.raw_transcript:
+                    audit_triggers.append("unclear/illegible markers")
+                audit_reason = ", ".join(audit_triggers) if audit_triggers else "Script verification required"
+
+                print(f"[Extraction] [2/3] Stage 2: Surgical Patch Auditing (Page {page_no}) [{audit_reason}]...")
                 stage2_result = self.stage2.run(
-                    image=p_img,
+                    image=stage1_input_img,
                     stage1_transcript=stage1_result.raw_transcript,
+                    pre_analysis=pre_analysis,
                     question_syllabus=question_obj.sub_questions if question_obj else None,
                     question_reference_vocab=question_vocab if question_obj else None,
+                    question_reference_numerals=question_numerals if question_obj else None,
+                    strikethrough_regions=stage0_strike_res.regions,
+                    teacher_mask=t_mask,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=decoding.max_new_tokens,
-                    thinking_mode=active_thinking
+                    thinking_mode=stage2_thinking
                 )
                 u2 = self.engine.get_last_usage()
                 ctx2 = self.engine.format_last_usage()
-                print(f"[Extraction] [2/3] Stage 2 Verified -> {stage2_result.total_corrections_count} silent corrections reverted {ctx2}")
+                print(f"[Extraction] [2/3] Stage 2 Verified -> {stage2_result.total_corrections_count} patches applied {ctx2}")
 
             # ---------------------------------------------------------
             # STAGE 0b: Teacher Mark Extraction (Conditional on Margin Red Ink)
@@ -518,7 +642,7 @@ class ScriptCheckingPipeline:
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=1024,
-                    thinking_mode=active_thinking
+                    thinking_mode=stage0b_thinking
                 )
                 page_marks = stage0b_res.teacher_marks
                 u0b = self.engine.get_last_usage()
@@ -583,6 +707,31 @@ class ScriptCheckingPipeline:
                 any_red_ink = True
             if extract_teacher_marks:
                 all_teacher_marks.extend(p.teacher_marks)
+
+        # Document-Level Teacher Mark Reconciliation & Deduplication (Problem 7)
+        if extract_teacher_marks and all_teacher_marks:
+            final_teacher_marks = reconcile_document_teacher_marks(
+                all_teacher_marks,
+                question_max_marks=question_max_marks
+            )
+            print(f"[Extraction] [0b/3] Reconciled {len(all_teacher_marks)} page marks down to {len(final_teacher_marks)} deduplicated document-level teacher marks.")
+        else:
+            final_teacher_marks = all_teacher_marks
+
+        # If on pre-cleaned canvas, load pre-extracted standalone teacher marks if present
+        if is_pre_cleaned or not final_teacher_marks:
+            standalone_marks_file = os.path.join(script_output_dir, "stage0b_teacher_marks.json")
+            if os.path.exists(standalone_marks_file):
+                try:
+                    with open(standalone_marks_file, "r", encoding="utf-8") as f:
+                        sm_data = json.load(f)
+                        raw_rec_marks = sm_data if isinstance(sm_data, list) else (sm_data.get("reconciled_marks") or sm_data.get("teacher_marks") or [])
+                        loaded_marks = [TeacherMarkItem.model_validate(m) for m in raw_rec_marks]
+                        if loaded_marks:
+                            final_teacher_marks = loaded_marks
+                            print(f"[Extraction] 📎 Attached {len(final_teacher_marks)} pre-extracted standalone teacher mark(s) from {standalone_marks_file}")
+                except Exception as e:
+                    print(f"[Extraction] Note: Failed loading standalone marks ({e}).")
 
         # -------------------------------------------------------------
         # Aggregate Multi-Page Transcripts & Run Global Script-Level Stage 3
@@ -846,7 +995,7 @@ class ScriptCheckingPipeline:
                         errors=q_err_res.errors,
                         temperature=decoding.temperature,
                         top_p=decoding.top_p,
-                        thinking_mode=active_thinking,
+                        thinking_mode=stage3b_thinking,
                         gate=gate,
                         q_no=ans.q_no,
                         answer_text=ans.answer_text,
@@ -892,7 +1041,7 @@ class ScriptCheckingPipeline:
                     errors=q_err_res.errors,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
-                    thinking_mode=active_thinking,
+                    thinking_mode=stage3b_thinking,
                     gate=gate,
                     q_no=None,
                     answer_text=combined_verified,
@@ -1004,8 +1153,7 @@ class ScriptCheckingPipeline:
             "pages": {f"page_{p.page_no}": p.token_usage for p in page_results}
         }
 
-        vlm_detected_marks = [m.model_dump() for m in all_teacher_marks]
-        final_teacher_marks = all_teacher_marks
+        vlm_detected_marks = [m.model_dump() for m in final_teacher_marks]
         has_gt = bool(ground_truth_marks)
         is_verified_gt = has_gt
 
@@ -1088,7 +1236,7 @@ class ScriptCheckingPipeline:
 
         # Save per-script raw-tier CSV and root dataset CSV
         per_script_csv = os.path.join(script_output_dir, "raw_tier_records.csv")
-        export_raw_tier_csv(raw_tier_records, per_script_csv)
+        export_raw_tier_csv(raw_tier_records, per_script_csv, overwrite=True)
 
         root_dataset_csv = os.path.join(base_out, "raw_tier_dataset.csv")
         export_raw_tier_csv(raw_tier_records, root_dataset_csv)
@@ -1125,9 +1273,21 @@ class ScriptCheckingPipeline:
 
         script_id = extraction.script_id
 
-        # Update rubric if custom path provided
-        active_rubric_path = rubric_path or self.rubric_path
-        rubric_data = self._load_rubric(active_rubric_path) if rubric_path else self.rubric_data
+        # Update rubric: intelligently select based on script language if not explicitly provided
+        is_english = (
+            str(extraction.metadata.get("paper", "")).lower() == "english"
+            or str(extraction.metadata.get("language", "")).lower() == "english"
+            or str(script_id).startswith("SE_")
+            or "english" in str(getattr(extraction_input, "name", extraction_input)).lower()
+        )
+        if rubric_path:
+            active_rubric_path = rubric_path
+        elif self.rubric_path and not ("bangla" in self.rubric_path and is_english):
+            active_rubric_path = self.rubric_path
+        else:
+            active_rubric_path = "configs/rubrics/english_writing.yaml" if is_english else "configs/rubrics/bangla_creative_question.yaml"
+
+        rubric_data = self._load_rubric(active_rubric_path)
 
         # Resolve Question Paper Matching
         question_obj: Optional[ExtractedQuestion] = None
@@ -1149,7 +1309,7 @@ class ScriptCheckingPipeline:
             )
 
         decoding = self.config.decoding
-        active_thinking = decoding.thinking_mode if thinking_mode is None else thinking_mode
+        active_thinking = getattr(self.config.pipeline, "stage4_thinking_mode", decoding.thinking_mode) if thinking_mode is None else thinking_mode
 
         if output_dir:
             if Path(output_dir).name == script_id:
@@ -1220,8 +1380,9 @@ class ScriptCheckingPipeline:
                 lookup_topic = thematic_topic or rubric_data.get("subject", "bangla")
                 thematic_context = self.rag_provider.get_context(lookup_topic)
 
+            clean_verified = clean_rubric_answer(extraction.stage2_verification.verified_transcript)
             stage4_result = self.stage4.run(
-                verified_transcript=extraction.stage2_verification.verified_transcript,
+                verified_transcript=clean_verified,
                 stage3_errors=extraction.stage3_errors,
                 rubric_data=rubric_data,
                 thematic_context=thematic_context,

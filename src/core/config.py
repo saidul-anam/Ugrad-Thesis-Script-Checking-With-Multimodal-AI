@@ -31,6 +31,7 @@ class ModelConfig(BaseModel):
     model_id: str = Field("google/gemma-4-31b-it", description="Hugging Face model ID or local directory")
     torch_dtype: str = Field("bfloat16", description="Weight precision (bfloat16 / float16 / float32)")
     quantization: str = Field("4bit", description="Quantization mode ('4bit', '8bit', or 'none')")
+    context_window: int = Field(16384, description="Maximum total sequence length (input + output)")
     engine_type: str = Field("cuda", description="Engine type: 'cuda', 'api', or 'mock'")
     api_url: Optional[str] = Field(None, description="Local or remote OpenAI-compatible API endpoint URL")
     device_map: str = Field("auto", description="Device placement strategy")
@@ -45,7 +46,7 @@ class DecodingConfig(BaseModel):
     top_p: float = Field(0.1, description="Nucleus sampling cutoff")
     max_new_tokens: int = Field(3072, description="Maximum new generation tokens")
     do_sample: bool = Field(False, description="Whether sampling is active (False for greedy)")
-    thinking_mode: bool = Field(False, description="Ablation flag for reasoning/thinking mode")
+    thinking_mode: bool = Field(False, description="Ablation flag for reasoning/thinking mode (global fallback)")
 
 
 class RagConfig(BaseModel):
@@ -59,6 +60,10 @@ class PipelineStageConfig(BaseModel):
     stage2_verification: bool = True
     stage3_error_extraction: bool = True
     stage4_rubric_evaluation: bool = True
+    stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
+    stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
+    stage3b_thinking_mode: bool = Field(True, description="Stage 3b evidence arbitration thinking mode (deep allograph deliberation)")
+    stage4_thinking_mode: bool = Field(True, description="Stage 4 rubric evaluation thinking mode (analytical criteria deliberation)")
     stage4_max_new_tokens: int = Field(2048, description="Upper token budget for Stage 4 rubric generation")
     stage4_generation_timeout_sec: float = Field(180.0, description="Hard timeout for Stage 4 generation in seconds")
     rag: RagConfig = Field(default_factory=RagConfig)

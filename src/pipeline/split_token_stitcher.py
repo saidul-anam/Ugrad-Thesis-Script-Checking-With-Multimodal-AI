@@ -2,9 +2,9 @@
 Split Token Stitcher: Automated Pen-Lift & Syllable Separation Merger.
 
 Students frequently pause their pens or leave unintended spaces inside long words:
-  - "elec tricuity" / "elec tricity" -> "electricity"
+  - "elec tricity" -> "electricity"
   - "pro blems" -> "problems"
-  - "sec tory" -> "sectors"
+  - "sec tors" -> "sectors"
   - "day time" -> "daytime"
   - "non- formal" -> "non-formal"
   - "Hy dro - electric" -> "Hydro-electric"
@@ -109,22 +109,34 @@ def stitch_pen_lift_splits(
 
                         cand_merged = w1_low + w2_low
                         cand_mapped = w1_low + w2_mapped
-
                         is_split = False
                         merged_word = ""
 
-                        # Condition A: cand_merged or cand_mapped is a valid dictionary/domain word
+                        # Common phrasal verb heads and particles that must NEVER be merged into nouns/adjectives
+                        PHRASAL_VERB_HEADS = {"come", "go", "take", "give", "get", "look", "turn", "run", "put", "set", "break", "bring", "stand", "fall", "keep", "cut", "far"}
+                        PARTICLES = {"back", "away", "out", "off", "up", "down", "over", "in", "on", "by"}
+
                         cand_no_hyphen = cand_merged.replace("-", "")
-                        if (cand_merged in combined_vocab or cand_no_hyphen in combined_vocab) and len(cand_merged) >= 4:
-                            # If both w1 and w2 are already valid words, prevent merging common short phrases (e.g. "he is", "to do")
-                            if w1_low in combined_vocab and w2_low in combined_vocab and "-" not in cand_merged:
-                                if w1_low not in _STOP_WORDS and w2_low not in _STOP_WORDS:
+                        cand_mapped_no_hyphen = cand_mapped.replace("-", "")
+                        is_valid_merged = (cand_merged in combined_vocab or cand_no_hyphen in combined_vocab) and len(cand_merged) >= 4
+                        is_valid_mapped = (cand_mapped in combined_vocab or cand_mapped_no_hyphen in combined_vocab) and len(cand_mapped) >= 4
+
+                        if is_valid_merged:
+                            w1_is_word = w1_low in combined_vocab
+                            w2_is_word = w2_low in combined_vocab
+
+                            if w1_is_word and w2_is_word:
+                                # When BOTH halves are independent valid words:
+                                # Block phrasal verbs and adverbial phrases (e.g. "come back" != "comeback", "far away" != "faraway")
+                                is_phrasal = (w1_low in PHRASAL_VERB_HEADS and w2_low in PARTICLES) or cand_merged in {"comeback", "faraway"}
+                                if not is_phrasal and w1_low not in _STOP_WORDS and w2_low not in _STOP_WORDS:
                                     is_split = True
                                     merged_word = cand_merged
                             else:
+                                # At least one half is a genuine pen-lift syllable fragment (e.g. "elec" + "tricity", "pro" + "blems")
                                 is_split = True
                                 merged_word = cand_merged
-                        elif cand_mapped in combined_vocab and len(cand_mapped) >= 4:
+                        elif is_valid_mapped:
                             is_split = True
                             merged_word = cand_mapped
 

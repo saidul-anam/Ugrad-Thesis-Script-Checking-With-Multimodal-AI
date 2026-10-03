@@ -1,6 +1,6 @@
 import json
 import re
-from typing import Optional, List, Dict, Any, Union
+from typing import Optional, List, Dict, Any, Union, Tuple
 from PIL import Image
 from pydantic import BaseModel, Field
 
@@ -149,21 +149,44 @@ class Stage0bTeacherMarkExtractor:
             else:
                 clean_val = raw_val
 
-            # Sub-Item Rollup: map loose sub-item letters (e.g. 'C', 'G') to parent question
+            # Sub-Item Rollup: map loose sub-item letters (e.g. 'C', 'G') to parent candidate question
             if canon_q and len(canon_q) == 1 and canon_q.isalpha():
                 letter = canon_q.upper()
-                if "1(B)" in cands_set and letter in ["A", "B", "C", "D", "E"]:
-                    canon_q = "1(B)"
-                elif "1(A)" in cands_set and letter in ["A", "B", "C", "D", "E"]:
-                    canon_q = "1(A)"
-                elif "4" in cands_set and letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]:
-                    canon_q = "4"
-                elif "5" in cands_set and letter in ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]:
-                    canon_q = "5"
+                if len(cands_set) == 1:
+                    canon_q = next(iter(cands_set))
+                elif cands_set:
+                    # 1. Direct subpart match e.g. candidate "1(C)" for letter "C"
+                    matched_cand = next((c for c in cands_set if c.upper() == letter or c.upper().endswith(f"({letter})")), None)
+                    if matched_cand:
+                        canon_q = matched_cand
+                    else:
+                        # 2. Check if candidates in cands_set are known objective / multi-item questions
+                        from src.prompts.stage4_modular import is_objective_question
+                        obj_cands = [c for c in cands_set if is_objective_question(c, "", "")]
+                        if len(obj_cands) == 1:
+                            canon_q = obj_cands[0]
+                        elif "1(B)" in cands_set and letter in ["A", "B", "C", "D", "E"]:
+                            canon_q = "1(B)"
+                        elif "1(A)" in cands_set and letter in ["A", "B", "C", "D", "E"]:
+                            canon_q = "1(A)"
+                        elif obj_cands:
+                            canon_q = obj_cands[0]
 
             # Maximum Marks Ceiling Validation & Disambiguation
-            if question_max_marks and canon_q in question_max_marks:
-                max_allowed = question_max_marks[canon_q]
+            base_q = re.sub(r'\(.*?\)', '', canon_q or '').strip()
+            max_allowed = None
+            if question_max_marks:
+                if canon_q and canon_q in question_max_marks:
+                    max_allowed = question_max_marks[canon_q]
+                elif base_q and base_q in question_max_marks:
+                    max_allowed = question_max_marks[base_q]
+                elif base_q:
+                    # Match subparts like "4(A)" when canon_q is "4"
+                    sub_matches = [v for k, v in question_max_marks.items() if re.sub(r'\(.*?\)', '', k).strip() == base_q]
+                    if sub_matches:
+                        max_allowed = max(sub_matches)
+
+            if max_allowed is not None:
                 try:
                     num_val = float(clean_val)
                     if num_val > max_allowed:
@@ -275,4 +298,92 @@ def align_orphan_marks(
         aligned_orphans.append(orphan)
 
     return assigned_marks + aligned_orphans
+
+
+def reconcile_document_teacher_marks(
+    marks: List[TeacherMarkItem],
+    question_max_marks: Optional[Dict[str, float]] = None
+) -> List[TeacherMarkItem]:
+    """
+    Document-level reconciliation and deduplication of teacher marks across all pages.
+    Enforces the single-mark-per-question invariant and resolves duplicate/conflicting entries.
+    """
+    if not marks:
+        return []
+
+    # 1. Deduplicate exact duplicates (same question_no, mark_value, and y_position/location)
+    seen_exact = set()
+    unique_marks: List[TeacherMarkItem] = []
+    for m in marks:
+        q_key = (m.question_no or "").strip().lower()
+        val_key = (m.mark_value or "").strip().lower()
+        exact_sig = (q_key, val_key, (m.y_position or "").strip().lower())
+        if q_key and exact_sig in seen_exact:
+            continue
+        if q_key:
+            seen_exact.add(exact_sig)
+        unique_marks.append(m)
+
+    # 2. Group by canonical question_no
+    grouped: Dict[str, List[TeacherMarkItem]] = {}
+    orphans: List[TeacherMarkItem] = []
+
+    for m in unique_marks:
+        if not m.question_no:
+            orphans.append(m)
+            continue
+        q = canonicalize_question_key(m.question_no)
+        grouped.setdefault(q, []).append(m)
+
+    reconciled: List[TeacherMarkItem] = []
+
+    for q, q_marks in grouped.items():
+        if len(q_marks) == 1:
+            reconciled.append(q_marks[0])
+            continue
+
+        # Multiple marks found for the same question
+        values = [m.mark_value for m in q_marks]
+        unique_values = set(values)
+
+        if len(unique_values) == 1:
+            # Duplicate entries with the exact same score -> keep best location
+            best_mark = next((m for m in q_marks if "zoom" in m.location.lower() or "left" in m.location.lower()), q_marks[0])
+            reconciled.append(best_mark)
+        else:
+            # Conflicting mark values for the same question
+            # Prioritize targeted zoom reading if available
+            zoom_mark = next((m for m in q_marks if "left margin (" in m.location.lower()), None)
+            if zoom_mark:
+                chosen = zoom_mark
+            else:
+                # Prefer value within max marks ceiling if known
+                max_m = question_max_marks.get(q) if question_max_marks else None
+                valid_cands = []
+                if max_m is not None:
+                    for m in q_marks:
+                        try:
+                            if float(m.mark_value) <= max_m:
+                                valid_cands.append(m)
+                        except ValueError:
+                            pass
+                chosen = valid_cands[-1] if valid_cands else q_marks[-1]
+
+            other_vals = [m.mark_value for m in q_marks if m.mark_value != chosen.mark_value]
+            chosen.location += f" (reconciled conflict: kept {chosen.mark_value}, discarded {','.join(other_vals)})"
+            reconciled.append(chosen)
+
+    # Append any remaining orphans
+    reconciled.extend(orphans)
+
+    # Sort naturally by question number
+    def _q_sort_key(item: TeacherMarkItem) -> Tuple[int, str]:
+        q = item.question_no or "999"
+        num_match = re.search(r'\d+', q)
+        num = int(num_match.group(0)) if num_match else 999
+        return (num, q)
+
+    reconciled.sort(key=_q_sort_key)
+    return reconciled
+
 

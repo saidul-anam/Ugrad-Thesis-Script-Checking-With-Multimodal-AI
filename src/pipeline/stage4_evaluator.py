@@ -47,17 +47,17 @@ def get_sub_question_prompt_and_marks(
         match = pattern.search(full_text)
         if match:
             snippet = match.group(1).strip()
-            # If subpart (A) or (B)
-            if "(A)" in q_no and "A." in snippet:
-                sub_pat = re.compile(r'A\.\s+(.*?)(?=\n\s*B\.|\Z)', re.DOTALL)
-                sub_m = sub_pat.search(snippet)
-                if sub_m:
-                    return f"Context:\n{snippet[:400]}...\n\nInstructions (Part A):\n{sub_m.group(1).strip()}", max_marks
-            elif "(B)" in q_no and "B." in snippet:
-                sub_pat = re.compile(r'B\.\s+(.*?)(?=\Z)', re.DOTALL)
-                sub_m = sub_pat.search(snippet)
-                if sub_m:
-                    return f"Context:\n{snippet[:400]}...\n\nInstructions (Part B):\n{sub_m.group(1).strip()}", max_marks
+            # If question has subpart e.g. 1(A), 1(B), 1(C)
+            sub_part_match = re.search(r'\(([A-Za-z0-9]+)\)', q_no)
+            if sub_part_match:
+                part_id = sub_part_match.group(1).upper()
+                part_header = rf'(?:^|\n)\s*{re.escape(part_id)}\.\s+'
+                if re.search(part_header, snippet, re.I):
+                    next_part = rf'(?=\n\s*[A-Za-z0-9]+\.\s+|\Z)'
+                    sub_pat = re.compile(rf'{part_header}(.*?){next_part}', re.DOTALL | re.I)
+                    sub_m = sub_pat.search(snippet)
+                    if sub_m:
+                        return f"Context:\n{snippet[:400]}...\n\nInstructions (Part {part_id}):\n{sub_m.group(1).strip()}", max_marks
             return snippet, max_marks
 
     # Fallback to sub_question name

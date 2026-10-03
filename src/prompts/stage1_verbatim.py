@@ -6,30 +6,40 @@ STAGE1_SYSTEM_PROMPT = (
     "not to correct, improve, interpret, or normalize."
 )
 
-STAGE1_BASE_PROMPT = """You are transcribing a handwritten exam script. Your ONLY job is to reproduce exactly what is written on the page, character for character — not to correct, improve, or interpret it.
+STAGE1_BASE_PROMPT = """You are a forensic paleographer transcribing handwritten student exam scripts. Your EXCLUSIVE duty is to transcribe the physical ink strokes character-by-character as written — NEVER correcting, normalizing, guessing, or improving the text.
 
-Transcribe only the student's original answer, written in the student's own ink (typically black or blue). Ignore and do not transcribe any red-ink teacher annotations, scores, ticks, or comments — those are not part of the student's response.
+Transcribe only the student's original answer written in student ink (black or blue). Ignore any red or green teacher grading marks, checkmarks, ticks, or margin scores.
 
-Rules:
-1. Transcribe every word exactly as written, including spelling mistakes, grammar errors, and incorrect word choices. Do NOT fix them.
-2. Preserve the student's original sentence structure and word order, even if grammatically incorrect.
-3. Struck-Through / Crossed-Out Text & Deletions:
-   - If a word, prefix, or phrase has a horizontal strike line, diagonal slash, scribble, or cross-out stroke through it (e.g. starting a word and crossing it out, such as striking 'grap' before 'pie-chart', or striking 'possi' before 'positively', or 'w-' before 'would'), mark it as [struck: text] (e.g. '[struck: grap] pie-chart', '[struck: possi] positively'). NEVER transcribe struck-through words as plain active text.
-   - MULTI-LINE & PARAGRAPH CROSS-OUTS: If multiple words, an entire line, or a whole paragraph is crossed out with a continuous horizontal line, large 'X', or diagonal slash, enclose the crossed-out content in [struck: ...]. NEVER absorb crossed-out text into the student's active answer.
-   - PROTECTED FUNCTION-WORDS: If an auxiliary verb, pronoun, or preposition (e.g. 'was', 'were', 'is', 'are', 'in', 'on', 'at', 'to', 'for', 'the') is crossed out and substituted, ensure it is enclosed in [struck: ...] and not transcribed as active text.
-4. If text is illegible, write [illegible] rather than guessing.
-5. If ambiguous but you can make a plausible reading, write it as [unclear: your reading].
-6. Preserve line breaks and paragraph structure as they appear.
-7. Do not add punctuation, capitalization, or spacing not present in the original.
-8. Do not translate — transcribe in the original script (Bangla or English).
-9. Do not summarize, paraphrase, or omit any part.
-10. Do not misinterpret normal cursive letterforms or minims:
-    - Handwritten 'm' has 3 downward legs/humps: transcribe as single 'm', NOT double 'mm' (e.g., 'Storm', NOT 'Stormm').
-    - Terminal horizontal/upward flourish on 'r' or 'w' is a pen exit stroke, NOT an added letter 'e' (e.g., 'over', NOT 'overe'; 'Dear', NOT 'Deare').
-    - Rounded cursive 'v' in common words ('have', 'over', 'never', 'remove') is the letter 'v', NOT 'r' ('have', NOT 'hare'; 'remove', NOT 'remore').
-    - Curvy or arched cursive 's' (e.g. in 'his', 'this', 'is', 'shows') has an entry curve and rounded base: transcribe as 's', NOT 'n' (e.g., 'with his sharp teeth', NOT 'with hin'; 'this chart', NOT 'thin chart'; 'it is divided', NOT 'it in divided').
-11. Right-Edge / Margin Truncation: If a word is visibly cut off at the right edge of the page, margin, binding gutter, or photo frame (where ink strokes or letters exit the visible area and the word is clearly incomplete, e.g. 'renewabl', 'wor', 'pro', 'villa'), append [truncated] immediately after the partial word (e.g. 'renewabl[truncated]', 'wor[truncated]'). If a hyphen is visible before the edge, preserve it (e.g. 'Universi-[truncated]'). This distinguishes physical page-boundary clipping from student spelling mistakes.
-12. Ink-Density & Blank Space Awareness: Transcribe ONLY lines where genuine physical ink strokes are visible. If a portion of the page (e.g. bottom half) is blank paper with zero ink, STOP transcribing. NEVER invent, extrapolate, or hallucinate text to fill empty space.
+CRITICAL RULES:
+1. STRICT ZERO AUTOCORRECTION:
+   - Transcribe all orthographic errors, phonetic misspellings, ungrammatical phrasing, and missing words EXACTLY as written.
+   - Never replace non-standard spellings with standard dictionary words.
+   - If a student omits a word or verb, transcribe only the words physically present; NEVER insert assumed words or missing parts of speech.
+
+2. STRIKETHROUGHS & CROSS-OUTS:
+   - When a student crosses out a word, syllable, or continuous multi-word phrase with a pen stroke or slash, enclose the entire crossed-out segment in [struck: ...].
+   - If a cross-out spans an entire clause or multiple consecutive words, tag the full span (e.g. [struck: first word second word third word]).
+   - For single-word or prefix cross-outs, enclose the exact struck token (e.g. [struck: word]).
+   - Never omit struck text, and never transcribe struck text as plain active text.
+
+3. UNREADABLE & AMBIGUOUS GLYPHS:
+   - If a word or stroke is physically illegible, write [illegible].
+   - If cursive strokes are genuinely ambiguous between two plausible readings, write [unclear: opt1 | opt2].
+
+4. MARGIN CUT-OFF:
+   - If a word is physically cut off at the edge of the scan or paper boundary, append [truncated] (e.g. incom[truncated]).
+
+5. GHOST INK & EMPTY SPACE:
+   - Stop transcribing when the student's answer ends; never hallucinate or invent text to fill empty page space.
+   - Completely ignore faint, grayish, mirrored reverse-side bleed-through ink.
+
+6. LAYOUT & CASING:
+   - Preserve the student's line breaks and paragraph structure.
+   - Transcribe student character casing as physically formed.
+
+7. PURE OUTPUT:
+   - Output ONLY the verbatim transcribed student text.
+   - NEVER output disclaimers, conversational commentary, or meta-notes (e.g. never write 'The provided image contains...', 'There is no answer...'). If no student handwriting is present, output nothing.
 
 Now transcribe the attached image."""
 
@@ -37,26 +47,50 @@ Now transcribe the attached image."""
 def build_stage1_prompt(
     few_shot_examples: Optional[List[Dict[str, str]]] = None,
     question_reference_vocab: Optional[List[str]] = None,
+    question_reference_numerals: Optional[List[str]] = None,
     question_syllabus: Optional[List[Dict[str, Any]]] = None,
     strikethrough_detected: bool = False,
     strikethrough_region_count: int = 0,
+    strikethrough_regions: Optional[List[Any]] = None,
 ) -> str:
     """
     Construct Stage 1 verbatim prompt incorporating strict rules, optional few-shot examples,
-    question syllabus context for header digit disambiguation, reference vocabulary, and
-    optical strikethrough directives.
+    question syllabus context for header digit disambiguation, reference vocabulary, reference numerals,
+    and optical strikethrough directives with spatial coordinates.
     """
     prompt = STAGE1_BASE_PROMPT
 
-    if strikethrough_detected:
-        count_desc = f" ({strikethrough_region_count} candidate cross-out stroke(s))" if strikethrough_region_count > 0 else ""
-        prompt += (
-            f"\n\n--- OPTICAL STRIKETHROUGH DIRECTIVE ---\n"
-            f"Physical strikethrough lines were optically detected on this page{count_desc}.\n"
-            f"HIGH-PRIORITY INSTRUCTION: Look very carefully for words or phrases crossed out with horizontal lines, diagonal slashes, "
-            f"or scribble strokes (especially cancelled prepositions like 'by for', repeated words like 'are are', or crossed-out attempts "
-            f"before corrections). You MUST enclose all crossed-out text in [struck: ...]. NEVER transcribe struck-through words as active text."
-        )
+    if strikethrough_detected or strikethrough_regions:
+        regions = strikethrough_regions or []
+        count = len(regions) if regions else strikethrough_region_count
+        count_desc = f" ({count} candidate line segment(s))" if count > 0 else ""
+        prompt += f"\n\n--- OPTICAL STRIKETHROUGH ADVISORY ---"
+        if regions:
+            prompt += f"\nImage preprocessing detected candidate cross-out stroke(s) at the following locations:\n"
+            for idx, reg in enumerate(regions[:8], 1):
+                y_p = getattr(reg, "y_pct", 0.0)
+                y2_p = getattr(reg, "y2_pct", 0.0)
+                x_p = getattr(reg, "x_pct", 0.0)
+                x2_p = getattr(reg, "x2_pct", 0.0)
+                w_px = getattr(reg, "w", 0)
+                is_multi = getattr(reg, "is_multi_word", False)
+                ang = getattr(reg, "angle", 0.0)
+                type_desc = "multi-word clause strike" if is_multi else "word cross-out"
+                angle_desc = f", angle: ~{ang:.0f}°" if abs(ang) >= 5.0 else ""
+                prompt += f"- Region {idx}: near ~{y_p}% down the page (Y: ~{y_p}%-{y2_p}%, X: ~{x_p}%-{x2_p}%) [{type_desc}, ~{w_px}px wide{angle_desc}]\n"
+            prompt += (
+                "CRITICAL DIRECTIVE: Carefully inspect the handwriting at these locations. "
+                "If the student drew a horizontal strike line, diagonal slash, or cross-out through text at these coordinates, "
+                "you MUST enclose the crossed-out text in [struck: ...]. NEVER transcribe crossed-out words as plain active text.\n"
+                "- If a line is simply an underline, table gridline, or faint reverse-side bleed-through/ghost ink, DO NOT tag it as struck."
+            )
+        else:
+            prompt += (
+                f"\nImage preprocessing flagged potential horizontal line stroke(s) on this page{count_desc} that may correspond to student cross-outs, underlines, or table borders.\n"
+                f"- If a word, prefix, or phrase is genuinely crossed out by the student, enclose it in [struck: ...].\n"
+                f"- If a line is simply an underline, table gridline, or faint reverse-side bleed-through/ghost ink, DO NOT tag it as struck.\n"
+                f"- Transcribe strictly what the student intentionally wrote on the front of this page; NEVER invent or force struck text to match the candidate count."
+            )
 
     if question_syllabus:
         syllabus_lines = []
@@ -83,6 +117,18 @@ def build_stage1_prompt(
             f"If the student made an actual spelling, grammatical, or word-choice error (e.g. wrote 'disasterre', 'succeded', 'corage'), "
             f"YOU MUST TRANSCRIBE THEIR EXACT MISSPELLING character-for-character so Stage 3 can penalize it. "
             f"Under no circumstances should you silently normalize or autocorrect student handwriting."
+        )
+
+    if question_reference_numerals:
+        num_preview = ", ".join(f"'{n}'" for n in question_reference_numerals[:50])
+        prompt += (
+            f"\n\n--- EXAM QUESTION REFERENCE NUMERALS (OPTICAL DISAMBIGUATION ONLY) ---\n"
+            f"Target printed reference numbers & percentages from question prompt: [{num_preview}].\n"
+            f"CRITICAL DIRECTIVE ON NUMERALS: When transcribing handwritten numbers and percentages, inspect ink topology closely: "
+            f"distinguish open-top '6' from double-loop '8', '5' from '6', open '4' from closed '9', and straight '1' from angled '7'. "
+            f"IMPORTANT: Students frequently make factual errors or deviate from figures in the question prompt. "
+            f"The printed reference numerals above are provided strictly as an optical aid to resolve cursive stroke ambiguity. "
+            f"ALWAYS transcribe what the student physically inked on the paper; NEVER alter or autocorrect student numbers to match the printed question prompt."
         )
 
     if few_shot_examples:

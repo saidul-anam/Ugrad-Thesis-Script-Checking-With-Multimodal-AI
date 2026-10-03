@@ -118,9 +118,18 @@ class EvidenceArbitrationGate:
         ev.edit_ops = [str(o) for o in ops if o.op != "match"]
 
         # 1. phonetic plausibility (generic linguistic feature)
-        pp = phonetic_plausibility(cand.candidate_token, cand.intended_token)
-        ev.phonetic_plausibility = pp
-        ev.phonetic_signal = 1.0 - pp
+        is_strike_suspect = (
+            cand.intended_token.strip() == "[struck]"
+            or cand.error_type == "strikethrough_suspect"
+            or ":strike" in cand.candidate_id
+        )
+        if is_strike_suspect:
+            ev.phonetic_plausibility = None
+            ev.phonetic_signal = None  # Neutralize: strikeout suspects are visual cross-outs, not phonetic substitutions
+        else:
+            pp = phonetic_plausibility(cand.candidate_token, cand.intended_token)
+            ev.phonetic_plausibility = pp
+            ev.phonetic_signal = 1.0 - pp
 
         # 2. learned writer prior (before this candidate contributes to the profile).
         # Check if intended_token is an established writer anchor word (demonstrated correct usage in script)
@@ -167,10 +176,31 @@ class EvidenceArbitrationGate:
                     cons_tok = cres.get("consensus_token")
                     cons_agr = cres.get("consensus_token_agreement") or 0.0
                     if cons_tok and cons_agr >= 0.6 and cons_tok != cand.candidate_token.lower():
-                        if cand.intended_token.lower() != cons_tok:
+                        c_cand_low = cand.candidate_token.lower()
+                        c_int_low = cand.intended_token.lower()
+                        # Plausibility check: consensus token cannot replace candidate/intended token
+                        # if it's completely dissimilar (e.g. crop miscentering reading a neighbouring word like 'the')
+                        is_plausible = (
+                            levenshtein(c_cand_low, cons_tok) <= 3
+                            or levenshtein(c_int_low, cons_tok) <= 1
+                        )
+                        generic_particles = {"the", "a", "an", "is", "in", "of", "and", "to", "or", "by", "at", "it"}
+                        if cons_tok in generic_particles and c_cand_low not in generic_particles:
+                            is_plausible = False
+
+                        # Enforce Closed Lexicon Invariant: intended token must be a valid dictionary or syllabus word
+                        is_valid_lexical_target = (
+                            cons_tok in self.lexicon
+                            or cons_tok in self.question_vocab
+                            or (self.profile and getattr(self.profile, "is_writer_allograph", lambda c, i: False)(c_cand_low, cons_tok))
+                        )
+
+                        if is_plausible and is_valid_lexical_target and cand.intended_token.lower() != cons_tok:
                             cand.intended_token = cons_tok
                             ev.consensus_agreement_intended = cons_agr
                             ev.consensus_signal = min(1.0, max(0.5, 0.5 + 0.5 * cons_agr))
+                        elif is_plausible and not is_valid_lexical_target and cand.intended_token.lower() != cons_tok:
+                            ev.notes.append(f"Consensus re-read '{cons_tok}' rejected: not in lexicon or syllabus")
                 except Exception as ex:
                     ev.notes.append(f"consensus failed: {ex}")
             # 3b. forced choice
@@ -274,11 +304,17 @@ class EvidenceArbitrationGate:
             # the ink is verified; do not elevate genuine linguistic errors.
             if not visual_confirms_candidate:
                 if i_low in self.lexicon or i_low in self.question_vocab or is_writer_anchor:
-                    # If candidate is a non-word in English or visual signals corroborate, elevate to AMBIGUITY
-                    if c_low not in self.lexicon or (ev.consensus_agreement_intended or 0.0) >= 0.3 or ev.forced_choice in ("intended", "neither"):
+                    # Asymmetric Ambiguity Rule:
+                    if c_low not in self.lexicon:
+                        # Candidate is an invalid non-word (e.g. 'rumore', 'hin'): elevate to forgive handwriting ambiguity
                         score = max(score, self.cfg.threshold_ambiguity)
-                    elif score < self.cfg.threshold_genuine:
-                        score = max(score, self.cfg.threshold_genuine)  # Elevate from GENUINE to at least UNCERTAIN
+                    else:
+                        # Candidate is ALREADY a valid English word (e.g. 'lion', 'have', 'hear'):
+                        # Never mutate an already-valid word unless overwhelming visual proof exists
+                        if (ev.consensus_agreement_intended or 0.0) >= 0.85 and ev.forced_choice == "intended":
+                            score = max(score, 0.85)
+                        elif score < self.cfg.threshold_genuine:
+                            score = max(score, self.cfg.threshold_genuine)
 
         # Discovered Writer Profile Allograph check (e.g. terminal_y -> s, curvy_s -> s, cursive_vr -> v)
         is_profile_allograph = getattr(self.profile, "is_writer_allograph", lambda c, i: False)(c_low, i_low)
@@ -317,18 +353,21 @@ class EvidenceArbitrationGate:
                 from src.pipeline.stage0_strikethrough_detector import StrikethroughDetector
                 s_det = StrikethroughDetector(min_line_width=15, max_line_height=8)
                 s_res = s_det.detect(crop.image)
-                if s_res.has_strikethrough:
+                if s_res.has_strikethrough and 1 <= s_res.region_count <= 4:
                     crop_has_strike = True
                     ev.notes.append(f"Optical strikethrough confirmed on crop across '{cand.candidate_token}': {s_res.details}")
+                elif s_res.region_count > 4:
+                    ev.notes.append(f"Suppressed noisy crop strokes ({s_res.region_count} regions; likely notebook ruling)")
             except Exception as ex:
                 ev.notes.append(f"crop strike detection failed: {ex}")
 
         if cand.error_type == "strikethrough_suspect":
             if crop_has_strike or is_aborted_draft or ev.forced_choice in ("intended", "neither"):
                 ev.notes.append(f"Strikethrough suspect confirmed for '{cand.candidate_token}': Benefit of Doubt applied")
-                score = max(score, self.cfg.threshold_ambiguity)
+                score = max(score, 0.90)
 
-        if is_aborted_draft or crop_has_strike:
+        # Only apply aborted/struck benefit of doubt if it is a genuine draft or confirmed strikethrough suspect/OOV
+        if is_aborted_draft or (crop_has_strike and (cand.error_type == "strikethrough_suspect" or c_low not in self.lexicon)):
             ev.notes.append(f"Aborted / struck-through draft token '{cand.candidate_token}': Benefit of Doubt applied")
             score = max(score, self.cfg.threshold_ambiguity)
 
@@ -446,12 +485,22 @@ class EvidenceArbitrationGate:
                 or ("[struck:" in (err.context_sentence or "").lower())
             )
             if is_collision:
+                repl = err.suggested_correction or ""
+                if len(err_parts) == 2 and err_parts[0] == err_parts[1]:
+                    repl = f"[struck: {err_parts[0]}] {err_parts[1]}"
+                elif len(err_parts) == 2 and err_parts[0] in COMMON_PREPOSITIONS and err_parts[1] in COMMON_PREPOSITIONS:
+                    repl = f"[struck: {err_parts[0]}] {err_parts[1]}"
+                elif not repl or repl.strip().lower() == err_clean:
+                    repl = err.suggested_correction or ""
+
                 cleared.append({
                     "candidate": err.erroneous_text,
-                    "intended_word": err.suggested_correction,
+                    "intended_word": repl,
+                    "context_sentence": getattr(err, "context_sentence", "") or "",
+                    "erroneous_text": getattr(err, "erroneous_text", "") or "",
                     "verdict": AMBIGUITY,
                     "reason": "Strikethrough / abandoned draft collision. Zero mark deduction.",
-                    "normalize": False,
+                    "normalize": bool(repl and repl.strip().lower() != err_clean),
                     "candidate_id": f"{q_no or 'ALL'}:{idx}:0",
                 })
                 self._log(f"Q{q_no or '-'} '{err.erroneous_text}' cleared as Strikethrough Collision (zero deduction).")
@@ -470,19 +519,28 @@ class EvidenceArbitrationGate:
             for r in recs:
                 is_strike_suspect = (r.candidate.error_type == "strikethrough_suspect")
                 if r.verdict == AMBIGUITY:
+                    intended = r.candidate.intended_token
+                    if is_strike_suspect or intended == "[struck]":
+                        intended = f"[struck: {r.candidate.candidate_token}]"
+                    int_clean = (intended or "").strip().lower()
+                    can_norm = bool(is_strike_suspect or int_clean in self.lexicon or int_clean in self.question_vocab)
                     cleared.append({
                         "candidate": r.candidate.candidate_token,
-                        "intended_word": r.candidate.intended_token,
+                        "intended_word": intended,
+                        "context_sentence": r.candidate.context_sentence,
+                        "erroneous_text": getattr(err, "erroneous_text", "") or "",
                         "verdict": AMBIGUITY,
                         "reason": f"ambiguity={r.ambiguity_score:.2f} (loc={r.evidence.localization_method}, "
                                   f"fc={r.evidence.forced_choice}, writer_n={r.evidence.writer_pair_count})" if not is_strike_suspect else "Strikethrough / abandoned draft verified on crop. Zero mark deduction.",
-                        "normalize": not is_strike_suspect,
+                        "normalize": can_norm,
                         "candidate_id": r.candidate.candidate_id,
                     })
                 else:
                     cleared.append({
                         "candidate": r.candidate.candidate_token,
                         "intended_word": r.candidate.intended_token,
+                        "context_sentence": r.candidate.context_sentence,
+                        "erroneous_text": getattr(err, "erroneous_text", "") or "",
                         "verdict": UNCERTAIN,
                         "reason": f"ambiguity={r.ambiguity_score:.2f}; flagged for human review",
                         "normalize": False,

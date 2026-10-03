@@ -58,3 +58,30 @@ def test_dual_zone_body_ticks_and_inpainting():
     mask2 = cv2.inRange(hsv_clean, np.array([170, 60, 60]), np.array([180, 255, 255]))
     remaining_red = cv2.countNonZero(cv2.bitwise_or(mask1, mask2))
     assert remaining_red < 30
+
+
+def test_dual_zone_preserves_student_handwriting_under_red_ink():
+    """Verify that student dark ballpoint ink (gray ~80) under red checkmark is preserved and not bleached to white paper."""
+    detector = RedInkDetector(
+        min_pixel_threshold=400,
+        margin_pixel_threshold=400,
+        margin_width_ratio=0.18,
+        enable_inpainting=True
+    )
+    arr = np.full((1000, 1000, 3), 255, dtype=np.uint8)
+    # Draw dark student handwriting stroke in body (gray=70, BGR=(70, 70, 70))
+    cv2.line(arr, (300, 500), (700, 500), (70, 70, 70), 6)
+
+    # Draw red teacher checkmark crossing over the student stroke
+    cv2.line(arr, (450, 420), (500, 580), (0, 0, 255), 10)
+    cv2.line(arr, (500, 580), (650, 380), (0, 0, 255), 10)
+
+    img = Image.fromarray(cv2.cvtColor(arr, cv2.COLOR_BGR2RGB))
+    res = detector.detect(img)
+    assert res.clean_image is not None
+
+    clean_arr = np.array(res.clean_image.convert("L"))
+    # Inspect the student stroke at (x=500, y=500) where the red checkmark crossed it
+    intersection_pixel_val = clean_arr[500, 500]
+    # It must NOT be bleached to paper background (>180)
+    assert intersection_pixel_val < 140, f"Expected preserved dark student ink, got bleached value {intersection_pixel_val}"

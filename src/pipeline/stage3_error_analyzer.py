@@ -193,9 +193,56 @@ class Stage3ErrorAnalyzer:
                 transcript=verified_transcript
             )
 
-            # Diagnostic logging if substantial answer produces zero errors
             word_count = len(clean_transcript.split())
-            if word_count > 50 and len(validated_errors) == 0:
+            if word_count > 80 and len(validated_errors) == 0:
+                print(f"[Stage 3 Error Analyzer] Sensitivity Cascade: Extended essay ({word_count} words) produced 0 errors on Pass 1. Running Pass 2 audit...")
+                audit_prompt = (
+                    f"{prompt}\n\n"
+                    "ADDITIONAL FORENSIC AUDIT DIRECTIVE:\n"
+                    "The initial pass cataloged 0 errors. As this is an extended student composition "
+                    f"({word_count} words), re-audit the verified transcript specifically for:\n"
+                    "1. Subject-verb agreement (e.g. 'he do', 'they was', 'child play').\n"
+                    "2. Tense inconsistencies and incorrect verb forms (e.g. 'did went', 'had wrote', 'yesterday he come').\n"
+                    "3. Preposition usage errors and missing articles (e.g. 'good in English', 'discuss about').\n"
+                    "4. Pluralization and countability errors.\n"
+                    "Only report genuine student grammatical, syntactical, or spelling errors. Do NOT flag proper nouns or style differences.\n"
+                    "Return standard JSON format. If truly error-free, output empty errors list []."
+                )
+                try:
+                    response_p2 = self.engine.generate_text(
+                        prompt=audit_prompt,
+                        system_prompt=STAGE3_SYSTEM_PROMPT,
+                        temperature=0.2,
+                        top_p=0.2,
+                        max_new_tokens=max_new_tokens,
+                        thinking_mode=thinking_mode
+                    )
+                    parsed_p2 = _extract_json_from_text(response_p2)
+                    if parsed_p2 and "errors" in parsed_p2 and parsed_p2.get("errors"):
+                        raw_errors_p2 = []
+                        for err in parsed_p2.get("errors", []):
+                            etype = err.get("error_type", "grammar").lower()
+                            raw_errors_p2.append(LinguisticErrorItem(
+                                error_type=etype,
+                                erroneous_text=err.get("erroneous_text", ""),
+                                suggested_correction=err.get("suggested_correction", ""),
+                                context_sentence=err.get("context_sentence", ""),
+                                explanation=err.get("explanation", "")
+                            ))
+                        validated_errors_p2 = verify_and_filter_stage3_errors(
+                            errors=raw_errors_p2,
+                            question_vocab=q_vocab_set,
+                            subject=subject,
+                            transcript=verified_transcript
+                        )
+                        if validated_errors_p2:
+                            print(f"[Stage 3 Error Analyzer] Sensitivity Cascade recovered {len(validated_errors_p2)} error(s) on Pass 2.")
+                            validated_errors = validated_errors_p2
+                            if parsed_p2.get("linguistic_summary"):
+                                parsed_data["linguistic_summary"] = parsed_p2.get("linguistic_summary")
+                except Exception as ex:
+                    print(f"[Stage 3 Error Analyzer] Sensitivity Cascade Pass 2 failed ({ex}). Retaining Pass 1 result.")
+            elif word_count > 50 and len(validated_errors) == 0:
                 snippet = (response[:200] + "...") if len(response) > 200 else response
                 print(f"[Stage 3 Error Analyzer] WARNING: Transcript of {word_count} words yielded 0 errors. Model snippet: {snippet!r}")
 

@@ -102,12 +102,6 @@ def differing_token_pairs(erroneous: str, correction: str, max_edits: int = 2) -
 _ALPHA_WORD = re.compile(r"^[a-z]+$")
 
 
-CULTURAL_NCTB_TERMS: Set[str] = {
-    "salam", "salaam", "eid", "madrasah", "madrasa", "hartal", "lakh", "crore",
-    "rickshaw", "puja", "babu", "thana", "upazila", "ghat", "azimpur", "bdr",
-}
-
-
 HANDWRITING_INITIAL_CONFUSIONS = {
     "r": ["v", "re"],
     "v": ["r"],
@@ -119,6 +113,25 @@ HANDWRITING_INITIAL_CONFUSIONS = {
     "n": ["u", "m"],
     "u": ["n"],
     "l": ["t", "i"],
+}
+
+
+NCTB_CULTURAL_TERMS: Set[str] = {
+    "salam", "salaam", "assalamu", "alaikum", "nomoshkar", "adab",
+    "eid", "puja", "boishakh", "pohela", "ekushey", "hartal", "bazaar", "bazar",
+    "lungi", "saree", "kurta", "madrasah", "madrasa", "upazila", "thana", "union",
+    "crore", "lakh", "taka", "paisa", "ghat", "char",
+    "tarun", "kalam", "jamuna", "padma", "meghna", "surma", "karnafuli", "sundarbans",
+    "rahim", "karim", "barkat", "rafiq", "jabbar", "shafiq", "bangabandhu", "mujib",
+    "nazrul", "rabindranath", "tagore", "titumir", "rokeya", "bhashani", "hasina",
+    "dhaka", "chittagong", "chattogram", "sylhet", "rajshahi", "khulna", "barisal",
+    "rangpur", "mymensingh", "comilla", "cumilla", "bogura", "bogra"
+}
+
+COMMON_PROPER_NAMES: Set[str] = {
+    "ronny", "johnny", "tommy", "billy", "bobby", "jimmy", "sammy", "danny", "tony",
+    "freddy", "eddie", "harry", "larry", "barry", "jerry", "terry", "perry", "gary",
+    "ron", "dan", "bob", "tom", "tim", "jim", "bill", "sam", "joe", "jack", "jill"
 }
 
 
@@ -156,7 +169,7 @@ def lexicon_candidates(
         low = tok.lower()
         if len(low) < min_len or not _ALPHA_WORD.match(low) or low in seen:
             continue
-        if low in lexicon or low in q_vocab or low in covered or low in CULTURAL_NCTB_TERMS:
+        if low in lexicon or low in q_vocab or low in covered or low in NCTB_CULTURAL_TERMS:
             continue
         prev = raw_tokens[i - 1] if i > 0 else ""
         sentence_start = i == 0 or prev.endswith((".", "!", "?", ":")) or prev.lower().startswith("ans")
@@ -183,6 +196,8 @@ def lexicon_candidates(
         pool.update(difflib.get_close_matches(low, [w for w in lexicon if w[:1] == low[:1] and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=5, cutoff=0.8))
         for alt in HANDWRITING_INITIAL_CONFUSIONS.get(low[:1], []):
             pool.update(difflib.get_close_matches(low, [w for w in lexicon if w.startswith(alt) and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=3, cutoff=0.6))
+        # Filter proper names unless explicitly in q_vocab or answer_lex
+        pool = {w for w in pool if (w not in COMMON_PROPER_NAMES or w in (q_vocab | answer_lex))}
         best, best_d = None, max_edits + 1
         if pool:
             cand_w = min(pool, key=_rank)

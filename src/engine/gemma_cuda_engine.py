@@ -134,6 +134,14 @@ class GemmaCudaEngine(BaseVLMEngine):
             quantization_config = BitsAndBytesConfig(
                 load_in_8bit=True
             )
+            if torch.cuda.is_available():
+                try:
+                    dev_props = torch.cuda.get_device_properties(0)
+                    total_gb = dev_props.total_memory / (1024 ** 3)
+                    if total_gb <= 34.0:
+                        print(f"[GemmaCudaEngine] Advisory: 8-bit weights (~32GB) leave minimal headroom for KV cache on a {total_gb:.1f}GB GPU. If layer offloading to CPU occurs, consider '4bit' with double-quantization.")
+                except Exception:
+                    pass
 
         # Extract Hugging Face token from environment or .env file
         hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")

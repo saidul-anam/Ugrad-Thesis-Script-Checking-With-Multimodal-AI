@@ -2,7 +2,7 @@ import os
 import json
 import csv
 from pathlib import Path
-from typing import Dict, Any, List, Optional, Union
+from typing import Dict, Any, List, Optional, Union, Tuple
 from src.core.schemas import (
     Stage1TranscriptionResult,
     Stage2VerificationResult,
@@ -317,11 +317,19 @@ def export_extraction_summary_markdown(result: ExtractionResult, output_path: st
     return output_path
 
 
-def export_raw_tier_csv(records: List[RawTierRecord], output_path: str) -> str:
+def export_raw_tier_csv(
+    records: List[RawTierRecord],
+    output_path: str,
+    overwrite: bool = False
+) -> str:
     """
     Save the standardized 13-column Raw-Tier dataset CSV for research and analysis:
     Columns: script_id, page_no, question_no, paper, task_type, transcript_text,
              ocr_flags, error_list, teacher_mark, has_red_ink, original_marker_id, school_id, region
+
+    If overwrite is True, overwrites the output file.
+    If writing to an existing shared file, replaces/upserts rows with matching (script_id, page_no, question_no)
+    to prevent duplicate accumulations across re-runs.
     """
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     
@@ -341,14 +349,47 @@ def export_raw_tier_csv(records: List[RawTierRecord], output_path: str) -> str:
         "region"
     ]
 
-    file_exists = os.path.exists(output_path) and os.path.getsize(output_path) > 0
+    new_dict_records = [r.model_dump() for r in records]
 
-    with open(output_path, "w" if not file_exists else "a", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        if not file_exists:
+    if overwrite or not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
+        with open(output_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-        for rec in records:
-            writer.writerow(rec.model_dump())
+            for r in new_dict_records:
+                writer.writerow(r)
+        return output_path
+
+    # Upsert into existing CSV: read existing rows and replace matching (script_id, page_no, question_no)
+    existing_rows = []
+    try:
+        with open(output_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                existing_rows.append(row)
+    except Exception:
+        existing_rows = []
+
+    incoming_keys = {(r.get("script_id"), str(r.get("page_no")), str(r.get("question_no"))) for r in new_dict_records}
+    retained_rows = [
+        row for row in existing_rows
+        if (row.get("script_id"), str(row.get("page_no")), str(row.get("question_no"))) not in incoming_keys
+    ]
+
+    all_rows = retained_rows + new_dict_records
+
+    def _csv_sort_key(row: Dict[str, Any]) -> Tuple[str, int, str]:
+        s_id = str(row.get("script_id") or "")
+        p_no = int(row.get("page_no") or 0) if str(row.get("page_no", "0")).isdigit() else 0
+        q_no = str(row.get("question_no") or "")
+        return (s_id, p_no, q_no)
+
+    all_rows.sort(key=_csv_sort_key)
+
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for r in all_rows:
+            writer.writerow({k: r.get(k, "") for k in fieldnames})
 
     return output_path
 

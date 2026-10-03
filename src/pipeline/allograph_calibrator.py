@@ -26,17 +26,69 @@ from src.pipeline.arbitration.symbolic_evidence import align_chars
 _ALPHA_WORD = re.compile(r"^[A-Za-z]+$")
 _PUNCT_STRIP = re.compile(r"^[^\w]+|[^\w]+$")
 
-# Cultural NCTB Terms / Names / Acronyms / Exam Abbreviations to avoid false-positive calibration
-CULTURAL_TERMS = {
-    "gaza", "gazan", "dhaka", "lalbagh", "mukit", "tawhid", "udvash", "bengali",
-    "bangla", "bangladesh", "rajshahi", "mirganj", "hsc", "ssc", "bkruet", "ruet",
-    "kuet", "buet", "ju", "ru", "cu", "du", "pto", "ai",
-    # Exam structural abbreviations and common proper acronyms
-    "ans", "answ", "answer", "ques", "question", "qno", "no", "para", "sec",
-    "usa", "uk", "uae", "un", "who"
+# Retained as empty sets for backward-compatibility with external imports
+CULTURAL_TERMS: Set[str] = set()
+FORBIDDEN_ALLOGRAPH_TARGETS: Set[str] = set()
+
+# Permissible Latin cursive handwriting allograph confusions grounded in stroke topology
+PLAUSIBLE_ALLOGRAPH_PAIRS = {
+    frozenset({'v', 'r'}),
+    frozenset({'u', 'n'}),
+    frozenset({'w', 'm'}),
+    frozenset({'f', 'p'}),
+    frozenset({'l', 't'}),
+    frozenset({'c', 'e'}),
+    frozenset({'a', 'o'}),
+    frozenset({'h', 'b'}),
+    frozenset({'s', 'n'}),
+    frozenset({'g', 'y'}),
+    frozenset({'i', 'l'}),
+    frozenset({'e', 'l'}),
 }
 
-FORBIDDEN_ALLOGRAPH_TARGETS = {"ass"}
+
+# Permissible multi-stroke Latin cursive ligature and minim confusions grounded in stroke topology
+PLAUSIBLE_LIGATURE_PAIRS = [
+    ("curr", "wr"),
+    ("cu", "w"),
+    ("vv", "w"),
+    ("rn", "m"),
+    ("cl", "d"),
+    ("ney", "ness"),
+]
+
+
+def check_cursive_topology(
+    word: str,
+    combined_vocab: Set[str]
+) -> Optional[Tuple[str, str]]:
+    """
+    Check if an out-of-vocabulary word maps to a legitimate dictionary word
+    via an unambiguous single-character allograph confusion from PLAUSIBLE_ALLOGRAPH_PAIRS
+    or a multi-stroke cursive ligature confusion from PLAUSIBLE_LIGATURE_PAIRS.
+    Purely algorithmic: zero hardcoded word lists.
+    """
+    w_low = word.lower().strip()
+    if not w_low or len(w_low) < 3 or w_low in combined_vocab:
+        return None
+
+    # 1. Check multi-stroke cursive ligature confusions
+    for src_seq, dst_seq in PLAUSIBLE_LIGATURE_PAIRS:
+        if src_seq in w_low:
+            cand = w_low.replace(src_seq, dst_seq, 1)
+            if cand in combined_vocab:
+                return (f"ligature_{src_seq}_{dst_seq}", cand)
+
+    # 2. Check 1-edit substitutions matching plausible cursive topology pairs
+    for i, ch in enumerate(w_low):
+        for pair in PLAUSIBLE_ALLOGRAPH_PAIRS:
+            if ch in pair:
+                alt_ch = next(c for c in pair if c != ch)
+                cand = w_low[:i] + alt_ch + w_low[i+1:]
+                if cand in combined_vocab:
+                    return (f"allograph_{ch}_{alt_ch}", cand)
+
+    return None
 
 
 class AllographCalibrator:
@@ -91,103 +143,11 @@ class AllographCalibrator:
             w for w in word_counts
             if len(w) >= 3
             and w.lower() not in combined_vocab
-            and w.lower() not in CULTURAL_TERMS
         ]
 
-        # 3. Test Allograph Hypotheses across all OOV words
-        terminal_y_matches = {}
-        curvy_s_matches = {}
-        cursive_vr_matches = {}
-        cu_w_matches = {}
-
-        for w in oov_words:
-            w_low = w.lower()
-
-            # Hypothesis A: Terminal 'y' is writer's cursive 's'
-            if w_low.endswith("y"):
-                # Case 1: Simple plural/verb 's' (e.g. sources, dreamers, algorithms, features)
-                cand_s = w_low[:-1] + "s"
-                if cand_s in combined_vocab and cand_s not in FORBIDDEN_ALLOGRAPH_TARGETS:
-                    terminal_y_matches[w_low] = cand_s
-                    continue
-                # Case 2: Suffix 'ey' -> 'ess' (e.g. sickney -> sickness, businesy -> business)
-                if w_low.endswith("ney") and (w_low[:-3] + "ness") in combined_vocab:
-                    terminal_y_matches[w_low] = w_low[:-3] + "ness"
-                    continue
-                if w_low.endswith("esy") and (w_low[:-3] + "ess") in combined_vocab:
-                    terminal_y_matches[w_low] = w_low[:-3] + "ess"
-                    continue
-                # Case 3: Medial 'y' -> 's' in short word (e.g. eaye -> easy)
-                cand_med = w_low.replace("y", "s")
-                if cand_med in combined_vocab and len(cand_med) >= 4 and cand_med not in FORBIDDEN_ALLOGRAPH_TARGETS:
-                    terminal_y_matches[w_low] = cand_med
-                    continue
-
-            # Hypothesis B: Medial/terminal 's' <-> 'n' stroke confusion (e.g. hin -> his, thin -> this)
-            if "n" in w_low:
-                cand_sn = w_low.replace("n", "s")
-                if cand_sn in combined_vocab and levenshtein(w_low, cand_sn) == 1 and cand_sn not in FORBIDDEN_ALLOGRAPH_TARGETS:
-                    curvy_s_matches[w_low] = cand_sn
-                    continue
-
-            # Hypothesis C: Cursive 'v' <-> 'r' ligature confusion (e.g. rumore -> remove, rillage -> village, hare -> have)
-            if "r" in w_low:
-                c_vr = w_low.replace("r", "v").replace("u", "e").replace("o", "e")
-                for cand_v in [w_low.replace("r", "v"), w_low.replace("rumore", "remove")]:
-                    if cand_v in combined_vocab:
-                        cursive_vr_matches[w_low] = cand_v
-                        break
-
-            # Hypothesis D: Asymmetric 'w' <-> 'cu' split (e.g. cuith -> with)
-            if "cu" in w_low:
-                cand_w = w_low.replace("cu", "w")
-                if cand_w in combined_vocab:
-                    cu_w_matches[w_low] = cand_w
-                    continue
-
-        # 4. Statistical Promotion: Activate rules supported across the script
-        if len(terminal_y_matches) >= min(self.min_support, 2):
-            prof.discovered_allographs["terminal_y"] = "s"
-            prof.adapted_words.update(terminal_y_matches)
-            prof.evidence.append({
-                "rule": "terminal_y -> s",
-                "support_count": len(terminal_y_matches),
-                "examples": list(terminal_y_matches.items())[:6]
-            })
-
-        if len(curvy_s_matches) >= 1:
-            prof.discovered_allographs["curvy_s"] = "s"
-            prof.adapted_words.update(curvy_s_matches)
-            prof.evidence.append({
-                "rule": "curvy_s <-> n",
-                "support_count": len(curvy_s_matches),
-                "examples": list(curvy_s_matches.items())[:6]
-            })
-
-        if len(cursive_vr_matches) >= 1:
-            prof.discovered_allographs["cursive_vr"] = "v"
-            prof.adapted_words.update(cursive_vr_matches)
-            prof.evidence.append({
-                "rule": "cursive_vr <-> v",
-                "support_count": len(cursive_vr_matches),
-                "examples": list(cursive_vr_matches.items())[:6]
-            })
-
-        if len(cu_w_matches) >= 1:
-            prof.discovered_allographs["w_cu"] = "w"
-            prof.adapted_words.update(cu_w_matches)
-            prof.evidence.append({
-                "rule": "w_cu -> w",
-                "support_count": len(cu_w_matches),
-                "examples": list(cu_w_matches.items())[:6]
-            })
-
-        # 5. Generalized Dynamic 26-Letter Allograph Discovery
-        # For remaining OOV words, find closest dictionary words within Levenshtein <= 2
+        # 3. Generalized Dynamic Statistical Allograph Discovery
+        # For OOV words, find closest dictionary words within Levenshtein <= 2
         # and accumulate character substitution pairs across the script.
-        already_adapted = set(prof.adapted_words.keys())
-        remaining_oov = [w for w in oov_words if w.lower() not in already_adapted]
-
         vocab_by_len: Dict[int, List[str]] = defaultdict(list)
         for vw in combined_vocab:
             if len(vw) >= 3:
@@ -195,7 +155,7 @@ class AllographCalibrator:
 
         # Collect candidate substitutions per word
         word_cand_subs: Dict[str, List[Tuple[str, str, str]]] = defaultdict(list)
-        for w in remaining_oov:
+        for w in oov_words:
             w_low = w.lower()
             w_len = len(w_low)
             cand_pool = vocab_by_len[w_len] + vocab_by_len[w_len - 1] + vocab_by_len[w_len + 1]
@@ -232,10 +192,11 @@ class AllographCalibrator:
             for dw, src_c, tgt_c in matches:
                 pair_word_support[(src_c, tgt_c)].add(w_low)
 
-        # Promote rules with support >= min_support (default 2)
+        # Promote rules with support >= min_support (default 2) that match PLAUSIBLE_ALLOGRAPH_PAIRS
         promoted_rules = {
             pair: words for pair, words in pair_word_support.items()
-            if len(words) >= min(self.min_support, 2)
+            if len(words) >= max(self.min_support, 2)
+            and frozenset({pair[0], pair[1]}) in PLAUSIBLE_ALLOGRAPH_PAIRS
         }
 
         for (src_c, tgt_c), supporting_words in promoted_rules.items():
@@ -248,8 +209,6 @@ class AllographCalibrator:
                 matching_dws = [dw for dw, sc, tc in word_cand_subs[w_low] if (sc, tc) == (src_c, tgt_c)]
                 if matching_dws:
                     best_dw = matching_dws[0]
-                    if best_dw in FORBIDDEN_ALLOGRAPH_TARGETS or w_low in CULTURAL_TERMS:
-                        continue
                     prof.adapted_words[w_low] = best_dw
                     rule_examples.append((w_low, best_dw))
 

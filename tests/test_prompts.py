@@ -78,3 +78,44 @@ def test_stage2_prompt_with_syllabus():
     assert "Q9: Story Completion (Lion and Mouse)" in prompt
     assert "Question Header Digits" in prompt
 
+
+def test_stage1_prompt_strikethrough_advisory():
+    prompt = build_stage1_prompt(strikethrough_detected=True, strikethrough_region_count=3)
+    assert "OPTICAL STRIKETHROUGH ADVISORY" in prompt
+    assert "3 candidate line segment(s)" in prompt
+    assert "NEVER invent or force struck text" in prompt
+    assert "REVERSE-SIDE BLEED-THROUGH & GHOST INK" in prompt
+
+
+def test_stage1_prompt_strikethrough_spatial_coordinates():
+    from src.pipeline.stage0_strikethrough_detector import StrikethroughRegion
+    regions = [
+        StrikethroughRegion(x=100, y=250, w=450, h=10, y_pct=25.0, y2_pct=26.0, x_pct=10.0, x2_pct=55.0, is_multi_word=True, angle=12.0),
+        StrikethroughRegion(x=300, y=500, w=120, h=6, y_pct=50.0, y2_pct=50.6, x_pct=30.0, x2_pct=42.0, is_multi_word=False, angle=0.0),
+    ]
+    prompt = build_stage1_prompt(strikethrough_regions=regions)
+    assert "OPTICAL STRIKETHROUGH ADVISORY" in prompt
+    assert "Region 1: near ~25.0% down the page" in prompt
+    assert "multi-word clause strike" in prompt
+    assert "angle: ~12°" in prompt
+    assert "Region 2: near ~50.0% down the page" in prompt
+    assert "word cross-out" in prompt
+
+
+def test_stage2_prompt_strikethrough_regions():
+    from src.pipeline.stage0_strikethrough_detector import StrikethroughRegion
+    regions = [
+        StrikethroughRegion(x=150, y=300, w=200, h=8, y_pct=30.0, y2_pct=30.8, x_pct=15.0, x2_pct=35.0, is_multi_word=True, angle=-5.0),
+    ]
+    prompt = build_stage2_prompt(stage1_transcript="test text", strikethrough_regions=regions)
+    # Strikethrough region injection is removed to prevent false strikethrough hallucinations on ruled/underlined text
+    assert "CANDIDATE STRIKETHROUGH STROKES DETECTED BY PREPROCESSING:" not in prompt
+
+
+def test_stage3_prompt_struck_rule():
+    prompt = build_stage3_prompt(verified_transcript="student verified text")
+    assert "STRUCK-THROUGH / CANCELLED TEXT:" in prompt
+    assert "NEVER extract errors from crossed-out or struck-through words" in prompt
+
+
+

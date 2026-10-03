@@ -9,41 +9,72 @@ Protects tokens where exact recognition directly determines awarded marks:
 """
 
 import re
-from typing import List, Optional, Tuple, Set
+from typing import List, Optional, Tuple, Set, Union, Dict
 
 VALID_REARRANGEMENT_LETTERS: Set[str] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"}
-VALID_ROMAN_NUMERALS: Set[str] = {"i", "ii", "iii", "iv", "v"}
+
+REARRANGEMENT_HOMOGLYPHS: dict = {
+    "o": "j",
+    "0": "j",
+    "l": "i",
+    "1": "i",
+    "|": "i",
+    "!": "i",
+    "u": "v",
+    "v": "u",
+    "c": "e",
+    "e": "c",
+    "q": "g",
+    "g": "q",
+    "t": "f",
+    "f": "t",
+    "d": "o",
+}
 
 
-def sanitize_rearrangement_sequence(raw_seq: str) -> Tuple[List[str], List[str]]:
+def sanitize_rearrangement_sequence(raw_seq: Union[str, List[str]]) -> Tuple[List[str], List[str]]:
     """
     Parse and validate sentence rearrangement sequence letters.
     Returns (cleaned_sequence, detected_anomalies).
     
     Handles arrow notation ($\rightarrow$, ->), commas, spaces.
-    If 9 of 10 letters are valid and an invalid token (e.g. 'o' instead of 'j') is present,
-    repairs the missing letter.
+    Applies multi-token OCR homoglyph resolution (e.g. 'o'/'0' -> 'j', 'l'/'1' -> 'i')
+    and single-omission substitutions.
     """
-    # Extract letter tokens
-    tokens = re.findall(r'\b[a-zA-Z]\b', raw_seq.lower())
+    if isinstance(raw_seq, list):
+        tokens = [str(x).strip().lower() for x in raw_seq if str(x).strip()]
+    else:
+        # Extract letter and digit tokens (handling OCR substitutions like 0, 1, |)
+        tokens = re.findall(r'[a-zA-Z0-9|!]', str(raw_seq).lower())
+    
     if not tokens:
         return [], ["no_letters_found"]
 
-    anomalies = []
-    # Check if this looks like a 10-item rearrangement attempt
-    if len(tokens) == 10:
-        seen = set(tokens)
-        invalid = [t for t in tokens if t not in VALID_REARRANGEMENT_LETTERS]
-        missing = [l for l in VALID_REARRANGEMENT_LETTERS if l not in seen]
+    anomalies: List[str] = []
+    seen = {t for t in tokens if t in VALID_REARRANGEMENT_LETTERS}
+    missing = [l for l in sorted(VALID_REARRANGEMENT_LETTERS) if l not in seen]
 
-        # Single substitution repair (e.g. 'o' for 'j' on script 0002)
-        if len(invalid) == 1 and len(missing) == 1:
-            bad_tok = invalid[0]
-            repair_tok = missing[0]
-            tokens = [repair_tok if t == bad_tok else t for t in tokens]
-            anomalies.append(f"repaired_substitution:{bad_tok}->{repair_tok}")
-        elif invalid:
-            anomalies.append(f"invalid_tokens:{','.join(invalid)}")
+    # Step 1: Multi-token homoglyph mapping
+    for i, tok in enumerate(tokens):
+        if tok not in VALID_REARRANGEMENT_LETTERS:
+            cand = REARRANGEMENT_HOMOGLYPHS.get(tok)
+            if cand and cand in missing:
+                tokens[i] = cand
+                missing.remove(cand)
+                anomalies.append(f"repaired_homoglyph:{tok}->{cand}")
+
+    # Step 2: Single-substitution fallback if exactly 1 invalid token remains and 1 valid letter is missing
+    seen_after = {t for t in tokens if t in VALID_REARRANGEMENT_LETTERS}
+    invalid_after = [t for t in tokens if t not in VALID_REARRANGEMENT_LETTERS]
+    missing_after = [l for l in sorted(VALID_REARRANGEMENT_LETTERS) if l not in seen_after]
+
+    if len(tokens) == 10 and len(invalid_after) == 1 and len(missing_after) == 1:
+        bad_tok = invalid_after[0]
+        repair_tok = missing_after[0]
+        tokens = [repair_tok if t == bad_tok else t for t in tokens]
+        anomalies.append(f"repaired_substitution:{bad_tok}->{repair_tok}")
+    elif invalid_after:
+        anomalies.append(f"invalid_tokens:{','.join(invalid_after)}")
 
     return tokens, anomalies
 
@@ -107,3 +138,16 @@ def filter_protected_errors(errors: List[dict], full_text: str) -> Tuple[List[di
             retained.append(err)
 
     return retained, cleared
+
+
+def clean_rubric_answer(text: str) -> str:
+    """
+    Clean student answer text for rubric scoring by removing struck drafts
+    while preserving paragraph structure and un-struck student writing.
+    """
+    if not text:
+        return ""
+    t = re.sub(r'\[struck:\s*[^\]]*\]', ' ', text, flags=re.IGNORECASE)
+    lines = [re.sub(r'[ \t]+', ' ', line).strip() for line in t.splitlines()]
+    return "\n".join(lines).strip()
+

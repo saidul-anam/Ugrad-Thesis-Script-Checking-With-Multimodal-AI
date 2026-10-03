@@ -289,3 +289,104 @@ def test_se_11_q1_0001_full_segmentation():
     for eq in expected_qs:
         assert eq in segmented_q_nos, f"Expected {eq} to be segmented, but got {segmented_q_nos}"
 
+
+def test_problem6_dans_normalization():
+    """Verify Dans does not force 1(B) and extracts correct target question number."""
+    assert extract_header_qno("Dans to Q 10\nDear friend, how are you?") == "10"
+    assert extract_header_qno("Dans to Q 7\nArtificial Intelligence is a blessing.") == "7"
+    assert extract_header_qno("Dans to the Question No 1(B)\n(a) Because...") == "1(B)"
+
+
+def test_problem6_padded_digits():
+    """Verify 3-digit padded numbers like 011 or 007 resolve to normalized integers."""
+    assert extract_header_qno("Answer to the Que: 011\nTheme: The poem is about life.") == "11"
+    assert extract_header_qno("Ans to the Q No-007\nParagraph on trees.") == "7"
+    assert extract_header_qno("Answer to the Question No: 010\nDear Father,") == "10"
+
+
+def test_problem6_salutation_fingerprint_and_multipage_state_machine():
+    """Verify letter starting with Dear <Name> without immediate signoff is recognized as letter/Q10,
+    and continuation on page 2 remains attached without dumping into 1(A)."""
+    p1 = PageExtractionResult(
+        page_no=1,
+        image_path="page_1.png",
+        has_red_ink=False,
+        red_pixel_count=0,
+        stage1_transcription=Stage1TranscriptionResult(raw_transcript="Dear Karim,\nTake my cordial love. I hope you are well. In your last letter you wanted to know about our picnic.", word_count=22),
+        stage2_verification=Stage2VerificationResult(verified_transcript="Dear Karim,\nTake my cordial love. I hope you are well. In your last letter you wanted to know about our picnic.", total_corrections_count=0),
+        stage3_errors=Stage3ErrorResult(errors=[])
+    )
+    p2 = PageExtractionResult(
+        page_no=2,
+        image_path="page_2.png",
+        has_red_ink=False,
+        red_pixel_count=0,
+        stage1_transcription=Stage1TranscriptionResult(raw_transcript="We had a wonderful time together.\nNo more today.\nYour loving friend,\nRahim", word_count=13),
+        stage2_verification=Stage2VerificationResult(verified_transcript="We had a wonderful time together.\nNo more today.\nYour loving friend,\nRahim", total_corrections_count=0),
+        stage3_errors=Stage3ErrorResult(errors=[])
+    )
+
+    extraction = ExtractionResult(
+        script_id="TEST_LETTER_SCRIPT",
+        image_path="test_letter.pdf",
+        timestamp="2026-09-29T00:00:00",
+        pages=[p1, p2],
+        stage1_transcription=Stage1TranscriptionResult(raw_transcript="", word_count=0),
+        stage2_verification=Stage2VerificationResult(verified_transcript="", total_corrections_count=0),
+        stage3_errors=Stage3ErrorResult(errors=[])
+    )
+
+    aligned = segment_script_into_questions(extraction)
+    q_nos = [item.q_no for item in aligned]
+
+    # Must be segmented as Q10, never dumped into default 1(A)
+    assert "10" in q_nos
+    assert "1(A)" not in q_nos
+
+    # Both pages should be united under Q10
+    q10_item = next(item for item in aligned if item.q_no == "10")
+    assert "Dear Karim" in q10_item.answer_text
+    assert "Your loving friend" in q10_item.answer_text
+
+
+def test_generalized_graph_and_story_fingerprints():
+    from src.pipeline.answer_segmenter import detect_structural_fingerprint
+    from src.core.schemas import ExtractedQuestion
+
+    # 1. Graph with non-year statistical description (proportions/percentages across categories)
+    graph_text = (
+        "The pie chart shows the percentage allocation of national budget.\n"
+        "Education received 25%, while defense was allocated 18%. The rate of healthcare expenditure was 12%."
+    )
+    assert detect_structural_fingerprint(graph_text) == "8"
+
+    # 2. Completing Story with unseen traditional opening
+    story_unseen = (
+        "Devotion to Mother\n"
+        "Many days ago, a young boy lived with his ailing mother in a remote village."
+    )
+    assert detect_structural_fingerprint(story_unseen) == "9"
+
+    # 3. Dynamic story matching against schema
+    schema = ExtractedQuestion(
+        question_id="ENG_101",
+        question_text="English Paper",
+        sub_questions=[
+            {"q_no": "9", "name": "Story: A King and His Astrologer", "marks": 15.0}
+        ]
+    )
+    schema_story = (
+        "A King and His Astrologer\n"
+        "There was a king who was fond of knowing his future."
+    )
+    assert detect_structural_fingerprint(schema_story, question_obj=schema) == "9"
+
+    # 4. Poem Theme with generalized terminology (no hardcoded poem titles)
+    theme_text = (
+        "Theme:\n"
+        "The central message of the poem emphasizes perseverance in the face of hardship."
+    )
+    assert detect_structural_fingerprint(theme_text) == "11"
+
+
+

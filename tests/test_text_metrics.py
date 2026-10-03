@@ -65,3 +65,39 @@ def test_score_transcription_without_lexicon():
     s = score_transcription("hello world", "hello world")
     assert s.cer == 0.0 and s.wer == 0.0
     assert s.silent_correction_rate is None
+
+
+def test_normalize_truncated_tags():
+    raw_ref = "w[truncated] is the lowest amount pro[truncated] 12%"
+    norm = normalize_transcript(raw_ref)
+    assert "[truncated]" not in norm
+    assert "w is the lowest amount pro 12%" == norm
+
+
+def test_normalize_envelope_tables():
+    raw_envelope_markdown = (
+        "| STAMP |\n"
+        "| From, | To, |\n"
+        "| Saidur Rahman | Rabu Rahman |\n"
+        "| Hazaribagh, Dhaka | Narayanganj Sadar, |\n"
+        "| - 1400 | Narayanganj 2500 |\n\n"
+        "P.T.O"
+    )
+    norm = normalize_transcript(raw_envelope_markdown)
+    assert norm.startswith("from, saidur rahman hazaribagh, dhaka - 1400 to, rabu rahman")
+    assert "stamp" in norm
+    assert norm.endswith("p.t.o")
+
+
+def test_normalize_envelope_ascii_grid_with_borders():
+    raw_envelope_grid = (
+        "_________________________________________________\n"
+        "| From,                      To                      | Stamp |\n"
+        "| nethia                      Sadia                  |       |\n"
+        "| Donia, Dhaka-1236           camilla                |       |\n"
+        "|____________________________________________________|_______|\n"
+    )
+    norm = normalize_transcript(raw_envelope_grid)
+    assert "_" not in norm
+    assert "|" not in norm
+    assert "from, nethia donia, dhaka-1236 to sadia camilla stamp" == norm

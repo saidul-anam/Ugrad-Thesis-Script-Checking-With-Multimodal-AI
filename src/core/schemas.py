@@ -38,10 +38,21 @@ class AutocorrectionDiffItem(BaseModel):
     context_snippet: str = Field("", description="Surrounding sentence or line snippet.")
 
 
+class Stage2PatchItem(BaseModel):
+    """An individual surgical patch proposed by Stage 2 auditing."""
+    patch_type: str = Field("ligature_fix", description="ligature_fix, strikethrough, spelling_reversion, digit_fix, split_stitch, no_change")
+    stage1_target: str = Field(..., description="Exact word or phrase in Stage 1")
+    replacement: str = Field(..., description="Replacement text, [struck: ...], [unclear: ...], or same as target")
+    confidence: str = Field("high", description="high, medium, or low")
+    reason: str = Field("", description="Visual or linguistic reason for the patch")
+    context_anchor: str = Field("", description="Surrounding words to disambiguate location")
+
+
 class Stage2VerificationResult(BaseModel):
     """Output of Stage 2: Reconciled transcript with silent autocorrection audit."""
     verified_transcript: str = Field(..., description="Canonical verified transcript.")
     silent_corrections_fixed: List[AutocorrectionDiffItem] = Field(default_factory=list)
+    proposed_patches: List[Stage2PatchItem] = Field(default_factory=list)
     total_corrections_count: int = Field(0, description="Number of silent corrections reverted.")
     verification_notes: str = Field("", description="Observations during visual cross-check.")
 

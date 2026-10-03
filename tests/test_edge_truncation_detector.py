@@ -54,6 +54,20 @@ def test_stitch_cross_line_truncations():
     assert "intend" in stitched4
     assert len(diffs4) == 1
 
+    # Over-stitch prevention: independent words must NEVER be stitched unhyphenated
+    full_lexicon = lexicon | {"in", "to", "into", "see", "the", "seethe", "is", "land", "island", "day", "today"}
+    text_independent = "We was in\nto the room. Can see\nthe chart. The cat is\nland owner. We came to\nday after."
+    stitched5, diffs5 = stitch_cross_line_truncations(text_independent, full_lexicon)
+    assert "into" not in stitched5
+    assert "in\nto" in stitched5
+    assert "seethe" not in stitched5
+    assert "see\nthe" in stitched5
+    assert "island" not in stitched5
+    assert "is\nland" in stitched5
+    assert "today" not in stitched5
+    assert "to\nday" in stitched5
+    assert len(diffs5) == 0
+
 
 def test_is_right_edge_truncation_detection():
     transcript = """

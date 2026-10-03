@@ -20,11 +20,12 @@ import json
 import os
 import re
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple, Set
 
 import yaml
 
 from src.core.schemas import AlignedAnswerItem
+from src.pipeline.token_guard import clean_rubric_answer
 from src.utils.ground_truth import canonicalize_question_key
 from src.utils.linguistic_sanitizer import get_english_lexicon
 
@@ -272,6 +273,7 @@ def build_mode_a_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, key_entry
             "Items:\n" + "\n".join(item_lines)
         )
         schema = '{"items": [{"item_label": "a", "candidate_answer": "the student\'s answer for this item"}], "notes": "one sentence"}'
+    clean_ans = clean_rubric_answer(answer.answer_text)
     return f"""{MODE_A_TAG} answer extraction for Question {answer.q_no} ({spec.task_type}, max {spec.max_mark:g} marks).
 
 OFFICIAL QUESTION:
@@ -279,9 +281,9 @@ OFFICIAL QUESTION:
 {question_prompt_text.strip()[:1800]}
 \"\"\"
 
-STUDENT'S ANSWER (verified transcription; ignore markers like [struck: ...]):
+STUDENT'S ANSWER (verified transcription):
 \"\"\"
-{answer.answer_text.strip()}
+{clean_ans}
 \"\"\"
 
 TASK:
@@ -306,6 +308,7 @@ def build_mode_b_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, key_entry
         ref = "  Expected content in passage order (any 5 earn credit):\n" + "\n".join(f"    - {p}" for p in pts)
         n_items = spec.n_items or 5
         item_note = f"Score each of the {n_items} student boxes/items in order (label them 1..{n_items})."
+    clean_ans = clean_rubric_answer(answer.answer_text)
     return f"""{MODE_B_TAG} for Question {answer.q_no} ({spec.task_type}, {n_items} items x {avail:g} marks = {spec.max_mark:g}).
 
 OFFICIAL QUESTION:
@@ -318,7 +321,7 @@ REFERENCE ANSWER KEY (from the passage):
 
 STUDENT'S ANSWER (verified transcription):
 \"\"\"
-{answer.answer_text.strip()}
+{clean_ans}
 \"\"\"
 
 SCALE PER ITEM (use ONLY these values):
@@ -343,6 +346,7 @@ def build_mode_c_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, question_
     if spec.layout_components:
         layout = "\nLAYOUT COMPONENTS TO CHECK:\n" + "\n".join(f"  - {k}: {', '.join(v)}" for k, v in spec.layout_components.items())
     src = f"\nSOURCE TEXT (for verbatim-copy judgement):\n\"\"\"\n{source_text.strip()[:1200]}\n\"\"\"\n" if source_text else ""
+    clean_ans = clean_rubric_answer(answer.answer_text)
     return f"""{MODE_C_TAG} criterion judgement for Question {answer.q_no} ({spec.task_type}, max {spec.max_mark:g} marks).
 
 OFFICIAL QUESTION:
@@ -352,7 +356,7 @@ OFFICIAL QUESTION:
 {src}
 STUDENT'S ANSWER (verified transcription; handwriting ambiguities already resolved):
 \"\"\"
-{answer.answer_text.strip()}
+{clean_ans}
 \"\"\"
 
 CONFIRMED LINGUISTIC ERRORS (for the language_mechanics criterion only; judge error DENSITY holistically, no per-error arithmetic):
@@ -408,6 +412,43 @@ class ScoreResult:
     weaknesses: List[str] = field(default_factory=list)
 
 
+def compute_lcs_alignment(student: List[str], expected: List[str]) -> Tuple[int, Set[int], Set[int]]:
+    """
+    Computes Longest Common Subsequence of relative sentence order.
+    Returns (lcs_length, student_matched_indices, expected_matched_indices).
+    """
+    m, n = len(student), len(expected)
+    if m == 0 or n == 0:
+        return 0, set(), set()
+
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if student[i - 1] == expected[j - 1]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+            else:
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+
+    lcs_len = dp[m][n]
+
+    # Backtrack to identify matched positions in both sequences
+    matched_student: Set[int] = set()
+    matched_expected: Set[int] = set()
+    i, j = m, n
+    while i > 0 and j > 0:
+        if student[i - 1] == expected[j - 1]:
+            matched_student.add(i - 1)
+            matched_expected.add(j - 1)
+            i -= 1
+            j -= 1
+        elif dp[i - 1][j] >= dp[i][j - 1]:
+            i -= 1
+        else:
+            j -= 1
+
+    return lcs_len, matched_student, matched_expected
+
+
 def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str, Any]) -> ScoreResult:
     res = ScoreResult(awarded=0.0, key_source="answer_key" if key_entry else "none")
     mpi = float(key_entry.get("mark_per_item") or spec.mark_per_item or 1.0)
@@ -415,22 +456,57 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
     if seq:
         raw_student = [str(x).strip().lower() for x in (parsed.get("student_sequence") or [])]
         from src.pipeline.token_guard import sanitize_rearrangement_sequence
-        repaired_seq, anomalies = sanitize_rearrangement_sequence(" ".join(raw_student))
+        repaired_seq, anomalies = sanitize_rearrangement_sequence(raw_student)
         student = repaired_seq if repaired_seq and len(repaired_seq) == len(raw_student) else raw_student
         if anomalies:
             res.notes.extend(anomalies)
 
-        correct = 0
-        for pos, letter in enumerate(seq):
+        expected_clean = [str(x).strip().lower() for x in seq]
+
+        # 1. Exact positional slot matching
+        pos_correct = 0
+        exact_slots: Set[int] = set()
+        for pos, letter in enumerate(expected_clean):
+            if pos < len(student) and student[pos] == letter:
+                pos_correct += 1
+                exact_slots.add(pos)
+
+        # 2. Dynamic programming Longest Common Subsequence (LCS) relative order alignment
+        lcs_len, matched_student, matched_expected = compute_lcs_alignment(student, expected_clean)
+
+        # Harmonized score: Take the maximum of positional matches and relative order matches
+        total_correct = max(pos_correct, lcs_len)
+
+        for pos, letter in enumerate(expected_clean):
             got = student[pos] if pos < len(student) else ""
-            ok = got == str(letter).lower()
-            correct += int(ok)
-            res.items.append({"item_label": str(pos + 1), "candidate_answer": got, "expected": letter,
-                              "status": "correct" if ok else ("not_attempted" if not got else "incorrect"),
-                              "marks_awarded": mpi if ok else 0.0, "marks_available": mpi})
-        res.awarded = min(spec.max_mark, correct * mpi)
+            is_exact = pos in exact_slots
+            is_lcs = pos in matched_expected
+            is_ok = is_exact or (lcs_len >= pos_correct and is_lcs)
+
+            if is_exact:
+                detail = "correct"
+            elif is_ok:
+                detail = "correct (relative order)"
+            elif not got:
+                detail = "not_attempted"
+            else:
+                detail = "incorrect"
+
+            res.items.append({
+                "item_label": str(pos + 1),
+                "candidate_answer": got,
+                "expected": letter,
+                "status": "correct" if is_ok else ("not_attempted" if not got else "incorrect"),
+                "status_detail": detail,
+                "marks_awarded": mpi if is_ok else 0.0,
+                "marks_available": mpi
+            })
+
+        res.awarded = min(spec.max_mark, total_correct * mpi)
         res.raw_total = res.awarded
-        res.notes.append(f"position-scored rearrangement: {correct}/{len(seq)} in correct slot")
+        res.notes.append(
+            f"rearrangement scored: {total_correct}/{len(seq)} (slot matches: {pos_correct}, LCS relative order matches: {lcs_len})"
+        )
         return res
 
     key_items = {str(it.get("label")).lower(): it for it in (key_entry.get("items") or [])}
@@ -484,6 +560,7 @@ def score_mode_b(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
 
 def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, source_text: str = "") -> ScoreResult:
     res = ScoreResult(awarded=0.0)
+    answer_text = clean_rubric_answer(answer_text)
     subs = parsed.get("raw_subscores") or {}
     total = 0.0
     for crit, ceiling in spec.criteria_ceilings.items():

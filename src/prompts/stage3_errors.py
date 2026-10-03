@@ -18,23 +18,26 @@ Analyze the transcript above and extract all student linguistic errors represent
 - syntax (word order distortion, fragment sentence, run-on sentence)
 
 OFFICIAL EXAMINER MARKING DOCTRINE:
-1. CONSERVATIVE GRAMMAR & SPELLING EXTRACTION (BENEFIT OF THE DOUBT ON HANDWRITING AMBIGUITY DEFERRED TO STAGE 3B):
+1. CONSERVATIVE GRAMMAR & SPELLING EXTRACTION:
    Extract ONLY unambiguous grammatical violations, definite syntax failures, and genuine misspellings.
-   - True spelling errors: Genuine orthographic misspellings of non-existent words (e.g. 'eingineer' for 'engineer', 'familyes' for 'families', 'inables' for 'enables', 'interduction' for 'introduction', 'powere' for 'power').
-   - True grammatical errors: Definite structural errors, broken subject-verb agreement (e.g. 'he see' -> 'he sees', 'AI have' -> 'AI has'), and wrong word forms.
-   - Narrative Past Tense: In narrative writing (e.g. Q9 Story Completion), actions set in the past MUST use past tense verbs. Base forms (e.g. 'wake' for 'woke', 'reply' for 'replied', 'live' for 'lived', 'be' for 'was') must be extracted as grammar errors. Do NOT flag present-tense verbs occurring inside direct speech quotation marks (e.g. "I will help you").
-2. REGIONAL SOUTH ASIAN ENGLISH CALIBRATION:
-   Standard South Asian / NCTB English collocations, stylistic choices, and vernacular idioms (e.g. 'take preparation', 'pass days', 'join with me', 'cope up with', 'discuss about', 'by this time') must NOT be penalized or extracted as errors unless they represent a blatant grammatical breakdown.
-3. ZERO PUNCTUATION MARKS:
-   Do NOT extract or flag punctuation marks (periods, commas, semicolons, quotation marks, hyphens, question marks, exclamation marks, or dari). Completely ignore all punctuation differences.
+   - True spelling errors: Non-existent words, omitted/transposed letters, or phonetic misspellings that do not form a valid word.
+   - True grammatical errors: Definite structural failures, broken subject-verb agreement, and incorrect word forms/parts of speech.
+   - Narrative Verb Tense: In past-tense narrative prose, verbs describing past actions must use past tense. Base forms used where past tense is required must be extracted as grammar errors, except when occurring inside direct speech quotations.
+2. REGIONAL & IDIOMATIC USAGE:
+   Standard curriculum collocations, stylistic choices, and recognized vernacular idioms must NOT be penalized unless they represent a blatant grammatical breakdown.
+3. ZERO PUNCTUATION & ZERO CAPITALIZATION PENALTIES:
+   - PUNCTUATION: Completely ignore all punctuation marks (periods, commas, semicolons, hyphens, quotation marks). Never extract punctuation differences as errors.
+   - CAPITALIZATION: Completely ignore letter casing. Do NOT extract or flag capitalization differences as grammatical, syntax, or spelling errors. Student handwriting casing is frequently ambiguous or stylistic; never penalize casing.
 4. EXAM HEADERS:
-   Do NOT flag question headers or labels (e.g. "Ans", "Ans to Q. No.", "Figure: Flow chart").
+   Do NOT flag structural question headings, subpart labels, or section identifiers.
 5. PROPER NOUNS:
-   Do NOT flag names of people, places, or historical figures (e.g. "Pasteur", "Gaza", "Dhaka").
+   Do NOT flag names of people, locations, organizations, or cultural entities.
 6. SINGLE-WORD PRECISION:
-   For "spelling", "erroneous_text" MUST be exactly ONE isolated word. If the student wrote a valid real word that is grammatically incorrect in context, classify it as "grammar" or "syntax", NEVER spelling.
-7. RIGHT-EDGE / MARGIN TRUNCATION:
-   Words that end abruptly at the end of a line or right edge of the page (e.g. 'renewabl', 'wor', 'pro', 'co', 'villa', or any token tagged '[truncated]') due to margin cut-off, scanning boundaries, or camera photo framing MUST NOT be extracted as errors (neither spelling nor grammar). Do NOT penalize students for physical scanning, photo-clipping, or margin cut-off artifacts.
+   For "spelling", "erroneous_text" MUST be exactly one isolated word. If the student wrote a valid real word that is ungrammatical in context, classify it as "grammar" or "syntax", never spelling.
+7. PHYSICAL MARGIN TRUNCATION:
+   Words that terminate prematurely at the end of a line or right edge of the page due to scanning, photography boundaries, or tagged '[truncated]' must NOT be extracted as errors.
+8. STRUCK-THROUGH / CANCELLED TEXT:
+   Any text enclosed in [struck: ...] was crossed out and cancelled by the student. Never extract errors from struck-through words.
 
 OUTPUT FORMAT:
 Return a valid JSON object matching this schema:

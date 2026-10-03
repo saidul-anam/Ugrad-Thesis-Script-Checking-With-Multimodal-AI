@@ -22,26 +22,8 @@ from src.utils.edge_truncation_detector import (
 _SYSTEM_DICT_PATH = "/usr/share/dict/words"
 _ENGLISH_LEXICON: Optional[Set[str]] = None
 
-COMMON_ENGLISH_FALLBACK = {
-    "really", "reality", "healthy", "health", "succeeded", "success", "successful",
-    "alone", "attain", "disaster", "engineer", "university", "family", "families",
-    "according", "respect", "intelligence", "system", "minister", "gaza", "pasteur",
-    "france", "dhaka", "power", "electricity", "natural", "coal", "nuclear", "lion",
-    "mouse", "poverty", "famine", "siege", "author", "deprivation", "moment", "momentum",
-    "right", "rights", "duty", "duties", "literate", "illiterate", "literacy", "happy",
-    "happiness", "teach", "teaches", "teacher", "learn", "learns", "enable",
-    "enables", "best", "better", "essential", "revolution", "revolutionary", "child",
-    "children", "school", "education", "educational", "opportunity", "opportunities",
-    "mobility", "status", "violence", "pregnancy", "vulnerable", "abuse", "curtail",
-    "full", "time", "household", "law", "laws", "doctor", "medicine", "medical",
-    "college", "passed", "passing", "hope", "dream", "dreams", "science", "scientific",
-    "solve", "problem", "problems", "program", "programme", "algorithm", "disease",
-    "germ", "germs", "cure", "cured", "cures", "treat", "treated", "animal", "animals"
-}
-
-
 def get_english_lexicon() -> Set[str]:
-    """Load system English words dictionary or fallback set."""
+    """Load standard English words dictionary."""
     global _ENGLISH_LEXICON
     if _ENGLISH_LEXICON is None:
         words = set()
@@ -51,15 +33,16 @@ def get_english_lexicon() -> Set[str]:
                     for line in f:
                         raw = line.strip()
                         if raw and len(raw) > 1 and not raw.endswith("'s"):
-                            # Filter out pure proper nouns/names (which only appear capitalized)
-                            if raw[0].islower():
-                                words.add(raw.lower())
+                            words.add(raw.lower())
             except Exception:
                 pass
         if not words:
-            words = set(COMMON_ENGLISH_FALLBACK)
-        else:
-            words.update(COMMON_ENGLISH_FALLBACK)
+            try:
+                import nltk
+                from nltk.corpus import words as nltk_words
+                words = {w.lower() for w in nltk_words.words()}
+            except Exception:
+                pass
         _ENGLISH_LEXICON = words
     return _ENGLISH_LEXICON
 
@@ -98,6 +81,10 @@ def sanitize_transcript_for_linguistic_analysis(text: str) -> str:
     # 2. Clean residual [truncated] tags so brackets do not generate syntax/punctuation noise
     stitched = re.sub(r'\[truncated(?::\s*[^\]]+)?\]', '', stitched, flags=re.IGNORECASE)
 
+    # 2b. Strip struck-through / cancelled text so deleted drafts do not trigger syntax/grammar penalties
+    stitched = re.sub(r'\[struck:\s*[^\]]*\]', ' ', stitched, flags=re.IGNORECASE)
+    stitched = re.sub(r'[ \t]+', ' ', stitched)
+
     # 3. Strip exam header prefixes at the beginning of lines (e.g. "Dans: The author..." -> "The author...")
     # Use [ \t] instead of \s to prevent consuming newlines
     stitched = re.sub(r"(?im)^[ \t]*d?ans\s*:\s*(?:to\s+(?:the\s+)?q(?:uestion)?\.?\s*(?:no\.?)?\s*[\w\(\)\.\- \t]*:?[ \t]*)?", "", stitched)
@@ -122,6 +109,19 @@ def sanitize_transcript_for_linguistic_analysis(text: str) -> str:
     return "\n".join(cleaned_lines).strip()
 
 
+NCTB_CULTURAL_TERMS: Set[str] = {
+    "salam", "salaam", "assalamu", "alaikum", "nomoshkar", "adab",
+    "eid", "puja", "boishakh", "pohela", "ekushey", "hartal", "bazaar", "bazar",
+    "lungi", "saree", "kurta", "madrasah", "madrasa", "upazila", "thana", "union",
+    "crore", "lakh", "taka", "paisa", "ghat", "char",
+    "tarun", "kalam", "jamuna", "padma", "meghna", "surma", "karnafuli", "sundarbans",
+    "rahim", "karim", "barkat", "rafiq", "jabbar", "shafiq", "bangabandhu", "mujib",
+    "nazrul", "rabindranath", "tagore", "titumir", "rokeya", "bhashani", "hasina",
+    "dhaka", "chittagong", "chattogram", "sylhet", "rajshahi", "khulna", "barisal",
+    "rangpur", "mymensingh", "comilla", "cumilla", "bogura", "bogra"
+}
+
+
 def verify_and_filter_stage3_errors(
     errors: List[LinguisticErrorItem],
     question_vocab: Optional[Set[str]] = None,
@@ -134,14 +134,15 @@ def verify_and_filter_stage3_errors(
     Rules enforced:
     1. Header Filter: Discards errors stemming from exam prefixes (e.g. 'Dans', 'Ans', 'Q. No').
     2. Edge Truncation Gate: Suppresses false spelling/grammar errors on words cut off at right margins/photo edges.
-    3. OCR Artifact Detection: Cursive OCR slips (e.g. 'thad' -> 'that', 'beals' -> 'beats') are suppressed.
-    4. Proper Noun / Question Whitelist: If the word or suggested correction is in the question paper
+    3. Struck Text Filter: Discards errors on words the student crossed out with [struck: ...].
+    4. OCR Artifact Detection: Cursive OCR slips (e.g. 'thad' -> 'that', 'beals' -> 'beats') are suppressed.
+    5. Proper Noun / Question Whitelist: If the word or suggested correction is in the question paper
        vocabulary (e.g. 'Pasteur', 'Gaza', 'Joseph Meister'), immune from spelling penalties.
-    5. Dictionary Gate: If erroneous_text is a valid dictionary word (e.g. 'really' in 'really of Gaza'),
+    6. Dictionary Gate: If erroneous_text is a valid dictionary word (e.g. 'really' in 'really of Gaza'),
        it CANNOT be a spelling error. Reclassifies to 'grammar' or 'syntax'.
-    6. Single-Word Precision: For spelling errors, erroneous_text must be exactly 1 word. If multiple
+    7. Single-Word Precision: For spelling errors, erroneous_text must be exactly 1 word. If multiple
        words are provided, reclassifies to 'syntax' or 'grammar'.
-    7. Compound Words / Hyphenations: Common closed compounds in note-taking (e.g. 'healthrisk') are
+    8. Compound Words / Hyphenations: Common closed compounds in note-taking (e.g. 'healthrisk') are
        demoted or filtered.
     """
     if not errors:
@@ -153,6 +154,18 @@ def verify_and_filter_stage3_errors(
     # Common headers to reject immediately
     header_tokens = {"ans", "dans", "q", "no", "q.", "no.", "qno", "section", "part", "question"}
 
+    # Extract all struck tokens/phrases from original transcript so cancelled text is never penalized
+    struck_texts = set()
+    if transcript:
+        for m in re.finditer(r'\[struck:\s*([^\]]*)\]', transcript, re.IGNORECASE):
+            st = m.group(1).strip().lower()
+            if st:
+                struck_texts.add(st)
+                for w in st.split():
+                    clean_w = re.sub(r'[^\w]', '', w)
+                    if clean_w:
+                        struck_texts.add(clean_w)
+
     validated_errors: List[LinguisticErrorItem] = []
 
     for err in errors:
@@ -163,12 +176,38 @@ def verify_and_filter_stage3_errors(
         corr_text = (err.suggested_correction or "").strip()
         corr_clean = re.sub(r"[^\w\s\-]", "", corr_text).strip()
         # 0. Drop punctuation errors immediately (punctuation is excluded from error catalog)
-        if "punct" in etype or "comma" in etype or "period" in etype:
+        if "punct" in etype or "comma" in etype or "period" in etype or "hyphen" in etype:
             continue
         if not err_clean or not corr_clean:
             continue
         if err.explanation and any(pw in err.explanation.lower() for pw in ["missing comma", "missing period", "punctuation", "quotation mark", "missing dari", "apostrophe"]):
             continue
+
+        # 0b. Discard pure capitalization / casing differences across all error types
+        # In student handwriting, letter casing (e.g. C, P, S, W, O, K, V) is often ambiguous or stylistic.
+        if "capital" in etype or "case" in etype or "casing" in etype:
+            continue
+        if err_clean.lower() == corr_clean.lower():
+            # Error and correction are identical ignoring case: this is purely a capitalization difference
+            continue
+        err_strip = re.sub(r'^[^\w\u0980-\u09FF]+|[^\w\u0980-\u09FF]+$', '', err_clean).lower()
+        corr_strip = re.sub(r'^[^\w\u0980-\u09FF]+|[^\w\u0980-\u09FF]+$', '', corr_clean).lower()
+        if err_strip and corr_strip and err_strip == corr_strip:
+            # Difference is purely capitalization and/or edge punctuation
+            continue
+        if err.explanation and any(kw in err.explanation.lower() for kw in [
+            "capitalization", "capital letter", "capital letters", "uppercase", "lowercase",
+            "capitalized", "capitalised", "capitalise", "capitalize", "capitalisation",
+            "casing error", "case error", "upper case", "lower case", "small letter",
+            "title case", "sentence case", "initial capital", "letter case"
+        ]):
+            continue
+
+        # 0c. Discard errors on text that was crossed out / struck by the student
+        if struck_texts:
+            err_lower = err_clean.lower()
+            if err_lower in struck_texts or (words and all(w.lower() in struck_texts for w in words)):
+                continue
 
         # 1. Drop exam header artifacts (e.g. "Dans" -> "Ans")
         if err_clean.lower() in header_tokens or corr_clean.lower() in header_tokens:
@@ -182,11 +221,25 @@ def verify_and_filter_stage3_errors(
         if is_right_edge_truncation(err_clean, corr_clean, context_sentence=err.context_sentence, transcript=transcript, lexicon=lexicon):
             continue
 
-        # 3. Check proper nouns and question paper vocabulary
-        if err_clean.lower() in q_vocab or corr_clean.lower() in q_vocab:
-            # If word is from question paper, it is not a student spelling error
+        # 3. Check proper nouns, cultural terms, and question paper vocabulary
+        err_low = err_clean.lower()
+        corr_low = corr_clean.lower()
+        if err_low in q_vocab or corr_low in q_vocab or err_low in NCTB_CULTURAL_TERMS:
+            # If word is from question paper or cultural entity, it is not a student spelling error
             if "spell" in etype:
                 continue
+
+        # 3b. Mid-Sentence Capitalized Proper Noun Shield:
+        # If the word appears capitalized in the context sentence and is NOT sentence-initial,
+        # it functions grammatically as a proper noun / named entity (e.g. 'Tarun', 'Kalam', 'Jamuna').
+        if "spell" in etype and err_text and err_text[0].isupper():
+            ctx = err.context_sentence or ""
+            pattern = r'(?:\b|[^\w])' + re.escape(err_text) + r'\b'
+            m = re.search(pattern, ctx)
+            if m:
+                preceding = ctx[:m.start()].strip()
+                if preceding and not preceding.endswith((".", "!", "?", ":", "\n")):
+                    continue
 
         # 4. Spelling Error Gate
         if "spell" in etype:

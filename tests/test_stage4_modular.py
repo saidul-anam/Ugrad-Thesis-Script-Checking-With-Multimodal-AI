@@ -28,7 +28,7 @@ from src.utils.export_utils import export_report_markdown
 def test_header_normalization_and_extraction():
     # Test OCR variants normalization
     assert "No. 7" in normalize_header_text("Ans to the Q No. Z")
-    assert "Ans: to the Q. No. 1(B)" in normalize_header_text("Dans to the Q")
+    assert "Ans to the Q" in normalize_header_text("Dans to the Q")
 
     # Test Q extraction
     assert extract_header_qno("Ans to the Question No 1(A)\nHere is answer") == "1(A)"
@@ -242,3 +242,49 @@ def test_orchestrator_modular_vs_monolithic():
         )
         assert rep_monolithic.stage4_evaluation.eval_mode == "monolithic"
         assert len(rep_monolithic.stage4_evaluation.criteria_scores) > 0
+
+
+def test_stage4_dynamic_subpart_prompt_slicing():
+    from src.pipeline.stage4_evaluator import get_sub_question_prompt_and_marks
+    from src.core.schemas import ExtractedQuestion
+
+    question_text = """
+1. Read the passage and answer questions A, B and C.
+Passage text about technology and climate change...
+
+A. Choose the correct answer from the following alternatives:
+(a) What does climate mean?
+
+B. Answer the following questions:
+(a) Explain the effects of global warming.
+
+C. Fill in the blanks with suitable words:
+(a) The ozone layer protects us.
+
+2. Read the following passage...
+"""
+    q_obj = ExtractedQuestion(
+        question_id="TEST_Q",
+        question_text=question_text,
+        sub_questions=[
+            {"q_no": "1(A)", "marks": 5.0},
+            {"q_no": "1(B)", "marks": 10.0},
+            {"q_no": "1(C)", "marks": 5.0}
+        ]
+    )
+
+    prompt_a, marks_a = get_sub_question_prompt_and_marks("1(A)", q_obj)
+    assert "Instructions (Part A):" in prompt_a
+    assert "Choose the correct answer" in prompt_a
+    assert marks_a == 5.0
+
+    prompt_b, marks_b = get_sub_question_prompt_and_marks("1(B)", q_obj)
+    assert "Instructions (Part B):" in prompt_b
+    assert "Answer the following questions" in prompt_b
+    assert marks_b == 10.0
+
+    prompt_c, marks_c = get_sub_question_prompt_and_marks("1(C)", q_obj)
+    assert "Instructions (Part C):" in prompt_c
+    assert "Fill in the blanks" in prompt_c
+    assert marks_c == 5.0
+

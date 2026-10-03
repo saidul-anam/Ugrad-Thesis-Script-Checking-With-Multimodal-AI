@@ -131,12 +131,18 @@ def stitch_cross_line_truncations(text: str, lexicon: Set[str]) -> Tuple[str, Li
     )
 
     # 2. Unhyphenated split words across newline: part1 on line k, part2 on line k+1
-    # Only if concatenation strictly forms a valid English word in the lexicon
+    # Only if concatenation strictly forms a valid English word in the lexicon,
+    # AND at least one part is an incomplete fragment (never merge two independent words)
     def _stitch_unhyphenated_lexicon(match: re.Match) -> str:
         part1 = match.group(1)
         part2 = match.group(2)
+        p1_lower = part1.lower()
+        p2_lower = part2.lower()
         combined = (part1 + part2).lower()
-        if combined in lexicon_lower and combined != part1.lower() and combined != part2.lower():
+        # If both parts are independent valid English words, NEVER stitch unhyphenated line breaks
+        if p1_lower in lexicon_lower and p2_lower in lexicon_lower:
+            return match.group(0)
+        if combined in lexicon_lower and combined != p1_lower and combined != p2_lower:
             diffs.append({"original": match.group(0), "stitched": part1 + part2})
             return part1 + part2
         return match.group(0)
@@ -233,12 +239,8 @@ def is_right_edge_truncation(
         elif context_sentence.strip().lower().endswith(err_clean) or context_sentence.strip().lower().endswith(err_raw.lower()):
             is_at_line_end = True
 
-    # Known classic margin break stems (even without transcript line coordinates)
-    KNOWN_TRUNCATION_STEMS = {
-        "universi", "organi", "technolo", "renewabl", "environ",
-        "intellig", "diffic", "communi", "satisf"
-    }
-    if err_clean in KNOWN_TRUNCATION_STEMS and corr_clean.startswith(err_clean):
+    # Long prefix truncation check (single-word stem length >= 5 that directly prefixes a valid word)
+    if " " not in err_clean and len(err_clean) >= 5 and corr_clean.startswith(err_clean) and len(corr_clean) > len(err_clean):
         return True
 
     # 3. Linguistic Prefix & Morphology Check

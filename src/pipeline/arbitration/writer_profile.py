@@ -73,7 +73,7 @@ class WriterProfile(BaseModel):
                 if (c_low.replace("n", "s") == i_low or i_low.replace("n", "s") == c_low):
                     return True
             if rule_key == "cursive_vr" and tgt == "v":
-                if (c_low.replace("r", "v") == i_low or c_low.replace("rumore", "remove") == i_low):
+                if c_low.replace("r", "v") == i_low:
                     return True
             if rule_key.startswith("allograph_"):
                 parts = rule_key.split("_")

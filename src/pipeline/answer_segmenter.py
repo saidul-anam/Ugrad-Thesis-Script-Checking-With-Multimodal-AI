@@ -13,13 +13,17 @@ from src.core.schemas import (
     ExtractedQuestion,
     AlignedAnswerItem
 )
+from src.utils.text_metrics import levenshtein
 
 
 # Canonical header normalization mappings
 HEADER_NORMALIZATION_RULES = [
+    (re.compile(r'(?im)^\s*Dans\s+to\b'), 'Ans to'),
+    (re.compile(r'(?im)^\s*([b-gB-G])\s*ans[:\s]+'), r'(\1) Ans: '),
+    (re.compile(r'(?im)^\s*Dans[:\s]+'), '(d) Ans: '),
     (re.compile(r'\b(?:Ass|Ansl)\b', re.IGNORECASE), 'Ans'),
     (re.compile(r'No[.,\s]*[Zz]\b', re.IGNORECASE), 'No. 7'),
-    (re.compile(r'\bDans\s*(?:to\s+(?:the\s+)?[Qq]|:)?', re.IGNORECASE), 'Ans: to the Q. No. 1(B)'),
+    (re.compile(r'\bDans\b', re.IGNORECASE), 'Ans'),
     (re.compile(r'\bdo the [Qq]\b', re.IGNORECASE), 'to the Q'),
     (re.compile(r'Qhe o\.', re.IGNORECASE), 'Q. No.'),
     (re.compile(r'Anseve?r', re.IGNORECASE), 'Answer'),
@@ -44,13 +48,13 @@ def to_arabic_digits(text: str) -> str:
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
     # English question headers (handles Ans/Answer/Dans/Ass/Ansl, to/of the, Question/Ques/Q/No/Number)
-    r'(?:\n|\A)\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}[0-9০-৯]{1,2}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
+    r'(?:\n|\A)\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}[0-9০-৯]{1,3}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
     r'(?:\n|\A)\s*Ans[:\s]+(?:(?:to|of)\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
     # Standalone question subpart headers: 1(A), 1(B), 1(a), 1(b)
-    r'(?:\n|\A)\s*[0-9০-৯]{1,2}\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)|'
+    r'(?:\n|\A)\s*[0-9০-৯]{1,3}\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)|'
     # Bengali question headers: supports '১ নং উত্তর', '১(ক) নং প্রশ্নের উত্তর', 'উত্তর: ১', 'উত্তর নং ১'
-    r'(?:\n|\A)\s*(?:[০-৯0-9]{1,2}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*(?:প্রশ্নের?\s*)?উত্তর)|'
-    r'(?:\n|\A)\s*(?:(?:প্রশ্নের?\s*)?উত্তর\s*(?:নং|নম্বর)?\s*[:\-]?\s*[০-৯0-9]{1,2})|'
+    r'(?:\n|\A)\s*(?:[০-৯0-9]{1,3}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*(?:প্রশ্নের?\s*)?উত্তর)|'
+    r'(?:\n|\A)\s*(?:(?:প্রশ্নের?\s*)?উত্তর\s*(?:নং|নম্বর)?\s*[:\-]?\s*[০-৯0-9]{1,3})|'
     # Subparts: (A), (B), (ক), (খ), circled letters Ⓐ-Ⓓ, or standalone A/B line before sub-items
     r'(?:\n|\A)\s*[\(（](?:[A-Da-d]|[ক-ঘ])[\)）]\s*(?:\n|\r\n|Ans|Answer)|'
     r'(?:\n|\A)\s*[Ⓐ-Ⓓ]\s*(?:\n|\r\n|Ans|Answer)|'
@@ -67,8 +71,8 @@ HEADER_SPLIT_REGEX = re.compile(
 )
 
 HEADER_EXTRACT_REGEX = re.compile(
-    r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}([0-9]{1,2}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'^\s*([0-9]{1,2})[ \t]*[\(（]([A-Za-z0-9])[\)）]\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$)|'
+    r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}([0-9]{1,3}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
+    r'^\s*([0-9]{1,3})[ \t]*[\(（]([A-Za-z0-9])[\)）]\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*[\(（]([A-B])[\)）]\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*([ⒶⒷ])\s*(?:\n|\r\n|Ans|Answer|$)|'
     r'^\s*([A-B])\s*$',
@@ -76,7 +80,7 @@ HEADER_EXTRACT_REGEX = re.compile(
 )
 
 VALID_HEADER_INTERMEDIATE_WORDS = {
-    "to", "of", "the", "question", "questions", "ques", "que", "qn", "no", "number", "num", "n", "q", "qhe", "o", "ans", "answer"
+    "to", "of", "the", "question", "questions", "ques", "que", "qn", "no", "number", "num", "n", "q", "qhe", "o", "ans", "answer", "for", "in"
 }
 
 
@@ -132,83 +136,88 @@ def _extract_explicit_english_header(
     if not clean_lines:
         return None
 
-    top_line = clean_lines[0]
+    # Check the first 2 clean lines for a header (handles page title on line 0)
+    for line_idx in range(min(2, len(clean_lines))):
+        top_line = clean_lines[line_idx]
 
-    # Special case: OCR artifact 'No. Z' -> 7
-    if re.search(r'\bNo[.,\s]*[Zz]\b', top_line, re.IGNORECASE):
-        return "7"
+        # Special case: OCR artifact 'No. Z' -> 7
+        if re.search(r'\bNo[.,\s]*[Zz]\b', top_line, re.IGNORECASE):
+            return "7"
 
-    # Standalone question subpart format e.g. "1(A)" or "1 (B)" or "1(b)"
-    standalone_m = re.match(r'^\s*([0-9]{1,2})\s*[\(（]([A-Za-z])[\)）]\s*[\:\.\-]?', top_line)
-    if standalone_m:
-        candidate = f"{int(standalone_m.group(1))}({standalone_m.group(2).upper()})"
-        if not valid_q_order or candidate in valid_q_order:
+        # Standalone question subpart format e.g. "1(A)" or "1 (B)" or "1(b)"
+        standalone_m = re.match(r'^\s*([0-9]{1,3})\s*[\(（]([A-Za-z])[\)）]\s*[\:\.\-]?', top_line)
+        if standalone_m:
+            candidate = f"{int(standalone_m.group(1))}({standalone_m.group(2).upper()})"
+            if not valid_q_order or candidate in valid_q_order:
+                return candidate
+
+        # Connected header anchor pattern: requires anchor (Ans/Answer/Dans/Ass/Q/No) connected to a number
+        # through valid header connectors (to, of, the, question, no, punctuation) or 1-edit OCR typos.
+        header_m = re.match(
+            r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b([^\n\r0-9]{0,40})([0-9]{1,3})\s*(?:[\(（\.\s]*([A-Za-z0-9])[\)）]?)?',
+            top_line,
+            re.IGNORECASE
+        )
+
+        if header_m:
+            intermediate = header_m.group(1)
+            inter_words = [w.lower() for w in re.findall(r'[A-Za-z]+', intermediate)]
+            all_valid = True
+            for w in inter_words:
+                if w in VALID_HEADER_INTERMEDIATE_WORDS or len(w) <= 2:
+                    continue
+                # 1-char edit distance tolerance for common OCR misreads on connector words
+                if any(levenshtein(w, canon) <= 1 for canon in ("question", "number", "answer")):
+                    continue
+                all_valid = False
+                break
+            if not all_valid:
+                header_m = None
+
+        if not header_m:
+            # Check if line has subpart letter like "Ans (A)" or "Ans: B"
+            sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-B])[\)）]|([A-B])\b)', top_line, re.IGNORECASE)
+            if sub_letter_m:
+                let = (sub_letter_m.group(1) or sub_letter_m.group(2)).upper()
+                return f"1({let})"
+            continue
+
+        raw_num = str(int(header_m.group(2)))
+        sub_letter = header_m.group(3).upper() if header_m.group(3) else None
+
+        # If subpart wasn't on the same line, check if the immediately following line specifies the subpart
+        if not sub_letter and len(clean_lines) > line_idx + 1:
+            next_line = clean_lines[line_idx + 1].strip()
+            next_sub = re.match(r'^\s*(?:[\(（]([A-Da-d])[\)）]|([Ⓐ-Ⓓ]))\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', next_line)
+            if next_sub:
+                if next_sub.group(1):
+                    sub_letter = next_sub.group(1).upper()
+                elif next_sub.group(2):
+                    circle_map = {'Ⓐ': 'A', 'Ⓑ': 'B', 'Ⓒ': 'C', 'Ⓓ': 'D'}
+                    sub_letter = circle_map.get(next_sub.group(2), 'A')
+
+        candidate = f"{raw_num}({sub_letter})" if sub_letter and sub_letter in ["A", "B", "C", "D", "E"] else raw_num
+
+        # Schema-Constrained Validation
+        if valid_q_order:
+            if candidate in valid_q_order:
+                return candidate
+
+            if candidate == "1":
+                if any(q in ("1(A)", "1A") for q in valid_q_order) and "1" not in valid_q_order:
+                    return "1(A)"
+                elif "1" in valid_q_order:
+                    return "1"
+
+            if sub_letter:
+                normalized_cand = f"{raw_num}({sub_letter})"
+                if normalized_cand in valid_q_order:
+                    return normalized_cand
+
+            continue
+
+        if raw_num.isdigit() and 1 <= int(raw_num) <= 25:
             return candidate
-        return None
-
-    # Connected header anchor pattern: requires anchor (Ans/Answer/Dans/Ass/Q/No) connected to a number
-    # through valid header connectors (to, of, the, question, no, punctuation).
-    # This strictly prevents body sentences like "The answer lies in the fact that 5 people were involved"
-    header_m = re.match(
-        r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b([^\n\r0-9]{0,40})([0-9]{1,2})\s*(?:[\(（\.\s]*([A-Za-z0-9])[\)）]?)?',
-        top_line,
-        re.IGNORECASE
-    )
-
-    if header_m:
-        intermediate = header_m.group(1)
-        inter_words = [w.lower() for w in re.findall(r'[A-Za-z]+', intermediate)]
-        if any(w not in VALID_HEADER_INTERMEDIATE_WORDS for w in inter_words):
-            header_m = None
-
-    if not header_m:
-        # Check if line has subpart letter like "Ans (A)" or "Ans: B"
-        sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-B])[\)）]|([A-B])\b)', top_line, re.IGNORECASE)
-        if sub_letter_m:
-            let = (sub_letter_m.group(1) or sub_letter_m.group(2)).upper()
-            return f"1({let})"
-        return None
-
-    raw_num = str(int(header_m.group(2)))
-    sub_letter = header_m.group(3).upper() if header_m.group(3) else None
-
-
-    # If subpart wasn't on the same line, check if the immediately following line specifies the subpart
-    # e.g.:
-    # Line 1: Ans: to the Q. No. 1
-    # Line 2: (A)
-    if not sub_letter and len(clean_lines) > 1:
-        next_line = clean_lines[1].strip()
-        next_sub = re.match(r'^\s*(?:[\(（]([A-Da-d])[\)）]|([Ⓐ-Ⓓ]))\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', next_line)
-        if next_sub:
-            if next_sub.group(1):
-                sub_letter = next_sub.group(1).upper()
-            elif next_sub.group(2):
-                circle_map = {'Ⓐ': 'A', 'Ⓑ': 'B', 'Ⓒ': 'C', 'Ⓓ': 'D'}
-                sub_letter = circle_map.get(next_sub.group(2), 'A')
-
-    candidate = f"{raw_num}({sub_letter})" if sub_letter and sub_letter in ["A", "B", "C", "D", "E"] else raw_num
-
-    # 4. Schema-Constrained Validation
-    if valid_q_order:
-        if candidate in valid_q_order:
-            return candidate
-
-        if candidate == "1":
-            if any(q in ("1(A)", "1A") for q in valid_q_order) and "1" not in valid_q_order:
-                return "1(A)"
-            elif "1" in valid_q_order:
-                return "1"
-
-        if sub_letter:
-            normalized_cand = f"{raw_num}({sub_letter})"
-            if normalized_cand in valid_q_order:
-                return normalized_cand
-
-        return None
-
-    if raw_num.isdigit() and 1 <= int(raw_num) <= 25:
-        return candidate
 
     return None
 
@@ -281,26 +290,36 @@ def detect_structural_fingerprint(
 
     # 3. Informal Letter / Email: Envelope box, [STAMP], salutation + sign-off
     has_envelope = bool(re.search(r'\b(?:\[?STAMP\]?|envelope)\b', section_text, re.I)) and bool(re.search(r'\b(?:from|to)\b', section_text, re.I))
-    has_salutation = bool(re.search(r'\b(?:dear\s+[a-z]+|my\s+dear)\b', first_lines, re.I))
-    has_signoff = bool(re.search(r'\b(?:yours\s+(?:ever|loving|faithfully|sincerely|truly)|lovingly\s+yours|your\s+friend)\b', sec_lower, re.I))
-    if has_envelope or (has_salutation and has_signoff):
+    has_salutation = bool(re.search(r'^\s*(?:dear\s+[a-z]+|my\s+dear)\b', first_lines, re.I | re.MULTILINE))
+    has_signoff = bool(re.search(r'\b(?:yours?\s+(?:ever|loving|faithfully|sincerely|truly|affectionately|friend)|lovingly\s+yours|your\s+(?:loving\s+)?friend)\b', sec_lower, re.I))
+    if has_envelope or (has_salutation and (has_signoff or len(section_text.split()) >= 8)) or (has_signoff and current_parent in (q_map["letter"], None)):
         return q_map["letter"]
 
-    # 4. Data Chart / Graph: Statistical description with percentages and years
+    # 4. Data Chart / Graph: Statistical description with percentages or trend metrics
     has_chart_kw = bool(re.search(r'\b(?:graph|chart|pie\s*chart|bar\s*chart|diagram)\b', first_lines, re.I))
-    has_stats = bool(re.search(r'\b(?:percent|percentage|\%)\b', sec_lower, re.I)) and bool(re.search(r'\b(?:19[89]\d|20[0-2]\d)\b', sec_lower))
-    if (has_chart_kw and has_stats) or bool(re.search(r'\b(?:the\s+graph\s+shows|the\s+chart\s+shows|the\s+pie\s+chart\s+shows)\b', first_lines, re.I)):
+    has_stats = bool(re.search(r'\b(?:percent|percentage|\%)\b', sec_lower, re.I)) and bool(re.search(r'\b\d+(?:\.\d+)?\b', sec_lower))
+    has_chart_desc = bool(re.search(r'\b(?:the\s+(?:given\s+)?(?:graph|chart|diagram|table)\s+shows|shows\s+that|increased|decreased|highest|lowest|fluctuat|rate\s+of)\b', sec_lower, re.I))
+    if (has_chart_kw and (has_stats or has_chart_desc)) or (has_stats and has_chart_desc):
         return q_map["graph"]
 
     # 5. Completing Story: Narrative openings or common story motifs
-    has_story_opening = bool(re.search(r'\b(?:once\s+upon\s+a\s+time|once\s+there\s+(?:was|lived)|there\s+lived\s+a)\b', first_lines, re.I))
-    has_story_titles = bool(re.search(r'\b(?:the\s+lion\s+and\s+the\s+mouse|grapes\s+are\s+sour|a\s+clever\s+crow|a\s+thirsty\s+crow|the\s+shepherd\s+boy|liar\s+shepherd|honesty\s+is\s+the\s+best\s+policy)\b', first_lines, re.I))
-    if has_story_opening or has_story_titles:
+    has_story_opening = bool(re.search(r'\b(?:once\s+upon\s+a\s+time|once\s+(?:there\s+)?lived|once\s+there\s+was|there\s+(?:lived|was)\s+(?:a|an)|one\s+day\s+(?:a|an)?|long\s+(?:ago|time\s+ago)|many\s+days\s+ago)\b', first_lines, re.I))
+    has_story_kw = bool(re.search(r'\b(?:completing\s+story|story\s*[:\-]|\btitle\s*[:\-])\b', first_lines, re.I))
+    has_schema_story_title = False
+    if question_obj and question_obj.sub_questions:
+        for sq in question_obj.sub_questions:
+            sq_name = str(sq.get("name") or sq.get("title") or "").lower()
+            if "story" in sq_name:
+                title_words = [w for w in re.findall(r'[a-z]{4,}', sq_name) if w not in _KEYWORD_STOPWORDS and w != "story"]
+                if title_words and sum(1 for w in set(title_words) if w in first_lines) >= 2:
+                    has_schema_story_title = True
+                    break
+    if has_story_opening or has_story_kw or has_schema_story_title:
         return q_map["story"]
 
     # 6. Poem Theme: Theme keyword, poem analysis phrasing
-    has_theme_kw = bool(re.search(r'\b(?:theme\s*[:\-]|\bthe\s+poem\s+(?:deals\s+with|is\s+about|focuses\s+on)|the\s+central\s+theme\s+of\s+the\s+poem)\b', first_lines, re.I))
-    if has_theme_kw or ("theme:" in first_lines and any(w in first_lines for w in ["poem", "poet", "dream", "dreams", "beauty"])):
+    has_theme_kw = bool(re.search(r'\b(?:theme\s*[:\-]|\bthe\s+(?:poem|stanza|verse|passage)\s+(?:deals\s+with|is\s+about|focuses\s+on)|central\s+theme\b)', first_lines, re.I))
+    if has_theme_kw or ("theme:" in first_lines and any(w in first_lines for w in ["poem", "poet", "stanza", "verse", "central", "main", "message", "author"])):
         return q_map["theme"]
 
     # 7. Summary: Explicit summary keyword
@@ -427,13 +446,6 @@ def extract_header_qno(
     if fp:
         return fp
 
-    # 6. Backward compatibility heuristics for English HSC
-    if "theme:" in first_lines_lower and ("dream" in first_lines_lower or "poem" in first_lines_lower):
-        return "11"
-    if "artificial" in first_lines_lower or "indelligence" in first_lines_lower or re.search(r'\b(ai|a\.i\.)\b', first_lines_lower):
-        if re.search(r'\b(ans|q|question|no)\b', first_lines_lower) or "artificial intelligence" in first_lines_lower:
-            return "7"
-
     return None
 
 
@@ -468,6 +480,9 @@ def segment_script_into_questions(
         full_text = extraction.stage2_verification.verified_transcript or extraction.stage1_transcription.raw_transcript
         return _segment_raw_transcript(full_text, sub_q_names, valid_q_order, extraction.stage3_errors.errors)
 
+    # Page-aware continuation state machine: track the last active question per page
+    page_last_q: Dict[int, str] = {}
+
     for p in pages:
         page_no = p.page_no
         page_text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").strip()
@@ -484,7 +499,7 @@ def segment_script_into_questions(
         if not sections:
             sections = [normalized_page]
 
-        for s in sections:
+        for s_idx, s in enumerate(sections):
             header_q = extract_header_qno(
                 s,
                 current_parent=current_q_no,
@@ -493,9 +508,16 @@ def segment_script_into_questions(
             )
             if header_q:
                 current_q_no = header_q
+            elif s_idx == 0 and not current_q_no:
+                # Continuation from previous page if available
+                prev_q = page_last_q.get(page_no - 1)
+                if prev_q:
+                    current_q_no = prev_q
 
-            # If still no active question, fallback to current_q_no, or first valid question
+            # If still no active question, fallback to current_q_no or valid_q_order[0]
             target_q = current_q_no or (valid_q_order[0] if valid_q_order else "1(A)")
+            current_q_no = target_q  # anchor active question
+
             if target_q not in answer_buckets:
                 answer_buckets[target_q] = {
                     "text_parts": [],
@@ -505,6 +527,9 @@ def segment_script_into_questions(
 
             answer_buckets[target_q]["text_parts"].append(s.strip())
             answer_buckets[target_q]["pages"].add(page_no)
+
+        if current_q_no:
+            page_last_q[page_no] = current_q_no
 
     # Gather all script-level errors from extraction
     all_extracted_errors = []

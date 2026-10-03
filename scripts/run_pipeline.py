@@ -83,6 +83,14 @@ def main():
         default=None,
         help="Directory to save evaluation reports"
     )
+    parser.add_argument(
+        "--force-extract",
+        "--re-extract",
+        dest="force_extract",
+        action="store_true",
+        default=False,
+        help="Force re-extraction even if artifacts or page checkpoints already exist"
+    )
 
     args = parser.parse_args()
 
@@ -131,7 +139,8 @@ def main():
         try:
             report = pipeline.evaluate_script(
                 image_input=img_path,
-                thinking_mode=cfg.decoding.thinking_mode
+                thinking_mode=cfg.decoding.thinking_mode,
+                force_extract=getattr(args, "force_extract", False)
             )
 
             # Summary Table

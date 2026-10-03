@@ -76,7 +76,8 @@ def test_score_mode_a_rearrangement_positional():
     specs = load_rubric_specs(RUBRIC)
     _, key = key_for_question(KEY, "6")
     sr = score_mode_a({"student_sequence": ["c", "h", "j", "a", "e", "d", "g", "i", "b", "f"]}, specs["6"], key)
-    assert sr.awarded == 8.0
+    # Under dual-engine (positional=8, LCS=9), awarded is max(8, 9) = 9.0
+    assert sr.awarded == 9.0
     sr2 = score_mode_a({"student_sequence": []}, specs["6"], key)
     assert sr2.awarded == 0.0 and all(it["status"] == "not_attempted" for it in sr2.items)
 

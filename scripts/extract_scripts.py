@@ -280,9 +280,10 @@ def main():
     parser.add_argument(
         "--force-extract",
         "--re-extract",
-        dest="skip_extracted",
-        action="store_false",
-        help="Force re-extraction even if artifacts already exist"
+        dest="force_extract",
+        action="store_true",
+        default=False,
+        help="Force re-extraction even if artifacts or page checkpoints already exist"
     )
     parser.add_argument(
         "--force-download",
@@ -294,8 +295,15 @@ def main():
         "--skip-stage2",
         dest="fast",
         action="store_true",
-        default=False,
-        help="Fast single-pass extraction mode: skip Stage 2 visual verification to cut extraction time in half"
+        default=True,
+        help="Fast single-pass extraction mode (Default): skip Stage 2 VLM autocorrection to preserve student errors and cut runtime"
+    )
+    parser.add_argument(
+        "--verify-stage2",
+        "--full",
+        dest="fast",
+        action="store_false",
+        help="Enable full 2-pass Stage 2 VLM verification"
     )
     parser.add_argument(
         "--api",
@@ -358,6 +366,8 @@ def main():
     )
 
     args = parser.parse_args()
+    if getattr(args, "force_extract", False):
+        args.skip_extracted = False
 
     # Defaults based on language
     if not args.pdf_dir:
@@ -492,7 +502,8 @@ def main():
         script_out_dir = os.path.join(args.output_dir, script_id)
         extraction_file = os.path.join(script_out_dir, "extraction_result.json")
 
-        if args.skip_extracted and os.path.exists(extraction_file):
+        force_extract_flag = getattr(args, "force_extract", False) or (not args.skip_extracted)
+        if (not force_extract_flag) and args.skip_extracted and os.path.exists(extraction_file):
             console.print(f"\n[{idx}/{len(input_files)}] Skipping already extracted: [cyan]{script_id}[/cyan]")
             continue
 
@@ -508,7 +519,7 @@ def main():
                 output_dir=args.output_dir,
                 paper=args.lang,
                 skip_stage2=args.fast,
-                force_extract=not args.skip_extracted,
+                force_extract=force_extract_flag,
                 question_input=getattr(args, "question", None),
                 questions_root=getattr(args, "questions_dir", "outputs/questions"),
                 extract_teacher_marks=extract_marks,

@@ -17,17 +17,17 @@ STAGE4_MODULAR_SYSTEM_PROMPT = (
 
 
 def is_objective_question(q_no: str, q_name: str, prompt_text: str) -> bool:
-    """Detect if a question is an objective/structured question where linguistic penalties are forbidden."""
-    q_str = f"{q_no} {q_name} {prompt_text[:200]}".lower()
-    # 1. Match typical HSC English objective questions
-    if q_no.strip() in ["1(A)", "1A", "1.A", "2", "4", "5", "6"]:
-        return True
+    """Detect if a question is an objective/structured grammar question where general linguistic penalties are forbidden."""
+    q_str = f"{q_no} {q_name} {prompt_text[:300]}".lower()
     
-    # 2. Keyword detection for objective question types across subjects
+    # Keyword & task-type detection for objective, grammar, and discrete items across English exams
     objective_keywords = [
-        "mcq", "multiple choice", "flow chart", "flowchart", "cloze",
-        "fill in the blank", "rearrang", "reorder", "table", "matching",
-        "choose the best", "true or false", "one word"
+        "mcq", "multiple choice", "alternatives", "choose the correct", "choose the best",
+        "flow chart", "flowchart", "cloze", "fill in the blank", "fill in the gap",
+        "suitable word", "appropriate word", "words from the box", "rearrang", "reorder",
+        "jumbled", "proper sequence", "table", "matching", "true or false", "one word",
+        "preposition", "right form of verb", "narrative style", "indirect speech",
+        "modifier", "sentence connector", "synonym", "antonym", "punctuation"
     ]
     return any(kw in q_str for kw in objective_keywords)
 
@@ -42,6 +42,8 @@ def build_modular_question_prompt(
     """
     Build a focused evaluation prompt for a single question answer with question-type aware penalties.
     """
+    from src.pipeline.token_guard import clean_rubric_answer
+
     is_obj = is_objective_question(answer.q_no, answer.q_name or "", question_prompt_text)
 
     if is_obj:
@@ -109,7 +111,7 @@ OFFICIAL QUESTION PROMPT & INSTRUCTIONS:
 
 STUDENT'S HANDWRITTEN ANSWER (Verified Transcription):
 \"\"\"
-{answer.answer_text.strip()}
+{clean_rubric_answer(answer.answer_text)}
 \"\"\"
 
 RELEVANT LINGUISTIC OBSERVATIONS:

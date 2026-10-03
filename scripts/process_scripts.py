@@ -326,6 +326,14 @@ def main():
         help="Skip evaluating PDFs that already have completed evaluation reports"
     )
     parser.add_argument(
+        "--force-extract",
+        "--re-extract",
+        dest="force_extract",
+        action="store_true",
+        default=False,
+        help="Force re-extraction of text even if extraction_result.json or page checkpoints already exist"
+    )
+    parser.add_argument(
         "--force-download",
         action="store_true",
         help="Re-download PDFs from Google Drive even if already present locally"
@@ -500,7 +508,7 @@ def main():
                 script_id=script_id,
                 thinking_mode=cfg.decoding.thinking_mode,
                 skip_stage2=args.fast,
-                force_extract=not args.skip_evaluated,
+                force_extract=getattr(args, "force_extract", False) or (not args.skip_evaluated),
                 extract_teacher_marks=extract_marks,
                 eval_mode=getattr(args, "eval_mode", "modular")
             )

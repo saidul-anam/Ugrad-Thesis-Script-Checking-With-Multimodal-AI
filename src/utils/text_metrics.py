@@ -19,9 +19,107 @@ from typing import List, Sequence, Set, Tuple, Optional, Dict, Any
 _TAG_STRUCK = re.compile(r"\[struck:\s*([^\]]*)\]", re.IGNORECASE)
 _TAG_UNCLEAR = re.compile(r"\[unclear:\s*([^\]]*)\]", re.IGNORECASE)
 _TAG_ILLEGIBLE = re.compile(r"\[illegible\]", re.IGNORECASE)
+_TAG_TRUNCATED = re.compile(r"\[truncated\]", re.IGNORECASE)
 _PAGE_BREAK = re.compile(r"-{2,}\s*page\s*break\s*-{2,}", re.IGNORECASE)
-_MD_TABLE_SEP = re.compile(r"^\s*\|?\s*-{2,}.*$", re.MULTILINE)
+_MD_TABLE_SEP = re.compile(r"^\s*\|?\s*[-:_]{2,}.*$", re.MULTILINE)
+_BOX_BORDERS = re.compile(r"[_~=+]{2,}")
 _PUNCT = re.compile(r"[^\w\s'ঀ-৿]", re.UNICODE)
+
+
+def _linearize_envelope_tables(text: str) -> str:
+    """
+    Detect postal envelope tables/boxes (containing 'from' and ('to' or 'stamp'))
+    and linearize them into sequential word blocks: [From block] [To block] [Stamp block].
+    Focuses evaluation strictly on handwritten words, removing box layout/border disparity.
+    """
+    lines = text.split("\n")
+    out_lines: List[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if "|" in line or re.match(r"^[\s_\-+=~]{3,}$", line):
+            block_lines: List[str] = []
+            j = i
+            while j < len(lines) and (
+                "|" in lines[j]
+                or re.match(r"^[\s_\-+=~]{3,}$", lines[j])
+                or (block_lines and lines[j].strip() == "" and j + 1 < len(lines) and ("|" in lines[j + 1] or re.match(r"^[\s_\-+=~]{3,}$", lines[j + 1])))
+            ):
+                block_lines.append(lines[j])
+                j += 1
+
+            block_text = "\n".join(block_lines).lower()
+            has_from = "from" in block_text
+            has_to = "to" in block_text
+            has_stamp = "stamp" in block_text
+
+            if (has_from and (has_to or has_stamp)) or (has_to and has_stamp):
+                content_rows: List[List[str]] = []
+                for bl in block_lines:
+                    if re.match(r"^[\s_|\+\-=~]+$", bl):
+                        continue
+                    stripped = bl.strip()
+                    if stripped.startswith("|"):
+                        stripped = stripped[1:]
+                    if stripped.endswith("|"):
+                        stripped = stripped[:-1]
+                    cells = [c.strip() for c in stripped.split("|")]
+                    if any(cells):
+                        content_rows.append(cells)
+
+                from_cells: List[str] = []
+                to_cells: List[str] = []
+                stamp_cells: List[str] = []
+                other_cells: List[str] = []
+
+                for row in content_rows:
+                    expanded_row: List[str] = []
+                    for c in row:
+                        if re.search(r"\bfrom\b.*\s{2,}.*\bto\b", c, re.IGNORECASE):
+                            parts = re.split(r"\s{2,}", c, maxsplit=1)
+                            expanded_row.extend(parts)
+                        elif len(row) > 1 and re.search(r"\S+\s{2,}\S+", c) and not ("stamp" in c.lower()):
+                            parts = re.split(r"\s{2,}", c, maxsplit=1)
+                            expanded_row.extend(parts)
+                        else:
+                            expanded_row.append(c)
+
+                    for idx, c in enumerate(expanded_row):
+                        c_clean = c.strip()
+                        if not c_clean:
+                            continue
+                        c_lower = c_clean.lower()
+                        if "stamp" in c_lower and len(c_clean) < 15:
+                            stamp_cells.append(c_clean)
+                        elif idx == 0 and len(expanded_row) > 1 and not ("to" in c_lower and "from" not in c_lower):
+                            from_cells.append(c_clean)
+                        elif idx == 1 and len(expanded_row) > 1 and not ("from" in c_lower and "to" not in c_lower):
+                            to_cells.append(c_clean)
+                        elif "from" in c_lower:
+                            from_cells.append(c_clean)
+                        elif "to" in c_lower and not ("p.t.o" in c_lower or "pto" in c_lower):
+                            to_cells.append(c_clean)
+                        elif len(from_cells) > 0 and len(to_cells) == 0:
+                            from_cells.append(c_clean)
+                        else:
+                            other_cells.append(c_clean)
+
+                linearized: List[str] = []
+                if from_cells:
+                    linearized.extend(from_cells)
+                if to_cells:
+                    linearized.extend(to_cells)
+                if stamp_cells:
+                    linearized.extend(stamp_cells)
+                if other_cells:
+                    linearized.extend(other_cells)
+
+                out_lines.append("\n".join(linearized))
+                i = j
+                continue
+        out_lines.append(line)
+        i += 1
+    return "\n".join(out_lines)
 
 
 def normalize_transcript(
@@ -37,18 +135,24 @@ def normalize_transcript(
       student's final answer and its tagging is inconsistent between passes.
     - `[unclear: x]` -> `x` (the model's best reading is still a reading).
     - `[illegible]` -> kept as a single token `[illegible]` so a missing word costs one error.
-    - page-break markers, markdown table separators and LaTeX arrows are removed.
+    - `[truncated]` -> dropped: edge-of-page clipping metadata from reference annotations.
+    - envelope tables/boxes are linearized sequentially (From -> To -> Stamp) ignoring borders.
+    - page-break markers, markdown table separators, decorative borders, and LaTeX arrows are removed.
     - Unicode NFC, collapse whitespace, optional lowercase / punctuation stripping.
     """
     if text is None:
         return ""
     t = unicodedata.normalize("NFC", text)
+    t = _linearize_envelope_tables(t)
     t = _PAGE_BREAK.sub(" ", t)
     t = _MD_TABLE_SEP.sub(" ", t)
-    t = t.replace("$\\rightarrow$", " ").replace("\\rightarrow", " ").replace("|", " ")
+    t = _BOX_BORDERS.sub(" ", t)
+    t = t.replace("$\\rightarrow$", " ").replace("\\rightarrow", " ").replace("|", " ").replace("_", " ")
     t = _TAG_STRUCK.sub(r"\1" if keep_struck else " ", t)
     t = _TAG_UNCLEAR.sub(r"\1", t)
     t = _TAG_ILLEGIBLE.sub(" [illegible] ", t)
+    t = _TAG_TRUNCATED.sub(" ", t)
+    t = re.sub(r"(?<!\w)[~=+](?!\w)", " ", t)
     if lowercase:
         t = t.lower()
     if strip_punctuation:

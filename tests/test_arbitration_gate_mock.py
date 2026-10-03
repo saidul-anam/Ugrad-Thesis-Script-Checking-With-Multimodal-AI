@@ -96,7 +96,7 @@ def test_gate_adopts_consensus_token():
     gate = EvidenceArbitrationGate(
         engine=MockGemmaEngine(), cfg=ArbitrationConfig(), script_id="test", output_dir="/tmp",
         page_images=[(1, Image.new("RGB", (100, 100)), "p1.png")],
-        page_transcripts={1: "test"}, clean_image_fn=None, full_transcript="test", lexicon={"test"}
+        page_transcripts={1: "test"}, clean_image_fn=None, full_transcript="test", lexicon={"test", "verry"}
     )
     gate.consensus.run = lambda *args, **kwargs: {
         "samples": ["verry", "verry"], "agreement_candidate": 0.0, "agreement_intended": 0.0,
