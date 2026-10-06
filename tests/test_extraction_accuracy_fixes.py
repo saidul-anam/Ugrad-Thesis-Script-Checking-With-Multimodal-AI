@@ -558,6 +558,8 @@ def test_permissive_headers_grammar():
 
 def test_structural_fingerprinting():
     from src.pipeline.answer_segmenter import detect_structural_fingerprint
+    from tests.test_dynamic_segmenter import se_11_q1_schema
+    paper = se_11_q1_schema()
 
     # 1. Flowchart
     flowchart_text = """
@@ -565,14 +567,14 @@ def test_structural_fingerprinting():
     (ii) Increasing their vulnerability ->
     (iii) Creating social inequality
     """
-    assert detect_structural_fingerprint(flowchart_text) == "2"
+    assert detect_structural_fingerprint(flowchart_text, question_obj=paper) == "2"
 
     # 2. Rearranging Table
     rearrange_text = """
     | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
     | c | h | j | a | e | d | g | i | f | b  |
     """
-    assert detect_structural_fingerprint(rearrange_text) == "6"
+    assert detect_structural_fingerprint(rearrange_text, question_obj=paper) == "6"
 
     # 3. Informal Letter / Email with Stamp
     letter_text = """
@@ -586,28 +588,28 @@ def test_structural_fingerprinting():
     | To: Rahim         |
     +-------------------+
     """
-    assert detect_structural_fingerprint(letter_text) == "10"
+    assert detect_structural_fingerprint(letter_text, question_obj=paper) == "10"
 
     # 4. Data Graph / Chart Interpretation
     graph_text = """
     The graph shows the percentage of internet users in Bangladesh from 2010 to 2020.
     In 2010, the rate was only 5% whereas in 2020 it increased to 40%.
     """
-    assert detect_structural_fingerprint(graph_text) == "8"
+    assert detect_structural_fingerprint(graph_text, question_obj=paper) == "8"
 
     # 5. Completing Story
     story_text = """
     The Lion and the Mouse
     Once upon a time, a lion was sleeping in a forest. A little mouse began running up and down upon him.
     """
-    assert detect_structural_fingerprint(story_text) == "9"
+    assert detect_structural_fingerprint(story_text, question_obj=paper) == "9"
 
     # 6. Poem Theme
     theme_text = """
     Theme:
     The poem deals with the importance of dreams in human life.
     """
-    assert detect_structural_fingerprint(theme_text) == "11"
+    assert detect_structural_fingerprint(theme_text, question_obj=paper) == "11"
 
 
 def test_dynamic_topic_matching_without_prefix():

@@ -231,6 +231,11 @@ def _extract_explicit_english_header(
                 if normalized_cand in valid_q_order:
                     return normalized_cand
 
+            # The subpart letter is not a question on this paper (e.g. a list item "(i)" under the header):
+            # the header still names the base question.
+            if sub_letter and raw_num in valid_q_order:
+                return raw_num
+
             continue
 
         if raw_num.isdigit() and 1 <= int(raw_num) <= 50:
@@ -263,9 +268,9 @@ def detect_structural_fingerprint(
             combined = f"{name_lower} {task_lower}".strip()
             if not sq_no:
                 continue
-            if "flow" in combined or ("chart" in combined and "pie" not in combined and "bar" not in combined):
+            if "flow" in combined:
                 q_map["flowchart"] = sq_no
-            elif "rearrange" in combined or "jumbled" in combined or "order" in combined:
+            elif "rearrang" in combined or "jumbled" in combined or "order" in combined:
                 q_map["rearrange"] = sq_no
             elif "summary" in combined or "summariz" in combined:
                 q_map["summary"] = sq_no
@@ -286,10 +291,10 @@ def detect_structural_fingerprint(
                     q_map["cloze_no_clues"] = sq_no
                 else:
                     q_map["cloze_clues"] = sq_no
-            elif "table" in combined:
-                q_map["table"] = sq_no
             elif "matching" in combined:
                 q_map["matching"] = sq_no
+            elif "table" in combined:
+                q_map["table"] = sq_no
 
     def _get_q(task_type: str) -> Optional[str]:
         val = q_map.get(task_type)

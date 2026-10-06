@@ -14,6 +14,29 @@ from src.pipeline.answer_segmenter import (
 )
 
 
+
+# Question numbers come from the question paper, never from a built-in class-11 map: fingerprint
+# tests therefore run against the SE_11_Q1 paper's sub-question names.
+SE_11_Q1_SCHEMA_SUBQUESTIONS = [
+    {"q_no": "1(A)", "name": "Q1(A): Multiple Choice Questions (Gaza Passage)"},
+    {"q_no": "1(B)", "name": "Q1(B): Short Answer Questions (Gaza Passage)"},
+    {"q_no": "2", "name": "Q2: Flow Chart (Adolescent Bride Miseries)"},
+    {"q_no": "3", "name": "Q3: Poem Summary ('Hope is the thing with feathers')"},
+    {"q_no": "4", "name": "Q4: Cloze Test with Clues (Success and Risk)"},
+    {"q_no": "5", "name": "Q5: Cloze Test without Clues (Education)"},
+    {"q_no": "6", "name": "Q6: Rearranging Sentences (Louis Pasteur)"},
+    {"q_no": "7", "name": "Q7: Paragraph on Artificial Intelligence"},
+    {"q_no": "8", "name": "Q8: Chart Analysis (USA Electricity Sources 1980)"},
+    {"q_no": "9", "name": "Q9: Story Completion (Lion and Mouse)"},
+    {"q_no": "10", "name": "Q10: Informal Letter (Future Plan after HSC)"},
+    {"q_no": "11", "name": "Q11: Theme of Poem ('All people dream...')"},
+]
+
+
+def se_11_q1_schema():
+    from src.core.schemas import ExtractedQuestion
+    return ExtractedQuestion(question_id="SE_11_Q1", question_text="English 1st Paper", sub_questions=SE_11_Q1_SCHEMA_SUBQUESTIONS)
+
 def test_to_arabic_digits():
     assert to_arabic_digits("১ নং প্রশ্নের উত্তর (ক)") == "1 নং প্রশ্নের উত্তর (ক)"
     assert to_arabic_digits("প্রশ্ন নং ১০") == "প্রশ্ন নং 10"
@@ -336,7 +359,7 @@ def test_problem6_salutation_fingerprint_and_multipage_state_machine():
         stage3_errors=Stage3ErrorResult(errors=[])
     )
 
-    aligned = segment_script_into_questions(extraction)
+    aligned = segment_script_into_questions(extraction, question_obj=se_11_q1_schema())
     q_nos = [item.q_no for item in aligned]
 
     # Must be segmented as Q10, never dumped into default 1(A)
@@ -358,14 +381,14 @@ def test_generalized_graph_and_story_fingerprints():
         "The pie chart shows the percentage allocation of national budget.\n"
         "Education received 25%, while defense was allocated 18%. The rate of healthcare expenditure was 12%."
     )
-    assert detect_structural_fingerprint(graph_text) == "8"
+    assert detect_structural_fingerprint(graph_text, question_obj=se_11_q1_schema()) == "8"
 
     # 2. Completing Story with unseen traditional opening
     story_unseen = (
         "Devotion to Mother\n"
         "Many days ago, a young boy lived with his ailing mother in a remote village."
     )
-    assert detect_structural_fingerprint(story_unseen) == "9"
+    assert detect_structural_fingerprint(story_unseen, question_obj=se_11_q1_schema()) == "9"
 
     # 3. Dynamic story matching against schema
     schema = ExtractedQuestion(
@@ -386,7 +409,7 @@ def test_generalized_graph_and_story_fingerprints():
         "Theme:\n"
         "The central message of the poem emphasizes perseverance in the face of hardship."
     )
-    assert detect_structural_fingerprint(theme_text) == "11"
+    assert detect_structural_fingerprint(theme_text, question_obj=se_11_q1_schema()) == "11"
 
 
 
