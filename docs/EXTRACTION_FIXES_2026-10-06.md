@@ -96,25 +96,47 @@ come from the image (section 4).
 | P5: negative logit bias on dictionary tokens | Not supported by the engine, and it would make the model invent misspellings. |
 | P6: "page-level CER safety gate" | CER needs ground truth, which doesn't exist at run time. |
 
-## 4. In progress: visual reconciliation of disagreements
-
-(Updated when the experiments finish; see section 5.)
+## 4. Stage 2b — line reconciliation (strike status only)
 
 Page-level reading (Stage 1/2) has context and good word accuracy. Reading a single line crop at
-higher resolution is worse overall, but much better at noticing thin cross-out strokes. The two
-make different mistakes. The planned mechanism:
+higher resolution is worse overall (it garbles names and loses context), but it is better at
+seeing thin cross-out strokes. `src/pipeline/line_reconciler.py`:
 
-1. Segment the page into text lines from the ink itself (horizontal projection profile, already in
+1. Segment the page into text lines from the ink itself (horizontal projection profile,
    `arbitration/localizer.py`).
-2. Read each line crop separately.
-3. Align the page transcript lines to the crop reads (monotonic dynamic programming on text
-   similarity).
-4. For every span where the two readings disagree (different letters, or one of them struck), show
-   the VLM the crop and both versions of the line, and ask which one matches the ink. Ask twice
-   with the order swapped. Accept the change only if both answers pick it.
+2. Read each line crop independently (`src/prompts/line_reconciliation.py`).
+3. Align the transcript lines to the crop reads (monotonic dynamic programming; a pair counts only
+   if the two lines are more alike than not).
+4. Wherever the two readings have the **same words but disagree on which are crossed out**, show
+   the crop with both versions of the line and ask which one matches the ink. Ask twice with the
+   order swapped, and adopt the crop reading only if both answers choose it.
 
-The decision comes from the pixels. No word, letter or threshold is hand-set; the only
-acceptance rule is that the model's choice does not depend on the order the options were shown in.
+**Why strikes only (measured, dev pages).** The first version adjudicated every disagreement:
+
+| Decision type | Accepted: helped / hurt | Rejected: would have helped / hurt |
+|---|---|---|
+| Strike status only | 11 / 4 | 3 / 7 |
+| Letters / words | 44 / 78 | 35 / 31 |
+
+On strike status the judge is right about 70% of the time. On letters it is at chance, and it
+accepted invented non-words such as `kmog` and `thimb`. A higher-resolution crop adds information
+about pen strokes, not about letter shapes the same model has already read. Applied to all
+disagreements, the version made things worse (CER 4.88% → 5.11%). Restricted to strike status:
+
+| Variant (56 dev pages) | CER macro | WER macro | false strikes | missed strikes |
+|---|---|---|---|---|
+| Stage 2, new default | 4.50% | 6.69% | 51 | 70 |
+| + Stage 2b (strikes only) | **4.21%** | **6.33%** | 36 | 63 |
+
+27 changes were accepted: 19 helped and 8 hurt. Cost: one short VLM call per text line plus two per
+disagreement, about 15–20 s per page. It is on by default (`pipeline.line_reconciliation: true`).
+Each page's decisions are saved next to its checkpoint as `page_<n>.reconcile.json`.
+
+Not solved by this: letter-level misreads (≈130 words on the dev pages) and silent
+autocorrection of student misspellings (≈28% of student non-words). The second reading did keep
+misspellings better (silent-correction rate 28% → 21% when letters were adjudicated too), but the
+judge could not tell which reading was right. That would need a judge that is independent of the
+reader (a different model, or labelled crops to fit one), which is left as future work.
 
 ## 5. Results log
 
@@ -125,6 +147,10 @@ acceptance rule is that the model's choice does not depend on the order the opti
 | 2026-10-06 | Stage 1+2 without text rules (replay) | dev 56 pp | 5.04% | 7.47% | offline replay |
 | 2026-10-06 | Stage 2 old filters, fresh run | dev 36 pp | 4.67% | 7.02% | same Stage 1 |
 | 2026-10-06 | Stage 2 no filters, fresh run | dev 36 pp | 4.28% | 6.51% | same Stage 1 |
+| 2026-10-06 | Stage 2 old filters | dev 56 pp | 4.87% | 7.12% | same Stage 1 (old checkpoint) |
+| 2026-10-06 | Stage 2 new default | dev 56 pp | 4.50% | 6.69% | same Stage 1 (old checkpoint) |
+| 2026-10-06 | + Stage 2b all disagreements | dev 32 pp | 5.11% (from 4.88%) | 9.48% (from 7.74%) | rejected design |
+| 2026-10-06 | + Stage 2b strikes only | dev 56 pp | 4.21% | 6.33% | adopted |
 
 ## 6. How to reproduce
 

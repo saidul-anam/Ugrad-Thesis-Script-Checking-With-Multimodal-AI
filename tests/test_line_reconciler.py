@@ -26,5 +26,6 @@ def test_replace_span_keeps_rest_of_line():
 
 def test_replace_span_word_substitution():
     line = "you more refreshmant."
-    start, end, new = disagreement_spans(line, "you more refreshment.")[0]
+    assert disagreement_spans(line, "you more refreshment.") == []          # default scope: strikes only
+    start, end, new = disagreement_spans(line, "you more refreshment.", scope="all")[0]
     assert replace_span(line, start, end, new) == "you more refreshment."

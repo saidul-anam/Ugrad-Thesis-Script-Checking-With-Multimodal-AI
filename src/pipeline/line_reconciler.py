@@ -94,12 +94,23 @@ def align_lines(transcript_lines: List[str], reads: List[str]) -> List[Tuple[int
     return pairs[::-1]
 
 
-def disagreement_spans(line: str, read: str) -> List[Tuple[int, int, List[MarkupToken]]]:
-    """(start, end, replacement tokens) over the line's content tokens wherever word or strike differs."""
+def disagreement_spans(line: str, read: str, scope: str = "strikes") -> List[Tuple[int, int, List[MarkupToken]]]:
+    """
+    (start, end, replacement tokens) over the line's content tokens where the two readings differ.
+    scope="strikes": only spans with the same words whose struck/active status differs.
+    scope="all": also spans whose words differ.
+    """
     a = _content(_line_tokens(line))
     b = _content(_line_tokens(read))
     sm = difflib.SequenceMatcher(None, [_key(t) for t in a], [_key(t) for t in b], autojunk=False)
-    return [(a1, a2, b[b1:b2]) for op, a1, a2, b1, b2 in sm.get_opcodes() if op != "equal"]
+    spans = []
+    for op, a1, a2, b1, b2 in sm.get_opcodes():
+        if op == "equal":
+            continue
+        same_words = [_key(t)[0] for t in a[a1:a2]] == [_key(t)[0] for t in b[b1:b2]]
+        if scope == "all" or same_words:
+            spans.append((a1, a2, b[b1:b2]))
+    return spans
 
 
 def replace_span(line: str, start: int, end: int, new: List[MarkupToken]) -> str:
@@ -140,8 +151,17 @@ class ReconcileResult:
 
 
 class LineReconciler:
-    def __init__(self, engine, crop_pad_px: int = 14, crop_min_height_px: int = 96, max_read_tokens: int = 200):
+    """
+    scope="strikes" (default): only struck/active disagreements are adjudicated. On the class-10 dev
+    pages the crop-level judge was right ~70% of the time on strike status (accepted: 11 helped, 4 hurt)
+    but at chance on letter identity (accepted: 44 helped, 78 hurt): a higher-resolution crop adds
+    information about thin pen strokes, not about letter shapes the same model already read.
+    """
+
+    def __init__(self, engine, crop_pad_px: int = 14, crop_min_height_px: int = 96, max_read_tokens: int = 200,
+                 scope: str = "strikes"):
         self.engine = engine
+        self.scope = scope
         self.crop_pad_px = crop_pad_px
         self.crop_min_height_px = crop_min_height_px
         self.max_read_tokens = max_read_tokens
@@ -182,7 +202,7 @@ class LineReconciler:
         for ti, ri in align_lines(lines, reads):
             line = lines[ti]
             accepted: List[Tuple[int, int, List[MarkupToken]]] = []
-            for start, end, new in disagreement_spans(line, reads[ri]):
+            for start, end, new in disagreement_spans(line, reads[ri], self.scope):
                 alternative = replace_span(line, start, end, new)
                 if _plain(alternative) == _plain(line) and \
                         [t.struck for t in _content(_line_tokens(alternative))] == [t.struck for t in _content(_line_tokens(line))]:
