@@ -42,10 +42,20 @@ from rich.panel import Panel
 from rich.prompt import Prompt, Confirm
 
 from src.core.config import load_config
+from src.core.schemas import ExtractedQuestion
 from src.engine.engine_factory import create_engine
 from src.pipeline.orchestrator import ScriptCheckingPipeline
 from src.utils.export_utils import load_extraction_artifacts
 from src.utils.script_files import resolve_paper_folder
+from src.utils.rubric_resolver import (
+    canonicalize_paper_id,
+    resolve_rubric_path,
+    resolve_answer_key_path,
+    resolve_penalty_config_path,
+    detect_class_level,
+    validate_paper_integrity
+)
+from scripts.extract_questions import extract_single_question
 
 
 console = Console()
@@ -97,23 +107,47 @@ def interactive_wizard(args, available_scripts: List[Path]):
         border_style="cyan"
     ))
 
-    # 1. Language
-    console.print("\n[bold green]1. Exam Script Language / Subject:[/bold green]")
-    console.print("   [[bold cyan]1[/bold cyan]] [bold white]Bangla[/bold white] (Creative Questions / সৃজনশীল)")
-    console.print("   [[bold cyan]2[/bold cyan]] [bold white]English[/bold white] (Essay / Composition Writing)")
+    # 1. Target Exam Question Paper & Class Level
+    discovered_papers = []
+    for d in [Path("outputs/questions/english"), Path("data/questions/english")]:
+        if d.exists():
+            for f in sorted(d.glob("*.json")) + sorted(d.glob("*.pdf")):
+                p_canon = canonicalize_paper_id(f.stem)
+                if p_canon not in discovered_papers and not p_canon.startswith("SB_"):
+                    discovered_papers.append(p_canon)
+    if not discovered_papers:
+        discovered_papers = ["SE_10_Q1", "SE_11_Q1"]
 
-    current_lang_idx = "2" if getattr(args, "lang", "bangla") == "english" else "1"
-    lang_choice = Prompt.ask("[bold green]   Select Language[/bold green]", choices=["1", "2"], default=current_lang_idx)
-    args.lang = "bangla" if lang_choice == "1" else "english"
+    console.print("\n[bold green]1. Target Exam Question Paper & Class Level (Classes 3 to 12):[/bold green]")
+    default_idx = "1"
+    current_paper = getattr(args, "paper", None)
+    for idx, p in enumerate(discovered_papers, 1):
+        lvl = detect_class_level(p)
+        if current_paper and canonicalize_paper_id(current_paper) == p:
+            default_idx = str(idx)
+        console.print(f"   [[bold cyan]{idx}[/bold cyan]] [bold white]{p}[/bold white] ({lvl})")
+    custom_idx = len(discovered_papers) + 1
+    console.print(f"   [[bold cyan]{custom_idx}[/bold cyan]] [bold white]Custom Paper ID (Any Class 3 to 12)[/bold white]")
 
-    if args.extraction_dir in [None, "outputs/extracted", "outputs/extracted/bangla", "outputs/extracted/english", "outputs/runs/bangla", "outputs/runs/english"]:
-        # Check standard extraction dir first, fallback to outputs/runs if extracted is empty
+    valid_choices = [str(i) for i in range(1, custom_idx + 1)]
+    paper_choice = Prompt.ask("[bold green]   Select Exam Paper[/bold green]", choices=valid_choices, default=default_idx)
+    choice_num = int(paper_choice)
+    if 1 <= choice_num <= len(discovered_papers):
+        args.paper = discovered_papers[choice_num - 1]
+    else:
+        args.paper = Prompt.ask("   [bold]Enter Exam Paper ID (e.g. SE_3_Q1, SE_6_Q1, SE_10_Q1)[/bold]", default="SE_10_Q1").strip()
+
+    args.lang = "english"
+    paper_dir = f"outputs/extracted/{args.lang}/{args.paper.lower()}"
+    if os.path.exists(paper_dir) and find_extracted_scripts(paper_dir):
+        args.extraction_dir = paper_dir
+    elif args.extraction_dir in [None, "outputs/extracted", "outputs/extracted/bangla", "outputs/extracted/english", "outputs/runs/bangla", "outputs/runs/english"]:
         primary_dir = f"outputs/extracted/{args.lang}"
         fallback_dir = f"outputs/runs/{args.lang}"
         args.extraction_dir = primary_dir if (os.path.exists(primary_dir) and find_extracted_scripts(primary_dir)) else fallback_dir
 
     if args.output_dir in [None, "outputs/evaluated", "outputs/evaluated/bangla", "outputs/evaluated/english"]:
-        args.output_dir = f"outputs/evaluated/{args.lang}"
+        args.output_dir = f"outputs/evaluated/{args.lang}/{args.paper.lower()}"
 
     # Refresh available scripts
     available = find_extracted_scripts(args.extraction_dir)
@@ -153,14 +187,13 @@ def interactive_wizard(args, available_scripts: List[Path]):
             args.script_name = script_input.strip()
 
     # 3. Rubric selection
+    resolved_default_rubric = resolve_rubric_path(args.paper, args.rubric)
     rubric_files = sorted(glob.glob("configs/rubrics/*.yaml") + glob.glob("configs/rubrics/*.yml"))
     console.print("\n[bold green]3. Available Rubrics:[/bold green]")
     default_idx = "1"
     for idx, rpath in enumerate(rubric_files, 1):
         clean_path = rpath.replace("\\", "/")
-        if args.lang == "bangla" and "bangla" in clean_path:
-            default_idx = str(idx)
-        elif args.lang == "english" and "english" in clean_path:
+        if clean_path == resolved_default_rubric.replace("\\", "/"):
             default_idx = str(idx)
         console.print(f"   [[bold cyan]{idx}[/bold cyan]] {clean_path}")
     console.print(f"   [[bold cyan]{len(rubric_files) + 1}[/bold cyan]] Custom file path...")
@@ -174,6 +207,8 @@ def interactive_wizard(args, available_scripts: List[Path]):
             args.rubric = Prompt.ask("   [bold]Enter custom rubric YAML path[/bold]", default=args.rubric)
     elif rubric_choice:
         args.rubric = rubric_choice
+    else:
+        args.rubric = resolved_default_rubric
 
     # 4. Engine & Quantization
     console.print("\n[bold green]4. Execution Engine:[/bold green]")
@@ -263,9 +298,9 @@ def main():
         "--language",
         dest="lang",
         type=str,
-        choices=["bangla", "english"],
-        default="bangla",
-        help="Language / Subject of exam scripts: 'bangla' or 'english' (default: bangla)"
+        choices=["english"],
+        default="english",
+        help="Language / Subject of exam scripts (default: english)"
     )
     parser.add_argument(
         "--rubric",
@@ -286,12 +321,20 @@ def main():
         help="Pipeline config YAML"
     )
     parser.add_argument(
+        "--paper",
+        "--paper-id",
+        dest="paper",
+        type=str,
+        default=None,
+        help="Target exam question paper ID (e.g. 'se_10_q1', 'se_11_q1'). Automatically sets question paper, rubric, and answer key."
+    )
+    parser.add_argument(
         "--question",
         "--question-id",
         dest="question",
         type=str,
         default=None,
-        help="Explicit question ID (e.g. 'SE_11_Q1' or 'SB_11_Q1') or path to question JSON to evaluate against (auto-matched by default)"
+        help="Explicit question ID (e.g. 'SE_11_Q1' or 'SE_10_Q1') or path to question JSON to evaluate against (auto-matched by default)"
     )
     parser.add_argument(
         "--questions-dir",
@@ -372,28 +415,114 @@ def main():
 
     args = parser.parse_args()
 
-    # Defaults based on language
+    # 1. Infer Target Exam Paper
+    initial_paper = args.paper or args.question
+    if not initial_paper and args.script_name:
+        initial_paper = canonicalize_paper_id(args.script_name)
+    elif not initial_paper and args.extraction_dir:
+        match_p = re.search(r'/(se_[0-9]+_q[0-9]+)', str(args.extraction_dir).replace('\\', '/'), re.I)
+        if match_p:
+            initial_paper = match_p.group(1).upper()
+
+    args.lang = "english"
+
+    if initial_paper and not args.extraction_dir:
+        cand_p_dir = f"outputs/extracted/{args.lang}/{canonicalize_paper_id(initial_paper).lower()}"
+        if os.path.exists(cand_p_dir) and find_extracted_scripts(cand_p_dir):
+            args.extraction_dir = cand_p_dir
+
     if not args.extraction_dir:
         primary_dir = f"outputs/extracted/{args.lang}"
         fallback_dir = f"outputs/runs/{args.lang}"
         args.extraction_dir = primary_dir if (os.path.exists(primary_dir) and find_extracted_scripts(primary_dir)) else (fallback_dir if os.path.exists(fallback_dir) else primary_dir)
 
-    eval_output_base = args.output_dir or f"outputs/evaluated/{args.lang}"
-
-    if not args.rubric:
-        args.rubric = (
-            "configs/rubrics/bangla_creative_question.yaml"
-            if args.lang == "bangla"
-            else "configs/rubrics/english_writing.yaml"
-        )
-
     # Check available scripts in directory
     discovered_scripts = find_extracted_scripts(args.extraction_dir)
 
-    # Launch wizard only if interactive terminal, not bypassed, and no explicit target script provided
-    has_explicit_target = bool(args.script_name or args.top)
+    # Launch wizard only if interactive terminal, not bypassed, and no explicit target script/paper provided
+    has_explicit_target = bool(args.script_name or args.top or args.paper)
     if not args.non_interactive and not has_explicit_target and sys.stdin.isatty():
         args = interactive_wizard(args, discovered_scripts)
+
+    # Finalize target paper & class level
+    target_paper = args.paper or args.question
+    if not target_paper and args.script_name:
+        target_paper = canonicalize_paper_id(args.script_name)
+    elif not target_paper and args.extraction_dir:
+        match_p = re.search(r'/(se_[0-9]+_q[0-9]+)', str(args.extraction_dir).replace('\\', '/'), re.I)
+        if match_p:
+            target_paper = match_p.group(1).upper()
+
+    paper_id = canonicalize_paper_id(target_paper) if target_paper else "SE_10_Q1"
+    args.paper = paper_id
+    class_level = detect_class_level(paper_id)
+
+    # Align extraction directory to target paper if generic default was active
+    paper_spec_dir = f"outputs/extracted/{args.lang}/{paper_id.lower()}"
+    if os.path.exists(paper_spec_dir) and find_extracted_scripts(paper_spec_dir):
+        if args.extraction_dir in [f"outputs/extracted/{args.lang}", f"outputs/runs/{args.lang}"]:
+            args.extraction_dir = paper_spec_dir
+
+    eval_output_base = args.output_dir or f"outputs/evaluated/{args.lang}/{paper_id.lower()}"
+
+    # Self-healing question extraction & verification
+    q_dir = Path(args.questions_dir) / args.lang
+    candidate_q_files = [
+        q_dir / f"{paper_id}.json",
+        q_dir / f"{paper_id.upper()}.json",
+        q_dir / f"{paper_id.lower()}.json",
+    ]
+    matched_q_path = next((cq for cq in candidate_q_files if cq.exists() and cq.stat().st_size > 300), None)
+
+    if matched_q_path:
+        console.print(f"[bold green]✓ Found valid question artifact for '{paper_id}':[/bold green] {matched_q_path} (skipping extraction)")
+        args.question = str(matched_q_path)
+    else:
+        pdf_candidates = [
+            Path("data/questions") / args.lang / f"{paper_id}.pdf",
+            Path("data/questions") / args.lang / f"{paper_id.upper()}.pdf",
+            Path("data/questions") / args.lang / f"{paper_id.lower()}.pdf",
+        ]
+        source_pdf = next((p for p in pdf_candidates if p.exists()), None)
+        if source_pdf:
+            console.print(f"[bold yellow]⚠️ Question artifact for '{paper_id}' missing or incomplete. Self-healing extraction from '{source_pdf}'...[/bold yellow]")
+            try:
+                extract_single_question(
+                    file_path=str(source_pdf),
+                    lang=args.lang,
+                    question_id_override=paper_id,
+                    engine=None,
+                    output_dir=args.questions_dir
+                )
+                args.question = str(q_dir / f"{paper_id}.json")
+                console.print(f"  [bold green]✓ Extracted and saved question artifact:[/bold green] {args.question}")
+            except Exception as ex:
+                console.print(f"  [red]Self-healing question extraction failed: {ex}[/red]")
+        else:
+            console.print(f"[yellow]⚠️ No question artifact or source PDF found for '{paper_id}'. Proceeding with standard rubric evaluation.[/yellow]")
+
+    # Resolve Rubric, Key, & Penalties
+    args.rubric = resolve_rubric_path(paper_id, args.rubric)
+    answer_key_path = resolve_answer_key_path(paper_id)
+    penalty_path = resolve_penalty_config_path(paper_id)
+
+    # Validate paper & rubric integrity
+    if args.question and os.path.exists(args.question) and os.path.exists(args.rubric):
+        try:
+            import json, yaml
+            with open(args.question, "r", encoding="utf-8") as f:
+                q_dict = json.load(f)
+            q_obj_check = ExtractedQuestion.model_validate(q_dict)
+            with open(args.rubric, "r", encoding="utf-8") as f:
+                r_dict = yaml.safe_load(f)
+            is_valid, validation_errors = validate_paper_integrity(q_obj_check, r_dict, expected_total_marks=100.0)
+            if is_valid:
+                console.print(f"[bold green]✓ Paper & Rubric Integrity Certified:[/bold green] 100.0 Marks, {len(q_obj_check.sub_questions)} questions ({class_level})")
+            else:
+                for err in validation_errors:
+                    console.print(f"[yellow]⚠️ Integrity notice: {err}[/yellow]")
+        except Exception as ex:
+            console.print(f"[dim]Note on integrity validation: {ex}[/dim]")
 
     # 1. Resolve Target Scripts to Evaluate
     target_script_paths = []
@@ -406,7 +535,6 @@ def main():
         else:
             # Check within extraction_dir
             match_in_dir = Path(args.extraction_dir) / args.script_name
-            # Check with / without extensions
             if match_in_dir.exists():
                 target_script_paths = [match_in_dir]
             else:
@@ -415,8 +543,13 @@ def main():
                 if matched:
                     target_script_paths = matched
                 else:
-                    console.print(f"[red]Could not find script '{args.script_name}' in '{args.extraction_dir}'.[/red]")
-                    return
+                    # Also try search in full english extracted dir
+                    matched = [p for p in find_extracted_scripts(f"outputs/extracted/{args.lang}") if p.stem.lower() == args.script_name.lower() or p.name.lower() == args.script_name.lower()]
+                    if matched:
+                        target_script_paths = matched
+                    else:
+                        console.print(f"[red]Could not find script '{args.script_name}' in '{args.extraction_dir}'.[/red]")
+                        return
     else:
         # Batch from directory
         target_script_paths = find_extracted_scripts(args.extraction_dir)
@@ -436,12 +569,14 @@ def main():
         exec_mode_label = "CUDA RTX 5090 (Gemma 4 31B IT)"
 
     console.print(Panel.fit(
-        f"[bold cyan]Gemma 4 31B IT Multimodal Script Evaluation Controller[/bold cyan]\n"
-        f"[green]Language / Subject:[/green] {args.lang.capitalize()}\n"
+        f"[bold cyan]English Multimodal Script Evaluation Controller[/bold cyan]\n"
+        f"[green]Exam Paper / Level:[/green] {paper_id} ({class_level})\n"
         f"[green]Extraction Source:[/green] {args.extraction_dir}\n"
         f"[green]Evaluation Output Root:[/green] {eval_output_base}\n"
         f"[green]Target Count:[/green] {len(target_script_paths)} script(s)\n"
-        f"[green]Rubric:[/green] {args.rubric}\n"
+        f"[green]Class Rubric:[/green] {args.rubric}\n"
+        f"[green]Objective Answer Key:[/green] {answer_key_path or 'Generic criteria'}\n"
+        f"[green]Penalty Config Profile:[/green] {penalty_path}\n"
         f"[yellow]Execution Mode:[/yellow] {exec_mode_label}",
         title="Evaluation Initialized"
     ))

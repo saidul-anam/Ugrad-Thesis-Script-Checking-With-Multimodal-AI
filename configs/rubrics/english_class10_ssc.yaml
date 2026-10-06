@@ -1,0 +1,262 @@
+subject: "English"
+class_level: "SSC_Class_10"
+curriculum: "NCTB"
+paper: "English 1st Paper"
+total_marks: 100
+
+provenance_and_traceability:
+  data_direct:
+    - Holistic grammar and communicative accuracy evaluation
+    - Elimination of handwriting/presentation bias
+    - Content relevance and originality weighting
+    - Narrative and dialogue structural completeness
+  syllabus_extrapolated:
+    - Formal summary brevity requirements (around 1/3 of original passage)
+    - Story title, development, and resolution requirements
+    - Dialogue turn-taking, greeting, and sign-off mechanics
+
+question_map:
+  - question_no: "1"
+    printed_task: "Choose the best answer from the given alternatives"
+    task_type: MCQ
+    mode: A
+    standard_marks: 7
+    breakdown: "1 x 7 = 7"
+  - question_no: "2"
+    printed_task: "Answer the following questions"
+    task_type: Comprehension_Questions
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "3"
+    printed_task: "Fill in each gap with a suitable word based on the text"
+    task_type: Cloze_Without_Clues
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "4"
+    printed_task: "Complete the following table with the information given in the passage"
+    task_type: Table_Completion
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "5"
+    printed_task: "Write a summary of the above passage in your own words"
+    task_type: Summary
+    mode: C
+    standard_marks: 10
+    breakdown: "10"
+  - question_no: "6"
+    printed_task: "Match the parts of sentences given in columns A, B and C to write five complete sentences"
+    task_type: Sentence_Matching
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "7"
+    printed_task: "Put the following parts of the story in correct order"
+    task_type: Rearrangement
+    mode: A
+    standard_marks: 8
+    breakdown: "1 x 8 = 8"
+  - question_no: "8"
+    printed_task: "Answer any 5 of the following questions from poems"
+    task_type: Poetry_Questions
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "9"
+    printed_task: "Answer any 5 of the following questions from stories"
+    task_type: Story_Questions
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "10"
+    printed_task: "Read the beginning of the story and write at least ten new sentences to complete it. Give a suitable title"
+    task_type: Story
+    mode: C
+    standard_marks: 15
+    breakdown: "15"
+  - question_no: "11"
+    printed_task: "Write a dialogue between you and your friend on the benefits of early rising"
+    task_type: Dialogue
+    mode: C
+    standard_marks: 15
+    breakdown: "15"
+
+paper_structure:
+  part_a_reading:
+    range: "Q1-Q9"
+    marks: 70
+  part_b_writing:
+    range: "Q10-Q11"
+    marks: 30
+  total_marks: 100
+
+scoring_modes:
+  A_ITEM:
+    method: "right/wrong per item against official answer key"
+    questions: ["1", "3", "4", "6", "7"]
+    task_types: ["MCQ", "Cloze_Without_Clues", "Table_Completion", "Sentence_Matching", "Rearrangement"]
+  B_POINT:
+    method: "point-scored discrete scale per question part"
+    questions: ["2", "8", "9"]
+    task_types: ["Comprehension_Questions", "Poetry_Questions", "Story_Questions"]
+  C_BAND:
+    method: "band-scored continuous composition with criteria ceilings and hard caps"
+    questions: ["5", "10", "11"]
+    task_types: ["Summary", "Story", "Dialogue"]
+
+mode_specifications:
+  mode_a_item_scored:
+    tasks:
+      Q1_MCQ:
+        task_type: MCQ
+        max_mark: 7
+        mark_per_item: 1.0
+        n_items: 7
+        rules:
+          - "Award 1.0 mark per correct alternative matching letter or text."
+          - "No deduction for minor handwriting ambiguities if the intention is clear."
+      Q3_Cloze_Without_Clues:
+        task_type: Cloze_Without_Clues
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per correct contextually and grammatically appropriate word."
+          - "Accept synonyms listed in the answer key."
+      Q4_Table_Completion:
+        task_type: Table_Completion
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per correct factual extraction from passage into table slot."
+      Q6_Sentence_Matching:
+        task_type: Sentence_Matching
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per fully matched logical sentence (A + B + C)."
+      Q7_Rearrangement:
+        task_type: Rearrangement
+        max_mark: 8
+        mark_per_item: 1.0
+        n_items: 8
+        rules:
+          - "Positional scoring: Award 1.0 mark for each element correctly placed in sequence."
+
+  mode_b_point_scored:
+    tasks:
+      Q2_Comprehension_Questions:
+        task_type: Comprehension_Questions
+        max_mark: 10
+        n_items: 5
+        mark_per_item: 2.0
+        scale:
+          2.0: "Accurate, complete response addressing the prompt directly in student's own words with correct grammar."
+          1.5: "Accurate response with minor grammatical or phrasing slips that do not disrupt comprehension."
+          1.0: "Partially correct response or direct verbatim lift from passage with minimal explanation."
+          0.5: "Vague, incomplete attempt with relevant keyword mentions but lacking substance."
+          0.0: "Completely incorrect, off-topic, or unattempted."
+      Q8_Poetry_Questions:
+        task_type: Poetry_Questions
+        max_mark: 10
+        n_items: 5
+        mark_per_item: 2.0
+        scale:
+          2.0: "Demonstrates clear poetic comprehension, accurate thematic understanding, and good expression."
+          1.5: "Accurate understanding with minor expression or grammatical weaknesses."
+          1.0: "Partial understanding of poetic device or stanza."
+          0.0: "Incorrect, irrelevant, or unattempted."
+      Q9_Story_Questions:
+        task_type: Story_Questions
+        max_mark: 10
+        n_items: 5
+        mark_per_item: 2.0
+        scale:
+          2.0: "Demonstrates clear understanding of character motives, plot points, and moral conflicts."
+          1.5: "Accurate plot answer with minor language errors."
+          1.0: "Partial or superficial recall of events."
+          0.0: "Incorrect, irrelevant, or unattempted."
+
+  mode_c_band_scored:
+    hard_caps:
+      heavy_verbatim_copying:
+        threshold_ratio: 0.50
+        max_awarded: 3.0
+        applies_to: ["Summary"]
+      short_length_below_50_words:
+        threshold_words: 50
+        max_awarded: 4.0
+        applies_to: ["Story", "Dialogue"]
+      off_topic:
+        max_awarded: 2.0
+        applies_to: ["Summary", "Story", "Dialogue"]
+    performance_bands_by_max_mark:
+      10:
+        band_1_excellent: "8.0 - 10.0"
+        band_2_good: "6.0 - 7.5"
+        band_3_satisfactory: "4.0 - 5.5"
+        band_4_limited: "2.0 - 3.5"
+        band_5_poor: "0.0 - 1.5"
+      15:
+        band_1_excellent: "12.0 - 15.0"
+        band_2_good: "9.0 - 11.5"
+        band_3_satisfactory: "6.0 - 8.5"
+        band_4_limited: "3.0 - 5.5"
+        band_5_poor: "0.0 - 2.5"
+    tasks:
+      Q5_Summary:
+        max_mark: 10
+        criteria_ceilings:
+          context_content_data: 4
+          structure_format_brevity: 3
+          language_mechanics: 2
+          originality_comparisons_paraphrase: 1
+      Q10_Story:
+        max_mark: 15
+        criteria_ceilings:
+          context_content_data: 6
+          structure_format_brevity: 4
+          language_mechanics: 3
+          originality_comparisons_paraphrase: 2
+      Q11_Dialogue:
+        max_mark: 15
+        criteria_ceilings:
+          context_content_data: 6
+          structure_format_brevity: 4
+          language_mechanics: 3
+          originality_comparisons_paraphrase: 2
+
+output_json_schema:
+  q_no: "string"
+  task_type: "string"
+  task_mode: "string"
+  max_mark: "number"
+  criteria_breakdown:
+    context_content_data:
+      max: "number"
+      awarded: "number"
+      reasoning: "string"
+    structure_format_brevity:
+      max: "number"
+      awarded: "number"
+      reasoning: "string"
+    language_mechanics:
+      max: "number"
+      awarded: "number"
+      reasoning: "string"
+    originality_comparisons_paraphrase:
+      max: "number"
+      awarded: "number"
+      reasoning: "string"
+  strengths: ["string"]
+  weaknesses: ["string"]
+  student_feedback:
+    praise_point: "string"
+    actionable_revision_step: "string"
+  examiner_reasoning: "string"
+  content_raw_score: "number"
+  awarded_marks: "number"

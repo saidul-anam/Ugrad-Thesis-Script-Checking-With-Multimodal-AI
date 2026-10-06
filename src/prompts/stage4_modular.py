@@ -57,10 +57,10 @@ def build_modular_question_prompt(
     else:
         penalties = rubric_penalties or {
             "spelling_error_deduction": 0.25,
-            "grammar_error_deduction": 0.25,
-            "max_linguistic_deduction": min(0.5, max_marks * 0.1)
+            "grammar_error_deduction": 0.50,
+            "max_linguistic_deduction": round(max_marks * 0.2, 1)
         }
-        max_pen = min(float(penalties.get("max_linguistic_deduction", 0.5)), 0.5)
+        max_pen = float(penalties.get("max_linguistic_deduction", round(max_marks * 0.2, 1)))
         high_min = round(max_marks * 0.8, 1)
         mid_min = round(max_marks * 0.5, 1)
         mid_max = round(max_marks * 0.79, 1)
@@ -125,12 +125,12 @@ Output ONLY a JSON object:
 {{
   "q_no": "{answer.q_no}",
   "max_marks": {max_marks},
-  "content_raw_score": 0.0,
-  "linguistic_penalty": {0.0 if is_obj else 0.0},
-  "awarded_marks": 0.0,
-  "justification": "1-2 concise sentences explaining the mark awarded",
+  "justification": "1-2 concise sentences assessing answer accuracy against prompt requirements",
   "strengths": ["Key strength or accurate element"],
   "weaknesses": ["Key weakness or missing point"],
-  "examiner_feedback": "Concise actionable advice for the student"
+  "examiner_feedback": "Concise actionable advice for the student",
+  "content_raw_score": 0.0,
+  "linguistic_penalty": {0.0 if is_obj else 0.0},
+  "awarded_marks": 0.0
 }}"""
 

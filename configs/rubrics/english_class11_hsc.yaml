@@ -1,3 +1,8 @@
+subject: "English"
+class_level: "HSC_Class_11"
+curriculum: "NCTB"
+paper: "English 1st Paper"
+total_marks: 100
 
 provenance_and_traceability:
   data_direct:

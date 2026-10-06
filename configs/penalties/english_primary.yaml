@@ -1,0 +1,35 @@
+profile_name: "english_primary"
+description: "Tunable linguistic and structural error penalty configuration for Primary Level English (Classes 3-5)"
+curriculum: "NCTB"
+language: "english"
+
+# Per-error deductions by category (in marks) - Gentler scale for young foundational learners
+deductions_per_error:
+  spelling: 0.15
+  grammar: 0.25
+  syntax: 0.15
+  punctuation_mechanics: 0.10
+  illegible_omission: 0.25
+
+# Maximum cumulative deduction caps per question type (in marks)
+question_type_caps:
+  MCQ: 0.0                      # Strict NCTB rule: zero linguistic penalty on objective items
+  Cloze_With_Clues: 0.0
+  Cloze_Without_Clues: 0.0
+  Fill_In_The_Blanks: 0.0
+  Matching: 0.0
+  Rearrangement: 0.0
+  Short_Answer: 0.5             # Cap at 0.5 mark for primary short answer questions
+  Paragraph: 1.0                # Cap at 1.0 mark for 5-line short paragraph
+  Composition: 1.5              # Cap at 1.5 marks for short composition
+  default: 0.5
+
+# Overall script cumulative deduction ceiling
+overall_script_max_penalty: 3.5
+
+# Recurrent error policy (NCTB Primary guideline)
+recurrent_error_policy:
+  deduplicate_identical_words: true  # Repeated instances of the same misspelled word penalized once
+  deduplicate_identical_rules: false
+  ignore_allograph_ambiguities: true # Cursive stroke/allograph ambiguities zero penalty
+  ignore_british_american_variants: true

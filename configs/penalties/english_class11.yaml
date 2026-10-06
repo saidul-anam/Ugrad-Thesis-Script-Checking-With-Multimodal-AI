@@ -1,0 +1,38 @@
+profile_name: "english_class11_hsc"
+description: "Tunable linguistic and structural error penalty configuration for HSC Class 11 English"
+curriculum: "NCTB"
+language: "english"
+
+# Per-error deductions by category (in marks)
+deductions_per_error:
+  spelling: 0.25
+  grammar: 0.50
+  syntax: 0.25
+  punctuation_mechanics: 0.25
+  illegible_omission: 0.50
+
+# Maximum cumulative deduction caps per question type (in marks)
+question_type_caps:
+  MCQ: 0.0                      # Zero penalty on objective items
+  Flow_Chart: 0.0               # NCTB rule: notes in flowchart boxes do not suffer language penalties
+  Cloze_With_Clues: 0.0
+  Cloze_Without_Clues: 0.0
+  Rearrangement: 0.0
+  Short_Answer: 1.0             # 10-mark short answers capped at 1.0
+  Summary: 1.5                  # 10-mark summary capped at 1.5
+  Paragraph: 2.0                # 10-mark paragraph capped at 2.0
+  Graph_Chart: 1.5              # 10-mark graph analysis capped at 1.5
+  Story: 1.5                    # 7-mark story capped at 1.5
+  Letter_Email: 1.0             # 5-mark letter/email capped at 1.0
+  Theme: 1.5                    # 8-mark theme capped at 1.5
+  default: 1.0
+
+# Overall script cumulative deduction ceiling
+overall_script_max_penalty: 6.0
+
+# Recurrent error policy
+recurrent_error_policy:
+  deduplicate_identical_words: true
+  deduplicate_identical_rules: false
+  ignore_allograph_ambiguities: true
+  ignore_british_american_variants: true

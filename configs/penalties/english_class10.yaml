@@ -1,0 +1,38 @@
+profile_name: "english_class10_ssc"
+description: "Tunable linguistic and structural error penalty configuration for SSC Class 10 English"
+curriculum: "NCTB"
+language: "english"
+
+# Per-error deductions by category (in marks)
+deductions_per_error:
+  spelling: 0.25
+  grammar: 0.50
+  syntax: 0.25
+  punctuation_mechanics: 0.25
+  illegible_omission: 0.50
+
+# Maximum cumulative deduction caps per question type (in marks)
+question_type_caps:
+  MCQ: 0.0                      # Strict NCTB rule: zero linguistic penalty on objective items
+  Cloze_With_Clues: 0.0
+  Cloze_Without_Clues: 0.0
+  Table_Completion: 0.0
+  Sentence_Matching: 0.0
+  Rearrangement: 0.0
+  Comprehension_Questions: 1.0  # Cap at 1.0 mark total deduction for 10-mark short questions
+  Poetry_Questions: 1.0
+  Story_Questions: 1.0
+  Summary: 1.5                  # Cap at 1.5 marks for 10-mark summary
+  Story: 2.0                    # Cap at 2.0 marks for 15-mark story
+  Dialogue: 2.0                 # Cap at 2.0 marks for 15-mark dialogue
+  default: 1.0
+
+# Overall script cumulative deduction ceiling
+overall_script_max_penalty: 6.0
+
+# Recurrent error policy (official NCTB board examiner guideline)
+recurrent_error_policy:
+  deduplicate_identical_words: true  # Multiple instances of the same misspelled word penalized once
+  deduplicate_identical_rules: false # Different words violating the same grammar rule are each evaluated
+  ignore_allograph_ambiguities: true # Cursive stroke/allograph ambiguities (e.g. uncrossed 't') zero penalty
+  ignore_british_american_variants: true # e.g. color vs colour, realize vs realise

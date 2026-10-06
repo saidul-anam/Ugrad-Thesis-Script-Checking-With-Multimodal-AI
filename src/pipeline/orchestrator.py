@@ -35,7 +35,8 @@ from src.utils.export_utils import (
     export_raw_tier_csv,
     load_extraction_artifacts,
     export_report_json,
-    export_report_markdown
+    export_report_markdown,
+    export_mistakes_markdown
 )
 from src.rag.context_provider import RAGContextProvider
 
@@ -1518,6 +1519,8 @@ class ScriptCheckingPipeline:
         md_path = os.path.join(script_output_dir, "evaluation_report.md")
         export_report_json(report, json_path)
         export_report_markdown(report, md_path)
+        mistakes_md_path = os.path.join(script_output_dir, "mistakes_report.md")
+        export_mistakes_markdown(report, mistakes_md_path)
 
         return report
 

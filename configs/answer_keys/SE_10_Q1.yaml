@@ -1,0 +1,150 @@
+paper_id: "SE_10_Q1"
+curriculum: "NCTB"
+class_level: "SSC_Class_10"
+subject: "English"
+paper: "English 1st Paper"
+total_marks: 100
+source: "outputs/questions/english/SE_10_Q1.md"
+
+mode_a:
+  "1":
+    task_type: MCQ
+    max_mark: 7
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["ii", "marching", "ii) marching", "ii. marching", "2"]
+        canonical: "ii. marching"
+      - label: b
+        accepted: ["ii", "He was a patriotic and courageous person", "patriotic and courageous person", "patriotic and courageous", "ii) He was a patriotic and courageous person", "2"]
+        canonical: "ii. He was a patriotic and courageous person"
+      - label: c
+        accepted: ["iii", "Students faced severe restrictions under the regime", "severe restrictions under the regime", "severe restrictions", "iii) Students faced severe restrictions under the regime", "3"]
+        canonical: "iii. Students faced severe restrictions under the regime"
+      - label: d
+        accepted: ["ii", "He wished films to serve as a voice for truth and justice", "voice for truth and justice", "truth and justice", "ii) He wished films to serve as a voice for truth and justice", "2"]
+        canonical: "ii. He wished films to serve as a voice for truth and justice"
+      - label: e
+        accepted: ["iii", "desertion", "desertation", "desertation", "iii) desertion", "iii) desertation", "3"]
+        canonical: "iii. desertion"
+      - label: f
+        accepted: ["ii", "Language Movement", "ii) Language Movement", "2", "i", "Liberation War", "1"]
+        canonical: "ii. Language Movement"
+      - label: g
+        accepted: ["ii", "The life and sacrifice of a patriotic artist", "life and sacrifice of a patriotic artist", "patriotic artist", "ii) The life and sacrifice of a patriotic artist", "2"]
+        canonical: "ii. The life and sacrifice of a patriotic artist"
+
+  "3":
+    task_type: Cloze_Without_Clues
+    max_mark: 5
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["dreamt", "dreamed", "wanted", "wished", "desired", "struggled for"]
+        canonical: "dreamt"
+      - label: b
+        accepted: ["free", "freedom of", "freedom", "independent"]
+        canonical: "free"
+      - label: c
+        accepted: ["legendary", "famous", "historic", "memorable", "celebrated"]
+        canonical: "legendary"
+      - label: d
+        accepted: ["against"]
+        canonical: "against"
+      - label: e
+        accepted: ["ruled", "governed", "dominated", "oppressed"]
+        canonical: "ruled"
+
+  "4":
+    task_type: Table_Completion
+    max_mark: 5
+    mark_per_item: 1.0
+    items:
+      - label: i
+        accepted: ["arsenic", "arsenic poison", "poison", "arsenic contaminated water"]
+        canonical: "arsenic"
+      - label: ii
+        accepted: ["thousands of people in bangladesh", "thousands of people", "many people", "people in bangladesh", "thosands of people in bangladesh"]
+        canonical: "thousands of people in bangladesh"
+      - label: iii
+        accepted: ["in bangladesh", "bangladesh", "throughout bangladesh"]
+        canonical: "in bangladesh"
+      - label: iv
+        accepted: ["drinking arsenic contaminate water must attempt to find safe source of water", "drinking arsenic contaminated water", "attempt to find safe source of water", "find safe source of water", "safe water", "drinking safe water"]
+        canonical: "attempt to find safe source of water"
+      - label: v
+        accepted: ["in ponds and rivers", "ponds and rivers", "in ponds and river", "ponds", "rivers"]
+        canonical: "in ponds and rivers"
+
+  "6":
+    task_type: Sentence_Matching
+    max_mark: 5
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["a+iv+ii", "iv+ii", "email has brought about a revolution in modern communication"]
+        canonical: "a + iv + ii (Email has brought about a revolution in modern communication.)"
+      - label: b
+        accepted: ["b+v+iv", "v+iv", "messages can be transmitted from one country to another within seconds"]
+        canonical: "b + v + iv (Messages can be transmitted from one country to another within seconds.)"
+      - label: c
+        accepted: ["c+i+v", "i+v", "it is far cheaper than telephone calls"]
+        canonical: "c + i + v (It is far cheaper than telephone calls.)"
+      - label: d
+        accepted: ["d+ii+i", "ii+i", "trade and commerce has become greatly dependent on this speedy mode of communication"]
+        canonical: "d + ii + i (Trade and commerce has become greatly dependent on this speedy mode of communication.)"
+      - label: e
+        accepted: ["e+iii+iii", "iii+iii", "it has however not reached everyone especially in developing countries like ours"]
+        canonical: "e + iii + iii (It has, however, not reached everyone especially in developing countries like ours.)"
+
+  "7":
+    task_type: Rearrangement
+    max_mark: 8
+    mark_per_item: 1.0
+    correct_sequence: ["c", "g", "a", "e", "f", "h", "b", "d"]
+    canonical_story:
+      1: "c. Many years ago there lived a King named Solomon."
+      2: "g. He was very wise and helped people in many ways."
+      3: "a. The Queen of Sheba heard about the name and fame of King Solomon."
+      4: "e. She could not believe that he was so wise and wealthy."
+      5: "f. She decided to visit the country and meet the king personally."
+      6: "h. So the Queen came to King Solomon's palace."
+      7: "b. The Queen brought with her hundreds of servants carrying many presents."
+      8: "d. She also brought with her some artificial flowers."
+
+mode_b:
+  "2":
+    task_type: Comprehension_Questions
+    max_mark: 10
+    mark_per_item: 2.0
+    items:
+      - label: a
+        question: "What kind of society did Zahir Raihan dream for? What did he do to achieve it?"
+        key_points:
+          - "Dreamt of a democratic society that would ensure freedom of speech"
+          - "Participated in the Language Movement (1952), mass movement (1969), and Liberation War (1971)"
+          - "Used filmmaking and documentaries to protest autocratic rule and build world sentiment"
+      - label: b
+        question: "How does 'Jibon Theke Neya' represent Pakistani autocracy?"
+        key_points:
+          - "The family portrayed symbolically represented East Pakistan"
+          - "Ruled by an autocrat who went to prison for her conspiracy"
+          - "Served as a direct allegorical protest against Pakistani dictatorship"
+      - label: c
+        question: "'Zahir Raihan's dream came true' - how? Describe in 2/3 sentences."
+        key_points:
+          - "Bangladesh achieved independence and freedom after the 1971 Liberation War"
+          - "Democratic society and freedom of speech were established"
+          - "Tragically he disappeared on 30 December 1971 and could not live to witness it"
+      - label: d
+        question: "Do you think Zahir Raihan to be a freedom fighter? Why/ Why not?"
+        key_points:
+          - "Yes, he actively joined the Liberation War in 1971"
+          - "Donated all film proceeds to the Freedom Fighters' Trust"
+          - "Made the documentary Stop Genocide to create global support for the war"
+      - label: e
+        question: "Why is Zahir Raihan regarded as a golden son of Bangladesh?"
+        key_points:
+          - "One of the most talented filmmakers and patriotic cultural figures"
+          - "Sacrificed his career, resources, and eventually his life for the nation"
+          - "Dedicated his entire creative work to national emancipation and democracy"

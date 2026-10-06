@@ -1,0 +1,50 @@
+rubric_name: "english_junior_secondary"
+version: "2.0"
+subject: "english"
+grade_level: "Junior_Secondary (Classes 6-8 / JSC)"
+total_marks: 100.0
+
+description: >
+  Modular NCTB English 1st & 2nd Paper Rubric for Junior Secondary level (Classes 6 to 8).
+  Emphasizes reading comprehension, vocabulary, grammar foundations, and guided creative writing.
+
+scoring_modes:
+  mode_a_objective:
+    description: "Itemized exact/synonym matching against answer key or standard options"
+    task_types:
+      - "MCQ"
+      - "Cloze_With_Clues"
+      - "Cloze_Without_Clues"
+      - "Table_Completion"
+      - "Sentence_Matching"
+      - "Rearrangement"
+      - "Fill_In_The_Blanks"
+    scoring_logic: "deterministic_key_match"
+    zero_penalty: true
+
+  mode_b_point_comprehension:
+    description: "Structured short-answer questions scored on textual comprehension and accuracy"
+    task_types:
+      - "Comprehension_Questions"
+      - "Short_Answer"
+    scoring_logic: "point_scale_with_rubric"
+    point_scale:
+      full: 2.0
+      partial: 1.0
+      minimal: 0.5
+      incorrect: 0.0
+
+  mode_c_band_writing:
+    description: "Extended writing scored on criteria ceilings: Content, Organization, Vocabulary, and Grammar"
+    task_types:
+      - "Summary"
+      - "Paragraph"
+      - "Story"
+      - "Letter"
+      - "Dialogue"
+      - "Composition"
+    criteria_ceilings:
+      content_relevance: 0.40
+      organization_cohesion: 0.25
+      vocabulary_expression: 0.20
+      grammar_mechanics: 0.15

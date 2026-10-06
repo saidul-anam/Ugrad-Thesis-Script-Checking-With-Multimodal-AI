@@ -47,35 +47,35 @@ def to_arabic_digits(text: str) -> str:
 
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
-    # English question headers (handles Ans/Answer/Dans/Ass/Ansl, to/of the, Question/Ques/Q/No/Number)
-    r'(?:\n|\A)\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}[0-9০-৯]{1,3}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
-    r'(?:\n|\A)\s*Ans[:\s]+(?:(?:to|of)\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
+    # English question headers (handles Ans/Answer/Dans/Ass/Ansl, to/of the, Question/Ques/Q/No/Number, optional leading [struck: ...])
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}[0-9০-৯]{1,3}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*Ans[:\s]+(?:(?:to|of)\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
     # Standalone question subpart headers: 1(A), 1(B), 1(a), 1(b)
-    r'(?:\n|\A)\s*[0-9০-৯]{1,3}\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[0-9০-৯]{1,3}\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)|'
     # Bengali question headers: supports '১ নং উত্তর', '১(ক) নং প্রশ্নের উত্তর', 'উত্তর: ১', 'উত্তর নং ১'
-    r'(?:\n|\A)\s*(?:[০-৯0-9]{1,3}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*(?:প্রশ্নের?\s*)?উত্তর)|'
-    r'(?:\n|\A)\s*(?:(?:প্রশ্নের?\s*)?উত্তর\s*(?:নং|নম্বর)?\s*[:\-]?\s*[০-৯0-9]{1,3})|'
-    # Subparts: (A), (B), (ক), (খ), circled letters Ⓐ-Ⓓ, or standalone A/B line before sub-items
-    r'(?:\n|\A)\s*[\(（](?:[A-Da-d]|[ক-ঘ])[\)）]\s*(?:\n|\r\n|Ans|Answer)|'
-    r'(?:\n|\A)\s*[Ⓐ-Ⓓ]\s*(?:\n|\r\n|Ans|Answer)|'
-    r'(?:\n|\A)\s*[A-B]\s*(?:\n|\r\n)\s*(?=[a-e][\)\.]|\([a-e]\))|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:[০-৯0-9]{1,3}\s*(?:[\(（][\u0980-\u09FFA-Za-z0-9]+[\)）]\s*)?(?:নং|নম্বর)?\s*(?:প্রশ্নের?\s*)?উত্তর)|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:(?:প্রশ্নের?\s*)?উত্তর\s*(?:নং|নম্বর)?\s*[:\-]?\s*[০-৯0-9]{1,3})|'
+    # Subparts: (A), (B), (ক), (খ), circled letters Ⓐ-Ⓩ, or standalone letter line before sub-items
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[\(（](?:[A-Za-z]|[ক-ঘ])[\)）]\s*(?:\n|\r\n|Ans|Answer)|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[Ⓐ-Ⓩⓐ-ⓩ]\s*(?:\n|\r\n|Ans|Answer)|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[A-Za-z]\s*(?:\n|\r\n)\s*(?=[a-z0-9][\)\.]|\([a-z0-9]\))|'
     # Structural headers (Flowchart, Theme, Rearrange, Summary, Story, Chart)
-    r'(?:\n|\A)\s*Flow[\s\-]*chart\s*[:\-]|'
-    r'(?:\n|\A)\s*Theme\s*:\s+|'
-    r'(?:\n|\A)\s*Summary\s*:\s+|'
-    r'(?:\n|\A)\s*Rearrange\s*[:\-]|'
-    r'(?:\n|\A)\s*(?:The\s+graph|The\s+chart)\s+shows\b|'
-    r'(?:\n|\A)\s*Once\s+upon\s+a\s+time\b'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*Flow[\s\-]*chart\s*[:\-]|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*Theme\s*:\s+|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*Summary\s*:\s+|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*Rearrange\s*[:\-]|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:The\s+graph|The\s+chart)\s+shows\b|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*Once\s+upon\s+a\s+time\b'
     r'))',
     re.IGNORECASE
 )
 
 HEADER_EXTRACT_REGEX = re.compile(
-    r'^\s*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}([0-9]{1,3}[ \t]*(?:\([A-Za-z0-9]\))?|[A-B]\b)|'
-    r'^\s*([0-9]{1,3})[ \t]*[\(（]([A-Za-z0-9])[\)）]\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$)|'
-    r'^\s*[\(（]([A-B])[\)）]\s*(?:\n|\r\n|Ans|Answer|$)|'
-    r'^\s*([ⒶⒷ])\s*(?:\n|\r\n|Ans|Answer|$)|'
-    r'^\s*([A-B])\s*$',
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answer|Dans|Ass|Q(?:uestion|ues|ue|n)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}([0-9]{1,3}[ \t]*(?:\([A-Za-z0-9]\))?|[A-Za-z]\b)|'
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*([0-9]{1,3})[ \t]*[\(（]([A-Za-z0-9])[\)）]\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$)|'
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*[\(（]([A-Za-z])[\)）]\s*(?:\n|\r\n|Ans|Answer|$)|'
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*([Ⓐ-Ⓩⓐ-ⓩ])\s*(?:\n|\r\n|Ans|Answer|$)|'
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*([A-Za-z])\s*$',
     re.IGNORECASE | re.MULTILINE
 )
 
@@ -115,20 +115,27 @@ def _extract_explicit_english_header(
     """
     first_lines = "\n".join(arabic_lines.strip().split("\n")[:4])
 
-    # 1. Standalone subparts following Question 1 or active parent
-    if current_parent in ["1", "1(A)", "1A"]:
-        sub_m = re.search(r'^\s*[\(（]([A-Da-d])[\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', first_lines, re.MULTILINE)
-        if sub_m:
-            return f"1({sub_m.group(1).upper()})"
-        sub_circle = re.search(r'^\s*([Ⓐ-Ⓓ])\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', first_lines, re.MULTILINE)
-        if sub_circle:
-            circle_map = {'Ⓐ': 'A', 'Ⓑ': 'B', 'Ⓒ': 'C', 'Ⓓ': 'D'}
-            return f"1({circle_map.get(sub_circle.group(1), 'A')})"
+    # 1. Standalone subparts following any active parent question
+    if current_parent:
+        base_parent = re.sub(r'\(.*?\)|[A-Za-z\u0980-\u09FF]+$', '', str(current_parent)).strip()
+        if base_parent.isdigit():
+            sub_m = re.search(r'^\s*[\(（]([A-Za-z])[\)）]\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', first_lines, re.MULTILINE)
+            if sub_m:
+                cand = f"{base_parent}({sub_m.group(1).upper()})"
+                if not valid_q_order or cand in valid_q_order:
+                    return cand
+            sub_circle = re.search(r'^\s*([Ⓐ-Ⓩⓐ-ⓩ])\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', first_lines, re.MULTILINE)
+            if sub_circle:
+                ch = sub_circle.group(1)
+                let = chr(ord('A') + ord(ch) - ord('Ⓐ')) if 'Ⓐ' <= ch <= 'Ⓩ' else (chr(ord('A') + ord(ch) - ord('ⓐ')) if 'ⓐ' <= ch <= 'ⓩ' else 'A')
+                cand = f"{base_parent}({let})"
+                if not valid_q_order or cand in valid_q_order:
+                    return cand
 
     # 2. Extract non-empty, non-structural leading lines
     clean_lines = []
     for l in first_lines.split("\n"):
-        l_str = l.strip()
+        l_str = re.sub(r'^\s*\[struck:[^\]]*\]\s*', '', l).strip()
         if not l_str or l_str.startswith("|") or l_str.startswith("---"):
             continue
         clean_lines.append(l_str)
@@ -140,7 +147,7 @@ def _extract_explicit_english_header(
     for line_idx in range(min(2, len(clean_lines))):
         top_line = clean_lines[line_idx]
 
-        # OCR artifact 'No. Z' -> 7 (or 2 depending on valid_q_order)
+        # OCR artifact 'No. Z' -> 7 or 2
         if re.search(r'\bNo[.,\s]*[Zz]\b', top_line, re.IGNORECASE):
             if valid_q_order:
                 if "7" in valid_q_order:
@@ -149,7 +156,7 @@ def _extract_explicit_english_header(
                     return "2"
             return "7"
 
-        # Standalone question subpart format e.g. "1(A)" or "1 (B)" or "1(b)"
+        # Standalone question subpart format e.g. "1(A)" or "2(B)" or "3(b)"
         standalone_m = re.match(r'^\s*([0-9]{1,3})\s*[\(（]([A-Za-z])[\)）]\s*[\:\.\-]?', top_line)
         if standalone_m:
             candidate = f"{int(standalone_m.group(1))}({standalone_m.group(2).upper()})"
@@ -181,11 +188,11 @@ def _extract_explicit_english_header(
 
         if not header_m:
             # Check if line has subpart letter like "Ans (A)" or "Ans: B"
-            sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-Ea-e])[\)）]|([A-Ea-e])\b)', top_line, re.IGNORECASE)
+            sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-Za-z])[\)）]|([A-Za-z])\b)', top_line, re.IGNORECASE)
             if sub_letter_m:
                 let = (sub_letter_m.group(1) or sub_letter_m.group(2)).upper()
-                base = re.sub(r'\(.*?\)|[A-Za-z\u0980-\u09FF]+$', '', str(current_parent or "1")).strip()
-                base = base if base.isdigit() else "1"
+                base = re.sub(r'\(.*?\)|[A-Za-z\u0980-\u09FF]+$', '', str(current_parent or "")).strip()
+                base = base if base.isdigit() else (valid_q_order[0] if valid_q_order else "1")
                 cand = f"{base}({let})"
                 if not valid_q_order or cand in valid_q_order:
                     return cand
@@ -197,26 +204,27 @@ def _extract_explicit_english_header(
         # If subpart wasn't on the same line, check if the immediately following line specifies the subpart
         if not sub_letter and len(clean_lines) > line_idx + 1:
             next_line = clean_lines[line_idx + 1].strip()
-            next_sub = re.match(r'^\s*(?:[\(（]([A-Da-d])[\)）]|([Ⓐ-Ⓓ]))\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', next_line)
+            next_sub = re.match(r'^\s*(?:[\(（]([A-Za-z])[\)）]|([Ⓐ-Ⓩⓐ-ⓩ]))\s*(?:\n|\r\n|Ans|Answer|:|\.|\-|$)', next_line)
             if next_sub:
                 if next_sub.group(1):
                     sub_letter = next_sub.group(1).upper()
                 elif next_sub.group(2):
-                    circle_map = {'Ⓐ': 'A', 'Ⓑ': 'B', 'Ⓒ': 'C', 'Ⓓ': 'D'}
-                    sub_letter = circle_map.get(next_sub.group(2), 'A')
+                    ch = next_sub.group(2)
+                    sub_letter = chr(ord('A') + ord(ch) - ord('Ⓐ')) if 'Ⓐ' <= ch <= 'Ⓩ' else (chr(ord('A') + ord(ch) - ord('ⓐ')) if 'ⓐ' <= ch <= 'ⓩ' else 'A')
 
-        candidate = f"{raw_num}({sub_letter})" if sub_letter and sub_letter in ["A", "B", "C", "D", "E"] else raw_num
+        candidate = f"{raw_num}({sub_letter})" if sub_letter and sub_letter.isalpha() else raw_num
 
         # Schema-Constrained Validation
         if valid_q_order:
             if candidate in valid_q_order:
                 return candidate
 
-            if candidate == "1":
-                if any(q in ("1(A)", "1A") for q in valid_q_order) and "1" not in valid_q_order:
-                    return "1(A)"
-                elif "1" in valid_q_order:
-                    return "1"
+            # If candidate is a base number whose first subpart is in valid_q_order (e.g. cand='1', valid has '1(A)'):
+            first_sub = f"{candidate}(A)"
+            if first_sub in valid_q_order and candidate not in valid_q_order:
+                return first_sub
+            if candidate in valid_q_order:
+                return candidate
 
             if sub_letter:
                 normalized_cand = f"{raw_num}({sub_letter})"
@@ -225,7 +233,7 @@ def _extract_explicit_english_header(
 
             continue
 
-        if raw_num.isdigit() and 1 <= int(raw_num) <= 25:
+        if raw_num.isdigit() and 1 <= int(raw_num) <= 50:
             return candidate
 
     return None
@@ -245,41 +253,43 @@ def detect_structural_fingerprint(
     if not section_text or not section_text.strip():
         return None
 
-    # Map question types to q_no using question_obj catalog if available, else standard defaults
-    q_map = {
-        "flowchart": "2",
-        "summary": "3",
-        "cloze_clues": "4",
-        "cloze_no_clues": "5",
-        "rearrange": "6",
-        "paragraph": "7",
-        "graph": "8",
-        "story": "9",
-        "letter": "10",
-        "theme": "11",
-    }
+    # Dynamically map question types to q_no using question_obj catalog
+    q_map: Dict[str, str] = {}
     if question_obj and question_obj.sub_questions:
         for sq in question_obj.sub_questions:
             sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
             name_lower = str(sq.get("name") or sq.get("title") or "").lower()
-            if not sq_no or not name_lower:
+            task_lower = str(sq.get("task_type") or "").lower()
+            combined = f"{name_lower} {task_lower}".strip()
+            if not sq_no:
                 continue
-            if "flow" in name_lower or ("chart" in name_lower and "pie" not in name_lower and "bar" not in name_lower):
+            if "flow" in combined or ("chart" in combined and "pie" not in combined and "bar" not in combined):
                 q_map["flowchart"] = sq_no
-            elif "rearrange" in name_lower or "jumbled" in name_lower or "order" in name_lower:
+            elif "rearrange" in combined or "jumbled" in combined or "order" in combined:
                 q_map["rearrange"] = sq_no
-            elif "summary" in name_lower or "summariz" in name_lower:
+            elif "summary" in combined or "summariz" in combined:
                 q_map["summary"] = sq_no
-            elif "graph" in name_lower or "chart" in name_lower or "diagram" in name_lower:
+            elif "graph" in combined or "chart" in combined or "diagram" in combined:
                 q_map["graph"] = sq_no
-            elif "story" in name_lower or "completing" in name_lower:
+            elif "story" in combined or "completing" in combined:
                 q_map["story"] = sq_no
-            elif "letter" in name_lower or "email" in name_lower:
+            elif "dialogue" in combined or "conversation" in combined:
+                q_map["dialogue"] = sq_no
+            elif "letter" in combined or "email" in combined:
                 q_map["letter"] = sq_no
-            elif "theme" in name_lower or "poem" in name_lower:
+            elif "theme" in combined or "poem" in combined or "poetry" in combined:
                 q_map["theme"] = sq_no
-            elif "paragraph" in name_lower or "composition" in name_lower:
+            elif "paragraph" in combined or "composition" in combined or "essay" in combined:
                 q_map["paragraph"] = sq_no
+            elif "cloze" in combined:
+                if "without" in combined:
+                    q_map["cloze_no_clues"] = sq_no
+                else:
+                    q_map["cloze_clues"] = sq_no
+            elif "table" in combined:
+                q_map["table"] = sq_no
+            elif "matching" in combined:
+                q_map["matching"] = sq_no
 
     def _get_q(task_type: str) -> Optional[str]:
         val = q_map.get(task_type)
@@ -342,7 +352,13 @@ def detect_structural_fingerprint(
     if has_summary_kw:
         return _get_q("summary")
 
-    # 8. Semantic Source-Text Fingerprint for Headless Answers (Summary & Theme)
+    # 8. Dialogue / Conversation: Multiple speaker turns (e.g. "Afifa:", "Doctor:", "Myself:")
+    speaker_turns = len(re.findall(r'(?im)^\s*[A-Z][a-z]{1,15}\s*:\s+', section_text))
+    has_dialogue_kw = bool(re.search(r'\b(?:dialogue|conversation)\b', first_lines, re.I))
+    if has_dialogue_kw or (speaker_turns >= 4 and len(section_text.split()) >= 20):
+        return _get_q("dialogue")
+
+    # 9. Semantic Source-Text Fingerprint for Headless Answers (Summary & Theme)
     # When a student writes NO header (no "Ans 3", no "3.", no "Summary:"), we match the text
     # against the source poem/passage printed on the question paper.
     if question_obj and getattr(question_obj, "question_text", None):
@@ -543,7 +559,7 @@ def segment_script_into_questions(
                     current_q_no = prev_q
 
             # If still no active question, fallback to current_q_no or valid_q_order[0]
-            target_q = current_q_no or (valid_q_order[0] if valid_q_order else "1(A)")
+            target_q = current_q_no or (valid_q_order[0] if valid_q_order else "1")
             current_q_no = target_q  # anchor active question
 
             if target_q not in answer_buckets:
@@ -669,7 +685,7 @@ def _segment_raw_transcript(
     sections = [s for s in sections if s.strip()]
 
     items = []
-    cur_q = valid_q_order[0] if valid_q_order else "1(A)"
+    cur_q = valid_q_order[0] if valid_q_order else "1"
     for s in sections:
         hq = extract_header_qno(s, current_parent=cur_q, valid_q_order=valid_q_order)
         if hq:

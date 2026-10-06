@@ -574,24 +574,6 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
             md_lines.append(f"| {tm.question_no or 'N/A'} | `{tm.mark_value}` | {tm.location} |")
         md_lines.append("")
 
-    if report.stage2_verification.silent_corrections_fixed:
-        md_lines.extend([
-            "### Reverted Silent Autocorrections",
-            "| Stage 1 Output | Actual Handwriting | Reason |",
-            "| --- | --- | --- |"
-        ])
-        for diff in report.stage2_verification.silent_corrections_fixed:
-            if hasattr(diff, "stage1_output"):
-                s1, act, rsn = diff.stage1_output, diff.actual_handwritten, diff.reason
-            elif isinstance(diff, dict):
-                s1, act, rsn = diff.get("stage1_output", ""), diff.get("actual_handwritten", ""), diff.get("reason", "")
-            elif isinstance(diff, str) and "->" in diff:
-                parts = diff.split("->", 1)
-                s1, act, rsn = parts[0].strip(), parts[1].strip(), "Global handwriting calibration"
-            else:
-                s1, act, rsn = str(diff), "", "Global handwriting calibration"
-            md_lines.append(f"| `{s1}` | `{act}` | {rsn} |")
-        md_lines.append("")
 
     md_lines.extend([
         "---",
@@ -693,6 +675,39 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
                 md_lines.append(f"| Q{qe.q_no} | " + " | ".join(f"{qe.subscores.get(c, 0):.1f}" for c in crits) +
                                 f" | {qe.raw_total if qe.raw_total is not None else '-'} | {qe.cap_reason if qe.cap_applied else '-'} | **{qe.awarded_marks:.1f}** |")
             md_lines.append("")
+
+            # Detailed criteria ceilings breakdown and student feedback per Mode C question
+            md_lines.append("### Mode C Writing: Criteria Ceilings & Dual Feedback Breakdown")
+            for qe in sub_rows:
+                md_lines.append(f"#### Q{qe.q_no} - {qe.q_name} (Max {qe.max_marks:.1f} Marks | Awarded: **{qe.awarded_marks:.1f}**)")
+                md_lines.append(f"- **Raw Content Score**: {qe.content_raw_score:.1f} | **Linguistic Penalty**: -{qe.linguistic_penalty:.2f} | **Performance Band**: {qe.performance_band or 'N/A'}")
+                if qe.criteria_reasoning:
+                    md_lines.extend([
+                        "| Criterion | Ceiling | Awarded | Examiner Justification | Evidence Quote |",
+                        "| --- | --- | --- | --- | --- |"
+                    ])
+                    for crit_k, crit_v in qe.criteria_reasoning.items():
+                        crit_name = crit_k.replace("_", " ").title()
+                        sub_val = f"{qe.subscores.get(crit_k, 0.0):.1f}" if qe.subscores else "-"
+                        if isinstance(crit_v, dict):
+                            just = str(crit_v.get("justification", "")).replace("|", "/")
+                            ev = str(crit_v.get("evidence", "")).replace("|", "/")
+                            md_lines.append(f"| {crit_name} | - | {sub_val} | {just} | `{ev[:60]}` |")
+                        else:
+                            md_lines.append(f"| {crit_name} | - | {sub_val} | {str(crit_v).replace('|', '/')} | - |")
+                    md_lines.append("")
+                if qe.examiner_feedback:
+                    md_lines.append(f"**Examiner Mark Allocation Reasoning**:\n> {qe.examiner_feedback}\n")
+                if qe.student_feedback:
+                    md_lines.append(f"**Student Writing Improvement Advice**:\n> {qe.student_feedback}\n")
+                if qe.penalty_breakdown:
+                    pb = qe.penalty_breakdown
+                    cat_ded = pb.get("category_deductions", {})
+                    ded_strs = [f"{k}: -{v:.2f}" for k, v in cat_ded.items() if v > 0]
+                    ded_desc = ", ".join(ded_strs) if ded_strs else "Zero deductions"
+                    cap_desc = f" ({pb.get('cap_reason')})" if pb.get("is_capped") else ""
+                    md_lines.append(f"**Linguistic Penalty Audit**: Deductions applied: {ded_desc}{cap_desc} (Total: -{qe.linguistic_penalty:.2f} marks)\n")
+                md_lines.append("")
     else:
         md_lines.extend([
             "## Stage 4: Rubric Marks Breakdown",
@@ -714,6 +729,42 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         md_lines.append(f"- {rec}")
 
     md_lines.append("")
+
+    # Final Given Marks Summary Table for Each Question
+    s4 = report.stage4_evaluation
+    md_lines.extend([
+        "---",
+        "",
+        "## Final Given Marks Summary Table",
+        "| Question | Question Title / Task Type | Full Marks | Marks Given | Score % | Performance Band / Remarks |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: |"
+    ])
+
+    if getattr(s4, "question_evaluations", None):
+        for qe in s4.question_evaluations:
+            pct = (qe.awarded_marks / qe.max_marks * 100.0) if qe.max_marks > 0 else 0.0
+            status_str = qe.performance_band or qe.scoring_status.title()
+            md_lines.append(
+                f"| **Q{qe.q_no}** | {qe.q_name} | {qe.max_marks:.1f} | **{qe.awarded_marks:.1f}** | {pct:.1f}% | {status_str} |"
+            )
+        tot_max = s4.total_max_marks
+        tot_awd = s4.final_score
+        tot_pct = s4.percentage
+        grade = "Grade A+ (Outstanding)" if tot_pct >= 80 else ("Grade A (Very Good)" if tot_pct >= 70 else ("Grade B (Good)" if tot_pct >= 60 else "Passed"))
+        md_lines.extend([
+            f"| **TOTAL** | **All {len(s4.question_evaluations)} Questions** | **{tot_max:.1f}** | **{tot_awd:.1f}** | **{tot_pct:.1f}%** | **{grade}** |",
+            ""
+        ])
+    elif getattr(s4, "criteria_scores", None):
+        for c in s4.criteria_scores:
+            pct = (c.awarded_marks / c.max_marks * 100.0) if c.max_marks > 0 else 0.0
+            md_lines.append(
+                f"| - | {c.criterion_name} | {c.max_marks:.1f} | **{c.awarded_marks:.1f}** | {pct:.1f}% | Evaluated |"
+            )
+        md_lines.extend([
+            f"| **TOTAL** | **All Criteria** | **{s4.total_max_marks:.1f}** | **{s4.final_score:.1f}** | **{s4.percentage:.1f}%** | - |",
+            ""
+        ])
 
     # AI vs. Human Ground Truth Alignment Table
     if gt_dict:
@@ -850,6 +901,83 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
             ""
         ])
 
+    content = "\n".join(md_lines)
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    return output_path
+
+
+def export_mistakes_markdown(report: CompleteEvaluationReport, output_path: str) -> str:
+    """Save dedicated standalone linguistic and structural error audit report as Markdown."""
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
+
+    errors = report.stage3_errors.errors if report.stage3_errors else []
+    total_count = report.stage3_errors.total_error_count if report.stage3_errors else len(errors)
+    spelling_count = report.stage3_errors.spelling_error_count if report.stage3_errors else sum(1 for e in errors if "spell" in str(e.error_type).lower())
+    grammar_count = report.stage3_errors.grammar_error_count if report.stage3_errors else sum(1 for e in errors if "gramm" in str(e.error_type).lower())
+    syntax_count = report.stage3_errors.syntax_error_count if report.stage3_errors else sum(1 for e in errors if "synt" in str(e.error_type).lower())
+    total_pen = report.stage4_evaluation.linguistic_penalty if getattr(report, "stage4_evaluation", None) else 0.0
+
+    # Recurring error pattern frequency
+    word_freq = {}
+    for e in errors:
+        w = str(e.erroneous_text or "").lower().strip()
+        if w:
+            word_freq[w] = word_freq.get(w, 0) + 1
+
+    top_repeated = [f"`{w}` ({c}x)" for w, c in sorted(word_freq.items(), key=lambda x: x[1], reverse=True) if c > 1][:4]
+    repeated_str = ", ".join(top_repeated) if top_repeated else "None (all detected errors are singular occurrences)"
+
+    md_lines = [
+        f"# Dedicated Mistakes & Linguistic Error Audit: `{report.script_id}`",
+        f"**Audit Generated**: {report.timestamp} | **Engine**: `{report.model_id}`",
+        f"**Input Source**: `{report.image_path}`",
+        "",
+        "---",
+        "",
+        "## 🔍 Executive Error Diagnostic Summary",
+        f"- **Total Detected Errors**: **{total_count}**",
+        f"  - Spelling / Orthographic: `{spelling_count}`",
+        f"  - Grammar & Tense: `{grammar_count}`",
+        f"  - Syntax & Word Order: `{syntax_count}`",
+        f"- **Total Linguistic Deduction Applied to Script**: **-{total_pen:.2f} marks**",
+        f"- **Recurrent Misspelled Words**: {repeated_str}",
+        f"- **NCTB Recurrent Error Policy Applied**: Identical misspelled words penalized once; objective question types exempted.",
+        "",
+        "---",
+        "",
+        "## Detailed Error Catalog",
+        "| Page | Error Type | Student's Text | Suggested Correction | Linguistic Explanation & Rule Violated |",
+        "| --- | --- | --- | --- | --- |"
+    ]
+
+    pages_list = getattr(report, "pages", None)
+    error_page_map = {}
+    if pages_list:
+        for p in pages_list:
+            for e in (p.stage3_errors.errors if p.stage3_errors else []):
+                error_page_map[(e.erroneous_text, e.context_sentence)] = p.page_no
+
+    for err in errors:
+        p_no = error_page_map.get((err.erroneous_text, err.context_sentence))
+        if p_no is None and pages_list:
+            needle = str(err.erroneous_text or "").lower().strip()
+            ctx = str(err.context_sentence or "").lower().strip()
+            for p in pages_list:
+                p_text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").lower()
+                if needle and needle in p_text:
+                    p_no = p.page_no
+                    break
+                elif ctx and len(ctx) > 8 and ctx[:20] in p_text:
+                    p_no = p.page_no
+                    break
+        page_str = f"Page {p_no}" if p_no is not None else "Page 1"
+        clean_exp = (err.explanation or "").replace("|", "/").replace("\n", " ")
+        clean_err = str(err.erroneous_text or "").replace("|", "/")
+        clean_corr = str(err.suggested_correction or "").replace("|", "/")
+        md_lines.append(f"| `{page_str}` | **{err.error_type}** | `{clean_err}` | `{clean_corr}` | {clean_exp} |")
+
+    md_lines.append("")
     content = "\n".join(md_lines)
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(content)

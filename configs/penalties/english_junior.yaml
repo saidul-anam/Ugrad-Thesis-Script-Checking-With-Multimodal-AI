@@ -1,0 +1,38 @@
+profile_name: "english_junior"
+description: "Tunable linguistic and structural error penalty configuration for Junior Secondary English (Classes 6-8 / JSC)"
+curriculum: "NCTB"
+language: "english"
+
+# Per-error deductions by category (in marks) - Moderate scale for junior learners
+deductions_per_error:
+  spelling: 0.20
+  grammar: 0.35
+  syntax: 0.20
+  punctuation_mechanics: 0.15
+  illegible_omission: 0.35
+
+# Maximum cumulative deduction caps per question type (in marks)
+question_type_caps:
+  MCQ: 0.0                      # Strict NCTB rule: zero linguistic penalty on objective items
+  Cloze_With_Clues: 0.0
+  Cloze_Without_Clues: 0.0
+  Table_Completion: 0.0
+  Sentence_Matching: 0.0
+  Rearrangement: 0.0
+  Comprehension_Questions: 0.75 # Cap at 0.75 mark for 2-mark short questions
+  Summary: 1.0                  # Cap at 1.0 mark for summary
+  Paragraph: 1.5                # Cap at 1.5 marks for paragraph
+  Story: 1.5                    # Cap at 1.5 marks for story
+  Letter: 1.5                   # Cap at 1.5 marks for informal letter/email
+  Dialogue: 1.5                 # Cap at 1.5 marks for dialogue
+  default: 1.0
+
+# Overall script cumulative deduction ceiling
+overall_script_max_penalty: 5.0
+
+# Recurrent error policy (NCTB Junior Secondary guideline)
+recurrent_error_policy:
+  deduplicate_identical_words: true  # Multiple instances of the same misspelled word penalized once
+  deduplicate_identical_rules: false
+  ignore_allograph_ambiguities: true # Cursive stroke/allograph ambiguities zero penalty
+  ignore_british_american_variants: true

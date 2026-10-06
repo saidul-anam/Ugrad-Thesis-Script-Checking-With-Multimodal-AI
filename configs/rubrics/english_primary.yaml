@@ -1,0 +1,47 @@
+rubric_name: "english_primary"
+version: "2.0"
+subject: "english"
+grade_level: "Primary (Classes 3-5)"
+total_marks: 100.0
+
+description: >
+  Modular NCTB English Rubric for Primary level (Classes 3 to 5).
+  Focuses on fundamental vocabulary, spelling, sentence matching, simple comprehension questions,
+  and guided short compositions / 5-sentence paragraphs.
+
+scoring_modes:
+  mode_a_objective:
+    description: "Itemized objective questions (MCQ, Fill in blanks, Matching, Re-ordering words)"
+    task_types:
+      - "MCQ"
+      - "Fill_In_The_Blanks"
+      - "Cloze_With_Clues"
+      - "Sentence_Matching"
+      - "Rearrangement"
+      - "True_False"
+    scoring_logic: "deterministic_key_match"
+    zero_penalty: true
+
+  mode_b_point_comprehension:
+    description: "Short comprehension questions scored on simple, direct textual accuracy"
+    task_types:
+      - "Comprehension_Questions"
+      - "Short_Answer"
+    scoring_logic: "point_scale_with_rubric"
+    point_scale:
+      full: 2.0
+      partial: 1.0
+      minimal: 0.5
+      incorrect: 0.0
+
+  mode_c_band_writing:
+    description: "Short guided paragraphs or 5-sentence creative writings"
+    task_types:
+      - "Paragraph"
+      - "Short_Composition"
+      - "Form_Filling"
+    criteria_ceilings:
+      content_relevance: 0.50
+      organization_cohesion: 0.20
+      vocabulary_expression: 0.15
+      grammar_mechanics: 0.15

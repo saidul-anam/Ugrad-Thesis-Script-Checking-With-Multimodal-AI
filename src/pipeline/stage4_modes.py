@@ -126,7 +126,14 @@ def load_rubric_specs(rubric_data: Dict[str, Any]) -> Dict[str, QuestionSpec]:
             spec.layout_components = {k: list(v) for k, v in (entry.get("layout_components") or {}).items()}
             if entry.get("max_mark"):
                 spec.max_mark = float(entry["max_mark"])
-            spec.bands = dict(bands_by_max.get(f"max_{int(spec.max_mark)}", {}))
+            m_int = int(spec.max_mark)
+            raw_b = (
+                bands_by_max.get(f"max_{m_int}")
+                or bands_by_max.get(m_int)
+                or bands_by_max.get(str(m_int))
+                or {}
+            )
+            spec.bands = dict(raw_b)
         specs[q_no] = spec
     return specs
 
@@ -219,7 +226,33 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
     if not c:
         return False
     c_alt = _ROMAN.get(c, c)
-    is_mcq = (task_type or "").upper() == "MCQ"
+    tt_upper = (task_type or "").upper()
+    is_mcq = tt_upper == "MCQ"
+    is_matching = "MATCH" in tt_upper or any("+" in a for a in accepted)
+
+    # Sentence Matching / Column matching: candidate may contain formula (e.g. a+iv+ii) and/or combined sentence
+    if is_matching:
+        formulas_accepted = [a for a in accepted if "+" in a]
+        if formulas_accepted:
+            cand_formulas = re.findall(
+                r"([a-e]\s*\+\s*[ivx]+\s*\+\s*[ivx]+|[ivx]+\s*\+\s*[ivx]+)",
+                candidate,
+                re.IGNORECASE,
+            )
+            for cf in cand_formulas:
+                norm_cf = re.sub(r"[^a-z0-9]", "", cf.lower())
+                for fa in formulas_accepted:
+                    norm_fa = re.sub(r"[^a-z0-9]", "", fa.lower())
+                    if norm_cf == norm_fa or norm_cf.endswith(norm_fa) or norm_fa.endswith(norm_cf):
+                        return True
+        for a in accepted:
+            norm_a = re.sub(r"[^a-z0-9 ]", "", a.lower()).strip()
+            if len(norm_a) >= 10:
+                if norm_a in c or c in norm_a:
+                    return True
+                if difflib.SequenceMatcher(None, c, norm_a).ratio() >= 0.65:
+                    return True
+
     for a in accepted:
         an = _norm(a)
         if not an:
@@ -227,8 +260,13 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
         if c == an or c_alt == _ROMAN.get(an, an):
             return True
         # MCQ only: the student may write the option text (or option letter + text)
-        if is_mcq and len(an) >= 6 and (an in c or c in an):
-            return True
+        if is_mcq:
+            # Case 1: Student wrote option text or option letter + text (e.g. "ii marching", "marching")
+            if len(an) >= 3 and re.search(r'\b' + re.escape(an) + r'\b', c):
+                return True
+            # Case 2: Candidate contains majority of accepted multi-word answer (avoid short slips like "in", "a")
+            if len(c) >= 5 and len(an) >= 5 and (c in an) and (len(c) / len(an) >= 0.7):
+                return True
         # tolerate a single-character slip in words of length >= 5 (rubric: minor spelling slips),
         # but only if candidate is NOT a different legitimate English word (e.g. "healthy" != "health")
         if len(an) >= 5 and abs(len(an) - len(c)) <= 1 and difflib.SequenceMatcher(None, c, an).ratio() >= 0.85:
@@ -355,7 +393,7 @@ RULES:
 
 {item_note}
 Output ONLY JSON:
-{{"items": [{{"item_label": "a", "candidate_answer": "short quote of what the student wrote", "marks_awarded": {avail:g}, "rationale": "one sentence"}}], "notes": "one sentence"}}"""
+{{"items": [{{"item_label": "a", "candidate_answer": "short quote of what the student wrote", "rationale": "one sentence assessing accuracy against key points", "marks_awarded": {avail:g}}}], "notes": "one sentence"}}"""
 
 
 def build_mode_c_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, question_prompt_text: str, errors_text: str, source_text: str = "") -> str:
@@ -397,8 +435,15 @@ GENERAL GUIDELINES:
 
 Output ONLY JSON:
 {{
+  "criteria_reasoning": {{{", ".join(f'"{k}": {{"justification": "1 sentence why mark was given against ceiling", "evidence": "exact short quote"}}' for k in spec.criteria_ceilings)}}},
+  "strengths": ["Key element done well"],
+  "weaknesses": ["Key weakness or missing point"],
+  "student_feedback": {{
+    "praise_point": "one clear commendation of what the student did well",
+    "actionable_revision_step": "one concrete actionable revision technique"
+  }},
+  "examiner_reasoning": "2 sentences explaining the final mark allocation across the criteria ceilings",
   "raw_subscores": {{{", ".join(f'"{k}": 0.0' for k in spec.criteria_ceilings)}}},
-  "criterion_evidence": {{{", ".join(f'"{k}": "exact short quote from the answer"' for k in spec.criteria_ceilings)}}},
   "structural_audit": {{
     "paragraph_subdivisions": false,
     "missing_layout_components": [],
@@ -406,10 +451,7 @@ Output ONLY JSON:
     "exceeds_length_limit": false,
     "external_facts_or_personal_opinions": false,
     "attempted": true
-  }},
-  "frequent_errors": ["..."],
-  "positive_aspects": ["..."],
-  "feedback_summary": "2 sentences for the student"
+  }}
 }}"""
 
 
@@ -422,6 +464,9 @@ class ScoreResult:
     raw_total: Optional[float] = None
     items: List[Dict[str, Any]] = field(default_factory=list)
     subscores: Dict[str, float] = field(default_factory=dict)
+    criteria_reasoning: Dict[str, Any] = field(default_factory=dict)
+    student_feedback: str = ""
+    examiner_reasoning: str = ""
     cap_applied: bool = False
     cap_reason: str = "None"
     capped_from: Optional[float] = None
@@ -529,8 +574,12 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         )
         return res
 
-    key_items = {str(it.get("label")).lower(): it for it in (key_entry.get("items") or [])}
-    got_items = {str(it.get("item_label", "")).strip().lower().strip("()"): it for it in (parsed.get("items") or [])}
+    raw_key_items = key_entry.get("items") or []
+    if isinstance(raw_key_items, dict):
+        key_items = {str(k).lower().strip("().: "): v for k, v in raw_key_items.items()}
+    else:
+        key_items = {str(it.get("label", it.get("item_label"))).lower().strip("().: "): it for it in raw_key_items}
+    got_items = {str(it.get("item_label", "")).strip().lower().strip("().: "): it for it in (parsed.get("items") or [])}
     labels = list(key_items) or list(got_items)
     correct = 0
     for lab in labels:
@@ -570,7 +619,7 @@ def score_mode_b(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         m = max(0.0, min(avail, m))
         m = min(allowed, key=lambda v: abs(v - m))          # clamp to the discrete scale
         total += m
-        res.items.append({"item_label": str(it.get("item_label", "")), "candidate_answer": str(it.get("candidate_answer", ""))[:160],
+        res.items.append({"item_label": str(it.get("item_label", "")).strip("().: "), "candidate_answer": str(it.get("candidate_answer", ""))[:160],
                           "status": "correct" if m >= avail else ("incorrect" if m == 0 else "partially_correct"),
                           "marks_awarded": m, "marks_available": avail, "rationale": str(it.get("rationale", ""))[:200]})
     res.awarded = min(spec.max_mark, snap_half(total))
@@ -629,11 +678,26 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
         awarded = cap_value
     elif cap_value is not None:
         res.cap_reason = reason + " (cap not binding)"
-    res.awarded = max(0.0, min(spec.max_mark, snap_half(awarded)))
+    res.awarded = snap_half(awarded)
     res.band = band_for(res.awarded, spec.bands)
-    res.feedback = str(parsed.get("feedback_summary") or "")
-    res.strengths = [str(s) for s in (parsed.get("positive_aspects") or [])][:5]
-    res.weaknesses = [str(s) for s in (parsed.get("frequent_errors") or [])][:5]
+    res.criteria_reasoning = parsed.get("criteria_reasoning") or {}
+    sf = parsed.get("student_feedback")
+    if isinstance(sf, dict):
+        praise = str(sf.get("praise_point", "")).strip()
+        action = str(sf.get("actionable_revision_step", "")).strip()
+        parts = []
+        if praise:
+            parts.append(f"Commendation: {praise}")
+        if action:
+            parts.append(f"Actionable Improvement: {action}")
+        res.student_feedback = "\n".join(parts)
+    elif isinstance(sf, str):
+        res.student_feedback = sf.strip()
+
+    res.examiner_reasoning = str(parsed.get("examiner_reasoning") or "").strip()
+    res.feedback = res.examiner_reasoning or str(parsed.get("feedback_summary") or "")
+    res.strengths = [str(s) for s in (parsed.get("strengths") or parsed.get("positive_aspects") or [])][:5]
+    res.weaknesses = [str(s) for s in (parsed.get("weaknesses") or parsed.get("frequent_errors") or [])][:5]
     ev = parsed.get("criterion_evidence") or {}
     if isinstance(ev, dict):
         hallucinations = []

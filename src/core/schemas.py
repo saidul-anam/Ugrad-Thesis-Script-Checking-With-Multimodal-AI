@@ -253,6 +253,9 @@ class QuestionEvaluationItem(BaseModel):
     content_raw_score: float = 0.0
     linguistic_penalty: float = 0.0
     examiner_feedback: str = ""
+    student_feedback: Optional[str] = Field(None, description="Constructive pedagogical advice for student writing improvement")
+    criteria_reasoning: Dict[str, Any] = Field(default_factory=dict, description="Criteria ceilings marks and detailed justification breakdown")
+    penalty_breakdown: Optional[Dict[str, Any]] = Field(None, description="Detailed linguistic penalty calculation and caps")
     strengths: List[str] = Field(default_factory=list)
     weaknesses: List[str] = Field(default_factory=list)
     # Rubric-driven scoring (mode-based rubrics)

@@ -16,9 +16,11 @@ from src.pipeline.stage2_verifier import _extract_json_from_text
 from src.pipeline.stage4_modes import (
     load_rubric_specs, load_answer_key, key_for_question, source_text_for_question,
     build_mode_a_prompt, build_mode_b_prompt, build_mode_c_prompt,
-    score_mode_a, score_mode_b, score_mode_c, snap_half, STAGE4_MODES_SYSTEM_PROMPT,
+    score_mode_a, score_mode_b, score_mode_c, snap_half, band_for, STAGE4_MODES_SYSTEM_PROMPT,
 )
 from src.utils.ground_truth import canonicalize_question_key
+from src.pipeline.penalty_calculator import PenaltyCalculator
+from src.utils.rubric_resolver import resolve_penalty_config_path
 
 
 def get_sub_question_prompt_and_marks(
@@ -78,6 +80,7 @@ class Stage4Evaluator:
     def __init__(self, engine: BaseVLMEngine, answer_keys_dir: str = "configs/answer_keys"):
         self.engine = engine
         self.answer_keys_dir = answer_keys_dir
+        self.penalty_calculator = PenaltyCalculator()
 
     # ------------------------------------------------------------------ helpers
     def _generate_json(self, prompt: str, system_prompt: str, temperature: float, top_p: float,
@@ -151,17 +154,39 @@ class Stage4Evaluator:
         except Exception as ex:
             return QuestionEvaluationItem(awarded_marks=0.0, scoring_status="unscored",
                                           examiner_feedback=f"Scoring failed: {ex}", scoring_notes=[f"raw: {raw[:200]}"], **base)
-        awarded = max(0.0, min(max_mark, snap_half(sr.awarded)))
-        feedback = sr.feedback or str(parsed.get("notes") or "")
+        pen_breakdown = self.penalty_calculator.calculate_question_penalties(
+            ans.errors or [], spec.task_type, max_mark
+        )
+        penalty = pen_breakdown.total_penalty
+        base_score = float(sr.awarded if sr.cap_applied else (sr.raw_total if sr.raw_total is not None else sr.awarded))
+        awarded = max(0.0, min(max_mark, snap_half(base_score - penalty)))
+        p_band = band_for(awarded, spec.bands) if getattr(spec, "bands", None) else sr.band
+
+        feedback = sr.examiner_reasoning or sr.feedback or str(parsed.get("notes") or "")
         if mode in ("A", "B") and not feedback:
             n_ok = sum(1 for it in sr.items if it.get("status") == "correct")
             feedback = f"{n_ok}/{len(sr.items)} items fully correct."
+
         return QuestionEvaluationItem(
-            awarded_marks=awarded, content_raw_score=float(sr.raw_total if sr.raw_total is not None else awarded),
-            linguistic_penalty=0.0, examiner_feedback=feedback, strengths=sr.strengths, weaknesses=sr.weaknesses,
-            scoring_status="scored", items=sr.items, subscores=sr.subscores, raw_total=sr.raw_total,
-            cap_applied=sr.cap_applied, cap_reason=sr.cap_reason, capped_from=sr.capped_from,
-            performance_band=sr.band, scoring_notes=sr.notes, **base,
+            awarded_marks=awarded,
+            content_raw_score=float(sr.raw_total if sr.raw_total is not None else sr.awarded),
+            linguistic_penalty=penalty,
+            examiner_feedback=feedback,
+            student_feedback=sr.student_feedback or None,
+            criteria_reasoning=sr.criteria_reasoning or {},
+            penalty_breakdown=pen_breakdown.__dict__,
+            strengths=sr.strengths,
+            weaknesses=sr.weaknesses,
+            scoring_status="scored",
+            items=sr.items,
+            subscores=sr.subscores,
+            raw_total=sr.raw_total,
+            cap_applied=sr.cap_applied,
+            cap_reason=sr.cap_reason,
+            capped_from=sr.capped_from,
+            performance_band=p_band,
+            scoring_notes=sr.notes,
+            **base,
         )
 
     def evaluate_modular(
@@ -195,6 +220,8 @@ class Stage4Evaluator:
         specs = load_rubric_specs(rubric_data)
         rubric_driven = bool(specs)
         answer_key = load_answer_key(question_obj.question_id if question_obj else None, self.answer_keys_dir) if rubric_driven else {}
+        penalty_conf = resolve_penalty_config_path(question_obj.question_id if question_obj else "SE_10_Q1")
+        self.penalty_calculator = PenaltyCalculator(penalty_conf)
         gt_canon = {canonicalize_question_key(str(k)): float(v) for k, v in (ground_truth_marks or {}).items()}
         print(f"[Stage 4 Modular] Evaluating {len(answers)} segmented answers question-by-question "
               f"({'rubric-driven modes A/B/C' if rubric_driven else 'generic prompt'}; answer key: {'yes' if answer_key else 'none'})...")
@@ -255,6 +282,7 @@ class Stage4Evaluator:
                 total_awarded += qe.awarded_marks
                 total_max += qe.max_marks
                 total_raw_content += qe.content_raw_score
+                total_linguistic_deductions += qe.linguistic_penalty
                 continue
 
             prompt = build_modular_question_prompt(
