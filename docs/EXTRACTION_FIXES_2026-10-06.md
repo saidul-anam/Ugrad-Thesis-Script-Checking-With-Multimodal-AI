@@ -14,6 +14,35 @@ comes from the image. No word lists, no per-letter rules, no hand-tuned threshol
 
 ---
 
+## 0. Result (fresh end-to-end run, 56 dev pages)
+
+Stage 1 → Stage 2 → Stage 2b were re-run from scratch on every dev ground-truth page with the new
+code and the cleaned Stage 1 prompt (`outputs/extracted/english/se_10_q1_v2/`, benchmark
+`outputs/benchmarks/transcription_english_se10_dev_v2_fixed_*.md`).
+
+| | CER macro | CER micro | WER macro | silent autocorrection |
+|---|---|---|---|---|
+| Old pipeline, Stage 1 | 6.00% | 5.45% | 8.94% | 29.5% |
+| Old pipeline, Stage 1+2 (as shipped) | 7.24% | 6.98% | 10.44% | 30.1% |
+| New Stage 1 (leaked examples removed) | 6.07% | 5.45% | 8.95% | 28.1% |
+| New Stage 1+2 | 4.91% | 4.36% | 7.22% | 26.8% |
+| **New Stage 1+2+2b (final)** | **4.52%** | **4.01%** | **6.77%** | **26.5%** |
+
+Word-level errors on the same 4,933 words:
+
+| Error type | Old shipped | New final |
+|---|---|---|
+| false strike | 276 | **20** |
+| missed strike | 71 | 58 |
+| misread | 155 | 128 |
+| autocorrection | 29 | 34 |
+| dropped word | 37 | 25 |
+| extra word | 39 | 48 |
+
+Removing the leaked prompt examples did not cost Stage 1 anything (6.00% → 6.07%, within run-to-run
+noise). **These are dev numbers.** The pipeline was changed while looking at these pages, so the
+number for the thesis is the test set (section 7), once its ground truth is proofread.
+
 ## 1. Where the errors actually come from (measured, not guessed)
 
 Word-level attribution of every difference between pipeline output and ground truth on the 56 dev
@@ -150,7 +179,8 @@ reader (a different model, or labelled crops to fit one), which is left as futur
 | 2026-10-06 | Stage 2 old filters | dev 56 pp | 4.87% | 7.12% | same Stage 1 (old checkpoint) |
 | 2026-10-06 | Stage 2 new default | dev 56 pp | 4.50% | 6.69% | same Stage 1 (old checkpoint) |
 | 2026-10-06 | + Stage 2b all disagreements | dev 32 pp | 5.11% (from 4.88%) | 9.48% (from 7.74%) | rejected design |
-| 2026-10-06 | + Stage 2b strikes only | dev 56 pp | 4.21% | 6.33% | adopted |
+| 2026-10-06 | + Stage 2b strikes only | dev 56 pp | 4.21% | 6.33% | adopted (old Stage 1) |
+| 2026-10-06 | **Fresh run, final pipeline** | dev 56 pp | **4.52%** | **6.77%** | new Stage 1 prompt; Stage 1 alone 6.07% |
 
 ## 6. How to reproduce
 
@@ -160,6 +190,38 @@ source ./script_checking/bin/activate
 python scripts/evaluate_transcription.py --lang english \
   --gt-dir data/ground_truth/transcripts/english_se_10_q1 \
   --extracted-dir outputs/extracted/english/se_10_q1
+# what kind of errors make up the CER (false/missed strike, misread, autocorrection, dropped/extra)
+python scripts/attribute_transcription_errors.py \
+  --gt-dir data/ground_truth/transcripts/english_se_10_q1 \
+  --extracted-dir outputs/extracted/english/se_10_q1_v2 --examples 10
 # ablation: old text rules back on
 #   set pipeline.legacy_text_rules: true in configs/pipeline_config.yaml, re-extract into another --output-dir
 ```
+
+## 7. What is left to do (needs a person or a long GPU run)
+
+1. **Proofread the test set.** Open each `page_<n>.png` / `page_<n>.txt` pair in
+   `data/ground_truth/transcripts/english_se_10_q1_test/SE_10_Q1_00{29..33}/` (20 pages, Q10 and
+   Q11). Correct the `.txt` to the exact ink: keep misspellings, use `[struck: ...]` for crossed-out
+   text and one line per handwritten line. Then change `"status"` in the `.meta.json` to `"CORRECTED"`.
+   The drafts come from the *old* pipeline's output; check names and crossed-out words especially
+   carefully so the drafts do not bias the result.
+2. **Score the test set once** (the new pipeline's test-page outputs already exist):
+   ```bash
+   python scripts/evaluate_transcription.py --lang english \
+     --gt-dir data/ground_truth/transcripts/english_se_10_q1_test \
+     --extracted-dir outputs/extracted/english/se_10_q1_v2 --tag se10_test_final
+   ```
+   For the old pipeline on the same pages (comparison row), use `--extracted-dir outputs/extracted/english/se_10_q1`.
+3. **Re-extract all 33 scripts** so Stage 3 and Stage 4 use the new transcripts. The existing
+   `outputs/extracted/english/se_10_q1/` was produced by the old pipeline, and so was the Stage 4
+   evaluation run on it. This takes about 10–12 h on the GPU (Stage 2b adds about 15–20 s per page):
+   ```bash
+   python scripts/extract_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_10_q1 \
+     --output-dir outputs/extracted/english_v2 --quant 4bit --force-extract -y
+   ```
+4. **Ablation rows for the thesis**: `pipeline.legacy_text_rules: true` (old rules back) and
+   `pipeline.line_reconciliation: false` (no Stage 2b), each extracted into its own `--output-dir`.
+
+Not addressed here: Stage 3's text-only error analysis (audit P6 part 2). It affects grading, not
+transcription CER, and belongs with the Stage 3/4 work.
