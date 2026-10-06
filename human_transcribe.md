@@ -42,13 +42,13 @@ You can extract a single script or a batch of scripts.
 
 ```bash
 # Single script extraction (Fast single-pass):
-python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english --api --fast -y
+python3 scripts/extract_scripts.py --image data/raw_pdfs/english/se_11_q1/SE_11_Q1_0010.pdf --lang english --api --fast -y
 
 # Single script extraction (Full 2-pass verification with visual auditor):
-python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english --api -y
+python3 scripts/extract_scripts.py --image data/raw_pdfs/english/se_11_q1/SE_11_Q1_0010.pdf --lang english --api -y
 
-# Batch extract top 2 scripts in data/raw_pdfs/english/:
-python3 scripts/extract_scripts.py --lang english --top 2 --api --fast -y
+# Batch extract top 2 scripts in data/raw_pdfs/english/se_11_q1/ (scripts are kept one folder per question paper):
+python3 scripts/extract_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_11_q1 --top 2 --api --fast -y
 ```
 
 ### Step 1.3: Inspect Extraction Outputs

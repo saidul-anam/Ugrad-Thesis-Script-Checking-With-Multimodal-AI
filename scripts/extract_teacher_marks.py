@@ -29,6 +29,7 @@ from pdf2image import convert_from_path
 
 from src.core.config import load_config
 from src.engine.engine_factory import create_engine
+from src.utils.script_files import list_script_files, all_script_files, describe_paper_folders
 from src.pipeline.stage0_preprocessor import detect_red_ink
 from src.pipeline.stage0b_teacher_marks import (
     Stage0bTeacherMarkExtractor,
@@ -173,12 +174,22 @@ def main():
         print(f"Error: PDF directory not found: {pdf_dir}")
         sys.exit(1)
 
-    pdf_files = sorted(glob.glob(os.path.join(pdf_dir, "*.pdf")))
     if args.script:
-        s_clean = args.script.replace(".pdf", "").strip()
-        pdf_files = [p for p in pdf_files if s_clean in Path(p).stem]
+        # Search pdf_dir and its question-paper sub-folders (e.g. se_11_q1/, se_10_q1/)
+        s_clean = Path(args.script).name.replace(".pdf", "").strip()
+        pdf_files = [p for p in all_script_files(pdf_dir, (".pdf",)) if s_clean in Path(p).stem]
         if not pdf_files:
             print(f"Error: Script '{args.script}' not found in {pdf_dir}")
+            sys.exit(1)
+        if len({Path(p).parent for p in pdf_files}) > 1:
+            print(f"Error: '{args.script}' matches scripts from several question papers: "
+                  f"{', '.join(Path(p).stem for p in pdf_files)}. Use the full script ID.")
+            sys.exit(1)
+    else:
+        pdf_files = list_script_files(pdf_dir, (".pdf",))
+        hint = None if pdf_files else describe_paper_folders(pdf_dir, (".pdf",))
+        if hint:
+            print(f"Error: {hint}")
             sys.exit(1)
 
     if args.top:

@@ -140,8 +140,13 @@ def _extract_explicit_english_header(
     for line_idx in range(min(2, len(clean_lines))):
         top_line = clean_lines[line_idx]
 
-        # Special case: OCR artifact 'No. Z' -> 7
+        # OCR artifact 'No. Z' -> 7 (or 2 depending on valid_q_order)
         if re.search(r'\bNo[.,\s]*[Zz]\b', top_line, re.IGNORECASE):
+            if valid_q_order:
+                if "7" in valid_q_order:
+                    return "7"
+                if "2" in valid_q_order:
+                    return "2"
             return "7"
 
         # Standalone question subpart format e.g. "1(A)" or "1 (B)" or "1(b)"
@@ -176,10 +181,14 @@ def _extract_explicit_english_header(
 
         if not header_m:
             # Check if line has subpart letter like "Ans (A)" or "Ans: B"
-            sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-B])[\)）]|([A-B])\b)', top_line, re.IGNORECASE)
+            sub_letter_m = re.search(r'^\s*(?:ans(?:wer)?)[:\s\.\-]+(?:[\(（]([A-Ea-e])[\)）]|([A-Ea-e])\b)', top_line, re.IGNORECASE)
             if sub_letter_m:
                 let = (sub_letter_m.group(1) or sub_letter_m.group(2)).upper()
-                return f"1({let})"
+                base = re.sub(r'\(.*?\)|[A-Za-z\u0980-\u09FF]+$', '', str(current_parent or "1")).strip()
+                base = base if base.isdigit() else "1"
+                cand = f"{base}({let})"
+                if not valid_q_order or cand in valid_q_order:
+                    return cand
             continue
 
         raw_num = str(int(header_m.group(2)))
@@ -272,6 +281,12 @@ def detect_structural_fingerprint(
             elif "paragraph" in name_lower or "composition" in name_lower:
                 q_map["paragraph"] = sq_no
 
+    def _get_q(task_type: str) -> Optional[str]:
+        val = q_map.get(task_type)
+        if val and (not valid_q_order or val in valid_q_order):
+            return val
+        return None
+
     sec_lower = section_text.lower()
     first_lines = "\n".join(section_text.strip().split("\n")[:5]).lower()
 
@@ -280,27 +295,27 @@ def detect_structural_fingerprint(
     has_flow_kw = bool(re.search(r'\b(?:flow[\s\-]*chart)\b', first_lines, re.I))
     has_flow_boxes = (arrows_count >= 2) and bool(re.search(r'[\(\[]?(?:i|1|ii|2)[\)\]]', section_text, re.I))
     if has_flow_kw or has_flow_boxes:
-        return q_map["flowchart"]
+        return _get_q("flowchart")
 
     # 2. Rearranging: Sequence table (| 1 | 2 | 3 |), sequence arrows, or rearrange keywords
     has_rearrange_kw = bool(re.search(r'\b(?:re[\s\-]*arrange|rearranging|order\s+of\s+events)\b', first_lines, re.I))
     has_rearrange_table = bool(re.search(r'\|\s*1\s*\|\s*2\s*\|\s*3\s*\|', section_text)) or bool(re.search(r'\b(?:1\s*\+\s*[a-j]|i\s*->\s*[ivx]+)', section_text, re.I))
     if has_rearrange_kw or has_rearrange_table:
-        return q_map["rearrange"]
+        return _get_q("rearrange")
 
     # 3. Informal Letter / Email: Envelope box, [STAMP], salutation + sign-off
     has_envelope = bool(re.search(r'\b(?:\[?STAMP\]?|envelope)\b', section_text, re.I)) and bool(re.search(r'\b(?:from|to)\b', section_text, re.I))
     has_salutation = bool(re.search(r'^\s*(?:dear\s+[a-z]+|my\s+dear)\b', first_lines, re.I | re.MULTILINE))
     has_signoff = bool(re.search(r'\b(?:yours?\s+(?:ever|loving|faithfully|sincerely|truly|affectionately|friend)|lovingly\s+yours|your\s+(?:loving\s+)?friend)\b', sec_lower, re.I))
-    if has_envelope or (has_salutation and (has_signoff or len(section_text.split()) >= 8)) or (has_signoff and current_parent in (q_map["letter"], None)):
-        return q_map["letter"]
+    if has_envelope or (has_salutation and (has_signoff or len(section_text.split()) >= 8)) or (has_signoff and current_parent in (q_map.get("letter"), None)):
+        return _get_q("letter")
 
     # 4. Data Chart / Graph: Statistical description with percentages or trend metrics
     has_chart_kw = bool(re.search(r'\b(?:graph|chart|pie\s*chart|bar\s*chart|diagram)\b', first_lines, re.I))
     has_stats = bool(re.search(r'\b(?:percent|percentage|\%)\b', sec_lower, re.I)) and bool(re.search(r'\b\d+(?:\.\d+)?\b', sec_lower))
     has_chart_desc = bool(re.search(r'\b(?:the\s+(?:given\s+)?(?:graph|chart|diagram|table)\s+shows|shows\s+that|increased|decreased|highest|lowest|fluctuat|rate\s+of)\b', sec_lower, re.I))
     if (has_chart_kw and (has_stats or has_chart_desc)) or (has_stats and has_chart_desc):
-        return q_map["graph"]
+        return _get_q("graph")
 
     # 5. Completing Story: Narrative openings or common story motifs
     has_story_opening = bool(re.search(r'\b(?:once\s+upon\s+a\s+time|once\s+(?:there\s+)?lived|once\s+there\s+was|there\s+(?:lived|was)\s+(?:a|an)|one\s+day\s+(?:a|an)?|long\s+(?:ago|time\s+ago)|many\s+days\s+ago)\b', first_lines, re.I))
@@ -315,19 +330,19 @@ def detect_structural_fingerprint(
                     has_schema_story_title = True
                     break
     if has_story_opening or has_story_kw or has_schema_story_title:
-        return q_map["story"]
+        return _get_q("story")
 
     # 6. Poem Theme: Theme keyword, poem analysis phrasing
     has_theme_kw = bool(re.search(r'\b(?:theme\s*[:\-]|\bthe\s+(?:poem|stanza|verse|passage)\s+(?:deals\s+with|is\s+about|focuses\s+on)|central\s+theme\b)', first_lines, re.I))
     if has_theme_kw or ("theme:" in first_lines and any(w in first_lines for w in ["poem", "poet", "stanza", "verse", "central", "main", "message", "author"])):
-        return q_map["theme"]
+        return _get_q("theme")
 
     # 7. Summary: Explicit summary keyword
     has_summary_kw = bool(re.search(r'\b(?:summary\s*[:\-]|\bthe\s+passage\s+(?:deals\s+with|is\s+about|summarizes))\b', first_lines, re.I))
     if has_summary_kw:
-        return q_map["summary"]
+        return _get_q("summary")
 
-    # 8. Semantic Source-Text Fingerprint for Headless Answers (Q3 Summary & Q11 Theme)
+    # 8. Semantic Source-Text Fingerprint for Headless Answers (Summary & Theme)
     # When a student writes NO header (no "Ans 3", no "3.", no "Summary:"), we match the text
     # against the source poem/passage printed on the question paper.
     if question_obj and getattr(question_obj, "question_text", None):
@@ -338,27 +353,31 @@ def detect_structural_fingerprint(
             if w.lower() not in _KEYWORD_STOPWORDS
         }
 
-        # Check Q3 Summary source passage overlap
-        q3_source = source_text_for_question(q_map["summary"], question_obj.question_text)
-        if q3_source and sec_tokens and (20 <= len(sec_words) <= 200):
-            q3_tokens = {
-                w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q3_source)
-                if w.lower() not in _KEYWORD_STOPWORDS
-            }
-            overlap_q3 = q3_tokens & sec_tokens
-            if len(overlap_q3) >= 3 and current_parent in ("2", "1(B)", "1", None):
-                return q_map["summary"]
+        # Check Summary source passage overlap
+        summary_q = _get_q("summary")
+        if summary_q:
+            q_source = source_text_for_question(summary_q, question_obj.question_text)
+            if q_source and sec_tokens and (20 <= len(sec_words) <= 200):
+                q_tokens = {
+                    w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q_source)
+                    if w.lower() not in _KEYWORD_STOPWORDS
+                }
+                overlap = q_tokens & sec_tokens
+                if len(overlap) >= 3:
+                    return summary_q
 
-        # Check Q11 Theme source poem overlap
-        q11_source = source_text_for_question(q_map["theme"], question_obj.question_text)
-        if q11_source and sec_tokens and (15 <= len(sec_words) <= 150):
-            q11_tokens = {
-                w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q11_source)
-                if w.lower() not in _KEYWORD_STOPWORDS
-            }
-            overlap_q11 = q11_tokens & sec_tokens
-            if len(overlap_q11) >= 3:
-                return q_map["theme"]
+        # Check Theme source poem overlap
+        theme_q = _get_q("theme")
+        if theme_q:
+            q_source = source_text_for_question(theme_q, question_obj.question_text)
+            if q_source and sec_tokens and (15 <= len(sec_words) <= 150):
+                q_tokens = {
+                    w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q_source)
+                    if w.lower() not in _KEYWORD_STOPWORDS
+                }
+                overlap = q_tokens & sec_tokens
+                if len(overlap) >= 3:
+                    return theme_q
 
     return None
 
@@ -403,12 +422,21 @@ def extract_header_qno(
             return f"{q_num}({ascii_sub})"
         return q_num
 
-    # 3. Subpart (B) following (A) or subpart (খ) following (ক)
-    if current_parent in ["1", "1(A)", "1A"]:
-        if re.search(r'^\s*(?:[\(（](?:B|খ)[\)）]|[Ⓑ]|B(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
-            return "1(B)"
-        if re.search(r'^\s*(?:[\(（](?:A|ক)[\)）]|[Ⓐ]|A(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))', first_lines, re.MULTILINE | re.IGNORECASE):
-            return "1(A)"
+    # 3. Dynamic Subpart (A/B/C/D) or (ক/খ/গ/ঘ) following active parent question
+    if current_parent:
+        base_parent = re.sub(r'\(.*?\)|[A-Za-z\u0980-\u09FF]+$', '', str(current_parent)).strip()
+        if base_parent.isdigit():
+            sub_patterns = [
+                ("B", r'^\s*(?:[\(（](?:B|খ)[\)）]|[Ⓑ]|B(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))'),
+                ("A", r'^\s*(?:[\(（](?:A|ক)[\)）]|[Ⓐ]|A(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))'),
+                ("C", r'^\s*(?:[\(（](?:C|গ)[\)）]|[Ⓒ]|C(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))'),
+                ("D", r'^\s*(?:[\(（](?:D|ঘ)[\)）]|[Ⓓ]|D(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))'),
+            ]
+            for sub_char, pat in sub_patterns:
+                if re.search(pat, first_lines, re.MULTILINE | re.IGNORECASE):
+                    cand = f"{base_parent}({sub_char})"
+                    if not valid_q_order or cand in valid_q_order:
+                        return cand
 
     # 4. Dynamic Keyword/Topic Matching from question_obj: best-matching sub-question wins
     if question_obj and question_obj.sub_questions:

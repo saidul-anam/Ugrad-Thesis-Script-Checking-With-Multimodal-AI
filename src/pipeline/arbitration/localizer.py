@@ -65,7 +65,8 @@ def match_ratio(crop_text: str, context: str, candidate_token: str = "", intende
     """
     Best difflib ratio between the crop re-read and any token window of the context of the same
     length (a context sentence usually spans more than one physical line). A small bonus is given
-    when the disputed token (or the intended one) is present within 2 edits.
+    when the disputed token (or the intended one) is present within 2 edits. If neither the candidate
+    nor the intended token is found in the crop transcription, the score is capped to reject the crop.
     """
     c_toks = tokenize(crop_text)
     x_toks = tokenize(context)
@@ -79,12 +80,23 @@ def match_ratio(crop_text: str, context: str, candidate_token: str = "", intende
         r = difflib.SequenceMatcher(None, c_str, seg, autojunk=False).ratio()
         if r > best:
             best = r
-    bonus = 0.0
-    for tok in (candidate_token, intended_token):
-        if tok and any(levenshtein(t, tok.lower()) <= 2 for t in c_toks):
-            bonus = 0.1
-            break
-    return min(1.0, best + bonus)
+
+    # Target token presence check:
+    targets = [t.lower().strip() for t in (candidate_token, intended_token) if t and t.strip()]
+    if targets:
+        token_found = False
+        for tok in targets:
+            if any(levenshtein(t, tok) <= 2 or (len(tok) >= 5 and (tok in t or t in tok)) for t in c_toks):
+                token_found = True
+                break
+        if token_found:
+            best = min(1.0, best + 0.15)
+        else:
+            # Crop is missing the disputed token (e.g. multi-line context split).
+            # Cap at 0.45 so caller rejects this crop and falls back to target line projection.
+            best = min(best, 0.45)
+
+    return best
 
 
 @dataclass
@@ -150,8 +162,10 @@ class LineLocalizer:
         w, h = img.size
         pad = self.crop_pad_px if pad is None else pad
         x1, y1, x2, y2 = bbox
-        x1, y1 = max(0, x1 - pad // 2), max(0, y1 - pad)
-        x2, y2 = min(w, x2 + pad // 2), min(h, y2 + pad)
+        v_pad = max(4, min(pad, 15))
+        h_pad = pad // 2
+        x1, y1 = max(0, x1 - h_pad), max(0, y1 - v_pad)
+        x2, y2 = min(w, x2 + h_pad), min(h, y2 + v_pad)
         c = img.crop((x1, y1, x2, y2))
         if c.size[1] < self.crop_min_height_px and c.size[1] > 0:
             c = c.resize((c.size[0] * 2, c.size[1] * 2), Image.LANCZOS)
@@ -181,13 +195,13 @@ class LineLocalizer:
         return text
 
     # ------------------------------------------------------- (a) VLM bbox
-    def _bbox_via_vlm(self, page_no: int, context: str) -> Optional[Tuple[int, int, int, int]]:
+    def _bbox_via_vlm(self, page_no: int, context: str, target_token: str = "") -> Optional[Tuple[int, int, int, int]]:
         img = self._clean_image(page_no)
         w, h = img.size
         try:
             raw = self.engine.generate_multimodal(
                 image=img,
-                prompt=build_line_bbox_prompt(context),
+                prompt=build_line_bbox_prompt(context, target_token),
                 system_prompt=LINE_BBOX_SYSTEM_PROMPT,
                 temperature=0.0,
                 top_p=0.1,
@@ -306,7 +320,7 @@ class LineLocalizer:
 
         best: Optional[LineCrop] = None
         if self.use_bbox:
-            bbox = self._bbox_via_vlm(page_no, context)
+            bbox = self._bbox_via_vlm(page_no, context, cand.candidate_token)
             if bbox is not None:
                 text = self.transcribe_crop(page_no, bbox)
                 r = match_ratio(text, context, cand.candidate_token, cand.intended_token)

@@ -32,43 +32,47 @@ REARRANGEMENT_HOMOGLYPHS: dict = {
 }
 
 
-def sanitize_rearrangement_sequence(raw_seq: Union[str, List[str]]) -> Tuple[List[str], List[str]]:
+def sanitize_rearrangement_sequence(
+    raw_seq: Union[str, List[str]],
+    expected_letters: Optional[Set[str]] = None
+) -> Tuple[List[str], List[str]]:
     """
     Parse and validate sentence rearrangement sequence letters.
     Returns (cleaned_sequence, detected_anomalies).
     
-    Handles arrow notation ($\rightarrow$, ->), commas, spaces.
-    Applies multi-token OCR homoglyph resolution (e.g. 'o'/'0' -> 'j', 'l'/'1' -> 'i')
-    and single-omission substitutions.
+    Supports dynamic expected letter sets derived from question key / schema,
+    handling arrow notation, commas, spaces, multi-token OCR homoglyphs, and single substitutions.
     """
+    valid_set = {str(l).strip().lower() for l in expected_letters} if expected_letters else VALID_REARRANGEMENT_LETTERS
+
     if isinstance(raw_seq, list):
         tokens = [str(x).strip().lower() for x in raw_seq if str(x).strip()]
     else:
-        # Extract letter and digit tokens (handling OCR substitutions like 0, 1, |)
         tokens = re.findall(r'[a-zA-Z0-9|!]', str(raw_seq).lower())
     
     if not tokens:
         return [], ["no_letters_found"]
 
     anomalies: List[str] = []
-    seen = {t for t in tokens if t in VALID_REARRANGEMENT_LETTERS}
-    missing = [l for l in sorted(VALID_REARRANGEMENT_LETTERS) if l not in seen]
+    seen = {t for t in tokens if t in valid_set}
+    missing = [l for l in sorted(valid_set) if l not in seen]
 
-    # Step 1: Multi-token homoglyph mapping
+    # Step 1: Multi-token homoglyph mapping (only if token is not in valid_set and candidate is missing)
     for i, tok in enumerate(tokens):
-        if tok not in VALID_REARRANGEMENT_LETTERS:
+        if tok not in valid_set:
             cand = REARRANGEMENT_HOMOGLYPHS.get(tok)
+            # Guard: only substitute if candidate letter is legitimately missing from sequence
             if cand and cand in missing:
                 tokens[i] = cand
                 missing.remove(cand)
                 anomalies.append(f"repaired_homoglyph:{tok}->{cand}")
 
     # Step 2: Single-substitution fallback if exactly 1 invalid token remains and 1 valid letter is missing
-    seen_after = {t for t in tokens if t in VALID_REARRANGEMENT_LETTERS}
-    invalid_after = [t for t in tokens if t not in VALID_REARRANGEMENT_LETTERS]
-    missing_after = [l for l in sorted(VALID_REARRANGEMENT_LETTERS) if l not in seen_after]
+    seen_after = {t for t in tokens if t in valid_set}
+    invalid_after = [t for t in tokens if t not in valid_set]
+    missing_after = [l for l in sorted(valid_set) if l not in seen_after]
 
-    if len(tokens) == 10 and len(invalid_after) == 1 and len(missing_after) == 1:
+    if len(tokens) == len(valid_set) and len(invalid_after) == 1 and len(missing_after) == 1:
         bad_tok = invalid_after[0]
         repair_tok = missing_after[0]
         tokens = [repair_tok if t == bad_tok else t for t in tokens]
@@ -79,17 +83,54 @@ def sanitize_rearrangement_sequence(raw_seq: Union[str, List[str]]) -> Tuple[Lis
     return tokens, anomalies
 
 
+# Canonical Roman numerals from 1 to 20
+_INT_TO_ROMAN = {
+    1: "i", 2: "ii", 3: "iii", 4: "iv", 5: "v",
+    6: "vi", 7: "vii", 8: "viii", 9: "ix", 10: "x",
+    11: "xi", 12: "xii", 13: "xiii", 14: "xiv", 15: "xv",
+    16: "xvi", 17: "xvii", 18: "xviii", 19: "xix", 20: "xx"
+}
+_ROMAN_TO_INT = {v: k for k, v in _INT_TO_ROMAN.items()}
+
+# OCR letter-to-numeral confusions
+_OCR_ROMAN_HOMOGLYPHS = {
+    "1": "i", "l": "i", "|": "i", "!": "i",
+    "11": "ii", "ll": "ii", "l1": "ii", "1l": "ii",
+    "111": "iii", "lll": "iii",
+    "1v": "iv", "lv": "iv", "|v": "iv",
+    "v1": "vi", "vl": "vi", "v|": "vi",
+    "v11": "vii", "vll": "vii",
+    "v111": "viii", "vlll": "viii",
+    "1x": "ix", "lx": "ix", "|x": "ix",
+    "x1": "xi", "xl": "xi",
+    "x11": "xii", "xll": "xii",
+}
+
+
 def normalize_roman_numeral(token: str) -> Optional[str]:
-    """Normalize OCR variations of Roman numerals (i)-(v)."""
+    """
+    Normalize OCR variations and digits to lowercase Roman numerals (i)-(xx).
+    Handles parens, brackets, OCR letter slips (e.g. 1/l/| -> i, lv -> iv).
+    """
     t = token.strip().lower().strip("()[].,")
-    mapping = {
-        "1": "i", "i": "i", "(i)": "i",
-        "2": "ii", "ii": "ii", "11": "ii", "ll": "ii", "(ii)": "ii",
-        "3": "iii", "iii": "iii", "111": "iii", "lll": "iii", "(iii)": "iii",
-        "4": "iv", "iv": "iv", "lv": "iv", "1v": "iv", "(iv)": "iv",
-        "5": "v", "v": "v", "(v)": "v",
-    }
-    return mapping.get(t)
+    if not t:
+        return None
+
+    # Direct Roman match
+    if t in _ROMAN_TO_INT:
+        return t
+
+    # OCR homoglyph match
+    if t in _OCR_ROMAN_HOMOGLYPHS:
+        return _OCR_ROMAN_HOMOGLYPHS[t]
+
+    # Digit match e.g. "1" -> "i", "5" -> "v", "10" -> "x"
+    if t.isdigit():
+        val = int(t)
+        if val in _INT_TO_ROMAN:
+            return _INT_TO_ROMAN[val]
+
+    return None
 
 
 def is_token_in_protected_tag(token: str, full_text: str) -> bool:

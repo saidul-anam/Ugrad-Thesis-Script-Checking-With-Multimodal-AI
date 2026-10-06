@@ -159,18 +159,18 @@ class Stage0bTeacherMarkExtractor:
                     matched_cand = next((c for c in cands_set if c.upper() == letter or c.upper().endswith(f"({letter})")), None)
                     if matched_cand:
                         canon_q = matched_cand
-                    else:
                         # 2. Check if candidates in cands_set are known objective / multi-item questions
                         from src.prompts.stage4_modular import is_objective_question
                         obj_cands = [c for c in cands_set if is_objective_question(c, "", "")]
                         if len(obj_cands) == 1:
                             canon_q = obj_cands[0]
-                        elif "1(B)" in cands_set and letter in ["A", "B", "C", "D", "E"]:
-                            canon_q = "1(B)"
-                        elif "1(A)" in cands_set and letter in ["A", "B", "C", "D", "E"]:
-                            canon_q = "1(A)"
-                        elif obj_cands:
-                            canon_q = obj_cands[0]
+                        else:
+                            # Match any candidate question having subparts in cands_set
+                            sub_matching = [c for c in cands_set if "(" in c]
+                            if len(sub_matching) == 1:
+                                canon_q = sub_matching[0]
+                            elif obj_cands:
+                                canon_q = obj_cands[0]
 
             # Maximum Marks Ceiling Validation & Disambiguation
             base_q = re.sub(r'\(.*?\)', '', canon_q or '').strip()
@@ -190,8 +190,8 @@ class Stage0bTeacherMarkExtractor:
                 try:
                     num_val = float(clean_val)
                     if num_val > max_allowed:
-                        # Circled '01' looks like '6'
-                        if clean_val == "6" and max_allowed <= 5.0:
+                        # Circled '01' / '1' disambiguation: circled '1' misread as '6' on a <= 5-mark question
+                        if num_val == 6.0 and max_allowed <= 5.0:
                             clean_val = "1"
                         else:
                             clean_val = f"{max_allowed:.1f}" if max_allowed % 1 != 0 else f"{int(max_allowed)}"

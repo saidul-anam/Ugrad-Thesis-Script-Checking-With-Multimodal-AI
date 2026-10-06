@@ -190,8 +190,12 @@ def lexicon_candidates(
                 continue
         # closest dictionary word within max_edits (prefer question vocab / words used in the answer)
         def _rank(w: str) -> tuple:
-            # smaller edit distance first; on ties prefer same length (substitution-only, the perceptual case)
-            return (levenshtein(low, w), abs(len(w) - len(low)), w)
+            d = levenshtein(low, w)
+            if d > max_edits:
+                return (999, 999, w)
+            # contextual prior: prioritize question vocab first, then answer lex, then global lexicon
+            in_q = 0 if w in q_vocab else (1 if (w in answer_lex and d <= 1) else 2)
+            return (in_q, d, abs(len(w) - len(low)), w)
         pool = {w for w in (q_vocab | answer_lex) if abs(len(w) - len(low)) <= max_edits and len(w) >= 3}
         pool.update(difflib.get_close_matches(low, [w for w in lexicon if w[:1] == low[:1] and abs(len(w) - len(low)) <= 1 and len(w) >= 3], n=5, cutoff=0.8))
         for alt in HANDWRITING_INITIAL_CONFUSIONS.get(low[:1], []):
@@ -250,23 +254,17 @@ def find_strikethrough_suspect(err: LinguisticErrorItem) -> Optional[Tuple[str, 
                         suspect = e_toks[i1 - 1]
                         return (suspect, "[struck]", f"Preposition bridge '{inserted_tok}' inserted after suspect un-struck word '{suspect}'")
 
-    # Case 2: Complete Word Deletion (e.g. "helps many us" -> "helps us")
-    if len(e_toks) == len(c_toks) + 1:
+    # Case 2: Word Deletion (e.g. "helps many us" -> "helps us" or "the percentage was Hydro..." -> "Hydro...")
+    if len(e_toks) > len(c_toks):
         sm = difflib.SequenceMatcher(a=e_toks, b=c_toks, autojunk=False)
         for tag, i1, i2, j1, j2 in sm.get_opcodes():
-            if tag == "delete" and (i2 - i1) == 1:
-                deleted_tok = e_toks[i1]
-                return (deleted_tok, "[struck]", f"Word '{deleted_tok}' omitted in suggested correction")
-
-    # Case 3: Duplicate Copula/Auxiliary Verb in Clause (e.g. "percentage was Hydro-electrice power was 16%")
-    for copula in ("was", "is", "are", "were", "had", "can"):
-        matches = list(re.finditer(r'\b' + copula + r'\b', ctx.lower()))
-        if len(matches) >= 2:
-            first_match_end = matches[0].end()
-            second_match_start = matches[1].start()
-            if 0 < (second_match_start - first_match_end) <= 60:
-                return (copula, "[struck]", f"Duplicate predicate verb '{copula}' in clause: suspect un-tagged cross-out")
-
+            if tag == "delete" and (i2 - i1) >= 1:
+                deleted_tok = e_toks[i2 - 1]
+                return (deleted_tok, "[struck]", f"Word(s) '{' '.join(e_toks[i1:i2])}' omitted in suggested correction")
+            if tag == "replace" and (i2 - i1) > (j2 - j1) and (i2 - 2) >= i1:
+                if levenshtein(e_toks[i2 - 1], c_toks[j1]) <= 2:
+                    deleted_tok = e_toks[i2 - 2]
+                    return (deleted_tok, "[struck]", f"Word(s) '{' '.join(e_toks[i1:i2-1])}' omitted in suggested correction")
     return None
 
 

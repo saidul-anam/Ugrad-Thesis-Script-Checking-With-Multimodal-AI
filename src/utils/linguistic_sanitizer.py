@@ -22,6 +22,21 @@ from src.utils.edge_truncation_detector import (
 _SYSTEM_DICT_PATH = "/usr/share/dict/words"
 _ENGLISH_LEXICON: Optional[Set[str]] = None
 
+# NCTB exam proper nouns, localities, and cultural terms common in Bangladeshi school exams
+NCTB_CULTURAL_TERMS: Set[str] = {
+    "salam", "salaam", "assalamu", "alaikum", "nomoshkar", "adab",
+    "eid", "puja", "boishakh", "pohela", "ekushey", "hartal", "bazaar", "bazar",
+    "lungi", "saree", "kurta", "madrasah", "madrasa", "upazila", "thana", "union",
+    "crore", "lakh", "taka", "paisa", "ghat", "char",
+    "tarun", "kalam", "jamuna", "padma", "meghna", "surma", "karnafuli", "sundarbans",
+    "rahim", "karim", "barkat", "rafiq", "jabbar", "shafiq", "bangabandhu", "mujib",
+    "nazrul", "rabindranath", "tagore", "titumir", "rokeya", "bhashani", "hasina",
+    "dhaka", "chittagong", "chattogram", "sylhet", "rajshahi", "khulna", "barisal",
+    "rangpur", "mymensingh", "comilla", "cumilla", "bogura", "bogra",
+    "jarif", "jigatola", "faridabad", "dhanmondi", "hsc", "ssc", "curzon",
+    "shahbagh", "motijheel", "gulshan", "banani", "uttara", "mirpur", "mahin"
+}
+
 def get_english_lexicon() -> Set[str]:
     """Load standard English words dictionary."""
     global _ENGLISH_LEXICON
@@ -43,6 +58,7 @@ def get_english_lexicon() -> Set[str]:
                 words = {w.lower() for w in nltk_words.words()}
             except Exception:
                 pass
+        words.update(NCTB_CULTURAL_TERMS)
         _ENGLISH_LEXICON = words
     return _ENGLISH_LEXICON
 
@@ -109,17 +125,7 @@ def sanitize_transcript_for_linguistic_analysis(text: str) -> str:
     return "\n".join(cleaned_lines).strip()
 
 
-NCTB_CULTURAL_TERMS: Set[str] = {
-    "salam", "salaam", "assalamu", "alaikum", "nomoshkar", "adab",
-    "eid", "puja", "boishakh", "pohela", "ekushey", "hartal", "bazaar", "bazar",
-    "lungi", "saree", "kurta", "madrasah", "madrasa", "upazila", "thana", "union",
-    "crore", "lakh", "taka", "paisa", "ghat", "char",
-    "tarun", "kalam", "jamuna", "padma", "meghna", "surma", "karnafuli", "sundarbans",
-    "rahim", "karim", "barkat", "rafiq", "jabbar", "shafiq", "bangabandhu", "mujib",
-    "nazrul", "rabindranath", "tagore", "titumir", "rokeya", "bhashani", "hasina",
-    "dhaka", "chittagong", "chattogram", "sylhet", "rajshahi", "khulna", "barisal",
-    "rangpur", "mymensingh", "comilla", "cumilla", "bogura", "bogra"
-}
+
 
 
 def verify_and_filter_stage3_errors(

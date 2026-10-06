@@ -464,6 +464,7 @@ class Stage2PreAnalysisReport:
 def run_stage2_pre_analysis(
     stage1_transcript: str,
     strikethrough_regions: Optional[List[Any]] = None,
+    strikethrough_blocks: Optional[List[Any]] = None,
     question_vocab: Optional[Set[str]] = None,
     lexicon: Optional[Set[str]] = None
 ) -> Stage2PreAnalysisReport:
@@ -537,6 +538,15 @@ def run_stage2_pre_analysis(
             f"- Strikethrough gap: Stage 0.5 detected {optical_strike_count} cross-out strokes, but Stage 1 only has {stage1_strike_count} [struck:] tags ({strike_gap} unverified). VISUALLY VERIFY candidate stroke locations."
         )
 
+    # 2b. Multi-Line Block Discrepancy Check
+    if strikethrough_blocks:
+        for b in strikethrough_blocks:
+            b_type = getattr(b, "stroke_type", "parallel_horizontal")
+            line_cnt = getattr(b, "line_count", 2)
+            anomalies.append(
+                f"- Multi-line Strike Gap: Stage 0.5 detected a {b_type} cross-out block ({line_cnt} lines) at vertical ~{b.y_pct}%-{b.y2_pct}%. VISUALLY VERIFY if an entire draft paragraph was crossed out and wrap each line in [struck: ...]."
+            )
+
     # 3. Pen-lift split token detection
     _, split_diffs = stitch_pen_lift_splits(stage1_transcript, lexicon=lex, question_vocab=question_vocab)
     split_candidates: List[Dict[str, Any]] = []
@@ -554,12 +564,18 @@ def run_stage2_pre_analysis(
         )
 
     # Determine whether Stage 2 should be triggered
+    has_strikes = bool(strikethrough_regions and len(strikethrough_regions) > 0)
+    has_strike_tags = stage1_strike_count > 0
+    has_strike_blocks = bool(strikethrough_blocks and len(strikethrough_blocks) > 0)
     should_trigger = (
         (strike_gap > 0)
+        or has_strikes
+        or has_strike_tags
+        or has_strike_blocks
         or (len(likely_glitches) >= 1)
         or (len(split_candidates) >= 1)
         or has_unclear
-        or (len(oov_words) >= 3)
+        or (len(oov_words) >= 2)
     )
 
     formatted_block = "\n".join(anomalies) if anomalies else ""
@@ -590,6 +606,7 @@ class Stage2Verifier:
         question_reference_vocab: Optional[List[str]] = None,
         question_reference_numerals: Optional[List[str]] = None,
         strikethrough_regions: Optional[List[Any]] = None,
+        strikethrough_blocks: Optional[List[Any]] = None,
         teacher_mask: Optional[Any] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
@@ -601,6 +618,7 @@ class Stage2Verifier:
             pre_analysis = run_stage2_pre_analysis(
                 stage1_transcript=stage1_transcript,
                 strikethrough_regions=strikethrough_regions,
+                strikethrough_blocks=strikethrough_blocks,
                 question_vocab=set(question_reference_vocab) if question_reference_vocab else None
             )
 

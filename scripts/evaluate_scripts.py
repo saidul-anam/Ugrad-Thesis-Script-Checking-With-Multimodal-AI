@@ -45,28 +45,47 @@ from src.core.config import load_config
 from src.engine.engine_factory import create_engine
 from src.pipeline.orchestrator import ScriptCheckingPipeline
 from src.utils.export_utils import load_extraction_artifacts
+from src.utils.script_files import resolve_paper_folder
 
 
 console = Console()
 
 
 def find_extracted_scripts(extraction_dir: str) -> List[Path]:
-    """Discover all extracted script folders that contain extraction artifacts."""
+    """Discover all extracted script folders that contain extraction artifacts.
+    Supports both flat directory layouts (extraction_dir/<script_id>) and
+    per-paper directory layouts (extraction_dir/<paper>/<script_id>).
+    """
     candidates = []
     if not os.path.exists(extraction_dir):
         return candidates
 
-    for entry in sorted(os.listdir(extraction_dir)):
-        p = Path(extraction_dir) / entry
-        if p.is_dir():
-            # Check for extraction result or individual stage outputs
-            has_extraction = (
-                (p / "extraction_result.json").exists() or
-                (p / "complete_report.json").exists() or
-                ((p / "stage1_transcription.json").exists() and (p / "stage3_errors.json").exists())
-            )
-            if has_extraction:
-                candidates.append(p)
+    seen_real_paths = set()
+    root = Path(extraction_dir)
+
+    def _is_script_dir(p: Path) -> bool:
+        return (
+            (p / "extraction_result.json").exists()
+            or (p / "complete_report.json").exists()
+            or ((p / "stage1_transcription.json").exists() and (p / "stage3_errors.json").exists())
+        )
+
+    for entry in sorted(root.iterdir()):
+        if not entry.is_dir():
+            continue
+        if _is_script_dir(entry):
+            real_p = entry.resolve()
+            if real_p not in seen_real_paths:
+                candidates.append(entry)
+                seen_real_paths.add(real_p)
+        else:
+            # Check inside paper sub-directory (e.g. se_11_q1, se_10_q1)
+            for sub in sorted(entry.iterdir()):
+                if sub.is_dir() and _is_script_dir(sub):
+                    real_p = sub.resolve()
+                    if real_p not in seen_real_paths:
+                        candidates.append(sub)
+                        seen_real_paths.add(real_p)
     return candidates
 
 
@@ -459,7 +478,12 @@ def main():
 
     for idx, script_path in enumerate(target_script_paths, 1):
         script_id = script_path.name if script_path.is_dir() else script_path.stem
-        script_eval_dir = os.path.join(eval_output_base, script_id)
+        paper_folder = resolve_paper_folder(str(script_path), lang=args.lang)
+        if paper_folder and not eval_output_base.rstrip("/").lower().endswith(paper_folder.lower()):
+            effective_eval_base = os.path.join(eval_output_base, paper_folder)
+        else:
+            effective_eval_base = eval_output_base
+        script_eval_dir = os.path.join(effective_eval_base, script_id)
         completed_report = os.path.join(script_eval_dir, "complete_report.json")
 
         if args.skip_evaluated and os.path.exists(completed_report):

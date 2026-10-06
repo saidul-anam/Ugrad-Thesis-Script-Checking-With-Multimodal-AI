@@ -97,6 +97,10 @@ class ArbitrationCandidate(BaseModel):
     question_no: Optional[str] = None
     page_no: Optional[int] = None
 
+    @property
+    def q_no(self) -> str:
+        return self.question_no or (self.candidate_id.split(":")[0] if ":" in self.candidate_id else "ALL")
+
 
 class ArbitrationEvidence(BaseModel):
     """All raw signals gathered for one candidate. Every signal is in [0,1] where 1 = ambiguity (perceptual)."""

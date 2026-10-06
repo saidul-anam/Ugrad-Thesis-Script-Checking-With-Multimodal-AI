@@ -393,8 +393,19 @@ def extract_question_vocab(
         sq_text = str(sq.get("name", "")) + " " + str(sq.get("text", ""))
         priority_tokens.extend(re.findall(r'[A-Za-z\u0980-\u09FF]+', sq_text))
 
-    # 4. General passage tokens
-    general_tokens = re.findall(r'[A-Za-z\u0980-\u09FF]+(?:-[A-Za-z\u0980-\u09FF]+)*', question.question_text)
+    # 4. General passage tokens and hyphenated compounds
+    raw_general = re.findall(r'[A-Za-z\u0980-\u09FF]+(?:-[A-Za-z\u0980-\u09FF]+)*', question.question_text)
+    general_tokens: List[str] = []
+    for gtok in raw_general:
+        general_tokens.append(gtok)
+        if "-" in gtok:
+            parts = gtok.split("-")
+            for p in parts:
+                if p:
+                    general_tokens.append(p)
+            joined = "".join(parts)
+            if joined:
+                general_tokens.append(joined)
 
     seen = set()
     vocab: List[str] = []

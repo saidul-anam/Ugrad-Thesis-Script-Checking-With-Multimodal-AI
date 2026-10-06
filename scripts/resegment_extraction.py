@@ -34,7 +34,31 @@ def main() -> None:
     ap.add_argument("--script", default=None)
     args = ap.parse_args()
     root = Path(args.extracted_dir or f"outputs/extracted/{args.lang}")
-    targets = [root / args.script] if args.script else sorted(p for p in root.iterdir() if p.is_dir())
+    if args.script:
+        candidate = root / args.script
+        if not candidate.exists():
+            matched = list(root.glob(f"*/{args.script}"))
+            candidate = matched[0] if matched else candidate
+        targets = [candidate]
+    else:
+        targets = []
+        seen = set()
+        for p in sorted(root.iterdir()):
+            if not p.is_dir():
+                continue
+            if (p / "extraction_result.json").exists():
+                rp = p.resolve()
+                if rp not in seen:
+                    targets.append(p)
+                    seen.add(rp)
+            else:
+                for sub in sorted(p.iterdir()):
+                    if sub.is_dir() and (sub / "extraction_result.json").exists():
+                        rp = sub.resolve()
+                        if rp not in seen:
+                            targets.append(sub)
+                            seen.add(rp)
+
     for d in targets:
         f = d / "extraction_result.json"
         if not f.exists():

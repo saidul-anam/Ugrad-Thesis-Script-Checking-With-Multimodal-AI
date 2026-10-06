@@ -203,7 +203,7 @@ Handwritten student exam PDFs are hosted at:
 > **Google Drive Dataset**: [`https://drive.google.com/drive/folders/11spWhJTncBfM_qsOvpH17AgduhyQpqSN`](https://drive.google.com/drive/folders/11spWhJTncBfM_qsOvpH17AgduhyQpqSN)
 
 ### Smart Caching:
-- PDFs are downloaded into `data/raw_pdfs/<lang>/`.
+- PDFs are stored in `data/raw_pdfs/<lang>/`, one folder per question paper (e.g. `data/raw_pdfs/english/se_11_q1/`).
 - Before downloading, local PDFs are scanned. **Already downloaded PDFs are NEVER redownloaded.**
 - `--top N` checks if $N$ PDFs already exist locally before triggering network requests.
 
@@ -220,7 +220,7 @@ Ugrad-Thesis-Script-Checking-With-Multimodal-AI/
 │       ├── bangla_creative_question.yaml   # Bangla CQ rubric
 │       └── english_writing.yaml            # English writing rubric
 ├── data/
-│   ├── raw_pdfs/                    # Downloaded PDF exam scripts (bangla / english)
+│   ├── raw_pdfs/                    # PDF exam scripts, one folder per question paper (english/se_11_q1/, english/se_10_q1/)
 │   └── samples/                     # Rendered 200 DPI PNG images per script page
 ├── outputs/
 │   └── extracted/

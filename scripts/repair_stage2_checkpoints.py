@@ -130,8 +130,26 @@ def main() -> None:
         print(f"Directory {ext_dir} does not exist.")
         sys.exit(1)
 
+    target_dirs = []
+    seen = set()
+    for p in sorted(ext_dir.iterdir()):
+        if not p.is_dir():
+            continue
+        if (p / "checkpoints").is_dir():
+            rp = p.resolve()
+            if rp not in seen:
+                target_dirs.append(p)
+                seen.add(rp)
+        else:
+            for sub in sorted(p.iterdir()):
+                if sub.is_dir() and (sub / "checkpoints").is_dir():
+                    rp = sub.resolve()
+                    if rp not in seen:
+                        target_dirs.append(sub)
+                        seen.add(rp)
+
     total_stats = {"scripts": 0, "pages": 0, "arrows": 0, "tags": 0}
-    for script_dir in sorted(p for p in ext_dir.iterdir() if p.is_dir()):
+    for script_dir in target_dirs:
         script_id = script_dir.name
         s = repair_script_checkpoints(script_dir)
         total_stats["scripts"] += 1

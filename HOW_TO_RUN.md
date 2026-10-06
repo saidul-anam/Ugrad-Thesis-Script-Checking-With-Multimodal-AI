@@ -83,7 +83,7 @@ python3 scripts/extract_questions.py --pdf data/questions/english/SE_11_Q1.pdf -
 ### 📄 Stage B: Student Exam Scripts (Download & Extract)
 
 #### 📥 Step 2.3: Download / Sync Exam Scripts from Google Drive
-Download student exam script PDFs from Google Drive into `data/raw_pdfs/<lang>`. The smart caching layer scans existing files first and skips downloading anything already present locally.
+Download student exam script PDFs from Google Drive into `data/raw_pdfs/<lang>`. The smart caching layer scans existing files first and skips downloading anything already present locally. If that folder is organised one sub-folder per question paper (e.g. `data/raw_pdfs/english/se_11_q1/`), each downloaded PDF is filed into its paper's folder.
 
 ```bash
 # Download English exam scripts (defaults to data/raw_pdfs/english)
@@ -103,21 +103,21 @@ python3 scripts/download_drive_pdfs.py --lang english --local-only
 Extracts student handwriting, detects teacher red ink, reverts silent model corrections, and exports the 13-column `raw_tier_dataset.csv`.
 
 > [!IMPORTANT]
-> **Strictly Local by Default**: Extraction strictly scans `data/raw_pdfs/<lang>/` (or `--image`) on your local drive. It **never** contacts Google Drive, checks network status, or triggers downloads.
+> **Strictly Local by Default**: Extraction strictly scans the `--pdf-dir` folder (or `--image`) on your local drive. Scripts are kept one folder per question paper, e.g. `data/raw_pdfs/english/se_11_q1/` (class 11) and `data/raw_pdfs/english/se_10_q1/` (class 10); `--image <script ID>` finds a script in any paper folder. It **never** contacts Google Drive, checks network status, or triggers downloads.
 
 ```bash
 # Fast Single-Pass Extraction on Local Scripts (RECOMMENDED: Local API, ~100s per 19-page PDF)
-python3 scripts/extract_scripts.py --lang english --top 2 --api --fast -y
+python3 scripts/extract_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_11_q1 --top 2 --api --fast -y
 
 # Full 2-Pass Verification Extraction (includes visual auditor cross-check)
-python3 scripts/extract_scripts.py --lang english --top 2 --api -y
+python3 scripts/extract_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_11_q1 --top 2 --api -y
 
 # Direct CUDA GPU Execution (requires >=20 GB free VRAM)
-python3 scripts/extract_scripts.py --lang english --top 2 --quant 4bit --fast -y
+python3 scripts/extract_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_11_q1 --top 2 --quant 4bit --fast -y
 
 # Single PDF or Image File
-python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english --api --fast -y
-python3 scripts/extract_scripts.py --image data/raw_pdfs/english/SE_11_Q1_0010.pdf --lang english -y
+python3 scripts/extract_scripts.py --image data/raw_pdfs/english/se_11_q1/SE_11_Q1_0010.pdf --lang english --api --fast -y
+python3 scripts/extract_scripts.py --image data/raw_pdfs/english/se_11_q1/SE_11_Q1_0010.pdf --lang english -y
 
 # Fast CPU Mock Mode (Development & testing)
 python3 scripts/extract_scripts.py --lang bangla --top 3 --mock -y
@@ -211,7 +211,7 @@ To run the entire pipeline (Extraction + Evaluation) in a single command:
 
 ```bash
 # End-to-end processing on local scripts with Local API & Fast Mode
-python3 scripts/process_scripts.py --lang english --top 2 --local-only --api --fast -y
+python3 scripts/process_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_11_q1 --top 2 --local-only --api --fast -y
 
 # End-to-end processing directly on CUDA RTX 5090
 python3 scripts/process_scripts.py --lang bangla --top 5 --local-only --quant 4bit --fast -y
@@ -226,50 +226,53 @@ python3 scripts/process_scripts.py
 
 Extraction artifacts and Evaluation reports are kept in completely separate directory trees:
 
-### 📄 Extraction Outputs (`outputs/extracted/<lang>/`)
-Contains verified student handwriting transcripts, error catalogs, teacher mark audits, and research datasets (isolated from grading scores):
+### 📄 Extraction Outputs (`outputs/extracted/<lang>/<paper_id>/`)
+Contains verified student handwriting transcripts, error catalogs, teacher mark audits, and research datasets organized by question paper / level (e.g. `se_11_q1`, `se_10_q1`, `se_09_q1`, `se_08_q1`):
 ```
 outputs/extracted/<lang>/
-  ├── raw_tier_dataset.csv             # 13-column consolidated research dataset CSV
-  └── <script_id>/
-      ├── checkpoints/                 # Per-page checkpoints for instant resume
-      │   ├── page_1.json
-      │   └── page_2.json
-      ├── stage0b_teacher_marks.json   # Extracted red-ink teacher marks (Q_no, marks, location)
-      ├── stage1_raw_transcript.txt    # Verbatim student transcript (preserving errors)
-      ├── stage1_transcription.json    # Stage 1 metrics & character stats
-      ├── stage2_verification.json     # Silent autocorrection audit diffs
-      ├── stage2_verified_transcript.txt # Canonical verified text
-      ├── stage3_errors.json           # Global linguistic error catalog
-      ├── stage3_errors.csv            # Tabular error list (spelling, grammar, syntax)
-      ├── extraction_result.json       # Complete consolidated extraction package
-      ├── extraction_summary.md        # Human-readable extraction overview
-      └── raw_tier_records.csv         # Script-level raw-tier CSV rows
+  ├── <paper_id>/                      # e.g. se_11_q1, se_10_q1, se_09_q1, se_08_q1
+  │   ├── raw_tier_dataset.csv         # 13-column consolidated research dataset CSV for this paper
+  │   └── <script_id>/                 # e.g. SE_11_Q1_0001
+  │       ├── checkpoints/             # Per-page checkpoints for instant resume
+  │       │   ├── page_1.json
+  │       │   └── page_2.json
+  │       ├── stage0b_teacher_marks.json # Extracted red-ink teacher marks (Q_no, marks, location)
+  │       ├── stage1_raw_transcript.txt  # Verbatim student transcript (preserving errors)
+  │       ├── stage1_transcription.json  # Stage 1 metrics & character stats
+  │       ├── stage2_verification.json   # Silent autocorrection audit diffs
+  │       ├── stage2_verified_transcript.txt # Canonical verified text
+  │       ├── stage3_errors.json         # Global linguistic error catalog
+  │       ├── stage3_errors.csv          # Tabular error list (spelling, grammar, syntax)
+  │       ├── extraction_result.json     # Complete consolidated extraction package
+  │       ├── extraction_summary.md      # Human-readable extraction overview
+  │       └── raw_tier_records.csv       # Script-level raw-tier CSV rows
+  └── raw_tier_dataset.csv             # Root consolidated dataset across papers
 ```
 
-### ⚖️ Evaluation Outputs (`outputs/evaluated/<lang>/`)
+### ⚖️ Evaluation Outputs (`outputs/evaluated/<lang>/<paper_id>/`)
 Contains rubric criterion scores, content scoring, linguistic deductions, pedagogical feedback, and final grade reports:
 ```
 outputs/evaluated/<lang>/
-  └── <script_id>/
-      ├── stage4_evaluation.json       # Rubric scores & penalty breakdown
-      ├── complete_report.json         # Complete consolidated evaluation artifact
-      └── evaluation_report.md         # Formatted teacher report & pedagogical feedback
+  └── <paper_id>/                      # e.g. se_11_q1, se_10_q1
+      └── <script_id>/
+          ├── stage4_evaluation.json   # Rubric scores & penalty breakdown
+          ├── complete_report.json     # Complete consolidated evaluation artifact
+          └── evaluation_report.md     # Formatted teacher report & pedagogical feedback
 ```
 
 ### Quick Commands to View Outputs:
 ```bash
 # View human-readable extraction summary
-cat outputs/extracted/english/SE_11_Q1_0001/extraction_summary.md
+cat outputs/extracted/english/se_11_q1/SE_11_Q1_0001/extraction_summary.md
 
 # View teacher marks extracted from red ink
-cat outputs/extracted/english/SE_11_Q1_0001/stage0b_teacher_marks.json
+cat outputs/extracted/english/se_11_q1/SE_11_Q1_0001/stage0b_teacher_marks.json
 
-# View the 13-column research dataset CSV
-cat outputs/extracted/english/raw_tier_dataset.csv
+# View the 13-column research dataset CSV for Class 11 Q1
+cat outputs/extracted/english/se_11_q1/raw_tier_dataset.csv
 
 # View complete pedagogical evaluation report (Stage 4)
-cat outputs/evaluated/english/SE_11_Q1_0001/evaluation_report.md
+cat outputs/evaluated/english/se_11_q1/SE_11_Q1_0001/evaluation_report.md
 ```
 
 ---

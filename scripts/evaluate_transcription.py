@@ -80,6 +80,10 @@ def main() -> None:
                     pass
             ckpt = ext_dir / script_id / "checkpoints" / f"page_{n}.json"
             if not ckpt.exists():
+                candidates = list(ext_dir.glob(f"*/{script_id}/checkpoints/page_{n}.json"))
+                if candidates:
+                    ckpt = candidates[0]
+            if not ckpt.exists():
                 print(f"  [{script_id}] page {n}: no checkpoint in {ext_dir}, skipped")
                 continue
             reference = open(txt, "r", encoding="utf-8").read()

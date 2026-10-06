@@ -27,6 +27,17 @@ class StrikethroughRegion(BaseModel):
     is_underline: bool = False
 
 
+class StrikethroughBlock(BaseModel):
+    """Detected composite multi-line crossed-out block (e.g. 2-6 lines or X-cross)."""
+    y_pct: float = 0.0
+    y2_pct: float = 0.0
+    x_pct: float = 0.0
+    x2_pct: float = 0.0
+    line_count: int = 1
+    stroke_type: str = "parallel_horizontal"  # 'parallel_horizontal', 'steep_diagonal', 'x_cross'
+    confidence: float = 1.0
+
+
 class StrikethroughDetectionResult(BaseModel):
     """Output of Stage 0.5 strikethrough detector."""
     has_strikethrough: bool = False
@@ -34,6 +45,7 @@ class StrikethroughDetectionResult(BaseModel):
     multi_word_count: int = 0
     regions: List[StrikethroughRegion] = Field(default_factory=list)
     underlines: List[StrikethroughRegion] = Field(default_factory=list)
+    blocks: List[StrikethroughBlock] = Field(default_factory=list)
     details: str = ""
 
 
@@ -90,6 +102,14 @@ class StrikethroughDetector:
         bridge_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (bridge_len, 1))
         bridged_lines = cv2.morphologyEx(horiz_lines, cv2.MORPH_CLOSE, bridge_kernel)
 
+        # 3a. Page-Wide Notebook Ruling Line Detection & Suppression
+        # Genuine notebook ruling lines span across the entire page (length > 80% of page width).
+        # Short stroke segments lying along these ruling lines are suppressed.
+        ruling_len = max(100, int(w * 0.82))
+        ruling_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (ruling_len, 1))
+        page_ruling_lines = cv2.morphologyEx(binary, cv2.MORPH_OPEN, ruling_kernel)
+        ruling_mask = cv2.dilate(page_ruling_lines, cv2.getStructuringElement(cv2.MORPH_RECT, (1, 3)))
+
         # 3b. Multi-Angle & Diagonal Line Detection via HoughLinesP
         # Catches diagonal cross-outs and slashes (-35 deg to +35 deg) across multi-word clauses
         diagonal_mask = np.zeros_like(binary)
@@ -104,6 +124,9 @@ class StrikethroughDetector:
         )
 
         hough_angles = {}
+        detected_x_cross_blocks: List[StrikethroughBlock] = []
+        valid_hough_lines = []
+
         if lines is not None and len(lines) > 0:
             lines_reshaped = lines.reshape(-1, 4)
             for x1, y1, x2, y2 in lines_reshaped:
@@ -116,26 +139,56 @@ class StrikethroughDetector:
                 elif angle_deg > 90:
                     angle_deg -= 180
 
-                # Filter for genuine diagonal strikes (between 4 and 35 degrees)
-                # Purely horizontal strikes (|angle| < 4 deg) are handled via continuous morphological opening (horiz_lines),
-                # preventing HoughLinesP from bridging letter crossbars across plain text lines into false strikes.
+                # Filter for genuine diagonal strikes (between 4 and 75 degrees)
                 abs_ang = abs(angle_deg)
-                if 4.0 <= abs_ang <= 35.0:
+                if 4.0 <= abs_ang <= 75.0:
                     seg_len = float(np.hypot(dx, dy))
-                    min_req_len = max(60, int(w * 0.12)) if abs_ang < 7.0 else max(35, int(w * 0.08))
+                    if abs_ang < 7.0:
+                        min_req_len = max(60, int(w * 0.12))
+                    elif abs_ang <= 35.0:
+                        min_req_len = max(30, int(w * 0.05))
+                    else:
+                        # Steep diagonal / multi-line cross-outs (35 to 75 deg)
+                        min_req_len = max(35, int(min(w, h) * 0.05))
+
                     if seg_len >= max(hough_min_len, min_req_len):
                         # Stroke continuity check: a genuine pen stroke has solid ink along the line.
-                        # Spurious Hough lines bridging gaps between letters across words have low ink ratio (<40%).
                         num_samples = max(10, int(seg_len))
                         xs = np.linspace(x1, x2, num_samples).astype(int)
                         ys = np.linspace(y1, y2, num_samples).astype(int)
                         valid_pts = (xs >= 0) & (xs < w) & (ys >= 0) & (ys < h)
                         if np.sum(valid_pts) > 0:
                             ink_ratio = float(np.sum(binary[ys[valid_pts], xs[valid_pts]] > 0)) / float(np.sum(valid_pts))
-                            if ink_ratio >= 0.60:
+                            if ink_ratio >= 0.55:
                                 cv2.line(diagonal_mask, (x1, y1), (x2, y2), 255, thickness=2)
                                 key = (int(x1 // 20), int(y1 // 20))
                                 hough_angles[key] = angle_deg
+                                valid_hough_lines.append((min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2), angle_deg))
+
+            # Detect pairs of intersecting opposite-sloped lines forming an X-cross
+            for i in range(len(valid_hough_lines)):
+                for j in range(i + 1, len(valid_hough_lines)):
+                    ax1, ay1, ax2, ay2, ang_a = valid_hough_lines[i]
+                    bx1, by1, bx2, by2, ang_b = valid_hough_lines[j]
+                    if (ang_a * ang_b < -100) and (abs(ang_a) >= 20.0 and abs(ang_b) >= 20.0):
+                        # Opposing diagonal slopes: check bounding box intersection
+                        ix1 = max(ax1, bx1)
+                        iy1 = max(ay1, by1)
+                        ix2 = min(ax2, bx2)
+                        iy2 = min(ay2, by2)
+                        if ix1 < ix2 and iy1 < iy2:
+                            x_span = max(ax2, bx2) - min(ax1, bx1)
+                            y_span = max(ay2, by2) - min(ay1, by1)
+                            if x_span >= max(40, int(w * 0.05)) and y_span >= max(30, int(h * 0.02)):
+                                detected_x_cross_blocks.append(StrikethroughBlock(
+                                    y_pct=round((float(min(ay1, by1)) / float(h)) * 100.0, 1),
+                                    y2_pct=round((float(max(ay2, by2)) / float(h)) * 100.0, 1),
+                                    x_pct=round((float(min(ax1, bx1)) / float(w)) * 100.0, 1),
+                                    x2_pct=round((float(max(ax2, bx2)) / float(w)) * 100.0, 1),
+                                    line_count=max(2, int(round(y_span / 30.0))),
+                                    stroke_type="x_cross",
+                                    confidence=0.98
+                                ))
 
         # Combine horizontal bridged lines and diagonal Hough segments
         merged_lines = cv2.bitwise_or(bridged_lines, diagonal_mask)
@@ -184,13 +237,17 @@ class StrikethroughDetector:
             rh = int(stats[i, cv2.CC_STAT_HEIGHT])
 
             has_diag_ink = np.any(diagonal_mask[ry:ry + rh, rx:rx + rw] > 0)
-            comp_key = (int(rx // 20), int(ry // 20))
-            stroke_angle = hough_angles.get(comp_key, 0.0)
+            stroke_angle = 0.0
+            if has_diag_ink and hough_angles:
+                for (kx, ky), ang in hough_angles.items():
+                    if rx - 20 <= kx * 20 <= rx + rw + 20 and ry - 20 <= ky * 20 <= ry + rh + 20:
+                        stroke_angle = ang
+                        break
             if stroke_angle == 0.0 and has_diag_ink:
                 stroke_angle = float(np.rad2deg(np.arctan2(rh, rw)))
 
             # Exclude full-width page rules / margins / underlines
-            max_allowed_h = max(self.max_line_height, int(rw * 0.75)) if (abs(stroke_angle) >= 4.0 or has_diag_ink) else (self.max_line_height + 4)
+            max_allowed_h = max(self.max_line_height, int(rw * 2.5)) if (abs(stroke_angle) >= 4.0 or has_diag_ink) else (self.max_line_height + 4)
             if rw >= hough_min_len and rh <= max_allowed_h and rw < int(w * 0.85):
                 # 5a. Optical Density Check: Genuine pen ink has dark stroke core.
                 # Faint reverse-side bleed-through ink has high grayscale values (>150-160).
@@ -198,6 +255,16 @@ class StrikethroughDetector:
                 if stroke_roi_gray.size > 0 and np.min(stroke_roi_gray) > 145:
                     # Stroke is too faint / ghostly (bleed-through from reverse page)
                     continue
+
+                # 5a-2. Notebook Ruling Line Suppression:
+                # Reject short strokes that lie directly on page-wide notebook ruling lines
+                if rw < int(w * 0.75):
+                    stroke_ruling_overlap = ruling_mask[ry:ry + rh, rx:rx + rw]
+                    if stroke_ruling_overlap.size > 0:
+                        ruling_overlap_ratio = float(np.sum(stroke_ruling_overlap > 0)) / float(stroke_ruling_overlap.size)
+                        if ruling_overlap_ratio >= 0.45 and not has_diag_ink:
+                            # Stroke is collinear with printed notebook ruling line
+                            continue
 
                 # 5b. Table Gridline Rejection:
                 # Count vertical grid lines that extend BOTH well above AND well below the stroke.
@@ -268,7 +335,7 @@ class StrikethroughDetector:
                         continue
                 else:
                     imm_top = max(0, ry - 8)
-                    imm_bot = min(h, ry + rh + 8)
+                    imm_bot = min(h, ry + rh + 12)
                     imm_above = np.sum(binary[imm_top:ry, rx:rx + rw] > 0)
                     imm_below = np.sum(binary[ry + rh:imm_bot, rx:rx + rw] > 0)
                     min_imm_px = max(2, int(rw * 0.02))
@@ -290,20 +357,38 @@ class StrikethroughDetector:
                         # No text above the stroke: stray noise or isolated margin rule
                         continue
 
-                    if imm_below < min_imm_px or below_pixels < min_text_px:
-                        # Text above but no piercing ink below: clear underline
-                        if not has_diag_ink and abs(stroke_angle) <= 10.0:
-                            detected_underlines.append(StrikethroughRegion(
-                                x=rx, y=ry, w=rw, h=rh,
-                                y_pct=round((float(ry) / float(h)) * 100.0, 1),
-                                y2_pct=round((float(ry + rh) / float(h)) * 100.0, 1),
-                                x_pct=round((float(rx) / float(w)) * 100.0, 1),
-                                x2_pct=round((float(rx + rw) / float(w)) * 100.0, 1),
-                                angle=round(stroke_angle, 1),
-                                confidence=min(1.0, float(rw / 100.0) + 0.3),
-                                is_multi_word=rw >= multi_word_threshold,
-                                is_underline=True
-                            ))
+                    # Descender-aware analysis:
+                    # Check the horizontal column occupancy of ink below the stroke.
+                    # Underlines beneath words with descenders (g, j, p, q, y) only have ink in sparse narrow columns.
+                    below_slice = binary[ry + rh:imm_bot, rx:rx + rw]
+                    cols_with_ink = np.sum(below_slice > 0, axis=0) > 0
+                    col_occupancy = float(np.mean(cols_with_ink)) if cols_with_ink.size > 0 else 0.0
+                    tot_context_ink = float(above_pixels + below_pixels)
+                    ratio_above = (float(above_pixels) / tot_context_ink) if tot_context_ink > 0 else 1.0
+
+                    # 5c-2. Letter 't' Crossbar Discrimination:
+                    # A letter 't' crossbar sits near the top of the letter height (above the x-height/midline),
+                    # so >=78% of surrounding glyph ink is strictly BELOW the crossbar (ratio_above < 0.22).
+                    # Genuine word strikethroughs cut through the midline of the word, where ink is balanced above and below.
+                    if rw <= 50 and ratio_above < 0.26 and not has_diag_ink and abs(stroke_angle) <= 10.0:
+                        # Isolated crossbar on 't' ascender, not a strikethrough
+                        continue
+
+                    is_descender_underline = (col_occupancy <= 0.25 and ratio_above >= 0.65 and rw >= 25)
+                    is_clear_underline = (imm_below < min_imm_px)
+
+                    if (is_clear_underline or is_descender_underline) and not has_diag_ink and abs(stroke_angle) <= 10.0:
+                        detected_underlines.append(StrikethroughRegion(
+                            x=rx, y=ry, w=rw, h=rh,
+                            y_pct=round((float(ry) / float(h)) * 100.0, 1),
+                            y2_pct=round((float(ry + rh) / float(h)) * 100.0, 1),
+                            x_pct=round((float(rx) / float(w)) * 100.0, 1),
+                            x2_pct=round((float(rx + rw) / float(w)) * 100.0, 1),
+                            angle=round(stroke_angle, 1),
+                            confidence=min(1.0, float(rw / 100.0) + 0.3),
+                            is_multi_word=rw >= multi_word_threshold,
+                            is_underline=True
+                        ))
                         continue
 
                     # 5d. Underline vs. Strikethrough Baseline Discriminator (for lines with descenders below)
@@ -369,25 +454,138 @@ class StrikethroughDetector:
                     is_underline=False
                 ))
 
+        # 6. Composite Multi-Line Block Clustering (Parallel Horizontal, Steep Diagonal, and X-Cross)
+        blocks: List[StrikethroughBlock] = []
+        clustered_region_indices = set()
+
+        # Add pre-detected X-cross blocks
+        for xb in detected_x_cross_blocks:
+            blocks.append(xb)
+
+        # 6a. Steep Diagonals & Multi-line Slashes (|angle| >= 30 deg or (rh >= 35px and |angle| >= 20 deg))
+        for idx, r in enumerate(detected_regions):
+            if abs(r.angle) >= 30.0 or (r.h >= max(35, int(h * 0.035)) and abs(r.angle) >= 20.0):
+                blocks.append(StrikethroughBlock(
+                    y_pct=r.y_pct,
+                    y2_pct=r.y2_pct,
+                    x_pct=r.x_pct,
+                    x2_pct=r.x2_pct,
+                    line_count=max(2, int(round(r.h / 30.0))),
+                    stroke_type="steep_diagonal",
+                    confidence=r.confidence
+                ))
+                clustered_region_indices.add(idx)
+
         # Ruled Notebook Paper Detection & Filtering:
-        # If a page contains many thin horizontal segments (angle ~ 0 deg) distributed across multiple vertical heights,
-        # it is ruled notebook paper where lines are paper rulings, not student cross-outs.
+        # If a page contains many thin horizontal segments distributed across the entire page,
+        # filter out spurious paper rulings BEFORE clustering parallel horizontal blocks!
         if len(detected_regions) > 6:
-            horizontal_strikes = [r for r in detected_regions if abs(r.angle) <= 2.5 and r.h <= 5]
+            horizontal_strikes = [
+                r for i, r in enumerate(detected_regions)
+                if abs(r.angle) <= 2.5 and r.h <= 5 and not r.is_multi_word
+            ]
             if len(horizontal_strikes) >= 6:
                 y_positions = sorted(r.y for r in horizontal_strikes)
                 y_span = y_positions[-1] - y_positions[0]
                 if y_span > int(h * 0.3):
-                    # Ruled notebook paper detected: filter out baseline horizontal lines.
-                    # Keep genuine diagonal slashes (|angle| >= 3.5 deg) or heavy thick cross-outs (rh >= 6).
                     detected_regions = [
                         r for r in detected_regions
-                        if abs(r.angle) >= 3.5 or r.h >= 6 or (r.is_multi_word and abs(r.angle) >= 2.0)
+                        if abs(r.angle) >= 3.5
+                        or r.h >= 6
+                        or (r.is_multi_word and abs(r.angle) >= 1.5)
                     ]
                     multi_word_count = sum(1 for r in detected_regions if r.is_multi_word)
+                    clustered_region_indices = set()
 
-        has_strike = len(detected_regions) > 0
-        details = f"Detected {len(detected_regions)} strikethrough stroke(s) ({multi_word_count} multi-word clause strike(s)), {len(detected_underlines)} underline(s)."
+        # 6b. Parallel Horizontal Line Clustering
+        # First group regions that belong to the same line of text (within ~10-12px vertically).
+        # This prevents multiple struck words or fragmented segments on the same line from falsely breaking multi-line clusters.
+        horiz_indices = [
+            i for i, r in enumerate(detected_regions)
+            if i not in clustered_region_indices and abs(r.angle) <= 15.0
+        ]
+        horiz_indices.sort(key=lambda i: detected_regions[i].y)
+
+        line_h_est = max(24, min(80, int(h * 0.04)))
+        max_y_gap = max(55, int(line_h_est * 2.2))
+        same_line_v_thresh = max(8, int(line_h_est * 0.35))
+
+        # Group horizontal regions into distinct text line bands
+        line_groups: List[List[int]] = []
+        for idx in horiz_indices:
+            r = detected_regions[idx]
+            placed = False
+            for group in line_groups:
+                grp_y = float(np.mean([detected_regions[gi].y for gi in group]))
+                if abs(r.y - grp_y) <= same_line_v_thresh:
+                    group.append(idx)
+                    placed = True
+                    break
+            if not placed:
+                line_groups.append([idx])
+
+        # Sort line groups from top to bottom
+        line_groups.sort(key=lambda grp: min(detected_regions[gi].y for gi in grp))
+
+        # Cluster consecutive text lines into multi-line blocks
+        clusters: List[List[List[int]]] = []
+        curr_cluster_lines: List[List[int]] = []
+
+        for grp in line_groups:
+            if not curr_cluster_lines:
+                curr_cluster_lines.append(grp)
+            else:
+                prev_grp = curr_cluster_lines[-1]
+                prev_min_y = min(detected_regions[gi].y for gi in prev_grp)
+                prev_min_x = min(detected_regions[gi].x for gi in prev_grp)
+                prev_max_x = max(detected_regions[gi].x + detected_regions[gi].w for gi in prev_grp)
+                prev_w = max(1, prev_max_x - prev_min_x)
+
+                curr_min_y = min(detected_regions[gi].y for gi in grp)
+                curr_min_x = min(detected_regions[gi].x for gi in grp)
+                curr_max_x = max(detected_regions[gi].x + detected_regions[gi].w for gi in grp)
+                curr_w = max(1, curr_max_x - curr_min_x)
+
+                y_dist = curr_min_y - prev_min_y
+                x_overlap = min(curr_max_x, prev_max_x) - max(curr_min_x, prev_min_x)
+                min_w = min(curr_w, prev_w)
+                overlap_ratio = float(x_overlap / max(1.0, float(min_w)))
+
+                if 8 <= y_dist <= max_y_gap and overlap_ratio >= 0.25:
+                    curr_cluster_lines.append(grp)
+                else:
+                    if len(curr_cluster_lines) >= 2:
+                        clusters.append(list(curr_cluster_lines))
+                    curr_cluster_lines = [grp]
+
+        if len(curr_cluster_lines) >= 2:
+            clusters.append(list(curr_cluster_lines))
+
+        for c_lines in clusters:
+            all_indices = [idx for line in c_lines for idx in line]
+            for idx in all_indices:
+                clustered_region_indices.add(idx)
+            c_regs = [detected_regions[idx] for idx in all_indices]
+            min_y = min(r.y for r in c_regs)
+            max_y2 = max(r.y + r.h for r in c_regs)
+            min_x = min(r.x for r in c_regs)
+            max_x2 = max(r.x + r.w for r in c_regs)
+            blocks.append(StrikethroughBlock(
+                y_pct=round((float(min_y) / float(h)) * 100.0, 1),
+                y2_pct=round((float(max_y2) / float(h)) * 100.0, 1),
+                x_pct=round((float(min_x) / float(w)) * 100.0, 1),
+                x2_pct=round((float(max_x2) / float(w)) * 100.0, 1),
+                line_count=len(c_lines),
+                stroke_type="parallel_horizontal",
+                confidence=0.95
+            ))
+
+        has_strike = len(detected_regions) > 0 or len(blocks) > 0
+        details = (
+            f"Detected {len(detected_regions)} strikethrough stroke(s) "
+            f"({multi_word_count} multi-word clause strike(s), {len(blocks)} multi-line block(s)), "
+            f"{len(detected_underlines)} underline(s)."
+        )
 
         return StrikethroughDetectionResult(
             has_strikethrough=has_strike,
@@ -395,5 +593,6 @@ class StrikethroughDetector:
             multi_word_count=multi_word_count,
             regions=detected_regions,
             underlines=detected_underlines,
+            blocks=blocks,
             details=details
         )

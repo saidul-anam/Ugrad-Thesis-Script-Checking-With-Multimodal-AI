@@ -98,14 +98,18 @@ def stitch_pen_lift_splits(
                         w1_low = w1.lower()
                         w2_low = w2.lower()
 
-                        # Apply allograph mapping if provided (e.g. 'y' -> 's' on terminal syllables like 'sectory' -> 'sectors')
+                        # Apply writer-discovered allograph mapping if provided (e.g. allograph_y_s on terminal syllables)
                         w2_mapped = w2_low
-                        if allograph_map and "terminal_y" in allograph_map and w2_low.endswith("y") and not w2_low.endswith("ly"):
-                            w2_mapped = w2_low[:-1] + "s"
+                        if allograph_map:
+                            for rule, tgt in allograph_map.items():
+                                if rule.startswith("allograph_"):
+                                    parts = rule.split("_")
+                                    if len(parts) == 3:
+                                        src_c, tgt_c = parts[1], parts[2]
+                                        if w2_low.endswith(src_c) and (src_c != "y" or not w2_low.endswith("ly")):
+                                            w2_mapped = w2_low[:-len(src_c)] + tgt_c
+                                            break
 
-                        # Syllable fix for cursive 'ri' read as 'u' (e.g. tricuity -> tricity)
-                        if "tricuity" in w2_low:
-                            w2_mapped = w2_low.replace("tricuity", "tricity")
 
                         cand_merged = w1_low + w2_low
                         cand_mapped = w1_low + w2_mapped

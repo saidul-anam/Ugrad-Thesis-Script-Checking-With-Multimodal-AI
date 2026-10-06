@@ -197,3 +197,66 @@ def test_strikethrough_detector_header_underline_classified_correctly():
     assert len(res.underlines) >= 1
     assert res.underlines[0].is_underline
 
+
+def test_strikethrough_detector_steep_diagonal_slash():
+    """Steep diagonal slash at 45-60 degrees must be detected and clustered into a block."""
+    detector = StrikethroughDetector(min_line_width=20, max_line_height=15)
+    arr = np.full((400, 400), 255, dtype=np.uint8)
+
+    # Multi-line text
+    cv2.putText(arr, "Line one text here", (40, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+    cv2.putText(arr, "Line two text here", (40, 140), cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+    cv2.putText(arr, "Line three text here", (40, 180), cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+
+    # Steep diagonal slash cutting through all 3 lines at ~50 degrees (from x=50,y=200 to x=200,y=80)
+    cv2.line(arr, (50, 200), (200, 80), 0, 3)
+
+    img = Image.fromarray(arr)
+    res = detector.detect(img)
+
+    assert res.has_strikethrough
+    assert len(res.blocks) >= 1
+    assert any(b.stroke_type == "steep_diagonal" for b in res.blocks)
+
+
+def test_strikethrough_detector_x_cross_block():
+    """Intersecting opposite diagonal slashes forming an X cross must produce an x_cross block."""
+    detector = StrikethroughDetector(min_line_width=20, max_line_height=15)
+    arr = np.full((400, 400), 255, dtype=np.uint8)
+
+    cv2.putText(arr, "First draft line", (40, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+    cv2.putText(arr, "Second draft line", (40, 140), cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+
+    # Draw X cross: forward slash and backslash crossing in center
+    cv2.line(arr, (50, 80), (220, 160), 0, 3)
+    cv2.line(arr, (50, 160), (220, 80), 0, 3)
+
+    img = Image.fromarray(arr)
+    res = detector.detect(img)
+
+    assert res.has_strikethrough
+    assert len(res.blocks) >= 1
+    assert any(b.stroke_type == "x_cross" for b in res.blocks)
+
+
+def test_strikethrough_detector_multiline_block_clustering():
+    """3 consecutive parallel horizontal lines must be clustered into a single parallel_horizontal block."""
+    detector = StrikethroughDetector(min_line_width=20, max_line_height=8)
+    arr = np.full((500, 600), 255, dtype=np.uint8)
+
+    # 3 lines of text with a horizontal stroke through each
+    for idx, y in enumerate([120, 160, 200]):
+        cv2.putText(arr, f"Cancelled draft line number {idx+1}", (50, y), cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+        cv2.line(arr, (45, y - 8), (480, y - 8), 0, 2)
+
+    img = Image.fromarray(arr)
+    res = detector.detect(img)
+
+    assert res.has_strikethrough
+    assert res.region_count >= 3
+    assert len(res.blocks) >= 1
+    block = res.blocks[0]
+    assert block.line_count >= 3
+    assert block.stroke_type == "parallel_horizontal"
+
+

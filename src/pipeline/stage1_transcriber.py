@@ -31,10 +31,16 @@ def sanitize_and_normalize_stage1_output(raw_text: str) -> str:
     text = re.sub(r'\[struck:\s*\]', '', text)
     text = re.sub(r'\[struck:[^\w\u0980-\u09FF]*\]', '', text)
 
-    # 4. Purge VLM conversational meta-chatter and disclaimers
-    text = re.sub(r'(?im)^The (?:provided )?image (?:is|contains|shows|depicts).*$', '', text)
-    text = re.sub(r'(?im)^There is no (?:original |student |handwritten )?.*$', '', text)
+    # 4. Purge VLM conversational meta-chatter, refusals, and overexposure disclaimers
+    text = re.sub(r'(?im)^.*?(?:The image provided|The provided image|The image) is too (?:faint|overexposed|dark|blurry).*$', '', text)
+    text = re.sub(r'(?im)^.*?(?:The image provided|The provided image) (?:is|contains|shows|depicts|appears).*$', '', text)
+    text = re.sub(r'(?im)^.*?(?:No|There is no) (?:original |student |handwritten |legible )?handwriting (?:is )?(?:visible|present|readable|discernible|found).*$', '', text)
+    text = re.sub(r'(?im)^.*?(?:Due to severe overexposure|Due to poor contrast|I cannot transcribe).*$', '', text)
     text = re.sub(r'(?im)^Note:\s*.*$', '', text)
+
+    # 4b. Purge ruling line hallucinations (repeated underscores or hyphens with no text)
+    text = re.sub(r'(?m)^[_\-\s]{3,}\s*$', '', text)
+
 
     # 5. Degeneracy suppression: collapse consecutive identical [illegible] tags
     text = re.sub(r'(?:\[illegible\][\s,;]*){2,}', '[illegible] ', text, flags=re.IGNORECASE)
@@ -130,6 +136,7 @@ class Stage1Transcriber:
         strikethrough_detected: bool = False,
         strikethrough_region_count: int = 0,
         strikethrough_regions: Optional[List[Any]] = None,
+        strikethrough_blocks: Optional[List[Any]] = None,
         temperature: float = 0.0,
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
@@ -152,14 +159,22 @@ class Stage1Transcriber:
                         if b_meta.y_start_pct <= ry <= b_meta.y_end_pct:
                             band_strike_regions.append(reg)
 
+                band_strike_blocks = []
+                if strikethrough_blocks:
+                    for blk in strikethrough_blocks:
+                        by = getattr(blk, "y_pct", 0.0)
+                        if b_meta.y_start_pct <= by <= b_meta.y_end_pct:
+                            band_strike_blocks.append(blk)
+
                 b_prompt = build_stage1_prompt(
                     few_shot_examples=few_shot_examples,
                     question_reference_vocab=question_reference_vocab,
                     question_reference_numerals=question_reference_numerals,
                     question_syllabus=question_syllabus,
-                    strikethrough_detected=len(band_strike_regions) > 0,
+                    strikethrough_detected=len(band_strike_regions) > 0 or len(band_strike_blocks) > 0,
                     strikethrough_region_count=len(band_strike_regions),
                     strikethrough_regions=band_strike_regions,
+                    strikethrough_blocks=band_strike_blocks,
                 )
 
                 b_text = self.engine.generate_multimodal(
@@ -180,9 +195,10 @@ class Stage1Transcriber:
                 question_reference_vocab=question_reference_vocab,
                 question_reference_numerals=question_reference_numerals,
                 question_syllabus=question_syllabus,
-                strikethrough_detected=strikethrough_detected,
+                strikethrough_detected=strikethrough_detected or (strikethrough_blocks is not None and len(strikethrough_blocks) > 0),
                 strikethrough_region_count=strikethrough_region_count,
                 strikethrough_regions=strikethrough_regions,
+                strikethrough_blocks=strikethrough_blocks,
             )
 
             raw_text = self.engine.generate_multimodal(

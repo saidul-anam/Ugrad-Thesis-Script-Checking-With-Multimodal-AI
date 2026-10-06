@@ -264,7 +264,22 @@ def main():
     gt_file = sys.argv[2] if len(sys.argv) > 2 else "gt.txt"
 
     teacher_gt = parse_teacher_gt(gt_file)
-    script_dirs = sorted([d for d in glob.glob(os.path.join(extracted_dir, "*")) if os.path.isdir(d)])
+    raw_dirs = sorted([d for d in glob.glob(os.path.join(extracted_dir, "*")) if os.path.isdir(d)])
+    script_dirs = []
+    seen = set()
+    for d in raw_dirs:
+        if os.path.exists(os.path.join(d, "extraction_result.json")) or os.path.isdir(os.path.join(d, "checkpoints")):
+            rp = os.path.realpath(d)
+            if rp not in seen:
+                script_dirs.append(d)
+                seen.add(rp)
+        else:
+            for sub in sorted(glob.glob(os.path.join(d, "*"))):
+                if os.path.isdir(sub) and (os.path.exists(os.path.join(sub, "extraction_result.json")) or os.path.isdir(os.path.join(sub, "checkpoints"))):
+                    rp = os.path.realpath(sub)
+                    if rp not in seen:
+                        script_dirs.append(sub)
+                        seen.add(rp)
 
     if not script_dirs:
         print(f"No scripts found in {extracted_dir}")

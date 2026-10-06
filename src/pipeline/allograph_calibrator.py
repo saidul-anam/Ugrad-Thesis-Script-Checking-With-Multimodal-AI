@@ -44,6 +44,9 @@ PLAUSIBLE_ALLOGRAPH_PAIRS = {
     frozenset({'g', 'y'}),
     frozenset({'i', 'l'}),
     frozenset({'e', 'l'}),
+    frozenset({'y', 's'}),
+    frozenset({'b', 'f'}),
+    frozenset({'n', 'r'}),  # Latin cursive flat-shoulder 'r' vs single-arch 'n'
 }
 
 
@@ -180,11 +183,12 @@ class AllographCalibrator:
                         ops = align_chars(w_low, dw)
                         subs = [o for o in ops if o.op == "sub"]
                         non_matches = [o for o in ops if o.op != "match"]
-                        if len(subs) == 1 and len(non_matches) == 1:
-                            src_c = subs[0].src
-                            tgt_c = subs[0].tgt
-                            if src_c and tgt_c and src_c.isalpha() and tgt_c.isalpha():
-                                word_cand_subs[w_low].append((dw, src_c, tgt_c))
+                        if len(subs) == 2 and len(non_matches) == 2:
+                            if subs[0].src == subs[1].src and subs[0].tgt == subs[1].tgt:
+                                src_c = subs[0].src
+                                tgt_c = subs[0].tgt
+                                if src_c and tgt_c and src_c.isalpha() and tgt_c.isalpha():
+                                    word_cand_subs[w_low].append((dw, src_c, tgt_c))
 
         # Count how many distinct words support each (src_c, tgt_c)
         pair_word_support: Dict[Tuple[str, str], Set[str]] = defaultdict(set)
@@ -202,6 +206,8 @@ class AllographCalibrator:
         for (src_c, tgt_c), supporting_words in promoted_rules.items():
             rule_name = f"allograph_{src_c}_{tgt_c}"
             prof.discovered_allographs[rule_name] = tgt_c
+            if (src_c, tgt_c) == ("y", "s"):
+                prof.discovered_allographs["terminal_y"] = "s"
             prof.add_pair(f"{tgt_c}>{src_c}", source="allograph_discovery", weight=len(supporting_words))
 
             rule_examples = []
@@ -226,28 +232,12 @@ class AllographCalibrator:
         profile: WriterProfile
     ) -> Tuple[str, List[Dict[str, Any]]]:
         """
-        Normalize discovered allographs in the transcript while preserving exact casing.
+        Enforce the Surface Immutability Invariant:
+        Transcript is frozen after Stage 2; allograph adaptations are diagnostic only
+        and must NEVER mutate the transcript string.
+        Downstream visual arbitration (Stage 3b) resolves ambiguities via image crops,
+        leaving the student's authentic written script of record intact.
         """
-        if not transcript or not profile.adapted_words:
-            return transcript, []
+        # Surface Immutability Invariant: Zero text mutation
+        return transcript, []
 
-        diffs = []
-
-        def _replace_word(match: re.Match) -> str:
-            raw = match.group(0)
-            low = raw.lower()
-            if low in profile.adapted_words:
-                target = profile.adapted_words[low]
-                # Preserve capitalization
-                adapted = target.capitalize() if raw[:1].isupper() else target
-                diffs.append({
-                    "original": raw,
-                    "adapted": adapted,
-                    "reason": f"writer allograph adaptation ({low} -> {target})"
-                })
-                return adapted
-            return raw
-
-        pattern = re.compile(r'\b[A-Za-z]+\b')
-        calibrated_transcript = pattern.sub(_replace_word, transcript)
-        return calibrated_transcript, diffs

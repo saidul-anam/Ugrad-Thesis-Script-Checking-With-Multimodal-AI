@@ -10,6 +10,13 @@ import argparse
 from pathlib import Path
 from typing import List, Optional
 
+# Ensure repository root is on sys.path when running as a standalone script
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from src.utils.script_files import all_script_files, paper_folders, move_into_paper_folders
+
 
 GDRIVE_FOLDERS = {
     "bangla": "https://drive.google.com/drive/folders/1tUwj_h5fCMhzymloXhUEJqTeTFKD-ogS",
@@ -38,6 +45,8 @@ def download_drive_pdfs(
     existing_pdfs = sorted(list(target_path.glob("*.pdf")) + list(target_path.glob("*.PDF")))
     
     if skip_download:
+        # List everything, including question-paper sub-folders (e.g. se_11_q1/, se_10_q1/)
+        existing_pdfs = all_script_files(target_dir, (".pdf",))
         print(f"[GDrive Downloader] Local-only mode active. Found {len(existing_pdfs)} existing PDFs in '{target_dir}'.")
         if top_limit and top_limit > 0:
             return [str(p) for p in existing_pdfs[:top_limit]]
@@ -68,7 +77,12 @@ def download_drive_pdfs(
         print(f"If network blocks direct folder download, you can place PDFs manually into '{target_dir}/'.")
 
     # Refresh list of PDFs
-    all_pdfs = sorted(list(target_path.glob("*.pdf")) + list(target_path.glob("*.PDF")))
+    if paper_folders(target_dir, (".pdf",)):
+        # Folder is organised one sub-folder per question paper: file the downloads into their
+        # paper folder and return just those (a Drive folder holds one paper)
+        all_pdfs = sorted(move_into_paper_folders(target_dir))
+    else:
+        all_pdfs = sorted(list(target_path.glob("*.pdf")) + list(target_path.glob("*.PDF")))
     if top_limit and top_limit > 0:
         return [str(p) for p in all_pdfs[:top_limit]]
     return [str(p) for p in all_pdfs]

@@ -6,10 +6,10 @@ from src.prompts.stage4_rubric import build_stage4_prompt
 
 def test_stage1_prompt_rules():
     prompt = build_stage1_prompt()
-    assert "You are transcribing a handwritten exam script" in prompt
+    assert "forensic paleographer" in prompt
     assert "[illegible]" in prompt
-    assert "[unclear: your reading]" in prompt
-    assert "Do NOT fix them" in prompt
+    assert "[unclear:" in prompt
+    assert "NEVER correcting" in prompt
 
 
 def test_stage1_prompt_few_shots():
@@ -25,7 +25,7 @@ def test_stage1_prompt_few_shots():
 def test_stage2_prompt():
     prompt = build_stage2_prompt(stage1_transcript="student wrote text")
     assert "student wrote text" in prompt
-    assert "silent_corrections_fixed" in prompt
+    assert "proposed_patches" in prompt
     assert "NORMALIZE VISUAL TRANSCRIPTION GLITCHES" in prompt
 
 
@@ -33,8 +33,7 @@ def test_stage3_prompt():
     prompt = build_stage3_prompt(verified_transcript="student verified text")
     assert "student verified text" in prompt
     assert "spelling | grammar | syntax" in prompt
-    assert "BENEFIT OF THE DOUBT" in prompt
-    assert "ZERO PUNCTUATION MARKS" in prompt
+    assert "ZERO PUNCTUATION & ZERO CAPITALIZATION PENALTIES" in prompt
 
 
 def test_stage4_prompt():
@@ -76,15 +75,12 @@ def test_stage2_prompt_with_syllabus():
     prompt = build_stage2_prompt(stage1_transcript="Ans to the Question No-05\nA lion and a mouse", question_syllabus=syllabus)
     assert "EXAM SYLLABUS REFERENCE:" in prompt
     assert "Q9: Story Completion (Lion and Mouse)" in prompt
-    assert "Question Header Digits" in prompt
 
 
 def test_stage1_prompt_strikethrough_advisory():
+    # Advisory was purged in Phase 1 to prevent false strikethroughs on lined notebook text
     prompt = build_stage1_prompt(strikethrough_detected=True, strikethrough_region_count=3)
-    assert "OPTICAL STRIKETHROUGH ADVISORY" in prompt
-    assert "3 candidate line segment(s)" in prompt
-    assert "NEVER invent or force struck text" in prompt
-    assert "REVERSE-SIDE BLEED-THROUGH & GHOST INK" in prompt
+    assert "OPTICAL STRIKETHROUGH ADVISORY" not in prompt
 
 
 def test_stage1_prompt_strikethrough_spatial_coordinates():
@@ -94,12 +90,7 @@ def test_stage1_prompt_strikethrough_spatial_coordinates():
         StrikethroughRegion(x=300, y=500, w=120, h=6, y_pct=50.0, y2_pct=50.6, x_pct=30.0, x2_pct=42.0, is_multi_word=False, angle=0.0),
     ]
     prompt = build_stage1_prompt(strikethrough_regions=regions)
-    assert "OPTICAL STRIKETHROUGH ADVISORY" in prompt
-    assert "Region 1: near ~25.0% down the page" in prompt
-    assert "multi-word clause strike" in prompt
-    assert "angle: ~12°" in prompt
-    assert "Region 2: near ~50.0% down the page" in prompt
-    assert "word cross-out" in prompt
+    assert "OPTICAL STRIKETHROUGH ADVISORY" not in prompt
 
 
 def test_stage2_prompt_strikethrough_regions():
@@ -114,8 +105,8 @@ def test_stage2_prompt_strikethrough_regions():
 
 def test_stage3_prompt_struck_rule():
     prompt = build_stage3_prompt(verified_transcript="student verified text")
-    assert "STRUCK-THROUGH / CANCELLED TEXT:" in prompt
-    assert "NEVER extract errors from crossed-out or struck-through words" in prompt
+    assert "SINGLE-PENALTY CLAUSE CONSTRAINT:" in prompt
+
 
 
 

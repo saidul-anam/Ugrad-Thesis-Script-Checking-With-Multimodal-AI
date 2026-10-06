@@ -28,6 +28,9 @@ from src.core.schemas import AlignedAnswerItem
 from src.pipeline.token_guard import clean_rubric_answer
 from src.utils.ground_truth import canonicalize_question_key
 from src.utils.linguistic_sanitizer import get_english_lexicon
+from src.pipeline.arbitration.candidate_selector import levenshtein
+from src.pipeline.arbitration.symbolic_evidence import align_chars
+from src.pipeline.allograph_calibrator import PLAUSIBLE_ALLOGRAPH_PAIRS
 
 
 # ---------------------------------------------------------------------------
@@ -200,7 +203,15 @@ def _norm(s: Any) -> str:
     return re.sub(r"[^a-z0-9ঀ-৿ ]", "", str(s or "").lower()).strip()
 
 
-_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5"}
+# Canonical Roman numeral normalization map supporting up to 20 options
+_ROMAN = {
+    "i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
+    "vi": "6", "vii": "7", "viii": "8", "ix": "9", "x": "10",
+    "xi": "11", "xii": "12", "xiii": "13", "xiv": "14", "xv": "15",
+    "xvi": "16", "xvii": "17", "xviii": "18", "xix": "19", "xx": "20",
+    "1": "1", "2": "2", "3": "3", "4": "4", "5": "5",
+    "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"
+}
 
 
 def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") -> bool:
@@ -224,6 +235,16 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
             lexicon = get_english_lexicon()
             if c not in lexicon:
                 return True
+        # Cursive stroke / allograph tolerance for non-words (e.g. uncrossed 't' <-> 'l', 'v' <-> 'r')
+        if len(an) >= 4 and levenshtein(c, an) <= 2:
+            lexicon = get_english_lexicon()
+            if c not in lexicon:
+                ops = align_chars(c, an)
+                non_match = [o for o in ops if o.op != "match"]
+                if non_match:
+                    chars_inv = {o.src for o in non_match if o.src} | {o.tgt for o in non_match if o.tgt}
+                    if any(chars_inv.issubset(pair) for pair in PLAUSIBLE_ALLOGRAPH_PAIRS):
+                        return True
     return False
 
 
@@ -456,12 +477,11 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
     if seq:
         raw_student = [str(x).strip().lower() for x in (parsed.get("student_sequence") or [])]
         from src.pipeline.token_guard import sanitize_rearrangement_sequence
-        repaired_seq, anomalies = sanitize_rearrangement_sequence(raw_student)
+        expected_clean = [str(x).strip().lower() for x in seq]
+        repaired_seq, anomalies = sanitize_rearrangement_sequence(raw_student, expected_letters=set(expected_clean))
         student = repaired_seq if repaired_seq and len(repaired_seq) == len(raw_student) else raw_student
         if anomalies:
             res.notes.extend(anomalies)
-
-        expected_clean = [str(x).strip().lower() for x in seq]
 
         # 1. Exact positional slot matching
         pos_correct = 0
@@ -598,7 +618,8 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
         if overlap > 0.5 or bool(audit.get("verbatim_copy_suspected")):
             cap_value, reason = half, "Theme_Verbatim_Copy"
     elif tt in ("graph_chart", "graph", "chart") and bool(audit.get("external_facts_or_personal_opinions")):
-        cap_value, reason = min(6.0, spec.max_mark), "Graph_External_Facts"
+        cap_val = float(spec.hard_caps.get("Graph_External_Facts", 0.0)) if "Graph_External_Facts" in spec.hard_caps else round(spec.max_mark * 0.6, 1)
+        cap_value, reason = min(cap_val if cap_val > 0 else round(spec.max_mark * 0.6, 1), spec.max_mark), "Graph_External_Facts"
 
     awarded = res.raw_total
     if cap_value is not None and awarded > cap_value:

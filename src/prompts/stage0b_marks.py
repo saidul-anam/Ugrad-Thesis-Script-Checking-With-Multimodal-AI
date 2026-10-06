@@ -20,7 +20,7 @@ CRITICAL LOCATION GUIDELINES:
 Output as a JSON array, one object per mark found:
 [
   {
-    "question_no": "the question number this mark belongs to (e.g. '1(A)', '1(B)', '2', '3', '4', '5', '6', '8', '9', '10')",
+    "question_no": "the question number this mark belongs to (e.g. '1', '2', '3', '1(A)', etc.)",
     "mark_value": "exact numeric value as written, e.g. '5', '7', '10', '3', '1'",
     "location": "left margin next to question X",
     "y_position": "vertical position on page: 'top', 'mid', or 'bottom'"
@@ -57,7 +57,7 @@ def build_stage0b_prompt(
     if valid_paper_questions:
         whitelist_str = (
             f"EXAM QUESTION WHITELIST: This exam paper ONLY contains questions: {valid_paper_questions}.\n"
-            f"- NEVER label a mark using sub-item letters like 'a', 'b', 'c', 'g'. Always map sub-parts to their parent question (e.g. sub-item (c) belongs to '1(B)', sub-item (g) belongs to '4').\n"
+            f"- NEVER label a mark using sub-item letters like 'a', 'b', 'c', 'g'. Always map sub-parts to their parent question number.\n"
         )
 
     return f"""This exam script page contains red-ink markings made by a teacher/examiner.

@@ -35,12 +35,20 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from src.pipeline.answer_segmenter import _extract_explicit_english_header, normalize_header_text, to_arabic_digits
+
 CONTINUOUS_Q = {"3", "7", "8", "9", "10", "11"}
-_HEADER_RE = re.compile(r"(?i)\bq(?:uestion)?\.?\s*(?:no\.?)?\s*-?\s*0?(\d{1,2})")
 
 
 def _page_question_hint(transcript: str) -> List[str]:
-    return sorted(set(_HEADER_RE.findall(transcript or "")))
+    """Question headers on the page in reading order, using the segmenter's own header parser
+    (handles 'Question Number- 7', 'Ques. No: 10', 'que:no:8', 'Q : no : 2', ...)."""
+    hints = []
+    for line in (transcript or "").splitlines():
+        q = _extract_explicit_english_header(to_arabic_digits(normalize_header_text(line)))
+        if q:
+            hints.append(q)
+    return hints
 
 
 def _load_checkpoints(script_dir: Path) -> List[Tuple[int, dict]]:
@@ -60,7 +68,18 @@ def _load_checkpoints(script_dir: Path) -> List[Tuple[int, dict]]:
 def _default_selection(extracted_dir: Path, max_pages: int) -> Dict[str, List[int]]:
     """Pages holding continuous-writing questions, spread evenly across scripts."""
     per_script: Dict[str, List[int]] = {}
-    for script_dir in sorted(p for p in extracted_dir.iterdir() if p.is_dir()):
+    dirs_to_check = []
+    for p in sorted(extracted_dir.iterdir()):
+        if not p.is_dir():
+            continue
+        if (p / "checkpoints").is_dir():
+            dirs_to_check.append(p)
+        else:
+            for sub in sorted(p.iterdir()):
+                if sub.is_dir() and (sub / "checkpoints").is_dir():
+                    dirs_to_check.append(sub)
+
+    for script_dir in dirs_to_check:
         pages = _load_checkpoints(script_dir)
         if not pages:
             continue
@@ -121,6 +140,10 @@ def main() -> None:
     written, skipped = 0, 0
     for script_id, page_nos in selection.items():
         script_dir = extracted_dir / script_id
+        if not script_dir.exists():
+            candidates = list(extracted_dir.glob(f"*/{script_id}"))
+            if candidates:
+                script_dir = candidates[0]
         pages = dict(_load_checkpoints(script_dir))
         target = out_dir / script_id
         target.mkdir(parents=True, exist_ok=True)

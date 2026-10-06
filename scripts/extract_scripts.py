@@ -42,6 +42,15 @@ from rich.prompt import Prompt, Confirm
 from src.core.config import load_config
 from src.engine.engine_factory import create_engine
 from src.pipeline.orchestrator import ScriptCheckingPipeline
+from src.utils.script_files import (
+    list_script_files,
+    paper_folders,
+    find_script_file,
+    describe_paper_folders,
+    resolve_paper_folder,
+    resolve_extracted_output_dir,
+    move_extracted_into_paper_folders,
+)
 from scripts.download_drive_pdfs import (
     download_drive_pdfs,
     GDRIVE_FOLDERS,
@@ -72,8 +81,18 @@ def interactive_wizard(args):
 
     if args.pdf_dir in [None, "data/raw_pdfs", "data/raw_pdfs/bangla", "data/raw_pdfs/english"]:
         args.pdf_dir = f"data/raw_pdfs/{args.lang}"
+    # Scripts organised one folder per question paper (e.g. se_11_q1/, se_10_q1/): pick one
+    folders = paper_folders(args.pdf_dir)
+    if folders and not list_script_files(args.pdf_dir):
+        names = list(folders)
+        console.print("\n[bold green]   Question Paper:[/bold green]")
+        for i, name in enumerate(names, 1):
+            console.print(f"   [[bold cyan]{i}[/bold cyan]] {name} ({folders[name]} scripts) [yellow]-> {os.path.join(args.pdf_dir, name)}[/yellow]")
+        chosen_paper = names[int(paper_choice) - 1]
+        args.pdf_dir = os.path.join(args.pdf_dir, chosen_paper)
     if args.output_dir in [None, "outputs/extracted", "outputs/extracted/bangla", "outputs/extracted/english"]:
-        args.output_dir = f"outputs/extracted/{args.lang}"
+        paper_folder = resolve_paper_folder(args.pdf_dir, lang=args.lang)
+        args.output_dir = f"outputs/extracted/{args.lang}/{paper_folder}" if paper_folder else f"outputs/extracted/{args.lang}"
     if args.gdrive_url in [None, DEFAULT_GDRIVE_FOLDER_BANGLA, DEFAULT_GDRIVE_FOLDER_ENGLISH]:
         args.gdrive_url = GDRIVE_FOLDERS.get(args.lang, DEFAULT_GDRIVE_FOLDER_BANGLA)
 
@@ -295,15 +314,15 @@ def main():
         "--skip-stage2",
         dest="fast",
         action="store_true",
-        default=True,
-        help="Fast single-pass extraction mode (Default): skip Stage 2 VLM autocorrection to preserve student errors and cut runtime"
+        default=False,
+        help="Fast single-pass extraction mode: skip Stage 2 VLM autocorrection to cut runtime (Default is False, enabling intelligent Stage 2 verification)"
     )
     parser.add_argument(
         "--verify-stage2",
         "--full",
         dest="fast",
         action="store_false",
-        help="Enable full 2-pass Stage 2 VLM verification"
+        help="Enable full 2-pass Stage 2 VLM verification (Default behavior)"
     )
     parser.add_argument(
         "--api",
@@ -377,6 +396,19 @@ def main():
     if not args.gdrive_url:
         args.gdrive_url = GDRIVE_FOLDERS.get(args.lang, DEFAULT_GDRIVE_FOLDER_BANGLA)
 
+    # Pre-resolve paper/level subfolder if --image or --pdf-dir carries one
+    target_to_check = args.image or args.pdf_dir
+    if target_to_check:
+        paper_hint = resolve_paper_folder(target_to_check, lang=args.lang)
+        if paper_hint and (args.output_dir in [None, "outputs/extracted", f"outputs/extracted/{args.lang}"]):
+            args.output_dir = f"outputs/extracted/{args.lang}/{paper_hint}"
+
+    # Auto-migrate loose legacy extractions into paper subfolders if found
+    try:
+        move_extracted_into_paper_folders(f"outputs/extracted/{args.lang}", lang=args.lang, create_symlinks=True)
+    except Exception:
+        pass
+
     # Launch wizard only if interactive terminal, not bypassed, and no explicit arguments provided
     has_explicit_args = bool(args.top or args.image)
     if not args.non_interactive and not has_explicit_args and sys.stdin.isatty():
@@ -418,17 +450,16 @@ def main():
     ))
 
     # 1. Discover Script Files (Strictly Local by Default)
+    input_files: List[str] = []
     if args.image:
         target = args.image
         if os.path.exists(target):
             input_files = [target]
         else:
-            # Look inside args.pdf_dir (e.g. data/raw_pdfs/<lang>)
-            for ext in [".pdf", ".PDF", ".png", ".jpg", ".jpeg", ""]:
-                cand = os.path.join(args.pdf_dir, f"{target}{ext}")
-                if os.path.exists(cand):
-                    input_files = [cand]
-                    break
+            # Look up by script ID inside args.pdf_dir and the language root, including paper sub-folders
+            found_file = find_script_file(target, [args.pdf_dir, f"data/raw_pdfs/{args.lang}"])
+            if found_file:
+                input_files = [found_file]
         if not input_files:
             console.print(f"[red]Specified image/PDF file does not exist: {target} (searched in '{args.pdf_dir}')[/red]")
             return
@@ -446,20 +477,14 @@ def main():
             return
     else:
         console.print(f"\n[bold]Step 1: Discovering Local Exam Script Files in '{args.pdf_dir}'...[/bold]")
-        if os.path.exists(args.pdf_dir):
-            target_path = Path(args.pdf_dir)
-            found = (
-                list(target_path.glob("*.pdf")) +
-                list(target_path.glob("*.PDF")) +
-                list(target_path.glob("*.jpg")) +
-                list(target_path.glob("*.jpeg")) +
-                list(target_path.glob("*.png")) +
-                list(target_path.glob("*.bmp"))
-            )
-            input_files = sorted(list(set(str(p) for p in found)))
+        input_files = list_script_files(args.pdf_dir)
 
     if not input_files:
         console.print(f"[red]No exam script files found in '{args.pdf_dir}'.[/red]")
+        hint = describe_paper_folders(args.pdf_dir)
+        if hint:
+            console.print(f"[yellow]{hint}[/yellow]")
+            return
         console.print(f"[yellow]To download scripts from Google Drive first, run:[/yellow]")
         console.print(f"  python3 scripts/download_drive_pdfs.py --lang {args.lang} --top 5\n")
         return
@@ -499,16 +524,25 @@ def main():
 
     for idx, script_path in enumerate(input_files, 1):
         script_id = Path(script_path).stem
-        script_out_dir = os.path.join(args.output_dir, script_id)
+        script_base_out = resolve_extracted_output_dir(args.output_dir, script_path, lang=args.lang)
+        script_out_dir = os.path.join(script_base_out, script_id)
         extraction_file = os.path.join(script_out_dir, "extraction_result.json")
 
+        legacy_out_dir = os.path.join(f"outputs/extracted/{args.lang}", script_id)
+        legacy_file = os.path.join(legacy_out_dir, "extraction_result.json")
+
         force_extract_flag = getattr(args, "force_extract", False) or (not args.skip_extracted)
-        if (not force_extract_flag) and args.skip_extracted and os.path.exists(extraction_file):
-            console.print(f"\n[{idx}/{len(input_files)}] Skipping already extracted: [cyan]{script_id}[/cyan]")
-            continue
+        if (not force_extract_flag) and args.skip_extracted:
+            if os.path.exists(extraction_file):
+                console.print(f"\n[{idx}/{len(input_files)}] Skipping already extracted: [cyan]{script_id}[/cyan] ({script_out_dir})")
+                continue
+            elif os.path.exists(legacy_file):
+                console.print(f"\n[{idx}/{len(input_files)}] Skipping already extracted in legacy path: [cyan]{script_id}[/cyan] ({legacy_out_dir})")
+                continue
 
         console.print(f"\n{'='*60}")
         console.print(f"[{idx}/{len(input_files)}] Extracting Script: [bold cyan]{Path(script_path).name}[/bold cyan]")
+        console.print(f"Target Output Directory: [yellow]{script_out_dir}[/yellow]")
         console.print(f"{'='*60}")
 
         try:
@@ -516,7 +550,7 @@ def main():
                 input_source=script_path,
                 script_id=script_id,
                 thinking_mode=cfg.decoding.thinking_mode,
-                output_dir=args.output_dir,
+                output_dir=script_base_out,
                 paper=args.lang,
                 skip_stage2=args.fast,
                 force_extract=force_extract_flag,

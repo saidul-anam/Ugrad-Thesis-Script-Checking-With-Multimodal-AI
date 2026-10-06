@@ -1,4 +1,5 @@
 import os
+import sys
 import re
 import time
 import yaml
@@ -43,7 +44,10 @@ from src.pipeline.stage0_strikethrough_detector import StrikethroughDetector
 from src.pipeline.stage0b_teacher_marks import Stage0bTeacherMarkExtractor, Stage0bResult, reconcile_document_teacher_marks
 from src.pipeline.stage1_transcriber import Stage1Transcriber
 from src.pipeline.stage2_verifier import Stage2Verifier, run_stage2_pre_analysis, Stage2PreAnalysisReport
-from src.utils.strikethrough_collision_resolver import resolve_strikethrough_collisions
+from src.utils.strikethrough_collision_resolver import (
+    resolve_strikethrough_collisions,
+    ground_and_reconcile_strikethroughs,
+)
 from src.pipeline.stage3_error_analyzer import Stage3ErrorAnalyzer
 from src.pipeline.arbitration import EvidenceArbitrationGate
 from src.utils.linguistic_sanitizer import get_english_lexicon
@@ -63,6 +67,8 @@ from src.utils.ground_truth import (
     extract_candidate_questions,
     canonicalize_question_key
 )
+from src.utils.script_files import paper_folder_name
+
 
 
 def _attribute_errors_to_pages(
@@ -115,12 +121,12 @@ def _attribute_errors_to_pages(
         )
 
 
-def _chunk_text_by_sentences(text: str, target_words: int = 120) -> List[str]:
+def _chunk_text_by_sentences(text: str, target_words: int = 300) -> List[str]:
     """
-    Split long text into sentence-bounded chunks of ~100-140 words.
-    Avoids cutting sentences across chunks.
+    Split long text into sentence-bounded chunks of ~250-350 words.
+    Avoids cutting sentences across chunks using syntactic boundaries.
     """
-    sentences = re.split(r"(?<=[.!?\n])\s+", text.strip())
+    sentences = re.split(r"(?<=[.!?\n])\s+(?=[A-Z0-9\"'(\[])", text.strip())
     sentences = [s.strip() for s in sentences if s.strip()]
     if not sentences:
         return [text] if text.strip() else []
@@ -140,7 +146,8 @@ def _chunk_text_by_sentences(text: str, target_words: int = 120) -> List[str]:
             current_count += s_words
 
     if current_chunk:
-        if chunks and current_count < 30:
+        min_tail_merge = min(40, max(5, target_words // 4))
+        if chunks and current_count < min_tail_merge:
             chunks[-1] = chunks[-1] + " " + " ".join(current_chunk)
         else:
             chunks.append(" ".join(current_chunk))
@@ -251,45 +258,12 @@ def _apply_normalizations(
     errors: List[Any],
     lexicon: Optional[set] = None,
 ) -> int:
-    """Apply HANDWRITING_AMBIGUITY normalizations to the answer text AND the per-page transcripts."""
-    n = 0
-    for amb in cleared:
-        if not amb.get("normalize", True):
-            continue
-        c_word = str(amb.get("candidate") or "").strip()
-        i_word = str(amb.get("intended_word") or "").strip()
-        if not c_word or not i_word or c_word.lower() == i_word.lower():
-            continue
-        err_text = str(amb.get("erroneous_text") or "").strip()
-        ctx = str(amb.get("context_sentence") or "").strip()
-        if not ctx and not err_text:
-            cid = str(amb.get("candidate_id") or "")
-            try:
-                e_idx = int(cid.split(":")[1]) if cid.count(":") >= 2 else -1
-                if 0 <= e_idx < len(errors):
-                    err_text = getattr(errors[e_idx], "erroneous_text", "") or ""
-                    ctx = getattr(errors[e_idx], "context_sentence", "") or ""
-            except Exception:
-                pass
-        if not ctx and not err_text:
-            for e in errors:
-                if c_word.lower() in (getattr(e, "erroneous_text", "") or "").lower():
-                    err_text = getattr(e, "erroneous_text", "") or ""
-                    ctx = getattr(e, "context_sentence", "") or ""
-                    break
-        if ans is not None:
-            ans.answer_text = _normalize_token_in_context(ans.answer_text, c_word, i_word, err_text, ctx, lexicon)
-        targets = [p for p in page_results if ans is None or not ans.page_numbers or p.page_no in ans.page_numbers]
-        for p in targets:
-            # ONLY normalize per-page verified_transcript if c_word is an out-of-vocabulary non-word or strikethrough!
-            # Stage 2 verified_transcript is authoritative and must not be mutated for valid dictionary words.
-            if lexicon is not None and c_word.lower() in lexicon and not i_word.startswith("[struck:"):
-                continue
-            p.stage2_verification.verified_transcript = _normalize_token_in_context(
-                p.stage2_verification.verified_transcript, c_word, i_word, err_text, ctx, lexicon
-            )
-        n += 1
-    return n
+    """
+    Surface Immutability Invariant:
+    Arbitration clears/waives linguistic error deductions in Stream 2, but MUST NEVER
+    mutate the frozen Stream 1 transcript or answer text. Surface text is immutable.
+    """
+    return 0
 
 
 def _rebuild_combined_verified(page_results: List[PageExtractionResult]) -> str:
@@ -444,7 +418,21 @@ class ScriptCheckingPipeline:
         pdf_to_render = input_source
 
         if isinstance(input_source, str) and is_pdf(input_source):
-            clean_candidate = os.path.join("data/cleaned_pdfs", paper, f"{script_id}.pdf")
+            clean_dir = os.path.join("data/cleaned_pdfs", paper)
+            clean_candidate = os.path.join(clean_dir, f"{script_id}.pdf")
+            if not os.path.exists(clean_candidate) and os.path.exists("clean_pdf.py"):
+                try:
+                    os.makedirs(clean_dir, exist_ok=True)
+                    print(f"[Extraction] 🧼 Auto-cleaning raw PDF to {clean_candidate}...")
+                    import subprocess
+                    subprocess.run(
+                        [sys.executable, "clean_pdf.py", input_source, "-o", clean_candidate],
+                        check=True,
+                        capture_output=True
+                    )
+                except Exception as ex:
+                    print(f"[Extraction] ⚠️ Auto-cleaning failed ({ex}). Falling back to raw PDF.")
+
             if os.path.exists(clean_candidate):
                 print(f"[Extraction] 🧼 Using pre-cleaned PDF: {clean_candidate}")
                 pdf_to_render = clean_candidate
@@ -480,6 +468,9 @@ class ScriptCheckingPipeline:
 
         # Dedicated output directory for this script
         base_out = output_dir or self.config.pipeline.output_dir
+        paper_folder = paper_folder_name(script_id, lang=paper)
+        if paper_folder and base_out.rstrip("/").endswith(("outputs/extracted", f"outputs/extracted/{paper}", "outputs/extracted/bangla", "outputs/extracted/english")):
+            base_out = os.path.join(base_out, paper_folder)
         script_output_dir = os.path.join(base_out, script_id)
         checkpoint_dir = os.path.join(script_output_dir, "checkpoints")
         os.makedirs(checkpoint_dir, exist_ok=True)
@@ -515,6 +506,7 @@ class ScriptCheckingPipeline:
             # ---------------------------------------------------------
             # STAGE 0 & 0.5: OpenCV Red-Ink & Strikethrough Pre-Detection
             # ---------------------------------------------------------
+            t_mask = None
             if is_pre_cleaned:
                 print(f"[Extraction] [0/3] Stage 0: Pre-cleaned canvas -> Bypassing red-ink detection for Page {page_no}.")
                 stage0_res = RedInkDetectionResult(
@@ -552,6 +544,7 @@ class ScriptCheckingPipeline:
                 strikethrough_detected=stage0_strike_res.has_strikethrough,
                 strikethrough_region_count=stage0_strike_res.region_count,
                 strikethrough_regions=stage0_strike_res.regions,
+                strikethrough_blocks=stage0_strike_res.blocks,
                 temperature=decoding.temperature,
                 top_p=decoding.top_p,
                 max_new_tokens=decoding.max_new_tokens,
@@ -567,24 +560,29 @@ class ScriptCheckingPipeline:
             pre_analysis = run_stage2_pre_analysis(
                 stage1_transcript=stage1_result.raw_transcript,
                 strikethrough_regions=stage0_strike_res.regions if stage0_strike_res.has_strikethrough else None,
+                strikethrough_blocks=stage0_strike_res.blocks if stage0_strike_res.blocks else None,
                 question_vocab=set(question_vocab) if question_vocab else None
             )
 
-            conditional_stage2 = getattr(self.cfg.pipeline, "stage2_conditional", True) if hasattr(self, "cfg") and hasattr(self.cfg, "pipeline") else True
+            pipe_cfg = getattr(self.config, "pipeline", None)
+            enable_vlm_stage2 = getattr(pipe_cfg, "enable_vlm_stage2", True) if pipe_cfg else True
+            conditional_stage2 = getattr(pipe_cfg, "stage2_conditional", True) if pipe_cfg else True
 
-            if skip_stage2 or (conditional_stage2 and not pre_analysis.should_trigger_stage2 and not force_extract):
-                bypass_reason = "Fast mode enabled" if skip_stage2 else "Stage 1 transcript clean (0 OCR glitches, 0 strike gaps, 0 split tokens, 0 unclear markers)"
-                print(f"[Extraction] [2/3] Stage 2: Skipped ({bypass_reason}). Preserving Stage 1 verbatim. [Context: 0 tokens (bypassed)]")
+            if not enable_vlm_stage2 or skip_stage2 or (conditional_stage2 and not pre_analysis.should_trigger_stage2 and not force_extract):
+                bypass_reason = "Deterministic CPU Stage 2 locked (Surface Immutability Invariant)" if not enable_vlm_stage2 else ("Fast mode enabled" if skip_stage2 else "Stage 1 transcript clean (0 OCR glitches, 0 strike gaps, 0 split tokens, 0 unclear markers)")
+                print(f"[Extraction] [2/3] Stage 2: {bypass_reason}. Preserving Stage 1 verbatim. [Context: 0 tokens (bypassed)]")
                 stage2_result = Stage2VerificationResult(
                     verified_transcript=stage1_result.raw_transcript,
                     silent_corrections_fixed=[],
                     proposed_patches=[],
                     total_corrections_count=0,
-                    verification_notes=f"Conditional bypass ({bypass_reason}); Stage 1 verbatim preserved."
+                    verification_notes="Fast mode enabled; Stage 1 verbatim preserved." if skip_stage2 else "Deterministic Stage 2; Stage 1 verbatim preserved."
                 )
                 u2 = {}
             else:
                 audit_triggers = []
+                if stage0_strike_res.blocks:
+                    audit_triggers.append(f"{len(stage0_strike_res.blocks)} multi-line strike blocks")
                 if pre_analysis.strike_gap_count > 0:
                     audit_triggers.append(f"strike gap ({pre_analysis.strike_gap_count} unverified strokes)")
                 if pre_analysis.likely_glitches:
@@ -604,6 +602,7 @@ class ScriptCheckingPipeline:
                     question_reference_vocab=question_vocab if question_obj else None,
                     question_reference_numerals=question_numerals if question_obj else None,
                     strikethrough_regions=stage0_strike_res.regions,
+                    strikethrough_blocks=stage0_strike_res.blocks,
                     teacher_mask=t_mask,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
@@ -613,6 +612,20 @@ class ScriptCheckingPipeline:
                 u2 = self.engine.get_last_usage()
                 ctx2 = self.engine.format_last_usage()
                 print(f"[Extraction] [2/3] Stage 2 Verified -> {stage2_result.total_corrections_count} patches applied {ctx2}")
+
+            # ---------------------------------------------------------
+            # STAGE 2.5: Neuro-Symbolic Strikethrough Grounding & False-Strike Elimination
+            # ---------------------------------------------------------
+            page_candidate_text = stage2_result.verified_transcript or stage1_result.raw_transcript
+            grounded_page_text, ground_diffs = ground_and_reconcile_strikethroughs(
+                page_candidate_text,
+                strikethrough_regions=stage0_strike_res.regions,
+                strikethrough_blocks=stage0_strike_res.blocks,
+                underlines=stage0_strike_res.underlines
+            )
+            if ground_diffs:
+                print(f"[Extraction] 🎯 Strikethrough Grounding (Page {page_no}): Applied {len(ground_diffs)} reconciliation(s): {[d.get('type') for d in ground_diffs]}")
+                stage2_result.verified_transcript = grounded_page_text
 
             # ---------------------------------------------------------
             # STAGE 0b: Teacher Mark Extraction (Conditional on Margin Red Ink)
@@ -781,11 +794,12 @@ class ScriptCheckingPipeline:
             question_vocab=set(question_vocab or [])
         )
 
-        # 1. Apply discovered allographs to transcript
-        calibrated_verified, allograph_diffs = allograph_calibrator.apply_adaptations(
-            combined_verified,
-            writer_profile
-        )
+        # 1. Surface Immutability Invariant:
+        # Calibrator is strictly diagnostic and populates WriterProfile priors for Stage 3b visual arbitration.
+        # It is forbidden from mutating the transcript text.
+        calibrated_verified = combined_verified
+        allograph_diffs = []
+
 
         # 2. Stitch intra-word pen-lift splits (e.g. "elec tricity", "pro blems", "Hy dro - electric")
         stitched_verified, stitch_diffs = stitch_pen_lift_splits(
@@ -909,21 +923,33 @@ class ScriptCheckingPipeline:
         # Run Stage 3 targeted per question
         if aligned_answers and len(aligned_answers) > 1:
             for ans in aligned_answers:
-                is_obj = is_objective_question(ans.q_no, ans.q_name, "")
-                if is_obj:
-                    # Objective question (Flowchart, MCQ, Cloze, Rearranging)
-                    # Graded against factual answer key; 0 essay linguistic deductions
-                    ans.errors = []
-                    continue
+                # Schema-driven pedagogical routing: look up matched sub-question
+                matched_sq_text = ""
+                matched_sq_type = ""
+                if question_obj and question_obj.sub_questions:
+                    clean_ans_q = re.sub(r'[^a-zA-Z0-9]', '', str(ans.q_no)).lower()
+                    for sq in question_obj.sub_questions:
+                        sq_no = re.sub(r'[^a-zA-Z0-9]', '', str(sq.get("q_no") or sq.get("part") or "")).lower()
+                        if sq_no and (sq_no == clean_ans_q or clean_ans_q.startswith(sq_no) or sq_no.startswith(clean_ans_q)):
+                            matched_sq_text = f"{sq.get('name', '')} {sq.get('title', '')} {sq.get('text', '')}"
+                            matched_sq_type = str(sq.get('question_type', ''))
+                            break
 
+                is_obj = (
+                    is_objective_question(ans.q_no, ans.q_name or "", matched_sq_text)
+                    or "objective" in matched_sq_type.lower()
+                    or "mcq" in matched_sq_type.lower()
+                    or "cloze" in matched_sq_type.lower()
+                    or "matching" in matched_sq_type.lower()
+                )
                 ans_text = ans.answer_text.strip()
                 if len(ans_text.split()) < 3:
                     ans.errors = []
                     continue
 
                 ans_words = len(ans_text.split())
-                if ans_words > 150:
-                    chunks = _chunk_text_by_sentences(ans_text, target_words=120)
+                if ans_words > 350:
+                    chunks = _chunk_text_by_sentences(ans_text, target_words=300)
                     chunk_errors: List[LinguisticErrorItem] = []
                     for chunk in chunks:
                         c_err_res = self.stage3.run(
@@ -941,14 +967,16 @@ class ScriptCheckingPipeline:
                         u3_comp += usage.get("completion_tokens", 0)
                         u3_total += usage.get("total_tokens", 0)
 
-                    # Deduplicate chunk errors
-                    seen_errs = set()
-                    deduped: List[LinguisticErrorItem] = []
+                    # Deduplicate chunk errors on (erroneous_text, context_sentence), preferring spelling
+                    seen_errs = {}
                     for e in chunk_errors:
-                        key = (e.error_type.lower(), e.erroneous_text.lower().strip(), e.suggested_correction.lower().strip())
-                        if key not in seen_errs:
-                            seen_errs.add(key)
-                            deduped.append(e)
+                        t_key = (e.erroneous_text.lower().strip(), e.context_sentence.lower().strip())
+                        if t_key not in seen_errs:
+                            seen_errs[t_key] = e
+                        elif "spell" in e.error_type.lower() and "spell" not in seen_errs[t_key].error_type.lower():
+                            # Prioritize spelling classification when an identical token is flagged under both
+                            seen_errs[t_key] = e
+                    deduped = list(seen_errs.values())
 
                     # Post-filter against full answer text to catch line-end edge truncations
                     from src.utils.linguistic_sanitizer import verify_and_filter_stage3_errors
@@ -983,10 +1011,24 @@ class ScriptCheckingPipeline:
                     u3_comp += usage.get("completion_tokens", 0)
                     u3_total += usage.get("total_tokens", 0)
 
+                if is_obj:
+                    # Objective questions (Cloze, Fill-in-the-gap, MCQ, Flowchart, Matching)
+                    # Isolated short answers lack full clausal structure, so syntax/grammar deductions are invalid.
+                    # Keep ONLY genuine spelling errors (e.g. 'allain', 'discoounage').
+                    q_err_res.errors = [e for e in q_err_res.errors if "spell" in e.error_type.lower()]
+                    q_err_res.grammar_error_count = 0
+                    q_err_res.syntax_error_count = 0
+                    q_err_res.punctuation_error_count = 0
+                    q_err_res.total_error_count = len(q_err_res.errors)
+
                 # -------------------------------------------------------------
                 # STAGE 3b: Handwriting Ambiguity Arbitration (Benefit of the Doubt)
                 # -------------------------------------------------------------
-                if q_err_res.errors and page_images and arb_mode != "off":
+                should_arbitrate = bool(
+                    q_err_res.errors
+                    or (gate is not None and getattr(gate.cfg, "lexicon_scan", True) and ans_words >= 3)
+                )
+                if should_arbitrate and page_images and arb_mode != "off":
                     ans_pno = ans.page_numbers[0] if ans.page_numbers else 1
                     target_p_img = page_images[ans_pno - 1][1] if (1 <= ans_pno <= len(page_images)) else page_images[0][1]
                     original_errs = list(q_err_res.errors)
@@ -1240,6 +1282,12 @@ class ScriptCheckingPipeline:
 
         root_dataset_csv = os.path.join(base_out, "raw_tier_dataset.csv")
         export_raw_tier_csv(raw_tier_records, root_dataset_csv)
+
+        # Also maintain top-level language dataset CSV if base_out is a subfolder under outputs/extracted/<lang>
+        parent_dir = os.path.dirname(base_out)
+        if "outputs/extracted" in parent_dir:
+            parent_dataset_csv = os.path.join(parent_dir, "raw_tier_dataset.csv")
+            export_raw_tier_csv(raw_tier_records, parent_dataset_csv)
 
         print(f"[Extraction] Saved Raw-Tier CSV -> {root_dataset_csv}")
         print(f"[Extraction] Extraction Complete for '{script_id}' in {elapsed}s.")

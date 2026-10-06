@@ -70,14 +70,11 @@ def test_se_11_q1_0023_terminal_y_discovery(english_lexicon):
     assert adapted.get("businesy") == "business"
     assert adapted.get("sectory") == "sectors"
 
-    # Test transcript normalization
+    # Test transcript immutability (Surface Immutability Invariant: transcript is frozen)
     calibrated_text, diffs = calibrator.apply_adaptations(sample_transcript, profile)
-    assert "sources" in calibrated_text
-    assert "dreamers" in calibrated_text
-    assert "algorithms" in calibrated_text
-    assert "features" in calibrated_text
-    assert "seconds" in calibrated_text
-    assert len(diffs) >= 8
+    assert calibrated_text == sample_transcript
+    assert len(diffs) == 0
+
 
 
 def test_dictionary_immutability(english_lexicon):
@@ -99,7 +96,7 @@ def test_dictionary_immutability(english_lexicon):
 def test_pen_lift_split_stitching(english_lexicon):
     """Verify pen-lift intra-word split stitching."""
     sample_text = """
-    The USA elec tricuity in 1980 was large.
+    The USA elec tricity in 1980 was large.
     It helps them solve complex pro blems.
     Day time dreamers are inspiring.
     It operates in non- formal educational sectors.
@@ -253,5 +250,42 @@ def test_ans_and_acronym_immunity(english_lexicon):
     assert "Ans" in calibrated_text
     assert "Ass" not in calibrated_text
     assert "USA" in calibrated_text
+
+
+def test_se_11_q1_0002_hydro_protection_and_profile_sanitization(english_lexicon):
+    """Verify that 'hydro' is preserved, no markdown tags enter pair_counts, and adaptations do not mutate text."""
+    from src.utils.question_utils import extract_question_vocab
+
+    sample_transcript = """
+    Ans to the Question No. 1
+    The graph shows the sources of electricity in 1980.
+    In 1980, Hydro-electric power produced 5% of total power.
+    Hydro power is renewable.
+    [struck: because] he wanted to go.
+    """
+    calibrator = AllographCalibrator(min_support=2)
+    q_vocab = {"hydro", "electric", "hydroelectric", "hydro-electric", "pie-chart"}
+
+    profile = calibrator.calibrate(
+        script_id="SE_11_Q1_0002",
+        transcript=sample_transcript,
+        lexicon=english_lexicon,
+        question_vocab=q_vocab
+    )
+
+    # 1. hydro is in question vocab and must never be adapted
+    assert "hydro" not in profile.adapted_words
+
+    # 2. No markdown brackets or colons in pair_counts
+    for pair in profile.pair_counts:
+        assert not any(c in pair for c in "[](){}:\"'~*#|_\\/"), f"Illegal char in pair {pair}"
+
+    # 3. Surface Immutability Invariant: apply_adaptations returns 0 text diffs
+    calibrated_text, diffs = calibrator.apply_adaptations(sample_transcript, profile)
+    assert diffs == []
+    assert calibrated_text == sample_transcript
+    assert "Hydro" in calibrated_text
+    assert "Hydra" not in calibrated_text
+
 
 

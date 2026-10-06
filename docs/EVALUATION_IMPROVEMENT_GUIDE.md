@@ -80,7 +80,7 @@ fix it.
 ### What you do
 **1.1 Extract the remaining scripts.** Grading needs more than 4 scripts.
 ```bash
-python scripts/extract_scripts.py --lang english --non-interactive
+python scripts/extract_scripts.py --lang english --pdf-dir data/raw_pdfs/english/se_11_q1 --non-interactive
 ```
 Already-extracted scripts are skipped.
 

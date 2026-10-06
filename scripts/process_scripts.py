@@ -42,6 +42,7 @@ from rich.prompt import Prompt, Confirm
 from src.core.config import load_config
 from src.engine.engine_factory import create_engine
 from src.pipeline.orchestrator import ScriptCheckingPipeline
+from src.utils.script_files import list_script_files, paper_folders, describe_paper_folders
 from scripts.download_drive_pdfs import (
     download_drive_pdfs,
     GDRIVE_FOLDERS,
@@ -80,6 +81,15 @@ def interactive_wizard(args):
     # Automatically set separate paths and appropriate default rubric based on language
     if args.pdf_dir in ["data/raw_pdfs", "data/raw_pdfs/bangla", "data/raw_pdfs/english"]:
         args.pdf_dir = f"data/raw_pdfs/{args.lang}"
+    # Scripts organised one folder per question paper (e.g. se_11_q1/, se_10_q1/): pick one
+    folders = paper_folders(args.pdf_dir, (".pdf",))
+    if folders and not list_script_files(args.pdf_dir, (".pdf",)):
+        names = list(folders)
+        console.print("\n[bold green]   Question Paper:[/bold green]")
+        for i, name in enumerate(names, 1):
+            console.print(f"   [[bold cyan]{i}[/bold cyan]] {name} ({folders[name]} scripts) [yellow]-> {os.path.join(args.pdf_dir, name)}[/yellow]")
+        paper_choice = Prompt.ask("[bold green]   Select Question Paper[/bold green]", choices=[str(i) for i in range(1, len(names) + 1)], default="1")
+        args.pdf_dir = os.path.join(args.pdf_dir, names[int(paper_choice) - 1])
     if args.output_dir in ["outputs/runs", "outputs/runs/bangla", "outputs/runs/english"]:
         args.output_dir = f"outputs/runs/{args.lang}"
     if args.gdrive_url in [DEFAULT_GDRIVE_FOLDER_BANGLA, DEFAULT_GDRIVE_FOLDER_ENGLISH]:
@@ -438,14 +448,14 @@ def main():
             return
     else:
         console.print(f"\n[bold]Step 1: Discovering Local Exam Script PDFs in '{args.pdf_dir}'...[/bold]")
-        if os.path.exists(args.pdf_dir):
-            found = list(Path(args.pdf_dir).glob("*.pdf")) + list(Path(args.pdf_dir).glob("*.PDF"))
-            pdf_paths = sorted(list(set(str(p) for p in found)))
-        else:
-            pdf_paths = []
+        pdf_paths = list_script_files(args.pdf_dir, (".pdf",))
 
     if not pdf_paths:
         console.print(f"[red]No PDF scripts found in '{args.pdf_dir}'.[/red]")
+        hint = describe_paper_folders(args.pdf_dir, (".pdf",))
+        if hint:
+            console.print(f"[yellow]{hint}[/yellow]")
+            return
         console.print(f"[yellow]To download scripts first, run:[/yellow]")
         console.print(f"  python3 scripts/download_drive_pdfs.py --lang {args.lang} --top 5\n")
         return

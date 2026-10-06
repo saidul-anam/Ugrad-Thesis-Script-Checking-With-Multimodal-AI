@@ -58,6 +58,8 @@ class PipelineStageConfig(BaseModel):
     stage0b_teacher_marks: bool = Field(True, description="Whether to execute Stage 0b red-ink teacher mark extraction")
     stage1_verbatim: bool = True
     stage2_verification: bool = True
+    enable_vlm_stage2: bool = Field(True, description="Enable VLM Stage 2 verification when conditional triggers fire")
+    stage2_conditional: bool = Field(True, description="Enable 5-point cascaded page routing for Stage 2")
     stage3_error_extraction: bool = True
     stage4_rubric_evaluation: bool = True
     stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
@@ -98,6 +100,8 @@ class ArbitrationConfig(BaseModel):
     threshold_ambiguity: float = Field(0.65, description="score >= => HANDWRITING_AMBIGUITY")
     threshold_genuine: float = Field(0.35, description="score <= => GENUINE_ERROR; between => UNCERTAIN")
     save_crops: bool = Field(True)
+    max_visual_crops: int = Field(45, description="Max visual crop VLM calls per script to bound runtime")
+    max_crops_per_question: int = Field(6, description="Max visual crops per question section to prevent early starvation")
     lexicon_scan: bool = Field(False, description="Also gate non-dictionary tokens Stage 3 did not flag (dictionary lookup, no letter rules)")
     weights: ArbitrationWeights = Field(default_factory=ArbitrationWeights)
 

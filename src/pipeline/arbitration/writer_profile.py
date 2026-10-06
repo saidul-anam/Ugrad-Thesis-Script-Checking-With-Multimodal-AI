@@ -43,6 +43,16 @@ class WriterProfile(BaseModel):
     def add_pair(self, key: str, source: str, token: str = "", anchor: str = "", weight: int = 1) -> None:
         if not key:
             return
+        # Guard: never record markdown tags, punctuation brackets, or non-alphabetics
+        if any(c in key for c in "[](){}:\"'`~*#|_\\/"):
+            return
+        parts = key.split(">")
+        if len(parts) == 2:
+            src_c, tgt_c = parts[0], parts[1]
+            if src_c != "∅" and not src_c.isalpha():
+                return
+            if tgt_c != "∅" and not tgt_c.isalpha():
+                return
         self.pair_counts[key] = self.pair_counts.get(key, 0) + weight
         self.evidence.append({"key": key, "source": source, "token": token, "anchor": anchor})
 
@@ -64,23 +74,23 @@ class WriterProfile(BaseModel):
             if c_low in orig_parts:
                 return True
         for rule_key, tgt in self.discovered_allographs.items():
-            if rule_key == "terminal_y" and tgt == "s":
-                if c_low.endswith("y") and i_low.endswith("s") and c_low[:-1] == i_low[:-1]:
-                    return True
-                if c_low.replace("ey", "ess") == i_low or c_low.replace("y", "s") == i_low:
-                    return True
-            if rule_key == "curvy_s" and tgt == "s":
-                if (c_low.replace("n", "s") == i_low or i_low.replace("n", "s") == c_low):
-                    return True
-            if rule_key == "cursive_vr" and tgt == "v":
-                if c_low.replace("r", "v") == i_low:
-                    return True
             if rule_key.startswith("allograph_"):
                 parts = rule_key.split("_")
                 if len(parts) == 3:
                     src_c, tgt_c = parts[1], parts[2]
                     if (c_low.replace(src_c, tgt_c) == i_low or i_low.replace(src_c, tgt_c) == c_low):
                         return True
+            elif rule_key == "terminal_y" and tgt == "s":
+                if (c_low.endswith("y") and c_low[:-1] + "s" == i_low) or (i_low.endswith("y") and i_low[:-1] + "s" == c_low):
+                    return True
+            elif rule_key == "curvy_s" and tgt == "s":
+                if c_low.replace("y", "s") == i_low or c_low.replace("n", "s") == i_low:
+                    return True
+            elif rule_key == "cursive_vr" and tgt == "v":
+                if (c_low.replace("r", "v") == i_low or 
+                    i_low.replace("r", "v") == c_low or
+                    (len(c_low) == len(i_low) and c_low[:1] == i_low[:1] and c_low[-1:] == i_low[-1:] and "r" in c_low and "v" in i_low)):
+                    return True
         return False
 
 
@@ -155,9 +165,21 @@ def add_consensus_disagreements(profile: WriterProfile, columns: List[List[str]]
 
 def add_candidate_evidence(profile: WriterProfile, candidate_token: str, intended_token: str) -> None:
     """Source (c): a gated candidate contributes its edit path once (after it has been scored)."""
-    for o in align_chars(candidate_token.lower(), intended_token.lower()):
-        if o.op != "match":
+    if not candidate_token or not intended_token:
+        return
+    c_low = candidate_token.strip().lower()
+    i_low = intended_token.strip().lower()
+    # Guard against strikethrough markup tags or non-words
+    if "[" in c_low or "]" in c_low or "[" in i_low or "]" in i_low:
+        return
+    if "struck" in c_low or "struck" in i_low:
+        return
+    if not _WORD_RE.match(c_low) or not _WORD_RE.match(i_low):
+        return
+    for o in align_chars(c_low, i_low):
+        if o.op != "match" and o.key:
             profile.add_pair(o.key, source="stage3", token=candidate_token, anchor=intended_token)
+
 
 
 def writer_prior(profile: WriterProfile, ops: List[EditOp], min_count: int = 2) -> Tuple[float, int]:

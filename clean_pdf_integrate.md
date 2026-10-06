@@ -146,7 +146,7 @@ Create a dedicated CLI tool that handles human examiner marks independently of t
 #### 3.1 Batch Process Corpus PDFs
 Execute [`clean_pdf.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/clean_pdf.py) across all raw exam scripts:
 ```bash
-python3 clean_pdf.py data/raw_pdfs/english/ \
+python3 clean_pdf.py data/raw_pdfs/english/se_11_q1/ \
   -o data/cleaned_pdfs/english/ \
   --qa data/cleaned_qa/english/ \
   --report data/cleaned_pdfs/english_clean_report.csv
@@ -196,7 +196,7 @@ Update the core pipeline orchestrator to automatically detect and consume pre-cl
 |---|---|---|---|
 | **V1** | Unit Tests | `pytest tests/test_linguistic_sanitizer.py tests/test_repair_checkpoints.py` | All existing unit tests pass |
 | **V2** | Logic Fix Unit Test | Run test script on `SE_11_Q1_0002` transcript snippet containing `and’s’’’’’’’’` and `Dans:` | Punctuation collapsed to `’s`; `Dans:` parsed to `(d) Ans:` |
-| **V3** | Batch Clean `SE_11_Q1_0002` | `python3 clean_pdf.py data/raw_pdfs/english/SE_11_Q1_0002.pdf -o data/cleaned_pdfs/english/SE_11_Q1_0002.pdf --qa data/cleaned_qa/english/` | Pages 11 & 13 have white background; red marks removed |
+| **V3** | Batch Clean `SE_11_Q1_0002` | `python3 clean_pdf.py data/raw_pdfs/english/se_11_q1/SE_11_Q1_0002.pdf -o data/cleaned_pdfs/english/SE_11_Q1_0002.pdf --qa data/cleaned_qa/english/` | Pages 11 & 13 have white background; red marks removed |
 | **V4** | Standalone Teacher Marks | `python3 scripts/extract_teacher_marks.py --lang english --script SE_11_Q1_0002` | Generates valid `stage0b_teacher_marks.json` with reconciled marks |
 | **V5** | Clean Transcription | `python3 scripts/extract_scripts.py --lang english --script SE_11_Q1_0002 -y` | 0 bleed loops, 0 punctuation runs, full Stage 3 completion |
 | **V6** | Comparative Benchmark | Run `scripts/evaluate_transcription.py` on clean output | WER drops below 7%, silent-correction rate drops below 8% |

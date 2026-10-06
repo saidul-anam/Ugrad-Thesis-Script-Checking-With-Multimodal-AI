@@ -176,9 +176,21 @@ def export_extraction_summary_markdown(result: ExtractionResult, output_path: st
             if is_obj:
                 md_lines.extend([
                     f"### Question {q_no}: {q_name} `[Objective]`",
-                    "> *Objective Question: Student answer is evaluated on factual content against the answer key. Subjective linguistic deductions are bypassed.*",
+                    "> *Objective Question: Student answer is evaluated on factual content against the answer key. Subjective grammar/syntax deductions are bypassed, but orthographic spelling in fill-in-the-blank tokens is audited.*",
                     ""
                 ])
+                if q_errors:
+                    md_lines.extend([
+                        "| Type | Erroneous Text | Suggested Correction | Context Sentence | Explanation |",
+                        "| --- | --- | --- | --- | --- |"
+                    ])
+                    for err in q_errors:
+                        etype = err.get("error_type", "spelling")
+                        etext = err.get("erroneous_text", "")
+                        ecorr = err.get("suggested_correction", "")
+                        ectx = err.get("context_sentence", "")
+                        eexpl = err.get("explanation", "")
+                        md_lines.append(f"| **{etype}** | `{etext}` | `{ecorr}` | *\"{ectx}\"* | {eexpl} |")
             else:
                 md_lines.append(f"### Question {q_no}: {q_name} `[Subjective Writing]`")
                 if q_errors:

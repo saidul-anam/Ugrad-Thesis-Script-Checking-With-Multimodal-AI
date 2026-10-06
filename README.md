@@ -10,7 +10,7 @@ The raw handwritten script PDFs are hosted at:
 > [Google Drive Folder](https://drive.google.com/drive/folders/11spWhJTncBfM_qsOvpH17AgduhyQpqSN)
 
 The pipeline includes built-in smart caching:
-- PDFs are downloaded locally into `data/raw_pdfs/`.
+- PDFs are stored locally under `data/raw_pdfs/<lang>/`, one folder per question paper (e.g. `data/raw_pdfs/english/se_11_q1/`, `data/raw_pdfs/english/se_10_q1/`).
 - **Already downloaded PDFs are automatically detected and NOT redownloaded.**
 - Use `--top N` to control how many PDF scripts to download and evaluate in one batch.
 

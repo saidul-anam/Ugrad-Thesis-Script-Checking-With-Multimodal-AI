@@ -194,6 +194,25 @@ def is_right_edge_truncation(
     if err_clean == corr_clean:
         return False
 
+    # Multi-word phrase edge truncation check:
+    # If the LLM extracted a multi-word phrase whose terminal token is truncated at the right margin
+    # (e.g. 'admitted into a Dhaka Univers' -> 'get admitted to Dhaka University',
+    # or 'Dhaka Univers' -> 'Dhaka University'), check the terminal token pair.
+    if " " in err_clean:
+        err_tokens = err_clean.split()
+        corr_tokens = corr_clean.split()
+        last_err = err_tokens[-1]
+        last_corr = corr_tokens[-1] if corr_tokens else corr_clean
+        if last_err != last_corr:
+            if is_right_edge_truncation(
+                erroneous_text=last_err,
+                suggested_correction=last_corr,
+                context_sentence=context_sentence,
+                transcript=transcript,
+                lexicon=lexicon
+            ):
+                return True
+
     # 2. Check position: Is err_clean at the right edge of a physical line?
     is_at_line_end = False
 

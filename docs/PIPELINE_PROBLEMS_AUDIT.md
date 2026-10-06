@@ -1,269 +1,275 @@
-# Comprehensive Pipeline Problems Audit & Architectural Redesign RFC
+# Master Pipeline Problems Audit & Architectural Remediation RFC
 
 > **Document Type**: Master Unified Audit & Architectural RFC  
 > **Target System**: Multimodal AI Exam Script Checking & Grading Pipeline  
-> **Engine**: `google/gemma-4-31b-it` @ 4bit quantization on NVIDIA RTX 5090 (Blackwell)  
-> **Evaluation Base**: 15 Human-Verified Ground Truth Pages across 5 Representative Student Scripts (`SE_11_Q1_0002`, `0006`, `0010`, `0011`, `0013`)  
-> **Latest Milestone**: Pre-cleaned PDF integration verified on `SE_11_Q1_0002` (Page 11 CER cut by >50%, 0 bleed-through loops, 100% authentic student non-words preserved).
+> **Vision-Language Engine**: `google/gemma-4-31b-it` @ 4-bit quantization on NVIDIA RTX 5090 (Blackwell)  
+> **Evaluation Base**: 
+> 1. **SE_11_Q1 Cohort**: 19 Extracted English Exam Scripts (`SE_11_Q1_0001` through `SE_11_Q1_0019`), with 15 Human-Verified Ground Truth Pages across 5 Representative Student Scripts (`0002`, `0006`, `0010`, `0011`, `0013`).
+> 2. **SE_10_Q1 Cohort**: 33 Extracted English Exam Scripts (`SE_10_Q1_0001` through `SE_10_Q1_0033`), with **56 Human-Verified Ground Truth Page Checkpoints** across 28 Student Scripts (`SE_10_Q1_0001` through `SE_10_Q1_0028` covering Q10 & Q11 long-form narrative and dialogue questions).  
+> **Date**: October 6, 2026  
+> **Status**: Comprehensive Master Issue Audit (Active & Newly Discovered Issues Only)  
 
 ---
 
-## 1. Executive Summary & Ground-Truth Empirical Findings
+## 1. Executive Summary & Macro Evaluation Metrics
 
-### 1.1 The Core Dilemma
-In an automated, high-stakes exam assessment system, transcription and linguistic evaluation must balance two competing objectives:
-1. **Pedagogical Authenticity (Verbatim Preservation)**: The system must faithfully preserve authentic student misspellings (`intelligane`, `softwor`, `feak`, `libary`), grammatical slips, and physical strike-outs so that downstream evaluation stages can assign accurate, rubric-aligned marks.
-2. **Perceptual Accuracy (OCR Glitch Repair)**: The system must repair machine transcription glitches (broken ligatures, missed letters, split tokens across pen-lifts) without hallucinating changes to the student's actual text.
+### 1.1 The Dual Mission of Pedagogical Script Checking
+The automated exam script checking pipeline operates under two foundational mandates:
+1. **Pedagogical Authenticity (Verbatim Preservation)**: Faithfully capture authentic student misspellings (`libary`, `strensth`, `fallfill`, `privecy`, `proplems`, `proffesional`, `suffuring`, `aslo`, `conspiricy`), grammatical slips, and physical strike-outs so that downstream rubric grading assigns fair, curriculum-aligned deductions.
+2. **Benefit of the Doubt (Handwriting Ambiguity & Active Text Protection)**: Protect legitimate handwriting flourishes, cursive minim doubling (`corre` $\leftrightarrow$ `core`), loop mergers (`illustrodes` $\leftrightarrow$ `illustrates`), uncrossed ascenders (`allain` $\leftrightarrow$ `attain`), and active unstruck words from being penalized or mistakenly erased.
 
-### 1.2 Ground-Truth Benchmark Results (15 Verified Pages Across 5 Scripts)
+### 1.2 Quantitative Benchmark Results: SE_10_Q1 vs Ground Truth
+Evaluating all 56 page checkpoints across 28 scripts against human-verified transcripts in [`data/ground_truth/transcripts/english_se_10_q1`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/data/ground_truth/transcripts/english_se_10_q1) revealed that **Stage 2 and Stage 3 currently introduce net error regressions, actively escalating CER and WER over Stage 1**:
 
-Prior to our modular cleaning and logic hardening, evaluating the full pipeline across all 15 human-verified Ground Truth pages revealed that **Stage 2 VLM verification severely degraded pipeline accuracy rather than improving it**:
-
-| Metric | Stage 1 (Verbatim HTR) | Stage 1 + Stage 2 (VLM Verified) | Net Impact | SOTA Target |
-|---|:---:|:---:|:---:|:---:|
-| **Character Error Rate (CER Macro)** | 7.43% | **8.07%** | **+0.64% (WORSE)** | $\le 4.0\%$ |
-| **Character Error Rate (CER Micro)** | 5.61% | **6.58%** | **+0.97% (WORSE)** | $\le 4.0\%$ |
-| **Word Error Rate (WER Macro)** | 10.08% | **11.12%** | **+1.04% (WORSE)** | $\le 6.0\%$ |
-| **Word Error Rate (WER Micro)** | 7.61% | **9.07%** | **+1.46% (WORSE)** | $\le 6.0\%$ |
-| **Student Non-Words Preserved** | 75 / 87 (86.2%) | 66 / 87 (75.9%) | **-9 non-words (WORSE)** | $100\%$ |
-| **Silent-Correction Rate** | 13.79% | **24.14%** | **Nearly Doubled (+10.35%)** | $0.0\%$ |
-| **Per-Page VLM Latency** | ~25s | **~75s (+50s)** | **3x Slower** | Fast |
-
-### 1.3 Audit Breakdown of Stage 2 Actions
-Auditing every patch proposed by Stage 2 across the Ground Truth scripts revealed an unacceptable distribution:
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   STAGE 2 PATCH AUDIT DISTRIBUTION                     │
-├────────────────────────────────────────────────────────────────────────┤
-│  [■] A: Legitimate OCR Glitch Fixes:       1 patch   ( 3.1%)           │
-│  [■] B: Destructive Autocorrection:       19 patches (59.4%)           │
-│  [■] D: Phantom / Formatting Mutations:   12 patches (37.5%)           │
-│                                                                        │
-│  TOTAL AUDITED PATCHES:                   32 patches (100.0%)          │
-│                                                                        │
-│  CRITICAL FINDING: 96.9% of Stage 2's actions are destructive or       │
-│  phantom mutations. Only 3.1% represent legitimate OCR improvements!   │
-└────────────────────────────────────────────────────────────────────────┘
-```
-
-### 1.4 Benchmark Validation on Pre-Cleaned Canvas (`SE_11_Q1_0002`)
-Deploying upstream document pre-cleaning via [`clean_pdf.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/clean_pdf.py) and defaulting to `--fast` deterministic CPU mode produced an immediate turnaround:
-
-| Metric / Page | Raw PDF (Baseline 20261003) | Pre-Cleaned Canvas + Fast Mode (Current) | Absolute Gain |
-|---|:---:|:---:|:---:|
-| **Page 5 CER (Stage 1)** | 1.1% (0.011) | **1.1% (0.011)** | Pristine transcript preserved |
-| **Page 10 CER (Stage 1)** | 1.1% (0.011) | **1.1% (0.011)** | Pristine transcript preserved |
-| **Page 11 CER (Stage 1)** | 20.1% (0.201) | **10.0% (0.100)** | **Cut by > 50% (Halved Error Rate)** |
-| **Page 11 WER (Stage 1+2)** | 20.5% (0.205) | **12.8% (0.128)** | **37.5% Relative WER Reduction** |
-| **Script Macro CER (Stage 1)** | 7.4% (0.0743) | **4.08% (0.0408)** | **45% Error Reduction** |
-| **Script Micro CER (Stage 1)** | 5.61% (0.0561) | **2.83% (0.0283)** | **49.6% Error Reduction** |
-| **Bleed-Through Attention Loops** | Frequent on Pages 11 & 13 | **0 loops across all 19 pages** | **100% Eliminated** |
-| **Teacher Red-Ink Artifacts** | Transcribed in margins | **0 tokens, 0 compute** | **100% Eliminated** |
-| **Student Non-Words Preserved** | 66 / 87 (75.9%) | **100% Preserved** | All errors retained for Stage 3 |
+| Evaluation Metric | Stage 1 (Raw VLM) | Stage 1+2 (Verified) | Net Delta | Empirical Impact |
+| :--- | :---: | :---: | :---: | :--- |
+| **CER (Macro Character Error Rate)** | **0.0600 (6.00%)** | **0.0724 (7.24%)** | **+20.7% relative increase** | **Regressed**; Stage 2 degrades character accuracy |
+| **CER (Micro Character Error Rate)** | **0.0545 (5.45%)** | **0.0698 (6.98%)** | **+28.1% relative increase** | Driven by localized paragraph over-striking |
+| **WER (Macro Word Error Rate)** | **0.0894 (8.94%)** | **0.1044 (10.44%)** | **+16.8% relative increase** | Stage 2 drops, mangles, or alters valid words |
+| **Silent Autocorrection Rate** | **29.47%** (89/302) | **30.13%** (91/302) | **+0.66% degradation** | Gemma language priors override authentic slips |
+| **Stage 3 Downstream Error Inflation** | Baseline | **Amplified (Noise Cascading)** | **False Deductions** | Stage 3 text blindness penalizes Stage 2 OCR slips |
+| **Total Strikethroughs Detected** | **107 detected** | **140 detected** | **+33 over-strikes** | Small strikes missed; full lines over-struck |
+| **Patches Applied Across Cohort** | — | **132 patches (49/56 pgs)** | **7 pristine pages** | 132 patches applied, but net CER/WER degraded |
 
 ---
 
-## 2. Active Pipeline Problems (Prioritized for Resolution)
+## 2. Master Table of Active Pipeline Problems
 
-The following 6 issues are currently active in code and require targeted architectural redesign and implementation.
-
----
-
-### Issue 1: Stage 3b Arbitration Back-Mutation into Stage 2 Verified Transcript
-* **Severity**: **HIGH (Critical Evaluation Integrity Defect)**
-* **Component**: [`src/pipeline/orchestrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/orchestrator.py#L284-L290) (`_apply_arbitration_to_transcript`)
-* **Mechanism**:
-  1. When Stage 3b evaluates a candidate error and resolves it with `score >= 0.65` and `i_word.startswith("[struck:")`, it retroactively mutates `page.stage2_verification.verified_transcript` and injects `[struck: word]`.
-  2. Downstream, [`scripts/evaluate_transcription.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/scripts/evaluate_transcription.py#L88) strips all `[struck: ...]` tokens as deleted text.
-  3. Because the human Ground Truth contains these legitimate words (e.g., `"the"` on Page 5, `"preparation"` on Page 10), the evaluator penalizes them as **deletion errors**.
-* **Empirical Evidence**:
-  On `SE_11_Q1_0002`:
-  * **Page 5**: Stage 1 CER was **1.1%**, but after Stage 3b back-mutation injected `[struck: the]`, Stage 1+2 CER jumped to **2.5%** (more than doubled).
-  * **Page 10**: Stage 1 CER was **1.1%**, but after Stage 3b back-mutation injected `[struck: preparation]`, Stage 1+2 CER jumped to **2.8%** (more than doubled).
-* **Root Cause**: Architectural coupling violation. Stage 3b arbitration is an error-scoring decision, but it is currently permitted to mutate upstream transcription text retroactively.
-* **Required Resolution**:
-  * **Sever the back-mutation loop**: Stage 2 `verified_transcript` must represent immutable optical handwriting transcription. Stage 3b arbitration decisions belong strictly in `stage3_errors.json` and grading penalty calculations, never rewriting Stage 2 transcripts.
+| ID | Issue Title | Subsystem / Component | Severity | Discovered In | Current Status |
+| :---: | :--- | :--- | :---: | :---: | :---: |
+| **P1** | **Catastrophic Paragraph Over-Striking in Stage 2** | [`src/utils/strikethrough_collision_resolver.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/strikethrough_collision_resolver.py) | **CRITICAL** | `SE_10_Q1` | **ACTIVE / RECURRENT** (in 0010, 0013, 0023) |
+| **P2** | **Severe Strikethrough Recall Deficit (Missed Strikes)** | [`src/prompts/stage1_verbatim.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage1_verbatim.py) & Stage 2 | **HIGH** | `SE_10_Q1` | **ACTIVE / UNRESOLVED** (False Resolved Flag Fixed) |
+| **P3** | **Cursive 'n' $\leftrightarrow$ 'r' Character Substitution Glitches** | [`src/pipeline/allograph_calibrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/allograph_calibrator.py) & Stage 2 | **HIGH** | `SE_10_Q1` | **PARTIALLY RESOLVED / ACTIVE** (Misses excencise, eany, thnees) |
+| **P4** | **Strikethrough Tag Inversion (Striking Replacement)** | [`src/utils/strikethrough_collision_resolver.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/strikethrough_collision_resolver.py) | **HIGH** | `SE_10_Q1` | **ACTIVE / UNRESOLVED** (False Resolved Flag Fixed) |
+| **P5** | **Silent Autocorrection of Authentic Student Spelling Slips** | [`src/prompts/stage1_verbatim.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage1_verbatim.py) & Stage 2 | **HIGH** | `SE_10_Q1` & `SE_11` | **ACTIVE / UNRESOLVED** (False Resolved Flag Fixed; 30.1% Loss) |
+| **P6** | **Stage 2 & Stage 3 Pipeline Regressions Increasing CER & WER** | [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py) & [`src/pipeline/stage3_error_analyzer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage3_error_analyzer.py) | **CRITICAL** | `SE_10_Q1` & `SE_11` | **NEW ISSUE** (Stage 2 inflates CER/WER; Stage 3 cascades false errors) |
+| **P7** | **Corrupted Bracket Syntax & Stripped Struck Tags in Patches** | [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py) | **HIGH** | `SE_10_Q1` | **NEW ISSUE** (Mangled `[struck:]` in 0012, 0013) |
+| **P8** | **Inappropriate Strike Unwrapping of Genuine Aborted Words** | [`src/utils/strikethrough_collision_resolver.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/strikethrough_collision_resolver.py) | **HIGH** | `SE_10_Q1` | **NEW ISSUE** (Unwraps authentic strikes into active errors) |
+| **P9** | **Stage 2 Length Disparity Fallback Discards Valid Edits** | [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py) | **MEDIUM** | `SE_10_Q1` | **NEW ISSUE** (>15% delta dumps verified transcript) |
+| **P10** | **Stage 2 Silent Autocorrection on Student Misspellings** | [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py) | **MEDIUM** | `SE_10_Q1` | **NEW ISSUE** (Patches authentic slips like 'neve cuted') |
 
 ---
 
-### Issue 2: Horizontal Notebook Ruling Lines Triggering False Optical Strikethroughs
-* **Severity**: **HIGH**
-* **Component**: [`src/pipeline/arbitration/gate.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/arbitration/gate.py#L350-L367) & [`src/pipeline/stage0_strikethrough_detector.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage0_strikethrough_detector.py)
-* **Mechanism**:
-  1. In `gate.py`, `StrikethroughDetector(min_line_width=15, max_line_height=8)` is run on candidate token image crops.
-  2. On lined exam pads, the horizontal printed notebook ruling line running underneath or through words satisfies this threshold, causing `crop_has_strike = True`.
-  3. Line 367 forces `score = max(score, 0.90)` (`HANDWRITING_AMBIGUITY`), wrongly declaring non-struck words (such as `"the"`, `"preparation"`) as struck out.
-* **Required Resolution**:
-  * Calibrate `StrikethroughDetector` with baseline ruling-line subtraction (notebook ruling lines are perfectly horizontal and extend across the entire width, whereas strikethroughs are local, slanted, or thicker).
-  * Require multi-stroke confirmation or tilt before declaring an optical strikeout on lined paper.
+## 3. Deep-Dive Problem Specifications
 
 ---
 
-### Issue 3: Stage 3b Arbitration Over-Forgiveness Leak (BOD Misclassification)
-* **Severity**: **HIGH (46.9% candidate errors improperly excused)**
-* **Component**: [`src/pipeline/arbitration/gate.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/arbitration/gate.py)
-* **Mechanism**:
-  In our audit of `SE_11_Q1_0002`, out of 64 candidate errors, Stage 3b granted Benefit of the Doubt to **30 candidates (46.9%)**. The gate routinely excused real student spelling and grammatical tense mistakes as "handwriting ambiguity":
-  * `Q7 'gnowledge' -> 'knowledge'` $\to$ **Score 0.65 (HANDWRITING_AMBIGUITY)** (Phonetic 0.0; student misspelled 'knowledge' with an overt 'g').
-  * `Q7 'gnaw' -> 'know'` $\to$ **Score 0.97 (HANDWRITING_AMBIGUITY)** (Student wrote the word 'gnaw' instead of 'know', completely forgiven).
-  * `Q7 'answear' -> 'answer'` $\to$ **Score 0.65 (HANDWRITING_AMBIGUITY)** (Classic school-level spelling mistake, forgiven as handwriting).
-  * `Q8 'accroding' -> 'according'` $\to$ **Score 0.65 (HANDWRITING_AMBIGUITY)** (Common spelling inversion, forgiven as handwriting).
-  * `Q8 'libary' -> 'library'` $\to$ **Score 0.65 (HANDWRITING_AMBIGUITY)** (Classic pronunciation-based misspelling, forgiven as handwriting).
-  * `Q11 'destruyed' -> 'destroyed'` $\to$ **Score 0.65 (HANDWRITING_AMBIGUITY)** (Clear spelling mistake, forgiven as handwriting).
-  * `Q8 'produce' -> 'produced'` & `Q11 'become' -> 'became'` $\to$ **Score 0.65 (HANDWRITING_AMBIGUITY)** (Grammatical past-tense errors forgiven as handwriting).
-* **Required Resolution**:
-  * Implement strict Cambridge / Edexcel BOD principles: if a student produces an established phonetic or orthographic misspelling of an anchor word, it must be classified as a **`GENUINE_ERROR`**, not handwriting ambiguity. Handwriting ambiguity only applies when character glyphs match established writer allographs (e.g. Palmer cursive 'r', terminal looped 's').
-
----
-
-### Issue 4: Stage 3 120-Word Sliding Window Sentence Severance
-* **Severity**: **MEDIUM**
-* **Component**: [`src/pipeline/orchestrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/orchestrator.py#L118-L148) (`_chunk_text_by_sentences`)
-* **Mechanism**:
-  * Long essay answers (>150 words) are chunked into 120-word blocks. When student handwriting lacks clean terminal periods or uses commas, the chunker cuts directly through the middle of compound sentences.
-  * The beginning of the sentence in Chunk 1 and the tail in Chunk 2 are both evaluated in isolation, causing Stage 3 to flag both halves as `"sentence fragments"` or `"syntax errors"`.
-* **Required Resolution**:
-  * Implement question-bounded syntactic sentence chunking. Question boundaries must never be crossed, and chunks must only split at sentence-terminating punctuation (`.`, `?`, `!`, or paragraph breaks).
-
----
-
-### Issue 5: Objective Question MCQ / Fill-in-the-Blank Grammar Over-Grading
-* **Severity**: **MEDIUM**
-* **Component**: [`src/pipeline/orchestrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/orchestrator.py) & [`src/pipeline/stage3_error_analyzer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage3_error_analyzer.py)
-* **Mechanism**:
-  * Stage 3 runs uniformly on all segmented answers, including Question 1 Part A (multiple-choice options: `(i) a`, `(ii) c`) and Question 4 (fill-in-the-blank single words).
-  * Single-word and single-letter answers are evaluated as incomplete sentences, generating nonsensical syntax errors.
-* **Required Resolution**:
-  * Bypass objective questions (Q1 Part A MCQs, cloze tests, fill-in-the-blanks) from Stage 3 essay grammar grading.
-
----
-
-### Issue 6: Multi-Page Answer Indexing Bug in Localizer
-* **Severity**: **MEDIUM (Spatial Misalignment in Arbitration)**
-* **Component**: [`src/pipeline/orchestrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/orchestrator.py#L949-L950)
-* **Mechanism**:
-  ```python
-  ans_pno = ans.page_numbers[0] if ans.page_numbers else 1
-  target_p_img = page_images[ans_pno - 1][1]
+### Problem 1: Catastrophic Paragraph Over-Striking in Stage 2
+- **Severity**: **CRITICAL**
+- **Impacted Components**: [`src/utils/strikethrough_collision_resolver.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/strikethrough_collision_resolver.py) & [`src/pipeline/orchestrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/orchestrator.py)
+- **Symptom**: Stage 2 Character Error Rate explodes to **>0.35–0.68** on valid student answer pages because multi-line text blocks are unconditionally wrapped in `[struck: ...]`:
+  - `SE_10_Q1_0010` Page 13: CER **0.1299** $\to$ **0.6753** | WER **0.2232** $\to$ **0.7411** | **11 of 18 lines over-struck**
+  - `SE_10_Q1_0023` Page 8: CER **0.1489** $\to$ **0.3570** | WER **0.1625** $\to$ **0.3625** | **6 lines over-struck**
+  - `SE_10_Q1_0013` Page 18: CER **0.0513** $\to$ **0.3203** | WER **0.1111** $\to$ **0.3827** | **4 lines over-struck**
+- **Empirical Evidence**:
+  In `SE_10_Q1_0010` page 13, Stage 2 wrapped 11 active narrative lines in `[struck: ...]`:
+  ```text
+  [struck: Onee thene lived a king in an island . There were]
+  [struck: green tnees everywhere in the island . The king]
+  [struck: decided to build a magnificent palace in the]
+  [struck: island. so he ordered his men to cut down]
+  ...
   ```
-  When an essay spans across Page 10, Page 11, and Page 12, the orchestrator passes *only Page 10's image* to the arbitration gate for all errors in that answer. When the localizer attempts to crop an error from Page 11 or 12, it crops empty background on Page 10.
-* **Required Resolution**:
-  * Map each error candidate to its specific page of occurrence using character offsets or line numbers, and crop from that exact page image.
+  In `SE_10_Q1_0023` page 8, Stage 2 wrapped 6 active dialogue turns in `[struck: ...]`:
+  ```text
+  [struck: Myself]
+  [struck: : you are right . early rising is]
+  [struck: important for us . It can help us .]
+  [struck: our mind fresh and you brain has]
+  [struck: early rising are may benifits . like]
+  [struck: It help us our ifect]
+  ```
+- **Root Cause**:
+  In `ground_and_reconcile_strikethroughs()`, multi-line block snapping triggered by Stage 0 bounding boxes still over-associates loose vertical bounding box overlap with full-clause cancellation. Because benchmark evaluation drops `[struck: ...]` content by default, entire valid answers are discarded from evaluation.
+- **Remediation**:
+  1. Mandate that multi-line strikethrough wrapping require stroke intersection density corroboration directly with word bounding boxes.
+  2. Implement a hard veto: if the vertical range contains more than 3 consecutive lines of text, strikethrough wrapping requires either explicit double-line restart corroboration (`Narrative Retake`) or an explicit cross (`X`) mark spanning the entire box.
 
 ---
 
-## 3. Literature & SOTA Comparison: Current vs. Best Approach
-
-| Component | State-of-the-Art Best Practice | Current Pipeline Implementation | Status |
-|---|---|---|:---:|
-| **Stage 2 Verification** | **Constrained Non-Word Invariance**: OCR post-correction is strictly prohibited from replacing an OOV student token with a dictionary word. | Unconstrained VLM generates freeform JSON replacement patches. | **BAD (Fixed by Fast Mode)** |
-| **Split-Token Stitcher** | Deterministic CPU lexicon stitcher with phrasal verb blocking (`come back` $\ne$ `comeback`). | [`split_token_stitcher.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/split_token_stitcher.py): pure CPU dictionary check. | **GOOD** |
-| **Edge Truncation** | Deterministic line-boundary margin scanner. | [`edge_truncation_detector.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/edge_truncation_detector.py): scans line ends. | **GOOD** |
-| **Strikethrough Detection** | Visual ink-topology verification without prompt biasing; baseline ruling subtraction. | Preprocessing line detector injects coordinates into prompt, causing mass false positives. | **BAD** |
-| **Stage 3 Scope** | Discourse-aware GEC chunked by sentence boundaries; objective questions bypassed. | 120-word arbitrary token sliding window; evaluates MCQ and fill-in-the-blanks. | **BAD** |
-| **Linguistic Sanitizer** | Dialectal (UK/US) and syllabus-term whitelisting. | [`linguistic_sanitizer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/linguistic_sanitizer.py): blocks false positives on proper nouns and syllabus terms. | **GOOD** |
-| **Stage 3b Arbitration** | Multimodal crop verification with calibrated Bayesian weights implementing Cambridge "Benefit of the Doubt" (BOD). | Multi-signal gate with severe strikeout phonetic inversion bug and back-mutation loop into transcript. | **BAD (Buggy)** |
+### Problem 2: Severe Strikethrough Recall Deficit (Missed Strikes)
+- **Severity**: **HIGH**
+- **Impacted Components**: [`src/prompts/stage1_verbatim.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage1_verbatim.py) & [`src/pipeline/stage1_transcriber.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage1_transcriber.py)
+- **Symptom**: Canceled words and aborted false starts are missed during transcription and output as active text, causing Stage 3 to levy false deductions on words the student explicitly struck out.
+- **Empirical Evidence**:
+  - `SE_10_Q1_0001` p.15: GT had `[struck: had]` and `[struck: inste]`. Both were missed in Stage 1 and Stage 2, output as active words; `inste'` triggered an unfair spelling error deduction.
+  - `SE_10_Q1_0002` p.14: GT had `[struck: B]`. Missed in both Stage 1 and Stage 2.
+  - `SE_10_Q1_0002` p.15: GT had `[struck: it's hard]`. Missed in both Stage 1 and Stage 2.
+  - `SE_10_Q1_0003` p.8: GT had single-letter aborted stroke `[struck: w]`. Missed in both Stage 1 and Stage 2.
+  - `SE_10_Q1_0006` p.11: GT had two `[struck: o]` false starts. Both transcribed as active or missed.
+- **Root Cause**:
+  1. The VLM attention mechanism prioritizes high-contrast character ink over thin horizontal strike-through pen strokes.
+  2. Single-word and partial-word false starts (`had`, `inste`, `B`, `w`, `o`) do not trigger large morphological shifts, leading the model to read right through the stroke.
+- **Remediation**:
+  1. Feed Stage 0 candidate strikethrough coordinates into Stage 1 as localized visual attention priors.
+  2. Add few-shot examples in `stage1_verbatim.py` explicitly showing single-word strikethroughs and aborted letters wrapped in `[struck: ...]`.
 
 ---
 
-## 4. Principled Architectural Redesign Specifications (RFC)
+### Problem 3: Cursive 'n' $\leftrightarrow$ 'r' Character Substitution Glitches
+- **Severity**: **HIGH**
+- **Impacted Components**: [`src/utils/linguistic_sanitizer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/linguistic_sanitizer.py) & [`src/pipeline/allograph_calibrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/allograph_calibrator.py)
+- **Symptom**: Systematic substitution between lowercase `n` and `r` produces artificial non-words that never existed in the student script.
+- **Empirical Evidence**:
+  - While Stage 2 successfully corrected `ondered` $\to$ `ordered`, `wonken's` $\to$ `worker's`, `hotten` $\to$ `hotter`, `bind` $\to$ `bird`, and `weathen` $\to$ `weather`, multiple prominent cases remain completely uncorrected:
+    - `SE_10_Q1_0002` p.15: Student wrote `excercise`; transcribed as `excencise` in both S1 and S2.
+    - `SE_10_Q1_0013` p.17: Student wrote `eary`; transcribed as `eany` in both S1 and S2.
+    - `SE_10_Q1_0010` p.13: Student wrote `trees`; transcribed as `thnees` in both S1 and S2.
+    - `SE_10_Q1_0010` p.13: Student wrote `are`; transcribed as `ane` in both S1 and S2.
+- **Root Cause**:
+  In Palmer cursive, `r` top-shoulders mimic the first arch of `n`. In words like `excencise` and `eany`, the OOV anomaly detector in Stage 2 pre-analysis failed to flag the token or the surgical patch prompt did not propose a substitution.
+- **Remediation**:
+  In `stage2_verifier.py`, run a deterministic pre-pass scanning all OOV words: if a single $n \leftrightarrow r$ swap yields a valid vocabulary word, force a high-priority surgical patch candidate.
 
+---
+
+### Problem 4: Strikethrough Tag Inversion (Striking Replacement Instead of Struck Word)
+- **Severity**: **HIGH**
+- **Impacted Components**: [`src/pipeline/stage1_transcriber.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage1_transcriber.py) & [`src/utils/strikethrough_collision_resolver.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/strikethrough_collision_resolver.py)
+- **Symptom**: When a student crosses out a word and immediately writes the correction, the pipeline assigns the `[struck: ...]` tag to the active replacement while leaving the crossed-out text as active.
+- **Empirical Evidence**:
+  In `SE_10_Q1_0001` Page 16:
+  - *Human Ground Truth*: `[struck: temperature] heat level increased`
+  - *Stage 1 Output*: `temperature [struck: heat level] increased`
+  - *Stage 2 Output*: `temperature [struck: heat level] increased`
+- **Root Cause**:
+  The VLM perceives the strike stroke near both tokens, but attention bias attaches the bracket tag to the later token. While spatial resolution code was drafted, in production it failed to trigger or invert the tokens.
+- **Remediation**:
+  In `ground_and_reconcile_strikethroughs()`, when `word1 [struck: word2]` occurs and Stage 0 strikethrough stroke bounding box overlaps `word1` with higher IoU than `word2`, enforce programmatic tag swapping: `[struck: word1] word2`.
+
+---
+
+### Problem 5: Silent Autocorrection of Authentic Student Spelling Slips
+- **Severity**: **HIGH**
+- **Impacted Components**: [`src/prompts/stage1_verbatim.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage1_verbatim.py) & [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py)
+- **Symptom**: **30.13% of genuine student misspellings** (91 / 302 non-words across the cohort) are silently normalized into correct standard English words during transcription.
+- **Empirical Evidence**:
+  - `SE_10_Q1_0001` p.16: Student wrote `suffuring`; transcribed as `suffering` in S1 and S2.
+  - `SE_10_Q1_0003` p.7: Student wrote `aslo`; transcribed as `Also` in S1 and S2.
+  - `SE_10_Q1_0004` p.16: Student wrote `femine` and `togather`; transcribed as `famine` and `together`.
+  - `SE_10_Q1_0025` p.9: Student wrote `conspiricy`; transcribed as `conspiracy`.
+- **Root Cause**:
+  Gemma-4-31B language model priors decode high-probability dictionary subwords, overriding visual pixel fidelity when reading slightly misspelled words.
+- **Remediation**:
+  Set decoding temperature to 0.0 with strong negative logit penalties on standard English dictionary tokens when the visual token contains character discrepancies.
+
+---
+
+### Problem 6: Stage 2 & Stage 3 Pipeline Regressions Increasing CER & WER
+- **Severity**: **CRITICAL**
+- **Impacted Components**: [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py), [`src/pipeline/stage3_error_analyzer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage3_error_analyzer.py), & [`src/pipeline/orchestrator.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/orchestrator.py)
+- **Symptom**: Stages 2 and 3 actively increase Character Error Rate (CER) and Word Error Rate (WER), compounding transcription degradation and triggering false downstream pedagogical penalties:
+  1. **Stage 2 Physical Transcript Regression**:
+     - Stage 1 Macro CER: **0.0600 (6.00%)** $\to$ Stage 1+2 Macro CER: **0.0724 (7.24%)** (**+20.7% relative increase in error rate**)
+     - Stage 1 Macro WER: **0.0894 (8.94%)** $\to$ Stage 1+2 Macro WER: **0.1044 (10.44%)** (**+16.8% relative increase in error rate**)
+     - Stage 1 Micro CER: **0.0545 (5.45%)** $\to$ Stage 1+2 Micro CER: **0.0698 (6.98%)** (**+28.1% relative increase in error rate**)
+  2. **Stage 3 Text-Only Error Escalation & Noise Conflation**:
+     - Stage 3 operates without access to the student handwriting image. When Stage 1 or Stage 2 introduces a perceptual reading slip (e.g., ligature dip read as wrong character, or split token), Stage 3 cannot inspect ink pixels and hallucinates grammatical or syntax errors for machine OCR slips.
+     - Arbitrary 120-word sliding-window chunking slices compound sentences mid-clause, causing Stage 3 to flag valid student writing as "sentence fragments".
+     - When Stage 2 wraps entire lines into `[struck: ...]`, Stage 3 alignment gets desynchronized, fabricating further false error deductions.
+- **Empirical Evidence**:
+  - In `SE_10_Q1_0010` p.13, Stage 2 over-striking exploded CER from 0.1299 to 0.6753 and WER from 0.2232 to 0.7411.
+  - In `SE_10_Q1_0023` p.8, Stage 2 over-striking increased CER from 0.1489 to 0.3570 and WER from 0.1625 to 0.3625.
+  - In `SE_10_Q1_0013` p.18, Stage 2 over-striking increased CER from 0.0513 to 0.3203 and WER from 0.1111 to 0.3827.
+  - In `SE_11_Q1` cohort benchmarks, Stage 2 increased Macro CER from 7.43% to 8.07% and Macro WER from 10.08% to 11.12%, while Stage 3 generated 279 error deductions where ~40% were conflated OCR slips or sentence-boundary slicing artifacts.
+- **Root Cause**:
+  1. Stage 2 unconstrained freeform JSON patches lack a page-level CER safety mechanism that verifies whether proposed replacements improve or degrade string alignment.
+  2. Stage 3 text-only blindness: without visual grounding, Stage 3 cannot distinguish authentic student misspellings from OCR errors.
+  3. Chunking boundaries cut through natural clauses instead of using syntactic sentence delimiters.
+- **Remediation**:
+  1. **Page-Level CER Safety Gate**: Compute string edit distance between Stage 1 and Stage 2; if proposed patches increase divergence or over-strike entire lines without optical consensus, automatically reject the Stage 2 draft and retain Stage 1.
+  2. **Syntactically-Bounded Chunking for Stage 3**: Enforce 350-word sentence-bounded chunking that never splits compound sentences across window boundaries.
+  3. **Visual Grounding in Stage 3**: Require Stage 3b arbitration to visually crop and verify any token before confirming a spelling or syntax deduction.
+
+---
+
+### Problem 7: Corrupted Bracket Syntax & Stripped Struck Tags During Patch String Replacement
+- **Severity**: **HIGH**
+- **Impacted Components**: [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py)
+- **Symptom**: When Stage 2 applies surgical patches containing `[struck: ...]` tags, naive string replacement strips the brackets or generates malformed/nested bracket syntax.
+- **Empirical Evidence**:
+  - In `SE_10_Q1_0012` p.12:
+    - *Stage 1*: `There' every [struck: w] were`
+    - *Proposed Patch*: target `[struck: w]`, replacement `[struck: w #]`
+    - *Verified Output*: `There' every w # were` (brackets and tag completely stripped; struck word converted to active text).
+  - In `SE_10_Q1_0013` p.18:
+    - *Verified Output*: `[struck: sunset and also feel the [struck: with]` (unclosed nested tag).
+- **Root Cause**:
+  Regex escaping and token boundary replacements in `apply_surgical_patches()` do not handle literal square brackets in the target string, causing regex replacement to strip or garble tags.
+- **Remediation**:
+  Use `re.escape()` on all search targets and validate bracket balance before accepting patched text.
+
+---
+
+### Problem 8: Inappropriate Strike Unwrapping of Genuine Aborted Words
+- **Severity**: **HIGH**
+- **Impacted Components**: [`src/utils/strikethrough_collision_resolver.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/strikethrough_collision_resolver.py)
+- **Symptom**: Legitimate single-word student strikethroughs are falsely unwrapped by Stage 2 reconciliation routines, converting aborted non-words into active text that triggers unfair spelling deductions.
+- **Empirical Evidence**:
+  In `SE_10_Q1_0012` Page 12:
+  - *Human Ground Truth*: `Animal lost [struck: thie] their home`
+  - *Stage 1*: `Animal lost [struck: thie] their home`
+  - *Stage 2*: `Animal lost thie their home` (`thie` unwrapped into active text, triggering an unearned spelling error).
+- **Root Cause**:
+  Heuristics intended to suppress notebook ruling lines falsely flag short strikethrough strokes as ruling lines, calling `unwrap_strikethrough()` on genuine cancelled words.
+- **Remediation**:
+  Never unwrap a strikethrough if the enclosed word is an out-of-vocabulary non-word (`thie`) immediately followed by its correct counterpart (`their`).
+
+---
+
+### Problem 9: Stage 2 Length Disparity Fallback Discards Valid Edits
+- **Severity**: **MEDIUM**
+- **Impacted Components**: [`src/pipeline/stage2_verifier.py:380-395`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py#L380-L395)
+- **Symptom**: When Stage 2 makes valid edits that change character length by >15% on short-answer pages, a blanket length disparity check unconditionally reverts the entire page to Stage 1.
+- **Empirical Evidence**:
+  Logged in `extract_all.log:6657`:
+  ```text
+  [Stage 2 Verifier] WARNING: Severe length disparity detected (Stage 1: 262 chars vs Verified: 302 chars, diff=15.27%). Falling back to Stage 1 transcript to prevent hallucinated drift.
+  ```
+  All valid OCR glitch patches on the page were discarded.
+- **Root Cause**:
+  A hardcoded percentage threshold (`diff > 15.0%`) is too aggressive for short text blocks (e.g. 40 characters difference on a 260-character answer).
+- **Remediation**:
+  Use an absolute character delta threshold (e.g., `abs_diff > 80`) combined with Levenshtein similarity rather than a rigid percentage cap.
+
+---
+
+### Problem 10: Stage 2 Verifier Performing Silent Autocorrection on Student Misspellings
+- **Severity**: **MEDIUM**
+- **Impacted Components**: [`src/pipeline/stage2_verifier.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py)
+- **Symptom**: Stage 2 proposes patches that correct authentic student misspellings into standard English, directly violating the verbatim preservation mandate.
+- **Empirical Evidence**:
+  In `SE_10_Q1_0012` Page 12:
+  - *Student wrote*: `was neve cuted any trees`
+  - *Stage 2 patch*: target `neve cated`, replacement `never created` (reason: *"OCR missed trailing 'r' in 'never' and 're' in 'created'"*).
+  Stage 2 eliminated the student's authentic errors before Stage 3 could evaluate them.
+- **Root Cause**:
+  The Stage 2 verification prompt lacks an explicit negative rule preventing the verifier from substituting non-words with dictionary words unless verified as an OCR-specific ligature confusion.
+- **Remediation**:
+  Instruct Stage 2: *"DO NOT normalize student misspellings (e.g. 'neve cuted'). If the student wrote an authentic spelling error, PRESERVE IT VERBATIM."*
+
+---
+
+## 4. Master Remediation Roadmap
+
+```mermaid
+graph TD
+    subgraph Strikethrough & Line Integrity
+        P1["P1: Restrict Multi-Line Block Snapping"] --> R1["Fixes recurrent over-strike on 0010, 0013, 0023"]
+        P2["P2: Visual Crop Priors for False Starts"] --> R2["Captures had, inste, B, w strikes"]
+        P4["P4: Spatial Tag Inversion Resolution"] --> R4["Inverts temperature [struck: heat level]"]
+        P8["P8: Protect Non-Word Strikethroughs"] --> R8["Prevents unwrapping [struck: thie]"]
+    end
+
+    subgraph Character & Verbatim Accuracy
+        P3["P3: Mandatory n <-> r Pre-Pass"] --> R3["Resolves excencise, eany, thnees, ane"]
+        P5["P5: Negative Logit Bias on Dict Words"] --> R5["Stops silent autocorrection of suffuring, aslo"]
+        P10["P10: Verbatim Rule in Stage 2 Verifier"] --> R10["Prevents patching neve cuted to never created"]
+    end
+
+    subgraph Stage 2 & 3 Error Escalation Control
+        P6["P6: Stage 2 & 3 CER/WER Safety Gate"] --> R6["Reverts Stage 2 on CER regression & grounds Stage 3 errors"]
+        P7["P7: re.escape on Patch Replacements"] --> R7["Prevents stripping brackets from [struck:]"]
+        P9["P9: Adaptive Length Disparity Threshold"] --> R9["Stops discarding valid patches on short pages"]
+    end
 ```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                        REDESIGNED MULTI-STAGE ARCHITECTURE                             │
-├────────────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                        │
-│  [ Stage 1: Verbatim Transcriber ]  (Native DPI multi-band tiling, greedily decoded)   │
-│        │                                                                               │
-│        ▼                                                                               │
-│  [ Stage 2: Pure Deterministic CPU Normalizer ]  ◄── (NO FULL-PAGE VLM AUTOCORRECT)    │
-│        │  • split_token_stitcher (pen-lift broken syllables)                           │
-│        │  • edge_truncation_detector (margin scan boundaries)                          │
-│        │  • STRICT NON-WORD INVARIANCE: 100% preservation of student misspellings      │
-│        │  • IMMUTABLE OUTPUT: Never modified downstream by arbitration                 │
-│        ▼                                                                               │
-│  [ Stage 3: Syntactically-Bounded & Question-Aware GEC ]                               │
-│        │  • Question-bounded sentence segmentation (never cuts across clauses)         │
-│        │  • Objective question bypass (MCQs & fill-in-the-blanks skipped from GEC)     │
-│        │  • Unified Grammar & Syntax taxonomy (eliminates duplicate clause penalties)  │
-│        │  • linguistic_sanitizer (preserves proper nouns & syllabus vocabulary)        │
-│        ▼                                                                               │
-│  [ Stage 3b: Calibrated Visual Evidence Gate ]                                         │
-│           • Sever transcript back-mutation (results stay in stage3_errors.json)        │
-│           • Lined-paper ruling line filter for strikethrough detection                 │
-│           • Cambridge / Edexcel BOD alignment (phonetic misspellings = GENUINE_ERROR)  │
-│           • Multi-page coordinate resolution (crop from actual page of occurrence)     │
-│           • Bounded budget (arbitrate at most 8-10 high-value ambiguities per script)  │
-│                                                                                        │
-└────────────────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 4.1 Stage 2 Redesign: Pure Deterministic CPU Normalization
-1. **Default Architecture**:
-   Stage 2 operates strictly as a deterministic CPU normalizer:
-   $$\text{Stage 2 Text} = \text{Stitcher}(\text{EdgeDetector}(\text{Stage 1 Verbatim}))$$
-   This completely eliminates the 50s/page latency overhead, prevents header corruption (`Ans:` $\to$ `Ann:`), and achieves **100% preservation of student non-words**.
-2. **Strict Non-Word Invariance Constraint**:
-   If an optional VLM verification pass is ever triggered, it is constrained by law:
-   $$\text{If } \text{target} \notin \text{Lexicon} \text{ and } \text{replacement} \in \text{Lexicon} \implies \mathbf{REJECT\ PATCH}$$
-   The system is structurally forbidden from converting a student misspelling into a dictionary word.
-
-### 4.2 Stage 3 Redesign: Question-Aware, Syntactically-Bounded GEC
-1. **Sentence-Boundary Chunking**:
-   Replace token-count chunking with syntactic sentence segmentation. Question boundaries must never be crossed, and splits occur only at terminal punctuation (`.`, `?`, `!`).
-2. **Objective Question Bypass**:
-   Detect Question 1 Part A (MCQ), Question 4 (Cloze), and Question 5 (Matching) from the question schema and bypass Stage 3 entirely.
-3. **Consolidated Taxonomy**:
-   Merge `syntax` into `grammar` with subtype tags (`grammar:agreement`, `grammar:tense`, `grammar:clause_fragment`) to ensure each clause construction incurs at most one penalty.
-
-### 4.3 Stage 3b Redesign: Calibrated, Strikeout-Safe Visual Gate
-1. **Sever Transcript Back-Mutation**:
-   Arbitration outcomes (`HANDWRITING_AMBIGUITY`, `GENUINE_ERROR`, `UNCERTAIN`) update only `stage3_errors.json` and grading penalty calculations. They must never rewrite `verified_transcript`.
-2. **Calibrate Strikethrough Detection on Lined Paper**:
-   Subtract horizontal ruling lines before testing for cross-out strokes on word crops.
-3. **Cambridge BOD Classification**:
-   If a student produces an overt phonetic or orthographic misspelling of an anchor word (`gnowledge`, `libary`, `destruyed`), classify it as `GENUINE_ERROR`.
-
----
-
-## 5. Resolved Issues Archive (Verified October 4, 2026)
-
-All issues in this section have been completely resolved, verified in code, and validated empirically across test benchmarks:
-
-### Group A: Preprocessing & Visual Contaminants (Resolved via `clean_pdf.py`)
-* **A1. Bleed-Through Attention Loops & Punctuation Floods**:
-  * **Status**: **RESOLVED**
-  * **Resolution**: Upstream pre-cleaning via [`clean_pdf.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/clean_pdf.py) eliminates reverse-side ink bleed-through. On `SE_11_Q1_0002`: **0 hallucination loops, 0 punctuation runs across all 19 pages**. Defensive regex added in [`src/pipeline/stage1_transcriber.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage1_transcriber.py#L104-L110).
-* **A2. Strikethrough Boundary Misalignment & Teacher-Stroke Confusion**:
-  * **Status**: **RESOLVED**
-  * **Resolution**: Inpainting all red examiner marks ensures strike detection only evaluates genuine student ink (blue/black). Reverse soak-through strokes eliminated.
-* **A3. Text Occlusion Under Overwrites**:
-  * **Status**: **RESOLVED**
-  * **Resolution**: Red teacher pen marks inpainted, exposing uninterrupted student handwriting strokes. On `SE_11_Q1_0002` Page 11, CER was cut by >50% (20.1% $\to$ 10.0%) and WER dropped from 23.1% to 12.8%.
-
-### Group B: Pipeline Logic Hardening (Resolved via Code)
-* **B1. Sub-Question Header Merge (`Dans:` / `Bans:`)**:
-  * **Status**: **RESOLVED**
-  * **Resolution**: Added header normalization rules in [`src/pipeline/answer_segmenter.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/answer_segmenter.py#L21-L26) to unpack fused markers (`Dans:` $\to$ `(d) Ans:`, `Bans:` $\to$ `(b) Ans:`) while preserving `Dans to Q 10` $\to$ `Ans to Q 10`. Verified via unit tests in [`tests/test_logic_hardening.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/tests/test_logic_hardening.py).
-* **B2. Stage 3b Arithmetic Bug: Phonetic Distortion on Strikeouts**:
-  * **Status**: **RESOLVED**
-  * **Resolution**: Neutralized phonetic signal for strikethrough suspects (`ev.phonetic_signal = None`) in [`src/pipeline/arbitration/gate.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/arbitration/gate.py#L126-L128). Prevents distance against `"[struck]"` from creating false maximal ambiguity scores. Verified in [`tests/test_logic_hardening.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/tests/test_logic_hardening.py).
-* **Stage 2 Destructive Autocorrection**:
-  * **Status**: **RESOLVED**
-  * **Resolution**: Set `--fast` deterministic CPU syllable stitching ([`src/pipeline/split_token_stitcher.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/split_token_stitcher.py)) as the default extraction mode in [`scripts/extract_scripts.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/scripts/extract_scripts.py#L294-L300). Verified on `SE_11_Q1_0002`: **100% of authentic student non-words (`illustrodes`, `strensth`, `afterpassing`, `momeneterm`, `fallfill`, `familys`) preserved**.
-
-### Group C: Core Architectural Fixes Previously Archived
-* **P2 (`[illegible]` Flood)**: Resolved by 15/page cap and run-collapsing in `stage1_transcriber.py`. `0002` dropped from 273 → 1.
-* **P3 (Stage 3 Context Overflow)**: Resolved by question-level chunking and sub-chunking in `orchestrator.py`. Context reduced from 399% to 8–11%.
-* **P5 (`Ans:` → `Ann:` Over-Correction)**: Resolved by whitelist of protected function/exam tokens and surgical patch mode in `stage2_verifier.py`.
-* **P7 (Teacher Mark Duplicates & Conflicts)**: Resolved by deduplication and conflict reconciliation in Stage 0b (`stage0b_teacher_marks.json`).
-* **P9 (Ghost Correction Over-Correction)**: Resolved by Surgical Patch Auditing on immutable Stage 1 base in `stage2_verifier.py`.
-* **P10 (Pen-Lift Stitcher Over-Stitching)**: Resolved by phrasal verb rules in `split_token_stitcher.py` (`come back` != `comeback`).
-* **P12 (Stage 3 0-Error False Negatives)**: Resolved by sensitivity cascade Pass 2 audit in `stage3_error_analyzer.py`.
-* **P13 (HTML Tags in Output)**: Resolved; 0 HTML tags found across all verified outputs.
-* **P14 (LaTeX Notation in Output)**: Resolved; `$\rightarrow$` eliminated from transcripts.
-* **P15 (Edge Truncation Recovery)**: Resolved by `edge_truncation_detector.py` and cross-line stitcher.
-* **P16 (Raw Tier CSV Append Accumulation)**: Resolved by key-based upsert on `(script_id, page_no, question_no)` in `export_utils.py`.
-* **P17 (Per-Script CSV Coverage)**: Resolved; `raw_tier_records.csv` generated per script.
-* **P18 (Extraction Timing Variance)**: Resolved; parallel workers + clean-canvas bypass reduces runtime to ~14–18 min per script.
