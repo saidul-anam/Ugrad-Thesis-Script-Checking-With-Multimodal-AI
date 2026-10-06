@@ -33,6 +33,9 @@ pipeline:
   stage2_conditional: true  # Only verify pages with unclear/illegible markers (bypasses clean pages, saves ~13 VLM passes)
   stage3_error_extraction: true
   stage4_rubric_evaluation: true
+  # Ablation only: text-pattern rewriters (Stage 2.5 strike grounding, stutter->strike regexes,
+  # lexicon pen-lift stitching). They raised CER on the dev set; see docs/EXTRACTION_FIXES_2026-10-06.md
+  legacy_text_rules: false
 
   # Granular Stage-Level Thinking Mode Routing
   stage1_thinking_mode: false  # STRICTLY False: guarantees 100% pure verbatim student text without preamble

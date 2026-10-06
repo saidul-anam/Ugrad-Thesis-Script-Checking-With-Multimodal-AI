@@ -5,6 +5,7 @@ from src.engine.base_engine import BaseVLMEngine
 from src.core.schemas import Stage1TranscriptionResult
 from src.prompts.stage1_verbatim import build_stage1_prompt, STAGE1_SYSTEM_PROMPT
 from src.pipeline.band_tiler import BandTiler, stitch_band_transcripts
+from src.utils.transcript_markup import normalize_markup
 
 
 def sanitize_and_normalize_stage1_output(raw_text: str) -> str:
@@ -212,7 +213,7 @@ class Stage1Transcriber:
             )
 
         # Canonicalization and degeneracy suppression
-        raw_text = sanitize_and_normalize_stage1_output(raw_text)
+        raw_text = normalize_markup(sanitize_and_normalize_stage1_output(raw_text))
 
         # Parse tags from canonicalized transcript
         illegible_matches = re.findall(r"\[illegible\]", raw_text, re.IGNORECASE)

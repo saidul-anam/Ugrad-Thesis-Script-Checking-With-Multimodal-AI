@@ -207,7 +207,7 @@ def test_stage2_verifier_full_flow_recovers_ghost_correction():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_response
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
         stage1_transcript=s1_transcript
@@ -332,7 +332,7 @@ def test_delta_only_patch_application_curriter_to_writer():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_json
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
         stage1_transcript=s1_transcript
@@ -375,7 +375,7 @@ def test_reject_hallucinated_target_mpona():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_json
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     # Even if target is mentioned, if it doesn't match context or doesn't exist, it is rejected
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
@@ -406,7 +406,7 @@ def test_reject_function_word_drift_see_to_the():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_json
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
         stage1_transcript=s1_transcript
@@ -451,7 +451,7 @@ def test_header_strikethrough_shield():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_json
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
         stage1_transcript=s1_transcript
@@ -510,7 +510,7 @@ def test_student_error_shield_phonetic_vs_cursive():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_json
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
         stage1_transcript=s1_transcript
@@ -550,7 +550,7 @@ def test_strikethrough_quota_caps_flooding():
     mock_engine = MagicMock()
     mock_engine.generate_multimodal.return_value = mock_json
 
-    verifier = Stage2Verifier(mock_engine)
+    verifier = Stage2Verifier(mock_engine, legacy_filters=True)
     result = verifier.run(
         image=Image.new("RGB", (100, 100)),
         stage1_transcript=s1_transcript
@@ -588,3 +588,17 @@ def test_orchestrator_normalization_guards():
     assert "curriter" not in res3
 
 
+
+
+def test_default_stage2_applies_structurally_valid_patches_without_word_filters():
+    """Default path: no word lists or quotas; a patch whose target exists is applied, tags stay balanced."""
+    import json as _json
+    from unittest.mock import MagicMock
+    engine = MagicMock()
+    engine.generate_multimodal.return_value = _json.dumps({"proposed_patches": [
+        {"stage1_target": "see the", "replacement": "see to", "context_anchor": "we see the river"},
+        {"stage1_target": "draft one\ndraft two", "replacement": "[struck: draft one\ndraft two]", "context_anchor": ""},
+    ], "verification_notes": ""})
+    out = Stage2Verifier(engine).run(image=None, stage1_transcript="we see the river\ndraft one\ndraft two\nend",
+                                     pre_analysis=None).verified_transcript
+    assert out == "we see to river\n[struck: draft one]\n[struck: draft two]\nend"

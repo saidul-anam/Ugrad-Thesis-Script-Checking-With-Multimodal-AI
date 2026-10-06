@@ -62,6 +62,17 @@ class PipelineStageConfig(BaseModel):
     stage2_conditional: bool = Field(True, description="Enable 5-point cascaded page routing for Stage 2")
     stage3_error_extraction: bool = True
     stage4_rubric_evaluation: bool = True
+    line_reconciliation: bool = Field(
+        False,
+        description="Stage 2b: re-read every text line as a crop and resolve disagreements with the page "
+                    "transcript by order-debiased forced choice on the crop (src/pipeline/line_reconciler.py)"
+    )
+    legacy_text_rules: bool = Field(
+        False,
+        description="Ablation only: re-enable the text-pattern rules (Stage 2.5 strike grounding, stutter->strike "
+                    "collision regexes, lexicon pen-lift stitching, Stage 2 hand-written patch filters). They change "
+                    "the transcript without visual evidence and raised CER on SE_10_Q1 (docs/EXTRACTION_FIXES_2026-10-06.md)."
+    )
     stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
     stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
     stage3b_thinking_mode: bool = Field(True, description="Stage 3b evidence arbitration thinking mode (deep allograph deliberation)")

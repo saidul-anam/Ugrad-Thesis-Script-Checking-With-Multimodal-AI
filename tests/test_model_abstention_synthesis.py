@@ -35,7 +35,7 @@ def test_ambiguous_reason_synthesizes_unclear_tag():
       "verification_notes": "Ambiguous handwriting on line 1"
     }"""
     engine = DummyEngine(dummy_json)
-    verifier = Stage2Verifier(engine)
+    verifier = Stage2Verifier(engine, legacy_filters=True)
 
     img = Image.new("RGB", (100, 100), color="white")
     res = verifier.run(
@@ -65,7 +65,7 @@ def test_confident_correction_does_not_synthesize_unclear():
       "verification_notes": "Reverted autocorrection"
     }"""
     engine = DummyEngine(dummy_json)
-    verifier = Stage2Verifier(engine)
+    verifier = Stage2Verifier(engine, legacy_filters=True)
 
     img = Image.new("RGB", (100, 100), color="white")
     res = verifier.run(

@@ -9,6 +9,7 @@ from src.core.schemas import Stage2VerificationResult, AutocorrectionDiffItem, S
 from src.prompts.stage2_verification import build_stage2_prompt, STAGE2_SYSTEM_PROMPT
 from src.pipeline.allograph_calibrator import check_cursive_topology, CULTURAL_TERMS, FORBIDDEN_ALLOGRAPH_TARGETS
 from src.pipeline.split_token_stitcher import stitch_pen_lift_splits
+from src.utils.transcript_markup import normalize_markup
 from src.utils.linguistic_sanitizer import get_english_lexicon
 
 
@@ -594,8 +595,15 @@ def run_stage2_pre_analysis(
 class Stage2Verifier:
     """Stage 2: Surgical Autocorrection Auditing (Image + Stage 1 Transcript -> Verified Transcript)."""
 
-    def __init__(self, engine: BaseVLMEngine):
+    def __init__(self, engine: BaseVLMEngine, legacy_filters: bool = False):
+        """
+        legacy_filters: re-enable the hand-written patch filters (function-word shields, strike quota,
+        keyword checks on the patch reason, note mining). On the class-10 dev pages they rejected helpful
+        and harmful patches at the same rate and raised CER (docs/EXTRACTION_FIXES_2026-10-06.md), so by
+        default every structurally valid patch is applied and visual checking is left to Stage 2b.
+        """
         self.engine = engine
+        self.legacy_filters = legacy_filters
 
     def run(
         self,
@@ -689,70 +697,71 @@ class Stage2Verifier:
                 if s1_out == act_hw or patch_type == "no_change":
                     continue
 
-                # Rule 2b: Anti-Deletion Shield
-                # Block silently dropping genuine student words/syllables (e.g. 'di desicions' -> 'desicions')
-                # If a word is crossed out, it must be tagged as [struck: ...], never silently deleted!
-                s1_tokens = [w for w in re.findall(r'[a-zA-Z\u0980-\u09FF]+', s1_out) if len(w) >= 2]
-                act_tokens = [w for w in re.findall(r'[a-zA-Z\u0980-\u09FF]+', act_hw) if len(w) >= 2]
-                if len(s1_tokens) > len(act_tokens) and not act_hw.startswith("[struck:"):
-                    dropped = set(s1_tokens) - set(act_tokens)
-                    if any(len(d) >= 2 for d in dropped):
-                        continue
-
-                # Disagreement / Ambiguity Synthesis
-                if s1_out and act_hw:
-                    if not (act_hw.startswith("[unclear:") or act_hw.startswith("[struck:") or act_hw.startswith("[illegible]")):
-                        is_ambiguous_reason = bool(re.search(
-                            r'\b(?:ambiguous|unclear|illegible|cannot\s+determine|unsure|either\b.*?\bor\b)\b',
-                            reason,
-                            re.IGNORECASE
-                        ))
-                        if is_ambiguous_reason:
-                            act_hw = f"[unclear: {s1_out} | {act_hw}]"
-
-                # Rule 3: Spurious Reversion & Function Word Shield
-                if is_spurious_reversion(s1_out, act_hw):
-                    continue
-
-                # Rule 4: Non-Word Introduction Block
-                # Never allow mutating a valid dictionary word into an out-of-lexicon non-word
-                # UNLESS it is an explicit reversion of silent autocorrection (Direction A) on a non-function word
-                if not (act_hw.startswith("[struck:") or act_hw.startswith("[unclear:") or act_hw.startswith("[truncated")):
-                    is_reverting_autocorrection = (
-                        (patch_type == "revert_autocorrection" or "revert" in reason.lower() or "autocorrect" in reason.lower())
-                        and s1_out.lower() not in PROTECTED_FUNCTION_WORDS
-                    )
-                    if s1_out.lower() in combined_vocab and act_hw.lower() not in combined_vocab:
-                        if not is_reverting_autocorrection:
+                if self.legacy_filters:
+                    # Rule 2b: Anti-Deletion Shield
+                    # Block silently dropping genuine student words/syllables (e.g. 'di desicions' -> 'desicions')
+                    # If a word is crossed out, it must be tagged as [struck: ...], never silently deleted!
+                    s1_tokens = [w for w in re.findall(r'[a-zA-Z\u0980-\u09FF]+', s1_out) if len(w) >= 2]
+                    act_tokens = [w for w in re.findall(r'[a-zA-Z\u0980-\u09FF]+', act_hw) if len(w) >= 2]
+                    if len(s1_tokens) > len(act_tokens) and not act_hw.startswith("[struck:"):
+                        dropped = set(s1_tokens) - set(act_tokens)
+                        if any(len(d) >= 2 for d in dropped):
                             continue
 
-                # Block inserting fabricated words/verbs into student transcript (e.g. [unclear: do | make])
-                if bool(re.search(r'\b(?:missing verb|omitted a verb|grammar completion|supply|insert missing)\b', reason, re.IGNORECASE)):
-                    continue
-                if "[unclear:" in act_hw and "|" in act_hw:
-                    unclear_match = re.search(r'\[unclear:\s*(.*?)\s*\]', act_hw)
-                    if unclear_match:
-                        opts = [o.strip().lower() for o in unclear_match.group(1).split("|")]
-                        if not any(difflib.SequenceMatcher(None, s1_out.lower(), o).ratio() >= 0.50 for o in opts):
-                            continue
+                    # Disagreement / Ambiguity Synthesis
+                    if s1_out and act_hw:
+                        if not (act_hw.startswith("[unclear:") or act_hw.startswith("[struck:") or act_hw.startswith("[illegible]")):
+                            is_ambiguous_reason = bool(re.search(
+                                r'\b(?:ambiguous|unclear|illegible|cannot\s+determine|unsure|either\b.*?\bor\b)\b',
+                                reason,
+                                re.IGNORECASE
+                            ))
+                            if is_ambiguous_reason:
+                                act_hw = f"[unclear: {s1_out} | {act_hw}]"
 
-                # Rule 5: Question Header Strikethrough Shield
-                if is_header_strikethrough(s1_out, act_hw):
-                    continue
-
-                # Rule 6: Strikethrough Quota Guard (Max 3 new strikethroughs per page)
-                if act_hw.startswith("[struck:") and not s1_out.startswith("[struck:"):
-                    if new_strikes_applied >= 3:
+                    # Rule 3: Spurious Reversion & Function Word Shield
+                    if is_spurious_reversion(s1_out, act_hw):
                         continue
 
-                # Rule 6b: Teacher Underline / Mark Strikethrough Shield
-                # Never allow teacher marks or underlines to be converted into student strikethroughs
-                if act_hw.startswith("[struck:") and any(kw in reason.lower() for kw in ["teacher", "red ink", "grading", "tick", "red underline"]):
-                    continue
+                    # Rule 4: Non-Word Introduction Block
+                    # Never allow mutating a valid dictionary word into an out-of-lexicon non-word
+                    # UNLESS it is an explicit reversion of silent autocorrection (Direction A) on a non-function word
+                    if not (act_hw.startswith("[struck:") or act_hw.startswith("[unclear:") or act_hw.startswith("[truncated")):
+                        is_reverting_autocorrection = (
+                            (patch_type == "revert_autocorrection" or "revert" in reason.lower() or "autocorrect" in reason.lower())
+                            and s1_out.lower() not in PROTECTED_FUNCTION_WORDS
+                        )
+                        if s1_out.lower() in combined_vocab and act_hw.lower() not in combined_vocab:
+                            if not is_reverting_autocorrection:
+                                continue
 
-                # Rule 7: Non-Cursive Student Error Shield (protects phonetic misspellings: desenibe, renny, Pull-time)
-                if is_student_error_autocorrection(s1_out, act_hw, combined_vocab):
-                    continue
+                    # Block inserting fabricated words/verbs into student transcript (e.g. [unclear: do | make])
+                    if bool(re.search(r'\b(?:missing verb|omitted a verb|grammar completion|supply|insert missing)\b', reason, re.IGNORECASE)):
+                        continue
+                    if "[unclear:" in act_hw and "|" in act_hw:
+                        unclear_match = re.search(r'\[unclear:\s*(.*?)\s*\]', act_hw)
+                        if unclear_match:
+                            opts = [o.strip().lower() for o in unclear_match.group(1).split("|")]
+                            if not any(difflib.SequenceMatcher(None, s1_out.lower(), o).ratio() >= 0.50 for o in opts):
+                                continue
+
+                    # Rule 5: Question Header Strikethrough Shield
+                    if is_header_strikethrough(s1_out, act_hw):
+                        continue
+
+                    # Rule 6: Strikethrough Quota Guard (Max 3 new strikethroughs per page)
+                    if act_hw.startswith("[struck:") and not s1_out.startswith("[struck:"):
+                        if new_strikes_applied >= 3:
+                            continue
+
+                    # Rule 6b: Teacher Underline / Mark Strikethrough Shield
+                    # Never allow teacher marks or underlines to be converted into student strikethroughs
+                    if act_hw.startswith("[struck:") and any(kw in reason.lower() for kw in ["teacher", "red ink", "grading", "tick", "red underline"]):
+                        continue
+
+                    # Rule 7: Non-Cursive Student Error Shield (protects phonetic misspellings: desenibe, renny, Pull-time)
+                    if is_student_error_autocorrection(s1_out, act_hw, combined_vocab):
+                        continue
 
                 diff_key = (s1_out, act_hw, ctx)
                 if diff_key in seen_diff_keys:
@@ -785,80 +794,81 @@ class Stage2Verifier:
                     ))
                     seen_diff_keys.add(diff_key)
 
-            # Ghost correction recovery from verification_notes (safety net for unlisted notes)
-            ghost_diffs = extract_ghost_corrections_from_notes(notes, verified_text)
-            for gd in ghost_diffs:
-                if (
-                    gd.stage1_output in verified_text
-                    and not is_spurious_reversion(gd.stage1_output, gd.actual_handwritten)
-                    and not is_header_strikethrough(gd.stage1_output, gd.actual_handwritten)
-                    and not is_student_error_autocorrection(gd.stage1_output, gd.actual_handwritten, combined_vocab)
-                ):
-                    if gd.actual_handwritten.startswith("[struck:") and not gd.stage1_output.startswith("[struck:"):
-                        if new_strikes_applied >= 3:
-                            continue
-                    diff_key = (gd.stage1_output, gd.actual_handwritten, gd.context_snippet)
-                    if diff_key not in seen_diff_keys:
-                        updated_text, success = apply_anchored_diff(
-                            text=verified_text,
-                            stage1_target=gd.stage1_output,
-                            actual=gd.actual_handwritten,
-                            context_snippet=gd.context_snippet
-                        )
-                        if success:
-                            verified_text = updated_text
-                            if gd.actual_handwritten.startswith("[struck:") and not gd.stage1_output.startswith("[struck:"):
-                                new_strikes_applied += 1
-                            applied_diffs.append(gd)
-                            applied_patches.append(Stage2PatchItem(
-                                patch_type="strikethrough",
-                                stage1_target=gd.stage1_output,
-                                replacement=gd.actual_handwritten,
-                                confidence="medium",
-                                reason=gd.reason,
-                                context_anchor=gd.context_snippet
-                            ))
-                            seen_diff_keys.add(diff_key)
-
-            # Unlisted strikethrough recovery (for backward compatibility if raw_verified returned)
-            if raw_verified:
-                unlisted_diffs = extract_unlisted_strikethroughs(
-                    stage1_text=verified_text,
-                    raw_verified_text=raw_verified,
-                    already_declared_targets={d.stage1_output for d in applied_diffs}
-                )
-                for ud in unlisted_diffs:
+            if self.legacy_filters:
+                # Ghost correction recovery from verification_notes (safety net for unlisted notes)
+                ghost_diffs = extract_ghost_corrections_from_notes(notes, verified_text)
+                for gd in ghost_diffs:
                     if (
-                        ud.stage1_output in verified_text
-                        and not is_spurious_reversion(ud.stage1_output, ud.actual_handwritten)
-                        and not is_header_strikethrough(ud.stage1_output, ud.actual_handwritten)
-                        and not is_student_error_autocorrection(ud.stage1_output, ud.actual_handwritten, combined_vocab)
+                        gd.stage1_output in verified_text
+                        and not is_spurious_reversion(gd.stage1_output, gd.actual_handwritten)
+                        and not is_header_strikethrough(gd.stage1_output, gd.actual_handwritten)
+                        and not is_student_error_autocorrection(gd.stage1_output, gd.actual_handwritten, combined_vocab)
                     ):
-                        if ud.actual_handwritten.startswith("[struck:") and not ud.stage1_output.startswith("[struck:"):
+                        if gd.actual_handwritten.startswith("[struck:") and not gd.stage1_output.startswith("[struck:"):
                             if new_strikes_applied >= 3:
                                 continue
-                        diff_key = (ud.stage1_output, ud.actual_handwritten, ud.context_snippet)
+                        diff_key = (gd.stage1_output, gd.actual_handwritten, gd.context_snippet)
                         if diff_key not in seen_diff_keys:
                             updated_text, success = apply_anchored_diff(
                                 text=verified_text,
-                                stage1_target=ud.stage1_output,
-                                actual=ud.actual_handwritten,
-                                context_snippet=ud.context_snippet
+                                stage1_target=gd.stage1_output,
+                                actual=gd.actual_handwritten,
+                                context_snippet=gd.context_snippet
                             )
                             if success:
                                 verified_text = updated_text
-                                if ud.actual_handwritten.startswith("[struck:") and not ud.stage1_output.startswith("[struck:"):
+                                if gd.actual_handwritten.startswith("[struck:") and not gd.stage1_output.startswith("[struck:"):
                                     new_strikes_applied += 1
-                                applied_diffs.append(ud)
+                                applied_diffs.append(gd)
                                 applied_patches.append(Stage2PatchItem(
                                     patch_type="strikethrough",
-                                    stage1_target=ud.stage1_output,
-                                    replacement=ud.actual_handwritten,
+                                    stage1_target=gd.stage1_output,
+                                    replacement=gd.actual_handwritten,
                                     confidence="medium",
-                                    reason=ud.reason,
-                                    context_anchor=ud.context_snippet
+                                    reason=gd.reason,
+                                    context_anchor=gd.context_snippet
                                 ))
                                 seen_diff_keys.add(diff_key)
+
+                # Unlisted strikethrough recovery (for backward compatibility if raw_verified returned)
+                if raw_verified:
+                    unlisted_diffs = extract_unlisted_strikethroughs(
+                        stage1_text=verified_text,
+                        raw_verified_text=raw_verified,
+                        already_declared_targets={d.stage1_output for d in applied_diffs}
+                    )
+                    for ud in unlisted_diffs:
+                        if (
+                            ud.stage1_output in verified_text
+                            and not is_spurious_reversion(ud.stage1_output, ud.actual_handwritten)
+                            and not is_header_strikethrough(ud.stage1_output, ud.actual_handwritten)
+                            and not is_student_error_autocorrection(ud.stage1_output, ud.actual_handwritten, combined_vocab)
+                        ):
+                            if ud.actual_handwritten.startswith("[struck:") and not ud.stage1_output.startswith("[struck:"):
+                                if new_strikes_applied >= 3:
+                                    continue
+                            diff_key = (ud.stage1_output, ud.actual_handwritten, ud.context_snippet)
+                            if diff_key not in seen_diff_keys:
+                                updated_text, success = apply_anchored_diff(
+                                    text=verified_text,
+                                    stage1_target=ud.stage1_output,
+                                    actual=ud.actual_handwritten,
+                                    context_snippet=ud.context_snippet
+                                )
+                                if success:
+                                    verified_text = updated_text
+                                    if ud.actual_handwritten.startswith("[struck:") and not ud.stage1_output.startswith("[struck:"):
+                                        new_strikes_applied += 1
+                                    applied_diffs.append(ud)
+                                    applied_patches.append(Stage2PatchItem(
+                                        patch_type="strikethrough",
+                                        stage1_target=ud.stage1_output,
+                                        replacement=ud.actual_handwritten,
+                                        confidence="medium",
+                                        reason=ud.reason,
+                                        context_anchor=ud.context_snippet
+                                    ))
+                                    seen_diff_keys.add(diff_key)
 
             # Purge empty or punctuation-only struck tags caused by margin scribble noise
             verified_text = purge_empty_struck_tags(verified_text)
@@ -885,16 +895,9 @@ class Stage2Verifier:
                 if r"\rightarrow" in verified_text and r"$\rightarrow$" not in verified_text:
                     verified_text = verified_text.replace(r"\rightarrow", r"$\rightarrow$")
 
-            # Transcript Reconciliation Guard: Length Disparity Defense
-            # If verification resulted in >15% length drift relative to Stage 1,
-            # this indicates severe hallucinations or wholesale text truncation. Fallback to Stage 1 base!
-            s1_len = len(stage1_transcript.strip())
-            v_len = len(verified_text.strip())
-            if s1_len > 60 and abs(v_len - s1_len) / float(s1_len) > 0.15:
-                print(f"[Stage 2 Verifier] WARNING: Severe length disparity detected (Stage 1: {s1_len} chars vs Verified: {v_len} chars, diff={abs(v_len-s1_len)/s1_len:.2%}). Falling back to Stage 1 transcript to prevent hallucinated drift.")
-                verified_text = stage1_transcript
-                applied_diffs = []
-                applied_patches = []
+            # Patches are applied one by one onto the Stage 1 base, so the page cannot drift as a whole;
+            # a multi-line [struck: ...] replacement can still leave tags unbalanced, which is repaired here.
+            verified_text = normalize_markup(verified_text)
 
             return Stage2VerificationResult(
                 verified_transcript=verified_text,

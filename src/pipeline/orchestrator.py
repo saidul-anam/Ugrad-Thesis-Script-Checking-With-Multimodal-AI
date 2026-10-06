@@ -44,6 +44,7 @@ from src.pipeline.stage0_strikethrough_detector import StrikethroughDetector
 from src.pipeline.stage0b_teacher_marks import Stage0bTeacherMarkExtractor, Stage0bResult, reconcile_document_teacher_marks
 from src.pipeline.stage1_transcriber import Stage1Transcriber
 from src.pipeline.stage2_verifier import Stage2Verifier, run_stage2_pre_analysis, Stage2PreAnalysisReport
+from src.pipeline.line_reconciler import LineReconciler
 from src.utils.strikethrough_collision_resolver import (
     resolve_strikethrough_collisions,
     ground_and_reconcile_strikethroughs,
@@ -296,7 +297,8 @@ class ScriptCheckingPipeline:
         self.stage0_strikethrough = StrikethroughDetector()
         self.stage0b = Stage0bTeacherMarkExtractor(self.engine)
         self.stage1 = Stage1Transcriber(self.engine)
-        self.stage2 = Stage2Verifier(self.engine)
+        self.stage2 = Stage2Verifier(self.engine, legacy_filters=getattr(self.config.pipeline, "legacy_text_rules", False))
+        self.line_reconciler = LineReconciler(self.engine)
         self.stage3 = Stage3ErrorAnalyzer(self.engine)
         self.stage4 = Stage4Evaluator(self.engine)
 
@@ -614,18 +616,41 @@ class ScriptCheckingPipeline:
                 print(f"[Extraction] [2/3] Stage 2 Verified -> {stage2_result.total_corrections_count} patches applied {ctx2}")
 
             # ---------------------------------------------------------
-            # STAGE 2.5: Neuro-Symbolic Strikethrough Grounding & False-Strike Elimination
+            # STAGE 2b: Line reconciliation (independent line-crop reads + forced choice)
             # ---------------------------------------------------------
-            page_candidate_text = stage2_result.verified_transcript or stage1_result.raw_transcript
-            grounded_page_text, ground_diffs = ground_and_reconcile_strikethroughs(
-                page_candidate_text,
-                strikethrough_regions=stage0_strike_res.regions,
-                strikethrough_blocks=stage0_strike_res.blocks,
-                underlines=stage0_strike_res.underlines
-            )
-            if ground_diffs:
-                print(f"[Extraction] 🎯 Strikethrough Grounding (Page {page_no}): Applied {len(ground_diffs)} reconciliation(s): {[d.get('type') for d in ground_diffs]}")
-                stage2_result.verified_transcript = grounded_page_text
+            if getattr(pipe_cfg, "line_reconciliation", False) and not skip_stage2:
+                page_text = stage2_result.verified_transcript or stage1_result.raw_transcript
+                rec = self.line_reconciler.run(stage1_input_img, page_text, page_no=page_no)
+                n_acc = sum(d.accepted for d in rec.decisions)
+                print(f"[Extraction] [2b/3] Line Reconciliation (Page {page_no}): {len(rec.line_reads)} line reads, "
+                      f"{len(rec.decisions)} disagreements checked, {n_acc} adopted ({rec.model_calls} model calls)")
+                stage2_result.verified_transcript = rec.transcript
+                try:
+                    with open(os.path.join(checkpoint_dir, f"page_{page_no}.reconcile.json"), "w", encoding="utf-8") as f:
+                        json.dump({
+                            "before": page_text,
+                            "after": rec.transcript,
+                            "line_boxes": rec.line_boxes,
+                            "line_reads": rec.line_reads,
+                            "decisions": [d.__dict__ for d in rec.decisions],
+                        }, f, ensure_ascii=False, indent=2)
+                except Exception as e:
+                    print(f"[Extraction] Note: could not save reconciliation record for page {page_no} ({e})")
+
+            # ---------------------------------------------------------
+            # STAGE 2.5 (ablation only): text-pattern strikethrough rewriting
+            # ---------------------------------------------------------
+            if getattr(pipe_cfg, "legacy_text_rules", False):
+                page_candidate_text = stage2_result.verified_transcript or stage1_result.raw_transcript
+                grounded_page_text, ground_diffs = ground_and_reconcile_strikethroughs(
+                    page_candidate_text,
+                    strikethrough_regions=stage0_strike_res.regions,
+                    strikethrough_blocks=stage0_strike_res.blocks,
+                    underlines=stage0_strike_res.underlines
+                )
+                if ground_diffs:
+                    print(f"[Extraction] 🎯 Strikethrough Grounding (Page {page_no}): Applied {len(ground_diffs)} reconciliation(s): {[d.get('type') for d in ground_diffs]}")
+                    stage2_result.verified_transcript = grounded_page_text
 
             # ---------------------------------------------------------
             # STAGE 0b: Teacher Mark Extraction (Conditional on Margin Red Ink)
@@ -801,19 +826,21 @@ class ScriptCheckingPipeline:
         allograph_diffs = []
 
 
-        # 2. Stitch intra-word pen-lift splits (e.g. "elec tricity", "pro blems", "Hy dro - electric")
-        stitched_verified, stitch_diffs = stitch_pen_lift_splits(
-            calibrated_verified,
-            lexicon=arb_lexicon,
-            question_vocab=set(question_vocab or []),
-            allograph_map=writer_profile.discovered_allographs
-        )
-        writer_profile.stitched_splits = stitch_diffs
-
-        # 3. Resolve un-tagged strikethrough collisions and false-start stutters (e.g. "are are", "by for")
-        resolved_collisions, collision_diffs = resolve_strikethrough_collisions(
-            stitched_verified
-        )
+        # 2-3. Ablation only: lexicon pen-lift stitching and stutter->strike regexes rewrite the
+        # transcript from text patterns alone ("for a long time" -> "fora longtime"); off by default.
+        stitch_diffs, collision_diffs = [], []
+        resolved_collisions = calibrated_verified
+        if getattr(self.config.pipeline, "legacy_text_rules", False):
+            stitched_verified, stitch_diffs = stitch_pen_lift_splits(
+                calibrated_verified,
+                lexicon=arb_lexicon,
+                question_vocab=set(question_vocab or []),
+                allograph_map=writer_profile.discovered_allographs
+            )
+            writer_profile.stitched_splits = stitch_diffs
+            resolved_collisions, collision_diffs = resolve_strikethrough_collisions(
+                stitched_verified
+            )
 
         if allograph_diffs or stitch_diffs or collision_diffs:
             print(f"[Extraction] ✍️ Global Calibration: {len(allograph_diffs)} allograph adaptation(s), {len(stitch_diffs)} stitched split(s), {len(collision_diffs)} struck collision(s).")
