@@ -6,9 +6,9 @@ comes from the image. No word lists, no per-letter rules, no hand-tuned threshol
 
 > **Data split.** Class-10 scripts 0001–0028 (56 ground-truth pages) were used to find these
 > problems, so from now on they are the **dev set**: numbers on them are development numbers.
-> Scripts 0029–0033 were never scored. Their ground-truth drafts are in
-> `data/ground_truth/transcripts/english_se_10_q1_test/` (20 pages, status `DRAFT`). Once they are
-> proofread they are the **held-out test set**. Score it once, at the end.
+> Scripts 0029–0033 are the **held-out test set**: 20 pages in
+> `data/ground_truth/transcripts/english_se_10_q1_test/` (status `CORRECTED`), scored once on
+> 2026-10-07 (section 0b). Do not tune the pipeline on test-page errors.
 > The honest held-out number for the *old* pipeline is the first class-10 run
 > (`outputs/benchmarks/transcription_english_20261006_001828.md`: Stage 1+2 CER 13.2% macro).
 
@@ -41,7 +41,67 @@ Word-level errors on the same 4,933 words:
 
 Removing the leaked prompt examples did not cost Stage 1 anything (6.00% → 6.07%, within run-to-run
 noise). **These are dev numbers.** The pipeline was changed while looking at these pages, so the
-number for the thesis is the test set (section 7), once its ground truth is proofread.
+number for the thesis is the test set (section 0b).
+
+## 0b. Held-out test result (2026-10-07, 20 pages, scored once)
+
+Test set: scripts 0029–0033, 4 pages each (Q10/Q11), 1,639 active ground-truth words. Ground truth
+was drafted by gemini-3.5-flash-lite and reviewed (see each `.meta.json`); one tag typo
+(`[strcuk: o]` → `[struck: o]`, 0030 p18) was fixed before scoring. The new pipeline was run with the
+same code and config as the dev run above.
+
+| Same 20 test pages, Stage 1+2(+2b) | CER micro | CER macro | WER macro | silent autocorrection |
+|---|---|---|---|---|
+| Old pipeline (`se_10_q1`) | 9.20% | 8.94% | 11.11% | 8.75% |
+| New pipeline (`se_10_q1_v2`) | **7.43%** | 7.37% | 8.83% | 7.50% |
+| *Dev, new pipeline final (section 0)* | *4.01%* | *4.52%* | *6.77%* | *26.5%* |
+
+**Uncertainty** (bootstrap, 2,000 resamples; students are the honest unit because each student's
+handwriting is on 4 pages):
+
+- New pipeline CER 7.43%, 95% CI **2.0–14.1%** resampling students (3.6–12.5% resampling pages).
+- Gain over the old pipeline: 1.8 points, paired 95% CI **−2.3 to +7.1 points** (students); the new
+  pipeline is no better in about 1 resample in 4. With 5 students the improvement is **not
+  statistically established**; report it as "lower, not significant".
+
+**Per student (CER micro):** 0029 4.7% · 0030 1.0% · 0031 **19.3%** · 0032 9.5% · 0033 1.8%.
+Without 0031 the test CER is 4.1%, close to dev. So most of the dev→test gap is one student.
+
+**What goes wrong on 0031.** The reference is correct; the model output is not. On page 15 the
+final transcript repeats lines ("will lost its beauty, event slowly" three times) and contains a
+stand-alone `[truncated]` line. This looks like overlapping bands being stitched badly (next-steps
+step 7 in `docs/EXTRACTION_NEXT_STEPS.md`); not yet confirmed. A stand-alone `[truncated]` appears in
+Stage 1 output on 19 dev+test pages, so it can be studied on **dev** without touching the test set.
+
+| Error type (test, final) | Count |
+|---|---|
+| Extra words (mostly the repeated lines on 0031) | 64 |
+| Missed strikes | 34 |
+| Misread letters | 32 |
+| False strikes | 9 |
+| Dropped words | 9 |
+| Autocorrected misspellings | 2 |
+
+Files: `outputs/benchmarks/transcription_english_se10_test_final_20261007_103349.{json,md}` and
+`..._se10_test_old_pipeline_20261007_103352.{json,md}`; checkpoints in
+`outputs/extracted/english/se_10_q1_v2/SE_10_Q1_00{29..33}/`. Error breakdown:
+`python scripts/attribute_transcription_errors.py --gt-dir data/ground_truth/transcripts/english_se_10_q1_test --extracted-dir outputs/extracted/english/se_10_q1_v2`.
+
+**How big a test set would be reliable.** Across all 33 class-10 students (dev + test), per-student
+CER has a standard deviation of about 3.6 points. The 95% margin on the test CER is roughly
+±1.96 × 3.6 / √(students):
+
+| Students | Pages (2 per student) | CER margin |
+|---|---|---|
+| 5 (now) | 20 (4 per student) | ±3.2 pts (wider in practice: small-sample t and the 0031 outlier) |
+| 10 | 20 | ±2.2 pts |
+| 20 | 40 | ±1.6 pts |
+| 30 | 60 | ±1.3 pts |
+| 40 | 80 | ±1.1 pts |
+
+The number of **students** matters, not pages: more pages from the same student add little new
+handwriting. Showing that a ~2-point gain between two pipelines is real needs roughly 30–40 students
+(paired comparison, rough estimate from only 5 test students).
 
 ## 1. Where the errors actually come from (measured, not guessed)
 
@@ -199,6 +259,8 @@ python scripts/attribute_transcription_errors.py \
 ```
 
 ## 7. What is left to do (needs a person or a long GPU run)
+
+*Items 1 and 2 were done on 2026-10-07; results in section 0b.*
 
 1. **Proofread the test set.** Open each `page_<n>.png` / `page_<n>.txt` pair in
    `data/ground_truth/transcripts/english_se_10_q1_test/SE_10_Q1_00{29..33}/` (20 pages, Q10 and
