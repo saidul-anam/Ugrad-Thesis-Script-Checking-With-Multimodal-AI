@@ -39,7 +39,9 @@ python scripts/attribute_transcription_errors.py \
 **Why.** With only 56 dev pages, differences like 20 vs 36 false strikes may be within run-to-run noise.
 
 1. **Proofread the 20 test pages** in `data/ground_truth/transcripts/english_se_10_q1_test/` and set
-   `"status": "CORRECTED"` in each `.meta.json`. Then score once:
+   `"status": "CORRECTED"` in each `.meta.json` (done 2026-10-06). Next, extract the 20 pages in
+   `test_pages.csv` with the new pipeline into `outputs/extracted/english/se_10_q1_v2/` (it holds dev
+   scripts 0001–0028 only, so test pages are otherwise skipped as "no checkpoint"). Then score once:
    ```bash
    python scripts/evaluate_transcription.py --lang english \
      --gt-dir data/ground_truth/transcripts/english_se_10_q1_test \

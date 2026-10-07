@@ -206,7 +206,11 @@ python scripts/attribute_transcription_errors.py \
    text and one line per handwritten line. Then change `"status"` in the `.meta.json` to `"CORRECTED"`.
    The drafts come from the *old* pipeline's output; check names and crossed-out words especially
    carefully so the drafts do not bias the result.
-2. **Score the test set once** (the new pipeline's test-page outputs already exist):
+2. **Score the test set once.** First extract the 20 test pages listed in
+   `data/ground_truth/transcripts/english_se_10_q1_test/test_pages.csv` with the new pipeline
+   (Stage 0 → 1 → 2 → 2b) into `outputs/extracted/english/se_10_q1_v2/`. That folder holds dev
+   scripts 0001–0028 only; older test-page outputs made for a superseded page list were deleted on
+   2026-10-06. Without this step the evaluator prints "no checkpoint" and skips every test page.
    ```bash
    python scripts/evaluate_transcription.py --lang english \
      --gt-dir data/ground_truth/transcripts/english_se_10_q1_test \
