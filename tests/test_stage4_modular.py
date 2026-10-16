@@ -27,7 +27,9 @@ from src.utils.export_utils import export_report_markdown
 
 def test_header_normalization_and_extraction():
     # Test OCR variants normalization
-    assert "No. 7" in normalize_header_text("Ans to the Q No. Z")
+    # An unreadable number is no longer guessed ("No. Z" used to become 7); the header word is kept intact
+    assert normalize_header_text("Ans to the Q No. Z").startswith("Ans to the Q No.")
+    assert "No. o." not in normalize_header_text("Ans to the Q No. 5")
     assert "Ans to the Q" in normalize_header_text("Dans to the Q")
 
     # Test Q extraction

@@ -32,8 +32,8 @@ HEADER_NORMALIZATION_RULES = [
     # Standalone Ans No X: e.g. 'Ans No 13.', 'Ans No. 12', 'Ans Num 5'
     (re.compile(r'(?im)^\s*(?:\[struck:[^\]]*\]\s*)*Ans\s*(?:No|Num|Number)[\.\:\s]+([0-9]{1,3})\b[\.\:\-]?', re.IGNORECASE), r'Ans to the Q No. \1\n'),
     # In-line sentence header: '...sentence. Answering to the Question No 8'
-    (re.compile(r'([.?!;]\s+)(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass)\s+(?:to|of)\s+(?:the\s+)?(?:Questions?|Ques|Qus|Quse|due|dues|Qno|qn|Q\s*N)\s*(?:\b(?:number|num|no)\b\.?|[nN]o[\.\s]*ber\b)?\s*([0-9]{1,3})\b', re.IGNORECASE), r'\1\nAns to the Q No. \2\n'),
-    (re.compile(r'(?im)^\s*(?:(?:\([^\)]*\)|Part[\s\-]*[A-Za-z0-9]+)\s*[:\-]\s*)?(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass|Am|Arn|Anis)\s+(?:to|of)\s+(?:the\s+)?(?:Questions?|Ques|Qus|Quse|due|dues|Qno|qn|Q\s*N)\s*(?:\b(?:number|num|no)\b\.?|[nN]o[\.\s]*ber\b)?\s*[\-:]?', re.IGNORECASE), 'Ans to the Q No. '),
+    (re.compile(r'([.?!;]\s+)(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass)\s+(?:to|of)\s+(?:the\s+)?(?:Questions?|Ques|Qus|Quse|due|dues|Qno|qn|Q\s*N)\s*(?:\b(?:number|num|no)\b\.?|[nN]o[\.\s]*ber\b)?\s*[\:\-]?\s*([0-9]{1,3})\b', re.IGNORECASE), r'\1\nAns to the Q No. \2\n'),
+    (re.compile(r'(?im)^\s*(?:(?:\([^\)]*\)|Part[\s\-]*[A-Za-z0-9]+)\s*[:\-]\s*)?(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass|Am|Arn|Anis)\s+(?:to|of)\s+(?:the\s+)?(?:Questions?|Ques|Qus|Quse|due|dues|Qno|qn|Q\s*N(?:o\b\.?|umber\b|um\b)?)\s*(?:\b(?:number|num|no)\b\.?|[nN]o[\.\s]*ber\b)?\s*[\-:]?', re.IGNORECASE), 'Ans to the Q No. '),
     (re.compile(r'\bQus\b', re.IGNORECASE), 'Ques'),
     (re.compile(r'\bQno\b', re.IGNORECASE), 'Q No.'),
     (re.compile(r'\bQtn\b', re.IGNORECASE), 'Ques'),
@@ -41,19 +41,18 @@ HEADER_NORMALIZATION_RULES = [
     (re.compile(r'\bNo[\.\s]*ber\b', re.IGNORECASE), 'No.'),
     (re.compile(r'\bQ(?:uestion)?[\s\.\-]+ber\b', re.IGNORECASE), 'Q No.'),
     (re.compile(r'(?im)^\s*Dans\s+to\b'), 'Ans to'),
-    (re.compile(r'(?im)^\s*([b-gB-G])\s*ans[:\s]+'), r'(\1) Ans: '),
-    (re.compile(r'(?im)^\s*Dans[:\s]+'), '(d) Ans: '),
-    (re.compile(r'(?im)^\s*(?:Am|Arn|Anis)[\.,\s]+(?:to|of|the|question|ques|no\b)', re.IGNORECASE), 'Ans to '),
+    (re.compile(r'(?im)^\s*([b-gB-G])(?:[\s\)\.]+ans[:\s]+|ans\s*:\s*)'), r'(\1) Ans: '),
+    (re.compile(r'(?im)^\s*Dans[:\s]+'), '(D) Ans: '),
+    (re.compile(r'(?im)^\s*(?:Am|Arn|Anis)[\.,\s]+(?:to|of|the|question|ques|no\b)(?=[^\n]*[0-9])', re.IGNORECASE), 'Ans to '),
     (re.compile(r'(?im)^\s*(?:Am|Arn|Anis)\.?\s+(?=[0-9])', re.IGNORECASE), 'Ans '),
     (re.compile(r'\b(?:Ass|Ansl)\b', re.IGNORECASE), 'Ans'),
-    (re.compile(r'No[.,\s]*[Zz]\b', re.IGNORECASE), 'No. 7'),
     (re.compile(r'\bDans\b', re.IGNORECASE), 'Ans'),
     (re.compile(r'\bdo the [Qq]\b', re.IGNORECASE), 'to the Q'),
     (re.compile(r'Qhe o\.', re.IGNORECASE), 'Q. No.'),
     (re.compile(r'Anseve?r', re.IGNORECASE), 'Answer'),
     (re.compile(r'\bAns(?:i?to|i\s*to)\b', re.IGNORECASE), 'Ans to'),
     (re.compile(r'\bAnsi\b', re.IGNORECASE), 'Ans'),
-    (re.compile(r'\b(?:Ans\s*[:\s]*(?:(?:to|of)\s+(?:the\s+)?)?)(?:ques?|qus?|dues?)\b', re.IGNORECASE), 'Ans to the Q'),
+    (re.compile(r'\b(?:Ans\s*[:\s]*(?:(?:to|of)\s+(?:the\s+)?)?)(?:ques?|qus?|dues?(?=[\s\.\:]*(?:no\b|number\b|[0-9])))\b', re.IGNORECASE), 'Ans to the Q'),
     (re.compile(r'\$?\s*\\?i?ghtarrow\s*\$?', re.IGNORECASE), ' -> '),
 ]
 
@@ -72,12 +71,13 @@ def to_arabic_digits(text: str) -> str:
 HEADER_SPLIT_REGEX = re.compile(
     r'(?=(?:'
     # English question headers (handles Ans/Answer/Answers/Answering/Answen/Dans/Ass/Ansl/Am/Arn/Anis, to/of the, Question/Questions/Ques/Q/No/Number, optional leading [struck: ...], optional section prefixes)
-    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:(?:\([^\)]*\)|Part[\s\-]*[A-Za-z0-9]+)\s*[:\-]\s*)?(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass|Am|Arn|Anis|Q(?:uestions?|ues|ue|us|use|u|n|no|tn)?|due|dues|No|Number|Num)\b[^\n\r0-9]{0,40}[0-9০-৯]{1,3}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:(?:\([^\)]*\)|Part[\s\-]*[A-Za-z0-9]+)\s*[:\-]\s*)?(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass|Am|Arn|Anis|Q(?:uestions?|ues|ue|us|use|u|n|no|tn)?|due|dues|No|Number|Num)\b[^\n\r0-9|]{0,40}[0-9০-৯]{1,3}(?:\s*[\(（][A-Za-z0-9\u0980-\u09FF][\)）])?|'
     r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*(?:Ans|Answers?|Answen|Answering|Am|Arn)[:\s]+(?:(?:to|of)\s+)?Qhe\s+o\.\s*No\.\s*[0-9A-Za-z]+|'
     # Leading number question headers: 1. No. Q. Ans, 2 NO.Q.Ans, 3 NO. Q. Ans, 4. NO. Q. Ans:-, 13.NO.Q.Ans, 12 NO. Q. Ans, 11 no, 13no, 4 নং, 9 নং, 1 Ans:, 2 Ans:, (5 Ans:), 11 Ans
     r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[\(（]?[0-9০-৯]{1,3}\s*[\.\:\-]?[ \t]*(?:(?:NO|No|no)\b[\.\:\s]*(?:Q|Ques|Question|qn)\b|(?:Q|Ques|Question|qn)\b[\.\:\s]*(?:(?:NO|No|no)\b[\.\:\s]*)?|(?:NO|No|no|নং)\b[\.\:\s]*|(?:Ans|Answers?|Answen|Answering)\b)\s*(?:Ans|Answers?|Answen|Answering)?\s*[\:\.\-\)]?|'
     # Standalone parenthesized question number: '(8)', '(5)'
     r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[\(（][0-9০-৯]{1,2}[\)）]\s*[\:\.\-]?(?:\r?\n|$)|'
+    r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[\(（][0-9০-৯]{1,2}[\)）]\s*(?=[\(（]?[a-jA-J][\)）\.]\s)|'
     # Standalone bare question number on its own line: '5.', '11.'
     r'(?:\n|\A)\s*(?:\[struck:[^\]]*\]\s*)*[0-9০-৯]{1,2}\s*[\.\:\-][ \t]*(?:\r?\n|$)|'
     # Numberless question headers: NO.Q-Ans, NO. Q. Ans, Ans to the Q, _NO Q: Ai
@@ -121,12 +121,60 @@ VALID_HEADER_INTERMEDIATE_WORDS = {
 
 
 
-def normalize_header_text(text: str) -> str:
-    """Normalize OCR anomalies in question headings."""
-    normalized = text
+# Lines that can carry a question header. Only these are rewritten by the normalisation rules, so the
+# student's answer text reaches Stage 3 / Stage 4 unchanged.
+_HEADER_CANDIDATE_RE = re.compile(
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*[_*~]*\s*(?:'
+    r'[\(\uff08]?[0-9\u09e6-\u09ef]{1,3}(?![0-9])'
+    r'|(?:ans\w*|am|arn|anis|dans|ass|q\w*|no|num\w*|number|part|p[\s\-]*[ab])\b'
+    r'|[\(\uff08][A-Za-z\u0980-\u09FF][\)\uff09]|[\u24b6-\u24e9]|[a-gA-G](?:[\s\)\.]+ans\b|ans\s*:)|[A-Za-z]\s*[\:\.\-]?\s*$'
+    r'|\u09aa\u09cd\u09b0\u09b6\u09cd\u09a8|\u0989\u09a4\u09cd\u09a4\u09b0|summary|theme|flow|rearrange|the\s+(?:graph|chart)|once\s+upon'
+    r'|\$'
+    r')',
+    re.IGNORECASE
+)
+_INLINE_HEADER_RE = re.compile(r'[.?!;]\s+(?:Ans|Answer|Answering|Dans|Ass)\w*\s+(?:to|of)\s', re.IGNORECASE)
+
+# Formatting around a header written by the transcriber: '_Answer to ... 10_', '$\underline{7}$', '**Ans**'
+_HEADER_MARKUP_RULES = [
+    (re.compile(r'\$\s*\\(?:underline|textbf|textit|text|mathbf)\{([^{}]*)\}\s*\$'), r'\1'),
+    (re.compile(r'\\(?:underline|textbf|textit|text|mathbf)\{([^{}]*)\}'), r'\1'),
+    (re.compile(r'\*\*|__'), ''),
+    (re.compile(r'^(\s*(?:\[struck:[^\]]*\]\s*)*)[_*~]+'), r'\1'),
+    (re.compile(r'[_*~]+(\s*)$'), r'\1'),
+]
+
+# A number written before a full header restates the answer's position, e.g. "2. No Ans to the Qs No 9":
+# the full header that follows names the question.
+_LEADING_NUMBER_BEFORE_HEADER_RE = re.compile(
+    r'^(\s*(?:\[struck:[^\]]*\]\s*)*)[\(\uff08]?[0-9]{1,3}[\)\uff09]?\s*[\.\:\-]?\s*(?:No\.?|Q\.?)?\s*'
+    r'(?=(?:Ans|Answer)\w*\s+(?:to|of)\b[^\n]*?[0-9])',
+    re.IGNORECASE
+)
+
+
+def is_header_candidate_line(line: str) -> bool:
+    return bool(_HEADER_CANDIDATE_RE.match(line) or _INLINE_HEADER_RE.search(line))
+
+
+def _normalize_header_line(line: str) -> str:
+    s = line
+    for pat, repl in _HEADER_MARKUP_RULES:
+        s = pat.sub(repl, s)
+    s = _LEADING_NUMBER_BEFORE_HEADER_RE.sub(r'\1', s)
     for pat, repl in HEADER_NORMALIZATION_RULES:
-        normalized = pat.sub(repl, normalized)
-    return normalized
+        s = pat.sub(repl, s)
+    return s
+
+
+def normalize_header_text(text: str) -> str:
+    """Normalize OCR anomalies in question headings (header-candidate lines only; other lines are untouched)."""
+    if not text:
+        return text
+    return "\n".join(
+        _normalize_header_line(line) if is_header_candidate_line(line) else line
+        for line in text.split("\n")
+    )
 
 
 _KEYWORD_STOPWORDS = {
@@ -255,7 +303,7 @@ def _extract_explicit_english_header(
     clean_lines = []
     for l in first_lines.split("\n"):
         l_str = re.sub(r'^\s*\[struck:[^\]]*\]\s*', '', l).strip()
-        if not l_str or l_str.startswith("|") or l_str.startswith("---"):
+        if not l_str or "|" in l_str or l_str.startswith("---"):  # table rows are never headers
             continue
         clean_lines.append(l_str)
 
@@ -266,15 +314,6 @@ def _extract_explicit_english_header(
         top_line = re.sub(r'\[struck:[^\]]*\]', '', clean_lines[line_idx]).strip()
         if not top_line:
             continue
-
-        # OCR artifact 'No. Z' -> 7 or 2
-        if re.search(r'\bNo[.,\s]*[Zz]\b', top_line, re.IGNORECASE):
-            if valid_q_order:
-                if "7" in valid_q_order:
-                    return "7"
-                if "2" in valid_q_order:
-                    return "2"
-            return "7"
 
         # Standalone question subpart format e.g. "1(A)" or "2(B)" or "3(b)" or "3 a)" or "3. a)"
         standalone_m = re.match(r'^\s*([0-9]{1,3})\s*[\(（]([A-Za-z])[\)）]\s*[\:\.\-]?', top_line)
@@ -292,6 +331,10 @@ def _extract_explicit_english_header(
             candidate = f"{int(standalone_m.group(1))}({standalone_m.group(2).upper()})"
             if not valid_q_order or candidate in valid_q_order:
                 return candidate
+            # "4 (a) Beautiful - ugly": the letter is the first item of question 4, not a paper sub-part
+            base = str(int(standalone_m.group(1)))
+            if base in valid_q_order:
+                return base
 
         # Leading number question headers e.g. "2 NO.Q.Ans", "3 NO. Q. Ans", "1 Ans:", "2. Ans:", "(5 Ans:)", "11 Ans", "13.NO.Q.Ans", "12 NO. Q. Ans", "11 no", "13no", "1no", "2no", "4 নং", "9 নং"
         leading_num_m = re.match(
@@ -313,6 +356,12 @@ def _extract_explicit_english_header(
                 top_line,
                 re.IGNORECASE
             )
+        if not leading_num_m:
+            # Parenthesised question number followed by its first item on the same line: "(6) (a) True"
+            leading_num_m = re.match(
+                r'^\s*(?:\[struck:[^\]]*\]\s*)*[\(\uff08]([0-9]{1,2})[\)\uff09]\s*(?=[\(\uff08]?[a-jA-J][\)\uff09\.]\s)',
+                top_line
+            )
         if leading_num_m:
             cand_raw = leading_num_m.group(1) or (leading_num_m.group(2) if len(leading_num_m.groups()) > 1 else None)
             if cand_raw:
@@ -323,7 +372,7 @@ def _extract_explicit_english_header(
         # Connected header anchor pattern: requires anchor (Ans/Answer/Answering/Dans/Ass/Q/No) connected to a number
         # through valid header connectors (to, of, the, question, no, punctuation) or 1-edit OCR typos.
         header_m = re.match(
-            r'^\s*(?:(?:\([^\)]*\)|Part[\s\-]*[A-Za-z0-9]+)\s*[:\-]\s*)?(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass|Am|Arn|Anis|Q(?:uestions?|ues|ue|n)?|due|dues|No|Number|Num)\b([^\n\r0-9]{0,40})([0-9]{1,3})\s*(?:[\(（\.\s]*([A-Za-z0-9])[\)）]?)?',
+            r'^\s*(?:(?:\([^\)]*\)|Part[\s\-]*[A-Za-z0-9]+)\s*[:\-]\s*)?(?:Ansl?\.?\s*)?(?:Ans(?:i?to|i\s*to)?|Answers?|Answen|Answering|Dans|Ass|Am|Arn|Anis|Q(?:uestions?|ues|ue|n)?|due|dues|No|Number|Num)\b([^\n\r0-9|]{0,40})([0-9]{1,3})\s*(?:[\(（\.\s]*([A-Za-z0-9])[\)）]?)?',
             top_line,
             re.IGNORECASE
         )
@@ -356,6 +405,13 @@ def _extract_explicit_english_header(
             continue
 
         raw_num = str(int(header_m.group(2)))
+        # Several numbers in one header ("no. 01 13", a corrected number): the last valid one names the question
+        tail_nums = re.match(r'^((?:\s*[\.,/\-]?\s*[0-9]{1,3}\b)+)', top_line[header_m.end(2):])
+        if tail_nums and valid_q_order:
+            for n in reversed(re.findall(r'[0-9]{1,3}', tail_nums.group(1))):
+                if str(int(n)) in valid_q_order:
+                    raw_num = str(int(n))
+                    break
         sub_letter = header_m.group(3).upper() if header_m.group(3) else None
 
         # If subpart wasn't on the same line, check if the immediately following line specifies the subpart
@@ -481,7 +537,9 @@ def detect_structural_fingerprint(
     has_flow_kw = bool(re.search(r'\b(?:flow[\s\-]*chart)\b', first_lines, re.I))
     has_flow_boxes = (arrows_count >= 2) and bool(re.search(r'[\(\[]?(?:i|1|ii|2)[\)\]]', section_text, re.I))
     if has_flow_kw or has_flow_boxes:
-        return _get_q("flowchart")
+        fp_q = _get_q("flowchart")
+        if fp_q:
+            return fp_q
 
     # 1b. Matching / Substitution Table: e.g. (a+v) = ..., (b+iii) = ..., (a+iii), a) (a+iii)
     has_matching_notation = bool(re.search(r'[\(\[]?\s*[a-eA-E0-9]+\s*\+\s*[ivx0-9a-e]+\s*[\)\]]?', section_text, re.I)) and len(re.findall(r'[\(\[]?\s*[a-eA-E0-9]+\s*\+\s*[ivx0-9a-e]+\s*[\)\]]?', section_text, re.I)) >= 2
@@ -495,21 +553,27 @@ def detect_structural_fingerprint(
     has_rearrange_kw = bool(re.search(r'\b(?:re[\s\-]*arrange|rearranging|order\s+of\s+events)\b', first_lines, re.I))
     has_rearrange_table = bool(re.search(r'\|\s*1\s*\|\s*2\s*\|\s*3\s*\|', section_text)) or bool(re.search(r'\b(?:1\s*\+\s*[a-j]|i\s*->\s*[ivx]+)', section_text, re.I))
     if has_rearrange_kw or has_rearrange_table:
-        return _get_q("rearrange")
+        fp_q = _get_q("rearrange")
+        if fp_q:
+            return fp_q
 
     # 3. Informal Letter / Email: Envelope box, [STAMP], salutation + sign-off
     has_envelope = bool(re.search(r'\b(?:\[?STAMP\]?|envelope)\b', section_text, re.I)) and bool(re.search(r'\b(?:from|to)\b', section_text, re.I))
     has_salutation = bool(re.search(r'^\s*(?:dear\s+[a-z]+|my\s+dear)\b', first_lines, re.I | re.MULTILINE))
     has_signoff = bool(re.search(r'\b(?:yours?\s+(?:ever|loving|faithfully|sincerely|truly|affectionately|friend)|lovingly\s+yours|your\s+(?:loving\s+)?friend)\b', sec_lower, re.I))
     if has_envelope or (has_salutation and (has_signoff or len(section_text.split()) >= 8)) or (has_signoff and current_parent in (q_map.get("letter"), None)):
-        return _get_q("letter")
+        fp_q = _get_q("letter")
+        if fp_q:
+            return fp_q
 
     # 4. Data Chart / Graph: Statistical description with percentages or trend metrics
     has_chart_kw = bool(re.search(r'\b(?:graph|chart|pie\s*chart|bar\s*chart|diagram)\b', first_lines, re.I))
     has_stats = bool(re.search(r'\b(?:percent|percentage|\%)\b', sec_lower, re.I)) and bool(re.search(r'\b\d+(?:\.\d+)?\b', sec_lower))
     has_chart_desc = bool(re.search(r'\b(?:the\s+(?:given\s+)?(?:graph|chart|diagram|table)\s+shows|shows\s+that|increased|decreased|highest|lowest|fluctuat|rate\s+of)\b', sec_lower, re.I))
     if (has_chart_kw and (has_stats or has_chart_desc)) or (has_stats and has_chart_desc):
-        return _get_q("graph")
+        fp_q = _get_q("graph")
+        if fp_q:
+            return fp_q
 
     # 5. Completing Story: Narrative openings or common story motifs
     has_story_opening = bool(re.search(r'\b(?:once\s+upon\s+a\s+time|once\s+(?:there\s+)?lived|once\s+there\s+was|there\s+(?:lived|was)\s+(?:a|an)|one\s+day\s+(?:a|an)?|long\s+(?:ago|time\s+ago)|many\s+days\s+ago)\b', first_lines, re.I))
@@ -520,27 +584,36 @@ def detect_structural_fingerprint(
             sq_name = str(sq.get("name") or sq.get("title") or "").lower()
             if "story" in sq_name:
                 title_words = [w for w in re.findall(r'[a-z]{4,}', sq_name) if w not in _KEYWORD_STOPWORDS and w != "story"]
-                if title_words and sum(1 for w in set(title_words) if w in first_lines) >= 2:
+                first_words = set(re.findall(r'[a-z]{4,}', first_lines))
+                if title_words and sum(1 for w in set(title_words) if w in first_words) >= 2:
                     if not valid_q_order or sq_no in valid_q_order:
                         return sq_no
     if has_story_opening or has_story_kw:
-        return _get_q("story")
+        fp_q = _get_q("story")
+        if fp_q:
+            return fp_q
 
     # 6. Poem Theme: Theme keyword, poem analysis phrasing
     has_theme_kw = bool(re.search(r'\b(?:theme\s*[:\-]|\bthe\s+(?:poem|stanza|verse|passage)\s+(?:deals\s+with|is\s+about|focuses\s+on)|central\s+theme\b)', first_lines, re.I))
     if has_theme_kw or ("theme:" in first_lines and any(w in first_lines for w in ["poem", "poet", "stanza", "verse", "central", "main", "message", "author"])):
-        return _get_q("theme")
+        fp_q = _get_q("theme")
+        if fp_q:
+            return fp_q
 
     # 7. Summary: Explicit summary keyword
     has_summary_kw = bool(re.search(r'\b(?:summary\s*[:\-]|\bthe\s+passage\s+(?:deals\s+with|is\s+about|summarizes))\b', first_lines, re.I))
     if has_summary_kw:
-        return _get_q("summary")
+        fp_q = _get_q("summary")
+        if fp_q:
+            return fp_q
 
     # 8. Dialogue / Conversation: Multiple speaker turns (e.g. "Afifa:", "Doctor:", "Myself:")
     speaker_turns = len(re.findall(r'(?im)^\s*[A-Z][a-z]{1,15}\s*:\s+', section_text))
     has_dialogue_kw = bool(re.search(r'\b(?:dialogue|conversation)\b', first_lines, re.I))
     if has_dialogue_kw or (speaker_turns >= 4 and len(section_text.split()) >= 20):
-        return _get_q("dialogue")
+        fp_q = _get_q("dialogue")
+        if fp_q:
+            return fp_q
 
     # 9. Semantic Source-Text Fingerprint for Headless Answers (Summary & Theme)
     # When a student writes NO header (no "Ans 3", no "3.", no "Summary:"), we match the text
@@ -582,14 +655,14 @@ def detect_structural_fingerprint(
     return None
 
 
-def extract_header_qno(
+def _classify_header_raw(
     section_text: str,
     current_parent: Optional[str] = None,
     question_obj: Optional[ExtractedQuestion] = None,
     valid_q_order: Optional[List[str]] = None,
     entity_index: Optional[Dict[str, Set[str]]] = None,
     completed_qs: Optional[Set[str]] = None
-) -> Optional[str]:
+) -> Tuple[Optional[str], str]:
     """
     Extract canonical question number from the leading lines of a text section.
     Supports English & Bengali headers, dynamic schema keywords, sub-parts,
@@ -599,12 +672,13 @@ def extract_header_qno(
     normalized = normalize_header_text(first_lines)
     arabic_lines = to_arabic_digits(normalized)
     first_lines_lower = first_lines.lower()
+    first_words = set(re.findall(r'[a-z\u0980-\u09ff]{4,}', first_lines_lower))
 
     # 1. Explicit numeric English header first (an explicit "Ans to the Q No 11" must never be
     #    overridden by topic keywords). Keyword matching (below) only runs when no header is present.
     explicit = _extract_explicit_english_header(arabic_lines, valid_q_order=valid_q_order, current_parent=current_parent)
     if explicit:
-        return explicit
+        return explicit, "explicit"
 
     # 2. Bengali Question Header Matching (supports '১ নং উত্তর', '১(ক) নং', '১ নং প্রশ্নের উত্তর (ক)', 'উত্তর: ১', '৪ নং', '9 নং')
     beng_m = re.search(
@@ -630,8 +704,8 @@ def extract_header_qno(
             sub_part = beng_m.group(3)
         if sub_part:
             ascii_sub = BENGALI_SUBPART_MAP.get(sub_part, sub_part.upper())
-            return f"{q_num}({ascii_sub})"
-        return q_num
+            return f"{q_num}({ascii_sub})", "bengali"
+        return q_num, "bengali"
 
     # 3. Dynamic Subpart (A/B/C/D) or (ক/খ/গ/ঘ) following active parent question
     if current_parent:
@@ -641,7 +715,7 @@ def extract_header_qno(
             sub_continuation = re.match(r'^\s*([c-gC-G])[\)\.]', first_lines)
             if sub_continuation:
                 # Continuation sub-item belonging to current_parent; do not switch questions
-                return None
+                return None, "continuation"
 
             sub_patterns = [
                 ("B", r'^\s*(?:[\(（](?:B|খ)[\)）]|[Ⓑ]|B(?:\s*[\:\.\-]|\s*$))(?:\s*[\:\.\-]?\s*(?:\n|\r\n|Ans|Answer|$))'),
@@ -653,7 +727,7 @@ def extract_header_qno(
                 if re.search(pat, first_lines, re.MULTILINE | re.IGNORECASE):
                     cand = f"{base_parent}({sub_char})"
                     if not valid_q_order or cand in valid_q_order:
-                        return cand
+                        return cand, "subpart"
 
     # 4. Dynamic Keyword/Topic Matching from question_obj: best-matching sub-question wins
     if question_obj and question_obj.sub_questions:
@@ -676,7 +750,7 @@ def extract_header_qno(
                             w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', sq_name)
                             if w.lower() not in _KEYWORD_STOPWORDS
                         ]
-                        if not words or sum(1 for w in set(words) if w in first_lines_lower) < 2:
+                        if not words or sum(1 for w in set(words) if w in first_words) < 2:
                             continue
                 words = [
                     w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', sq_name)
@@ -684,26 +758,26 @@ def extract_header_qno(
                 ]
                 if not words:
                     continue
-                matches = sum(1 for w in set(words) if w in first_lines_lower)
+                matches = sum(1 for w in set(words) if w in first_words)
                 is_strong_match = False
                 if matches >= 2:
                     is_strong_match = True
                 elif matches == 1:
-                    matched_w = [w for w in set(words) if w in first_lines_lower]
+                    matched_w = [w for w in set(words) if w in first_words]
                     if matched_w and len(matched_w[0]) >= 6 and matched_w[0] not in {"english", "second", "paper", "write", "passage"}:
-                        if bool(re.search(r'\b(?:ans|q|ques|question|no|title|theme|paragraph|topic)\b', first_lines_lower, re.IGNORECASE)) or matched_w[0] in top_line.lower():
+                        if bool(re.search(r'\b(?:ans|q|ques|question|no|title|theme|paragraph|topic)\b', first_lines_lower, re.IGNORECASE)) or matched_w[0] in set(re.findall(r'[a-z\u0980-\u09ff]{4,}', top_line.lower())):
                             is_strong_match = True
                 if is_strong_match:
                     score = matches / len(set(words))
                     if score > best_score:
                         best_q, best_score = sq_no, score
             if best_q:
-                return best_q
+                return best_q, "keyword"
 
     # 5. Structural & Semantic Content Fingerprinting (Flowchart, Rearrange table, Letter, Graph, Story, Theme)
     fp = detect_structural_fingerprint(section_text, question_obj=question_obj, valid_q_order=valid_q_order, current_parent=current_parent)
     if fp:
-        return fp
+        return fp, "structural"
 
     # 6. Dynamic Schema-Driven Entity Fingerprinting (Headless / Unlabeled Answers)
     # Strictly applies to substantial headless answers (>= 25 words).
@@ -711,7 +785,7 @@ def extract_header_qno(
     if question_obj and valid_q_order:
         is_sub_item = bool(re.match(r'^\s*[\(（]?[a-jA-J0-9][\)）\.]', first_lines))
         if len(section_text.split()) < 25 or is_sub_item:
-            return None
+            return None, "none"
 
         e_index = entity_index or build_question_entity_index(question_obj, valid_q_order)
         best_match_q = None
@@ -736,9 +810,9 @@ def extract_header_qno(
                 best_match_q = q
 
         if best_match_q and best_match_overlap >= 3:
-            return best_match_q
+            return best_match_q, "content"
 
-    return None
+    return None, "none"
 
 
 def audit_segmented_answers(
@@ -857,489 +931,578 @@ def resolve_ambiguous_snippet(
     return None
 
 
-def reconcile_delayed_headers(
-    answer_buckets: Dict[str, Dict[str, Any]],
-    valid_q_order: List[str],
-    pages: Optional[List[Any]] = None,
-    question_obj: Optional[ExtractedQuestion] = None,
-    engine: Optional[Any] = None
-) -> None:
-    """
-    Physical Exam Invariant Reconciler:
-    If a bucket for Question Q contains an explicit header for Q at line L > 0
-    preceded by non-header body lines, that prefix text belongs to a predecessor question.
-    Uses Micro-LLM resolution if engine is provided; otherwise safely restores to the predecessor.
-    """
-    if not valid_q_order:
-        return
+# ---------------------------------------------------------------------------
+# Content evidence: how well a piece of text fits a question, measured from the question paper
+# (distinctive terms of the printed question / passage), its answer key (accepted answers, the
+# rearrangement letter sequence) and its layout (dialogue turns, letter, flow chart, ...).
+# ---------------------------------------------------------------------------
+# Evidence is a count of paper terms / answer-key items found in the text. These minimums apply to every
+# script and paper alike; they were checked against scripts/audit_segmentation.py, not set per script.
+MIN_REMAP_EVIDENCE = 2      # an alternative question needs at least this much evidence to override a header
+STRUCTURAL_EVIDENCE = 3     # a matching layout fingerprint counts like three distinctive terms
+MIN_CONTENT_WORDS = 8       # shorter text says too little about its content to override anything
 
-    q_titles = {}
-    if question_obj and question_obj.sub_questions:
-        for sq in question_obj.sub_questions:
-            sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
-            if sq_no:
-                q_titles[sq_no] = str(sq.get("name") or sq.get("title") or sq.get("prompt") or f"Question {sq_no}")
+EXPLICIT_SOURCES = ("explicit", "bengali", "subpart", "remap", "inner_header")
 
-    for idx, q in enumerate(valid_q_order):
-        data = answer_buckets.get(q)
-        if not data or not data.get("text_parts"):
+_BOUNDARY_LINE_RE = re.compile(
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*(?:Ans(?:wer)?\b[\s\.\:\-]|[0-9]{1,2}\s*[\.\)]?\s*[\(（]?[a-jA-J][\)）\.]\s)',
+    re.IGNORECASE
+)
+_PART_DIVIDER_RE = re.compile(r'^\s*(?:Part[\s\-]*[A-Z0-9]\b|P[\s\-]*[A-Z0-9]\s*(?:Writting|Writing|Reading)?)\b.*$', re.IGNORECASE)
+
+
+def build_answer_key_index(
+    question_obj: Optional[ExtractedQuestion],
+    valid_q_order: Optional[List[str]]
+) -> Dict[str, Dict[str, Any]]:
+    """Per question: one regex per answer-key item (its accepted answers) and the rearrangement sequence."""
+    index: Dict[str, Dict[str, Any]] = {}
+    qid = getattr(question_obj, "question_id", None) if question_obj else None
+    if not qid or not valid_q_order:
+        return index
+    try:
+        from src.pipeline.stage4_modes import load_answer_key, key_for_question
+        key = load_answer_key(qid)
+    except Exception:
+        return index
+    if not key:
+        return index
+    for q in valid_q_order:
+        _section, entry = key_for_question(key, q)
+        if not entry:
             continue
-        full_text = "\n".join(data["text_parts"])
-        lines = [l.strip() for l in full_text.split("\n") if l.strip()]
-        if len(lines) <= 1:
-            continue
+        info: Dict[str, Any] = {"items": [], "sequence": []}
+        seq = entry.get("correct_sequence")
+        if seq:
+            info["sequence"] = [str(x).strip().lower() for x in seq if str(x).strip()]
+        raw_items = entry.get("items") or []
+        if isinstance(raw_items, dict):
+            raw_items = list(raw_items.values())
+        for it in raw_items:
+            accepted = (it.get("accepted") or []) if isinstance(it, dict) else []
+            phrases = []
+            for a in accepted:
+                a_norm = re.sub(r"\s+", " ", str(a).strip().lower())
+                # option labels ("iv", "4", "b") identify nothing on their own
+                if len(a_norm) < 4 or re.fullmatch(r"[ivx]+|[0-9]+|[a-z]", a_norm):
+                    continue
+                phrases.append(re.escape(a_norm))
+            if phrases:
+                info["items"].append(re.compile(r"(?<![a-z])(?:" + "|".join(phrases) + r")(?![a-z])"))
+        if info["items"] or info["sequence"]:
+            index[q] = info
+    return index
 
-        first_line = lines[0]
-        m_first = re.match(
-            r'^(?:\[struck:[^\]]*\]\s*)*(?:Ans(?:wers?|wer|ing)?\s+to\s+(?:the\s+)?(?:Q|Questions?|Ques)\s*(?:No\.?|Number)?\s*([0-9]{1,2}))',
-            first_line,
-            re.I
-        )
-        if m_first and m_first.group(1) == q:
-            continue  # Already begins cleanly with explicit header
 
-        for l_idx, line in enumerate(lines[1:], 1):
-            m = re.match(
-                r'^(?:\[struck:[^\]]*\]\s*)*(?:Ans(?:wers?|wer|ing)?\s+to\s+(?:the\s+)?(?:Q|Questions?|Ques)\s*(?:No\.?|Number)?\s*([0-9]{1,2}))',
-                line,
-                re.I
-            )
-            if m and m.group(1) == q:
-                preceding_text = "\n".join(lines[:l_idx]).strip()
-                post_text = "\n".join(lines[l_idx:]).strip()
-
-                # Determine target predecessor question
-                prev_q = valid_q_order[idx - 1] if idx > 0 else None
-                dest_q = prev_q
-
-                if engine and prev_q:
-                    cand_list = [
-                        (prev_q, q_titles.get(prev_q, f"Question {prev_q}")),
-                        (q, q_titles.get(q, f"Question {q}"))
-                    ]
-                    llm_choice = resolve_ambiguous_snippet(preceding_text, cand_list, engine)
-                    if llm_choice:
-                        dest_q = llm_choice
-
-                if dest_q and dest_q != q:
-                    if dest_q not in answer_buckets:
-                        answer_buckets[dest_q] = {"text_parts": [], "pages": set(), "errors": []}
-                    answer_buckets[dest_q]["text_parts"].append(preceding_text)
-
-                    # Re-attribute page numbers
-                    if pages:
-                        prec_snip = preceding_text[:40].strip()
-                        post_snip = post_text[:40].strip()
-                        for p in pages:
-                            p_txt = (getattr(getattr(p, "stage2_verification", None), "verified_transcript", "") or
-                                     getattr(getattr(p, "stage1_transcription", None), "raw_transcript", "") or "")
-                            if prec_snip and prec_snip in p_txt:
-                                answer_buckets[dest_q]["pages"].add(p.page_no)
-                                if post_snip not in p_txt:
-                                    data["pages"].discard(p.page_no)
-
-                    print(f"[AnswerSegmenter] Reconciled delayed header in Q{q}: moved {len(preceding_text.split())} words -> Q{dest_q}")
-
-                data["text_parts"] = [post_text]
+def _key_hits(text: str, info: Optional[Dict[str, Any]]) -> int:
+    """Answer-key items whose accepted answer occurs in text; a written rearrangement sequence counts fully."""
+    if not info or not text:
+        return 0
+    low = text.lower()
+    hits = sum(1 for rx in info.get("items", []) if rx.search(low))
+    seq = info.get("sequence") or []
+    if len(seq) >= 4 and all(re.fullmatch(r"[a-z]|[ivx]{1,4}", x) for x in seq):
+        letters = set(seq)
+        for line in low.split("\n"):
+            found = {t for t in re.findall(r"(?<![a-z])([a-z]|[ivx]{1,4})(?![a-z])", line) if t in letters}
+            if len(found) >= len(letters) - 2:
+                hits += len(seq)
                 break
+    return hits
 
 
-def segment_script_into_questions(
-    extraction: ExtractionResult,
+class QuestionContext:
+    """Paper-derived lookups shared by every decision of one segmentation run."""
+
+    def __init__(
+        self,
+        question_obj: Optional[ExtractedQuestion],
+        valid_q_order: Optional[List[str]],
+        entity_index: Optional[Dict[str, Set[str]]] = None
+    ):
+        self.question_obj = question_obj
+        self.order: List[str] = list(valid_q_order or [])
+        if entity_index is not None:
+            self.entities = entity_index
+        else:
+            self.entities = build_question_entity_index(question_obj, self.order) if (question_obj and self.order) else {}
+        self.keys = build_answer_key_index(question_obj, self.order) if question_obj else {}
+        # A paper term shared by k questions (e.g. a reading passage behind several questions) says little about
+        # which of them a text answers: it counts 1/k.
+        df: Dict[str, int] = {}
+        for q in self.order:
+            for term in self.entities.get(q, set()):
+                df[term] = df.get(term, 0) + 1
+        self.term_weight = {t: 1.0 / n for t, n in df.items()}
+
+    def scores(self, text: str) -> Dict[str, float]:
+        """Evidence for every question on the paper (weighted paper terms + answer-key items + layout)."""
+        out: Dict[str, float] = {}
+        if not text or not self.order:
+            return out
+        words = {w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', text)}
+        fp = None
+        if self.question_obj is not None:
+            fp = detect_structural_fingerprint(text, question_obj=self.question_obj, valid_q_order=self.order)
+        for q in self.order:
+            score = sum(self.term_weight.get(t, 0.0) for t in words & self.entities.get(q, set()))
+            score += _key_hits(text, self.keys.get(q))
+            if fp == q:
+                score += STRUCTURAL_EVIDENCE
+            out[q] = round(score, 3)
+        return out
+
+
+def _base_q(q: Optional[str]) -> str:
+    return re.sub(r"\(.*?\)", "", str(q or "")).strip()
+
+
+def resolve_header_collision(
+    section_text: str,
+    header_q: str,
+    current_parent: Optional[str],
+    completed_qs: Optional[Set[str]],
+    ctx: QuestionContext
+) -> Optional[str]:
+    """
+    An explicit header that names a question already answered, or jumps back in paper order, is checked
+    against the content below it. If a question not yet answered fits that content clearly better
+    (more evidence, and at least MIN_REMAP_EVIDENCE), the header is taken as a slip and that question
+    is returned. Legitimate out-of-order answers keep their header: their content fits it.
+    """
+    order = ctx.order
+    if not order or header_q not in order:
+        return None
+    completed = set(completed_qs or set()) - {current_parent}
+    backward = bool(
+        current_parent in order
+        and order.index(header_q) < order.index(current_parent)
+        and _base_q(current_parent) != _base_q(header_q)
+    )
+    if header_q not in completed and not backward:
+        return None
+    if len(section_text.split()) < MIN_CONTENT_WORDS:
+        return None
+    scores = ctx.scores(section_text)
+    exclude = {header_q, current_parent} | completed
+    candidates = [q for q in order if q not in exclude and _base_q(q) != _base_q(header_q)]
+    if not candidates:
+        return None
+    alt = max(candidates, key=lambda q: scores.get(q, 0))
+    if scores.get(alt, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(scores, alt):
+        return alt
+    return None
+
+
+def _is_unique_best(scores: Dict[str, float], q: str) -> bool:
+    """q has strictly more evidence than every other question on the paper."""
+    return all(scores.get(q, 0) > v for k, v in scores.items() if k != q)
+
+
+def classify_header(
+    section_text: str,
+    current_parent: Optional[str] = None,
     question_obj: Optional[ExtractedQuestion] = None,
-    engine: Optional[Any] = None
-) -> List[AlignedAnswerItem]:
+    valid_q_order: Optional[List[str]] = None,
+    entity_index: Optional[Dict[str, Set[str]]] = None,
+    completed_qs: Optional[Set[str]] = None,
+    context: Optional[QuestionContext] = None
+) -> Tuple[Optional[str], str]:
     """
-    Segment verified script text into aligned question answers.
-    Combines page-by-page transcripts, tracks continuation pages,
-    and maps linguistic errors to each answer segment.
+    Decide which question a section's leading lines name, and how:
+      explicit / bengali / subpart  - a written header ("Ans to the Q No. 5", "৫ নং উত্তর", "(B)")
+      remap                         - a written header overridden by content evidence (see resolve_header_collision)
+      keyword / structural / content - no header; inferred from the question title, layout or paper terms
+      continuation / none           - nothing that names a question
     """
-    # Build question catalog from question paper if available
-    sub_q_names = {}
-    valid_q_order = []
+    q, source = _classify_header_raw(
+        section_text,
+        current_parent=current_parent,
+        question_obj=question_obj,
+        valid_q_order=valid_q_order,
+        entity_index=entity_index,
+        completed_qs=completed_qs
+    )
+    if q and source in ("explicit", "bengali", "subpart") and valid_q_order and question_obj is not None:
+        ctx = context or QuestionContext(question_obj, valid_q_order, entity_index)
+        alt = resolve_header_collision(section_text, q, current_parent, completed_qs, ctx)
+        if alt:
+            return alt, "remap"
+    return q, source
+
+
+def extract_header_qno(
+    section_text: str,
+    current_parent: Optional[str] = None,
+    question_obj: Optional[ExtractedQuestion] = None,
+    valid_q_order: Optional[List[str]] = None,
+    entity_index: Optional[Dict[str, Set[str]]] = None,
+    completed_qs: Optional[Set[str]] = None
+) -> Optional[str]:
+    """Canonical question number named or implied by a section's leading lines (see classify_header)."""
+    q, _source = classify_header(
+        section_text,
+        current_parent=current_parent,
+        question_obj=question_obj,
+        valid_q_order=valid_q_order,
+        entity_index=entity_index,
+        completed_qs=completed_qs
+    )
+    return q
+
+
+# ---------------------------------------------------------------------------
+# Segmentation
+# ---------------------------------------------------------------------------
+class _Part:
+    """One contiguous piece of a page's transcript and the question it was filed under."""
+    __slots__ = ("text", "page", "q", "source")
+
+    def __init__(self, text: str, page: int, q: str, source: str):
+        self.text, self.page, self.q, self.source = text, page, q, source
+
+
+def _split_page_sections(page_text: str) -> List[str]:
+    normalized = normalize_header_text(page_text)
+    sections = [s for s in HEADER_SPLIT_REGEX.split(normalized) if s.strip()]
+    return sections or ([normalized] if normalized.strip() else [])
+
+
+def _explicit_header_of_line(line: str, order: List[str]) -> Optional[str]:
+    return _extract_explicit_english_header(to_arabic_digits(normalize_header_text(line)), valid_q_order=order or None)
+
+
+def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, log: List[Dict[str, Any]]) -> List[_Part]:
+    """Reading-order pass: file every section under a question."""
+    parts: List[_Part] = []
+    current: Optional[str] = None
+    default_q = ctx.order[0] if ctx.order else "1"
+    for page_no, page_text in page_items:
+        for sec in _split_page_sections(page_text):
+            completed = {p.q for p in parts}
+            q, source = classify_header(
+                sec,
+                current_parent=current,
+                question_obj=ctx.question_obj,
+                valid_q_order=ctx.order or None,
+                entity_index=ctx.entities,
+                completed_qs=completed,
+                context=ctx
+            )
+            sec_clean = sec.strip()
+            if not q and _PART_DIVIDER_RE.match(sec_clean) and len(sec_clean.split()) <= 6:
+                continue  # "Part-B : Writing Part" carries no answer text
+
+            if q and source in ("explicit", "bengali", "subpart", "remap"):
+                target, how = q, source
+                if source == "remap":
+                    named = _classify_header_raw(sec, current_parent=current, question_obj=ctx.question_obj,
+                                                 valid_q_order=ctx.order or None, entity_index=ctx.entities,
+                                                 completed_qs=completed)[0]
+                    log.append({"event": "header_remap", "page": page_no, "header_named": named, "assigned": q,
+                                "line": sec_clean.split("\n", 1)[0][:80]})
+                    print(f"[AnswerSegmenter] Header on page {page_no} names Q{named} but its content fits Q{q}: filed under Q{q}")
+            elif q and q != current and source in ("keyword", "structural", "content"):
+                if current is None:
+                    target, how = q, source
+                elif q not in completed and len(sec_clean.split()) >= MIN_CONTENT_WORDS:
+                    sc = ctx.scores(sec_clean)
+                    if sc.get(q, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, q):
+                        target, how = q, source
+                        log.append({"event": "content_switch", "page": page_no, "from": current, "to": q,
+                                    "evidence": {q: sc.get(q, 0), current: sc.get(current, 0)}})
+                    else:
+                        target, how = current, "continuation"
+                else:
+                    target, how = current, "continuation"
+            else:
+                target = current or default_q
+                how = "continuation" if current else "default"
+            current = target
+            parts.append(_Part(sec_clean, page_no, target, how))
+    return parts
+
+
+def _split_delayed_headers(
+    parts: List[_Part],
+    ctx: QuestionContext,
+    engine: Optional[Any],
+    llm_recovery: bool,
+    q_titles: Dict[str, str],
+    log: List[Dict[str, Any]]
+) -> List[_Part]:
+    """
+    A part whose own header appears only after some body lines: those lines belong to the question that
+    was being answered just before (reading order). Nothing is discarded; with no earlier question the
+    lines stay where they are.
+    """
+    out: List[_Part] = []
+    for part in parts:
+        lines = part.text.split("\n")
+        hdr_idx = None
+        if part.source in EXPLICIT_SOURCES and len(lines) > 1:
+            first = _explicit_header_of_line(lines[0], ctx.order)
+            if not (first and _base_q(first) == _base_q(part.q)):
+                for li in range(1, min(len(lines), 4)):
+                    h = _explicit_header_of_line(lines[li], ctx.order)
+                    if h and _base_q(h) == _base_q(part.q):
+                        hdr_idx = li
+                        break
+        prev_q = out[-1].q if out else None
+        if hdr_idx is None or not prev_q or prev_q == part.q:
+            out.append(part)
+            continue
+        prefix = "\n".join(lines[:hdr_idx]).strip()
+        if not prefix or (_PART_DIVIDER_RE.match(prefix) and len(prefix.split()) <= 6):
+            out.append(part)
+            continue
+        dest = prev_q
+        if llm_recovery and engine is not None:
+            choice = resolve_ambiguous_snippet(
+                prefix, [(prev_q, q_titles.get(prev_q, f"Question {prev_q}")), (part.q, q_titles.get(part.q, f"Question {part.q}"))], engine
+            )
+            dest = choice or prev_q
+        if dest == part.q:
+            out.append(part)
+            continue
+        out.append(_Part(prefix, part.page, dest, "delayed_header_prefix"))
+        out.append(_Part("\n".join(lines[hdr_idx:]).strip(), part.page, part.q, part.source))
+        log.append({"event": "delayed_header", "page": part.page, "moved_words": len(prefix.split()), "from": part.q, "to": dest})
+        print(f"[AnswerSegmenter] Delayed header on page {part.page}: {len(prefix.split())} words before Q{part.q}'s header -> Q{dest}")
+    return out
+
+
+def _recover_inner_headers(parts: List[_Part], ctx: QuestionContext, log: List[Dict[str, Any]]) -> List[_Part]:
+    """A missing question whose explicit header sits inside another part (not split earlier): split it out."""
+    if not ctx.order:
+        return parts
+    for mis_q in [q for q in ctx.order if q not in {p.q for p in parts}]:
+        for i, part in enumerate(parts):
+            if part.q == mis_q:
+                continue
+            lines = part.text.split("\n")
+            hit = next((li for li in range(1, len(lines)) if _explicit_header_of_line(lines[li], ctx.order) == mis_q), None)
+            if hit is None:
+                continue
+            head, tail = "\n".join(lines[:hit]).strip(), "\n".join(lines[hit:]).strip()
+            new_parts = ([_Part(head, part.page, part.q, part.source)] if head else []) + [_Part(tail, part.page, mis_q, "inner_header")]
+            parts = parts[:i] + new_parts + parts[i + 1:]
+            log.append({"event": "inner_header", "page": part.page, "from": part.q, "to": mis_q, "line": lines[hit].strip()[:60]})
+            print(f"[AnswerSegmenter] Inner header for Q{mis_q} found inside Q{part.q} (page {part.page}): split out")
+            break
+    return parts
+
+
+def _fill_gaps_by_content(parts: List[_Part], ctx: QuestionContext, log: List[Dict[str, Any]]) -> List[_Part]:
+    """
+    A question still missing takes the chunk of text that fits it clearly better than the question it is
+    filed under (answer-key items / paper terms / layout). Chunks start at a part boundary or at a
+    numberless 'Ans' / 'N (a)' line. A part that carries its own written header is only considered when
+    the same header occurs twice (one of them is then a mislabel). A question is never emptied.
+    """
+    if not ctx.order or ctx.question_obj is None:
+        return parts
+    for mis_q in [q for q in ctx.order if q not in {p.q for p in parts}]:
+        # written headers per question; a header repeated on consecutive parts is one header
+        explicit_count: Dict[str, int] = {}
+        for k, p in enumerate(parts):
+            if p.source in EXPLICIT_SOURCES and not (k > 0 and parts[k - 1].q == p.q):
+                explicit_count[p.q] = explicit_count.get(p.q, 0) + 1
+        best = None  # (margin, part index, start line, end line, scores)
+        for i, part in enumerate(parts):
+            if part.q == mis_q:
+                continue
+            if part.source in EXPLICIT_SOURCES and explicit_count.get(part.q, 0) < 2:
+                continue
+            lines = part.text.split("\n")
+            starts = [0] + [li for li in range(1, len(lines)) if _BOUNDARY_LINE_RE.match(lines[li])]
+            for k, st in enumerate(starts):
+                chunk = "\n".join(lines[st:]).strip()
+                if len(chunk.split()) < 3:
+                    continue
+                sc = ctx.scores(chunk)
+                a_m, a_p = sc.get(mis_q, 0), sc.get(part.q, 0)
+                if a_m < MIN_REMAP_EVIDENCE or not _is_unique_best(sc, mis_q):
+                    continue
+                remaining = sum(len(p.text.split()) for j, p in enumerate(parts) if p.q == part.q and j != i)
+                remaining += len("\n".join(lines[:st]).split())
+                if remaining == 0:
+                    continue
+                margin = a_m - a_p
+                if best is None or margin > best[0]:
+                    best = (margin, i, st, sc)
+        if best is None:
+            continue
+        _margin, i, st, sc = best
+        part = parts[i]
+        lines = part.text.split("\n")
+        head, chunk = "\n".join(lines[:st]).strip(), "\n".join(lines[st:]).strip()
+        new_parts = ([_Part(head, part.page, part.q, part.source)] if head else []) + [_Part(chunk, part.page, mis_q, "gap_fill")]
+        parts = parts[:i] + new_parts + parts[i + 1:]
+        # the answer may run on over following continuation parts of the same question
+        j = i + len(new_parts)
+        while j < len(parts) and parts[j].q == part.q and parts[j].source == "continuation":
+            sc_j = ctx.scores(parts[j].text)
+            if sc_j.get(mis_q, 0) > sc_j.get(part.q, 0):
+                parts[j] = _Part(parts[j].text, parts[j].page, mis_q, "gap_fill")
+                j += 1
+            else:
+                break
+        log.append({"event": "gap_fill", "page": part.page, "from": part.q, "to": mis_q,
+                    "evidence": {mis_q: sc.get(mis_q, 0), part.q: sc.get(part.q, 0)}, "head": chunk[:60]})
+        print(f"[AnswerSegmenter] Missing Q{mis_q} recovered from Q{part.q} on page {part.page} (evidence {sc.get(mis_q, 0)} vs {sc.get(part.q, 0)})")
+    return parts
+
+
+def _llm_transition_recovery(
+    parts: List[_Part],
+    ctx: QuestionContext,
+    engine: Any,
+    q_prompts: Dict[str, str],
+    log: List[Dict[str, Any]]
+) -> List[_Part]:
+    """Ablation only (pipeline.segmentation_llm_recovery): ask the model where a missing answer starts."""
+    for mis_q in [q for q in ctx.order if q not in {p.q for p in parts}]:
+        target_desc = q_prompts.get(mis_q, f"Question {mis_q}")
+        words_by_q: Dict[str, int] = {}
+        for p in parts:
+            words_by_q[p.q] = words_by_q.get(p.q, 0) + len(p.text.split())
+        for parent_q in sorted((q for q, w in words_by_q.items() if w >= 100), key=lambda q: -words_by_q[q]):
+            parent_text = "\n\n".join(p.text for p in parts if p.q == parent_q)
+            prompt = (
+                f"You are an exam layout boundary detector.\n"
+                f"We are looking for missing Question {mis_q} (Topic: '{target_desc}').\n"
+                f"The text below is filed under Question {parent_q}:\n"
+                f"\"\"\"\n{parent_text[:2500]}\n\"\"\"\n\n"
+                f"Does this text contain a distinct answer transition where Question {mis_q} begins?\n"
+                f"If YES, quote the EXACT starting line of Question {mis_q}.\n"
+                f"If NO (not attempted here or all of it belongs to Question {parent_q}), reply with NONE.\n"
+                f"Reply ONLY with the starting line or NONE."
+            )
+            try:
+                resp = ""
+                if hasattr(engine, "generate_text"):
+                    resp = engine.generate_text(prompt, max_new_tokens=64, temperature=0.0)
+                elif hasattr(engine, "chat"):
+                    resp = engine.chat(prompt)
+                resp = (resp or "").strip()
+            except Exception as ex:
+                print(f"[AnswerSegmenter] Note on neural recovery: {ex}")
+                break
+            if not resp or resp.upper() == "NONE" or "\n" in resp or len(resp) < 4:
+                continue
+            idx = next((i for i, p in enumerate(parts) if p.q == parent_q and resp in p.text), None)
+            if idx is None:
+                continue
+            post = parent_text[parent_text.find(resp):]
+            sc = ctx.scores(post)
+            if sc.get(mis_q, 0) < MIN_REMAP_EVIDENCE:
+                print(f"[AnswerSegmenter] Layer 3 rejected unverified split for Question {mis_q} from Question {parent_q}")
+                continue
+            p = parts[idx]
+            pos = p.text.find(resp)
+            head, tail = p.text[:pos].strip(), p.text[pos:].strip()
+            new_parts = ([_Part(head, p.page, parent_q, p.source)] if head else []) + [_Part(tail, p.page, mis_q, "llm_recovery")]
+            parts = parts[:idx] + new_parts + parts[idx + 1:]
+            k = idx + len(new_parts)
+            while k < len(parts) and parts[k].q == parent_q and parts[k].source == "continuation":
+                parts[k] = _Part(parts[k].text, parts[k].page, mis_q, "llm_recovery")
+                k += 1
+            log.append({"event": "llm_recovery", "page": p.page, "from": parent_q, "to": mis_q, "line": resp[:60]})
+            print(f"[AnswerSegmenter] Layer 3 recovered Question {mis_q} from Question {parent_q} at boundary: '{resp[:30]}'")
+            break
+    return parts
+
+
+def _attribute_errors(
+    errors: List[Dict[str, Any]],
+    parts: List[_Part],
+    ordered_keys: List[str]
+) -> Tuple[Dict[str, List[Dict[str, Any]]], List[Dict[str, Any]]]:
+    """
+    File each Stage 3 error under a question: restrict to the questions present on the error's page, then
+    match its context sentence, then its erroneous text (4+ characters, whole words), then its recorded
+    question number. Errors that match nothing are returned separately instead of being dropped.
+    """
+    texts = {q: "\n\n".join(p.text for p in parts if p.q == q).lower() for q in ordered_keys}
+    pages = {q: {p.page for p in parts if p.q == q} for q in ordered_keys}
+    out: Dict[str, List[Dict[str, Any]]] = {q: [] for q in ordered_keys}
+    unattributed: List[Dict[str, Any]] = []
+    for err in errors:
+        page = err.get("page_no") if err.get("page_no") is not None else err.get("page_number")
+        cands = [q for q in ordered_keys if page is not None and page in pages[q]] or list(ordered_keys)
+        ctx_s = str(err.get("context_sentence") or "").strip().lower()
+        needle = str(err.get("erroneous_text") or "").strip().lower()
+        qn = re.sub(r"[()\s]", "", str(err.get("question_no") or "")).upper()
+        matched = None
+        if len(ctx_s) >= 12:
+            matched = next((q for q in cands if ctx_s[:30] in texts[q] or (len(ctx_s) > 15 and ctx_s[-20:] in texts[q])), None)
+        if not matched and len(needle) >= 4:
+            rx = re.compile(r"\b" + re.escape(needle) + r"\b")
+            matched = next((q for q in cands if rx.search(texts[q])), None)
+        if not matched and qn:
+            matched = next((q for q in cands if re.sub(r"[()\s]", "", q).upper() == qn), None)
+        if not matched and page is not None and len(cands) == 1:
+            matched = cands[0]
+        if matched:
+            err["question_no"] = matched
+            out[matched].append(err)
+        else:
+            unattributed.append(err)
+    return out, unattributed
+
+
+def _paper_catalog(question_obj: Optional[ExtractedQuestion]) -> Tuple[List[str], Dict[str, str], Dict[str, str]]:
+    """Questions written on the script (class-test marks carried over by the teacher are excluded)."""
+    order: List[str] = []
+    names: Dict[str, str] = {}
+    prompts: Dict[str, str] = {}
     if question_obj and question_obj.sub_questions:
         for sq in question_obj.sub_questions:
             q_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
             q_title = str(sq.get("name") or sq.get("title") or sq.get("prompt") or "").lower()
-            # Institutional assessment questions (e.g. "Q14: Class Test", "Class Test : 10") are teacher marks carried over,
-            # not written on the student semester exam paper.
             task_type = str(sq.get("task_type") or "").lower()
             if task_type == "class_test" or re.match(r'^(?:q[0-9]+[:\s]*)?class[\s_-]*test(?:\s*assessment)?\s*[:0-9\s]*$', q_title.strip(), re.I):
                 continue
-            if q_no:
-                valid_q_order.append(q_no)
-                sub_q_names[q_no] = sq.get("name") or sq.get("title") or f"Question {q_no}"
+            if q_no and q_no not in order:
+                order.append(q_no)
+                names[q_no] = sq.get("name") or sq.get("title") or f"Question {q_no}"
+                prompts[q_no] = str(sq.get("prompt") or sq.get("question_prompt") or sq.get("name") or sq.get("title") or "")
+    return order, names, prompts
 
-    # Build dynamic entity index for semantic and gap-filling reconciliation
-    entity_index = build_question_entity_index(question_obj, valid_q_order) if (question_obj and valid_q_order) else {}
 
-    # Collect answers across all pages
-    # Map: q_no -> {"text_parts": [], "pages": [], "errors": []}
-    answer_buckets: Dict[str, Dict[str, Any]] = {}
-    current_q_no: Optional[str] = None
+def _segment_pages(
+    page_items: List[Tuple[int, str]],
+    errors: List[Dict[str, Any]],
+    question_obj: Optional[ExtractedQuestion],
+    engine: Optional[Any],
+    llm_recovery: bool,
+    diagnostics: Optional[Dict[str, Any]]
+) -> List[AlignedAnswerItem]:
+    valid_q_order, sub_q_names, q_prompts = _paper_catalog(question_obj)
+    ctx = QuestionContext(question_obj, valid_q_order)
+    log: List[Dict[str, Any]] = []
 
-    pages = extraction.pages or []
+    parts = _assign_sections(page_items, ctx, log)
+    parts = _split_delayed_headers(parts, ctx, engine, llm_recovery, sub_q_names, log)
+    parts = _recover_inner_headers(parts, ctx, log)
+    parts = _fill_gaps_by_content(parts, ctx, log)
+    if llm_recovery and engine is not None and valid_q_order and question_obj is not None:
+        parts = _llm_transition_recovery(parts, ctx, engine, q_prompts, log)
+    parts = [p for p in parts if p.text.strip()]
 
-    # If pages are not available, segment the combined verified transcript directly
-    if not pages:
-        full_text = extraction.stage2_verification.verified_transcript or extraction.stage1_transcription.raw_transcript
-        return _segment_raw_transcript(full_text, sub_q_names, valid_q_order, extraction.stage3_errors.errors, question_obj=question_obj, entity_index=entity_index)
-
-    # Page-aware continuation state machine: track the last active question per page
-    page_last_q: Dict[int, str] = {}
-
-    for p in pages:
-        page_no = p.page_no
-        page_text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").strip()
-        if not page_text:
-            continue
-
-        page_errors = [e.model_dump() for e in p.stage3_errors.errors] if p.stage3_errors else []
-
-        # Split page text into sections if page contains multiple question headers
-        normalized_page = normalize_header_text(page_text)
-        sections = HEADER_SPLIT_REGEX.split(normalized_page)
-        sections = [s for s in sections if s.strip()]
-
-        if not sections:
-            sections = [normalized_page]
-
-        for s_idx, s in enumerate(sections):
-            header_q = extract_header_qno(
-                s,
-                current_parent=current_q_no,
-                question_obj=question_obj,
-                valid_q_order=valid_q_order,
-                entity_index=entity_index,
-                completed_qs=set(answer_buckets.keys())
-            )
-            is_explicit = bool(_extract_explicit_english_header(s, valid_q_order=valid_q_order, current_parent=current_q_no))
-            if not is_explicit:
-                beng_m = re.search(r'^\s*([0-9০-৯]{1,2})\s*(?:নং|নম্বর)\b', s, re.M)
-                if beng_m:
-                    is_explicit = True
-
-            if header_q:
-                if current_q_no and not is_explicit and header_q != current_q_no:
-                    struct_fp = detect_structural_fingerprint(s, question_obj=question_obj, valid_q_order=valid_q_order, current_parent=current_q_no)
-                    is_strong_struct = struct_fp and any(kw in s.lower() for kw in ["1 | 2", "1|2", "flow", "rearrange"])
-                    if is_strong_struct:
-                        current_q_no = struct_fp
-                    else:
-                        # Continuation of current active question
-                        pass
-                else:
-                    current_q_no = header_q
-            elif s_idx == 0 and not current_q_no:
-                # Continuation from previous page if available
-                prev_q = page_last_q.get(page_no - 1)
-                if prev_q:
-                    current_q_no = prev_q
-
-            # If section is merely a structural paper divider (e.g. "Part-B : Writing Part", "P-B Writting", "Part - A", "Part-A: Reading Test")
-            # and contains no actual answer text, do not append it to any question or default to Q1!
-            s_clean = s.strip()
-            is_part_divider = bool(re.match(r'^\s*(?:Part[\s\-]*[A-Z0-9]\b|P[\s\-]*[A-Z0-9]\s*(?:Writting|Writing|Reading)?)\b.*$', s_clean, re.I)) and len(s_clean.split()) <= 6
-            if not header_q and is_part_divider:
-                continue
-
-            # If still no active question, fallback to current_q_no or valid_q_order[0]
-            target_q = current_q_no or (valid_q_order[0] if valid_q_order else "1")
-            current_q_no = target_q  # anchor active question
-
-            if target_q not in answer_buckets:
-                answer_buckets[target_q] = {
-                    "text_parts": [],
-                    "pages": set(),
-                    "errors": []
-                }
-
-            answer_buckets[target_q]["text_parts"].append(s.strip())
-            answer_buckets[target_q]["pages"].add(page_no)
-
-        if current_q_no:
-            page_last_q[page_no] = current_q_no
-
-    # -------------------------------------------------------------
-    # Stage 2: Delayed-Header Semantic Reconciliation (Physical Exam Invariant)
-    # -------------------------------------------------------------
-    reconcile_delayed_headers(
-        answer_buckets=answer_buckets,
-        valid_q_order=valid_q_order,
-        pages=pages,
-        question_obj=question_obj,
-        engine=engine
-    )
-
-    # -------------------------------------------------------------
-    # Missing-Question Reconciliation (Gap-Filler Engine)
-    # -------------------------------------------------------------
-    if valid_q_order and question_obj and entity_index:
-        found_qs = set(answer_buckets.keys())
-        missing_qs = [q for q in valid_q_order if q not in found_qs]
-
-        if missing_qs:
-            for mis_q in missing_qs:
-                mis_ents = entity_index.get(mis_q, set())
-                if not mis_ents:
-                    continue
-
-                reallocated = False
-                for parent_q, parent_data in list(answer_buckets.items()):
-                    if parent_q == mis_q:
-                        continue
-                    parts = parent_data.get("text_parts", [])
-                    if len(parts) <= 1:
-                        # Check if single part actually contains embedded headers or section dividers
-                        full_part = parts[0] if parts else ""
-                        if full_part:
-                            norm_fp = normalize_header_text(full_part)
-                            sub_pieces = [sp for sp in HEADER_SPLIT_REGEX.split(norm_fp) if sp.strip()]
-                            if len(sub_pieces) > 1:
-                                parts = sub_pieces
-                                parent_data["text_parts"] = parts
-                            else:
-                                continue
-                        else:
-                            continue
-
-                    p_idx = 0
-                    while p_idx < len(parts):
-                        part_text = parts[p_idx]
-
-                        # Explicit header shield: never steal a chunk that explicitly names another question!
-                        part_hdr = _extract_explicit_english_header(part_text, valid_q_order=valid_q_order)
-                        if part_hdr and str(part_hdr) != str(mis_q):
-                            p_idx += 1
-                            continue
-
-                        overlap = compute_entity_overlap(part_text, mis_ents)
-                        parent_overlap = compute_entity_overlap(part_text, entity_index.get(parent_q, set()))
-
-                        # Strong match for missing question over parent
-                        if overlap >= 2 and overlap > parent_overlap:
-                            carved_text = parts.pop(p_idx)
-                            if mis_q not in answer_buckets:
-                                answer_buckets[mis_q] = {
-                                    "text_parts": [],
-                                    "pages": set(),
-                                    "errors": []
-                                }
-                            answer_buckets[mis_q]["text_parts"].append(carved_text)
-
-                            # Re-attribute page numbers
-                            for p in pages:
-                                p_txt = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "")
-                                if carved_text[:40].strip() and carved_text[:40].strip() in p_txt:
-                                    answer_buckets[mis_q]["pages"].add(p.page_no)
-                                    if not any(other_pt[:40].strip() in p_txt for other_pt in parts):
-                                        parent_data["pages"].discard(p.page_no)
-                            reallocated = True
-                            continue
-                        p_idx += 1
-
-                    if reallocated:
-                        break
-
-    # -------------------------------------------------------------
-    # Layer 3: Safe Neural Boundary & Transition Recovery (if engine provided)
-    # -------------------------------------------------------------
-    if engine and valid_q_order and question_obj:
-        found_qs = set(answer_buckets.keys())
-        still_missing = [q for q in valid_q_order if q not in found_qs]
-        if still_missing:
-            q_prompts = {}
-            if question_obj and question_obj.sub_questions:
-                for sq in question_obj.sub_questions:
-                    sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
-                    if sq_no:
-                        p_txt = str(sq.get("prompt") or sq.get("question_prompt") or sq.get("name") or sq.get("title") or "")
-                        q_prompts[sq_no] = p_txt
-
-            for mis_q in still_missing:
-                target_prompt_desc = q_prompts.get(mis_q, f"Question {mis_q}")
-                # First: Check for inner unparsed header lines deterministically before calling LLM
-                recovered_via_line = False
-                for parent_q, parent_data in list(answer_buckets.items()):
-                    if parent_q == mis_q:
-                        continue
-                    parts = parent_data.get("text_parts", [])
-                    for pt_idx, pt in enumerate(parts):
-                        pt_lines = pt.split("\n")
-                        if len(pt_lines) >= 3:
-                            for l_idx in range(2, len(pt_lines)):
-                                line_cand = pt_lines[l_idx].strip()
-                                cand_hq = extract_header_qno(
-                                    line_cand,
-                                    current_parent=parent_q,
-                                    question_obj=question_obj,
-                                    valid_q_order=valid_q_order,
-                                    entity_index=entity_index
-                                )
-                                if cand_hq and str(cand_hq) == str(mis_q):
-                                    # Safe boundary found at this line!
-                                    pre_text = "\n".join(pt_lines[:l_idx]).strip()
-                                    post_text = "\n".join(pt_lines[l_idx:]).strip()
-                                    if pre_text:
-                                        parts[pt_idx] = pre_text
-                                    else:
-                                        parts.pop(pt_idx)
-                                    if mis_q not in answer_buckets:
-                                        answer_buckets[mis_q] = {"text_parts": [], "pages": set(parent_data.get("pages", set())), "errors": []}
-                                    answer_buckets[mis_q]["text_parts"].append(post_text)
-                                    print(f"[AnswerSegmenter] Deterministic inner header recovered Question {mis_q} from Question {parent_q} at line: {line_cand[:30]}")
-                                    recovered_via_line = True
-                                    break
-                        if recovered_via_line:
-                            break
-                    if recovered_via_line:
-                        break
-
-                if recovered_via_line:
-                    continue
-
-                # Second: Safe LLM transition detection (only on composite segments with >= 100 words)
-                candidate_parents = sorted(
-                    [(k, v) for k, v in answer_buckets.items() if sum(len(pt.split()) for pt in v.get("text_parts", [])) >= 100],
-                    key=lambda x: sum(len(pt.split()) for pt in x[1].get("text_parts", [])),
-                    reverse=True
-                )
-                if not candidate_parents:
-                    continue
-
-                for parent_q, parent_data in candidate_parents:
-                    parent_text = "\n\n".join(parent_data.get("text_parts", []))
-                    if len(parent_text.split()) < 80:
-                        continue
-
-                    # Require LLM to specify the exact starting transition line
-                    llm_prompt = (
-                        f"You are an exam layout boundary detector.\n"
-                        f"We are looking for missing Question {mis_q} (Topic: '{target_prompt_desc}').\n"
-                        f"The text below is filed under Question {parent_q}:\n"
-                        f"\"\"\"\n{parent_text[:2500]}\n\"\"\"\n\n"
-                        f"Does this text contain a distinct answer transition where Question {mis_q} begins?\n"
-                        f"If YES, quote the EXACT starting line of Question {mis_q}.\n"
-                        f"If NO (not attempted here or all of it belongs to Question {parent_q}), reply with NONE.\n"
-                        f"Reply ONLY with the starting line or NONE."
-                    )
-                    try:
-                        resp = ""
-                        if hasattr(engine, "generate_text"):
-                            resp = engine.generate_text(llm_prompt, max_new_tokens=64, temperature=0.0)
-                        elif hasattr(engine, "chat"):
-                            resp = engine.chat(llm_prompt)
-
-                        if resp and resp.upper() != "NONE" and "\n" not in resp and len(resp) >= 4 and resp in parent_text:
-                            # Safe split at transition line
-                            split_pos = parent_text.find(resp)
-                            pre_split = parent_text[:split_pos].strip()
-                            post_split = parent_text[split_pos:].strip()
-                            if len(pre_split.split()) >= 15 and len(post_split.split()) >= 10:
-                                # Validation: Ensure post_split actually has relevance to mis_q!
-                                e_idx = entity_index or (build_question_entity_index(question_obj, valid_q_order) if question_obj and valid_q_order else {})
-                                mis_ents = e_idx.get(mis_q, set())
-                                overlap = compute_entity_overlap(post_split, mis_ents)
-                                cand_h = extract_header_qno(post_split, current_parent=parent_q, question_obj=question_obj, valid_q_order=valid_q_order, entity_index=e_idx)
-
-                                prompt_words = [w.lower() for w in re.findall(r'[A-Za-z]{4,}', target_prompt_desc) if w.lower() not in _KEYWORD_STOPWORDS]
-                                prompt_match = sum(1 for w in set(prompt_words) if w in post_split.lower())
-
-                                is_verified = (cand_h and str(cand_h) == str(mis_q)) or overlap >= 2 or prompt_match >= 2
-                                if not is_verified:
-                                    print(f"[AnswerSegmenter] Layer 3 rejected unverified split for Question {mis_q} from Question {parent_q} (no entity/keyword support; overlap={overlap}, prompt_match={prompt_match})")
-                                    continue
-
-                                parent_data["text_parts"] = [pre_split]
-                                if mis_q not in answer_buckets:
-                                    answer_buckets[mis_q] = {
-                                        "text_parts": [],
-                                        "pages": set(parent_data.get("pages", set())),
-                                        "errors": []
-                                    }
-                                answer_buckets[mis_q]["text_parts"].append(post_split)
-                                print(f"[AnswerSegmenter] Layer 3 Safe Transition verified and recovered Question {mis_q} from Question {parent_q} at boundary: '{resp[:30]}'")
-                                break
-                    except Exception as ex:
-                        print(f"[AnswerSegmenter] Note on neural recovery: {ex}")
-                        break
-
-    # Gather all script-level errors from extraction
-    all_extracted_errors = []
-    if pages:
-        for p in pages:
-            if p.stage3_errors and p.stage3_errors.errors:
-                for e in p.stage3_errors.errors:
-                    d = e.model_dump() if hasattr(e, "model_dump") else dict(e)
-                    d.setdefault("page_no", p.page_no)
-                    all_extracted_errors.append(d)
-    if not all_extracted_errors and extraction.stage3_errors and extraction.stage3_errors.errors:
-        all_extracted_errors = [e.model_dump() if hasattr(e, "model_dump") else dict(e) for e in extraction.stage3_errors.errors]
-
-    # Convert buckets to structured AlignedAnswerItem list
-    aligned_items: List[AlignedAnswerItem] = []
-
-    # Order by valid_q_order if known, else natural order
-    all_keys = list(answer_buckets.keys())
+    all_keys = list(dict.fromkeys(p.q for p in parts))
     if valid_q_order:
-        ordered_keys = [k for k in valid_q_order if k in answer_buckets] + [k for k in all_keys if k not in valid_q_order]
+        ordered_keys = [k for k in valid_q_order if k in all_keys] + [k for k in all_keys if k not in valid_q_order]
     else:
         ordered_keys = sorted(all_keys)
 
-    # Pre-build combined answer texts for matching
-    combined_texts = {}
+    question_errors, unattributed = _attribute_errors(errors, parts, ordered_keys)
+
+    aligned_items: List[AlignedAnswerItem] = []
     for q in ordered_keys:
-        combined_texts[q] = "\n\n".join(answer_buckets[q]["text_parts"]).strip()
-
-    # Attribute errors to questions accurately using context, erroneous text, and question_no
-    question_errors: Dict[str, List[Dict[str, Any]]] = {q: [] for q in ordered_keys}
-    for err in all_extracted_errors:
-        qn = str(err.get("question_no") or "").strip().upper()
-        needle = str(err.get("erroneous_text") or "").strip().lower()
-        ctx = str(err.get("context_sentence") or "").strip().lower()
-
-        matched_q = None
-        # 1. Match by context sentence presence in answer text (highest ground-truth precision)
-        if ctx:
-            for q in ordered_keys:
-                q_txt = combined_texts[q].lower()
-                if ctx[:30] in q_txt or (len(ctx) > 15 and ctx[-20:] in q_txt):
-                    matched_q = q
-                    break
-
-        # 2. Match by erroneous_text within word boundaries in answer text
-        if not matched_q and needle:
-            for q in ordered_keys:
-                q_txt = combined_texts[q].lower()
-                if re.search(r'\b' + re.escape(needle) + r'\b', q_txt):
-                    matched_q = q
-                    break
-
-        # 3. Match by explicit question_no
-        if not matched_q and qn:
-            for q in ordered_keys:
-                clean_q = q.upper().replace("(", "").replace(")", "").strip()
-                clean_qn = qn.replace("(", "").replace(")", "").strip()
-                if q.upper() == qn or clean_q == clean_qn:
-                    matched_q = q
-                    break
-
-        # 4. Fallback: match by page presence if error has page_no or page_number
-        err_page = err.get("page_no") if err.get("page_no") is not None else err.get("page_number")
-        if not matched_q and err_page is not None:
-            for q in ordered_keys:
-                if err_page in answer_buckets[q]["pages"]:
-                    matched_q = q
-                    break
-
-        if matched_q:
-            err["question_no"] = matched_q
-            question_errors[matched_q].append(err)
-
-    for q in ordered_keys:
-        b = answer_buckets[q]
-        combined_ans = combined_texts[q]
-        # Deduplicate error dicts by erroneous_text + sentence
+        q_parts = [p for p in parts if p.q == q]
+        combined_ans = "\n\n".join(p.text for p in q_parts).strip()
         seen_errs = set()
         dedup_errors = []
         for err in question_errors[q]:
@@ -1347,115 +1510,63 @@ def segment_script_into_questions(
             if key not in seen_errs:
                 seen_errs.add(key)
                 dedup_errors.append(err)
-
-        words = len(combined_ans.split())
         aligned_items.append(AlignedAnswerItem(
             q_no=q,
             q_name=sub_q_names.get(q, f"Question {q}"),
             answer_text=combined_ans,
-            page_numbers=sorted(list(b["pages"])),
+            page_numbers=sorted({p.page for p in q_parts}),
             errors=dedup_errors,
-            word_count=words,
+            word_count=len(combined_ans.split()),
             character_count=len(combined_ans)
         ))
 
+    if diagnostics is not None:
+        diagnostics.update({
+            "llm_recovery": bool(llm_recovery and engine is not None),
+            "parts": [{"q": p.q, "page": p.page, "source": p.source, "words": len(p.text.split()),
+                       "head": p.text[:60]} for p in parts],
+            "events": log,
+            "missing_questions": [q for q in valid_q_order if q not in all_keys],
+            "unattributed_errors": unattributed,
+        })
     return aligned_items
 
 
-def _segment_raw_transcript(
-    full_text: str,
-    sub_q_names: Dict[str, str],
-    valid_q_order: List[str],
-    all_errors: List[Any],
+def segment_script_into_questions(
+    extraction: ExtractionResult,
     question_obj: Optional[ExtractedQuestion] = None,
-    entity_index: Optional[Dict[str, Set[str]]] = None
+    engine: Optional[Any] = None,
+    llm_recovery: bool = False,
+    diagnostics: Optional[Dict[str, Any]] = None
 ) -> List[AlignedAnswerItem]:
-    """Fallback segmenter when page-level checkpoint structures are absent."""
-    normalized = normalize_header_text(full_text)
-    sections = HEADER_SPLIT_REGEX.split(normalized)
-    sections = [s for s in sections if s.strip()]
+    """
+    Segment verified script text into aligned question answers.
 
-    e_index = entity_index or (build_question_entity_index(question_obj, valid_q_order) if (question_obj and valid_q_order) else {})
+    Pages are read in order; every section keeps its page number. Headers decide the question; a header
+    that contradicts its content is corrected from paper evidence; missing questions are recovered from
+    inner headers and content. With llm_recovery=True (ablation, needs `engine`) the model is also asked
+    to place boundaries. Pass a dict as `diagnostics` to receive the part list, every remap/recovery
+    event and errors that could not be attributed.
+    """
+    pages = extraction.pages or []
+    errors: List[Dict[str, Any]] = []
+    for p in pages:
+        if p.stage3_errors and p.stage3_errors.errors:
+            for e in p.stage3_errors.errors:
+                d = e.model_dump() if hasattr(e, "model_dump") else dict(e)
+                d.setdefault("page_no", p.page_no)
+                errors.append(d)
+    if not errors and extraction.stage3_errors and extraction.stage3_errors.errors:
+        errors = [e.model_dump() if hasattr(e, "model_dump") else dict(e) for e in extraction.stage3_errors.errors]
 
-    items = []
-    grouped: Dict[str, List[str]] = {}
-    cur_q = valid_q_order[0] if valid_q_order else "1"
-    for s in sections:
-        hq = extract_header_qno(
-            s,
-            current_parent=cur_q,
-            question_obj=question_obj,
-            valid_q_order=valid_q_order,
-            entity_index=e_index,
-            completed_qs=set(grouped.keys())
-        )
-        if hq:
-            cur_q = hq
-        items.append((cur_q, s.strip()))
-        grouped.setdefault(cur_q, []).append(s.strip())
+    if pages:
+        page_items = []
+        for p in pages:
+            text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").strip()
+            if text:
+                page_items.append((p.page_no, text))
+    else:
+        full_text = (extraction.stage2_verification.verified_transcript or extraction.stage1_transcription.raw_transcript or "").strip()
+        page_items = [(1, full_text)] if full_text else []
 
-    # Delayed-Header Semantic Reconciliation in raw fallback
-    raw_buckets = {k: {"text_parts": list(v), "pages": set(), "errors": []} for k, v in grouped.items()}
-    reconcile_delayed_headers(raw_buckets, valid_q_order, question_obj=question_obj, engine=None)
-    grouped = {k: v["text_parts"] for k, v in raw_buckets.items()}
-
-    # Missing question gap-filler in raw transcript fallback
-    if valid_q_order and question_obj and e_index:
-        found_qs = set(grouped.keys())
-        missing_qs = [q for q in valid_q_order if q not in found_qs]
-        for mis_q in missing_qs:
-            mis_ents = e_index.get(mis_q, set())
-            if not mis_ents:
-                continue
-            reallocated = False
-            for parent_q, parts in list(grouped.items()):
-                if parent_q == mis_q:
-                    continue
-                parts = list(parts)
-                if len(parts) <= 1:
-                    full_part = parts[0] if parts else ""
-                    if full_part:
-                        norm_fp = normalize_header_text(full_part)
-                        sub_pieces = [sp for sp in HEADER_SPLIT_REGEX.split(norm_fp) if sp.strip()]
-                        if len(sub_pieces) > 1:
-                            parts = sub_pieces
-                            grouped[parent_q] = parts
-                        else:
-                            continue
-                    else:
-                        continue
-
-                p_idx = 0
-                while p_idx < len(parts):
-                    part_text = parts[p_idx]
-
-                    # Explicit header shield: never steal a chunk that explicitly names another question!
-                    part_hdr = _extract_explicit_english_header(part_text, valid_q_order=valid_q_order)
-                    if part_hdr and str(part_hdr) != str(mis_q):
-                        p_idx += 1
-                        continue
-
-                    overlap = compute_entity_overlap(part_text, mis_ents)
-                    parent_overlap = compute_entity_overlap(part_text, e_index.get(parent_q, set()))
-                    if overlap >= 2 and overlap > parent_overlap:
-                        carved_text = parts.pop(p_idx)
-                        grouped.setdefault(mis_q, []).append(carved_text)
-                        reallocated = True
-                        continue
-                    p_idx += 1
-                if reallocated:
-                    break
-
-    results = []
-    for q, parts in grouped.items():
-        ans_text = "\n\n".join(parts)
-        results.append(AlignedAnswerItem(
-            q_no=q,
-            q_name=sub_q_names.get(q, f"Question {q}"),
-            answer_text=ans_text,
-            page_numbers=[1],
-            errors=[e.model_dump() if hasattr(e, "model_dump") else e for e in all_errors],
-            word_count=len(ans_text.split()),
-            character_count=len(ans_text)
-        ))
-    return results
+    return _segment_pages(page_items, errors, question_obj, engine, llm_recovery, diagnostics)
