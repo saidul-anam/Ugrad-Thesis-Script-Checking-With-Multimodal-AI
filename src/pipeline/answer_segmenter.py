@@ -185,6 +185,26 @@ _KEYWORD_STOPWORDS = {
 }
 
 
+def _declared_passages(question_obj: Optional[ExtractedQuestion]) -> List[Tuple[Set[str], str, Set[str]]]:
+    """Reading passages declared in the answer key: (questions served, whitespace-normalised text, terms)."""
+    qid = getattr(question_obj, "question_id", None) if question_obj else None
+    if not qid:
+        return []
+    try:
+        from src.pipeline.stage4_modes import load_answer_key
+        key = load_answer_key(qid)
+    except Exception:
+        return []
+    out = []
+    for psg in (key.get("passages") or []):
+        text = " ".join(str((psg or {}).get("text") or "").split())
+        qs = {str(q).strip() for q in ((psg or {}).get("questions") or [])}
+        if text and qs:
+            terms = {w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', text) if w.lower() not in _KEYWORD_STOPWORDS}
+            out.append((qs, text, terms))
+    return out
+
+
 def build_question_entity_index(
     question_obj: Optional[ExtractedQuestion] = None,
     valid_q_order: Optional[List[str]] = None
@@ -205,6 +225,8 @@ def build_question_entity_index(
             if q_no and q_no not in q_order:
                 q_order.append(q_no)
 
+    declared = _declared_passages(question_obj)
+
     for q in q_order:
         clean_q = re.sub(r'\(.*?\)', '', str(q)).strip()
         entities: Set[str] = set()
@@ -214,6 +236,13 @@ def build_question_entity_index(
             try:
                 from src.pipeline.stage4_modes import source_text_for_question
                 src = source_text_for_question(clean_q, question_obj.question_text, getattr(question_obj, "question_id", None))
+                if src and declared:
+                    # a declared passage belongs only to the questions it serves, even when it is printed
+                    # inside another question's block on the paper
+                    src = " ".join(src.split())
+                    for served, p_text, _terms in declared:
+                        if q not in served and clean_q not in served:
+                            src = src.replace(p_text, " ")
                 if src:
                     for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', src):
                         wl = w.lower()
@@ -234,10 +263,15 @@ def build_question_entity_index(
                             if wl not in _KEYWORD_STOPWORDS:
                                 entities.add(wl)
 
+        # 3. Passages declared in the answer key for this question
+        for served, _p_text, terms in declared:
+            if q in served or clean_q in served:
+                entities |= terms
+
         if entities:
             index[q] = entities
 
-    # 3. Mine reading passages that introduce questions (e.g. 'Read the text and answer the questions 3 & 4 :')
+    # 4. Mine reading passages that introduce questions (e.g. 'Read the text and answer the questions 3 & 4 :')
     if getattr(question_obj, "question_text", None):
         passage_matches = re.findall(
             r'(?i)(?:Read\s+the\s+(?:text|passage)[^\n]*?(?:questions?|qn|no\.?)\s*([0-9\s,&and\-to]+)[\s:]*\n)(.*?)(?=\n\s*(?:Read\s+the\s+(?:text|passage)|[0-9]{1,2}\.\s|Part[\s\-]*[A-Z]|\Z))',
@@ -620,7 +654,12 @@ def detect_structural_fingerprint(
     # 9. Semantic Source-Text Fingerprint for Headless Answers (Summary & Theme)
     # When a student writes NO header (no "Ans 3", no "3.", no "Summary:"), we match the text
     # against the source poem/passage printed on the question paper.
-    if use_source_overlap and question_obj and getattr(question_obj, "question_text", None):
+    # Summaries and themes are continuous prose: an itemised list ("a) ...", "(ii) ...") is never one of them
+    item_lines = [l for l in section_text.split("\n") if l.strip()]
+    is_item_list = bool(item_lines) and sum(
+        1 for l in item_lines if re.match(r'^\s*\(?(?:[a-jA-J]|[ivxIVX]{1,4}|[0-9]{1,2})[\)\.]', l)
+    ) >= 0.5 * len(item_lines)
+    if use_source_overlap and not is_item_list and question_obj and getattr(question_obj, "question_text", None):
         from src.pipeline.stage4_modes import source_text_for_question
         sec_words = section_text.split()
         sec_tokens = {
@@ -1002,21 +1041,59 @@ def build_answer_key_index(
     return index
 
 
+_ITEM_LABEL_RE = re.compile(
+    r'^\s*(?:(?:\(?[a-jA-J]\)|\(?[ivxIVX]{1,4}\)|\(?[0-9]{1,2}\)|[a-jA-J0-9]{1,2}\.|[\u24b6-\u24e9]|'
+    r'ans(?:wer)?\s*[:;\.\-]*|[=\-:]+)\s*)+',
+    re.IGNORECASE
+)
+_INLINE_ITEM_SPLIT_RE = re.compile(r'\s(?=(?:\(?[a-jA-J]\)|\(?[ivxIVX]{1,4}\)|[\u24b6-\u24e9])\s)')
+
+
+def _item_answers(text: str) -> List[str]:
+    """Answer strings written as items: one per line (or per inline label), with labels and 'Ans:' removed."""
+    out = []
+    for line in text.lower().split("\n"):
+        for seg in _INLINE_ITEM_SPLIT_RE.split(line):
+            body = _ITEM_LABEL_RE.sub("", seg).strip(" .;,:-")
+            if body:
+                out.append(body)
+    return out
+
+
 def _key_hits(text: str, info: Optional[Dict[str, Any]]) -> int:
-    """Answer-key items whose accepted answer occurs in text; a written rearrangement sequence counts fully."""
+    """
+    Answer-key items answered in item form: a line (or labelled segment) that consists of an accepted
+    answer plus at most a few words. Accepted answers that merely occur inside prose do not count:
+    cloze and table answers are passage words and turn up in any essay about the passage.
+    A written rearrangement sequence counts fully.
+    """
     if not info or not text:
         return 0
-    low = text.lower()
-    hits = sum(1 for rx in info.get("items", []) if rx.search(low))
+    answers = _item_answers(text)
+    hits = 0
+    for rx in info.get("items", []):
+        for body in answers:
+            m = rx.search(body)
+            if m and len(body.split()) <= len(m.group(0).split()) + 3:
+                hits += 1
+                break
     seq = info.get("sequence") or []
     if len(seq) >= 4 and all(re.fullmatch(r"[a-z]|[ivx]{1,4}", x) for x in seq):
         letters = set(seq)
-        for line in low.split("\n"):
+        for line in text.lower().split("\n"):
             found = {t for t in re.findall(r"(?<![a-z])([a-z]|[ivx]{1,4})(?![a-z])", line) if t in letters}
             if len(found) >= len(letters) - 2:
                 hits += len(seq)
                 break
     return hits
+
+
+_STRUCK_SPAN_RE = re.compile(r'\[struck:[^\]]*\]|struck\[:[^\]]*\]', re.IGNORECASE)
+
+
+def _strip_struck(text: str) -> str:
+    """Words the student crossed out are cancelled; they are no evidence of what a section answers."""
+    return _STRUCK_SPAN_RE.sub(" ", text or "")
 
 
 class QuestionContext:
@@ -1046,7 +1123,8 @@ class QuestionContext:
     def scores(self, text: str) -> Dict[str, float]:
         """Evidence for every question on the paper (weighted paper terms + answer-key items + layout)."""
         out: Dict[str, float] = {}
-        if not text or not self.order:
+        text = _strip_struck(text)
+        if not text.strip() or not self.order:
             return out
         words = {w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', text)}
         fp = None
