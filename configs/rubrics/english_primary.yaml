@@ -45,3 +45,4 @@ scoring_modes:
       organization_cohesion: 0.20
       vocabulary_expression: 0.15
       grammar_mechanics: 0.15
+    ocr_robustness: "Do not penalise physical paragraph splits, indentations, or line breaks that may be artifacts of OCR extraction. Focus on writing quality, topical flow, and organization & cohesion."

@@ -1,0 +1,38 @@
+profile_name: "english_class7"
+description: "Tunable linguistic and structural error penalty configuration calibrated for Class 7 English (age 12-13)"
+curriculum: "NCTB"
+language: "english"
+
+# Per-error deductions by category (in marks) - Calibrated for Class 7 learners
+deductions_per_error:
+  spelling: 0.20
+  grammar: 0.30
+  syntax: 0.20
+  punctuation_mechanics: 0.15
+  illegible_omission: 0.30
+
+# Maximum cumulative deduction caps per question type (in marks)
+question_type_caps:
+  MCQ: 0.0                      # Strict NCTB rule: zero linguistic penalty on objective items
+  Cloze_With_Clues: 0.0
+  Cloze_Without_Clues: 0.0
+  Table_Completion: 0.0
+  Sentence_Matching: 0.0
+  Sentence_Making: 0.0
+  Rearrangement: 0.0
+  Comprehension_Questions: 0.75 # Cap at 0.75 mark for 2-mark short questions
+  Summary: 0.75                 # Cap at 0.75 mark for 5-mark summary
+  Paragraph: 1.25               # Cap at 1.25 marks for 10-mark paragraph
+  Story: 1.25                   # Cap at 1.25 marks for 10-mark story
+  Dialogue: 1.25                # Cap at 1.25 marks for 10-mark dialogue
+  default: 1.0
+
+# Overall script cumulative deduction ceiling
+overall_script_max_penalty: 4.0
+
+# Recurrent error policy (NCTB Junior guideline)
+recurrent_error_policy:
+  deduplicate_identical_words: true  # Multiple instances of the same misspelled word penalized once
+  deduplicate_identical_rules: false
+  ignore_allograph_ambiguities: true # Cursive stroke/allograph ambiguities zero penalty
+  ignore_british_american_variants: true

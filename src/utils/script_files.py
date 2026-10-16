@@ -19,7 +19,7 @@ from typing import Dict, Iterable, List, Optional, Sequence
 
 from src.utils.question_utils import extract_question_id
 
-SCRIPT_EXTENSIONS = (".pdf", ".jpg", ".jpeg", ".png", ".bmp")
+SCRIPT_EXTENSIONS = (".pdf", ".jpg", ".jpeg", ".png", ".bmp", ".txt")
 
 
 def paper_folder_name(script_name: str, lang: Optional[str] = None) -> Optional[str]:

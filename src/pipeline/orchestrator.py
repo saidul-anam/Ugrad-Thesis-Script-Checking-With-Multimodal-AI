@@ -65,6 +65,7 @@ from src.utils.question_utils import (
 )
 from src.utils.ground_truth import (
     get_ground_truth_for_script,
+    get_ground_truth_info_for_script,
     ground_truth_to_teacher_marks,
     extract_candidate_questions,
     canonicalize_question_key
@@ -412,7 +413,7 @@ class ScriptCheckingPipeline:
             print(f"[Extraction] ℹ️ No question context matched for '{script_id}'. Proceeding with standard visual extraction.")
 
         # Ground truth is strictly an evaluation benchmark (never fed to extraction VLM)
-        ground_truth_marks = get_ground_truth_for_script(script_id)
+        ground_truth_marks, ground_truth_source = get_ground_truth_info_for_script(script_id)
 
         # 2. Extract or Load Pages
         page_images: List[tuple[int, Image.Image, str]] = []  # (page_no, PIL Image, image_path)
@@ -621,7 +622,13 @@ class ScriptCheckingPipeline:
             # ---------------------------------------------------------
             if getattr(pipe_cfg, "line_reconciliation", False) and not skip_stage2:
                 page_text = stage2_result.verified_transcript or stage1_result.raw_transcript
-                rec = self.line_reconciler.run(stage1_input_img, page_text, page_no=page_no)
+                rec = self.line_reconciler.run(
+                    stage1_input_img,
+                    page_text,
+                    page_no=page_no,
+                    strikethrough_regions=stage0_strike_res.regions if stage0_strike_res else None,
+                    strikethrough_blocks=stage0_strike_res.blocks if stage0_strike_res else None,
+                )
                 n_acc = sum(d.accepted for d in rec.decisions)
                 print(f"[Extraction] [2b/3] Line Reconciliation (Page {page_no}): {len(rec.line_reads)} line reads, "
                       f"{len(rec.decisions)} disagreements checked, {n_acc} adopted ({rec.model_calls} model calls)")
@@ -908,7 +915,7 @@ class ScriptCheckingPipeline:
             pages=page_results,
             metadata={"paper": paper}
         )
-        aligned_answers = segment_script_into_questions(interim_res, question_obj)
+        aligned_answers = segment_script_into_questions(interim_res, question_obj, engine=self.engine)
         print(f"[Extraction] Segmented transcript into {len(aligned_answers)} distinct question answers.")
 
         all_extracted_errors: List[Any] = []
@@ -1227,8 +1234,10 @@ class ScriptCheckingPipeline:
         has_gt = bool(ground_truth_marks)
         is_verified_gt = has_gt
 
+        print(f"[Extraction] 🔍 Stage 0b VLM visually detected {len(final_teacher_marks)} red-ink teacher mark(s) from page images.")
         if has_gt:
-            print(f"[Extraction] 🎯 Autonomous VLM extracted {len(final_teacher_marks)} teacher marks. Verified against gt.txt benchmark ({len(ground_truth_marks)} ground truth marks).")
+            src_lbl = os.path.basename(ground_truth_source) if ground_truth_source else "teacher_marks"
+            print(f"[Extraction] 📋 Official examiner ground truth marks loaded from {src_lbl} ({len(ground_truth_marks)} questions) for Stage 4 evaluation benchmark.")
 
         extraction_result = ExtractionResult(
             script_id=script_id,
@@ -1252,11 +1261,12 @@ class ScriptCheckingPipeline:
                 "paper": paper,
                 "task_type": task_type,
                 "question_id": question_obj.question_id if question_obj else None,
-                "original_marker_id": original_marker_id if not is_verified_gt else "human_examiner_gt",
+                "original_marker_id": original_marker_id,
                 "school_id": school_id,
                 "region": region,
                 "verified_by_human": is_verified_gt,
                 "ground_truth_marks": ground_truth_marks,
+                "ground_truth_source": ground_truth_source,
                 "vlm_detected_teacher_marks": vlm_detected_marks,
                 "aligned_answers": [a.model_dump() for a in aligned_answers] if aligned_answers else [],
                 "arbitration": arbitration_meta
@@ -1299,7 +1309,7 @@ class ScriptCheckingPipeline:
                 error_list=error_json_str,
                 teacher_mark=marks_str,
                 has_red_ink=p.has_red_ink,
-                original_marker_id=original_marker_id if not is_verified_gt else "human_examiner_gt",
+                original_marker_id=original_marker_id,
                 school_id=school_id,
                 region=region
             ))
@@ -1421,8 +1431,11 @@ class ScriptCheckingPipeline:
 
         # Check for verified human ground truth marks (strictly for evaluation metrics, isolated from grading)
         gt_dict = extraction.metadata.get("ground_truth_marks")
+        gt_source = extraction.metadata.get("ground_truth_source")
         if not gt_dict:
-            gt_dict = get_ground_truth_for_script(script_id)
+            gt_dict, gt_source = get_ground_truth_info_for_script(script_id)
+        elif not gt_source:
+            _, gt_source = get_ground_truth_info_for_script(script_id)
         is_verified_gt = extraction.metadata.get("verified_by_human", False) or (gt_dict is not None)
 
         # -------------------------------------------------------------
@@ -1433,7 +1446,7 @@ class ScriptCheckingPipeline:
 
         if eval_mode == "modular":
             print("\n[Evaluation] [4/4] Executing Stage 4: Modular Question-by-Question Evaluation...")
-            aligned_answers = segment_script_into_questions(extraction, question_obj)
+            aligned_answers = segment_script_into_questions(extraction, question_obj, engine=self.engine)
             if not aligned_answers and extraction.metadata.get("aligned_answers"):
                 aligned_answers = [AlignedAnswerItem.model_validate(a) for a in extraction.metadata["aligned_answers"]]
             print(f"[Evaluation] Loaded {len(aligned_answers)} distinct question answers.")
@@ -1510,7 +1523,9 @@ class ScriptCheckingPipeline:
                 "output_dir": script_output_dir,
                 "verified_by_human": is_verified_gt,
                 "ground_truth_marks": gt_dict,
-                "mae_vs_human": stage4_result.mae_vs_human
+                "ground_truth_source": gt_source,
+                "mae_vs_human": stage4_result.mae_vs_human,
+                "aligned_answers": [a.model_dump() for a in aligned_answers] if eval_mode == "modular" and 'aligned_answers' in locals() and aligned_answers else []
             }
         )
 

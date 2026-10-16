@@ -269,6 +269,7 @@ class QuestionEvaluationItem(BaseModel):
     cap_reason: str = "None"
     capped_from: Optional[float] = None
     performance_band: Optional[str] = None
+    student_writing: Optional[str] = Field(None, description="Segmented student handwritten text for this question")
     key_source: Optional[str] = Field(None, description="answer_key | none")
     scoring_notes: List[str] = Field(default_factory=list)
 

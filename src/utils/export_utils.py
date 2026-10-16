@@ -507,11 +507,18 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     
     gt_dict = report.metadata.get("ground_truth_marks")
+    gt_source = report.metadata.get("ground_truth_source")
     if not gt_dict:
-        from src.utils.ground_truth import get_ground_truth_for_script
-        gt_dict = get_ground_truth_for_script(report.script_id)
-    is_verified = report.metadata.get("verified_by_human", False) or (gt_dict is not None)
-    verifier_tag = " (✅ Verified with Ground Truth gt.txt)" if is_verified else ""
+        from src.utils.ground_truth import get_ground_truth_info_for_script
+        gt_dict, gt_source = get_ground_truth_info_for_script(report.script_id)
+    elif not gt_source:
+        from src.utils.ground_truth import get_ground_truth_info_for_script
+        _, gt_source = get_ground_truth_info_for_script(report.script_id)
+
+    from src.utils.ground_truth import get_teacher_marks_total, canonicalize_question_key
+    teacher_total_gt = get_teacher_marks_total(gt_dict) if gt_dict else None
+    gt_source_name = os.path.basename(gt_source) if gt_source else "teacher_marks directory"
+    has_examiner_gt = bool(gt_dict)
 
     md_lines = [
         f"# Exam Script Evaluation Report: `{report.script_id}`",
@@ -529,13 +536,16 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         f"- **Raw Content Score**: {report.stage4_evaluation.content_raw_score:.2f}",
         f"- **Linguistic Penalty**: -{report.stage4_evaluation.linguistic_penalty:.2f}",
         f"- **Red Ink Detected (Stage 0)**: `{'Yes' if report.has_red_ink else 'No'}`",
-        f"- **Extracted Teacher Marks (Stage 0b)**: {len(report.teacher_marks)} mark(s){verifier_tag}",
+        f"- **Model-Detected Red-Ink Marks (Stage 0b)**: {len(report.teacher_marks)} visual detection(s) *(autonomous VLM, unverified)*",
         f"- **Silent Autocorrections Reverted (Stage 2)**: {report.stage2_verification.total_corrections_count}",
         f"- **Linguistic Errors Found (Stage 3)**: {report.stage3_errors.total_error_count}"
     ]
 
+    if has_examiner_gt and teacher_total_gt is not None:
+        md_lines.append(f"- **Official Examiner Ground Truth (`{gt_source_name}`)**: **{teacher_total_gt:.1f} / {report.stage4_evaluation.total_max_marks:.1f} marks**")
+
     if getattr(report.stage4_evaluation, "mae_vs_human", None) is not None:
-        md_lines.append(f"- **MAE vs. Examiner Ground Truth (`gt.txt`)**: **{report.stage4_evaluation.mae_vs_human:.2f} marks**")
+        md_lines.append(f"- **MAE vs. Teacher Marks (`{gt_source_name}`)**: **{report.stage4_evaluation.mae_vs_human:.2f} marks**")
 
     if report.question_text:
         md_lines.extend([
@@ -551,140 +561,159 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         s4_out = stage4_tok.get("completion_tokens", 0)
         md_lines.append(f"- **Stage 4 Token Usage**: **{s4_tot:,} / {s4_max:,} tokens** ({s4_pct:.1f}%) [In: {s4_in:,}, Out: {s4_out:,}]")
 
+    s4 = report.stage4_evaluation
+    tot_max = s4.total_max_marks
+    tot_awd = s4.final_score
+    tot_pct = s4.percentage
+    grade = "Grade A+ (Outstanding)" if tot_pct >= 80 else ("Grade A (Very Good)" if tot_pct >= 70 else ("Grade B (Good)" if tot_pct >= 60 else "Passed"))
+
     md_lines.extend([
         "",
         "---",
         "",
-        "## Stage 1 & Stage 2: Transcripts & Autocorrection Audit",
-        "",
-        "### Verified Canonical Transcript (Stage 2)",
-        "```text",
-        report.stage2_verification.verified_transcript,
-        "```",
-        ""
+        "## 📊 Consolidated Exam Marks Scorecard",
+        "| Question | Task / Topic | Mode | Max | Awarded | Score % | Teacher GT | Δ (AI - GT) | Status |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |"
     ])
 
-    if report.teacher_marks:
-        md_lines.extend([
-            "### Teacher Red-Ink Marks (Isolated)",
-            "| Question | Mark | Location |",
-            "| --- | --- | --- |"
-        ])
-        for tm in report.teacher_marks:
-            md_lines.append(f"| {tm.question_no or 'N/A'} | `{tm.mark_value}` | {tm.location} |")
-        md_lines.append("")
+    # Gather segmented writing per question
+    writing_by_q: Dict[str, Dict[str, Any]] = {}
+    aligned_meta = report.metadata.get("aligned_answers") or []
+    for a in aligned_meta:
+        q_k = str(a.get("q_no") if isinstance(a, dict) else getattr(a, "q_no", "")).strip()
+        ans_t = a.get("answer_text") if isinstance(a, dict) else getattr(a, "answer_text", "")
+        p_nums = a.get("page_numbers") if isinstance(a, dict) else getattr(a, "page_numbers", [])
+        writing_by_q[q_k] = {
+            "writing": ans_t,
+            "pages": p_nums,
+            "word_count": len(ans_t.split()) if ans_t else 0
+        }
 
+    q_evals = getattr(s4, "question_evaluations", []) or []
+    for qe in q_evals:
+        q_k = str(qe.q_no).strip()
+        if q_k not in writing_by_q:
+            writing = getattr(qe, "student_writing", "") or ""
+            p_nums = getattr(qe, "page_numbers", []) or []
+            writing_by_q[q_k] = {
+                "writing": writing,
+                "pages": p_nums,
+                "word_count": len(writing.split()) if writing else 0
+            }
 
+        # Scorecard Row
+        pct = (qe.awarded_marks / qe.max_marks * 100.0) if qe.max_marks > 0 else 0.0
+        gt_val = qe.human_gt
+        if gt_val is None and gt_dict:
+            q_c = canonicalize_question_key(qe.q_no)
+            gt_val = gt_dict.get(q_c) or gt_dict.get(qe.q_no)
+        gt_str = f"{gt_val:.1f}" if gt_val is not None else "N/A"
+        delta_str = f"{(qe.awarded_marks - gt_val):+.1f}" if gt_val is not None else "N/A"
+        mode_str = getattr(qe, "task_mode", None) or "-"
+        status = getattr(qe, "scoring_status", "scored")
+        status_badge = "Scored" if status == "scored" else ("⚠️ Missing" if status == "missing" else status.capitalize())
+
+        md_lines.append(
+            f"| **Q{qe.q_no}** | {qe.q_name} | `{mode_str}` | {qe.max_marks:.1f} | **{qe.awarded_marks:.1f}** | {pct:.1f}% | {gt_str} | {delta_str} | `{status_badge}` |"
+        )
+
+    tot_gt_str = f"{teacher_total_gt:.1f}" if teacher_total_gt is not None else "N/A"
+    tot_delta_str = f"{(tot_awd - teacher_total_gt):+.1f}" if teacher_total_gt is not None else "N/A"
     md_lines.extend([
+        f"| **TOTAL** | **All {len(q_evals)} Questions** | — | **{tot_max:.1f}** | **{tot_awd:.1f}** | **{tot_pct:.1f}%** | **{tot_gt_str}** | **{tot_delta_str}** | **{grade}** |",
+        "",
         "---",
         "",
-        "## Stage 3: Linguistic & Structural Errors",
-        f"**Total Errors**: {report.stage3_errors.total_error_count} (Spelling: {report.stage3_errors.spelling_error_count}, Grammar: {report.stage3_errors.grammar_error_count}, Syntax: {report.stage3_errors.syntax_error_count})",
-        "",
-        f"> {report.stage3_errors.linguistic_summary}",
+        "## 📝 Question-by-Question Evaluation & Student Answers",
+        "> Each question below pairs the student's transcribed answer directly with the rubric evaluation, criteria judgments, and examiner rationale.",
         ""
     ])
 
-    if report.stage3_errors.errors:
-        error_page_map = {}
-        pages_list = getattr(report, "pages", None)
-        if pages_list:
-            for p in pages_list:
-                for e in (p.stage3_errors.errors if p.stage3_errors else []):
-                    error_page_map[(e.erroneous_text, e.context_sentence)] = p.page_no
+    if q_evals:
+        for qe in q_evals:
+            q_k = str(qe.q_no).strip()
+            ans_info = writing_by_q.get(q_k, {})
+            writing_text = (ans_info.get("writing") or "").strip()
+            pages_list = ans_info.get("pages") or getattr(qe, "page_numbers", []) or []
+            pages_str = ", ".join(f"Page {p}" for p in sorted(pages_list)) if pages_list else "Unattempted"
+            w_cnt = ans_info.get("word_count") or (len(writing_text.split()) if writing_text else 0)
 
-        md_lines.extend([
-            "| Page | Type | Written Text | Correct Form | Explanation |",
-            "| --- | --- | --- | --- | --- |"
-        ])
-        for err in report.stage3_errors.errors:
-            p_no = error_page_map.get((err.erroneous_text, err.context_sentence))
-            if p_no is None and pages_list:
-                needle = err.erroneous_text.lower().strip()
-                ctx = err.context_sentence.lower().strip()
-                for p in pages_list:
-                    p_text = (p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").lower()
-                    if needle and needle in p_text:
-                        p_no = p.page_no
-                        break
-                    elif ctx and len(ctx) > 8 and ctx[:20] in p_text:
-                        p_no = p.page_no
-                        break
-            page_str = f"Page {p_no}" if p_no is not None else "Page 1"
-            md_lines.append(f"| `{page_str}` | **{err.error_type}** | `{err.erroneous_text}` | `{err.suggested_correction}` | {err.explanation} |")
-        md_lines.append("")
-
-    md_lines.append("---")
-    md_lines.append("")
-
-    # Stage 4 Rubric Evaluation Table: Modular vs Monolithic
-    if getattr(report.stage4_evaluation, "question_evaluations", None):
-        s4 = report.stage4_evaluation
-        rubric_driven = bool(getattr(s4, "rubric_driven", False))
-        md_lines.append("## Stage 4: Question-by-Question Rubric Marks Breakdown")
-        if rubric_driven:
-            md_lines.append("> Rubric-driven scoring: the model reports item answers / criterion judgements, the code computes the marks "
-                            "(Mode A item-scored against the answer key, Mode B point-scored on the rubric scale, Mode C band-scored with "
-                            "criteria ceilings and hard caps). Marks are snapped to 0.5.")
-        missing = getattr(s4, "missing_questions", []) or []
-        unscored = getattr(s4, "unscored_questions", []) or []
-        if missing or unscored:
-            md_lines.append(f"> **Missing answer segments**: {', '.join(missing) or 'none'} | **Unscored (unparseable output)**: {', '.join(unscored) or 'none'} "
-                            f"— both excluded from the scored MAE and counted as 0 in `mae_including_missing`.")
-        md_lines.extend([
-            "| Question | Topic / Part | Mode | Status | Pages | Max | Raw | Cap | Band | Awarded | Human GT | Δ (AI - Human) | Feedback |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |"
-        ])
-        for qe in s4.question_evaluations:
-            pages_str = ", ".join(str(p) for p in qe.page_numbers) if qe.page_numbers else "-"
-            gt_str = f"{qe.human_gt:.1f}" if qe.human_gt is not None else "N/A"
-            delta_str = f"{(qe.awarded_marks - qe.human_gt):+.1f}" if qe.human_gt is not None else "N/A"
+            gt_val = qe.human_gt
+            if gt_val is None and gt_dict:
+                q_c = canonicalize_question_key(qe.q_no)
+                gt_val = gt_dict.get(q_c) or gt_dict.get(qe.q_no)
+            gt_info = f" | **Teacher GT**: {gt_val:.1f} (Δ {(qe.awarded_marks - gt_val):+.1f})" if gt_val is not None else ""
+            pct = (qe.awarded_marks / qe.max_marks * 100.0) if qe.max_marks > 0 else 0.0
             mode_str = getattr(qe, "task_mode", None) or "-"
             status = getattr(qe, "scoring_status", "scored")
-            status_str = {"scored": "scored", "missing": "⚠️ missing", "unscored": "⚠️ unscored"}.get(status, status)
-            raw_str = f"{qe.raw_total:.1f}" if getattr(qe, "raw_total", None) is not None else f"{qe.content_raw_score:.1f}"
-            cap_str = f"{qe.cap_reason} ({qe.capped_from:.1f}→{qe.awarded_marks:.1f})" if getattr(qe, "cap_applied", False) else "-"
-            band_str = getattr(qe, "performance_band", None) or "-"
-            fb = (qe.feedback or "").replace("|", "/").replace("\n", " ")[:160]
-            md_lines.append(
-                f"| **Q{qe.q_no}** | {qe.q_name} | {mode_str} | {status_str} | {pages_str} | {qe.max_marks:.1f} | {raw_str} | {cap_str} | {band_str} | **{qe.awarded_marks:.1f}** | {gt_str} | {delta_str} | {fb} |"
-            )
-        md_lines.extend([
-            f"| **TOTAL** | **All Questions** | - | - | - | **{s4.total_max_marks:.1f}** | **{s4.content_raw_score:.1f}** | - | - | **{s4.final_score:.1f}** | - | - | - |",
-            ""
-        ])
-        if getattr(s4, "mae_including_missing", None) is not None:
-            md_lines.append(f"- **MAE (scored questions with GT, n={getattr(s4, 'scored_with_gt', 0)})**: {s4.mae_vs_human} | **MAE incl. missing/unscored as 0**: {s4.mae_including_missing}")
-            md_lines.append("")
-        # Per-item detail for Mode A/B questions
-        item_rows = [qe for qe in s4.question_evaluations if getattr(qe, "items", None)]
-        if item_rows:
-            md_lines.extend(["### Item-level detail (Mode A / B)", "| Question | Item | Student wrote | Expected | Status | Marks |", "| --- | --- | --- | --- | --- | --- |"])
-            for qe in item_rows:
-                for it in qe.items:
-                    exp = it.get("expected")
-                    exp_str = ", ".join(str(x) for x in exp) if isinstance(exp, list) else (str(exp) if exp else "-")
-                    md_lines.append(f"| Q{qe.q_no} | {it.get('item_label', '')} | `{str(it.get('candidate_answer', ''))[:60]}` | {exp_str[:60]} | {it.get('status', '')} | {it.get('marks_awarded', 0)}/{it.get('marks_available', '')} |")
-            md_lines.append("")
-        sub_rows = [qe for qe in s4.question_evaluations if getattr(qe, "subscores", None)]
-        if sub_rows:
-            crits = list(sub_rows[0].subscores.keys())
-            md_lines.extend(["### Criterion subscores (Mode C)", "| Question | " + " | ".join(crits) + " | Raw total | Cap | Awarded |",
-                             "| --- | " + " | ".join("---" for _ in crits) + " | --- | --- | --- |"])
-            for qe in sub_rows:
-                md_lines.append(f"| Q{qe.q_no} | " + " | ".join(f"{qe.subscores.get(c, 0):.1f}" for c in crits) +
-                                f" | {qe.raw_total if qe.raw_total is not None else '-'} | {qe.cap_reason if qe.cap_applied else '-'} | **{qe.awarded_marks:.1f}** |")
+            status_badge = "Scored" if status == "scored" else ("⚠️ Missing / Unattempted" if status == "missing" else status.capitalize())
+
+            md_lines.append(f"### Question {qe.q_no}: {qe.q_name}")
+            md_lines.append(f"> **Mode**: `{mode_str}` | **Pages**: {pages_str} | **Word Count**: {w_cnt} words")
+            md_lines.append(f"> **Marks Awarded**: **{qe.awarded_marks:.1f} / {qe.max_marks:.1f}** ({pct:.1f}%){gt_info} | **Status**: `{status_badge}`")
             md_lines.append("")
 
-            # Detailed criteria ceilings breakdown and student feedback per Mode C question
-            md_lines.append("### Mode C Writing: Criteria Ceilings & Dual Feedback Breakdown")
-            for qe in sub_rows:
-                md_lines.append(f"#### Q{qe.q_no} - {qe.q_name} (Max {qe.max_marks:.1f} Marks | Awarded: **{qe.awarded_marks:.1f}**)")
-                md_lines.append(f"- **Raw Content Score**: {qe.content_raw_score:.1f} | **Linguistic Penalty**: -{qe.linguistic_penalty:.2f} | **Performance Band**: {qe.performance_band or 'N/A'}")
+            # 1. Student Answer
+            md_lines.append("#### 📝 Student's Answer:")
+            if writing_text:
+                md_lines.extend([
+                    "```text",
+                    writing_text,
+                    "```",
+                    ""
+                ])
+            else:
+                md_lines.extend([
+                    "> ⚠️ *No student answer segment identified for this question (unattempted).* ",
+                    ""
+                ])
+
+            # 2. Evaluation & Marks Breakdown
+            md_lines.append("#### 📊 Evaluation & Marks Breakdown:")
+            if qe.examiner_feedback:
+                md_lines.append(f"- **Examiner Feedback**: {qe.examiner_feedback}")
+
+            # Mode A / B Items table
+            if getattr(qe, "items", None):
+                has_rationale = any(bool(it.get("rationale")) for it in qe.items)
+                if has_rationale:
+                    md_lines.extend([
+                        "",
+                        "| Item | Student Answer | Expected / Cue | Status | Marks | Examiner Rationale |",
+                        "| :---: | :--- | :--- | :---: | :---: | :--- |"
+                    ])
+                    for it in qe.items:
+                        exp = it.get("expected")
+                        exp_str = ", ".join(str(x) for x in exp) if isinstance(exp, list) else (str(exp) if exp else "-")
+                        cand = str(it.get("candidate_answer", "")).replace("\n", " ").strip()
+                        rat = str(it.get("rationale", "")).replace("|", "/").strip()
+                        md_lines.append(
+                            f"| **{it.get('item_label', '')}** | `{cand[:60]}` | {exp_str[:50]} | `{it.get('status', '')}` | **{it.get('marks_awarded', 0):.1f} / {it.get('marks_available', 1):.1f}** | {rat[:100]} |"
+                        )
+                else:
+                    md_lines.extend([
+                        "",
+                        "| Item | Student Answer | Expected Answer | Status | Marks Awarded |",
+                        "| :---: | :--- | :--- | :---: | :---: |"
+                    ])
+                    for it in qe.items:
+                        exp = it.get("expected")
+                        exp_str = ", ".join(str(x) for x in exp) if isinstance(exp, list) else (str(exp) if exp else "-")
+                        cand = str(it.get("candidate_answer", "")).replace("\n", " ").strip()
+                        md_lines.append(
+                            f"| **{it.get('item_label', '')}** | `{cand[:60]}` | {exp_str[:60]} | `{it.get('status', '')}` | **{it.get('marks_awarded', 0):.1f} / {it.get('marks_available', 1):.1f}** |"
+                        )
+                md_lines.append("")
+
+            # Mode C Writing Criteria table
+            if getattr(qe, "subscores", None) or getattr(qe, "criteria_reasoning", None):
+                band_str = qe.performance_band or "N/A"
+                md_lines.append(f"- **Performance Band**: `{band_str}` | **Raw Content Score**: {qe.content_raw_score:.1f} | **Linguistic Penalty**: -{qe.linguistic_penalty:.2f}")
                 if qe.criteria_reasoning:
                     md_lines.extend([
-                        "| Criterion | Ceiling | Awarded | Examiner Justification | Evidence Quote |",
-                        "| --- | --- | --- | --- | --- |"
+                        "",
+                        "| Criterion Dimension | Ceiling | Awarded | Examiner Justification | Evidence Quote |",
+                        "| :--- | :---: | :---: | :--- | :--- |"
                     ])
                     for crit_k, crit_v in qe.criteria_reasoning.items():
                         crit_name = crit_k.replace("_", " ").title()
@@ -692,181 +721,78 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
                         if isinstance(crit_v, dict):
                             just = str(crit_v.get("justification", "")).replace("|", "/")
                             ev = str(crit_v.get("evidence", "")).replace("|", "/")
-                            md_lines.append(f"| {crit_name} | - | {sub_val} | {just} | `{ev[:60]}` |")
+                            md_lines.append(f"| **{crit_name}** | — | **{sub_val}** | {just} | `{ev[:60]}` |")
                         else:
-                            md_lines.append(f"| {crit_name} | - | {sub_val} | {str(crit_v).replace('|', '/')} | - |")
+                            md_lines.append(f"| **{crit_name}** | — | **{sub_val}** | {str(crit_v).replace('|', '/')} | — |")
                     md_lines.append("")
-                if qe.examiner_feedback:
-                    md_lines.append(f"**Examiner Mark Allocation Reasoning**:\n> {qe.examiner_feedback}\n")
+
                 if qe.student_feedback:
-                    md_lines.append(f"**Student Writing Improvement Advice**:\n> {qe.student_feedback}\n")
+                    md_lines.append(f"- **Actionable Writing Advice**: {qe.student_feedback}")
                 if qe.penalty_breakdown:
                     pb = qe.penalty_breakdown
                     cat_ded = pb.get("category_deductions", {})
                     ded_strs = [f"{k}: -{v:.2f}" for k, v in cat_ded.items() if v > 0]
-                    ded_desc = ", ".join(ded_strs) if ded_strs else "Zero deductions"
-                    cap_desc = f" ({pb.get('cap_reason')})" if pb.get("is_capped") else ""
-                    md_lines.append(f"**Linguistic Penalty Audit**: Deductions applied: {ded_desc}{cap_desc} (Total: -{qe.linguistic_penalty:.2f} marks)\n")
+                    if ded_strs:
+                        cap_desc = f" ({pb.get('cap_reason')})" if pb.get("is_capped") else ""
+                        md_lines.append(f"- **Linguistic Deductions**: {', '.join(ded_strs)}{cap_desc} (Total: -{qe.linguistic_penalty:.2f} marks)")
                 md_lines.append("")
-    else:
+
+            md_lines.append("---")
+            md_lines.append("")
+    elif getattr(s4, "criteria_scores", None):
         md_lines.extend([
-            "## Stage 4: Rubric Marks Breakdown",
+            "### Rubric Marks Breakdown (Monolithic)",
             "| Criterion | Max Marks | Awarded | Justification |",
             "| --- | --- | --- | --- |"
         ])
-        for c in report.stage4_evaluation.criteria_scores:
+        for c in s4.criteria_scores:
             md_lines.append(f"| **{c.criterion_name}** | {c.max_marks:.2f} | **{c.awarded_marks:.2f}** | {c.justification} |")
         md_lines.append("")
 
-    md_lines.extend([
-        "### Teacher Feedback & Recommendations",
-        f"> {report.stage4_evaluation.overall_feedback}",
-        "",
-        "**Actionable Improvements**:"
-    ])
+    # Overall Teacher Feedback & Recommendations
+    if s4.overall_feedback:
+        md_lines.extend([
+            "## 👨‍🏫 Overall Teacher Feedback & Recommendations",
+            f"> {s4.overall_feedback}",
+            ""
+        ])
+    if s4.actionable_recommendations:
+        md_lines.append("**Key Actionable Improvements:**")
+        for rec in s4.actionable_recommendations:
+            md_lines.append(f"- {rec}")
+        md_lines.append("")
 
-    for rec in report.stage4_evaluation.actionable_recommendations:
-        md_lines.append(f"- {rec}")
-
-    md_lines.append("")
-
-    # Final Given Marks Summary Table for Each Question
-    s4 = report.stage4_evaluation
+    # Appendix: Linguistic Errors & Script Transcript
     md_lines.extend([
         "---",
         "",
-        "## Final Given Marks Summary Table",
-        "| Question | Question Title / Task Type | Full Marks | Marks Given | Score % | Performance Band / Remarks |",
-        "| :---: | :--- | :---: | :---: | :---: | :---: |"
+        "## 📁 Appendix: Linguistic Errors & Transcript Reference"
     ])
 
-    if getattr(s4, "question_evaluations", None):
-        for qe in s4.question_evaluations:
-            pct = (qe.awarded_marks / qe.max_marks * 100.0) if qe.max_marks > 0 else 0.0
-            status_str = qe.performance_band or qe.scoring_status.title()
-            md_lines.append(
-                f"| **Q{qe.q_no}** | {qe.q_name} | {qe.max_marks:.1f} | **{qe.awarded_marks:.1f}** | {pct:.1f}% | {status_str} |"
-            )
-        tot_max = s4.total_max_marks
-        tot_awd = s4.final_score
-        tot_pct = s4.percentage
-        grade = "Grade A+ (Outstanding)" if tot_pct >= 80 else ("Grade A (Very Good)" if tot_pct >= 70 else ("Grade B (Good)" if tot_pct >= 60 else "Passed"))
+    if report.stage3_errors and report.stage3_errors.errors:
         md_lines.extend([
-            f"| **TOTAL** | **All {len(s4.question_evaluations)} Questions** | **{tot_max:.1f}** | **{tot_awd:.1f}** | **{tot_pct:.1f}%** | **{grade}** |",
+            f"### Stage 3: Cataloged Linguistic Errors ({report.stage3_errors.total_error_count} total)",
+            "| Type | Erroneous Text | Suggested Correction | Context / Explanation |",
+            "| :---: | :--- | :--- | :--- |"
+        ])
+        for err in report.stage3_errors.errors[:30]:
+            clean_exp = (err.explanation or "").replace("|", "/").replace("\n", " ")
+            clean_err = str(err.erroneous_text or "").replace("|", "/")
+            clean_corr = str(err.suggested_correction or "").replace("|", "/")
+            md_lines.append(f"| `{err.error_type}` | `{clean_err}` | `{clean_corr}` | {clean_exp[:80]} |")
+        md_lines.append("")
+
+    if getattr(report, "stage2_verification", None) and report.stage2_verification.verified_transcript:
+        md_lines.extend([
+            "<details>",
+            "<summary>📄 <strong>Click to expand full unsegmented script transcript (Reference)</strong></summary>",
+            "",
+            "```text",
+            report.stage2_verification.verified_transcript,
+            "```",
+            "</details>",
             ""
         ])
-    elif getattr(s4, "criteria_scores", None):
-        for c in s4.criteria_scores:
-            pct = (c.awarded_marks / c.max_marks * 100.0) if c.max_marks > 0 else 0.0
-            md_lines.append(
-                f"| - | {c.criterion_name} | {c.max_marks:.1f} | **{c.awarded_marks:.1f}** | {pct:.1f}% | Evaluated |"
-            )
-        md_lines.extend([
-            f"| **TOTAL** | **All Criteria** | **{s4.total_max_marks:.1f}** | **{s4.final_score:.1f}** | **{s4.percentage:.1f}%** | - |",
-            ""
-        ])
-
-    # AI vs. Human Ground Truth Alignment Table
-    if gt_dict:
-        from src.utils.ground_truth import canonicalize_question_key, extract_candidate_questions
-
-        alignment_rows = []
-        total_ai = 0.0
-        total_human = 0.0
-        matched_count = 0
-        exact_matches = 0
-        within_one_mark = 0
-        total_abs_diff = 0.0
-
-        if getattr(report.stage4_evaluation, "question_evaluations", None):
-            for qe in report.stage4_evaluation.question_evaluations:
-                if qe.human_gt is not None:
-                    ai_val = float(qe.awarded_marks)
-                    human_val = float(qe.human_gt)
-                    diff = ai_val - human_val
-                    abs_diff = abs(diff)
-                    total_abs_diff += abs_diff
-                    matched_count += 1
-                    total_ai += ai_val
-                    total_human += human_val
-
-                    if abs_diff < 0.01:
-                        exact_matches += 1
-                        status = "✅ Exact Match"
-                    elif abs_diff <= 1.0:
-                        within_one_mark += 1
-                        status = f"🟡 Close (Δ {diff:+.1f})"
-                    else:
-                        status = f"⚠️ Delta {diff:+.1f}"
-
-                    alignment_rows.append(
-                        f"| Q{qe.q_no} | {qe.q_name} | {qe.max_marks:.1f} | **{ai_val:.1f}** | **{human_val:.1f}** | {diff:+.1f} | {status} |"
-                    )
-        else:
-            for c in report.stage4_evaluation.criteria_scores:
-                matched_q = None
-                human_val = None
-
-                cands = extract_candidate_questions(c.criterion_name)
-                if cands and cands[0] in gt_dict:
-                    matched_q = cands[0]
-                    human_val = gt_dict[matched_q]
-                else:
-                    c_id_norm = canonicalize_question_key(c.criterion_id.replace("q", "").replace("_", ""))
-                    for k, v in gt_dict.items():
-                        k_norm = canonicalize_question_key(k)
-                        if c_id_norm == k_norm or k.lower() in c.criterion_name.lower():
-                            matched_q = k
-                            human_val = v
-                            break
-
-                if matched_q and human_val is not None:
-                    ai_val = float(c.awarded_marks)
-                    diff = ai_val - human_val
-                    abs_diff = abs(diff)
-                    total_abs_diff += abs_diff
-                    matched_count += 1
-                    total_ai += ai_val
-                    total_human += human_val
-
-                    if abs_diff < 0.01:
-                        exact_matches += 1
-                        status = "✅ Exact Match"
-                    elif abs_diff <= 1.0:
-                        within_one_mark += 1
-                        status = f"🟡 Close (Δ {diff:+.1f})"
-                    else:
-                        status = f"⚠️ Delta {diff:+.1f}"
-
-                    alignment_rows.append(
-                        f"| Q{matched_q} | {c.criterion_name} | {c.max_marks:.1f} | **{ai_val:.1f}** | **{human_val:.1f}** | {diff:+.1f} | {status} |"
-                    )
-
-        if alignment_rows:
-            overall_diff = report.stage4_evaluation.final_score - sum(gt_dict.values())
-            overall_agreement = max(0.0, 100.0 - (abs(overall_diff) / max(sum(gt_dict.values()), 1.0) * 100.0))
-            mae = total_abs_diff / matched_count if matched_count > 0 else 0.0
-            exact_pct = (exact_matches / matched_count * 100.0) if matched_count > 0 else 0.0
-            within_one_pct = ((exact_matches + within_one_mark) / matched_count * 100.0) if matched_count > 0 else 0.0
-
-            md_lines.extend([
-                "---",
-                "",
-                "## 🎯 AI vs. Human Ground Truth Alignment",
-                f"- **Ground Truth Source**: Verified Examiner Marks (`gt.txt`)",
-                f"- **Overall Alignment**: **{overall_agreement:.1f}% Agreement** (Human Total: `{sum(gt_dict.values()):.1f}`, AI Total: `{report.stage4_evaluation.final_score:.1f}`, Net Δ: `{overall_diff:+.1f}`)",
-                f"- **Mean Absolute Error (MAE)**: **{mae:.2f} marks** across {matched_count} questions",
-                f"- **Exact Match Rate**: **{exact_pct:.1f}%** ({exact_matches}/{matched_count})",
-                f"- **Within ±1.0 Mark Rate**: **{within_one_pct:.1f}%** ({exact_matches + within_one_mark}/{matched_count})",
-                "",
-                "| Question | Criterion | Max Marks | AI Awarded | Human Mark | Δ (AI - Human) | Status |",
-                "| --- | --- | --- | --- | --- | --- | --- |"
-            ])
-            md_lines.extend(alignment_rows)
-            md_lines.extend([
-                f"| **TOTAL** | **All Questions** | **{report.stage4_evaluation.total_max_marks:.1f}** | **{report.stage4_evaluation.final_score:.1f}** | **{sum(gt_dict.values()):.1f}** | **{overall_diff:+.1f}** | **{overall_agreement:.1f}% Match** |",
-                ""
-            ])
 
     # Context & Token Usage Summary across Extraction and Stage 4
     ext_tok = report.metadata.get("extraction_token_usage", {})
@@ -889,9 +815,8 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         md_lines.extend([
             "---",
             "",
-            "## Pipeline Context & Token Usage Breakdown",
-            f"- **Context Window Limit**: `{max_ctx:,}` tokens",
-            f"- **Total End-to-End Tokens**: **{pipe_total:,}** (Prompt: {pipe_in:,}, Completion: {pipe_out:,})",
+            "### Pipeline Context & Token Usage Breakdown",
+            f"- **Context Window Limit**: `{max_ctx:,}` tokens | **Total Tokens**: **{pipe_total:,}** (Prompt: {pipe_in:,}, Completion: {pipe_out:,})",
             "",
             "| Pipeline Phase | Prompt (In) | Completion (Out) | Total Tokens | Context Window | Phase Usage % |",
             "| --- | --- | --- | --- | --- | --- |",

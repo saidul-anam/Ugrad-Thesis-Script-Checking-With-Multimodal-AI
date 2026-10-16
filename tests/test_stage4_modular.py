@@ -288,3 +288,236 @@ C. Fill in the blanks with suitable words:
     assert "Fill in the blanks" in prompt_c
     assert marks_c == 5.0
 
+
+def test_evaluation_report_mentions_teacher_marks_at_end_of_table():
+    from src.core.schemas import CompleteEvaluationReport, QuestionEvaluationItem, Stage4EvaluationResult
+    from src.utils.export_utils import export_report_markdown
+
+    qe1 = QuestionEvaluationItem(
+        q_no="1",
+        q_name="Reading Comprehension",
+        max_marks=11.0,
+        awarded_marks=11.0,
+        human_ground_truth=11.0,
+        scoring_status="scored"
+    )
+    qe2 = QuestionEvaluationItem(
+        q_no="2",
+        q_name="Comprehension Questions",
+        max_marks=10.0,
+        awarded_marks=9.0,
+        human_ground_truth=10.0,
+        scoring_status="scored"
+    )
+
+    s4 = Stage4EvaluationResult(
+        subject="English",
+        question_type="Junior_Secondary",
+        question_id="SE_11_Q1",
+        eval_mode="modular",
+        question_evaluations=[qe1, qe2],
+        content_raw_score=20.0,
+        linguistic_penalty=0.0,
+        final_score=20.0,
+        total_max_marks=21.0,
+        percentage=95.2,
+        overall_feedback="Good work.",
+        actionable_recommendations=["Keep practicing."]
+    )
+
+    p1_s1 = Stage1TranscriptionResult(raw_transcript="Ans to Q1", word_count=5)
+    p1_s2 = Stage2VerificationResult(verified_transcript="Ans to Q1", total_corrections_count=0, silent_corrections_fixed=[])
+    p1_s3 = Stage3ErrorResult(total_error_count=0, spelling_error_count=0, grammar_error_count=0, syntax_error_count=0, punctuation_error_count=0, errors=[], linguistic_summary="")
+
+    # Test with script SE_11_Q1_0002 which exists in data/ground_truth/transcripts/teacher_marks/SE_11_Q1_teacher_marks.csv
+    report = CompleteEvaluationReport(
+        script_id="SE_11_Q1_0002",
+        image_path="/tmp/test.pdf",
+        timestamp="2026-10-09T22:00:00",
+        stage1_transcription=p1_s1,
+        stage2_verification=p1_s2,
+        stage3_errors=p1_s3,
+        stage4_evaluation=s4,
+        metadata={
+            "ground_truth_marks": {"1": 11.0, "2": 10.0, "total_marks": 70.0},
+            "ground_truth_source": "data/ground_truth/transcripts/teacher_marks/SE_11_Q1_teacher_marks.csv"
+        }
+    )
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        md_path = os.path.join(tmpdir, "evaluation_report.md")
+        export_report_markdown(report, md_path)
+
+        with open(md_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # 1. Official Ground Truth is cleanly separated from Stage 0b
+        assert "SE_11_Q1_teacher_marks.csv" in content
+        assert "Model-Detected Red-Ink Marks (Stage 0b)" in content
+        assert "autonomous VLM, unverified" in content
+
+        # 2. Final row in Stage 4 table has Human GT and delta
+        assert "| **TOTAL** | **All Questions** | - | - | - | **21.0** | **20.0** | - | - | **20.0** | **70.0** | **-50.0** | - |" in content
+
+        # 3. Final Given Marks Summary Table has Teacher Marks (GT) row at the end
+        assert "| **Teacher Marks (GT)** | **Verified Examiner (`SE_11_Q1_teacher_marks.csv`)" in content
+
+        # 4. Teacher Ground Truth Marks Comparison callout is present below the table
+        assert "> 🧑‍🏫 **Teacher Ground Truth Marks Comparison (`SE_11_Q1_teacher_marks.csv`)" in content
+        assert "- **Teacher Total Score**: **70.0 / 21.0**" in content
+        assert "- **AI Evaluation Score**: **20.0 / 21.0**" in content
+        assert "- **Score Discrepancy (Δ AI - Teacher)**: **-50.0 marks**" in content
+
+
+def test_evaluation_report_without_teacher_marks():
+    from src.core.schemas import CompleteEvaluationReport, QuestionEvaluationItem, Stage4EvaluationResult
+    from src.utils.export_utils import export_report_markdown
+
+    qe1 = QuestionEvaluationItem(
+        q_no="1",
+        q_name="Writing Task",
+        max_marks=10.0,
+        awarded_marks=8.0,
+        scoring_status="scored"
+    )
+
+    s4 = Stage4EvaluationResult(
+        subject="English",
+        question_type="Junior_Secondary",
+        eval_mode="modular",
+        question_evaluations=[qe1],
+        content_raw_score=8.0,
+        linguistic_penalty=0.0,
+        final_score=8.0,
+        total_max_marks=10.0,
+        percentage=80.0,
+        overall_feedback="Well done.",
+        actionable_recommendations=[]
+    )
+
+    p1_s1 = Stage1TranscriptionResult(raw_transcript="Ans to Q1", word_count=5)
+    p1_s2 = Stage2VerificationResult(verified_transcript="Ans to Q1", total_corrections_count=0, silent_corrections_fixed=[])
+    p1_s3 = Stage3ErrorResult(total_error_count=0, spelling_error_count=0, grammar_error_count=0, syntax_error_count=0, punctuation_error_count=0, errors=[], linguistic_summary="")
+
+    # Completely unmapped dummy script
+    report = CompleteEvaluationReport(
+        script_id="UNMAPPED_STUDENT_9999",
+        image_path="/tmp/test.pdf",
+        timestamp="2026-10-09T22:00:00",
+        stage1_transcription=p1_s1,
+        stage2_verification=p1_s2,
+        stage3_errors=p1_s3,
+        stage4_evaluation=s4,
+        metadata={}
+    )
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        md_path = os.path.join(tmpdir, "evaluation_report.md")
+        export_report_markdown(report, md_path)
+
+        with open(md_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Should NOT contain Teacher Marks (GT) row or callout
+        assert "Teacher Marks (GT)" not in content
+        assert "> 🧑‍🏫 **Teacher Ground Truth Marks Comparison" not in content
+        assert "| **TOTAL** | **All Questions** | - | - | - | **10.0** | **8.0** | - | - | **8.0** | - | - | - |" in content
+
+
+def test_evaluation_report_segmented_writing():
+    from src.core.schemas import (
+        CompleteEvaluationReport, QuestionEvaluationItem, Stage4EvaluationResult,
+        Stage1TranscriptionResult, Stage2VerificationResult, Stage3ErrorResult
+    )
+    from src.utils.export_utils import export_report_markdown
+
+    qe1 = QuestionEvaluationItem(
+        q_no="1",
+        q_name="Multiple Choice Questions",
+        page_numbers=[1],
+        max_marks=7.0,
+        awarded_marks=7.0,
+        scoring_status="scored",
+        student_writing="Answers to the Question no. 1\n(a) -> (iv)\n(b) -> (ii)"
+    )
+    qe4 = QuestionEvaluationItem(
+        q_no="4",
+        q_name="Synonyms and Antonyms",
+        page_numbers=[3],
+        max_marks=5.0,
+        awarded_marks=5.0,
+        scoring_status="scored",
+        student_writing="Answers to the Question no.4\nwords | Synonym | Antonym\nTraditional | classy, cultural |"
+    )
+    qe5 = QuestionEvaluationItem(
+        q_no="5",
+        q_name="Cloze Test with Clues",
+        page_numbers=[],
+        max_marks=5.0,
+        awarded_marks=0.0,
+        scoring_status="missing",
+        student_writing=None
+    )
+
+    s4 = Stage4EvaluationResult(
+        subject="English",
+        question_type="Junior_Secondary",
+        eval_mode="modular",
+        question_evaluations=[qe1, qe4, qe5],
+        content_raw_score=12.0,
+        linguistic_penalty=0.0,
+        final_score=12.0,
+        total_max_marks=17.0,
+        percentage=70.6,
+        overall_feedback="Good performance.",
+        actionable_recommendations=[]
+    )
+
+    full_transcript = "Answers to the Question no. 1\n(a) -> (iv)\n(b) -> (ii)\n\nAnswers to the Question no.4\nwords | Synonym | Antonym\nTraditional | classy, cultural |"
+    p1_s1 = Stage1TranscriptionResult(raw_transcript=full_transcript, word_count=20)
+    p1_s2 = Stage2VerificationResult(verified_transcript=full_transcript, total_corrections_count=0, silent_corrections_fixed=[])
+    p1_s3 = Stage3ErrorResult(total_error_count=0, spelling_error_count=0, grammar_error_count=0, syntax_error_count=0, punctuation_error_count=0, errors=[], linguistic_summary="")
+
+    report = CompleteEvaluationReport(
+        script_id="TEST_SEGMENT_01",
+        image_path="/tmp/test.pdf",
+        timestamp="2026-10-10T04:00:00",
+        stage1_transcription=p1_s1,
+        stage2_verification=p1_s2,
+        stage3_errors=p1_s3,
+        stage4_evaluation=s4,
+        metadata={}
+    )
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        md_path = os.path.join(tmpdir, "evaluation_report.md")
+        export_report_markdown(report, md_path)
+
+        with open(md_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # 1. Heading reflects segmented writing
+        assert "## Stage 2: Segmented Student Answers by Question" in content
+        assert "The handwritten script has been segmented into question-aligned blocks" in content
+
+        # 2. Q1 segmented writing and metadata
+        assert "### Question 1: Multiple Choice Questions" in content
+        assert "Page 1" in content
+        assert "(a) -> (iv)" in content
+
+        # 3. Q4 segmented writing and metadata
+        assert "### Question 4: Synonyms and Antonyms" in content
+        assert "Page 3" in content
+        assert "Traditional | classy, cultural |" in content
+
+        # 4. Missing question notice
+        assert "### Question 5: Cloze Test with Clues" in content
+        assert "No student answer segment identified for this question (unattempted)" in content
+
+        # 5. Collapsible reference transcript is present
+        assert "<details>" in content
+        assert "Click to expand full unsegmented canonical transcript (Reference)" in content
+
+
+
+

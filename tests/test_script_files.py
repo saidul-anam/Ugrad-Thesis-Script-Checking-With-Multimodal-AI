@@ -37,7 +37,7 @@ def test_paper_folder_name():
 
 def test_listing_is_not_recursive_and_counts_paper_folders(tmp_path):
     root = _per_paper_root(tmp_path)
-    _touch(root / "se_10_q1" / "readme.txt")
+    _touch(root / "se_10_q1" / "readme.md")
     (root / "empty").mkdir()
     assert list_script_files(str(root)) == []
     assert paper_folders(str(root)) == {"se_10_q1": 1, "se_11_q1": 2}

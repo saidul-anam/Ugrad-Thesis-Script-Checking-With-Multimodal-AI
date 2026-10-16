@@ -181,12 +181,11 @@ mode_specifications:
       scale_discipline: "Calculate raw_total from four criteria first, then apply hard caps to produce total_score."
       motivation_rule: "Band 4 standard excellent scripts receive middle or lower values. Award MAX_MARK only for exceptional, mature, creative expression."
       precision_tiebreaker:
-        band_4: "Highest = zero errors & flawless structure; Middle = minor slips; Lowest = multiple minor errors."
+        band_4: "Highest = zero errors & flawless organization/cohesion; Middle = minor slips; Lowest = multiple minor errors."
         bands_3_and_2: "Higher = elevated syntax/vocabulary; Lower = basic/standard."
         band_1: "Highest = coherent attempt; Lowest = fragmented/near-unreadable."
+      ocr_robustness: "Do not penalise physical paragraph splits, indentations, line breaks, or structural formatting that may be artifacts of OCR extraction. Grade writing quality, logical progression, and organization & cohesion."
     hard_caps:
-      paragraph_split: "Split into multiple sub-paragraphs -> capped at 50% of MAX_MARK (Cap 5 for 10-mark)."
-      letter_layout_missing: "Missing 3+ layout components -> capped at 50% of MAX_MARK (Cap 2 for 5-mark)."
       summary_violations: "Exceeding 1/3rd source length OR >50% verbatim copying -> capped at 50% of MAX_MARK (Cap 5 for 10-mark)."
       theme_verbatim_copy: ">50% verbatim poem line reproduction -> capped at 50% of MAX_MARK (Cap 4 for 8-mark)."
       graph_external_facts: "Personal opinions, moral judgments, or external facts -> HARD CAP AT 6 (Override cap)."
@@ -220,35 +219,35 @@ mode_specifications:
         max_mark: 10
         criteria_ceilings:
           context_content_data: 3
-          structure_format_brevity: 2
+          organization_cohesion: 2
           language_mechanics: 2
           originality_comparisons_paraphrase: 3
       Q7_Paragraph:
         max_mark: 10
         criteria_ceilings:
           context_content_data: 3
-          structure_format_brevity: 3
+          organization_cohesion: 3
           language_mechanics: 2
           originality_comparisons_paraphrase: 2
       Q8_Graph_Chart:
         max_mark: 10
         criteria_ceilings:
           context_content_data: 3
-          structure_format_brevity: 3
+          organization_cohesion: 3
           language_mechanics: 2
           originality_comparisons_paraphrase: 2
       Q9_Story:
         max_mark: 7
         criteria_ceilings:
           context_content_data: 2
-          structure_format_brevity: 2
+          organization_cohesion: 2
           language_mechanics: 1
           originality_comparisons_paraphrase: 2
       Q10_Letter_Email:
         max_mark: 5
         criteria_ceilings:
           context_content_data: 1
-          structure_format_brevity: 2
+          organization_cohesion: 2
           language_mechanics: 1
           originality_comparisons_paraphrase: 1
         layout_components:
@@ -258,7 +257,7 @@ mode_specifications:
         max_mark: 8
         criteria_ceilings:
           context_content_data: 3
-          structure_format_brevity: 2
+          organization_cohesion: 2
           language_mechanics: 1
           originality_comparisons_paraphrase: 2
 
@@ -283,26 +282,26 @@ output_json_schema:
     type: "object or null (Mode C only)"
     properties:
       context_content_data: { rationale: "string", evidence: "string" }
-      structure_format_brevity: { rationale: "string", evidence: "string" }
+      organization_cohesion: { rationale: "string", evidence: "string" }
       language_mechanics: { rationale: "string", evidence: "string" }
       originality_comparisons_paraphrase: { rationale: "string", evidence: "string" }
   raw_subscores:
     type: "object or null (Mode C only)"
     properties:
       context_content_data: "number"
-      structure_format_brevity: "number"
+      organization_cohesion: "number"
       language_mechanics: "number"
       originality_comparisons_paraphrase: "number"
       raw_total: "number"
   structural_audit:
     cap_applied: "boolean"
-    applied_cap_reason: "string (None | Paragraph_Subdivisions | Letter_Missing_Layout | Summary_Verbatim_Length | Theme_Verbatim_Copy | Graph_External_Facts)"
+    applied_cap_reason: "string (None | Summary_Verbatim_Length | Theme_Verbatim_Copy | Graph_External_Facts)"
   capped_from: "number or null"
   score_breakdown:
     type: "object or null (Mode C only)"
     properties:
       context_content_data: "number"
-      structure_format_brevity: "number"
+      organization_cohesion: "number"
       language_mechanics: "number"
       originality_comparisons_paraphrase: "number"
       total_score: "number"

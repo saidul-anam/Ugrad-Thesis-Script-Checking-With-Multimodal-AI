@@ -25,3 +25,6 @@ penalties:
   spelling_error_deduction: 0.25      # per distinct major spelling error
   grammar_error_deduction: 0.5        # per structural grammar error
   max_linguistic_deduction: 2.0       # maximum marks that can be deducted for language errors alone
+
+general_guidelines:
+  ocr_robustness: "হাতে লেখার প্যারাগ্রাফ বিভাজন বা লাইনের বিন্যাস OCR এক্সট্রাকশনে ভেঙে গেলেও নম্বর কাটা যাবে না। লেখার মান, বক্তব্যের গভীরতা ও যুক্তিগ্রাহ্য ধারাবাহিকতা মূল্যায়ন করতে হবে।"

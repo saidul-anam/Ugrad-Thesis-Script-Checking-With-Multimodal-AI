@@ -139,7 +139,7 @@ class Stage4Evaluator:
         parsed, raw = self._generate_json(prompt, STAGE4_MODES_SYSTEM_PROMPT, temperature, top_p, max_new_tokens, thinking_mode, generation_max_time)
         base = dict(q_no=ans.q_no, q_name=ans.q_name or f"Question {ans.q_no}", page_numbers=ans.page_numbers,
                     max_marks=max_mark, task_mode={"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[mode], task_type=spec.task_type,
-                    key_source=("answer_key" if key_entry else "none"))
+                    key_source=("answer_key" if key_entry else "none"), student_writing=ans.answer_text)
         if parsed is None:
             return QuestionEvaluationItem(awarded_marks=0.0, scoring_status="unscored",
                                           examiner_feedback="Model output could not be parsed; question left unscored.",
@@ -167,6 +167,14 @@ class Stage4Evaluator:
             n_ok = sum(1 for it in sr.items if it.get("status") == "correct")
             feedback = f"{n_ok}/{len(sr.items)} items fully correct."
 
+        # Silent Zero Anomaly Guard: flag attempted compositions with substantial word count receiving 0.0
+        word_cnt = len(ans.answer_text.split()) if ans.answer_text else 0
+        scoring_status = "scored"
+        if mode == "C" and awarded == 0.0 and word_cnt >= 25:
+            sr.notes.append(f"[STAGE4_AUDIT_ANOMALY] Attempted Mode C composition with {word_cnt} words received 0.0 marks")
+            if base_score == 0.0:
+                scoring_status = "unscored_anomaly"
+
         return QuestionEvaluationItem(
             awarded_marks=awarded,
             content_raw_score=float(sr.raw_total if sr.raw_total is not None else sr.awarded),
@@ -177,7 +185,7 @@ class Stage4Evaluator:
             penalty_breakdown=pen_breakdown.__dict__,
             strengths=sr.strengths,
             weaknesses=sr.weaknesses,
-            scoring_status="scored",
+            scoring_status=scoring_status,
             items=sr.items,
             subscores=sr.subscores,
             raw_total=sr.raw_total,
@@ -222,7 +230,11 @@ class Stage4Evaluator:
         answer_key = load_answer_key(question_obj.question_id if question_obj else None, self.answer_keys_dir) if rubric_driven else {}
         penalty_conf = resolve_penalty_config_path(question_obj.question_id if question_obj else "SE_10_Q1")
         self.penalty_calculator = PenaltyCalculator(penalty_conf)
-        gt_canon = {canonicalize_question_key(str(k)): float(v) for k, v in (ground_truth_marks or {}).items()}
+        gt_canon = {
+            canonicalize_question_key(str(k)): float(v)
+            for k, v in (ground_truth_marks or {}).items()
+            if str(k).lower() not in ("total_marks", "total", "tot", "total_score")
+        }
         print(f"[Stage 4 Modular] Evaluating {len(answers)} segmented answers question-by-question "
               f"({'rubric-driven modes A/B/C' if rubric_driven else 'generic prompt'}; answer key: {'yes' if answer_key else 'none'})...")
 
@@ -251,6 +263,7 @@ class Stage4Evaluator:
                     content_raw_score=0.0,
                     linguistic_penalty=0.0,
                     examiner_feedback="No answer written for this question (unattempted by student). 0 marks awarded.",
+                    student_writing=ans.answer_text,
                 )
                 if gt_val is not None:
                     qe.delta = round(abs(0.0 - gt_val), 2)
@@ -317,6 +330,7 @@ class Stage4Evaluator:
                     max_marks=q_max_marks, awarded_marks=0.0, scoring_status="unscored", task_mode="generic",
                     examiner_feedback="Model output could not be parsed; question left unscored.",
                     scoring_notes=[f"raw: {str(response)[:200]}"],
+                    student_writing=ans.answer_text,
                 )
                 gt_val = gt_canon.get(q_canon)
                 if gt_val is not None:
@@ -381,6 +395,7 @@ class Stage4Evaluator:
                 weaknesses=parsed.get("weaknesses", []),
                 task_mode="generic",
                 scoring_status="scored",
+                student_writing=ans.answer_text,
             ))
 
             total_awarded += awarded
@@ -388,13 +403,26 @@ class Stage4Evaluator:
             total_raw_content += content_raw
             total_linguistic_deductions += penalty
 
-        # Questions expected by the rubric, question paper, or ground truth but absent from the segmentation
-        expected = set(specs.keys()) | set(gt_canon.keys())
+        # Questions expected by the question paper, rubric, or ground truth but absent from the segmentation
+        rubric_or_paper_expected = set()
         if question_obj and question_obj.sub_questions:
             for sq in question_obj.sub_questions:
                 sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
+                task_type = str(sq.get("task_type") or "").lower()
+                q_title = str(sq.get("name") or sq.get("title") or sq.get("prompt") or "").lower()
+                if task_type == "class_test" or re.match(r'^(?:q[0-9]+[:\s]*)?class[\s_-]*test(?:\s*assessment)?\s*[:0-9\s]*$', q_title.strip(), re.I):
+                    continue
                 if sq_no:
-                    expected.add(canonicalize_question_key(sq_no))
+                    rubric_or_paper_expected.add(canonicalize_question_key(sq_no))
+        else:
+            rubric_or_paper_expected = set(specs.keys())
+
+        expected = set(rubric_or_paper_expected)
+        for k in gt_canon.keys():
+            # Avoid adding parent '1' if subparts (e.g. 1(A)) are already expected or answered
+            if k.isdigit() and any(e.startswith(f"{k}(") for e in (rubric_or_paper_expected | answered)):
+                continue
+            expected.add(k)
 
         for q in sorted(expected, key=lambda x: (len(x), x)):
             if q in answered:
@@ -408,6 +436,7 @@ class Stage4Evaluator:
                 scoring_status="missing", task_mode=({"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[spec.mode] if spec else None),
                 task_type=(spec.task_type if spec else None), human_ground_truth=gt_val,
                 examiner_feedback="No answer segment found for this question (unattempted by student). 0 marks awarded.",
+                student_writing=None,
             )
             if gt_val is not None:
                 qe.delta = round(abs(0.0 - gt_val), 2)

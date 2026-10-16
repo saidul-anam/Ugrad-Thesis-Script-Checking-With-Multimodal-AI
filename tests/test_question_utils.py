@@ -70,4 +70,37 @@ def test_bangla_question_save_and_load(tmp_path):
     assert loaded.question_id == "SB_11_Q1"
     assert loaded.language == "bangla"
     assert loaded.total_marks == 10.0
+def test_se_08_q1_resolution_and_integrity():
+    import yaml
+    from src.utils.rubric_resolver import (
+        resolve_rubric_path,
+        resolve_answer_key_path,
+        validate_paper_integrity,
+    )
 
+    # 1. Question ID extraction
+    assert extract_question_id("SE_08_Q1_0001.txt") == "SE_08_Q1"
+    assert extract_question_id("SE_08_Q1_0036.txt") == "SE_08_Q1"
+    assert extract_question_id("SE_08_Q1.txt") == "SE_08_Q1"
+
+    # 2. Loading from outputs/questions
+    q_obj = load_question_for_script("SE_08_Q1_0001", lang="english")
+    assert q_obj is not None
+    assert q_obj.question_id == "SE_08_Q1"
+    assert q_obj.total_marks == 100.0
+    assert len(q_obj.sub_questions) == 14
+
+    # 3. Rubric & Answer Key Resolution
+    rubric_path = resolve_rubric_path("SE_08_Q1")
+    assert "english_junior.yaml" in rubric_path
+
+    answer_key_path = resolve_answer_key_path("SE_08_Q1")
+    assert answer_key_path is not None
+    assert "SE_08_Q1.yaml" in answer_key_path
+
+    # 4. Paper Integrity Certification
+    with open(rubric_path, "r", encoding="utf-8") as f:
+        r_dict = yaml.safe_load(f)
+    is_valid, errors = validate_paper_integrity(q_obj, r_dict, expected_total_marks=100.0)
+    assert is_valid, f"Validation errors: {errors}"
+    assert len(errors) == 0

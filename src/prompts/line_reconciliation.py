@@ -19,8 +19,14 @@ FORCED_CHOICE_SYSTEM_PROMPT = "You verify transcriptions of handwriting against 
 
 FORCED_CHOICE_PROMPT = (
     "The image shows one line of handwriting from a student's exam script. Two candidate transcriptions "
-    "of this line are given; they differ only in a small part. Crossed-out text is written as [struck: ...].\n"
-    "Choose the candidate that matches the ink exactly: keep the student's own spelling even when it is "
-    "wrong, and treat text as struck only if a pen stroke crosses it out.\n\n"
-    "Candidate 1: {first}\nCandidate 2: {second}\n\nAnswer with 1 or 2 only."
+    "of this line are given; they differ only in a disputed part. Crossed-out text is marked as [struck: ...].\n\n"
+    "{disputed_section}"
+    "Candidate 1: {first}\n"
+    "Candidate 2: {second}\n\n"
+    "Look closely at the ink for the disputed text:\n"
+    "- If a pen stroke (horizontal line, diagonal slash, or cross-out) clearly crosses through the letters, choose the candidate with [struck: ...].\n"
+    "- If the letters are clean and untouched (or only underlined beneath), choose the candidate without [struck: ...].\n\n"
+    "Format your response as:\n"
+    "Observation: [1 brief sentence describing whether ink crosses through the letters of the disputed text]\n"
+    "Choice: 1 or 2"
 )

@@ -1,0 +1,140 @@
+# Answer key for question paper SE_08_Q1 (English 1st Paper, Class VIII, Half-Yearly Exam 2026)
+#
+# DRAFTED FROM THE QUESTION PAPER, NOT YET VERIFIED BY A TEACHER.
+# Set `verified: true` after checking. Mode A items are scored arithmetically against this key;
+# Mode B items use the key points as the reference for partial credit.
+#
+# Conventions:
+#   accepted: every string that earns the item (case-insensitive; option letters, roman numerals and
+#             option text are all accepted for MCQ). Minor spelling slips are tolerated by the grader
+#             when the word identity and grammatical form are intact.
+question_id: SE_08_Q1
+verified: true
+source: "outputs/questions/english/SE_08_Q1.md"
+
+mode_a:
+  "1":
+    task_type: MCQ
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "The term 'hygiene' refers to—"
+        accepted: ["iv", "4", "the practice of keeping ourselves clean"]
+      - label: b
+        question: "What is hygiene thought to be?"
+        accepted: ["ii", "2", "next to godliness"]
+      - label: c
+        question: "What must we keep clean first?"
+        accepted: ["iii", "3", "our body"]
+      - label: d
+        question: "What does regular bathing help remove?"
+        accepted: ["iii", "3", "dirt and bacteria"]
+      - label: e
+        question: "Why should clothes be washed regularly?"
+        accepted: ["ii", "2", "they give off bad smell"]
+      - label: f
+        question: "How should we protect our feet from dust and germs?"
+        accepted: ["i", "1", "by wearing socks and shoes"]
+      - label: g
+        question: "What should we do before meals?"
+        accepted: ["iv", "4", "wash our hands"]
+
+  "3":
+    task_type: Cloze_Without_Clues
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["quilt", "embroidered quilt"]
+      - label: b
+        accepted: ["pattern", "patterns", "design", "designs", "artistic pattern"]
+      - label: c
+        accepted: ["craft", "traditional craft", "art"]
+      - label: d
+        accepted: ["poem", "nakshi kanthar math", "book"]
+      - label: e
+        accepted: ["commercially", "commercially in cities", "for sale", "in market"]
+
+  "4":
+    task_type: Vocabulary
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "Traditional (synonym)"
+        accepted: ["conventional", "customary", "classical", "cultural", "age-old", "indigenous", "traditional", "historic", "hereditary"]
+      - label: b
+        question: "Famous (synonym)"
+        accepted: ["renowned", "well-known", "celebrated", "famed", "noted", "eminent", "prominent"]
+      - label: c
+        question: "Expensive (antonym)"
+        accepted: ["cheap", "inexpensive", "affordable", "low-cost", "low-priced", "reasonable"]
+      - label: d
+        question: "Colourful (synonym)"
+        accepted: ["bright", "vibrant", "vivid", "brilliant", "multicoloured", "variegated", "picturesque"]
+      - label: e
+        question: "Popular (antonym)"
+        accepted: ["unpopular", "uncommon", "obscure", "unfamiliar", "rare", "disliked", "unknown"]
+
+  "5":
+    task_type: Table_Completion
+    mark_per_item: 1.0
+    items:
+      - label: "i"
+        accepted: ["at the age of ten", "at 10", "1798", "in 1798", "age of 10", "at the age of 10", "the age of ten", "the age of ten, after his grand uncle's death", "the age of ten, afther his grand uncle's death", "after the death of his grand uncle"]
+      - label: "ii"
+        accepted: ["honours of idleness", "'honours of idleness'", "his first collection of poems", "first collection of poems", "idleness"]
+      - label: "iii"
+        accepted: ["in 1808", "1808", "from cambridge in 1808", "cambridge", "in cambridge"]
+      - label: "iv"
+        accepted: ["child harold", "first two parts of child harold", "'child harold'", "two parts of child harold", "first two parts of 'child harold'"]
+      - label: "v"
+        accepted: ["published completely", "completely published", "published completely in six separate volumes", "published in six separate volumes", "was published completely", "was published completely in six separate volumes"]
+
+  "6":
+    task_type: True_False
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "Lord Byron was a Bengali poet."
+        accepted: ["false", "false. lord byron was an english poet.", "false, english poet", "f", "false (english poet)", "lord byron was an english poet", "english poet"]
+      - label: b
+        question: "Byron left England for a few years."
+        accepted: ["false", "false. byron left england never to return.", "false, never to return", "f", "false (never to return)", "never return", "never return back", "byron left england and never return back", "byron left england never to return"]
+      - label: c
+        question: "\"Child Harold\" had four parts."
+        accepted: ["true", "t"]
+      - label: d
+        question: "Byron's father died before his birth."
+        accepted: ["false", "false. his father died only three years after his birth.", "false, died after his birth", "f", "false (died after his birth)", "died after his birth", "died only three years after his birth", "only three years after his birth", "three years after his birth", "died after his death", "his father died only three years after his death"]
+      - label: e
+        question: "\"Don Juan\" had six separate volumes."
+        accepted: ["true", "t"]
+
+  "8":
+    task_type: Sentence_Matching
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["v", "5", "cutting down of trees in a large number", "a+v", "a + v", "a-v"]
+      - label: b
+        accepted: ["iv", "4", "too many to describe", "b+iv", "b + iv", "b-iv"]
+      - label: c
+        accepted: ["ii", "2", "carbon-di-oxide is increasing worldwide", "c+ii", "c + ii", "c-ii"]
+      - label: d
+        accepted: ["i", "1", "rising rapidly", "d+i", "d + i", "d-i"]
+      - label: e
+        accepted: ["iii", "3", "serious damage to the soil", "e+iii", "e + iii", "e-iii"]
+
+  "9":
+    task_type: Rearrangement
+    mark_per_item: 1.0
+    note: "Absolute-position scoring: 1 mark for every sentence letter in its exact correct slot."
+    correct_sequence: ["e", "b", "d", "h", "a", "c", "g", "f"]
+    sentences:
+      a: "One day, while walking through the fields, he came across a purse of gold."
+      b: "He had a few acres of land."
+      c: "He picked it up and carried it home."
+      d: "The lands yielded him some crops, but with that, he supported his family with difficulty."
+      e: "There lived a farmer in a village."
+      f: "He thought that it might have been dropped by a passer-by."
+      g: "He showed it to his wife."
+      h: "So he always thought about how he could add to his income."

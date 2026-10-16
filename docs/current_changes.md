@@ -1,251 +1,195 @@
-# Pipeline Updates: Arbitration, Allograph Calibration, and Handwriting Safeguards
+# Changes: Schema-Driven Dynamic Segmentation & Missing Question Reconciliation
 
-**Date**: October 4, 2026  
-**Status**: Implemented & Verified  
-**Scope**: Stage 3 Error Extraction, Stage 3b Arbitration Gate, VLM Judge, Crop Localizer, and Linguistic Sanitizer.
+**Date**: 2026-10-09  
+**Status**: Verified & Passing (37 unit tests green)
 
----
+## Summary of Changes
+Resolved the issue where Question 9 was incorrectly marked as missing in `SE_10_Q1_0009` (and similar scripts) due to OCR header slips (`Am. to question no. 2` instead of `Ans. to question no. 9`) or student misnumbering.
 
-## 1. Motivation & Context
-Empirical analysis of extracted exam scripts against ground-truth human transcripts across **SE_11_Q1_0001** and **SE_11_Q1_0002** revealed systematic false penalties on students due to pipeline architectural limitations:
+### 1. Header Normalization & Anchor Grammar
+- **File**: `src/pipeline/answer_segmenter.py`
+- Added OCR ligature rules to `HEADER_NORMALIZATION_RULES`:
+  - `(?im)^\s*(?:Am|Arn|Anis)[\.,\s]+(?:to|of|the|question|ques|no\b)` -> `'Ans to '`
+  - `(?im)^\s*(?:Am|Arn|Anis)\.?\s+(?=[0-9])` -> `'Ans '`
+- Extended `HEADER_SPLIT_REGEX`, `HEADER_EXTRACT_REGEX`, and `_extract_explicit_english_header` to recognize `Am|Arn|Anis` as question boundaries.
 
-1. **`presisely` $\to$ `precisely` (0001)**: The consensus model re-read `presicely` (confirming the physical ink stroke `'c'`), but the arbitration gate rejected the re-read because `presicely` was not in `/usr/share/dict/words`. Subsequently, the phonetic penalty ran unconditionally, penalizing the student.
-2. **`sourcee` $\to$ `source` (0001)**: Student wrote `source`, but a cursive blind loop on the terminal `c` was transcribed with an inserted `e` (`ins:e`). The allograph rules only checked 1-to-1 character substitutions, so insertion was treated as a genuine misspelling.
-3. **`corre` $\to$ `core` (0001)**: Student wrote `core` using Palmer cursive with an arched minim on `r` transcribed as `rr`. Multi-line crop bleed caused consensus to read the wrong line (`beggining`), and phonetic penalty overrode the strikethrough benefit of the doubt.
-4. **`care` $\to$ `[struck]` (0002)**: Strikethrough suspect detector flagged `care`, but visual inspection confirmed the word was active, unstruck text. The gate inverted the logic and penalized it with score `0.009` (`GENUINE_ERROR`).
-5. **`illustrodes` $\to$ `illustrates` (0002)**: Cursive `at` ligature loop merger transcribed as `od` was penalized as a genuine error (`0.005`).
-6. **NCTB Proper Nouns (`Jarif`, `Jigatola`, `Dhanmondi`, `Curzon`)**: Standard system dictionary lacked Bangladeshi proper nouns and exam localities, creating false-positive spelling deductions.
+### 2. Runtime Schema Entity Mining
+- **File**: `src/pipeline/answer_segmenter.py`
+- Added `build_question_entity_index(question_obj, valid_q_order)`: Dynamically mines distinctive topic terms and named entities from `question_obj.sub_questions` and `question_obj.question_text` without hardcoding any paper-specific names.
+- Added `compute_entity_overlap(text, entities)` for fast set-intersection token matching.
 
----
+### 3. Monotonic Sequence Collision Disambiguation
+- **File**: `src/pipeline/answer_segmenter.py`
+- In `extract_header_qno`, when a header contains an explicit question number that violates sequence progression (e.g. "Q2" appearing after "Q8" when Q2 was already completed on earlier pages):
+  - It checks entity overlap against candidate question vs subsequent syllabus questions.
+  - If a subsequent question (e.g. Q9) has strong entity support ($\ge 2$ matches) and beats the candidate question, it re-maps to that question.
+- Added Step 6: Semantic Entity Fingerprinting for headless / unlabeled answer blocks ($\ge 3$ entity matches).
 
-## 2. Detailed Code Changes
+### 4. Structural Divider Guard
+- Ignored standalone structural dividers (`Part-B : Writing Part`, `Part-A : Reading Test`) when computing answer buckets so they don't attach new page numbers to preceding questions.
 
-### A. Stage 3b Arbitration Gate ([`src/pipeline/arbitration/gate.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/arbitration/gate.py))
+### 5. Post-Pass Gap-Filler Reconciliation
+- In `segment_script_into_questions` and `_segment_raw_transcript`, added a gap-filler reconciliation engine that searches multi-page/multi-part parent buckets for chunks matching any syllabus questions that remained missing.
+- Automatically reallocates matching chunks and updates page numbers.
+- Linguistic errors are automatically attributed to the reallocated question by `context_sentence` and `erroneous_text`.
 
-1. **Sub-Word Disputed Character Agreement (Lines 327–352)**:
-   - Replaced naive whole-token dictionary lookup with stroke recovery:
-     ```python
-     missing_in_cand = int_diff_chars - set(c_cand_low)
-     if missing_in_cand and any(ch in cons_tok for ch in missing_in_cand):
-         disputed_char_agreed = True
-     elif cand_diff_chars and not any(ch in cons_tok for ch in cand_diff_chars):
-         if levenshtein(cons_tok, c_int_low) <= levenshtein(c_cand_low, c_int_low):
-             disputed_char_agreed = True
-     ```
-   - When the re-read contains the missing disputed stroke (`presicely` containing `'c'`), `ev.consensus_signal` is awarded $\ge 0.70$ (`HANDWRITING_AMBIGUITY`).
-
-2. **Cursive Glyph Variant Detection (Lines 110–195)**:
-   - Implemented `_detect_cursive_glyph_variant(c_low, i_low)` supporting 7 dynamic cursive topologies:
-     - **Terminal blind loop insertion**: Extra `e` or `c` adjacent to terminal `c`/`s` (`sourcee` $\leftrightarrow$ `source`).
-     - **Palmer minim doubling**: Single consonant written with arched minims transcribed as double consonants (`corre` $\leftrightarrow$ `core`, `allain` $\leftrightarrow$ `attain`).
-     - **Ascender & ligature mergers**: Cursive `at` $\leftrightarrow$ `od` / `ode` (`illustrodes` $\leftrightarrow$ `illustrates`).
-     - **Looped base variants**: Base loop on `s` transcribed as `is` (`examis` $\leftrightarrow$ `exams`).
-     - **Cursive `v`/`r` ligature stroke**: Loop on `v` read as `r` (`remore` $\leftrightarrow$ `remove`).
-     - **Curvy `s`/`n` stroke confusion**: S-curve terminal read as `n` (`hin` $\leftrightarrow$ `his`).
-     - **Uncrossed `t`/`l` ascenders**: Uncrossed ascender stroke read as `l` (`allain` $\leftrightarrow$ `attain`).
-
-3. **Inverted Strikethrough Suspect Logic (Lines 485–498)**:
-   - When `cand.error_type == "strikethrough_suspect"` and ink is confirmed unstruck active text (e.g. `care`), score is elevated to `0.95` (`HANDWRITING_AMBIGUITY` / dismissed) and noted: `"Strikethrough suspect dismissed for '{cand.candidate_token}': word is active valid text"`.
-
-4. **Strict Rule Precedence & Active Exemption Guard (Lines 508–526)**:
-   - Enforced `has_active_exemption` checking cursive variants, allographs, aborted drafts, strikethrough suspects, and existing ambiguity scores $\ge 0.65$.
-   - `is_phonetic_error` is strictly guarded: phonetic penalties can no longer overwrite active benefits of the doubt.
+### 6. Test Suite
+- Added `tests/test_answer_segmenter_reconciliation.py` (5 tests covering normalization, entity mining, collision remapping, headless matching, and full multi-page simulation).
+- All 37 related tests pass cleanly in pytest.
 
 ---
 
-### B. VLM Judge & Crop Localizer ([`src/pipeline/arbitration/localizer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/arbitration/localizer.py), [`src/prompts/stage3b_arbitration.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage3b_arbitration.py))
+## 7. Stage 2b: Line Reconciliation & Strikethrough Arbitration Overhaul
 
-1. **Tight Vertical Line Cropping**:
-   - In [`localizer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/arbitration/localizer.py#L148-L158), vertical crop padding clamped to `v_pad = max(4, min(pad, 15))` to eliminate multi-line ink bleeding.
-   - Updated `_bbox_via_vlm` signature and `locate()` call to pass `target_token=cand.candidate_token`.
-2. **Line-Specific VLM Bounding Box Prompt**:
-   - In [`stage3b_arbitration.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage3b_arbitration.py#L14-L45), `build_line_bbox_prompt` explicitly instructs the VLM: *"If the context spans multiple physical lines, return the tight bounding box ONLY for the single physical line containing the target word: '{target_token}'"*.
-3. **Cursive-Aware Forced-Choice Prompt**:
-   - In [`stage3b_arbitration.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage3b_arbitration.py#L80-L115), `build_forced_choice_prompt` explains common handwriting ligatures (blind loop on `c`, minim arches on `r`, and crossbars on `t`) to prevent mechanical print comparisons from penalizing cursive handwriting.
+**Date**: 2026-10-09  
+**Files**: `src/pipeline/line_reconciler.py`, `src/prompts/line_reconciliation.py`, `src/pipeline/orchestrator.py`, `tests/test_line_reconciler.py`
 
----
+### Motivation & Problems Solved
+1. **OCR Typos Dropping Multi-Word Strikes**: Solved the issue where crop OCR typos (`contiminate` vs `contaminate`) caused `disagreement_spans` to discard entire struck phrases (`iv) Ans: [struck: drinking arsenic contaminate water]`) before arbitration due to strict character-equality demands.
+2. **VLM Option-1 Position Bias**: Solved split-vote `[0, 1]` rejections (e.g. `advent`) where single-token prompt forcing caused the VLM to pick Option 1 under both presentation orders.
+3. **Physical Stroke Midline Grounding**: Connected OpenCV Stage 0.5 morphological stroke detection to Stage 2b to break ties on split votes and validate genuine physical strikes while strictly ignoring baseline underlines and notebook ruling ($y_{rel} > 0.80$).
 
-### C. Linguistic Sanitizer & Domain Vocabulary ([`src/utils/linguistic_sanitizer.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/utils/linguistic_sanitizer.py))
-
-1. **NCTB Cultural & Exam Entities**:
-   - Expanded `NCTB_CULTURAL_TERMS` with exam entities, localities, and Bangladeshi names: `"jarif"`, `"jigatola"`, `"faridabad"`, `"dhanmondi"`, `"curzon"`, `"hsc"`, `"ssc"`, `"shahbagh"`, `"motijheel"`, `"gulshan"`, `"banani"`, `"uttara"`, `"mirpur"`, `"mahin"`.
-2. **Lexicon Integration**:
-   - Integrated `NCTB_CULTURAL_TERMS` directly into `get_english_lexicon()` so all pipeline components (sanitizer, calibration, arbitration gate) recognize these terms as valid lexical targets.
-
----
-
-### D. Stage 3 Structured Question Error Extraction ([`src/prompts/stage3_errors.py`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/prompts/stage3_errors.py))
-
-1. **Rule 3 Clarification**:
-   - Clarified Rule 3 to ensure discrete fill-in-the-gap words containing authentic spelling corruptions (e.g. `discoounage`, `allain`) are checked for spelling mistakes rather than discarded as sentence fragments.
-
----
-
-## 3. Empirical Verification Results
-
-### Unit Test Suite Results
-Run command: `python /home/ubuntu/.gemini/antigravity-ide/brain/e94097a6-2c1f-4186-9744-0d01dbbf9cac/scratch/test_fixes.py`
-
-```text
-======================================================================
-TESTING NCTB PROPER NOUNS & CULTURAL TERMS IN LEXICON
-======================================================================
-[PASS] NCTB term 'jarif' in lexicon: True
-[PASS] NCTB term 'jigatola' in lexicon: True
-[PASS] NCTB term 'faridabad' in lexicon: True
-[PASS] NCTB term 'dhanmondi' in lexicon: True
-[PASS] NCTB term 'curzon' in lexicon: True
-[PASS] NCTB term 'hsc' in lexicon: True
-[PASS] NCTB term 'ssc' in lexicon: True
-[PASS] NCTB term 'shahbagh' in lexicon: True
-
-======================================================================
-TESTING CURSIVE GLYPH VARIANT DETECTION
-======================================================================
-[PASS] 'sourcee' -> 'source': detected=True  | ["blind loop ligature insertion on terminal 'c'/'s'"]
-[PASS] 'corre' -> 'core': detected=True      | ["cursive minim doubling 'rr'<->'r'"]
-[PASS] 'illustrodes' -> 'illustrates': detected=True | ["cursive ligature 'at'<->'od' loop merger"]
-[PASS] 'allain' -> 'attain': detected=True   | ["uncrossed 'tt'<->'ll' ascender stroke"]
-[PASS] 'examis' -> 'exams': detected=True    | ["looped base 's' variant"]
-[PASS] 'remore' -> 'remove': detected=True   | ["cursive 'v'<->'r' ligature stroke"]
-[PASS] 'hin' -> 'his': detected=True         | ["curvy 's'<->'n' stroke confusion"]
-
-NEGATIVE CONTROLS (Genuine errors must NOT be detected as cursive variants):
-[PASS] 'gnowledge' -> 'knowledge': detected=False | []
-[PASS] 'destruyed' -> 'destroyed': detected=False | []
-[PASS] 'eingineer' -> 'engineer': detected=False  | []
-[PASS] 'fallfill' -> 'fulfill': detected=False    | []
-[PASS] 'libary' -> 'library': detected=False      | []
-
-======================================================================
-TESTING STRIKETHROUGH SUSPECT DISMISSAL (care -> [struck])
-======================================================================
-Candidate 'care': verdict=HANDWRITING_AMBIGUITY, score=0.95
-Notes: ["Strikethrough suspect dismissed for 'care': word is active valid text"]
-[PASS] Strikethrough suspect on valid word 'care' was correctly NOT penalized!
-
-======================================================================
-TESTING CONSENSUS DISPUTED-CHARACTER AGREEMENT
-======================================================================
-Candidate: 'presisely', Intended: 'precisely', Consensus: 'presicely'
-Disputed ops: ['sub:c>s']
-Disputed character agreement detected: True
-[PASS] Disputed character agreement successfully confirmed for 'presicely'!
-
-======================================================================
-ALL TESTS PASSED SUCCESSFULLY!
-```
+### Key Implementation Details
+1. **Fuzzy Token Alignment (`_tokens_match`)**:
+   - Short words ($\le 3$ chars) require strict exact match to prevent preposition/article drift (`in` vs `on`).
+   - Words $\ge 4$ chars allow Levenshtein distance $\le 1$ with similarity $\ge 0.82$.
+   - **Spelling Immutability**: Applies `[struck: ...]` status while retaining the verified transcript's authentic characters byte-for-byte.
+2. **Observation-First Visual Prompting**:
+   - Spotlights the specific disputed word(s) in `FORCED_CHOICE_PROMPT`.
+   - Requires a 1-sentence ink observation before the choice, grounding the decision in visual pixels.
+   - Robust choice parsing via `parse_choice_digit`.
+3. **Midline Stroke Validation (`has_physical_midline_stroke`)**:
+   - Verifies stroke vertical center falls within the text body ($15\% \le y_{rel} \le 80\%$) and overlaps horizontally with the line box.
+   - Tie-breaking: Split votes `[0, 1]` are accepted if and only if OpenCV physically detected a midline stroke. Ambiguous cases without physical strokes safely default to active text (guaranteeing zero false strikes).
+4. **Unit Tests**:
+   - Added tests in `tests/test_line_reconciler.py` covering fuzzy token matching, short-word guard, spelling immutability, midline stroke filtering, and choice parsing.
 
 ---
 
-### Comparison of Disputed Tokens Across Scripts
+## 8. Stage 2: Boundary Overlap De-duplication & Surface Immutability
 
-| Script | Token | Intended | Previous Pipeline | Updated Pipeline | Outcome |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **0001** | `sourcee` | `source` | `GENUINE_ERROR` (0.005) | **`HANDWRITING_AMBIGUITY` (0.65)** | Blind loop insertion on terminal `c` protected |
-| **0001** | `corre` | `core` | `GENUINE_ERROR` (0.300) | **`HANDWRITING_AMBIGUITY` (0.65)** | Palmer minim doubling `r` protected |
-| **0001** | `presisely` | `precisely` | `GENUINE_ERROR` (0.300) | **`HANDWRITING_AMBIGUITY` (0.70+)** | Consensus `'c'` confirmed; exemption preserved |
-| **0002** | `care` | `[struck]` | `GENUINE_ERROR` (0.009) | **`HANDWRITING_AMBIGUITY` (0.95)** | Active text confirmed; strike penalty dismissed |
-| **0002** | `illustrodes` | `illustrates` | `GENUINE_ERROR` (0.005) | **`HANDWRITING_AMBIGUITY` (0.65)** | Cursive `at` ligature loop merger protected |
-| **0002** | `allain` | `attain` | `GENUINE_ERROR` (0.005) | **`HANDWRITING_AMBIGUITY` (0.65)** | Uncrossed `tt` ascender stroke protected |
-| **Both** | `gnowledge` | `knowledge` | `GENUINE_ERROR` | **`GENUINE_ERROR`** | Genuine phonetic error correctly penalized |
-| **Both** | `destruyed` | `destroyed` | `GENUINE_ERROR` | **`GENUINE_ERROR`** | Genuine phonetic error correctly penalized |
+**Date**: 2026-10-09  
+**Files**: `src/pipeline/stage2_verifier.py`, `tests/test_stage2_verifier.py`
 
----
+### Motivation & Problems Solved
+1. **Hallucinated Word Duplications (The Page 18 Bug)**:
+   - In `SE_10_Q1_0001` Page 18, Stage 2 VLM proposed a patch where the replacement string leaked trailing context words (`stage1_target`: `"I [struck: heard you ma]"`, `replacement`: `"I [struck: heard you ma] [struck: heard you] wake up at"`).
+   - In [`apply_anchored_diff`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/src/pipeline/stage2_verifier.py#L219), Strategy 1 naive substring replacement (`ctx.replace(s1, act, 1)`) left the existing `"wake up at"` in place, producing `"wake up at wake up at"` and merging tags into `[struck: heard you ma heard you]`.
+   - Strategies 1 and 2 completely bypassed existing prefix checks in `_apply_at_idx`, and `_apply_at_idx` had zero trailing suffix overlap checks.
+2. **Underline False Strike Protection & Benefit of the Doubt Invariant**:
+   - Analyzed whether to aggressively probe OpenCV strokes when both models miss a strike (e.g. `represented`, `needed to be cared for`).
+   - Determined that aggressive active probing creates high risk of falsely striking student underlines (headings, key answers). In accordance with Cambridge Assessment standards, the pipeline adopts the **Benefit of the Doubt (BOD)** rule: prioritize precision over recall on ambiguous strokes, treating borderline faint single-line pen drags as an inherent physical HTR bottleneck rather than risking false strikes on underlined text.
 
-### Ground-Truth Transcription Benchmark on SE_11_Q1_0002
-Run command: `python scripts/evaluate_transcription.py --lang english --script SE_11_Q1_0002`
-
-```text
-  [SE_11_Q1_0002] page  5: CER s1=0.011 s1+2=0.011 | WER s1=0.038 s1+2=0.038
-  [SE_11_Q1_0002] page  6: CER s1=0.153 s1+2=0.145 | WER s1=0.269 s1+2=0.192
-  [SE_11_Q1_0002] page 10: CER s1=0.013 s1+2=0.013 | WER s1=0.042 s1+2=0.042
-  [SE_11_Q1_0002] page 11: CER s1=0.055 s1+2=0.050 | WER s1=0.128 s1+2=0.077
-
-== Summary ==
-  Stage 1:   CER macro 0.0577 | micro 0.0341 (3.41%) | WER macro 0.1193 (11.93%)
-  Stage 1+2: CER macro 0.0546 | micro 0.0325 (3.25%) | WER macro 0.0872 (8.72%)
-```
-
----
-
-## 4. How to Verify
-
-1. **Run Unit Tests**:
-   ```bash
-   script_checking/bin/python scratch/test_fixes.py
-   ```
-2. **Re-score Arbitration Records on 0001 & 0002**:
-   ```bash
-   script_checking/bin/python scratch/test_gate_on_0001_0002.py
-   ```
-3. **Run Full Ground-Truth Benchmark on Available English Scripts**:
-   ```bash
-   script_checking/bin/python scripts/evaluate_transcription.py --lang english --script SE_11_Q1_0002
-   ```
+### Key Implementation Details
+1. **Bidirectional Boundary Overlap Trimming (`trim_boundary_overlap`)**:
+   - Analyzes token boundaries between `act` (replacement), `prefix_text`, and `suffix_text`.
+   - **Trailing Overlap**: If `act` ends with words that match the start of `suffix_text` (and those words were not already part of `s1`'s trailing words), strips them cleanly.
+   - **Leading Overlap**: If `act` begins with words that match the end of `prefix_text` (and those words were not already part of `s1`'s leading words), strips them cleanly.
+   - Preserves exact original internal characters, tags, and whitespace using regex token span slicing.
+2. **Unified Strategy Routing**:
+   - Replaced fragmented substring replacement in Strategy 1 and Strategy 2 with exact coordinate calculation and unified routing through `_apply_at_idx(at_idx, target_len)`.
+   - Guaranteed that all 4 strategies (exact context, regex context, single occurrence, SequenceMatcher) enforce boundary overlap trimming.
+3. **Unit Tests**:
+   - Added unit tests in `tests/test_stage2_verifier.py`:
+     - `test_apply_anchored_diff_prevents_trailing_context_duplication` (verifies `wake up at wake up at` is prevented).
+     - `test_apply_anchored_diff_prevents_leading_context_duplication` (verifies prefix duplication is prevented).
+     - `test_apply_anchored_diff_preserves_legitimate_shared_words` (verifies authentic target words are never trimmed).
+   - All 26 tests in `tests/test_stage2_verifier.py` and all 10 tests in `tests/test_line_reconciler.py` pass cleanly.
 
 ---
 
-## 5. Phase 2 Updates: Generalized Arbitration, Ruled Paper Line Suppression, and Objective Auditing
+## 9. Evaluation Report: Teacher Ground Truth Marks Integration
 
-**Date**: October 4, 2026  
-**Scope**: Stage 3b Arbitration Gate, Strikethrough Suppression on Lined Paper, Localizer Token Presence Verification, Objective/Cloze Question Auditing, and Multi-Word Margin Truncation.
+**Date**: 2026-10-09  
+**Files**: `src/utils/ground_truth.py`, `src/utils/export_utils.py`, `src/pipeline/orchestrator.py`, `src/pipeline/stage4_evaluator.py`, `tests/test_stage4_modular.py`
 
-### Key Architectural Root Causes Resolved:
+### Motivation & User Request
+- Converted raw teacher markings into canonical CSV format (`SE_11_Q1_teacher_marks.csv`) matching `SE_08_Q1_teacher_marks.csv`.
+- Enabled the evaluation pipeline to automatically detect if teacher marks exist in `data/ground_truth/transcripts/teacher_marks/` for the script being checked.
+- If teacher marks exist, mention the teacher marks directly at the end of the final mark tables in `evaluation_report.md`.
 
-1. **Uncoupling Non-Word Cursive Variants from Visual Candidate Confirmation (`gate.py`)**:
-   - **Problem**: When a student forms cursive ligatures (e.g. `illustrates` with looped `at` read as `illustrodes`, or `core` with minim doubling read as `corre`), the vision model inspects the physical ink loop and confirms the candidate non-word (`forced_choice == "candidate"`). Previously, `visual_confirms_candidate` cancelled the cursive safeguard, crushing the score to `0.005` (`GENUINE_ERROR`).
-   - **Generalized Fix**: Dynamic system lexicon separation (`c_low not in self.lexicon`). For non-words, visual confirmation of the non-word is the *expected symptom of OCR cursive ambiguity*, not proof of a spelling fault. Non-words are elevated to `HANDWRITING_AMBIGUITY` (0.65). Valid English words (e.g. `lion` vs `line`, `have` vs `has`) still require explicit visual proof of the intended word before alteration.
+### Key Implementation Details
+1. **Teacher Marks Directory Resolution & Multi-File Parser (`src/utils/ground_truth.py`)**:
+   - `resolve_teacher_marks_dir()`: Dynamically resolves `data/ground_truth/transcripts/teacher_marks` relative to current working directory or repository root.
+   - `parse_teacher_marks_csv()`: Parses canonical CSV format (`student_id,Q1,Q2,...,total_marks`).
+   - `load_all_teacher_marks()`: Scans the directory for both CSV and text files, merging sub-part granularity (e.g. `1(A)`, `1(B)`) with top-level questions (`Q1`).
+   - `get_teacher_marks_total()`: Computes total teacher marks without double-counting `total_marks` and individual questions.
+   - `get_ground_truth_info_for_script()`: Intelligently resolves scripts by exact ID, paper prefix (e.g. `SE_11_Q1_0002`), numeric suffix (`_0002`), or substring.
+2. **Metadata Propagation in Pipeline (`src/pipeline/orchestrator.py`)**:
+   - Extraction stage stores both `ground_truth_marks` and `ground_truth_source` in `extraction.metadata`.
+   - Evaluation stage preserves `ground_truth_source` in `CompleteEvaluationReport.metadata`.
+3. **Stage 4 Evaluator Clean Separation (`src/pipeline/stage4_evaluator.py`)**:
+   - Filtered out `total_marks`, `total`, `tot` from `gt_canon` to ensure `total_marks` is never evaluated as an unattempted question item.
+   - Handled parent question mapping when subparts are evaluated.
+4. **Markdown Report Rendering at End of Final Mark Tables (`src/utils/export_utils.py`)**:
+   - **Stage 4 Modular Marks Breakdown Table**:
+     - At the `| **TOTAL** |` row, populates `Human GT` with `teacher_total_gt` and `Δ (AI - Human)` with `(final_score - teacher_total_gt):+.1f`.
+     - Appends the callout block below the table:
+       ```markdown
+       > 🧑‍🏫 **Teacher Ground Truth Marks Comparison (`<csv_filename>`)**:
+       > - **Teacher Total Score**: **<teacher_total> / <max_marks>**
+       > - **AI Evaluation Score**: **<ai_total> / <max_marks>**
+       > - **Score Discrepancy (Δ AI - Teacher)**: **±<diff> marks**
+       ```
+   - **Final Given Marks Summary Table**:
+     - At the end of the table, appends a dedicated row:
+       `| **Teacher Marks (GT)** | **Verified Examiner (`<csv_filename>`)** | **<max>** | **<teacher_total>** | **<pct>%** | **Δ (AI - Teacher): ±<diff> marks** |`
+     - Appends a structured Teacher Ground Truth Marks Comparison summary callout block immediately below the table.
+   - **Monolithic Mode Table**:
+     - Appends the `TOTAL` row and summary callout at the end of the rubric criteria table.
+   - **Ground Truth Source & Executive Summary**:
+     - Dynamically references the teacher marks filename rather than hardcoded `gt.txt`.
+5. **Strict Decoupling of Model's Stage 0b Extraction from Official Ground Truth**:
+   - VLM-detected red-ink marks (Stage 0b) are visual detections that may contain noise or OCR slips; they are never treated as ground truth or labeled as "verified".
+   - `original_marker_id` retains its source without being overwritten as `"human_examiner_gt"`.
+   - `stage0b_teacher_marks.json` is preserved purely for model vision outputs; official examiner marks live strictly in `data/ground_truth/transcripts/teacher_marks/` and `metadata["ground_truth_marks"]`.
 
-2. **Ruled Notebook Paper Strikethrough Suppression (`gate.py`)**:
-   - **Problem**: On small line crops of lined paper, horizontal baseline ruling lines triggered OpenCV line detection as 1-4 strikethroughs. Because `c_low not in self.lexicon` for all misspelled words, `gate.py` excused authentic student misspellings (`libary` $\to$ `library`) as "aborted drafts"!
-   - **Generalized Fix**:
-     - If `ev.forced_choice == "candidate"` with high confidence ($\ge 0.70$) and no mention of strike marks in VLM reasoning, baseline ruling lines are prevented from setting `crop_has_strike = True`.
-     - Added vertical text body piercing check: only strokes intersecting the vertical center ($0.20 \le y_{pct} \le 0.70$) of the crop are treated as candidate strikethroughs (suppressing bottom baseline strokes $\ge 65\%$).
-     - Aborted draft benefit of doubt is restricted to verified drafts (`is_aborted_draft`), tagged suspects (`strikethrough_suspect`), or VLM-corroborated strike marks. Authentic errors (`libary`, `fallfill`, `strensth`) score $\le 0.11$ (`GENUINE_ERROR`).
+---
 
-3. **Strict Target Token Presence in Localizer (`localizer.py`)**:
-   - **Problem**: In multi-line context sentences, `match_ratio` gave high similarity ($0.85$) to crops that truncated early (e.g. `crop = "he wants to be a"` for context `"he wants to be an eingineer in future"`), even though the disputed word `eingineer` was missing from the crop.
-   - **Generalized Fix**: `match_ratio` checks whether `candidate_token` or `intended_token` is present in crop tokens (`c_toks`) within edit distance $\le 2$. If the disputed token is missing, the crop score is capped at $\le 0.45$ (below `min_ratio = 0.60`), cleanly rejecting the partial crop and triggering fallback to target line projection.
+## 9. Class VIII SE_08_Q1 Question Paper Artifacts & Evaluation Setup
 
-4. **Objective & Cloze Question Auditing (`orchestrator.py`)**:
-   - **Problem**: Cloze and fill-in-the-gap questions (such as Question 4 on Page 6) had `if is_obj: ans.errors = []; continue`, bypassing linguistic error extraction entirely and missing spelling corruptions like `allain` and `discoounage`.
-   - **Generalized Fix**: Objective questions undergo Stage 3 extraction with a dedicated filter: keep ONLY `spelling` errors, while suppressing clause-level syntax and grammar deductions.
+**Date**: 2026-10-09  
+**Files**: `data/questions/english/SE_08_Q1.txt`, `data/questions/SE_08_Q1.txt`, `outputs/questions/english/SE_08_Q1.json`, `outputs/questions/english/SE_08_Q1.md`, `configs/answer_keys/SE_08_Q1.yaml`, `configs/rubrics/english_junior.yaml`, `tests/test_question_utils.py`
 
-5. **Multi-Word Margin Truncation Protection (`edge_truncation_detector.py`)**:
-   - **Problem**: When a sentence ended at the physical paper edge (`Dhaka Univers`), Stage 3 extracted a multi-word phrase (`admitted into a Dhaka Univers` $\to$ `get admitted to Dhaka University`). The single-token edge truncation check was bypassed.
-   - **Generalized Fix**: Added terminal token edge truncation inspection. If the terminal word of a multi-word error phrase is cut off at the right page boundary (e.g. `Univers` $\to$ `University`), the error is recognized as document boundary truncation and sanitized.
+### Changes & Configuration
+1. **Raw Question Artifact Placement**:
+   - Copied and formatted raw question text from `SE_08_Q1_extraction/SE_08_Q1.txt` to:
+     - `data/questions/english/SE_08_Q1.txt`
+     - `data/questions/SE_08_Q1.txt`
+2. **Structured Extracted Question Schema (`outputs/questions/english/SE_08_Q1.json`)**:
+   - Structured all 14 sub-questions totaling exactly 100.0 marks:
+     - Part A (Reading, 70m):
+       - Q1: MCQ (Hygiene Passage, 7 marks)
+       - Q2: Short Answer Comprehension (Hygiene Passage, 10 marks)
+       - Q3: Cloze without Clues (Nakshi Kantha, 5 marks)
+       - Q4: Synonyms and Antonyms (Nakshi Kantha, 5 marks)
+       - Q5: Information Transfer Table (Lord Byron, 5 marks)
+       - Q6: True or False Statements (Lord Byron, 5 marks)
+       - Q7: Summary Writing (Lord Byron, 10 marks)
+       - Q8: Sentence Matching (Deforestation, 5 marks)
+       - Q9: Rearranging Story (Farmer & Purse of Gold, 8 marks)
+       - Q10: Poetry Comprehension Questions (any 5, 10 marks)
+     - Part B (Writing, 30m):
+       - Q11: Story Completion (Honest Woodcutter, 7 marks)
+       - Q12: Paragraph Writing ('Tree Plantation', 7 marks)
+       - Q13: Dialogue Writing ('Importance of Reading Newspaper', 6 marks)
+       - Q14: Class Test Assessment (10 marks)
+3. **Companion Markdown Documentation (`outputs/questions/english/SE_08_Q1.md`)**:
+   - Created full inspection Markdown companion matching `SE_11_Q1.md` and `SE_10_Q1.md`.
+4. **Deterministic Objective Answer Key (`configs/answer_keys/SE_08_Q1.yaml`)**:
+   - Mode A questions mapped with exhaustive accepted answers:
+     - Q1 (MCQ: options a–g)
+     - Q3 (Cloze: quilt, pattern/design, craft, poem, commercially)
+     - Q4 (Vocabulary: synonyms/antonyms for traditional, famous, expensive, colourful, popular)
+     - Q5 (Table: age of 10 / 1798, Honours of Idleness, in 1808 / Cambridge, Child Harold, published in six volumes)
+     - Q6 (True/False: False, False, True, False, True with required corrections)
+     - Q8 (Sentence Matching: a+v, b+iv, c+ii, d+i, e+iii)
+     - Q9 (Rearrangement order: e -> b -> d -> h -> a -> c -> g -> f)
+5. **Junior Secondary Rubric (`configs/rubrics/english_junior.yaml`)**:
+   - Fully aligned scoring modes (`A_ITEM`, `B_POINT`, `C_BAND`) with 100.0 total marks and mode specifications.
+   - Certified with `validate_paper_integrity()`.
+6. **Automated Unit Testing**:
+   - Added test coverage in `tests/test_question_utils.py` verifying ID resolution, dynamic artifact loading, rubric/answer key resolution, and paper integrity validation.
 
-6. **Authentic Student Misspellings Clarification (`strensth`)**:
-   - Raw ink inspection confirmed the student wrote standard Palmer cursive `g` with a clear descender loop in words like *"gives"* and *"courage"*, but penned an explicit `s` in *"strensth"*.
-   - `strensth` is an authentic student misspelling and is correctly penalized as `GENUINE_ERROR` ($\le 0.11$) without any hardcoded character patches.
 
-### Test Suite Execution Output
-```text
-============================================================
-RUNNING GATE ARBITRATION TESTS
-============================================================
-[1] 'illustrodes' -> 'illustrates': score=0.65, verdict=HANDWRITING_AMBIGUITY
-[2] 'strensth' -> 'strength': score=0.1091, verdict=GENUINE_ERROR
-[3] 'libary' -> 'library' on lined paper: score=0.0998, verdict=GENUINE_ERROR
-[4] 'fallfill' -> 'fulfill': score=0.1091, verdict=GENUINE_ERROR
-[5] 'care' -> '[struck]': score=0.9, verdict=HANDWRITING_AMBIGUITY
-Gate Tests Passed: 5/5
-
-============================================================
-RUNNING LOCALIZER MATCH_RATIO TESTS
-============================================================
-Crop 1 (missing target 'eingineer'): match_ratio = 0.450
-Crop 2 (contains target 'eingineer'): match_ratio = 1.000
-Localizer Tests Passed: 2/2
-
-============================================================
-RUNNING MULTI-WORD MARGIN TRUNCATION TESTS
-============================================================
-'admitted into a Dhaka Univers' -> 'get admitted to Dhaka University': is_truncation = True
-'face with great courage' -> 'face with great bravery': is_truncation = False
-Edge Truncation Tests Passed: 2/2
-
-ALL TESTS PASSED SUCCESSFULLY!
-```
 

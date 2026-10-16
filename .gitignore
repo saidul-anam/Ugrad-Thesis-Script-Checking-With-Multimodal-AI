@@ -21,6 +21,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+outputs/
+data_without_pipeline/
 
 # PyInstaller / Py2app
 *.manifest

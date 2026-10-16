@@ -80,22 +80,21 @@ def find_extracted_scripts(extraction_dir: str) -> List[Path]:
             or ((p / "stage1_transcription.json").exists() and (p / "stage3_errors.json").exists())
         )
 
-    for entry in sorted(root.iterdir()):
-        if not entry.is_dir():
-            continue
-        if _is_script_dir(entry):
-            real_p = entry.resolve()
-            if real_p not in seen_real_paths:
-                candidates.append(entry)
-                seen_real_paths.add(real_p)
-        else:
-            # Check inside paper sub-directory (e.g. se_11_q1, se_10_q1)
-            for sub in sorted(entry.iterdir()):
-                if sub.is_dir() and _is_script_dir(sub):
-                    real_p = sub.resolve()
-                    if real_p not in seen_real_paths:
-                        candidates.append(sub)
-                        seen_real_paths.add(real_p)
+    def _traverse(current_dir: Path, depth: int = 1):
+        if depth > 4 or not current_dir.is_dir():
+            return
+        for child in sorted(current_dir.iterdir()):
+            if not child.is_dir():
+                continue
+            if _is_script_dir(child):
+                real_p = child.resolve()
+                if real_p not in seen_real_paths:
+                    candidates.append(child)
+                    seen_real_paths.add(real_p)
+            else:
+                _traverse(child, depth + 1)
+
+    _traverse(root)
     return candidates
 
 
@@ -462,6 +461,15 @@ def main():
     if os.path.exists(paper_spec_dir) and find_extracted_scripts(paper_spec_dir):
         if args.extraction_dir in [f"outputs/extracted/{args.lang}", f"outputs/runs/{args.lang}"]:
             args.extraction_dir = paper_spec_dir
+    elif args.extraction_dir in [f"outputs/extracted/{args.lang}", f"outputs/runs/{args.lang}"]:
+        for cand_dwp in [
+            f"data_without_pipeline/{args.lang}/{paper_id.lower()}",
+            f"data_without_pipeline/{paper_id.lower()}",
+            "data_without_pipeline"
+        ]:
+            if os.path.exists(cand_dwp) and find_extracted_scripts(cand_dwp):
+                args.extraction_dir = cand_dwp
+                break
 
     eval_output_base = args.output_dir or f"outputs/evaluated/{args.lang}/{paper_id.lower()}"
 

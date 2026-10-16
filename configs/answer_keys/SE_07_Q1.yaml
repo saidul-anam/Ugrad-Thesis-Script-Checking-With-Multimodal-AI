@@ -1,0 +1,127 @@
+# Answer key for question paper SE_07_Q1 (English 1st Paper, Class VII, Half-Yearly Exam 2026)
+#
+# DRAFTED FROM THE QUESTION PAPER AND HUMAN TRANSCRIPTS.
+# Mode A items are scored arithmetically against this key.
+question_id: SE_07_Q1
+verified: true
+source: "outputs/questions/english/SE_07_Q1.md"
+
+mode_a:
+  "1":
+    task_type: MCQ
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "Where do Joynul and Nazma live?"
+        accepted: ["iii", "3", "rural area", "iii. rural area", "(iii) rural area"]
+      - label: b
+        question: "Why does Joynul face financial difficulties?"
+        accepted: ["ii", "2", "he earns irregularly for daily needs", "he works irregularly for daily needs", "ii. he earns irregularly for daily needs"]
+      - label: c
+        question: "What part of speech is the word 'daily'?"
+        accepted: ["iv", "4", "adverb", "iv. adverb", "(iv) adverb", "adjective", "i", "1", "i. adjective"]
+      - label: d
+        question: "How long does Nazma work every day?"
+        accepted: ["i", "1", "from morning to night", "i. from morning to night", "(i) from morning to night", "ii", "2"]
+      - label: e
+        question: "The word 'hard' in the text is an —"
+        accepted: ["iv", "4", "adjective", "iv. adjective", "(iv) adjective"]
+      - label: f
+        question: "The antonym of 'smooth' is —"
+        accepted: ["iii", "3", "rough", "iii. rough", "(iii) rough"]
+      - label: g
+        question: "Nazma plays the role of a —"
+        accepted: ["ii", "2", "household manager and caregiver", "household manager and caregivers", "ii. household manager and caregiver"]
+
+  "3":
+    task_type: Cloze_Without_Clues
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["show", "program", "programme"]
+      - label: b
+        accepted: ["great", "much", "huge"]
+      - label: c
+        accepted: ["cheered", "enjoyed", "applauded"]
+      - label: d
+        accepted: ["enthusiasm", "amusement", "joy"]
+      - label: e
+        accepted: ["cheers", "applause", "cheering"]
+
+  "4":
+    task_type: Vocabulary
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["ugly", "plain", "unattractive", "hideous", "bad-looking", "bad looking", "not beautiful", "nasty"]
+      - label: b
+        accepted: ["courageous", "fearless", "unfearful", "heroic", "valiant", "daring", "bold", "confident"]
+      - label: c
+        accepted: ["spotless", "tidy", "neat", "hygienic", "hygenic", "pure", "immaculate", "cleanly", "clear"]
+      - label: d
+        accepted: ["senior", "aged", "ancient", "anicent", "elderly", "old-aged", "older"]
+      - label: e
+        accepted: ["noisy", "loud", "rowdy", "clamorous", "noise", "active", "talkative"]
+
+
+  "5":
+    task_type: Table_Completion
+    mark_per_item: 1.0
+    items:
+      - label: i
+        accepted: ["began their journey to the moon", "began journey to moon", "began space expedition", "journey to the moon"]
+      - label: ii
+        accepted: ["lunar module", "spacecraft", "armstrong and aldrin", "the spacecraft", "neil armstrong and edwin aldrin"]
+      - label: iii
+        accepted: ["on july 20, 1969", "july 20, 1969", "20 july 1969", "july 20"]
+      - label: iv
+        accepted: ["came back safely to earth", "returned safely to earth", "came back to earth", "returned to earth"]
+      - label: v
+        accepted: ["all over the world", "by the whole world", "worldwide", "by people all over the world"]
+
+  "6":
+    task_type: True_False
+    mark_per_item: 1.0
+    items:
+      - label: a
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "Apollo 11 was a space expedition to the Moon that began in 1969."
+      - label: b
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "Michael Collins stayed in the main ship while Armstrong and Aldrin landed on the Moon."
+      - label: c
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "Neil Armstrong was the first person to walk on the Moon's surface."
+      - label: d
+        status: true
+        accepted: ["true", "t"]
+      - label: e
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "The mission proved that the combination of science, teamwork, and human courage can achieve interplanetary travel."
+
+  "8":
+    task_type: Sentence_Matching
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["do you know where the post office is", "where the post office is", "where is the post office", "do you know where is the post office", "where the post office is?"]
+      - label: b
+        accepted: ["do you know what the postmaster does", "what the postmaster does", "what does the postmaster do", "do you know what does the postmaster do", "what the postmaster does?"]
+      - label: c
+        accepted: ["do you know why the postmaster is so happy", "why the postmaster is so happy", "why is the postmaster so happy", "why does the postmaster look so happy", "why the postmaster looks so happy", "do you know why does the postmaster look so happy"]
+      - label: d
+        accepted: ["do you know where his children go to school", "where his children go to school", "where do his children go to school", "where does his children go to school", "which school his children go to", "do you know which school his children go to"]
+      - label: e
+        accepted: ["do you know when the postmaster comes to the office", "do you know when the postmaster comes to the post office", "when the postmaster comes to the post office", "when does the postmaster come to the post office", "when does the postmaster come to the office", "when the postmaster comes to the office"]
+
+  "9":
+    task_type: Rearrangement
+    total_marks: 8.0
+    mark_per_item: 1.0
+    correct_sequence: ["c", "f", "e", "g", "a", "h", "d", "b"]
+    canonical_order: ["c", "f", "e", "g", "a", "h", "d", "b"]
+

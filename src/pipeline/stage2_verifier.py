@@ -216,6 +216,68 @@ def is_student_error_autocorrection(
     return True
 
 
+def trim_boundary_overlap(
+    act: str,
+    s1: str,
+    prefix_text: str,
+    suffix_text: str
+) -> str:
+    """
+    Trims leaked context from the boundaries of `act` to prevent word duplication.
+    - If `act` ends with words matching the beginning of `suffix_text` (and those words
+      were NOT part of `s1`'s trailing words), strips them.
+    - If `act` begins with words matching the end of `prefix_text` (and those words
+      were NOT part of `s1`'s leading words), strips them.
+    Preserves exact original internal characters and whitespace of `act`.
+    """
+    tok_matches = list(re.finditer(r'\S+', act))
+    if not tok_matches:
+        return act
+
+    act_tokens = [m.group(0) for m in tok_matches]
+    s1_tokens = s1.split()
+    prefix_tokens = prefix_text.split()
+    suffix_tokens = suffix_text.split()
+
+    def _norm(tok: str) -> str:
+        return re.sub(r'^[^\w\[\]]+|[^\w\[\]]+$', '', tok).lower()
+
+    start_token_idx = 0
+    end_token_idx = len(act_tokens)  # exclusive
+
+    # 1. Trailing Overlap Check (Suffix)
+    max_k = min(len(act_tokens) - 1, len(suffix_tokens))
+    for k in range(max_k, 0, -1):
+        cand = [_norm(t) for t in act_tokens[-k:]]
+        target = [_norm(t) for t in suffix_tokens[:k]]
+        if cand == target:
+            s1_cand = [_norm(t) for t in s1_tokens[-k:]] if len(s1_tokens) >= k else None
+            if s1_cand != cand:
+                end_token_idx = len(act_tokens) - k
+                break
+
+    # 2. Leading Overlap Check (Prefix)
+    max_m = min(end_token_idx - start_token_idx - 1, len(prefix_tokens))
+    for m in range(max_m, 0, -1):
+        cand = [_norm(t) for t in act_tokens[:m]]
+        target = [_norm(t) for t in prefix_tokens[-m:]]
+        if cand == target:
+            s1_cand = [_norm(t) for t in s1_tokens[:m]] if len(s1_tokens) >= m else None
+            if s1_cand != cand:
+                start_token_idx = m
+                break
+
+    if start_token_idx == 0 and end_token_idx == len(act_tokens):
+        return act
+
+    if start_token_idx >= end_token_idx:
+        return act
+
+    start_char = tok_matches[start_token_idx].start()
+    end_char = tok_matches[end_token_idx - 1].end()
+    return act[start_char:end_char]
+
+
 def apply_anchored_diff(
     text: str,
     stage1_target: str,
@@ -225,6 +287,7 @@ def apply_anchored_diff(
     """
     Applies a verified diff (stage1_target -> actual) into text using context-anchored window matching.
     Resolves Problem 14: avoids naive re.sub(..., count=1) which corrupts the first occurrence on the page.
+    Guarantees surface boundary immutability: trims leaked context overlap to prevent word duplication.
     Returns: (updated_text, success_boolean)
     """
     s1 = stage1_target.strip()
@@ -234,10 +297,18 @@ def apply_anchored_diff(
 
     ctx = context_snippet.strip()
 
+    def _apply_at_idx(at_idx: int, target_len: int) -> str:
+        prefix_text = text[:at_idx]
+        suffix_text = text[at_idx + target_len:]
+        act_cleaned = trim_boundary_overlap(act, s1, prefix_text, suffix_text)
+        return prefix_text + act_cleaned + suffix_text
+
     # Strategy 1: Exact context snippet match
     if ctx and ctx in text and s1 in ctx:
-        updated_ctx = ctx.replace(s1, act, 1)
-        return text.replace(ctx, updated_ctx, 1), True
+        ctx_pos = text.find(ctx)
+        s1_pos = ctx.find(s1)
+        at_idx = ctx_pos + s1_pos
+        return _apply_at_idx(at_idx, len(s1)), True
 
     # Strategy 2: Whitespace-normalized regex context match
     if ctx and s1 in ctx:
@@ -247,9 +318,13 @@ def apply_anchored_diff(
             m = re.search(ctx_pattern, text)
             if m:
                 matched_span = m.group(0)
-                if s1 in matched_span:
-                    updated_span = matched_span.replace(s1, act, 1)
-                    return text[:m.start()] + updated_span + text[m.end():], True
+                s1_tokens_esc = [re.escape(tok) for tok in s1.split() if tok]
+                s1_pattern = r'\s+'.join(s1_tokens_esc)
+                s1_matches = list(re.finditer(s1_pattern, matched_span))
+                if len(s1_matches) == 1:
+                    at_idx = m.start() + s1_matches[0].start()
+                    s1_len = s1_matches[0].end() - s1_matches[0].start()
+                    return _apply_at_idx(at_idx, s1_len), True
 
     # Find all occurrences of s1 in text
     if re.fullmatch(r'\w+', s1):
@@ -275,18 +350,9 @@ def apply_anchored_diff(
             return text, True
         return text, False
 
-    def _apply_at_idx(at_idx: int) -> str:
-        prefix_text = text[:at_idx].rstrip()
-        first_act_word = act.split()[0] if act.split() else ""
-        if first_act_word and prefix_text.endswith(first_act_word) and not s1.startswith(first_act_word):
-            # Strip duplicate leading word from replacement
-            act_cleaned = act[len(first_act_word):].lstrip()
-            return text[:at_idx] + act_cleaned + text[at_idx + len(s1):]
-        return text[:at_idx] + act + text[at_idx + len(s1):]
-
     # Strategy 3: Single unambiguous occurrence on the page
     if len(occurrences) == 1:
-        return _apply_at_idx(occurrences[0]), True
+        return _apply_at_idx(occurrences[0], len(s1)), True
 
     # Strategy 4: Multiple occurrences with context snippet (sliding-window SequenceMatcher)
     if ctx:
@@ -303,7 +369,7 @@ def apply_anchored_diff(
                 best_idx = idx
 
         if best_ratio >= 0.40 and best_idx != -1:
-            return _apply_at_idx(best_idx), True
+            return _apply_at_idx(best_idx, len(s1)), True
 
     # Ambiguous target with multiple occurrences and no resolving context snippet:
     # Abort to prevent corrupting an unrelated sentence earlier on the page.

@@ -1,0 +1,209 @@
+# Answer key for question paper SE_06_Q1 (English 1st Paper, Class VI, Half-Yearly Exam 2026)
+#
+# DRAFTED FROM THE QUESTION PAPER AND HUMAN TRANSCRIPTS.
+# Mode A items are scored arithmetically against this key.
+question_id: SE_06_Q1
+verified: true
+source: "outputs/questions/english/SE_06_Q1.md"
+
+mode_a:
+  "1":
+    task_type: MCQ
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "Here the meaning of the word reality is -"
+        accepted: ["iv", "4", "actuality", "iv. actuality", "(iv) actuality"]
+      - label: b
+        question: "To every Bangladeshi the 16th December is a day of -"
+        accepted: ["iv", "4", "pride and joy", "iv. pride and joy", "(iv) pride and joy"]
+      - label: c
+        question: "Here respect means -"
+        accepted: ["ii", "2", "honour", "honor", "ii. honour", "(ii) honour"]
+      - label: d
+        question: "Which of the following words has a similar meaning of fearless?"
+        accepted: ["ii", "2", "courageous", "ii. courageous", "(ii) courageous"]
+      - label: e
+        question: "What does surrendered mean here?"
+        accepted: ["ii", "2", "submitted", "ii. submitted", "(ii) submitted"]
+      - label: f
+        question: "To build up our nation as a prosperous country we have to work -"
+        accepted: ["iv", "4", "unitedly", "iv. unitedly", "(iv) unitedly"]
+      - label: g
+        question: "1971 is the year of our -"
+        accepted: ["iv", "4", "all of i, ii & iii", "all of i, ii and iii", "all of the above", "iv. all of i, ii & iii"]
+
+  "3":
+    task_type: Cloze_Without_Clues
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["dreamt", "dreamed", "thought"]
+      - label: b
+        accepted: ["packed", "went", "went back", "returned", "travelled"]
+      - label: c
+        accepted: ["came", "got", "returned"]
+      - label: d
+        accepted: ["sold", "bought", "gave", "offered"]
+      - label: e
+        accepted: ["hearing", "getting", "knowing", "learning", "at"]
+
+  "4":
+    task_type: Vocabulary
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["came back", "come back", "returned", "stayed", "arrived", "advanced", "went away", "go away"]
+      - label: b
+        accepted: ["gallery", "art gallery", "exhibition", "archive", "repository", "historical place"]
+      - label: c
+        accepted: ["companion", "mate", "pal", "partner", "well-wisher", "ally", "bestie", "besti", "friend"]
+      - label: d
+        accepted: ["hide", "conceal", "cover", "mask", "ignor", "ignore", "secret"]
+      - label: e
+        accepted: ["purchased", "acquired", "aquire", "got", "obtained", "took", "bought"]
+
+
+  "5":
+    task_type: Table_Completion
+    mark_per_item: 1.0
+    items:
+      - label: a
+        accepted: ["six", "6", "class six", "class 6"]
+      - label: b
+        accepted: ["bangla, english, and math", "bangla, english, mathematics", "bangla, english and mathematics", "bangla, english and math"]
+      - label: c
+        accepted: ["8, 9, and 10", "8, 9, 10", "8 in bangla, 9 in english, and 10 in mathematics"]
+      - label: d
+        accepted: ["ict, science, and religion", "ict, science and religion"]
+      - label: e
+        accepted: ["6", "6 in each", "6 out of 10", "six", "only 6 marks in each"]
+
+  "6":
+    task_type: True_False
+    mark_per_item: 1.0
+    items:
+      - label: a
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "Raju believes that with more practice, he can improve all his subjects."
+      - label: b
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "He got 10 in Mathematics out of 10."
+      - label: c
+        status: true
+        accepted: ["true", "t"]
+      - label: d
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "Raju promised to study harder next time."
+      - label: e
+        status: false
+        accepted: ["false", "f"]
+        correct_version: "His father told him not to lose hope."
+
+  "9":
+    task_type: Rearrangement
+    total_marks: 8.0
+    mark_per_item: 1.0
+    correct_sequence: ["b", "a", "d", "f", "c", "h", "e", "g"]
+    canonical_order: ["b", "a", "d", "f", "c", "h", "e", "g"]
+
+mode_b:
+  "2":
+    task_type: Short_Answer
+    max_mark: 5
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "What happened during the war in 1971?"
+        key_points:
+          - "Bangladesh fought the Liberation War against Pakistan"
+          - "Sacrifices of martyrs and freedom fighters leading to independence on 16 December 1971"
+      - label: b
+        question: "How do people celebrate Victory Day?"
+        key_points:
+          - "With great enthusiasm, parades, paying homage at National Martyrs' Memorial"
+          - "Singing patriotic songs, cultural events, hoisting the national flag"
+      - label: c
+        question: "Why is the National Martyrs' Memorial important?"
+        key_points:
+          - "Symbolizes the supreme sacrifice and pays homage to the martyrs of 1971"
+      - label: d
+        question: "What do people sing at the National Martyrs' Memorial?"
+        key_points:
+          - "Patriotic songs and national songs to remember the martyrs"
+      - label: e
+        question: "What does the 31-gun salute represent on Victory Day?"
+        key_points:
+          - "Ceremonial military honor heralding the dawn of Victory Day"
+
+  "8":
+    task_type: Sentence_Making
+    max_mark: 5
+    mark_per_item: 1.0
+    items:
+      - label: a
+        question: "Make a sentence using 'bottom of'"
+        key_points:
+          - "Must use preposition 'bottom of' correctly showing position at the lowest point or base of something"
+          - "Grammatically meaningful sentence"
+      - label: b
+        question: "Make a sentence using 'top of'"
+        key_points:
+          - "Must use preposition 'top of' (or 'on top of') correctly showing position at the highest point of something"
+          - "Grammatically meaningful sentence"
+      - label: c
+        question: "Make a sentence using 'through'"
+        key_points:
+          - "Must use preposition 'through' correctly showing movement into one side and out of the other or passing within a space"
+          - "Grammatically meaningful sentence"
+      - label: d
+        question: "Make a sentence using 'along'"
+        key_points:
+          - "Must use preposition 'along' correctly showing movement or location in a constant direction on or beside a path, road, or border"
+          - "Grammatically meaningful sentence"
+      - label: e
+        question: "Make a sentence using 'across'"
+        key_points:
+          - "Must use preposition 'across' correctly showing movement or position from one side to the other of a space or road"
+          - "Grammatically meaningful sentence"
+
+  "10":
+    task_type: Short_Answer
+    max_mark: 10
+    mark_per_item: 2.0
+    items:
+      - label: a
+        question: "What does Robin say about autumn?"
+        key_points:
+          - "There are fruits for everyone; let all give praise"
+      - label: b
+        question: "How is Robin a happy bird?"
+        key_points:
+          - "Sings sweetly throughout all seasons and brings joy"
+      - label: c
+        question: "How is Robin a hopeful bird?"
+        key_points:
+          - "Reminds us that spring will return even during cold winter"
+      - label: d
+        question: "What reason does Robin give for singing during the winter?"
+        key_points:
+          - "Somebody must sing, else winter will seem long"
+      - label: e
+        question: "What does Robin teach us in the poem?"
+        key_points:
+          - "To be happy and praise God in all seasons, stay hopeful"
+      - label: f
+        question: "Why does the playmate come only on a rainy day?"
+        key_points:
+          - "Appears as a reflection in rainwater or puddles"
+      - label: g
+        question: "Why does the boy think the playmate lives in another land?"
+        key_points:
+          - "The playmate never speaks or makes any sound"
+      - label: h
+        question: "What does the Moon come there to do?"
+        key_points:
+          - "Peep in or shine through the window while the child is asleep"

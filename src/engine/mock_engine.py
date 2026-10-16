@@ -139,9 +139,9 @@ class MockGemmaEngine(BaseVLMEngine):
             return resp
         if "mode c (band-scored)" in prompt_lower:
             resp = json.dumps({
-                "raw_subscores": {"context_content_data": 2.5, "structure_format_brevity": 2.0, "language_mechanics": 1.5, "originality_comparisons_paraphrase": 1.5},
+                "raw_subscores": {"context_content_data": 2.5, "organization_cohesion": 2.0, "structure_format_brevity": 2.0, "language_mechanics": 1.5, "originality_comparisons_paraphrase": 1.5},
                 "criterion_evidence": {"context_content_data": "mock quote"},
-                "structural_audit": {"paragraph_subdivisions": False, "missing_layout_components": [], "verbatim_copy_suspected": False,
+                "structural_audit": {"verbatim_copy_suspected": False,
                                      "exceeds_length_limit": False, "external_facts_or_personal_opinions": False, "attempted": True},
                 "frequent_errors": ["subject-verb agreement"], "positive_aspects": ["relevant content"],
                 "feedback_summary": "Mock feedback."

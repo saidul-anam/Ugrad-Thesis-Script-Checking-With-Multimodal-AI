@@ -34,9 +34,10 @@ def test_rubric_specs_loaded_per_mode():
     assert specs["1(A)"].mode == "A" and specs["1(A)"].max_mark == 5
     assert specs["1(B)"].mode == "B" and 2.0 in specs["1(B)"].scale
     assert specs["7"].mode == "C" and specs["7"].criteria_ceilings["context_content_data"] == 3
+    assert specs["7"].criteria_ceilings["organization_cohesion"] == 3
     assert specs["10"].layout_components["letter"]
     assert specs["9"].bands["band_4"] == "6-7"
-    assert "paragraph_split" in specs["7"].hard_caps
+    assert "summary_violations" in specs["7"].hard_caps
     assert load_rubric_specs({"subject": "Bangla", "penalties": {}}) == {}
 
 
@@ -94,27 +95,29 @@ def test_score_mode_b_clamps_to_scale():
 
 def test_score_mode_c_ceilings_caps_and_band():
     specs = load_rubric_specs(RUBRIC)
-    parsed = {"raw_subscores": {"context_content_data": 3.4, "structure_format_brevity": 5.0, "language_mechanics": 1.5, "originality_comparisons_paraphrase": 2.0},
-              "structural_audit": {"paragraph_subdivisions": True}, "feedback_summary": "ok", "positive_aspects": ["x"], "frequent_errors": ["y"]}
+    parsed = {"raw_subscores": {"context_content_data": 3.4, "organization_cohesion": 5.0, "language_mechanics": 1.5, "originality_comparisons_paraphrase": 2.0},
+              "structural_audit": {}, "feedback_summary": "ok", "positive_aspects": ["x"], "frequent_errors": ["y"]}
     sr = score_mode_c(parsed, specs["7"], "some paragraph text")
-    assert sr.subscores["structure_format_brevity"] == 3.0     # clamped to ceiling
+    assert sr.subscores["organization_cohesion"] == 3.0     # clamped to ceiling
     assert sr.raw_total == 9.5
-    assert sr.cap_applied and sr.cap_reason == "Paragraph_Subdivisions" and sr.awarded == 5.0
-    assert sr.band == "Band 2"
-    # graph: personal opinion cap at 6
+    # Paragraph structure constraints removed to prevent penalizing OCR layout artifacts
+    assert not sr.cap_applied and sr.awarded == 9.5
+    assert sr.band == "Band 4"
+    # graph: personal opinion cap at 6 (backward compatibility alias structure_format_brevity -> organization_cohesion)
     parsed_g = {"raw_subscores": {"context_content_data": 3, "structure_format_brevity": 3, "language_mechanics": 2, "originality_comparisons_paraphrase": 2},
                 "structural_audit": {"external_facts_or_personal_opinions": True}}
     sr_g = score_mode_c(parsed_g, specs["8"], "chart text")
     assert sr_g.awarded == 6.0 and sr_g.cap_reason == "Graph_External_Facts"
+    assert sr_g.subscores["organization_cohesion"] == 3.0
     # theme: verbatim copying computed in code
     poem = "All people dream but not equally those who dream by night in the dusty recesses of their mind wake in the morning to find that it was vanity"
     answer = "Those who dream by night in the dusty recesses of their mind wake in the morning to find that it was vanity."
     assert verbatim_overlap(answer, poem) > 0.5
-    parsed_t = {"raw_subscores": {"context_content_data": 3, "structure_format_brevity": 2, "language_mechanics": 1, "originality_comparisons_paraphrase": 2}, "structural_audit": {}}
+    parsed_t = {"raw_subscores": {"context_content_data": 3, "organization_cohesion": 2, "language_mechanics": 1, "originality_comparisons_paraphrase": 2}, "structural_audit": {}}
     sr_t = score_mode_c(parsed_t, specs["11"], answer, poem)
     assert sr_t.cap_applied and sr_t.awarded == 4.0
     # no cap when not binding
-    parsed_ok = {"raw_subscores": {"context_content_data": 2, "structure_format_brevity": 2, "language_mechanics": 1, "originality_comparisons_paraphrase": 1}, "structural_audit": {}}
+    parsed_ok = {"raw_subscores": {"context_content_data": 2, "organization_cohesion": 2, "language_mechanics": 1, "originality_comparisons_paraphrase": 1}, "structural_audit": {}}
     sr_ok = score_mode_c(parsed_ok, specs["7"], "text")
     assert not sr_ok.cap_applied and sr_ok.awarded == 6.0 and sr_ok.band == "Band 3"
 
@@ -164,3 +167,82 @@ def test_evaluator_rubric_driven_with_mock_engine_missing_and_totals():
     assert res.mae_vs_human is not None and res.mae_including_missing is not None
     assert res.mae_including_missing >= res.mae_vs_human - 1e-9 or by_q["8"].human_ground_truth is None
     assert res.scored_with_gt == 4
+
+
+def test_mode_c_multi_tier_self_healing_parsing():
+    specs = load_rubric_specs(RUBRIC)
+    spec_7 = specs["7"]
+
+    # Tier 2: raw_subscores is missing, but marks are inside criteria_reasoning
+    parsed_tier2 = {
+        "criteria_reasoning": {
+            "context_content_data": {"marks": 3.0, "justification": "good data"},
+            "organization_cohesion": {"marks": 2.0, "justification": "logical structure"},
+            "language_mechanics": {"marks": 1.5, "justification": "minor slips"},
+            "originality_comparisons_paraphrase": {"marks": 1.0, "justification": "paraphrased"}
+        },
+        "structural_audit": {"attempted": True}
+    }
+    sr2 = score_mode_c(parsed_tier2, spec_7, "A valid paragraph of more than twenty words written by the student.")
+    assert sr2.subscores["context_content_data"] == 3.0
+    assert sr2.subscores["organization_cohesion"] == 2.0
+    assert sr2.raw_total == 7.5
+    assert sr2.awarded == 7.5
+
+    # Tier 3: No numbers at all, only narrative mentioning Band 2 (Good)
+    parsed_tier3 = {
+        "criteria_reasoning": {
+            "context_content_data": {"justification": "good content"},
+            "organization_cohesion": {"justification": "coherent flow"},
+            "language_mechanics": {"justification": "clear expression"},
+            "originality_comparisons_paraphrase": {"justification": "good attempt"}
+        },
+        "examiner_reasoning": "The student earns marks for content and organization, placing the total in Band 2 Good.",
+        "structural_audit": {"attempted": True}
+    }
+    # Write a paragraph of > 15 words
+    student_writing = "Tree plantation is very important for our environment. Trees give us oxygen and shelter and protect against global warming."
+    sr3 = score_mode_c(parsed_tier3, spec_7, student_writing)
+    assert sr3.awarded > 0.0
+    assert any("reconstructed_from_narrative_band" in n for n in sr3.notes)
+
+
+def test_source_text_for_question_group_header_and_fail_open():
+    exam_paper = """
+Read the text and answer the questions 5, 6 & 7 :
+Lord Byron was an English poet who lived from 1788 to 1824. His father, Captain John Byron, died only three years after his birth. At the age of ten, after the death of his grand uncle, he inherited the family title and estate. Byron attended a number of schools for his education and received his M. A. Degree from Cambridge in 1808.
+
+5. Complete the table.
+6. True or False.
+7. Write a summary of the passage in your own words. 10
+8. Match the sentences.
+"""
+    # Should resolve the ~60-word passage from the preceding header
+    src = source_text_for_question("7", exam_paper)
+    assert "Lord Byron" in src and "Captain John Byron" in src
+
+    # Fail-open test: when source passage is short/unresolved (<25 words), length cap is bypassed
+    specs = load_rubric_specs(RUBRIC)
+    spec_sum = specs["7"]
+    spec_sum.task_type = "Summary"
+    parsed = {"raw_subscores": {"context_content_data": 3.0, "organization_cohesion": 2.0, "language_mechanics": 1.0, "originality_comparisons_paraphrase": 1.0}}
+    short_src = "Instruction only"
+    sr = score_mode_c(parsed, spec_sum, "A summary text consisting of fifty words here to test the brevity bypass...", short_src)
+    assert not sr.cap_applied
+    assert any("length caps bypassed" in n for n in sr.notes)
+
+
+def test_matches_accepted_enhanced():
+    from src.pipeline.stage4_modes import _matches_accepted
+    # 1. OCR space healing
+    assert _matches_accepted("com pletely", ["completely"])
+    assert _matches_accepted("was published com pletely", ["published completely"])
+
+    # 2. Boilerplate stripping
+    assert _matches_accepted("Ans: conventional", ["conventional"])
+    assert _matches_accepted("Correct Ans: Lord Byron was an English poet", ["lord byron was an english poet", "english poet"], "True_False")
+
+    # 3. Multi-word phrase containment
+    assert _matches_accepted("the age of ten, after his grand uncle's death", ["at the age of ten", "age of 10"], "Table_Completion")
+    assert _matches_accepted("was Published completely in six separate Volumes.", ["published completely in six separate volumes"], "Table_Completion")
+

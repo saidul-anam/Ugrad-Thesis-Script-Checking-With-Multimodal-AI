@@ -170,21 +170,22 @@ def snap_half(x: float) -> float:
 
 
 def band_for(score: float, bands: Dict[str, str]) -> Optional[str]:
-    """bands like {'band_4': '8-10', 'band_3': '6-7', ..., 'band_0': '0'}."""
+    """bands like {'band_4': '8-10', 'band_3': '6-7: descriptor', ...}."""
     if not bands:
         return None
     for name, rng in bands.items():
-        rng = str(rng)
-        if "-" in rng:
-            lo, hi = rng.split("-", 1)
+        rng_str = str(rng).split("|")[0].split(":")[0].replace("marks", "").strip()
+        if "-" in rng_str:
+            parts = rng_str.split("-", 1)
             try:
-                if float(lo) <= score <= float(hi):
+                lo, hi = float(parts[0].strip()), float(parts[1].strip())
+                if lo <= score <= hi:
                     return name.replace("_", " ").title()
             except ValueError:
                 continue
         else:
             try:
-                if float(rng) == score:
+                if float(rng_str) == score:
                     return name.replace("_", " ").title()
             except ValueError:
                 continue
@@ -210,6 +211,14 @@ def _norm(s: Any) -> str:
     return re.sub(r"[^a-z0-9ঀ-৿ ]", "", str(s or "").lower()).strip()
 
 
+def _clean_cand_text(cand: str) -> str:
+    """Strip student exam boilerplate like 'Ans:', 'Correct Ans:', question labels '(a)', '(i)'."""
+    s = str(cand or "").strip()
+    s = re.sub(r"^(?:ans(?:wer)?(?:\s+to(?:\s+the)?(?:\s+q(?:uestion)?(?:\s+no\.?)?)?)?|correct\s+ans(?:wer)?)\s*[:.-]*\s*", "", s, flags=re.IGNORECASE)
+    s = re.sub(r"^\(?[a-j0-9ivx]+\)?[.:\s-]+\s*", "", s, flags=re.IGNORECASE)
+    return s.strip()
+
+
 # Canonical Roman numeral normalization map supporting up to 20 options
 _ROMAN = {
     "i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5",
@@ -225,10 +234,12 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
     c = _norm(candidate)
     if not c:
         return False
-    c_alt = _ROMAN.get(c, c)
+    c_clean = _norm(_clean_cand_text(candidate))
+    c_alt = _ROMAN.get(c, _ROMAN.get(c_clean, c))
     tt_upper = (task_type or "").upper()
     is_mcq = tt_upper == "MCQ"
     is_matching = "MATCH" in tt_upper or any("+" in a for a in accepted)
+    is_tf = "TRUE" in tt_upper or "FALSE" in tt_upper
 
     # Sentence Matching / Column matching: candidate may contain formula (e.g. a+iv+ii) and/or combined sentence
     if is_matching:
@@ -253,12 +264,76 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
                 if difflib.SequenceMatcher(None, c, norm_a).ratio() >= 0.65:
                     return True
 
+    # True / False statement handling: if expected answer is True or False with correction
+    if is_tf:
+        cand_lower = candidate.lower().strip()
+        is_cand_false = bool(re.search(r"\b(false|f)\b", cand_lower))
+        is_cand_true = bool(re.search(r"\b(true|t)\b", cand_lower)) and not is_cand_false
+        has_false_accepted = any(re.search(r"\b(false|f)\b", a.lower()) for a in accepted)
+        has_true_accepted = any(re.search(r"\b(true|t)\b", a.lower()) for a in accepted)
+
+        if has_true_accepted and is_cand_true:
+            return True
+        if has_false_accepted and is_cand_false:
+            # Check if student gave the correction
+            cand_corr = _norm(re.sub(r"^(?:false|f)[\s.:,-]*(?:correct\s*(?:ans|answer)[\s.:,-]*)?", "", cand_lower))
+            cand_corr = re.sub(r"^[()]+|[()]+$", "", cand_corr).strip()
+            for a in accepted:
+                norm_a = _norm(a)
+                a_corr = _norm(re.sub(r"^(?:false|f)[\s.:,-]*(?:correct\s*(?:ans|answer)[\s.:,-]*)?", "", a.lower()))
+                a_corr = re.sub(r"^[()]+|[()]+$", "", a_corr).strip()
+                if not a_corr or a_corr in ("false", "f"):
+                    return True
+                if cand_corr and (cand_corr == a_corr or a_corr in cand_corr or cand_corr in a_corr):
+                    return True
+                if cand_corr and len(cand_corr) >= 8 and len(a_corr) >= 8:
+                    if difflib.SequenceMatcher(None, cand_corr, a_corr).ratio() >= 0.70:
+                        return True
+
     for a in accepted:
         an = _norm(a)
         if not an:
             continue
-        if c == an or c_alt == _ROMAN.get(an, an):
+        if c == an or c_clean == an or c_alt == _ROMAN.get(an, an):
             return True
+        # OCR whitespace healing: e.g. "com pletely" vs "completely", "phy sically" vs "physically"
+        if len(c) >= 6 and len(an) >= 6 and c.replace(" ", "") == an.replace(" ", ""):
+            return True
+        if len(c_clean) >= 6 and len(an) >= 6 and c_clean.replace(" ", "") == an.replace(" ", ""):
+            return True
+
+        # Candidate might contain multiple alternatives separated by commas, slashes, or 'or' (e.g. "classy, cultural")
+        cand_parts = [p.strip() for p in re.split(r'[,/;\n]|\bor\b', candidate) if p.strip()]
+        if len(cand_parts) > 1:
+            for cp in cand_parts:
+                cp_norm = _norm(cp)
+                cp_clean = _norm(_clean_cand_text(cp))
+                if cp_norm == an or cp_clean == an or _ROMAN.get(cp_norm, cp_norm) == _ROMAN.get(an, an):
+                    return True
+
+        # Multi-word phrase containment for Table Completion, Cloze, etc.
+        # e.g., "was Published completely in six separate Volumes." vs "published completely in six separate volumes"
+        # e.g., "the age of ten, afther his grand uncle's death" vs "at the age of ten"
+        an_words = an.split()
+        if len(an_words) >= 2 and len(an) >= 8:
+            if an in c or an in c_clean or c in an or c_clean in an:
+                return True
+            an_collapsed = an.replace(" ", "")
+            c_collapsed = c.replace(" ", "")
+            c_clean_collapsed = c_clean.replace(" ", "")
+            if an_collapsed in c_collapsed or an_collapsed in c_clean_collapsed or c_collapsed in an_collapsed:
+                return True
+            # Strip common leading auxiliary verbs/articles like "was", "the", "a", "an", "at", "in"
+            an_core = re.sub(r"^(?:was|is|are|were|the|a|an|at|in|by|from)\s+", "", an).strip()
+            c_core = re.sub(r"^(?:was|is|are|were|the|a|an|at|in|by|from)\s+", "", c_clean).strip()
+            an_core_c = an_core.replace(" ", "")
+            c_core_c = c_core.replace(" ", "")
+            if len(an_core) >= 6:
+                if an_core in c or an_core in c_core or c_core in an_core:
+                    return True
+                if an_core_c in c_collapsed or an_core_c in c_core_c or c_core_c in an_core_c:
+                    return True
+
         # MCQ only: the student may write the option text (or option letter + text)
         if is_mcq:
             # Case 1: Student wrote option text or option letter + text (e.g. "ii marching", "marching")
@@ -267,6 +342,7 @@ def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") 
             # Case 2: Candidate contains majority of accepted multi-word answer (avoid short slips like "in", "a")
             if len(c) >= 5 and len(an) >= 5 and (c in an) and (len(c) / len(an) >= 0.7):
                 return True
+
         # tolerate a single-character slip in words of length >= 5 (rubric: minor spelling slips),
         # but only if candidate is NOT a different legitimate English word (e.g. "healthy" != "health")
         if len(an) >= 5 and abs(len(an) - len(c)) <= 1 and difflib.SequenceMatcher(None, c, an).ratio() >= 0.85:
@@ -398,9 +474,19 @@ Output ONLY JSON:
 
 def build_mode_c_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, question_prompt_text: str, errors_text: str, source_text: str = "") -> str:
     ceilings = "\n".join(f"  - {k}: max {v:g}" for k, v in spec.criteria_ceilings.items())
-    bands = "\n".join(f"  - {k.replace('_', ' ').title()}: {v} marks" for k, v in spec.bands.items())
+    bands_formatted = []
+    for k, v in spec.bands.items():
+        title = k.replace("_", " ").title()
+        v_str = str(v).strip()
+        if "marks" in v_str.lower() or "|" in v_str or ":" in v_str:
+            bands_formatted.append(f"  - {title}: {v_str}")
+        else:
+            bands_formatted.append(f"  - {title}: {v_str} marks")
+    bands = "\n".join(bands_formatted)
     caps = "\n".join(f"  - {k}: {v}" for k, v in spec.hard_caps.items())
-    general = "\n".join(f"  - {g}" for g in spec.general_rules[:10])
+    general_list = list(spec.general_rules[:10])
+    general_list.append("OCR Robustness: Do NOT penalise physical paragraph splits, indentations, line breaks, or structural formatting that may be artifacts of OCR extraction. Grade writing quality, logical progression, and organization & cohesion.")
+    general = "\n".join(f"  - {g}" for g in general_list)
     layout = ""
     if spec.layout_components:
         layout = "\nLAYOUT COMPONENTS TO CHECK:\n" + "\n".join(f"  - {k}: {', '.join(v)}" for k, v in spec.layout_components.items())
@@ -435,7 +521,8 @@ GENERAL GUIDELINES:
 
 Output ONLY JSON:
 {{
-  "criteria_reasoning": {{{", ".join(f'"{k}": {{"justification": "1 sentence why mark was given against ceiling", "evidence": "exact short quote"}}' for k in spec.criteria_ceilings)}}},
+  "raw_subscores": {{{", ".join(f'"{k}": <number between 0.0 and {v:g}>' for k, v in spec.criteria_ceilings.items())}}},
+  "criteria_reasoning": {{{", ".join(f'"{k}": {{"marks": <number between 0.0 and {v:g}>, "justification": "1 sentence why mark was given against ceiling", "evidence": "exact short quote"}}' for k, v in spec.criteria_ceilings.items())}}},
   "strengths": ["Key element done well"],
   "weaknesses": ["Key weakness or missing point"],
   "student_feedback": {{
@@ -443,10 +530,7 @@ Output ONLY JSON:
     "actionable_revision_step": "one concrete actionable revision technique"
   }},
   "examiner_reasoning": "2 sentences explaining the final mark allocation across the criteria ceilings",
-  "raw_subscores": {{{", ".join(f'"{k}": 0.0' for k in spec.criteria_ceilings)}}},
   "structural_audit": {{
-    "paragraph_subdivisions": false,
-    "missing_layout_components": [],
     "verbatim_copy_suspected": false,
     "exceeds_length_limit": false,
     "external_facts_or_personal_opinions": false,
@@ -579,11 +663,16 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         key_items = {str(k).lower().strip("().: "): v for k, v in raw_key_items.items()}
     else:
         key_items = {str(it.get("label", it.get("item_label"))).lower().strip("().: "): it for it in raw_key_items}
-    got_items = {str(it.get("item_label", "")).strip().lower().strip("().: "): it for it in (parsed.get("items") or [])}
+    got_items = {}
+    for it in (parsed.get("items") or []):
+        lab = str(it.get("item_label") or it.get("item") or it.get("label") or "").strip().lower().strip("().: ")
+        if lab:
+            got_items[lab] = it
     labels = list(key_items) or list(got_items)
     correct = 0
     for lab in labels:
-        cand = str((got_items.get(lab) or {}).get("candidate_answer") or "")
+        it_dict = got_items.get(lab) or {}
+        cand = str(it_dict.get("candidate_answer") or it_dict.get("student_answer") or it_dict.get("answer") or "")
         accepted = list((key_items.get(lab) or {}).get("accepted") or [])
         if not cand.strip():
             status = "not_attempted"
@@ -630,16 +719,94 @@ def score_mode_b(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
 def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, source_text: str = "") -> ScoreResult:
     res = ScoreResult(awarded=0.0)
     answer_text = clean_rubric_answer(answer_text)
-    subs = parsed.get("raw_subscores") or {}
-    total = 0.0
+    subs = parsed.get("raw_subscores") or parsed.get("subscores") or {}
+    cr = parsed.get("criteria_reasoning") or {}
+
+    # Backward compatibility alias between structure_format_brevity and organization_cohesion
+    if "organization_cohesion" in spec.criteria_ceilings and "organization_cohesion" not in subs and "structure_format_brevity" in subs:
+        subs["organization_cohesion"] = subs["structure_format_brevity"]
+    elif "structure_format_brevity" in spec.criteria_ceilings and "structure_format_brevity" not in subs and "organization_cohesion" in subs:
+        subs["structure_format_brevity"] = subs["organization_cohesion"]
+
+    # Tier 1 & Tier 2: Extract numerical subscores per criterion
+    extracted_any_subscore = False
     for crit, ceiling in spec.criteria_ceilings.items():
-        try:
-            v = float(subs.get(crit, 0.0))
-        except (TypeError, ValueError):
-            v = 0.0
-        v = max(0.0, min(float(ceiling), snap_half(v)))
-        res.subscores[crit] = v
-        total += v
+        v = None
+        # Tier 1: direct in subs
+        if crit in subs:
+            try:
+                v = float(subs[crit])
+                extracted_any_subscore = True
+            except (TypeError, ValueError):
+                pass
+        # Tier 2: check inside criteria_reasoning[crit]
+        if v is None and crit in cr and isinstance(cr[crit], dict):
+            for k_mark in ("marks", "score", "awarded", "subscore", "mark"):
+                if k_mark in cr[crit]:
+                    try:
+                        v = float(cr[crit][k_mark])
+                        extracted_any_subscore = True
+                        break
+                    except (TypeError, ValueError):
+                        pass
+        if v is not None:
+            v = max(0.0, min(float(ceiling), snap_half(v)))
+            res.subscores[crit] = v
+        else:
+            res.subscores[crit] = 0.0
+
+    # Tier 3: Narrative Band Recovery if no numerical subscores found but student attempted composition
+    ans_words = len(_WORD.findall(answer_text.lower()))
+    audit = parsed.get("structural_audit") or {}
+    is_attempted = audit.get("attempted", True) if answer_text.strip() else False
+
+    if not extracted_any_subscore and is_attempted and ans_words >= 15 and spec.bands:
+        all_narrative = (
+            str(parsed.get("examiner_reasoning", "")) + " " +
+            str(parsed.get("feedback_summary", "")) + " " +
+            " ".join(str(cr.get(c, {}).get("justification", "")) for c in spec.criteria_ceilings)
+        ).lower()
+
+        band_patterns = [
+            ("band_1", r"\bband\s*1\b|\bexcellent\b|\bfull\s+marks\b"),
+            ("band_2", r"\bband\s*2\b|\bgood\b|\bhigh\s+marks\b"),
+            ("band_3", r"\bband\s*3\b|\bsatisfactory\b|\baverage\b"),
+            ("band_4", r"\bband\s*4\b|\blimited\b"),
+            ("band_5", r"\bband\s*5\b|\bpoor\b"),
+        ]
+        detected_band = None
+        for b_name, b_re in band_patterns:
+            if re.search(b_re, all_narrative):
+                matched_key = next((k for k in spec.bands.keys() if b_name in k.lower()), None)
+                if matched_key:
+                    detected_band = matched_key
+                    break
+
+        if detected_band:
+            rng_str = str(spec.bands[detected_band])
+            if "-" in rng_str:
+                lo, hi = map(float, rng_str.split("-", 1))
+                target_score = snap_half((lo + hi) / 2.0)
+            else:
+                target_score = snap_half(float(rng_str))
+            reconstruct_reason = f"reconstructed_from_narrative_band: {detected_band} (target={target_score})"
+        elif ans_words >= 25:
+            # Fallback for attempted substantial composition where narrative didn't name a band
+            target_score = snap_half(spec.max_mark * 0.5)
+            reconstruct_reason = f"reconstructed_from_attempted_narrative_default (target={target_score})"
+        else:
+            target_score = 0.0
+            reconstruct_reason = None
+
+        if target_score > 0.0:
+            tot_ceiling = sum(spec.criteria_ceilings.values()) or spec.max_mark or 1.0
+            ratio = min(1.0, target_score / tot_ceiling)
+            for crit, ceiling in spec.criteria_ceilings.items():
+                res.subscores[crit] = snap_half(ceiling * ratio)
+            if reconstruct_reason:
+                res.notes.append(reconstruct_reason)
+
+    total = sum(res.subscores.values())
     res.raw_total = snap_half(total)
     audit = parsed.get("structural_audit") or {}
     tt = (spec.task_type or "").lower()
@@ -649,23 +816,25 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
     if audit.get("attempted") is False and not answer_text.strip():
         res.awarded = 0.0
         res.notes.append("not attempted")
-    if tt == "paragraph" and bool(audit.get("paragraph_subdivisions")):
-        cap_value, reason = half, "Paragraph_Subdivisions"
-    elif tt in ("letter_email", "letter", "email"):
-        missing = audit.get("missing_layout_components") or []
-        if isinstance(missing, list) and len(missing) >= 3:
-            cap_value, reason = half, "Letter_Missing_Layout"
-    elif tt == "summary":
-        overlap = verbatim_overlap(answer_text, source_text) if source_text else 0.0
-        too_long = bool(source_text) and len(_WORD.findall(answer_text.lower())) > len(_WORD.findall(source_text.lower())) / 3.0 + 5
-        res.notes.append(f"verbatim_overlap={overlap:.2f} too_long={too_long}")
-        if overlap > 0.5 or too_long or bool(audit.get("verbatim_copy_suspected")) or bool(audit.get("exceeds_length_limit")):
-            cap_value, reason = half, "Summary_Verbatim_Length"
+
+    source_words = len(_WORD.findall((source_text or "").lower()))
+    if tt == "summary":
+        if source_words >= 25:
+            overlap = verbatim_overlap(answer_text, source_text)
+            too_long = len(_WORD.findall(answer_text.lower())) > (source_words / 3.0 + 5)
+            res.notes.append(f"verbatim_overlap={overlap:.2f} too_long={too_long} (src_words={source_words})")
+            if overlap > 0.5 or too_long or bool(audit.get("verbatim_copy_suspected")) or bool(audit.get("exceeds_length_limit")):
+                cap_value, reason = half, "Summary_Verbatim_Length"
+        else:
+            res.notes.append(f"source_passage_unresolved_or_short (src_words={source_words}) - length caps bypassed")
     elif tt == "theme":
-        overlap = verbatim_overlap(answer_text, source_text) if source_text else 0.0
-        res.notes.append(f"verbatim_overlap={overlap:.2f}")
-        if overlap > 0.5 or bool(audit.get("verbatim_copy_suspected")):
-            cap_value, reason = half, "Theme_Verbatim_Copy"
+        if source_words >= 20:
+            overlap = verbatim_overlap(answer_text, source_text)
+            res.notes.append(f"verbatim_overlap={overlap:.2f}")
+            if overlap > 0.5 or bool(audit.get("verbatim_copy_suspected")):
+                cap_value, reason = half, "Theme_Verbatim_Copy"
+        else:
+            res.notes.append(f"source_theme_unresolved_or_short (src_words={source_words}) - verbatim cap bypassed")
     elif tt in ("graph_chart", "graph", "chart") and bool(audit.get("external_facts_or_personal_opinions")):
         cap_val = float(spec.hard_caps.get("Graph_External_Facts", 0.0)) if "Graph_External_Facts" in spec.hard_caps else round(spec.max_mark * 0.6, 1)
         cap_value, reason = min(cap_val if cap_val > 0 else round(spec.max_mark * 0.6, 1), spec.max_mark), "Graph_External_Facts"
@@ -717,15 +886,56 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
 
 
 def source_text_for_question(q_no: str, question_text: str) -> str:
-    """Extract the source passage/poem for summary (Q3) and theme (Q11) tasks from the question paper text."""
+    """Extract the source passage/poem for summary (Q3/Q7) and theme (Q11) tasks from the question paper text."""
     if not question_text:
         return ""
     clean = re.sub(r"\(.*?\)", "", q_no).strip()
-    pattern = re.compile(rf"(?:^|\n)\s*{re.escape(clean)}\.\s+(.*?)(?=\n\s*(?:[0-9]{{1,2}}\.\s|\*\*Part|\Z))", re.DOTALL)
+
+    # Step 1: Look for multi-question reading headers that include q_no
+    # e.g., "Read the text and answer the questions 5, 6 & 7 :"
+    # e.g., "Read the following passage carefully and answer questions 1 and 2:"
+    group_pattern = re.compile(
+        r"(?:Read\s+(?:the\s+)?(?:text|passage)[^\n]*?(?:questions?|question\s+nos?\.)\s*([0-9\s,&andto-]+)[^\n]*?[:\n])\s*(.*?)(?=\n\s*(?:[0-9]{1,2}\.\s|Read\s+the|\*\*Part|\Z))",
+        re.DOTALL | re.IGNORECASE,
+    )
+    for gm in group_pattern.finditer(question_text):
+        q_range_text = gm.group(1)
+        q_nums = re.findall(r"\b\d+\b", q_range_text)
+        if clean in q_nums:
+            passage_body = gm.group(2).strip()
+            if len(_WORD.findall(passage_body.lower())) >= 25:
+                return passage_body
+
+    # Step 2: Check directly under the question number (e.g. "3. Summarize the following poem.\n<poem>")
+    pattern = re.compile(
+        rf"(?:^|\n)\s*{re.escape(clean)}\.\s+(.*?)(?=\n\s*(?:Read\s+the\s+(?:text|passage)|[0-9]{{1,2}}\.\s|\*\*Part|\Z))",
+        re.DOTALL | re.IGNORECASE,
+    )
     m = pattern.search(question_text)
-    if not m:
-        return ""
-    body = m.group(1)
-    # drop the instruction line, keep the quoted text
-    lines = [l for l in body.splitlines() if l.strip()]
-    return "\n".join(lines[1:]) if len(lines) > 1 else body
+    if m:
+        body = m.group(1).strip()
+        lines = [l for l in body.splitlines() if l.strip()]
+        quoted = "\n".join(lines[1:]) if len(lines) > 1 else body
+        if len(_WORD.findall(quoted.lower())) >= 25:
+            return quoted
+
+    # Step 3: If still unresolved, look for the most recent reading passage preceding question q_no
+    q_pos_m = re.search(rf"(?:^|\n)\s*{re.escape(clean)}\.\s+", question_text)
+    if q_pos_m:
+        preceding = question_text[: q_pos_m.start()]
+        passages = list(
+            re.finditer(
+                r"(?:Read\s+(?:the\s+)?(?:text|passage)[^\n]*?[:\n])\s*(.*?)(?=\n\s*(?:[0-9]{1,2}\.\s|Read\s+the|\*\*Part|\Z))",
+                preceding,
+                re.DOTALL | re.IGNORECASE,
+            )
+        )
+        if passages:
+            last_p = passages[-1].group(1).strip()
+            if len(_WORD.findall(last_p.lower())) >= 25:
+                return last_p
+
+    # Fallback to lines under question if any
+    if m:
+        return "\n".join(lines[1:]) if len(lines) > 1 else body
+    return ""

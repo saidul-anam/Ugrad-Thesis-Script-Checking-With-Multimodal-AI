@@ -20,7 +20,7 @@ and the decision from a visual comparison whose only acceptance rule is order in
 import difflib
 import re
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from PIL import Image
 
@@ -94,10 +94,27 @@ def align_lines(transcript_lines: List[str], reads: List[str]) -> List[Tuple[int
     return pairs[::-1]
 
 
+def _tokens_match(w1: str, w2: str) -> bool:
+    """
+    Checks if two words match for alignment.
+    Strict equality for short words (<= 3 chars, e.g. 'in', 'on', 'to') to prevent drift.
+    Single edit distance or high similarity (>= 0.79) for words >= 4 chars to handle OCR typos (e.g. 'binth' vs 'birth').
+    """
+    if w1 == w2:
+        return True
+    if len(w1) <= 3 or len(w2) <= 3:
+        return False
+    if abs(len(w1) - len(w2)) > 1:
+        return False
+    if len(w1) == len(w2) and sum(c1 != c2 for c1, c2 in zip(w1, w2)) <= 1:
+        return True
+    return difflib.SequenceMatcher(None, w1, w2, autojunk=False).ratio() >= 0.79
+
+
 def disagreement_spans(line: str, read: str, scope: str = "strikes") -> List[Tuple[int, int, List[MarkupToken]]]:
     """
     (start, end, replacement tokens) over the line's content tokens where the two readings differ.
-    scope="strikes": only spans with the same words whose struck/active status differs.
+    scope="strikes": only spans with the same words (allowing minor OCR fuzzy typos) whose struck/active status differs.
     scope="all": also spans whose words differ.
     """
     a = _content(_line_tokens(line))
@@ -107,10 +124,73 @@ def disagreement_spans(line: str, read: str, scope: str = "strikes") -> List[Tup
     for op, a1, a2, b1, b2 in sm.get_opcodes():
         if op == "equal":
             continue
-        same_words = [_key(t)[0] for t in a[a1:a2]] == [_key(t)[0] for t in b[b1:b2]]
-        if scope == "all" or same_words:
+        words_a = [_key(t)[0] for t in a[a1:a2]]
+        words_b = [_key(t)[0] for t in b[b1:b2]]
+        same_words = False
+        if len(words_a) == len(words_b) and words_a:
+            same_words = all(_tokens_match(wa, wb) for wa, wb in zip(words_a, words_b))
+
+        if same_words:
+            # Transfer strike status from b, but retain authentic transcript token text from a (spelling immutability)
+            if any(ta.struck != tb.struck for ta, tb in zip(a[a1:a2], b[b1:b2])):
+                rep = [MarkupToken(ta.kind, ta.value, struck=tb.struck) for ta, tb in zip(a[a1:a2], b[b1:b2])]
+                spans.append((a1, a2, rep))
+            elif scope == "all" and [ta.value for ta in a[a1:a2]] != [tb.value for tb in b[b1:b2]]:
+                spans.append((a1, a2, b[b1:b2]))
+        elif scope == "all":
             spans.append((a1, a2, b[b1:b2]))
     return spans
+
+
+def has_physical_midline_stroke(
+    box: Tuple[int, int, int, int],
+    strikethrough_regions: Optional[List[Any]] = None,
+    strikethrough_blocks: Optional[List[Any]] = None,
+    image_shape: Optional[Tuple[int, int]] = None,
+) -> bool:
+    """
+    Checks if any OpenCV Stage 0.5 detected stroke intersects the line box within the text midline.
+    Excludes underlines (y_rel > 0.80) and strokes outside the horizontal span of the line box.
+    """
+    if not strikethrough_regions and not strikethrough_blocks:
+        return False
+
+    bx1, by1, bx2, by2 = box
+    bh = max(1, by2 - by1)
+
+    # 1. Check StrikethroughRegion list
+    if strikethrough_regions:
+        for r in strikethrough_regions:
+            if getattr(r, "is_underline", False):
+                continue
+            rx = getattr(r, "x", 0)
+            ry = getattr(r, "y", 0)
+            rw = getattr(r, "w", 0)
+            rh = getattr(r, "h", 0)
+
+            # Horizontal overlap check
+            if max(bx1, rx) >= min(bx2, rx + rw):
+                continue
+
+            # Vertical midline check within the line box (20% to 80% of text height)
+            sy_mid = ry + rh / 2.0
+            rel_y = (sy_mid - by1) / bh
+            if 0.15 <= rel_y <= 0.80:
+                return True
+
+    # 2. Check StrikethroughBlock list (multi-line crossed out blocks)
+    if strikethrough_blocks and image_shape:
+        img_h, img_w = image_shape
+        for b in strikethrough_blocks:
+            by_px1 = getattr(b, "y_pct", 0.0) / 100.0 * img_h
+            by_px2 = getattr(b, "y2_pct", 0.0) / 100.0 * img_h
+            bx_px1 = getattr(b, "x_pct", 0.0) / 100.0 * img_w
+            bx_px2 = getattr(b, "x2_pct", 0.0) / 100.0 * img_w
+
+            if max(bx1, bx_px1) < min(bx2, bx_px2) and max(by1, by_px1) < min(by2, by_px2):
+                return True
+
+    return False
 
 
 def replace_span(line: str, start: int, end: int, new: List[MarkupToken]) -> str:
@@ -150,6 +230,18 @@ class ReconcileResult:
     model_calls: int = 0
 
 
+def parse_choice_digit(text: str, alt_slot: str) -> int:
+    """Extracts 1 or 2 choice from VLM response; returns 1 if alt_slot chosen, else 0."""
+    t = (text or "").strip()
+    m = re.search(r"(?:Choice|Answer|Candidate)\s*[:=]?\s*([12])", t, re.IGNORECASE)
+    if m:
+        return 1 if m.group(1) == alt_slot else 0
+    m = re.search(r"\b([12])\b", t)
+    if m:
+        return 1 if m.group(1) == alt_slot else 0
+    return 0
+
+
 class LineReconciler:
     """
     scope="strikes" (default): only struck/active disagreements are adjudicated. On the class-10 dev
@@ -176,16 +268,31 @@ class LineReconciler:
         text = self._generate(crop, LINE_READ_PROMPT, LINE_READ_SYSTEM_PROMPT, self.max_read_tokens).strip()
         return normalize_markup(text.splitlines()[0]) if text else ""
 
-    def _prefers_alternative(self, crop: Image.Image, current: str, alternative: str) -> List[int]:
+    def _parse_choice_digit(self, text: str, alt_slot: str) -> int:
+        return parse_choice_digit(text, alt_slot)
+
+    def _prefers_alternative(
+        self, crop: Image.Image, current: str, alternative: str, disputed: str = ""
+    ) -> List[int]:
         """Votes for the alternative (1) or the current line (0) under both presentation orders."""
         votes = []
+        disputed_sec = f'Disputed word/phrase: "{disputed}"\n\n' if disputed else ""
         for first, second, alt_slot in ((current, alternative, "2"), (alternative, current, "1")):
-            r = self._generate(crop, FORCED_CHOICE_PROMPT.format(first=first, second=second), FORCED_CHOICE_SYSTEM_PROMPT, 4)
-            m = re.search(r"[12]", r)
-            votes.append(1 if (m and m.group(0) == alt_slot) else 0)
+            prompt = FORCED_CHOICE_PROMPT.format(
+                first=first, second=second, disputed_section=disputed_sec
+            )
+            r = self._generate(crop, prompt, FORCED_CHOICE_SYSTEM_PROMPT, max_new_tokens=35)
+            votes.append(self._parse_choice_digit(r, alt_slot))
         return votes
 
-    def run(self, image: Image.Image, transcript: str, page_no: int = 1) -> ReconcileResult:
+    def run(
+        self,
+        image: Image.Image,
+        transcript: str,
+        page_no: int = 1,
+        strikethrough_regions: Optional[List[Any]] = None,
+        strikethrough_blocks: Optional[List[Any]] = None,
+    ) -> ReconcileResult:
         if not transcript or not transcript.strip():
             return ReconcileResult(transcript=transcript)
         loc = LineLocalizer(
@@ -197,19 +304,39 @@ class LineReconciler:
         reads = [self._read_line(c) for c in crops]
         calls = len(reads)
 
+        img_shape = (image.height, image.width) if image else None
+
         lines = transcript.split("\n")
         decisions: List[ReconcileDecision] = []
         for ti, ri in align_lines(lines, reads):
             line = lines[ti]
             accepted: List[Tuple[int, int, List[MarkupToken]]] = []
+            box = boxes[ri] if boxes and ri < len(boxes) else (0, 0, 0, 0)
+            has_cv_stroke = has_physical_midline_stroke(
+                box, strikethrough_regions, strikethrough_blocks, img_shape
+            )
+
             for start, end, new in disagreement_spans(line, reads[ri], self.scope):
                 alternative = replace_span(line, start, end, new)
                 if _plain(alternative) == _plain(line) and \
                         [t.struck for t in _content(_line_tokens(alternative))] == [t.struck for t in _content(_line_tokens(line))]:
                     continue
-                votes = self._prefers_alternative(crops[ri], line, alternative)
+
+                content_tokens = _content(_line_tokens(line))
+                disputed_words = " ".join(t.value for t in content_tokens[start:end]) if start < len(content_tokens) else ""
+
+                votes = self._prefers_alternative(crops[ri], line, alternative, disputed=disputed_words)
                 calls += 2
-                ok = votes == [1, 1]
+
+                # Unanimous agreement ([1, 1]) -> accepted
+                # Split vote ([0, 1] or [1, 0]) -> accepted if and only if OpenCV physically detected a midline stroke
+                if votes == [1, 1]:
+                    ok = True
+                elif (votes == [0, 1] or votes == [1, 0]) and has_cv_stroke:
+                    ok = True
+                else:
+                    ok = False
+
                 decisions.append(ReconcileDecision(ti, line, alternative, votes, ok))
                 if ok:
                     accepted.append((start, end, new))

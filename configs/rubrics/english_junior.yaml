@@ -1,50 +1,273 @@
-rubric_name: "english_junior_secondary"
-version: "2.0"
-subject: "english"
-grade_level: "Junior_Secondary (Classes 6-8 / JSC)"
-total_marks: 100.0
+subject: "English"
+class_level: "JSC_Class_8"
+curriculum: "NCTB"
+paper: "English 1st Paper"
+total_marks: 90
 
-description: >
-  Modular NCTB English 1st & 2nd Paper Rubric for Junior Secondary level (Classes 6 to 8).
-  Emphasizes reading comprehension, vocabulary, grammar foundations, and guided creative writing.
+provenance_and_traceability:
+  data_direct:
+    - Holistic grammar and communicative accuracy evaluation
+    - Elimination of handwriting/presentation bias
+    - Content relevance and originality weighting
+    - Narrative and dialogue structural completeness
+  syllabus_extrapolated:
+    - Formal summary brevity requirements (around 1/3 of original passage)
+    - Story title, development, and resolution requirements
+    - Dialogue turn-taking, greeting, and sign-off mechanics
+
+question_map:
+  - question_no: "1"
+    printed_task: "Choose the best answer from the alternatives"
+    task_type: MCQ
+    mode: A
+    standard_marks: 7
+    breakdown: "1 x 7 = 7"
+  - question_no: "2"
+    printed_task: "Write short answers to the following questions"
+    task_type: Short_Answer
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "3"
+    printed_task: "Complete the passage with suitable words"
+    task_type: Cloze_Without_Clues
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "4"
+    printed_task: "Read the passage carefully and replace words with suitable synonyms or antonyms"
+    task_type: Vocabulary
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "5"
+    printed_task: "Complete the table with information from the passage"
+    task_type: Table_Completion
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "6"
+    printed_task: "Write True if correct and False if incorrect. If False, write correct answer"
+    task_type: True_False
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "7"
+    printed_task: "Write a summary of the passage in your own words"
+    task_type: Summary
+    mode: C
+    standard_marks: 10
+    breakdown: "10"
+  - question_no: "8"
+    printed_task: "Match the parts of sentences from Columns A and B to make five complete sentences"
+    task_type: Sentence_Matching
+    mode: A
+    standard_marks: 5
+    breakdown: "1 x 5 = 5"
+  - question_no: "9"
+    printed_task: "Put the parts of the story in correct order to make the whole story"
+    task_type: Rearrangement
+    mode: A
+    standard_marks: 8
+    breakdown: "1 x 8 = 8"
+  - question_no: "10"
+    printed_task: "Answer the following questions from poems (any 5)"
+    task_type: Short_Answer
+    mode: B
+    standard_marks: 10
+    breakdown: "2 x 5 = 10"
+  - question_no: "11"
+    printed_task: "Read the beginning of the story and complete it"
+    task_type: Story
+    mode: C
+    standard_marks: 7
+    breakdown: "7"
+  - question_no: "12"
+    printed_task: "Write a paragraph on 'Tree Plantation'"
+    task_type: Paragraph
+    mode: C
+    standard_marks: 7
+    breakdown: "7"
+  - question_no: "13"
+    printed_task: "Write a dialogue between you and your friend about importance of reading newspaper"
+    task_type: Dialogue
+    mode: C
+    standard_marks: 6
+    breakdown: "6"
+  - question_no: "14"
+    printed_task: "Class Test"
+    task_type: Class_Test
+    mode: C
+    standard_marks: 10
+    breakdown: "10"
+
+paper_structure:
+  part_a_reading:
+    range: "Q1-Q10"
+    marks: 70
+  part_b_writing:
+    range: "Q11-Q13"
+    marks: 30
+  total_marks: 100
 
 scoring_modes:
-  mode_a_objective:
-    description: "Itemized exact/synonym matching against answer key or standard options"
-    task_types:
-      - "MCQ"
-      - "Cloze_With_Clues"
-      - "Cloze_Without_Clues"
-      - "Table_Completion"
-      - "Sentence_Matching"
-      - "Rearrangement"
-      - "Fill_In_The_Blanks"
-    scoring_logic: "deterministic_key_match"
-    zero_penalty: true
+  A_ITEM:
+    method: "right/wrong per item against official answer key"
+    questions: ["1", "3", "4", "5", "6", "8", "9"]
+    task_types: ["MCQ", "Cloze_Without_Clues", "Vocabulary", "Table_Completion", "True_False", "Sentence_Matching", "Rearrangement"]
+  B_POINT:
+    method: "point-scored discrete scale per question part"
+    questions: ["2", "10"]
+    task_types: ["Short_Answer", "Poetry_Questions"]
+  C_BAND:
+    method: "band-scored continuous composition with criteria ceilings and hard caps"
+    questions: ["7", "11", "12", "13", "14"]
+    task_types: ["Summary", "Story", "Paragraph", "Dialogue", "Class_Test"]
 
-  mode_b_point_comprehension:
-    description: "Structured short-answer questions scored on textual comprehension and accuracy"
-    task_types:
-      - "Comprehension_Questions"
-      - "Short_Answer"
-    scoring_logic: "point_scale_with_rubric"
-    point_scale:
-      full: 2.0
-      partial: 1.0
-      minimal: 0.5
-      incorrect: 0.0
+mode_specifications:
+  mode_a_item_scored:
+    tasks:
+      Q1_MCQ:
+        task_type: MCQ
+        max_mark: 7
+        mark_per_item: 1.0
+        n_items: 7
+        rules:
+          - "Award 1.0 mark per correct option matching letter or text."
+      Q3_Cloze_Without_Clues:
+        task_type: Cloze_Without_Clues
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per correct contextually and grammatically appropriate word."
+      Q4_Vocabulary:
+        task_type: Vocabulary
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per correct synonym or antonym as specified."
+      Q5_Table_Completion:
+        task_type: Table_Completion
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per correct factual extraction from passage into table slot."
+      Q6_True_False:
+        task_type: True_False
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per correct True/False classification with correct correction for False."
+      Q8_Sentence_Matching:
+        task_type: Sentence_Matching
+        max_mark: 5
+        mark_per_item: 1.0
+        n_items: 5
+        rules:
+          - "Award 1.0 mark per matched logical sentence (A + B)."
+      Q9_Rearrangement:
+        task_type: Rearrangement
+        max_mark: 8
+        mark_per_item: 1.0
+        n_items: 8
+        rules:
+          - "Positional scoring: Award 1.0 mark for each element correctly placed in sequence."
 
-  mode_c_band_writing:
-    description: "Extended writing scored on criteria ceilings: Content, Organization, Vocabulary, and Grammar"
-    task_types:
-      - "Summary"
-      - "Paragraph"
-      - "Story"
-      - "Letter"
-      - "Dialogue"
-      - "Composition"
-    criteria_ceilings:
-      content_relevance: 0.40
-      organization_cohesion: 0.25
-      vocabulary_expression: 0.20
-      grammar_mechanics: 0.15
+  mode_b_point_scored:
+    tasks:
+      Q2_Short_Answer:
+        task_type: Short_Answer
+        max_mark: 10
+        n_items: 5
+        mark_per_item: 2.0
+        scale:
+          2.0: "Accurate, complete response addressing the prompt directly in student's own words with correct grammar."
+          1.5: "Accurate response with minor grammatical or phrasing slips that do not disrupt comprehension."
+          1.0: "Partially correct response or direct verbatim lift from passage with minimal explanation."
+          0.5: "Vague, incomplete attempt with relevant keyword mentions but lacking substance."
+          0.0: "Completely incorrect, off-topic, or unattempted."
+      Q10_Poetry_Questions:
+        task_type: Short_Answer
+        max_mark: 10
+        n_items: 5
+        mark_per_item: 2.0
+        scale:
+          2.0: "Demonstrates clear poetic comprehension, accurate thematic understanding, and good expression."
+          1.5: "Accurate understanding with minor expression or grammatical weaknesses."
+          1.0: "Partial understanding of poetic device or stanza."
+          0.0: "Incorrect, irrelevant, or unattempted."
+
+  mode_c_band_scored:
+    hard_caps:
+      heavy_verbatim_copying:
+        threshold_ratio: 0.50
+        max_awarded: 3.0
+        applies_to: ["Summary"]
+      short_length_below_50_words:
+        threshold_words: 50
+        max_awarded: 3.0
+        applies_to: ["Story", "Paragraph", "Dialogue"]
+      off_topic:
+        max_awarded: 2.0
+        applies_to: ["Summary", "Story", "Paragraph", "Dialogue"]
+    performance_bands_by_max_mark:
+      6:
+        band_1_excellent: "5.0 - 6.0"
+        band_2_good: "3.5 - 4.5"
+        band_3_satisfactory: "2.5 - 3.0"
+        band_4_limited: "1.5 - 2.0"
+        band_5_poor: "0.0 - 1.0"
+      7:
+        band_1_excellent: "6.0 - 7.0"
+        band_2_good: "4.5 - 5.5"
+        band_3_satisfactory: "3.0 - 4.0"
+        band_4_limited: "2.0 - 2.5"
+        band_5_poor: "0.0 - 1.5"
+      10:
+        band_1_excellent: "8.0 - 10.0"
+        band_2_good: "6.0 - 7.5"
+        band_3_satisfactory: "4.0 - 5.5"
+        band_4_limited: "2.0 - 3.5"
+        band_5_poor: "0.0 - 1.5"
+    tasks:
+      Q7_Summary:
+        max_mark: 10
+        criteria_ceilings:
+          context_content_data: 4
+          organization_cohesion: 3
+          language_mechanics: 2
+          originality_comparisons_paraphrase: 1
+      Q11_Story:
+        max_mark: 7
+        criteria_ceilings:
+          context_content_data: 3
+          organization_cohesion: 2
+          language_mechanics: 1
+          originality_comparisons_paraphrase: 1
+      Q12_Paragraph:
+        max_mark: 7
+        criteria_ceilings:
+          context_content_data: 3
+          organization_cohesion: 2
+          language_mechanics: 1
+          originality_comparisons_paraphrase: 1
+      Q13_Dialogue:
+        max_mark: 6
+        criteria_ceilings:
+          context_content_data: 2.5
+          organization_cohesion: 2
+          language_mechanics: 1
+          originality_comparisons_paraphrase: 0.5
+    
+
+general_evaluation_guidelines:
+  - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
+  - no_per_error_math: "In Mode C, evaluate error density holistically within performance bands without fixed deductions."
+  - mark_granularity: "Whole and half marks (0.5) only."
+  - illegibility_handling: "Do not penalise transcription markers ([illegible], [unclear: word], [cut: word]). Mark item unscorable only if completely unreadable."
+  - unattempted_vs_wrong: "Unattempted = not_attempted (0 marks). Attempted & wrong = incorrect (0 marks)."
+  - no_structural_layout_penalty: "Do not penalise physical paragraph splits, indentations, line breaks, or structural formatting that may be artifacts of OCR extraction. Grade writing quality, logical flow, and organization & cohesion."

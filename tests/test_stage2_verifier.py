@@ -119,6 +119,50 @@ def test_apply_anchored_diff_single_occurrence_unambiguous():
     assert updated == "The unique mammoth marched forward."
 
 
+def test_apply_anchored_diff_prevents_trailing_context_duplication():
+    """Verify that leaked trailing context words in replacement are trimmed, preventing 'wake up at wake up at' duplication."""
+    text = "Afifa : I [struck: heard you ma] wake up at 5am every morning:"
+    # VLM returned replacement that leaked trailing 'wake up at'
+    updated, success = apply_anchored_diff(
+        text=text,
+        stage1_target="I [struck: heard you ma]",
+        actual="I [struck: heard you ma] [struck: heard you] wake up at",
+        context_snippet="Afifa : I [struck: heard you ma] wake up"
+    )
+    assert success is True
+    assert "wake up at wake up at" not in updated
+    assert updated == "Afifa : I [struck: heard you ma] [struck: heard you] wake up at 5am every morning:"
+
+
+def test_apply_anchored_diff_prevents_leading_context_duplication():
+    """Verify that leaked leading context words in replacement are trimmed, preventing prefix duplication."""
+    text = "The king ordered his men to cut down all the trees."
+    # VLM returned replacement that leaked leading 'ordered his'
+    updated, success = apply_anchored_diff(
+        text=text,
+        stage1_target="men to cut down",
+        actual="ordered his men to cut down [struck: quickly]",
+        context_snippet="The king ordered his men to cut down"
+    )
+    assert success is True
+    assert "ordered his ordered his" not in updated
+    assert updated == "The king ordered his men to cut down [struck: quickly] all the trees."
+
+
+def test_apply_anchored_diff_preserves_legitimate_shared_words():
+    """Verify that words legitimate to both target and replacement are not erroneously trimmed."""
+    text = "He saw the light and cheered."
+    updated, success = apply_anchored_diff(
+        text=text,
+        stage1_target="the light",
+        actual="the [struck: red] light",
+        context_snippet="saw the light and"
+    )
+    assert success is True
+    assert updated == "He saw the [struck: red] light and cheered."
+
+
+
 # ---------------------------------------------------------------------------
 # Problem 17: Programmatic Ghost Correction Extraction
 # ---------------------------------------------------------------------------
