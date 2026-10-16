@@ -124,7 +124,7 @@ VALID_HEADER_INTERMEDIATE_WORDS = {
 # Lines that can carry a question header. Only these are rewritten by the normalisation rules, so the
 # student's answer text reaches Stage 3 / Stage 4 unchanged.
 _HEADER_CANDIDATE_RE = re.compile(
-    r'^\s*(?:\[struck:[^\]]*\]\s*)*[_*~]*\s*(?:'
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*[:;\u2022\u00b7]*\s*[_*~]*\s*(?:'
     r'[\(\uff08]?[0-9\u09e6-\u09ef]{1,3}(?![0-9])'
     r'|(?:ans\w*|am|arn|anis|dans|ass|q\w*|no|num\w*|number|part|p[\s\-]*[ab])\b'
     r'|[\(\uff08][A-Za-z\u0980-\u09FF][\)\uff09]|[\u24b6-\u24e9]|[a-gA-G](?:[\s\)\.]+ans\b|ans\s*:)|[A-Za-z]\s*[\:\.\-]?\s*$'
@@ -137,6 +137,7 @@ _INLINE_HEADER_RE = re.compile(r'[.?!;]\s+(?:Ans|Answer|Answering|Dans|Ass)\w*\s
 
 # Formatting around a header written by the transcriber: '_Answer to ... 10_', '$\underline{7}$', '**Ans**'
 _HEADER_MARKUP_RULES = [
+    (re.compile(r'^(\s*(?:\[struck:[^\]]*\]\s*)*)[:;\u2022\u00b7]+\s*'), r'\1'),
     (re.compile(r'\$\s*\\(?:underline|textbf|textit|text|mathbf)\{([^{}]*)\}\s*\$'), r'\1'),
     (re.compile(r'\\(?:underline|textbf|textit|text|mathbf)\{([^{}]*)\}'), r'\1'),
     (re.compile(r'\*\*|__'), ''),
@@ -212,7 +213,7 @@ def build_question_entity_index(
         if getattr(question_obj, "question_text", None):
             try:
                 from src.pipeline.stage4_modes import source_text_for_question
-                src = source_text_for_question(clean_q, question_obj.question_text)
+                src = source_text_for_question(clean_q, question_obj.question_text, getattr(question_obj, "question_id", None))
                 if src:
                     for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', src):
                         wl = w.lower()
@@ -475,7 +476,8 @@ def detect_structural_fingerprint(
     section_text: str,
     question_obj: Optional[ExtractedQuestion] = None,
     valid_q_order: Optional[List[str]] = None,
-    current_parent: Optional[str] = None
+    current_parent: Optional[str] = None,
+    use_source_overlap: bool = True
 ) -> Optional[str]:
     """
     Detect question attribution from structural layout, notation, or compositional fingerprints.
@@ -618,7 +620,7 @@ def detect_structural_fingerprint(
     # 9. Semantic Source-Text Fingerprint for Headless Answers (Summary & Theme)
     # When a student writes NO header (no "Ans 3", no "3.", no "Summary:"), we match the text
     # against the source poem/passage printed on the question paper.
-    if question_obj and getattr(question_obj, "question_text", None):
+    if use_source_overlap and question_obj and getattr(question_obj, "question_text", None):
         from src.pipeline.stage4_modes import source_text_for_question
         sec_words = section_text.split()
         sec_tokens = {
@@ -629,7 +631,7 @@ def detect_structural_fingerprint(
         # Check Summary source passage overlap
         summary_q = _get_q("summary")
         if summary_q:
-            q_source = source_text_for_question(summary_q, question_obj.question_text)
+            q_source = source_text_for_question(summary_q, question_obj.question_text, getattr(question_obj, "question_id", None))
             if q_source and sec_tokens and (20 <= len(sec_words) <= 200):
                 q_tokens = {
                     w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q_source)
@@ -642,7 +644,7 @@ def detect_structural_fingerprint(
         # Check Theme source poem overlap
         theme_q = _get_q("theme")
         if theme_q:
-            q_source = source_text_for_question(theme_q, question_obj.question_text)
+            q_source = source_text_for_question(theme_q, question_obj.question_text, getattr(question_obj, "question_id", None))
             if q_source and sec_tokens and (15 <= len(sec_words) <= 150):
                 q_tokens = {
                     w.lower() for w in re.findall(r'[A-Za-z\u0980-\u09FF]{4,}', q_source)
@@ -948,6 +950,12 @@ _BOUNDARY_LINE_RE = re.compile(
     r'^\s*(?:\[struck:[^\]]*\]\s*)*(?:Ans(?:wer)?\b[\s\.\:\-]|[0-9]{1,2}\s*[\.\)]?\s*[\(（]?[a-jA-J][\)）\.]\s)',
     re.IGNORECASE
 )
+# Headings that open an answer without naming its number; a content-based switch may happen here or at a page start
+_STRUCTURAL_OPENING_RE = re.compile(
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*(?:Flow[\s\-]*chart|Theme|Summary|Rearrange|The\s+(?:graph|chart)\s+shows|Once\s+upon\s+a\s+time'
+    r'|Ans(?:wer)?\s+(?:to|of)\s+(?:the\s+)?(?:Q|Ques\w*|Question\w*)\b[^0-9\n]*$)\b',
+    re.IGNORECASE
+)
 _PART_DIVIDER_RE = re.compile(r'^\s*(?:Part[\s\-]*[A-Z0-9]\b|P[\s\-]*[A-Z0-9]\s*(?:Writting|Writing|Reading)?)\b.*$', re.IGNORECASE)
 
 
@@ -1178,7 +1186,7 @@ def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, lo
     current: Optional[str] = None
     default_q = ctx.order[0] if ctx.order else "1"
     for page_no, page_text in page_items:
-        for sec in _split_page_sections(page_text):
+        for s_idx, sec in enumerate(_split_page_sections(page_text)):
             completed = {p.q for p in parts}
             q, source = classify_header(
                 sec,
@@ -1205,7 +1213,8 @@ def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, lo
             elif q and q != current and source in ("keyword", "structural", "content"):
                 if current is None:
                     target, how = q, source
-                elif q not in completed and len(sec_clean.split()) >= MIN_CONTENT_WORDS:
+                elif (q not in completed and len(sec_clean.split()) >= MIN_CONTENT_WORDS
+                      and (s_idx == 0 or _STRUCTURAL_OPENING_RE.match(sec_clean.split("\n", 1)[0]))):
                     sc = ctx.scores(sec_clean)
                     if sc.get(q, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, q):
                         target, how = q, source
@@ -1306,7 +1315,7 @@ def _fill_gaps_by_content(parts: List[_Part], ctx: QuestionContext, log: List[Di
         # written headers per question; a header repeated on consecutive parts is one header
         explicit_count: Dict[str, int] = {}
         for k, p in enumerate(parts):
-            if p.source in EXPLICIT_SOURCES and not (k > 0 and parts[k - 1].q == p.q):
+            if p.source in EXPLICIT_SOURCES and not (k > 0 and parts[k - 1].q == p.q and parts[k - 1].source in EXPLICIT_SOURCES):
                 explicit_count[p.q] = explicit_count.get(p.q, 0) + 1
         best = None  # (margin, part index, start line, end line, scores)
         for i, part in enumerate(parts):
@@ -1339,11 +1348,12 @@ def _fill_gaps_by_content(parts: List[_Part], ctx: QuestionContext, log: List[Di
         head, chunk = "\n".join(lines[:st]).strip(), "\n".join(lines[st:]).strip()
         new_parts = ([_Part(head, part.page, part.q, part.source)] if head else []) + [_Part(chunk, part.page, mis_q, "gap_fill")]
         parts = parts[:i] + new_parts + parts[i + 1:]
-        # the answer may run on over following continuation parts of the same question
+        # continuation parts were filed under the question before them; they follow the moved chunk unless
+        # their own content fits the old question better
         j = i + len(new_parts)
         while j < len(parts) and parts[j].q == part.q and parts[j].source == "continuation":
             sc_j = ctx.scores(parts[j].text)
-            if sc_j.get(mis_q, 0) > sc_j.get(part.q, 0):
+            if sc_j.get(mis_q, 0) >= sc_j.get(part.q, 0):
                 parts[j] = _Part(parts[j].text, parts[j].page, mis_q, "gap_fill")
                 j += 1
             else:

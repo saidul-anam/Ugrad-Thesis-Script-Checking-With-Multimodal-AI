@@ -111,3 +111,28 @@ mode_b:
       - "uninformed about reproductive health and contraception / maternal mortality double the national rate"
       - "loses mobility, friends and social status"
       - "curtailed economic and non-formal educational opportunities"
+
+# Source passages / poems for summary and theme questions, copied verbatim from the question paper
+# (outputs/questions/english/SE_11_Q1.json). Stage 4 uses them for the verbatim-copy and length checks and
+# shows them to the model; the segmenter uses their words as evidence for these questions.
+source_texts:
+  "3": |
+    "Hope" is the thing with feathers —
+    That perches in the soul —
+    And sings the tune without the words—
+    And never stops — at all—
+    And sweetest — in the Gale — is heard —
+    And sore must be the storm —
+    That could abash the little Bird
+    That kept so many warm —
+    I've heard it in the chillest land —
+    And on the strangest Sea —
+    Yet — never — in Extremity,
+    It crumbed a stake of me —
+  "11": |
+    All people dream, but not equally.
+    Those who dream by night in the dusty recesses of their mind,
+    Wake in the morning to find that it was vanity.
+    But the dreamers of the day are dangerous people,
+    For they dream their dreams with open eyes,
+    And make them come true.

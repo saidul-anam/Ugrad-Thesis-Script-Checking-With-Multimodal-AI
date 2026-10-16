@@ -125,3 +125,11 @@ mode_a:
     correct_sequence: ["c", "f", "e", "g", "a", "h", "d", "b"]
     canonical_order: ["c", "f", "e", "g", "a", "h", "d", "b"]
 
+
+# Source passages / poems for summary and theme questions, copied verbatim from the question paper
+# (outputs/questions/english/SE_07_Q1.json). Stage 4 uses them for the verbatim-copy and length checks and
+# shows them to the model; the segmenter uses their words as evidence for these questions.
+source_texts:
+  "7": |
+    Apollo 11 was an American space expedition to the Moon that began on July 16, 1969. The spacecraft was launched from Florida, USA, carrying three astronauts: Neil Armstrong, Edwin Aldrin, and Michael Collins. The world watched the mission with excitement.
+    After traveling for several days, the lunar module touched down on the Moon on July 20, 1969. Neil Armstrong was the first person to walk on the Moon's surface, followed by Edwin Aldrin, while Michael Collins stayed in the command module in lunar orbit. The astronauts took photographs, collected rock and soil samples, and planted the American flag. They returned safely to Earth on July 24, 1969. The mission was hailed all over the world. It proved that human courage, science, and teamwork can achieve interplanetary exploration.

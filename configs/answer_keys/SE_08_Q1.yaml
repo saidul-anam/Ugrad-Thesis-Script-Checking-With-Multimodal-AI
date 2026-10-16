@@ -138,3 +138,25 @@ mode_a:
       f: "He thought that it might have been dropped by a passer-by."
       g: "He showed it to his wife."
       h: "So he always thought about how he could add to his income."
+
+# Source passages / poems for summary and theme questions, copied verbatim from the question paper
+# (outputs/questions/english/SE_08_Q1.json). Stage 4 uses them for the verbatim-copy and length checks and
+# shows them to the model; the segmenter uses their words as evidence for these questions.
+source_texts:
+  "7": |
+    Lord Byron was an English poet who lived from 1788 to 1824. His
+    father, Captain John Byron, died only three years after his birth. At
+    the age of ten, after the death of his grand uncle, he inherited the
+    family title and estate.
+    Byron attended a number of schools for his education and received his
+    M. A. Degree from Cambridge in 1808. Byron left England in 1816,
+    never to return and travelled to Geneva. His first collection of poems
+    'Honours of Idleness' appeared in 1807. He published first two parts
+    of "Child Harold" in March, 1812 which made him famous. The 3rd
+    part of Child Harold was published in 1816 and fourth part in 1818. In
+    1817, he compiled and published an American Dictionary.
+    The first two parts of 'Don Juan' were published in 1819 and by 1823
+    the poem was published completely in six separate volumes.
+    Apart from his literary career, in 1809 he took his seat in the House
+    of Lords. In 1824, he formed "Byron Brigade" and gave large sums
+    of money to the insurgent Greeks.

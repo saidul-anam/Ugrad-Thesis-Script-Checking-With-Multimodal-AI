@@ -16,6 +16,7 @@ Nothing here awards marks on a parse failure: the evaluator marks such questions
 """
 
 import difflib
+import functools
 import json
 import os
 import re
@@ -147,9 +148,23 @@ def load_answer_key(question_id: Optional[str], keys_dir: str = "configs/answer_
     for cand in (f"{question_id}.yaml", f"{question_id}.yml"):
         p = os.path.join(keys_dir, cand)
         if os.path.exists(p):
-            with open(p, "r", encoding="utf-8") as f:
-                return yaml.safe_load(f) or {}
+            return _load_yaml_cached(p, os.path.getmtime(p))
     return {}
+
+
+@functools.lru_cache(maxsize=32)
+def _load_yaml_cached(path: str, mtime: float) -> Dict[str, Any]:
+    """Parsed answer key, re-read only when the file changes (the segmenter looks keys up very often)."""
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+def key_source_text(answer_key: Dict[str, Any], q_no: str) -> str:
+    """Source passage / poem stored for a question under `source_texts:` in the answer key ('' if none)."""
+    for k, v in ((answer_key or {}).get("source_texts") or {}).items():
+        if canonicalize_question_key(str(k)) == canonicalize_question_key(str(q_no)):
+            return str(v or "").strip()
+    return ""
 
 
 def key_for_question(answer_key: Dict[str, Any], q_no: str) -> Tuple[str, Dict[str, Any]]:
@@ -885,8 +900,15 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
     return res
 
 
-def source_text_for_question(q_no: str, question_text: str) -> str:
-    """Extract the source passage/poem for summary (Q3/Q7) and theme (Q11) tasks from the question paper text."""
+def source_text_for_question(q_no: str, question_text: str, question_id: Optional[str] = None) -> str:
+    """
+    Source passage/poem for summary and theme tasks. The answer key's `source_texts` entry wins (it is
+    copied verbatim from the paper); otherwise it is located in the question paper text.
+    """
+    if question_id:
+        stored = key_source_text(load_answer_key(question_id), q_no)
+        if stored:
+            return stored
     if not question_text:
         return ""
     clean = re.sub(r"\(.*?\)", "", q_no).strip()

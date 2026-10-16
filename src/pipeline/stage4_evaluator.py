@@ -127,7 +127,7 @@ class Stage4Evaluator:
                 errors_text = "\n".join(f"- [{e.get('error_type', 'error')}] '{e.get('erroneous_text', '')}' -> '{e.get('suggested_correction', '')}'" for e in clean_errors[:12])
             else:
                 errors_text = "No confirmed linguistic errors."
-        source_text = source_text_for_question(ans.q_no, question_text) if spec.task_type.lower() in ("summary", "theme") else ""
+        source_text = source_text_for_question(ans.q_no, question_text, getattr(self, "_question_id", None)) if spec.task_type.lower() in ("summary", "theme") else ""
 
         if mode == "A":
             prompt = build_mode_a_prompt(ans, spec, key_entry, question_prompt_text)
@@ -228,6 +228,7 @@ class Stage4Evaluator:
         specs = load_rubric_specs(rubric_data)
         rubric_driven = bool(specs)
         answer_key = load_answer_key(question_obj.question_id if question_obj else None, self.answer_keys_dir) if rubric_driven else {}
+        self._question_id = question_obj.question_id if question_obj else None
         penalty_conf = resolve_penalty_config_path(question_obj.question_id if question_obj else "SE_10_Q1")
         self.penalty_calculator = PenaltyCalculator(penalty_conf)
         gt_canon = {

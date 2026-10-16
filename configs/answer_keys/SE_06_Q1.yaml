@@ -207,3 +207,11 @@ mode_b:
         question: "What does the Moon come there to do?"
         key_points:
           - "Peep in or shine through the window while the child is asleep"
+
+# Source passages / poems for summary and theme questions, copied verbatim from the question paper
+# (outputs/questions/english/SE_06_Q1.json). Stage 4 uses them for the verbatim-copy and length checks and
+# shows them to the model; the segmenter uses their words as evidence for these questions.
+source_texts:
+  "7": |
+    Raju is a student of class six. Last week, his school held class tests in several subjects. Raju worked very hard to do well. He got 8 in Bangla, 9 in English, and 10 in Mathematics out of 10. His teachers praised him for his good marks. However, he could not do well in ICT, Science, and Religion, getting only 6 marks in each.
+    Raju felt a little sad about his low marks but promised to study harder next time. His father told him not to lose hope. His mother advised him to read ICT and Science regularly. Raju made a plan to give more time to those subjects. He was happy that he did very well in Bangla, English, and Math. Raju believes that with more practice, he can improve all his subjects.

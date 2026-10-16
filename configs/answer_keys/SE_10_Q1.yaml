@@ -148,3 +148,12 @@ mode_b:
           - "One of the most talented filmmakers and patriotic cultural figures"
           - "Sacrificed his career, resources, and eventually his life for the nation"
           - "Dedicated his entire creative work to national emancipation and democracy"
+
+# Source passages / poems for summary and theme questions, copied verbatim from the question paper
+# (outputs/questions/english/SE_10_Q1.json). Stage 4 uses them for the verbatim-copy and length checks and
+# shows them to the model; the segmenter uses their words as evidence for these questions.
+source_texts:
+  "5": |
+    Poisoning by arsenic is a slow process: it is due to a gradual build-up of the poison in the human body. Deaths due to long-term poisoning make it even more important to address the problem as soon as possible. Many people currently drinking arsenic contaminated groundwater may develop problems soon. They must attempt to find safe source of water. Tube wells, which have been tested for arsenic, should be painted green if they are safe or red if they are unsafe. Deep tube wells are free from arsenic and bacteria although they will need testing in the future to ensure that it is still the case. Surface water in ponds and rivers is a potential source of arsenic-free water. But no surface water should be used without some form of treatment. Rainwater can be collected. This water is free from arsenic and bacteria although care must be taken to ensure that the container is clean.
+    Thousands of people in Bangladesh are suffering from arsenic poisonings and more are being affected every day. Arsenicosis is caused by drinking tube well water containing arsenic. The main recommendation for the people who are affected by arsenic is to drink water from a source that contains no arsenic.
+    The effects of arsenicosis are less severe among people who eat a healthy, balanced diet, ideally containing fish and vegetables. This is an initial treatment for arsenicosis. It is believed that vitamins A, C and E are effective for treatment of arsenicosis.
