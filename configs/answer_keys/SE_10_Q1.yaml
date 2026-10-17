@@ -111,6 +111,16 @@ mode_a:
       6: "h. So the Queen came to King Solomon's palace."
       7: "b. The Queen brought with her hundreds of servants carrying many presents."
       8: "d. She also brought with her some artificial flowers."
+    # the same sentences by letter (from canonical_story); shown to the model to map rewritten sentences to letters
+    sentences:
+      a: "The Queen of Sheba heard about the name and fame of King Solomon."
+      b: "The Queen brought with her hundreds of servants carrying many presents."
+      c: "Many years ago there lived a King named Solomon."
+      d: "She also brought with her some artificial flowers."
+      e: "She could not believe that he was so wise and wealthy."
+      f: "She decided to visit the country and meet the king personally."
+      g: "He was very wise and helped people in many ways."
+      h: "So the Queen came to King Solomon's palace."
 
 mode_b:
   "2":

@@ -109,6 +109,16 @@ mode_a:
     mark_per_item: 1.0
     correct_sequence: ["b", "a", "d", "f", "c", "h", "e", "g"]
     canonical_order: ["b", "a", "d", "f", "c", "h", "e", "g"]
+    # copied from the question paper; shown to the model so it can map sentences a student rewrote to letters
+    sentences:
+      a: "She asked Bayazid to give her a glass of water, but he could not find any water in the pitcher."
+      b: "Once Hazrat Bayazid Bustami came home to see his ailing mother."
+      c: "But she again fell asleep."
+      d: "So, he went to the well quite far from their house."
+      e: "She woke up some hours later."
+      f: "He filled the pitcher, came back and went to his mother with a glass of water."
+      g: "As he was still standing by her bed, his mother drank the glass of water and blessed him from the core of heart."
+      h: "He, instead of waking her up, stood by her bed with the glass of water in his hand."
 
 mode_b:
   "2":

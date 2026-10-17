@@ -1,0 +1,177 @@
+# DRAFT Mode B reference answers, for a teacher to check. NOT READ BY THE PIPELINE.
+#
+# These short-answer questions are scored in Mode B with no reference answers today (the model judges them
+# against the passage only; see `python scripts/lint_rubrics.py`). After checking, copy an entry into the
+# paper's key under `mode_b:` (configs/answer_keys/<paper>.yaml); the key's `verified: true` then covers it.
+#
+# Sources:
+#   passage   - key points taken from the passage printed on the question paper (data/questions/english/)
+#   textbook  - from general knowledge of the textbook text, NOT from the paper; check against the NCTB book
+#   TODO      - not drafted: the text is not on the paper and the drafter was not sure of it
+#
+# Format is the same as configs/answer_keys/SE_10_Q1.yaml mode_b.
+
+SE_07_Q1:
+  "2":
+    source: passage
+    task_type: Short_Answer
+    max_mark: 10
+    mark_per_item: 2.0
+    verified: false
+    items:
+      - label: a
+        question: "Where do Joynul and Nazma live?"
+        key_points: ["They live in a small village"]
+      - label: b
+        question: "What work does Joynul do for the villagers?"
+        key_points: ["He is a carpenter: makes chairs, tables, pira and other furniture", "He also does small repair work"]
+      - label: c
+        question: "Why does Joynul face financial difficulties?"
+        key_points: ["He does not find work every day; his income is irregular", "He lives from hand to mouth"]
+      - label: d
+        question: "What does Nazma do throughout the day?"
+        key_points: ["She does all the household work from morning to night", "She works hard to take care of her family"]
+      - label: e
+        question: "How does Nazma contribute to her children's early education?"
+        key_points: ["She sits with her children and teaches them Bangla and English alphabets and numbers"]
+  "10":
+    source: textbook
+    task_type: Short_Answer
+    max_mark: 5          # the parsed paper and rubric say 5; the printed paper says 2 x 5 = 10 (see review list)
+    answer_any: 5
+    verified: false
+    items:
+      - label: a
+        question: "In the poem \"Whose Child is this?\", what is the parent's responsibility?"
+        key_points: ["TODO"]
+      - label: b
+        question: "In the poem \"Leisure\", what is the poet's suggestion about nature?"
+        key_points: ["We should take time to stand and stare at the beauty of nature"]
+      - label: c
+        question: "In the poem \"Leisure\", how does the poet feel about life without nature?"
+        key_points: ["A life full of care with no time to stand and stare at nature is poor / meaningless"]
+      - label: d
+        question: "In the poem \"Whose Child is this?\", how does the parent show care for the child?"
+        key_points: ["TODO"]
+      - label: e
+        question: "In the poem \"Whose Child is this?\", how does the teacher describe their role?"
+        key_points: ["TODO"]
+      - label: f
+        question: "In the poem \"Leisure\", why does the poet criticize our busy life?"
+        key_points: ["Busy, care-filled life leaves no time to enjoy the beauty of nature", "Such a life is poor"]
+      - label: g
+        question: "In the poem \"Leisure\", what beauty of nature does the poet mention?"
+        key_points: ["Standing under the boughs like sheep or cows", "Squirrels hiding nuts in the grass in the woods",
+                     "Streams full of stars like skies at night", "Beauty's glance and her dancing feet"]
+
+SE_08_Q1:
+  "2":
+    source: passage
+    task_type: Short_Answer
+    max_mark: 10
+    mark_per_item: 2.0
+    verified: false
+    items:
+      - label: a
+        question: "What does the word 'hygiene' mean?"
+        key_points: ["The practice of keeping ourselves clean", "Also keeping our home and work places clean"]
+      - label: b
+        question: "What is thought to be godliness?"
+        key_points: ["Hygiene is thought to be next to godliness"]
+      - label: c
+        question: "Why is 'hygiene' important?"
+        key_points: ["It is important for our good health"]
+      - label: d
+        question: "Why is 'hygiene' thought next to godliness?"
+        key_points: ["We cannot achieve anything physically, mentally or spiritually if we are unclean in body, mind and soul"]
+      - label: e
+        question: "What happens to an unclean person?"
+        key_points: ["Nobody likes an unclean person"]
+  "10":
+    source: TODO
+    task_type: Short_Answer
+    max_mark: 10
+    answer_any: 5
+    verified: false
+    note: "Class 8 textbook poems (Oh, They Say; The Children's Song; The field of the embroidered quilt; the
+      sunshine and the little plant) - not on the paper; to be drafted by the teacher."
+
+SE_10_Q1:
+  "8":
+    source: textbook
+    task_type: Poetry_Questions
+    max_mark: 10
+    answer_any: 5
+    verified: false
+    items:
+      - label: a
+        question: "What does the poet say about new ideas in the poem \"Books\"?"
+        key_points: ["TODO"]
+      - label: b
+        question: "How are the woods described in the poem \"Stopping by Woods on a Snowy Evening\"?"
+        key_points: ["Lovely, dark and deep", "Filling up with snow"]
+      - label: c
+        question: "What is unique about the mothers in the poem \"Two Mothers Remembered\"?"
+        key_points: ["TODO"]
+      - label: d
+        question: "What are the books compared to in the poem \"Books\"?"
+        key_points: ["TODO"]
+      - label: e
+        question: "Why does the poet call time a \"gipsy\" in the poem \"Time, You Old Gipsy Man\"?"
+        key_points: ["Like a gipsy, time never stays in one place; it keeps moving on", "No one can make time stay, even with gifts"]
+      - label: f
+        question: "What does the \"cruel crawling foam\" signify in the poem \"The Sands of Dee\"?"
+        key_points: ["The rising tide that crept over the sands and drowned Mary", "The cruelty and danger of the sea"]
+      - label: g
+        question: "How does the speaker's role change in the poem \"Two Mothers Remembered\"?"
+        key_points: ["TODO"]
+      - label: h
+        question: "How does the poem \"Books\" describe books as magical?"
+        key_points: ["TODO"]
+  "9":
+    source: textbook
+    task_type: Story_Questions
+    max_mark: 10
+    answer_any: 5
+    verified: false
+    items:
+      - label: a
+        question: "What condition did Shylock place on the loan he gave to Antonio?"
+        key_points: ["If Antonio could not repay on the agreed day, Shylock could cut a pound of flesh from his body"]
+      - label: b
+        question: "Why did Rosamond's mother refuse to buy jewelry?"
+        key_points: ["TODO"]
+      - label: c
+        question: "What does the phrase \"all that glitters is not gold\" signify in the story \"The Merchant of Venice\"?"
+        key_points: ["Outward appearance can deceive; what looks valuable may not be", "Message in the gold casket chosen by a suitor who judged by appearance"]
+      - label: d
+        question: "Why did Rosamond choose the purple jar over the shoes?"
+        key_points: ["She was attracted by its bright, beautiful colour and thought it would be useful/beautiful", "She ignored her real need for new shoes"]
+      - label: e
+        question: "How did Portia trick Shylock with the bond's wording?"
+        key_points: ["The bond gave him a pound of flesh but not a drop of blood", "He could not take the flesh without shedding blood, so he lost the case"]
+      - label: f
+        question: "How did Rosamond's decision affect her daily life?"
+        key_points: ["The jar was plain glass filled with coloured liquid, so it was useless", "Her worn-out shoes made it hard to walk; she could not go out (with her father) as planned"]
+      - label: g
+        question: "What was Portia's father's strange plan to choose her husband and why did he do so?"
+        key_points: ["Suitors had to choose one of three caskets (gold, silver, lead); the one holding her portrait won her",
+                     "He wanted a husband who would value true worth over outward show"]
+      - label: h
+        question: "What lesson did Rosamond learn from her experience?"
+        key_points: ["Choose what is useful and needed rather than what only looks attractive", "Think before choosing"]
+
+# ---------------------------------------------------------------------------------------------------------------
+# Rearrangement sentence mapping to confirm (Mode A key, so it needs the teacher before it goes into the key).
+# The paper text in data/questions/english/SE_07_Q1.txt shows the story as one paragraph without letters. Read in
+# the key's correct_sequence (c f e g a h d b), its 8 sentences give this mapping:
+SE_07_Q1_rearrangement_sentences:
+  "9":
+    c: "Suddenly, I noticed two large, yellow eyes approaching me."
+    f: "At first, I was frightened and wondered if it was a tiger."
+    e: "But soon, I realized the eyes were too large for that."
+    g: "As it came closer, I discovered it was a slow-moving Baby Austin car."
+    a: "I waved my torch desperately, but the car did not stop."
+    h: "Growing impatient, I made a quick decision."
+    d: "As the car passed by, I opened the door and jumped inside without hesitation."
+    b: "Feeling relieved and safe, I politely began to request the owner to drop me near Lalpur."
