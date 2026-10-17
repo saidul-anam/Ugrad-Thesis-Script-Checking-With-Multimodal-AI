@@ -41,7 +41,7 @@ Work order: correctness bugs, then runtime, then accuracy, then rubric and evalu
 | Stored class 6–8 summaries capped by a rule their rubric does not have | 61 | 0 | re-applying caps offline |
 | Evaluation repeatable (same transcript, same segments) | no (LLM boundary layers) | yes (deterministic by default) | `segmentation_llm_recovery: false` |
 | Rubric/key/paper consistency errors (5 papers) | 8 (class 11) | 0 | `scripts/lint_rubrics.py` |
-| Unit tests | 310 pass, 8 fail | 349 pass | `pytest tests` |
+| Unit tests | 310 pass, 8 fail | 351 pass | `pytest tests` |
 | Page stages (0–2b), seconds per page, 56 dev pages | 48.2 | **41.3** | `scripts/bench_pages.py` timers |
 | Post-reading stages (segmentation, Stage 3, 3b), 5 dev scripts | 2220 s | **1865 s** | script-level timers |
 | Dev-page CER, Stage 1 / Stage 1+2 (56 GT pages, same benchmark) | 6.07% / 4.27% | **5.20% / 4.04%** | `scripts/bench_pages.py` |
@@ -204,6 +204,17 @@ Each band's raw text is now kept in the page checkpoint (`stage1_transcription.b
 - `test_overlap_read_differently_by_the_two_bands_is_not_repeated` holds the real case.
 - The fallback was chosen after looking at these dev pages, so the 5.20% is a dev number. The check that settles it runs Stage 1 on 99 dev pages that have an Opus 5.5 reference but no hand-checked GT (`silver_trunc`).
 
+### Stage 1 clean-up could hang a page (7c0d060)
+
+The first class-6 scan run stopped on SE_06_Q1_0006 page 8 for 3 hours. The model's text for that page held a struck word inside a struck phrase, like `[struck: [struck: the] cat]`. The Stage 1 clean-up (`sanitize_and_normalize_stage1_output`, step 7c) flattens nested struck tags in a loop:
+- the loop runs while the text contains `[struck: [struck:`;
+- each pass only flattens the form `[struck: [struck: x]]`;
+- with text after the inner tag, the pass changes nothing, and the loop never ends.
+
+The loop now stops when a pass changes nothing. Output is unchanged on every page where the old loop finished. `test_nested_struck_tag_that_cannot_be_flattened_does_not_hang` holds the case.
+
+The scan queue now also has a watchdog for our own jobs. If a job's log has not changed for 30 minutes, the queue logs a stack trace, ends the job, sets the script aside and goes on.
+
 ### Ablation switches added
 
 | Switch | Default | What it tests |
@@ -321,6 +332,8 @@ Each class rubric now states the guide's grade expectation (section 5) as a qual
 7. **Check the drafted Mode B answers**, then move them into the keys (`verified: true` covers them).
 8. **SE_10 key:** add `verified: true` once checked. The key also has no `question_id`; it uses `paper_id`.
 9. **Writing questions (for the expert):** in SE_10 the teacher never gave more than 8.5/15 on Q10 (story) or Q11 (dialogue). Model means are 8.5 and 9.6 against teacher means of 6.8. Is the teacher's scale compressed, or is the model lenient? This is not tuned either way.
+10. **SE_06_Q1_0004 is a different paper.** The scan answers grammar questions: parts of speech, articles, verb forms, transformation, a paragraph and a dialogue. That looks like English 2nd Paper. Its teacher-marks row matches that scan (Q1 = 2, as written in red on page 1), but it is filed under SE_06_Q1. It has no Gemini transcript and is left out of every class-6 comparison. Is there a 1st Paper scan for this student?
+11. **SE_08_Q1_0007** is a normal 1st Paper scan with teacher marks, but it has no Gemini transcript. Its pipeline grade can only be compared with the teacher.
 
 ---
 
@@ -422,6 +435,7 @@ Still running (2026-10-17 evening, in this order):
 1. **Class 6/7/8 read from the scans** (uploaded 2026-10-17), then graded on that text:
    - a seeded sample of 8 scripts per class first, then the rest;
    - Stage 3 and 3b are skipped, because every other Stage 4 run here graded text without Stage 3 errors, so only the transcription differs.
+   - The first attempt hung on SE_06_Q1_0006 (see "Stage 1 clean-up could hang a page"). It was restarted at 23:49 from 7c0d060, which also includes the segmenter fix df86f90. 0001 and 0004 had been read and graded before the hang, with e7c2ff9.
 2. **`final_no_vocab`, `silver_final`, `silver_final_no_vocab`:** the word-list decision, and the joiner on 99 more dev pages scored against the Opus reference.
 3. **Class 10 Stage 4 re-evaluation:** the first run was interrupted. Then the repeatability check, SE_07 with the Q9 sentence map, and class 10 graded on the Oct-13 pipeline text (the cost of transcription errors).
 4. **The one-time score of the held-out class-10 test pages.**
