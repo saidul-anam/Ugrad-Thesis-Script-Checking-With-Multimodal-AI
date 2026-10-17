@@ -733,6 +733,12 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
             if getattr(qe, "subscores", None) or getattr(qe, "criteria_reasoning", None):
                 band_str = qe.performance_band or "N/A"
                 md_lines.append(f"- **Performance Band**: `{band_str}` | **Raw Content Score**: {qe.content_raw_score:.1f} | **Linguistic Penalty**: -{qe.linguistic_penalty:.2f}")
+                # The computed mark, as the software derived it (the model's prose does not state a total)
+                if getattr(qe, "cap_applied", False):
+                    md_lines.append(f"- **Computed Mark**: criteria total {float(qe.capped_from or 0):.1f} -> capped at "
+                                    f"{qe.awarded_marks:.1f} (`{qe.cap_reason}`)")
+                elif qe.raw_total is not None:
+                    md_lines.append(f"- **Computed Mark**: criteria total {float(qe.raw_total):.1f} -> {qe.awarded_marks:.1f}")
                 if qe.criteria_reasoning:
                     md_lines.extend([
                         "",
