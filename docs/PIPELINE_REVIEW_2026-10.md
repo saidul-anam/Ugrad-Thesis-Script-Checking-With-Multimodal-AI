@@ -42,8 +42,9 @@ Work order: correctness bugs, then runtime, then accuracy, then rubric and evalu
 | Evaluation repeatable (same transcript, same segments) | no (LLM boundary layers) | yes (deterministic by default) | `segmentation_llm_recovery: false` |
 | Rubric/key/paper consistency errors (5 papers) | 8 (class 11) | 0 | `scripts/lint_rubrics.py` |
 | Unit tests | 310 pass, 8 fail | 349 pass | `pytest tests` |
-| Extraction time per script | 20.5 min (Oct 13 run) | pending | per-stage timers |
-| Dev-page CER | 4.30% (stored outputs) | pending | `scripts/evaluate_transcription.py` |
+| Page stages (0–2b), seconds per page, 56 dev pages | 48.2 | **41.3** | `scripts/bench_pages.py` timers |
+| Post-reading stages (segmentation, Stage 3, 3b), 5 dev scripts | 2220 s | **1865 s** | script-level timers |
+| Dev-page CER, Stage 1 / Stage 1+2 (56 GT pages, same benchmark) | 6.07% / 4.27% | **5.20% / 4.04%** | `scripts/bench_pages.py` |
 
 ---
 
@@ -149,7 +150,21 @@ The engine ran one request at a time and called `gc.collect + empty_cache + ipc_
 
 ### Measured effect
 
-Pending: see [Pending GPU results](#pending-gpu-results).
+Page benchmark on the 56 dev GT pages (Stages 0–2b re-run; decoding is deterministic):
+
+| Run | Code | Stage 1 CER | Stage 1+2 CER | s/page S1 / S2 / S2b / total |
+|---|---|---|---|---|
+| `baseline_b` | before the runtime changes | 6.07% | 4.27% | 12.3 / 22.7 / 13.1 / 48.2 |
+| `baseline_a` | runtime changes only | 6.07% | 4.27% | 12.3 / 22.7 / 13.2 / 48.3 |
+| `final` | all changes (hybrid joiner, compact Stage 2) | **5.20%** | **4.04%** | 11.9 / 17.6 / 11.6 / **41.3** |
+
+- **The runtime changes do not change the output:** A and B agree on every page. So the noise floor for identical code is zero, and dropping the per-call cache clearing gave no measurable speed-up (48.3 vs 48.2 s/page).
+- **`final` vs `baseline_b`:**
+  - Stage 1 improves by 0.86 ± 0.29 points per page (16 better, 5 worse). This is the joiner.
+  - Stage 1+2 improves by 0.23 ± 0.24 points (21 better, 14 worse), within the noise.
+  - The page stages are 14% faster, mostly Stage 2's shorter reply.
+- **Post-reading stages:** on 5 dev scripts they take 1865 s instead of 2220 s (−16%). Stage 3 calls fall from 60 to 35 (Mode A answers skipped), and the Stage 3 errors of the other answers are identical on 29 of 29 questions.
+- **Sanity check:** `final`'s Stage 1 CER equals the offline re-join of the `after` band texts (5.20%), as it must with deterministic decoding.
 
 ---
 
@@ -396,20 +411,15 @@ Run the page benchmark twice with the same settings: the difference between the 
 
 ## Pending GPU results
 
-The queue (each job starts only when no process is using the GPU):
+Done: `baseline_a`/`b`, `after`, `sl_before`/`sl_after`, `no_vocab`, `s2_compact`, `final` (numbers above). The class 6/7/8 Stage 4 re-evaluation on the imported text is also done.
 
-1. `baseline_a`: page benchmark on the code after the runtime changes, before the new stitcher.
-2. `baseline_b`: page benchmark on the code before the runtime changes. A vs B gives the CER noise floor and the cache-clearing effect.
-3. `after`: page benchmark with the new stitcher, which also saves the band texts. It is compared with A/B, and offline with the old stitcher on the same band texts.
-4. `sl_before` / `sl_after`: script-level stages (segmentation, Stage 3, 3b) on 5 dev scripts, before and after the runtime changes. It also checks that Stage 3 errors of the non-Mode-A answers and the 3b verdicts are unchanged.
-5. `no_vocab`, `s2_compact`: the two prompt ablations, compared with `after`.
-
-After that:
-- the full re-evaluation of the 123 scripts (dev and test splits reported separately);
-- a repeatability check (10 scripts evaluated twice must give identical totals);
-- the one-time score of the held-out class-10 test pages.
-
----
+Still running (2026-10-17 evening, in this order):
+1. **Class 6/7/8 read from the scans** (uploaded 2026-10-17), then graded on that text:
+   - a seeded sample of 8 scripts per class first, then the rest;
+   - Stage 3 and 3b are skipped, because every other Stage 4 run here graded text without Stage 3 errors, so only the transcription differs.
+2. **`final_no_vocab`, `silver_final`, `silver_final_no_vocab`:** the word-list decision, and the joiner on 99 more dev pages scored against the Opus reference.
+3. **Class 10 Stage 4 re-evaluation:** the first run was interrupted. Then the repeatability check, SE_07 with the Q9 sentence map, and class 10 graded on the Oct-13 pipeline text (the cost of transcription errors).
+4. **The one-time score of the held-out class-10 test pages.**
 
 ## Proposals not done (need a decision)
 
