@@ -352,9 +352,14 @@ class ConsensusTranscriber:
         candidate: str,
         intended: str,
         context_sentence: Optional[str] = None,
+        known_read: Optional[str] = None,
     ) -> Dict[str, Any]:
         samples: List[str] = [""] * len(self.augs)
-        if self.parallel_workers > 1 and len(self.augs) > 1:
+        if known_read is not None and len(self.augs) == 1 and _is_identity(self.augs[0]):
+            # One unaugmented greedy sample is exactly the localizer's read of the same crop (same prompt,
+            # temperature 0, token limit and first-line cleaning): reuse it instead of a second model call.
+            samples = [_clean_line(known_read)]
+        elif self.parallel_workers > 1 and len(self.augs) > 1:
             from concurrent.futures import ThreadPoolExecutor
 
             def _read_idx(pair):
@@ -402,6 +407,11 @@ class ConsensusTranscriber:
             "consensus_token": cons_tok,
             "consensus_token_agreement": cons_tok_agr,
         }
+
+
+def _is_identity(aug: Augment) -> bool:
+    return (aug.scale == 1.0 and not aug.rotate_deg and aug.gamma == 1.0 and aug.contrast == 1.0
+            and not aug.pad_shift_px and aug.temperature == 0.0)
 
 
 def _clean_line(text: str) -> str:

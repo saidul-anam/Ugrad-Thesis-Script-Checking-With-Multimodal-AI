@@ -19,9 +19,14 @@ Usage:
   python scripts/bench_pages.py --tag after --scripts SE_10_Q1_0001 SE_10_Q1_0002
 """
 
+import os
+
+# same CUDA allocator setting as the production runners (scripts/extract_scripts.py)
+if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import argparse
 import json
-import os
 import shutil
 import subprocess
 import sys

@@ -1,4 +1,12 @@
 # Audit Plan: Verifying Pipeline Bloat & Identifying Unnecessary Heavy Patches
+
+> **Superseded (2026-10-17).** `scripts/audit_pipeline_bloat.py` was removed: it read the deleted `gt.txt`,
+> estimated one Stage 1 call per page (there are three bands) and used class-11 question numbers. Measured
+> timings now come from the pipeline itself: every page checkpoint stores `token_usage.timing` and
+> `extraction_result.json` stores `metadata.stage_timing` (seconds, model calls, tokens per stage).
+> Summarise them with `python scripts/report_stage_timing.py <extraction folder>`, and compare settings on
+> the ground-truth pages with `python scripts/bench_pages.py --tag <name>`. See docs/PIPELINE_REVIEW_2026-10.md.
+
 *(Without Ground-Truth Text Extractions)*
 
 ## Goal Description

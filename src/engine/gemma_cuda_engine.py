@@ -399,10 +399,11 @@ class GemmaCudaEngine(BaseVLMEngine):
 
             return response.strip()
         finally:
+            # Tensors are freed here; the allocator keeps the memory for the next call. The cache is cleared
+            # once per script by the orchestrator and on an out-of-memory retry, not after every call.
             if output_tokens is not None:
                 del output_tokens
             del inputs
-            self.clear_cuda_cache()
 
     def generate_text(
         self,
@@ -469,10 +470,11 @@ class GemmaCudaEngine(BaseVLMEngine):
 
             return response.strip()
         finally:
+            # Tensors are freed here; the allocator keeps the memory for the next call. The cache is cleared
+            # once per script by the orchestrator and on an out-of-memory retry, not after every call.
             if output_tokens is not None:
                 del output_tokens
             del inputs
-            self.clear_cuda_cache()
 
     def get_engine_info(self) -> Dict[str, Any]:
         import torch

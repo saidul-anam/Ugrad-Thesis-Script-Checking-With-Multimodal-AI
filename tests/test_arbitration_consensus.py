@@ -68,3 +68,14 @@ def test_augmentations_and_mock_transcriber():
     assert tr.model_calls == 3
     assert len(res["samples"]) == 3
     assert res["signal"] is not None
+
+
+def test_single_sample_reuses_localizer_read():
+    tr = ConsensusTranscriber(MockGemmaEngine(), n_samples=1)
+    crop = Image.new("RGB", (200, 40), "white")
+    res = tr.run(crop, "the boy went home", "went", "want", known_read="the boy went home\nextra")
+    assert tr.model_calls == 0 and res["samples"] == ["the boy went home"]
+    # several (augmented) samples still read the crop
+    tr5 = ConsensusTranscriber(MockGemmaEngine(), n_samples=3)
+    tr5.run(crop, "the boy went home", "went", "want", known_read="the boy went home")
+    assert tr5.model_calls == 3

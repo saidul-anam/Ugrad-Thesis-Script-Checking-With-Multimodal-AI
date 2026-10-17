@@ -306,6 +306,7 @@ class EvidenceArbitrationGate:
                         cand.candidate_token,
                         cand.intended_token,
                         context_sentence=cand.context_sentence,
+                        known_read=crop.transcript,
                     )
                     ev.consensus_samples = [s for s in cres.get("samples", [])]
                     ev.consensus_agreement_candidate = cres.get("agreement_candidate")

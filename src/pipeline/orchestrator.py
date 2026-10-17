@@ -74,7 +74,8 @@ from src.utils.ground_truth import (
 from src.utils.script_files import paper_folder_name
 from src.utils.provenance import build_provenance
 from src.utils.stage_timer import StageTimer, merge_timings
-from src.utils.rubric_resolver import resolve_answer_key_path, resolve_penalty_config_path
+from src.utils.rubric_resolver import resolve_answer_key_path, resolve_penalty_config_path, resolve_rubric_path
+from src.pipeline.stage4_modes import load_rubric_specs
 
 
 
@@ -490,6 +491,8 @@ class ScriptCheckingPipeline:
         page_results: List[PageExtractionResult] = []
         all_teacher_marks: List[TeacherMarkItem] = []
         any_red_ink = False
+        if hasattr(self.engine, "clear_cuda_cache"):
+            self.engine.clear_cuda_cache()      # once per script (the engine no longer clears after every call)
 
         active_workers = parallel_workers if parallel_workers is not None else getattr(self.config.pipeline, "parallel_workers", 1)
         active_workers = max(1, int(active_workers or 1))
@@ -960,6 +963,8 @@ class ScriptCheckingPipeline:
             _img_by_page = {p_no: img for p_no, img, _ in page_images}
 
             def _clean_image_fn(n: int, _m=_img_by_page):
+                if is_pre_cleaned:          # red ink already removed from the PDF
+                    return _m[n]
                 res0 = self.stage0.detect(_m[n])
                 return res0.clean_image if getattr(res0, "clean_image", None) is not None else _m[n]
 
@@ -980,10 +985,26 @@ class ScriptCheckingPipeline:
             )
             print(f"[Extraction] [3b/3] Evidence gate ready (writer profile: {len(gate.profile.pair_counts)} confusion pairs from {len(gate.profile.anchors)} anchor words)")
 
+        # Item-scored (Mode A) answers are marked against the answer key without language deductions, so
+        # their Stage 3/3b output is never used: skip them. The modes come from the paper's rubric.
+        item_scored_qs: set = set()
+        if question_obj is not None:
+            try:
+                rubric_specs = load_rubric_specs(self._load_rubric(resolve_rubric_path(question_obj.question_id)))
+                item_scored_qs = {q for q, sp in rubric_specs.items() if sp.mode == "A"}
+            except Exception as ex:
+                print(f"[Extraction] Note: rubric modes unavailable ({ex}); Stage 3 runs on every answer.")
+
         # Run Stage 3 targeted per question
         if aligned_answers and len(aligned_answers) > 1:
+            skipped_item_scored = [a.q_no for a in aligned_answers if canonicalize_question_key(a.q_no) in item_scored_qs]
+            if skipped_item_scored:
+                print(f"[Extraction] [3/3] Stage 3/3b skipped for item-scored answers: {', '.join(skipped_item_scored)}")
             for ans in aligned_answers:
                 st.begin("stage3")
+                if canonicalize_question_key(ans.q_no) in item_scored_qs:
+                    ans.errors = []
+                    continue
                 # Schema-driven pedagogical routing: look up matched sub-question
                 matched_sq_text = ""
                 matched_sq_type = ""
