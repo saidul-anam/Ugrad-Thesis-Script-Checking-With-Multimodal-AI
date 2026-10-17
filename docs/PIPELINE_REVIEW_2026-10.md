@@ -67,7 +67,7 @@ Run on the stored transcripts with no model (`scripts/audit_segmentation.py`), t
 - **The deterministic recovery only ran when a model engine was passed.** Evaluation re-segmented with model-based layers, so two evaluations of the same transcript could give different answers. Totals moved by up to 29 marks.
 - **Stage 3 errors** were matched to questions loosely, and on the raw-transcript path every error was attached to every question.
 
-### What changed (commits d6727bf, 7995936, a5ceb8d, 8d00e22)
+### What changed (commits 0eb4d7d, c4dd120, 1817378, f756183)
 
 - **Parts carry their own page number**, so page lists cannot drift.
 - **`classify_header()` records how each question was decided.** An explicit header that names a finished question, or jumps back, is checked against evidence from the paper:
@@ -129,13 +129,13 @@ The engine ran one request at a time and called `gc.collect + empty_cache + ipc_
 
 ### What changed
 
-- **Timers first** (f186cbe):
+- **Timers first** (470710a):
   - every page checkpoint stores `token_usage.timing` per stage (seconds, calls, tokens);
   - `extraction_result.json` stores `metadata.stage_timing` for the run;
   - `scripts/report_stage_timing.py` sums them over folders.
 
   The Stage 1 token log now sums all bands; it reported only the last band.
-- **No per-call CUDA cache clearing** (ed230aa). It now clears once per script, and before an out-of-memory retry.
+- **No per-call CUDA cache clearing** (884d960). It now clears once per script, and before an out-of-memory retry.
 - **Stage 3/3b is skipped for item-scored (Mode A) answers.** Their errors are never used: objective items get no language deductions. The mode comes from the rubric. In the stored runs, 18 Stage 3b normalisations fell on such answers, mostly rearrangement text where only the letter order counts.
 - **Stage 3b with one consensus sample** reuses the localizer's read of the same crop (same prompt, temperature 0) instead of reading it again.
 - **The evidence gate no longer re-runs red-ink detection on pre-cleaned PDFs.**
@@ -155,7 +155,7 @@ Pending: see [Pending GPU results](#pending-gpu-results).
 
 ## 3. Extraction accuracy
 
-### Band stitching (dca6324, b2e7003)
+### Band stitching (2be532d, 97262cd)
 
 A page is read in three overlapping horizontal bands, and the band texts are joined. The old joiner compared whole lines from the end of one band with whole lines from the start of the next. The line at a band edge is usually cut: read partly, or marked `[truncated]`. When that happened the joiner found no match and **appended the lower band whole**, so the overlap lines appeared twice. 123 of the 555 stored class-10 pages contain a `[truncated]` marker. Student 0031's repeated lines are this bug.
 
@@ -185,7 +185,7 @@ Both have flags in `scripts/bench_pages.py` (`--no-prompt-vocab`, `--stage2-comp
 
 ## 4. Rubric standardisation
 
-### Rubric linter (e100a9b)
+### Rubric linter (65147a5)
 
 `python scripts/lint_rubrics.py` resolves, for each paper, the rubric, answer key, question paper and penalty profile that Stage 4 would use, and checks that they agree.
 
@@ -217,7 +217,7 @@ Both have flags in `scripts/bench_pages.py` (`--no-prompt-vocab`, `--stage2-comp
 - **`rubric_mismatches()`:** Stage 4 and `evaluate_scripts.py` now **refuse** a rubric whose questions or marks differ from the question paper, instead of scoring one paper with another paper's rubric.
 - **Reports name the rubric and answer key**, and say whether a teacher has verified the key.
 
-### The guide's hand-set gates are off by default (19096d6)
+### The guide's hand-set gates are off by default (48ee074)
 
 Section 4 of `docs/NCTB_Standard_Evaluation_Rubric_Guide.md` adds three gates, derived from one script (SE_10_0001, teacher 7.5/15, model 14.5/15):
 
@@ -233,11 +233,11 @@ These were calibrated toward a teacher's mark on writing questions, which this p
 
 This also removes a contradiction: the class 6/7 rubrics said "without punitive verbatim caps" but had one.
 
-### Grade-level expectations (756d032)
+### Grade-level expectations (1e1917b)
 
 Each class rubric now states the guide's grade expectation (section 5) as a qualitative guideline. Class 6 and class 7 already had different band wordings from the teammate, but nothing about compound sentences and connectives at class 7, or turn-taking at class 8. No thresholds were added.
 
-### Answer keys (800f5bc, 176bbf5)
+### Answer keys (fe87a74, 8b9fb13)
 
 - **Rearrangement keys** for SE_06 and SE_10 now include the sentences by letter, copied from the paper. The model can then map sentences a student rewrote in full back to letters.
 - **Rearrangement convention per paper.** These are objective questions, so the teachers are the reference. The convention was chosen on the dev split and stored as `scoring:` in the key:
@@ -277,19 +277,19 @@ Most of the error against teachers on objective questions came from bugs, not fr
 
 | Fix | Commit | Effect |
 |---|---|---|
-| **MCQ "multiple selection" counted any stray letter.** The article "a", or "i, ii & iii" inside the option text, made a correct answer score 0. Now only option labels count. | 64ec15b | 106 of 114 flagged items were single choices; SE_10 Q1 MAE 3.18 → 0.73 |
-| **The last question of a paper lost its prompt text** (it was graded against "Question 11: Dialogue Writing") | 1882203 | SE_06/07 Q13, SE_10 Q11, SE_11 Q11 |
-| **Hard caps come from the rubric.** The hard-coded "50% if over 1/3 of the source" rule is gone. | 34a8f0f | it capped 61 class 6–8 summaries whose rubrics have no such cap |
-| **No invented marks.** Narrative band recovery, the 50% defaults and the monolithic 5.0 fallback are removed; unusable output is `unscored` and listed for review. | 34a8f0f | |
-| **Penalties by mode:** additive language deductions only in Mode B. Mode C already judges language in `language_mechanics`, so deducting again counted it twice. | 34a8f0f | |
-| **Half marks round up** (Python sent 7.25 to 7.0 but 7.75 to 8.0) | d226c18 | |
-| **"Answer any N" scores the first N attempted items** (SE_06 Q10 summed all 8 answers) | d226c18 | 4 dev scripts: first-5 MAE 1.50 vs best-5 2.00, too few to be conclusive |
-| **Mode B without a key** gets "no reference answers, judge against the passage" instead of a stray flow-chart instruction | d226c18 | |
-| **SE_08 class test** is left out of the paper maximum (scored out of 90) | 30d8d8f | |
-| **Feedback cannot contradict the score:** the model does not state a total; the report shows criteria total → cap → awarded | 2ad8217 | |
-| **Provenance:** each evaluation stores the git commit, config hash and the hashes of the rubric, key, penalty profile and scoring code | 30d8d8f | two evaluations can be told apart |
-| **Rearrangement convention per paper** | 176bbf5 | see section 4 |
-| **One rubric per paper, refusal on mismatch** | e100a9b | see section 4 |
+| **MCQ "multiple selection" counted any stray letter.** The article "a", or "i, ii & iii" inside the option text, made a correct answer score 0. Now only option labels count. | a180afd | 106 of 114 flagged items were single choices; SE_10 Q1 MAE 3.18 → 0.73 |
+| **The last question of a paper lost its prompt text** (it was graded against "Question 11: Dialogue Writing") | f874190 | SE_06/07 Q13, SE_10 Q11, SE_11 Q11 |
+| **Hard caps come from the rubric.** The hard-coded "50% if over 1/3 of the source" rule is gone. | 092a73e | it capped 61 class 6–8 summaries whose rubrics have no such cap |
+| **No invented marks.** Narrative band recovery, the 50% defaults and the monolithic 5.0 fallback are removed; unusable output is `unscored` and listed for review. | 092a73e | |
+| **Penalties by mode:** additive language deductions only in Mode B. Mode C already judges language in `language_mechanics`, so deducting again counted it twice. | 092a73e | |
+| **Half marks round up** (Python sent 7.25 to 7.0 but 7.75 to 8.0) | 8c67c12 | |
+| **"Answer any N" scores the first N attempted items** (SE_06 Q10 summed all 8 answers) | 8c67c12 | 4 dev scripts: first-5 MAE 1.50 vs best-5 2.00, too few to be conclusive |
+| **Mode B without a key** gets "no reference answers, judge against the passage" instead of a stray flow-chart instruction | 8c67c12 | |
+| **SE_08 class test** is left out of the paper maximum (scored out of 90) | 554a8bc | |
+| **Feedback cannot contradict the score:** the model does not state a total; the report shows criteria total → cap → awarded | 4f29629 | |
+| **Provenance:** each evaluation stores the git commit, config hash and the hashes of the rubric, key, penalty profile and scoring code | 554a8bc | two evaluations can be told apart |
+| **Rearrangement convention per paper** | 8b9fb13 | see section 4 |
+| **One rubric per paper, refusal on mismatch** | 65147a5 | see section 4 |
 
 ### Writing questions: agreement with teachers, descriptive only
 
@@ -382,4 +382,39 @@ After that:
 
 - **Language bug in `orchestrator.py`.** Stage 4 reads `extraction.metadata["paper"]` as the language. Digitized imports store the paper ID there ("SE_08_Q1"), so without an explicit `question_input` the wrong question paper can be loaded. `evaluate_scripts.py` always passes it, so stored runs are unaffected. A small fix is ready to propose.
 - **Batch Stage 2b's line reads** into one call per page instead of one call per line.
-- **Before pushing:** the commits on `gemma` are authored with the git account currently set on this PC. Re-author them before pushing if that account is going to change.
+
+---
+
+## Commit IDs before re-authoring
+
+On 2026-10-17 the unpushed commits on `gemma` were re-authored from the PC's previous git account to Md. Shadman Shafie. Content, messages and dates are unchanged; only the IDs changed. Outputs written before then (the evaluation provenance, benchmark reports) record the old ID; this table maps it to the new one. The IDs in this document are the new ones.
+
+| Old | New | Date | Commit |
+|---|---|---|---|
+| 9f7475b | e62eb5b | 2026-10-07 | Docs: test pages must be extracted before scoring; stale test checkpoints removed from se_10_q1_v2 |
+| 4f4b7a8 | fb2063e | 2026-10-07 | Docs: held-out class-10 test result (20 pages), uncertainty and test-set size estimate |
+| 5d6ac53 | 99d4c73 | 2026-10-16 | Snapshot: teammate's class 6-8 rubrics/keys/penalties, schema-driven segmenter, Stage 4 and report changes |
+| 2840afa | bd7e4c3 | 2026-10-16 | Phase 0: teacher-mark benchmark, seeded eval dev/test split, segmentation audit harness |
+| d6727bf | 0eb4d7d | 2026-10-16 | Segmenter: page-tracked parts, content-checked headers, deterministic gap filling |
+| 7995936 | c4dd120 | 2026-10-16 | Segmenter evidence: weighted paper terms, unique-best rule, answer-key source passages |
+| a5ceb8d | 1817378 | 2026-10-16 | Segmenter evidence: item-form key matches, declared passages, struck text ignored |
+| 8d00e22 | f756183 | 2026-10-17 | Segmenter wiring: LLM recovery switch (default off), segmentation.json, missing vs blank status |
+| 64ec15b | a180afd | 2026-10-17 | Stage 4 MCQ: count only option labels as selections |
+| 1882203 | f874190 | 2026-10-17 | Stage 4: last question keeps its prompt text |
+| 34a8f0f | 092a73e | 2026-10-17 | Stage 4: rubric-driven caps, no invented marks, penalties by mode |
+| d226c18 | 8c67c12 | 2026-10-17 | Stage 4: half marks round up, "answer any N" scores the first N attempted, no-key Mode B prompt |
+| 30d8d8f | 554a8bc | 2026-10-17 | Stage 4: provenance stamp, class-test marks out of the total, evaluate_scripts fixes |
+| 2ad8217 | 4f29629 | 2026-10-17 | Report: show each writing answer's computed mark and the cap that set it |
+| f186cbe | 470710a | 2026-10-17 | Runtime instrumentation: per-stage time, model calls and tokens |
+| 0fc218b | 957a740 | 2026-10-17 | scripts/bench_pages.py: re-run Stages 0-2b on ground-truth pages only, with timing and CER |
+| ed230aa | 884d960 | 2026-10-17 | Runtime: no per-call CUDA cache clearing, skip Stage 3/3b for item-scored answers, reuse 3b crop read |
+| dca6324 | 2be532d | 2026-10-17 | Stage 1: keep each band's raw text in the page result so stitching can be compared offline |
+| b2e7003 | 97262cd | 2026-10-17 | Band stitching: join bands at the longest shared word run instead of line-by-line similarity |
+| bdfc45f | 09ce9af | 2026-10-17 | Config switch for the question-word list in the Stage 1/2 prompts (ablation), honest stage2_conditional comment |
+| fdda19a | 5d270d9 | 2026-10-17 | Stage 2 ablation switch: reply without the unread confidence / verification_notes fields |
+| e100a9b | 65147a5 | 2026-10-17 | Rubric linter; each English paper uses its own rubric and Stage 4 refuses one that does not fit the paper |
+| 19096d6 | 48ee074 | 2026-10-17 | Rubrics: the guide's hand-set calibration gates move to a calibration_gates block, off by default |
+| 756d032 | 1e1917b | 2026-10-17 | Rubrics: each class states the guide's grade-level expectation (classes 6, 7, 8, 10) |
+| 800f5bc | fe87a74 | 2026-10-17 | Answer keys: rearrangement sentence maps (SE_06, SE_10); draft Mode B reference answers for review (not read by the pipeline) |
+| 176bbf5 | 8b9fb13 | 2026-10-17 | Rearrangement: per-key scoring convention; SE_06, SE_07, SE_10 use positional scoring |
+| 440aeca | f7a7160 | 2026-10-17 | docs/PIPELINE_REVIEW_2026-10.md: findings, changes, numbers and reproduction commands (GPU results pending) |
