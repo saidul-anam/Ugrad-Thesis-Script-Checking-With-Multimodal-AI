@@ -73,6 +73,7 @@ from src.utils.ground_truth import (
 )
 from src.utils.script_files import paper_folder_name
 from src.utils.provenance import build_provenance
+from src.utils.stage_timer import StageTimer, merge_timings
 from src.utils.rubric_resolver import resolve_answer_key_path, resolve_penalty_config_path
 
 
@@ -493,6 +494,8 @@ class ScriptCheckingPipeline:
         active_workers = parallel_workers if parallel_workers is not None else getattr(self.config.pipeline, "parallel_workers", 1)
         active_workers = max(1, int(active_workers or 1))
 
+        fresh_pages: set = set()      # pages processed in this run (not resumed from a checkpoint)
+
         def _process_single_page(item):
             page_no, p_img, p_path = item
             ckpt_path = os.path.join(checkpoint_dir, f"page_{page_no}.json")
@@ -509,10 +512,13 @@ class ScriptCheckingPipeline:
                     print(f"[Extraction] Note: Checkpoint for page {page_no} invalid ({e}). Re-extracting.")
 
             print(f"\n--- Processing Page {page_no}/{len(page_images)} ---")
+            pt = StageTimer(self.engine)
+            fresh_pages.add(page_no)
 
             # ---------------------------------------------------------
             # STAGE 0 & 0.5: OpenCV Red-Ink & Strikethrough Pre-Detection
             # ---------------------------------------------------------
+            pt.begin("stage0")
             t_mask = None
             if is_pre_cleaned:
                 print(f"[Extraction] [0/3] Stage 0: Pre-cleaned canvas -> Bypassing red-ink detection for Page {page_no}.")
@@ -543,6 +549,7 @@ class ScriptCheckingPipeline:
             # STAGE 1: Verbatim Transcription (Ignoring Teacher Red Ink)
             # ---------------------------------------------------------
             print(f"[Extraction] [1/3] Stage 1: Verbatim Transcription (Page {page_no})...")
+            pt.begin("stage1")
             stage1_result = self.stage1.run(
                 image=stage1_input_img,
                 question_reference_vocab=question_vocab if question_obj else None,
@@ -557,9 +564,13 @@ class ScriptCheckingPipeline:
                 max_new_tokens=decoding.max_new_tokens,
                 thinking_mode=stage1_thinking
             )
-            u1 = self.engine.get_last_usage()
-            ctx1 = self.engine.format_last_usage()
-            print(f"[Extraction] [1/3] Stage 1 Transcribed -> {stage1_result.word_count} words (illegible: {stage1_result.illegible_count}, unclear: {stage1_result.unclear_count}, struck: {stage1_result.struck_count}) {ctx1}")
+            pt.begin("stage2")
+            s1 = pt.stages["stage1"]
+            # all bands of the page, not only the last one
+            u1 = {"prompt_tokens": s1["prompt_tokens"], "completion_tokens": s1["completion_tokens"],
+                  "total_tokens": s1["prompt_tokens"] + s1["completion_tokens"], "calls": s1["calls"]}
+            print(f"[Extraction] [1/3] Stage 1 Transcribed -> {stage1_result.word_count} words (illegible: {stage1_result.illegible_count}, unclear: {stage1_result.unclear_count}, struck: {stage1_result.struck_count}) "
+                  f"[{s1['calls']} call(s), in:{s1['prompt_tokens']:,} out:{s1['completion_tokens']:,}, {s1['seconds']:.1f}s]")
 
             # ---------------------------------------------------------
             # STAGE 2: Autocorrection Verification & Audit (Delta-Only Redesign)
@@ -624,6 +635,7 @@ class ScriptCheckingPipeline:
             # STAGE 2b: Line reconciliation (independent line-crop reads + forced choice)
             # ---------------------------------------------------------
             if getattr(pipe_cfg, "line_reconciliation", False) and not skip_stage2:
+                pt.begin("stage2b")
                 page_text = stage2_result.verified_transcript or stage1_result.raw_transcript
                 rec = self.line_reconciler.run(
                     stage1_input_img,
@@ -666,6 +678,7 @@ class ScriptCheckingPipeline:
             # ---------------------------------------------------------
             # STAGE 0b: Teacher Mark Extraction (Conditional on Margin Red Ink)
             # ---------------------------------------------------------
+            pt.begin("stage0b")
             page_marks: List[TeacherMarkItem] = []
             u0b = {}
             has_margin_scores = getattr(stage0_res, "margin_has_red_ink", stage0_res.has_red_ink)
@@ -716,7 +729,8 @@ class ScriptCheckingPipeline:
                 "completion_tokens": page_comp_t,
                 "total_tokens": page_total_t,
                 "max_context": max_ctx,
-                "pct_context": page_pct
+                "pct_context": page_pct,
+                "timing": pt.summary(),     # per stage: seconds, model calls, tokens (incl. Stage 2b)
             }
 
             p_res = PageExtractionResult(
@@ -918,6 +932,8 @@ class ScriptCheckingPipeline:
             pages=page_results,
             metadata={"paper": paper}
         )
+        st = StageTimer(self.engine)
+        st.begin("segmentation")
         seg_diag: Dict[str, Any] = {}
         aligned_answers = segment_script_into_questions(
             interim_res, question_obj, engine=self.engine,
@@ -934,6 +950,7 @@ class ScriptCheckingPipeline:
         # ---------------------------------------------------------
         # STAGE 3b setup: evidence-fused handwriting ambiguity gate
         # ---------------------------------------------------------
+        st.begin("stage3b_setup")
         subject_name = "Bangla" if ("bangla" in script_id.lower() or "bangla" in source_str.lower()) else "English"
         arb_cfg = getattr(self.config, "arbitration", None)
         arb_mode = (arb_cfg.mode if arb_cfg is not None else "legacy").lower()
@@ -966,6 +983,7 @@ class ScriptCheckingPipeline:
         # Run Stage 3 targeted per question
         if aligned_answers and len(aligned_answers) > 1:
             for ans in aligned_answers:
+                st.begin("stage3")
                 # Schema-driven pedagogical routing: look up matched sub-question
                 matched_sq_text = ""
                 matched_sq_type = ""
@@ -1072,6 +1090,7 @@ class ScriptCheckingPipeline:
                     or (gate is not None and getattr(gate.cfg, "lexicon_scan", True) and ans_words >= 3)
                 )
                 if should_arbitrate and page_images and arb_mode != "off":
+                    st.begin("stage3b")
                     ans_pno = ans.page_numbers[0] if ans.page_numbers else 1
                     target_p_img = page_images[ans_pno - 1][1] if (1 <= ans_pno <= len(page_images)) else page_images[0][1]
                     original_errs = list(q_err_res.errors)
@@ -1105,6 +1124,7 @@ class ScriptCheckingPipeline:
                 ans.errors = [e.model_dump() for e in q_err_res.errors]
         else:
             # Fallback if segmentation yielded no distinct sections
+            st.begin("stage3")
             q_err_res = self.stage3.run(
                 verified_transcript=combined_verified,
                 question_vocab=set(question_vocab) if question_vocab else None,
@@ -1120,6 +1140,7 @@ class ScriptCheckingPipeline:
             u3_total = usage.get("total_tokens", 0)
 
             if q_err_res.errors and page_images and arb_mode != "off":
+                st.begin("stage3b")
                 original_errs = list(q_err_res.errors)
                 confirmed_errs, cleared_ambiguities = self.stage3.arbitrate_visual_errors(
                     image=page_images[0][1],
@@ -1150,6 +1171,7 @@ class ScriptCheckingPipeline:
         # ---------------------------------------------------------
         arbitration_meta: Dict[str, Any] = {"mode": arb_mode}
         if gate is not None:
+            st.begin("stage3b")
             arb_res = gate.finalize()
             u3_prompt += arb_res.token_usage.get("prompt_tokens", 0)
             u3_comp += arb_res.token_usage.get("completion_tokens", 0)
@@ -1203,6 +1225,7 @@ class ScriptCheckingPipeline:
             linguistic_summary=f"Cataloged {len(all_extracted_errors)} linguistic errors across {len(aligned_answers)} questions."
         )
 
+        st.end()
         u3 = {
             "prompt_tokens": u3_prompt,
             "completion_tokens": u3_comp,
@@ -1221,6 +1244,14 @@ class ScriptCheckingPipeline:
                 pass
 
         elapsed = round(time.time() - start_time, 2)
+        # Per-stage time, model calls and tokens of this run (pages resumed from a checkpoint are not included)
+        stage_timing = merge_timings([p.token_usage.get("timing") for p in page_results if p.page_no in fresh_pages and p.token_usage]
+                                     + [st.summary()])
+        stage_timing["wall_seconds"] = elapsed
+        stage_timing["pages_processed"] = len(fresh_pages)
+        stage_timing["pages_resumed"] = len(page_results) - len(fresh_pages)
+        print("[Extraction] Stage timing: " + ", ".join(
+            f"{k} {v['seconds']:.0f}s/{v['calls']}c" for k, v in stage_timing.items() if isinstance(v, dict) and k != "total"))
 
         max_ctx = getattr(self.engine, "context_window", getattr(self.engine, "max_context_window", 4096))
         total_ext_prompt = sum(p.token_usage.get("prompt_tokens", 0) for p in page_results) + u3.get("prompt_tokens", 0)
@@ -1265,6 +1296,7 @@ class ScriptCheckingPipeline:
                 "temperature": decoding.temperature,
                 "engine_info": self.engine.get_engine_info(),
                 "token_usage": extraction_token_usage,
+                "stage_timing": stage_timing,
                 "output_dir": script_output_dir,
                 "paper": paper,
                 "task_type": task_type,

@@ -40,9 +40,29 @@ class BaseVLMEngine(ABC):
         """Return engine metadata, hardware profile, and runtime configuration."""
         pass
 
+    # Every engine reports a request's tokens by assigning `self.last_usage`; the setter also keeps running
+    # totals, so a caller can measure the calls and tokens of any stretch of work (src/utils/stage_timer.py).
+    @property
+    def last_usage(self) -> Dict[str, Any]:
+        return self.__dict__.get("_last_usage", {})
+
+    @last_usage.setter
+    def last_usage(self, value: Dict[str, Any]) -> None:
+        self.__dict__["_last_usage"] = value or {}
+        if value:
+            t = self.usage_totals
+            t["calls"] += 1
+            t["prompt_tokens"] += int(value.get("prompt_tokens", 0) or 0)
+            t["completion_tokens"] += int(value.get("completion_tokens", 0) or 0)
+
+    @property
+    def usage_totals(self) -> Dict[str, int]:
+        """Model calls and tokens since the engine was created."""
+        return self.__dict__.setdefault("_usage_totals", {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0})
+
     def get_last_usage(self) -> Dict[str, Any]:
         """Return token usage of the most recent inference request."""
-        return getattr(self, "last_usage", {})
+        return self.last_usage
 
     def format_last_usage(self) -> str:
         """Format last token usage as a concise context string, e.g.: [Context: 1,185/4,096 tokens (28.9%) | in:1,050 out:135]"""
