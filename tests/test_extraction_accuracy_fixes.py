@@ -665,7 +665,7 @@ def test_stage4_unattempted_question_handling():
     # Q4 must be in missing_questions, awarded 0.0, marked missing, and delta vs human 0.0 is 0.0
     assert "4" in res.missing_questions
     assert by_q["4"].awarded_marks == 0.0
-    assert by_q["4"].scoring_status == "missing"
+    assert by_q["4"].scoring_status == "missing_no_segment"
     assert "unattempted" in by_q["4"].examiner_feedback.lower()
     assert by_q["4"].delta == 0.0
 

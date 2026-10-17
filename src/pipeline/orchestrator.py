@@ -36,7 +36,8 @@ from src.utils.export_utils import (
     load_extraction_artifacts,
     export_report_json,
     export_report_markdown,
-    export_mistakes_markdown
+    export_mistakes_markdown,
+    save_segmentation_diagnostics
 )
 from src.rag.context_provider import RAGContextProvider
 
@@ -915,7 +916,12 @@ class ScriptCheckingPipeline:
             pages=page_results,
             metadata={"paper": paper}
         )
-        aligned_answers = segment_script_into_questions(interim_res, question_obj, engine=self.engine)
+        seg_diag: Dict[str, Any] = {}
+        aligned_answers = segment_script_into_questions(
+            interim_res, question_obj, engine=self.engine,
+            llm_recovery=self.config.pipeline.segmentation_llm_recovery, diagnostics=seg_diag
+        )
+        save_segmentation_diagnostics(seg_diag, aligned_answers, script_output_dir)
         print(f"[Extraction] Segmented transcript into {len(aligned_answers)} distinct question answers.")
 
         all_extracted_errors: List[Any] = []
@@ -1446,9 +1452,15 @@ class ScriptCheckingPipeline:
 
         if eval_mode == "modular":
             print("\n[Evaluation] [4/4] Executing Stage 4: Modular Question-by-Question Evaluation...")
-            aligned_answers = segment_script_into_questions(extraction, question_obj, engine=self.engine)
+            seg_diag: Dict[str, Any] = {}
+            aligned_answers = segment_script_into_questions(
+                extraction, question_obj, engine=self.engine,
+                llm_recovery=self.config.pipeline.segmentation_llm_recovery, diagnostics=seg_diag
+            )
             if not aligned_answers and extraction.metadata.get("aligned_answers"):
                 aligned_answers = [AlignedAnswerItem.model_validate(a) for a in extraction.metadata["aligned_answers"]]
+                seg_diag["source"] = "stored_extraction_metadata"
+            save_segmentation_diagnostics(seg_diag, aligned_answers, script_output_dir)
             print(f"[Evaluation] Loaded {len(aligned_answers)} distinct question answers.")
 
             stage4_result = self.stage4.evaluate_modular(

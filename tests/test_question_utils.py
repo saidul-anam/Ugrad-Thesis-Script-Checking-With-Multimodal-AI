@@ -92,7 +92,7 @@ def test_se_08_q1_resolution_and_integrity():
 
     # 3. Rubric & Answer Key Resolution
     rubric_path = resolve_rubric_path("SE_08_Q1")
-    assert "english_junior.yaml" in rubric_path
+    assert "english_class8.yaml" in rubric_path
 
     answer_key_path = resolve_answer_key_path("SE_08_Q1")
     assert answer_key_path is not None

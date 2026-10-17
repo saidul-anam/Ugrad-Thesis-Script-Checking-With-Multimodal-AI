@@ -358,17 +358,14 @@ def test_evaluation_report_mentions_teacher_marks_at_end_of_table():
         assert "Model-Detected Red-Ink Marks (Stage 0b)" in content
         assert "autonomous VLM, unverified" in content
 
-        # 2. Final row in Stage 4 table has Human GT and delta
-        assert "| **TOTAL** | **All Questions** | - | - | - | **21.0** | **20.0** | - | - | **20.0** | **70.0** | **-50.0** | - |" in content
+        # 2. Final row of the scorecard has the teacher total and the delta
+        assert "| **TOTAL** | **All 2 Questions** | — | **21.0** | **20.0** | **95.2%** | **70.0** | **-50.0** |" in content
 
-        # 3. Final Given Marks Summary Table has Teacher Marks (GT) row at the end
-        assert "| **Teacher Marks (GT)** | **Verified Examiner (`SE_11_Q1_teacher_marks.csv`)" in content
+        # 3. Executive summary names the verified examiner source and total
+        assert "**Official Examiner Ground Truth (`SE_11_Q1_teacher_marks.csv`)**: **70.0 / 21.0 marks**" in content
 
-        # 4. Teacher Ground Truth Marks Comparison callout is present below the table
-        assert "> 🧑‍🏫 **Teacher Ground Truth Marks Comparison (`SE_11_Q1_teacher_marks.csv`)" in content
-        assert "- **Teacher Total Score**: **70.0 / 21.0**" in content
-        assert "- **AI Evaluation Score**: **20.0 / 21.0**" in content
-        assert "- **Score Discrepancy (Δ AI - Teacher)**: **-50.0 marks**" in content
+        # 4. Scored questions whose text was not stored are not called unattempted
+        assert "unattempted" not in content.lower()
 
 
 def test_evaluation_report_without_teacher_marks():
@@ -423,7 +420,8 @@ def test_evaluation_report_without_teacher_marks():
         # Should NOT contain Teacher Marks (GT) row or callout
         assert "Teacher Marks (GT)" not in content
         assert "> 🧑‍🏫 **Teacher Ground Truth Marks Comparison" not in content
-        assert "| **TOTAL** | **All Questions** | - | - | - | **10.0** | **8.0** | - | - | **8.0** | - | - | - |" in content
+        assert "Official Examiner Ground Truth" not in content
+        assert "| **TOTAL** | **All 1 Questions** | — | **10.0** | **8.0** | **80.0%** | **N/A** | **N/A** |" in content
 
 
 def test_evaluation_report_segmented_writing():
@@ -457,7 +455,7 @@ def test_evaluation_report_segmented_writing():
         page_numbers=[],
         max_marks=5.0,
         awarded_marks=0.0,
-        scoring_status="missing",
+        scoring_status="missing_no_segment",
         student_writing=None
     )
 
@@ -499,8 +497,8 @@ def test_evaluation_report_segmented_writing():
             content = f.read()
 
         # 1. Heading reflects segmented writing
-        assert "## Stage 2: Segmented Student Answers by Question" in content
-        assert "The handwritten script has been segmented into question-aligned blocks" in content
+        assert "## 📝 Question-by-Question Evaluation & Student Answers" in content
+        assert "Each question below pairs the student's transcribed answer" in content
 
         # 2. Q1 segmented writing and metadata
         assert "### Question 1: Multiple Choice Questions" in content
@@ -514,11 +512,11 @@ def test_evaluation_report_segmented_writing():
 
         # 4. Missing question notice
         assert "### Question 5: Cloze Test with Clues" in content
-        assert "No student answer segment identified for this question (unattempted)" in content
+        assert "No student answer segment identified for this question (unattempted, or not recognised by the segmenter" in content
 
         # 5. Collapsible reference transcript is present
         assert "<details>" in content
-        assert "Click to expand full unsegmented canonical transcript (Reference)" in content
+        assert "Click to expand full unsegmented script transcript (Reference)" in content
 
 
 

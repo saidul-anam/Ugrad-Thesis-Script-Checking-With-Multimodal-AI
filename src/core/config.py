@@ -73,6 +73,12 @@ class PipelineStageConfig(BaseModel):
                     "collision regexes, lexicon pen-lift stitching, Stage 2 hand-written patch filters). They change "
                     "the transcript without visual evidence and raised CER on SE_10_Q1 (docs/EXTRACTION_FIXES_2026-10-06.md)."
     )
+    segmentation_llm_recovery: bool = Field(
+        False,
+        description="Ablation only: let the model place question boundaries (delayed-header micro-call and "
+                    "transition recovery) on top of the deterministic segmenter. Off by default so that "
+                    "re-segmenting the same transcript always gives the same answers (src/pipeline/answer_segmenter.py)"
+    )
     stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
     stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
     stage3b_thinking_mode: bool = Field(True, description="Stage 3b evidence arbitration thinking mode (deep allograph deliberation)")

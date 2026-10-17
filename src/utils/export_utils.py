@@ -76,6 +76,27 @@ def export_stage4_artifacts(result: Stage4EvaluationResult, script_dir: str):
         json.dump(result.model_dump(), f, ensure_ascii=False, indent=2)
 
 
+STATUS_BADGES = {
+    "scored": "Scored",
+    "unscored": "⚠️ Unscored",
+    "blank_answer": "Blank answer",
+    "missing_no_segment": "⚠️ No answer found",
+    "missing": "⚠️ Missing",  # evaluations written before the two cases were separated
+}
+
+
+def save_segmentation_diagnostics(diagnostics: Dict[str, Any], answers: List[Any], script_dir: str) -> str:
+    """Save how the transcript was split into questions: every part with its page and the rule that placed it,
+    each header correction or content recovery, questions left without text, and unattributed Stage 3 errors."""
+    os.makedirs(script_dir, exist_ok=True)
+    path = os.path.join(script_dir, "segmentation.json")
+    data = dict(diagnostics or {})
+    data["answers"] = [{"q_no": a.q_no, "words": a.word_count, "pages": list(a.page_numbers)} for a in answers or []]
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2, default=str)
+    return path
+
+
 def export_extraction_artifacts(result: ExtractionResult, script_dir: str):
     """Save all extraction stage artifacts (Stage 0, 0b, 1 to 3, JSON, CSV, transcripts, and summary)."""
     os.makedirs(script_dir, exist_ok=True)
@@ -611,7 +632,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         delta_str = f"{(qe.awarded_marks - gt_val):+.1f}" if gt_val is not None else "N/A"
         mode_str = getattr(qe, "task_mode", None) or "-"
         status = getattr(qe, "scoring_status", "scored")
-        status_badge = "Scored" if status == "scored" else ("⚠️ Missing" if status == "missing" else status.capitalize())
+        status_badge = STATUS_BADGES.get(status, status.capitalize())
 
         md_lines.append(
             f"| **Q{qe.q_no}** | {qe.q_name} | `{mode_str}` | {qe.max_marks:.1f} | **{qe.awarded_marks:.1f}** | {pct:.1f}% | {gt_str} | {delta_str} | `{status_badge}` |"
@@ -635,7 +656,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
             ans_info = writing_by_q.get(q_k, {})
             writing_text = (ans_info.get("writing") or "").strip()
             pages_list = ans_info.get("pages") or getattr(qe, "page_numbers", []) or []
-            pages_str = ", ".join(f"Page {p}" for p in sorted(pages_list)) if pages_list else "Unattempted"
+            pages_str = ", ".join(f"Page {p}" for p in sorted(pages_list)) if pages_list else "—"
             w_cnt = ans_info.get("word_count") or (len(writing_text.split()) if writing_text else 0)
 
             gt_val = qe.human_gt
@@ -646,7 +667,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
             pct = (qe.awarded_marks / qe.max_marks * 100.0) if qe.max_marks > 0 else 0.0
             mode_str = getattr(qe, "task_mode", None) or "-"
             status = getattr(qe, "scoring_status", "scored")
-            status_badge = "Scored" if status == "scored" else ("⚠️ Missing / Unattempted" if status == "missing" else status.capitalize())
+            status_badge = STATUS_BADGES.get(status, status.capitalize())
 
             md_lines.append(f"### Question {qe.q_no}: {qe.q_name}")
             md_lines.append(f"> **Mode**: `{mode_str}` | **Pages**: {pages_str} | **Word Count**: {w_cnt} words")
@@ -663,10 +684,13 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
                     ""
                 ])
             else:
-                md_lines.extend([
-                    "> ⚠️ *No student answer segment identified for this question (unattempted).* ",
-                    ""
-                ])
+                notice = {
+                    "blank_answer": "The answer segment for this question is blank (unattempted).",
+                    "missing_no_segment": "No student answer segment identified for this question (unattempted, "
+                                          "or not recognised by the segmenter; see segmentation.json).",
+                    "missing": "No student answer segment identified for this question (unattempted).",
+                }.get(status, "The answer text was not stored with this evaluation.")
+                md_lines.extend([f"> ⚠️ *{notice}* ", ""])
 
             # 2. Evaluation & Marks Breakdown
             md_lines.append("#### 📊 Evaluation & Marks Breakdown:")

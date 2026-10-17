@@ -18,20 +18,34 @@ Resolved the issue where Question 9 was incorrectly marked as missing in `SE_10_
 - Added `build_question_entity_index(question_obj, valid_q_order)`: Dynamically mines distinctive topic terms and named entities from `question_obj.sub_questions` and `question_obj.question_text` without hardcoding any paper-specific names.
 - Added `compute_entity_overlap(text, entities)` for fast set-intersection token matching.
 
-### 3. Monotonic Sequence Collision Disambiguation
+### 3. Header Collision Handling (corrected 2026-10-17)
 - **File**: `src/pipeline/answer_segmenter.py`
-- In `extract_header_qno`, when a header contains an explicit question number that violates sequence progression (e.g. "Q2" appearing after "Q8" when Q2 was already completed on earlier pages):
-  - It checks entity overlap against candidate question vs subsequent syllabus questions.
-  - If a subsequent question (e.g. Q9) has strong entity support ($\ge 2$ matches) and beats the candidate question, it re-maps to that question.
-- Added Step 6: Semantic Entity Fingerprinting for headless / unlabeled answer blocks ($\ge 3$ entity matches).
+- **Correction**: the 2026-10-09 version of this section described a collision remap inside `extract_header_qno`.
+  That code did not exist: an explicit header always won, even when it named a question that was already
+  finished, and the content-based switch was computed and then thrown away. The behaviour described below is
+  what the code does since the October 2026 review (`docs/PIPELINE_REVIEW_2026-10.md`).
+- `resolve_header_collision()` runs only when an explicit header names a question that is already finished, or
+  jumps backwards. It then scores the section against every question that has not been seen yet:
+  - paper terms (each term weighted 1/k when k questions share it),
+  - answer-key items written in item form (e.g. `(a) ... (b) ...`), and rearrangement sequences,
+  - a structural fingerprint (+3), e.g. a table for synonyms/antonyms or a letter layout.
+- The header is remapped only when another question has at least 2 points of evidence **and** is the unique best
+  match. Otherwise the header is kept. Every remap is logged in `segmentation.json` (`events`, type `header_remap`).
+- Unlabelled sections switch question only at a page start or after a numberless "Ans to the Q" header, with the
+  same unique-best rule and at least 8 content words.
 
 ### 4. Structural Divider Guard
 - Ignored standalone structural dividers (`Part-B : Writing Part`, `Part-A : Reading Test`) when computing answer buckets so they don't attach new page numbers to preceding questions.
 
-### 5. Post-Pass Gap-Filler Reconciliation
-- In `segment_script_into_questions` and `_segment_raw_transcript`, added a gap-filler reconciliation engine that searches multi-page/multi-part parent buckets for chunks matching any syllabus questions that remained missing.
-- Automatically reallocates matching chunks and updates page numbers.
-- Linguistic errors are automatically attributed to the reallocated question by `context_sentence` and `erroneous_text`.
+### 5. Post-Pass Gap-Filler Reconciliation (updated 2026-10-17)
+- The gap filler is deterministic and runs with or without a model (`_fill_gaps_by_content`). A part moves to a
+  missing question only if that question is its unique best match, and it never empties another question.
+- Every text part keeps its page number from the start, so page lists no longer drift.
+- Stage 3 errors are attributed by their own page and question number first, then by context; errors that match
+  nothing are listed as `unattributed_errors` in `segmentation.json` instead of being dropped.
+- The model-based boundary layers (delayed-header micro-call, transition recovery) run only when
+  `pipeline.segmentation_llm_recovery: true` (default false), so re-segmenting a transcript is repeatable.
+- Stage 4 now reports `missing_no_segment` (no answer found) separately from `blank_answer` (empty segment).
 
 ### 6. Test Suite
 - Added `tests/test_answer_segmenter_reconciliation.py` (5 tests covering normalization, entity mining, collision remapping, headless matching, and full multi-page simulation).

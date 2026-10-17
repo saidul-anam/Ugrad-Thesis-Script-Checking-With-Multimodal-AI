@@ -261,7 +261,7 @@ class QuestionEvaluationItem(BaseModel):
     # Rubric-driven scoring (mode-based rubrics)
     task_mode: Optional[str] = Field(None, description="A_ITEM | B_POINT | C_BAND | generic")
     task_type: Optional[str] = None
-    scoring_status: str = Field("scored", description="scored | unscored (model output unusable) | missing (no answer segment found)")
+    scoring_status: str = Field("scored", description="scored | unscored (model output unusable) | blank_answer (segment has no text) | missing_no_segment (no answer segment found)")
     items: List[Dict[str, Any]] = Field(default_factory=list, description="Per-item results (Mode A/B)")
     subscores: Dict[str, float] = Field(default_factory=dict, description="Criterion subscores (Mode C)")
     raw_total: Optional[float] = None

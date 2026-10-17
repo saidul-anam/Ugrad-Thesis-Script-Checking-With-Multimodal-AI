@@ -222,7 +222,7 @@ def summarize(rows: List[Dict[str, Any]], seed: int = 0) -> Dict[str, Any]:
     return {
         "scripts": scripts, "n_scripts": len(scripts), "n_questions": len(rows), "n_with_gt": len(with_gt),
         "n_scored_with_gt": len(scored),
-        "n_missing": sum(1 for r in rows if r["status"] == "missing"),
+        "n_missing": sum(1 for r in rows if r["status"] in ("missing", "missing_no_segment", "blank_answer")),
         "n_unscored": sum(1 for r in rows if r["status"] == "unscored"),
         "n_caps_applied": sum(1 for r in rows if r["cap"]),
         "mae_scored": mae(pairs_scored), "mae_including_missing": mae(pairs_all),

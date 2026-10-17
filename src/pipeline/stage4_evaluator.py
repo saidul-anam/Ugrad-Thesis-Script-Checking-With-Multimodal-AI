@@ -213,8 +213,9 @@ class Stage4Evaluator:
         Question-by-question evaluation. With a mode-based rubric (English NCTB framework) every
         question is scored by `stage4_modes` (model judges, code scores); otherwise the generic
         modular prompt is used. Unparseable outputs are `unscored`; questions expected by the rubric
-        or the ground truth but absent from the segmentation are `missing`. Both are excluded from
-        `mae_vs_human` and counted as 0 in `mae_including_missing`.
+        or the ground truth but absent from the segmentation are `missing_no_segment`; segments with no text
+        are `blank_answer`. All three are excluded from `mae_vs_human` and counted as 0 in
+        `mae_including_missing`; the last two are listed in `missing_questions`.
         """
         subject = rubric_data.get("subject", "English")
         question_evaluations: List[QuestionEvaluationItem] = []
@@ -247,9 +248,9 @@ class Stage4Evaluator:
             answered.add(q_canon)
             spec = specs.get(q_canon) if rubric_driven else None
 
-            # Fast-path for blank / empty answers: certify 0.0 marks unattempted without LLM call
+            # A segment exists but holds no text: 0 marks without a model call
             if ans.word_count == 0 or not ans.answer_text.strip():
-                print(f"[Stage 4 Modular] [{idx}/{len(answers)}] Q{ans.q_no} is blank/empty -> 0.0 marks (unattempted)")
+                print(f"[Stage 4 Modular] [{idx}/{len(answers)}] Q{ans.q_no} is blank -> 0.0 marks (blank_answer)")
                 gt_val = gt_canon.get(q_canon)
                 qe = QuestionEvaluationItem(
                     q_no=ans.q_no,
@@ -257,13 +258,13 @@ class Stage4Evaluator:
                     page_numbers=ans.page_numbers,
                     max_marks=q_max_marks,
                     awarded_marks=0.0,
-                    scoring_status="missing",
+                    scoring_status="blank_answer",
                     task_mode=({"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[spec.mode] if spec else "generic"),
                     task_type=(spec.task_type if spec else None),
                     human_ground_truth=gt_val,
                     content_raw_score=0.0,
                     linguistic_penalty=0.0,
-                    examiner_feedback="No answer written for this question (unattempted by student). 0 marks awarded.",
+                    examiner_feedback="The answer to this question is blank (unattempted by student). 0 marks awarded.",
                     student_writing=ans.answer_text,
                 )
                 if gt_val is not None:
@@ -434,9 +435,10 @@ class Stage4Evaluator:
             gt_val = gt_canon.get(q)
             qe = QuestionEvaluationItem(
                 q_no=q, q_name=f"Question {q}", page_numbers=[], max_marks=max_mark, awarded_marks=0.0,
-                scoring_status="missing", task_mode=({"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[spec.mode] if spec else None),
+                scoring_status="missing_no_segment", task_mode=({"A": "A_ITEM", "B": "B_POINT", "C": "C_BAND"}[spec.mode] if spec else None),
                 task_type=(spec.task_type if spec else None), human_ground_truth=gt_val,
-                examiner_feedback="No answer segment found for this question (unattempted by student). 0 marks awarded.",
+                examiner_feedback=("No answer to this question was found in the script (unattempted, or not recognised "
+                                   "by the segmenter; see segmentation.json). 0 marks awarded."),
                 student_writing=None,
             )
             if gt_val is not None:

@@ -163,7 +163,7 @@ def test_evaluator_rubric_driven_with_mock_engine_missing_and_totals():
     assert by_q["6"].awarded_marks == 10.0
     assert by_q["1(B)"].task_mode == "B_POINT" and by_q["1(B)"].awarded_marks == 7.5
     assert by_q["7"].task_mode == "C_BAND" and by_q["7"].awarded_marks == 7.5 and by_q["7"].performance_band == "Band 3"
-    assert "8" in res.missing_questions and by_q["8"].scoring_status == "missing"
+    assert "8" in res.missing_questions and by_q["8"].scoring_status == "missing_no_segment"
     assert res.mae_vs_human is not None and res.mae_including_missing is not None
     assert res.mae_including_missing >= res.mae_vs_human - 1e-9 or by_q["8"].human_ground_truth is None
     assert res.scored_with_gt == 4
