@@ -200,6 +200,8 @@ def lint_paper(paper_id: str, rubric: Dict[str, Any], question_obj: Any, answer_
                         add(ERROR, q, f"key item ({it.get('label')}) has no accepted answers")
                 if _norm_task(spec.task_type) == "rearrangement" and not entry.get("correct_sequence"):
                     add(ERROR, q, "rearrangement key has no correct_sequence")
+                if entry.get("scoring") and str(entry["scoring"]).lower() not in ("positional", "relative", "max"):
+                    add(ERROR, q, f"unknown rearrangement scoring '{entry['scoring']}' (positional, relative or max)")
         elif spec.mode == "B":
             top = max(spec.scale) if spec.scale else None
             if top is not None and spec.mark_per_item and abs(top - spec.mark_per_item) > 1e-6:

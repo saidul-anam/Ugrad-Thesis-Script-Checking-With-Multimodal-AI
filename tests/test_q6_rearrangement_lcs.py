@@ -99,3 +99,14 @@ def test_q6_script_0010_empirical():
     assert res.awarded >= 1.0
     assert any("slot matches: 1" in n for n in res.notes)
 
+
+
+def test_key_scoring_convention_picks_positional_or_relative():
+    from src.pipeline.stage4_modes import QuestionSpec, score_mode_a
+    spec = QuestionSpec(q_no="7", mode="A", task_type="Rearrangement", max_mark=4.0, mark_per_item=1.0, n_items=4)
+    parsed = {"student_sequence": ["b", "c", "d", "a"]}           # every letter shifted one slot: 0 slots, 3 in order
+    key = {"correct_sequence": ["a", "b", "c", "d"], "mark_per_item": 1.0}
+    assert score_mode_a(parsed, spec, dict(key, scoring="positional")).awarded == 0.0
+    assert score_mode_a(parsed, spec, dict(key, scoring="relative")).awarded == 3.0
+    res = score_mode_a(parsed, spec, key)                          # default: the better of the two
+    assert res.awarded == 3.0 and sum(i["marks_awarded"] for i in res.items) == 3.0

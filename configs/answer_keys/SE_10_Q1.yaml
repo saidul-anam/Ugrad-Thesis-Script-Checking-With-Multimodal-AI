@@ -102,6 +102,9 @@ mode_a:
     max_mark: 8
     mark_per_item: 1.0
     correct_sequence: ["c", "g", "a", "e", "f", "h", "b", "d"]
+    # scoring convention chosen on the dev split by agreement with teacher marks (objective question):
+    # positional MAE 0.17 vs relative-order 0.52 (23 dev scripts). See docs/PIPELINE_REVIEW_2026-10.md
+    scoring: positional
     canonical_story:
       1: "c. Many years ago there lived a King named Solomon."
       2: "g. He was very wise and helped people in many ways."

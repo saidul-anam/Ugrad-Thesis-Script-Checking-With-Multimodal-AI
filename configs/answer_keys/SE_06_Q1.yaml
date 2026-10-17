@@ -108,6 +108,9 @@ mode_a:
     total_marks: 8.0
     mark_per_item: 1.0
     correct_sequence: ["b", "a", "d", "f", "c", "h", "e", "g"]
+    # scoring convention chosen on the dev split by agreement with teacher marks (objective question):
+    # positional MAE 0.57 vs relative-order 1.57 (14 dev scripts). See docs/PIPELINE_REVIEW_2026-10.md
+    scoring: positional
     canonical_order: ["b", "a", "d", "f", "c", "h", "e", "g"]
     # copied from the question paper; shown to the model so it can map sentences a student rewrote to letters
     sentences:

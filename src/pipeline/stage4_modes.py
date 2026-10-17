@@ -681,16 +681,19 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         # 2. Dynamic programming Longest Common Subsequence (LCS) relative order alignment
         lcs_len, matched_student, matched_expected = compute_lcs_alignment(student, expected_clean)
 
-        # Harmonized score: Take the maximum of positional matches and relative order matches
-        total_correct = max(pos_correct, lcs_len)
+        # The key's `scoring` picks the convention: "positional" (a mark per letter in its exact slot),
+        # "relative" (longest run of letters in the right relative order), default "max" of the two
+        convention = str(key_entry.get("scoring") or "max").lower()
+        use_lcs = convention == "relative" or (convention == "max" and lcs_len >= pos_correct)
+        total_correct = lcs_len if use_lcs else pos_correct
 
         for pos, letter in enumerate(expected_clean):
             got = student[pos] if pos < len(student) else ""
             is_exact = pos in exact_slots
             is_lcs = pos in matched_expected
-            is_ok = is_exact or (lcs_len >= pos_correct and is_lcs)
+            is_ok = is_lcs if use_lcs else is_exact
 
-            if is_exact:
+            if is_ok and is_exact:
                 detail = "correct"
             elif is_ok:
                 detail = "correct (relative order)"
@@ -712,7 +715,7 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         res.awarded = min(spec.max_mark, total_correct * mpi)
         res.raw_total = res.awarded
         res.notes.append(
-            f"rearrangement scored: {total_correct}/{len(seq)} (slot matches: {pos_correct}, LCS relative order matches: {lcs_len})"
+            f"rearrangement scored {convention}: {total_correct}/{len(seq)} (slot matches: {pos_correct}, LCS relative order matches: {lcs_len})"
         )
         return res
 

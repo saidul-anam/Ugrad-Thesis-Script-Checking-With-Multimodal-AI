@@ -123,6 +123,9 @@ mode_a:
     total_marks: 8.0
     mark_per_item: 1.0
     correct_sequence: ["c", "f", "e", "g", "a", "h", "d", "b"]
+    # scoring convention chosen on the dev split by agreement with teacher marks (objective question):
+    # positional MAE 1.06 vs relative-order 1.33 (18 dev scripts; 4 reads in writing order excluded). See docs/PIPELINE_REVIEW_2026-10.md
+    scoring: positional
     canonical_order: ["c", "f", "e", "g", "a", "h", "d", "b"]
 
 
