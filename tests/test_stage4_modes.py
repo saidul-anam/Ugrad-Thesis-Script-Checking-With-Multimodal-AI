@@ -10,7 +10,7 @@ from src.pipeline.stage4_modes import (
     _matches_accepted, selected_option_labels,
 )
 
-RUBRIC = yaml.safe_load(open("configs/rubrics/english_writing.yaml", "r", encoding="utf-8"))
+RUBRIC = yaml.safe_load(open("configs/rubrics/english_class11_hsc.yaml", "r", encoding="utf-8"))
 KEY = load_answer_key("SE_11_Q1")
 
 
@@ -36,7 +36,7 @@ def test_rubric_specs_loaded_per_mode():
     assert specs["7"].mode == "C" and specs["7"].criteria_ceilings["context_content_data"] == 3
     assert specs["7"].criteria_ceilings["organization_cohesion"] == 3
     assert specs["10"].layout_components["letter"]
-    assert specs["9"].bands["band_4"] == "6-7"
+    assert specs["9"].bands["band_4"] == "6.0 - 7.0"
     assert "summary_violations" in specs["7"].hard_caps
     assert load_rubric_specs({"subject": "Bangla", "penalties": {}}) == {}
 

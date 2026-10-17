@@ -114,7 +114,7 @@ def parse_sub_questions_from_text(question_text: str, lang: str = "english") -> 
 
     # 1. Try aligning with official rubric YAML if available
     lang_lower = (lang or "english").lower()
-    rubric_file = "configs/rubrics/english_writing.yaml" if "english" in lang_lower else "configs/rubrics/bangla_creative_question.yaml"
+    rubric_file = "configs/rubrics/english_class11_hsc.yaml" if "english" in lang_lower else "configs/rubrics/bangla_creative_question.yaml"
     rubric_path = Path(rubric_file)
 
     rubric_sub_qs: List[Dict[str, Any]] = []
@@ -192,7 +192,7 @@ def load_question_from_rubric(
             rubric_path = "configs/rubrics/bangla_creative_question.yaml"
             default_qid = "SB_11_Q1"
         else:
-            rubric_path = "configs/rubrics/english_writing.yaml"
+            rubric_path = "configs/rubrics/english_class11_hsc.yaml"
             default_qid = "SE_11_Q1"
     else:
         default_qid = Path(rubric_path).stem

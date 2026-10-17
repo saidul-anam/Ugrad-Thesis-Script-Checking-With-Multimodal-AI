@@ -74,7 +74,7 @@ from src.utils.ground_truth import (
 from src.utils.script_files import paper_folder_name
 from src.utils.provenance import build_provenance
 from src.utils.stage_timer import StageTimer, merge_timings
-from src.utils.rubric_resolver import resolve_answer_key_path, resolve_penalty_config_path, resolve_rubric_path
+from src.utils.rubric_resolver import resolve_answer_key_path, resolve_penalty_config_path, resolve_rubric_path, rubric_mismatches
 from src.pipeline.stage4_modes import load_rubric_specs
 
 
@@ -1435,7 +1435,7 @@ class ScriptCheckingPipeline:
         elif self.rubric_path and not ("bangla" in self.rubric_path and is_english):
             active_rubric_path = self.rubric_path
         else:
-            active_rubric_path = "configs/rubrics/english_writing.yaml" if is_english else "configs/rubrics/bangla_creative_question.yaml"
+            active_rubric_path = resolve_rubric_path(script_id) if is_english else "configs/rubrics/bangla_creative_question.yaml"
 
         rubric_data = self._load_rubric(active_rubric_path)
 
@@ -1457,6 +1457,11 @@ class ScriptCheckingPipeline:
                 lang=lang,
                 questions_root=questions_root
             )
+
+        mismatch = rubric_mismatches(question_obj, rubric_data)
+        if mismatch:
+            raise ValueError(f"Rubric {active_rubric_path} does not fit question paper {question_obj.question_id}: "
+                             + "; ".join(mismatch) + ". Pass the paper's rubric or fix the files (scripts/lint_rubrics.py).")
 
         decoding = self.config.decoding
         active_thinking = getattr(self.config.pipeline, "stage4_thinking_mode", decoding.thinking_mode) if thinking_mode is None else thinking_mode

@@ -67,6 +67,17 @@ def export_teacher_marks_artifacts(marks: List[TeacherMarkItem], script_dir: str
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+def _key_status_lines(provenance: Dict[str, Any]) -> List[str]:
+    """Report line naming the rubric and answer key used, and whether a teacher has verified the key."""
+    rubric = (provenance.get("rubric") or {}).get("path")
+    key = provenance.get("answer_key") or {}
+    if not rubric and not key.get("path"):
+        return []
+    status = {True: "verified by a teacher", False: "**not yet verified by a teacher**"}.get(key.get("verified"), "")
+    key_txt = f"`{os.path.basename(key['path'])}`" + (f" ({status})" if status else "") if key.get("path") else "none"
+    return [f"- **Rubric / Answer Key**: `{os.path.basename(rubric or '')}` / {key_txt}"]
+
+
 def export_stage4_artifacts(result: Stage4EvaluationResult, script_dir: str):
     """Save Stage 4 rubric scoring outputs."""
     os.makedirs(script_dir, exist_ok=True)
@@ -553,6 +564,7 @@ def export_report_markdown(report: CompleteEvaluationReport, output_path: str) -
         f"- **Question Type**: {report.stage4_evaluation.question_type}",
         f"- **Evaluation Architecture**: `{'Modular (Question-Mapped)' if getattr(report.stage4_evaluation, 'eval_mode', None) == 'modular' else 'Monolithic (Single-Pass)'}`",
         f"- **Matched Question**: `{report.question_id or 'General'}`",
+        *_key_status_lines(getattr(report.stage4_evaluation, "provenance", None) or {}),
         f"- **Final Score**: **{report.stage4_evaluation.final_score:.2f} / {report.stage4_evaluation.total_max_marks:.2f}** ({report.stage4_evaluation.percentage:.1f}%)",
         f"- **Raw Content Score**: {report.stage4_evaluation.content_raw_score:.2f}",
         f"- **Linguistic Penalty**: -{report.stage4_evaluation.linguistic_penalty:.2f}",

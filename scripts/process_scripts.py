@@ -208,7 +208,7 @@ def interactive_wizard(args):
     console.print(Panel(
         f"• [cyan]Language / Subject (--lang):[/cyan] [bold yellow]{args.lang.capitalize()}[/bold yellow]\n"
         f"• [cyan]Scripts to Process (--top):[/cyan] [bold white]{top_label}[/bold white]\n"
-        f"• [cyan]Rubric (--rubric):[/cyan] [bold white]{args.rubric}[/bold white]\n"
+        f"• [cyan]Rubric (--rubric):[/cyan] [bold white]{args.rubric or 'per paper (auto)'}[/bold white]\n"
         f"• [cyan]Quantization (--quant):[/cyan] [bold white]{args.quant}[/bold white]\n"
         f"• [cyan]Engine Mode (--mock):[/cyan] {engine_label}\n"
         f"• [cyan]Thinking Mode (--thinking):[/cyan] {thinking_label}\n"
@@ -406,12 +406,9 @@ def main():
         args.output_dir = f"outputs/runs/{args.lang}"
     if not args.gdrive_url:
         args.gdrive_url = GDRIVE_FOLDERS.get(args.lang, DEFAULT_GDRIVE_FOLDER_BANGLA)
-    if not args.rubric:
-        args.rubric = (
-            "configs/rubrics/bangla_creative_question.yaml"
-            if args.lang == "bangla"
-            else "configs/rubrics/english_writing.yaml"
-        )
+    if not args.rubric and args.lang == "bangla":
+        args.rubric = "configs/rubrics/bangla_creative_question.yaml"
+    # English: no default; Stage 4 resolves each paper's own rubric (src/utils/rubric_resolver.py)
 
     # If running in interactive terminal and non-interactive is not requested, launch wizard
     if not args.non_interactive and sys.stdin.isatty():
@@ -426,7 +423,7 @@ def main():
         f"[green]Google Drive Folder:[/green] {args.gdrive_url}\n"
         f"[green]Target PDF Directory:[/green] {args.pdf_dir}\n"
         f"[green]Top Limit (--top):[/green] {args.top or 'All available PDFs'}\n"
-        f"[green]Rubric (--rubric):[/green] {args.rubric}\n"
+        f"[green]Rubric (--rubric):[/green] {args.rubric or 'per paper (auto)'}\n"
         f"[green]Quantization (--quant):[/green] {args.quant}\n"
         f"[yellow]Execution Mode:[/yellow] {'Mock (Dev PC)' if args.mock else 'CUDA RTX 5090 (Gemma 4 31B IT)'}\n"
         f"[yellow]Stage-by-Stage Output Root:[/yellow] {args.output_dir}",

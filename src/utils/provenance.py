@@ -35,6 +35,17 @@ def git_commit() -> Optional[str]:
         return None
 
 
+def key_verified(answer_key_path: Optional[str]) -> Optional[bool]:
+    """The answer key's `verified:` flag (True once a teacher has checked it); None without a key."""
+    if not answer_key_path or not Path(answer_key_path).is_file():
+        return None
+    try:
+        import yaml
+        return (yaml.safe_load(Path(answer_key_path).read_text(encoding="utf-8")) or {}).get("verified") is True
+    except Exception:
+        return None
+
+
 def build_provenance(config: Any, rubric_path: Optional[str], answer_key_path: Optional[str],
                      penalty_path: Optional[str]) -> Dict[str, Any]:
     try:
@@ -46,7 +57,8 @@ def build_provenance(config: Any, rubric_path: Optional[str], answer_key_path: O
         "git_commit": git_commit(),
         "config_sha256": cfg_hash,
         "rubric": {"path": rubric_path, "sha256": file_sha256(rubric_path)},
-        "answer_key": {"path": answer_key_path, "sha256": file_sha256(answer_key_path)},
+        "answer_key": {"path": answer_key_path, "sha256": file_sha256(answer_key_path),
+                       "verified": key_verified(answer_key_path)},
         "penalty_profile": {"path": penalty_path, "sha256": file_sha256(penalty_path)},
         "scoring_code_sha256": {p: file_sha256(p) for p in SCORING_CODE},
     }

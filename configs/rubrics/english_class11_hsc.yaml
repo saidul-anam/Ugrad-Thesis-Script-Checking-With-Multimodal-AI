@@ -21,7 +21,7 @@ question_map:
     task_type: MCQ
     mode: A
     standard_marks: 5
-    breakdown: "0.5 x 10 = 5"
+    breakdown: "1 x 5 = 5"        # the paper prints 0.5x10 but has 5 items worth 5 marks (as in the answer key)
   - question_no: "1(B)"
     printed_task: "Read the passage and answer the following questions"
     task_type: Short_Answer
@@ -127,9 +127,9 @@ mode_specifications:
     formula: "total_score = correct_items * mark_per_item (capped at MAX_MARK)"
     tasks:
       Q1_A_MCQ:
-        allocation: "0.5 x 10 = 5"
+        allocation: "1 x 5 = 5"
         rules:
-          - "Binary credit (0.5 or 0)."
+          - "Binary credit (1 or 0)."
           - "Multiple selections earn 0."
           - "Option letter, text, or both accepted."
           - "Spelling errors in written text do not penalise."
@@ -202,31 +202,32 @@ mode_specifications:
         audit_flag: external_facts_or_personal_opinions
         max_awarded: 6.0
         applies_to: ["Graph_Chart"]
+    # every half mark falls in exactly one band (a half mark stays in the band of the whole mark below it)
     performance_bands_by_max_mark:
       max_10:
-        band_4: "8-10"
-        band_3: "6-7"
-        band_2: "4-5"
-        band_1: "1-3"
-        band_0: "0"
+        band_4: "8.0 - 10.0"
+        band_3: "6.0 - 7.5"
+        band_2: "4.0 - 5.5"
+        band_1: "1.0 - 3.5"
+        band_0: "0.0 - 0.5"
       max_8:
-        band_4: "7-8"
-        band_3: "5-6"
-        band_2: "3-4"
-        band_1: "1-2"
-        band_0: "0"
+        band_4: "7.0 - 8.0"
+        band_3: "5.0 - 6.5"
+        band_2: "3.0 - 4.5"
+        band_1: "1.0 - 2.5"
+        band_0: "0.0 - 0.5"
       max_7:
-        band_4: "6-7"
-        band_3: "4-5"
-        band_2: "3"
-        band_1: "1-2"
-        band_0: "0"
+        band_4: "6.0 - 7.0"
+        band_3: "4.0 - 5.5"
+        band_2: "3.0 - 3.5"
+        band_1: "1.0 - 2.5"
+        band_0: "0.0 - 0.5"
       max_5:
-        band_4: "4-5"
-        band_3: "3"
-        band_2: "2"
-        band_1: "1"
-        band_0: "0"
+        band_4: "4.0 - 5.0"
+        band_3: "3.0 - 3.5"
+        band_2: "2.0 - 2.5"
+        band_1: "1.0 - 1.5"
+        band_0: "0.0 - 0.5"
     tasks:
       Q3_Summary:
         max_mark: 10

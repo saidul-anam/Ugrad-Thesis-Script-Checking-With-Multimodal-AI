@@ -123,12 +123,11 @@ def resolve_rubric_path(
       1. Custom path (if exists)
       2. Exact paper rubric: configs/rubrics/<paper_id>.yaml
       3. Class-specific rubric: configs/rubrics/english_class<N>_*.yaml or english_class<N>.yaml
-      4. Tier-level rubric:
-         - Primary (3-5): configs/rubrics/english_primary.yaml
-         - Junior (6-8): configs/rubrics/english_junior.yaml
-         - Secondary (9-10): configs/rubrics/english_class10_ssc.yaml
-         - Higher Secondary (11-12): configs/rubrics/english_class11_hsc.yaml
-      5. Fallback: configs/rubrics/english_writing.yaml
+      4. Nearest class rubric: classes 9-10 -> english_class10_ssc.yaml, 11-12 -> english_class11_hsc.yaml
+      5. Fallback: configs/rubrics/english_class10_ssc.yaml
+
+    A rubric found by steps 4-5 is a guess: Stage 4 refuses it unless its questions and marks match the
+    question paper (rubric_mismatches), instead of silently scoring one paper with another paper's rubric.
     """
     if custom_rubric_path and os.path.exists(custom_rubric_path):
         return custom_rubric_path
@@ -159,16 +158,8 @@ def resolve_rubric_path(
             if matches:
                 return str(matches[0])
 
-        # 3. Tier-level rubrics
-        if class_num <= 5:
-            p_prim = rubrics_dir / "english_primary.yaml"
-            if p_prim.exists():
-                return str(p_prim)
-        elif 6 <= class_num <= 8:
-            p_jun = rubrics_dir / "english_junior.yaml"
-            if p_jun.exists():
-                return str(p_jun)
-        elif class_num in (9, 10):
+        # 3. Nearest class rubric
+        if class_num in (9, 10):
             p_sec = rubrics_dir / "english_class10_ssc.yaml"
             if p_sec.exists():
                 return str(p_sec)
@@ -177,10 +168,6 @@ def resolve_rubric_path(
             if p_hsc.exists():
                 return str(p_hsc)
 
-    # General fallback
-    p_leg = rubrics_dir / "english_writing.yaml"
-    if p_leg.exists():
-        return str(p_leg)
     return str(rubrics_dir / "english_class10_ssc.yaml")
 
 
@@ -262,6 +249,33 @@ def resolve_penalty_config_path(
     return str(root / "english_class10.yaml")
 
 
+def rubric_mismatches(question_obj: Optional[ExtractedQuestion], rubric_data: Optional[Dict[str, Any]]) -> List[str]:
+    """
+    Reasons a mode-based rubric cannot score this question paper: questions on one side only, or different
+    marks for the same question. Empty when they agree, and for rubrics without a question_map (legacy).
+    """
+    from src.utils.ground_truth import canonicalize_question_key
+
+    qmap = (rubric_data or {}).get("question_map") or []
+    if not question_obj or not question_obj.sub_questions or not qmap:
+        return []
+    in_rubric = {canonicalize_question_key(str(q.get("question_no", ""))): float(q.get("standard_marks") or 0.0) for q in qmap}
+    in_paper = {canonicalize_question_key(str(sq.get("q_no") or "")): float(sq.get("max_marks") or sq.get("marks") or 0.0)
+                for sq in question_obj.sub_questions}
+    order = lambda q: (len(q), q)
+    problems = []
+    missing = sorted(set(in_paper) - set(in_rubric), key=order)
+    extra = sorted(set(in_rubric) - set(in_paper), key=order)
+    if missing:
+        problems.append(f"paper questions missing from the rubric: {', '.join(missing)}")
+    if extra:
+        problems.append(f"rubric questions not on the paper: {', '.join(extra)}")
+    for q in sorted(set(in_paper) & set(in_rubric), key=order):
+        if abs(in_paper[q] - in_rubric[q]) > 1e-6:
+            problems.append(f"Q{q} is worth {in_paper[q]:g} on the paper but {in_rubric[q]:g} in the rubric")
+    return problems
+
+
 def validate_paper_integrity(
     question_obj: Optional[ExtractedQuestion],
     rubric_data: Optional[Dict[str, Any]] = None,
@@ -294,6 +308,7 @@ def validate_paper_integrity(
             clean_q = re.sub(r'\(.*?\)', '', q_no).strip()
             if q_no not in covered_questions and clean_q not in covered_questions:
                 errors.append(f"Question Q{q_no} is present in paper but missing from rubric scoring modes.")
+        errors.extend(rubric_mismatches(question_obj, rubric_data))
 
     is_valid = len(errors) == 0
     return is_valid, errors

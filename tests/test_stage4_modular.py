@@ -1,5 +1,6 @@
 import os
 import tempfile
+import yaml
 import pytest
 from src.core.config import PipelineConfig
 from src.core.schemas import (
@@ -218,14 +219,16 @@ def test_orchestrator_modular_vs_monolithic():
         paper="1st Paper",
         total_marks=100.0,
         question_text="Q1: Choose the right answer",
-        sub_questions=[{"q_no": "1(A)", "marks": 5.0, "title": "MCQ"}]
+        # the whole paper: Stage 4 refuses a rubric whose questions and marks differ from the paper's
+        sub_questions=[{"q_no": str(q["question_no"]), "marks": float(q["standard_marks"]), "title": q["task_type"]}
+                       for q in yaml.safe_load(open("configs/rubrics/english_class11_hsc.yaml"))["question_map"]]
     )
 
     with tempfile.TemporaryDirectory() as tmpdir:
         # Test modular mode
         rep_modular = pipeline.evaluate_extracted_script(
             extraction_input=extraction,
-            rubric_path="configs/rubrics/english_writing.yaml",
+            rubric_path="configs/rubrics/english_class11_hsc.yaml",
             question_input=question_obj,
             output_dir=tmpdir,
             eval_mode="modular"
@@ -237,7 +240,7 @@ def test_orchestrator_modular_vs_monolithic():
         # Test monolithic mode
         rep_monolithic = pipeline.evaluate_extracted_script(
             extraction_input=extraction,
-            rubric_path="configs/rubrics/english_writing.yaml",
+            rubric_path="configs/rubrics/english_class11_hsc.yaml",
             question_input=question_obj,
             output_dir=tmpdir,
             eval_mode="monolithic"

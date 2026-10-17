@@ -54,7 +54,8 @@ from src.utils.rubric_resolver import (
     resolve_answer_key_path,
     resolve_penalty_config_path,
     detect_class_level,
-    validate_paper_integrity
+    validate_paper_integrity,
+    rubric_mismatches
 )
 from scripts.extract_questions import extract_single_question
 
@@ -526,6 +527,13 @@ def main():
                 r_dict = yaml.safe_load(f)
             paper_total = float(q_obj_check.total_marks or r_dict.get("total_marks") or 100.0)
             is_valid, validation_errors = validate_paper_integrity(q_obj_check, r_dict, expected_total_marks=paper_total)
+            mismatch = rubric_mismatches(q_obj_check, r_dict)
+            if mismatch:
+                for err in mismatch:
+                    console.print(f"[red]✗ Rubric {args.rubric} does not fit {paper_id}: {err}[/red]")
+                console.print("[red]Refusing to score with a rubric written for a different paper. Fix the files "
+                              "(python scripts/lint_rubrics.py) or pass the right one with --rubric.[/red]")
+                sys.exit(1)
             if is_valid:
                 console.print(f"[bold green]✓ Paper & Rubric Integrity Certified:[/bold green] {paper_total:g} Marks, {len(q_obj_check.sub_questions)} questions ({class_level})")
             else:
