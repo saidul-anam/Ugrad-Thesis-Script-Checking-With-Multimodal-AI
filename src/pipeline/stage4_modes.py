@@ -18,6 +18,7 @@ Nothing here awards marks on a parse failure: the evaluator marks such questions
 import difflib
 import functools
 import json
+import math
 import os
 import re
 from dataclasses import dataclass, field
@@ -181,7 +182,8 @@ def key_for_question(answer_key: Dict[str, Any], q_no: str) -> Tuple[str, Dict[s
 # Helpers
 # ---------------------------------------------------------------------------
 def snap_half(x: float) -> float:
-    return round(round(float(x) * 2) / 2, 1)
+    """Nearest half mark, halves rounded up (7.25 -> 7.5, 7.75 -> 8.0); Python's round() rounds halves to even."""
+    return round(math.floor(float(x) * 2 + 0.5 + 1e-9) / 2, 1)
 
 
 def band_for(score: float, bands: Dict[str, str]) -> Optional[str]:
@@ -461,31 +463,53 @@ TASK:
 Output ONLY JSON: {schema}"""
 
 
-def build_mode_b_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, key_entry: Dict[str, Any], question_prompt_text: str) -> str:
+def items_to_score(spec: QuestionSpec, key_entry: Dict[str, Any]) -> int:
+    """How many items earn marks: the key's `answer_any`, else the rubric allocation ('2 x 5' -> 5), else the
+    number of key items. For "answer any N" questions the first N items the student attempted are scored."""
+    return int(key_entry.get("answer_any") or spec.n_items or len(key_entry.get("items") or []) or 5)
+
+
+_BLANK_CANDIDATE_RE = re.compile(r"^\s*(?:not\s+(?:attempted|answered|written|found)|no\s+answer|n/?a|none|-+|\u2014)?\s*\.?\s*$", re.I)
+
+
+def is_blank_candidate(text: Any) -> bool:
+    """True for an empty item or the placeholders models write for one ('Not attempted', 'N/A', '-')."""
+    return bool(_BLANK_CANDIDATE_RE.match(str(text or "")))
+
+
+def build_mode_b_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, key_entry: Dict[str, Any], question_prompt_text: str,
+                        source_text: str = "") -> str:
     avail = float(key_entry.get("marks_available") or spec.mark_per_item or 2.0)
     scale_lines = "\n".join(f"  {v:g}: {d}" for v, d in sorted(spec.scale.items(), reverse=True)) or f"  {avail:g}: fully correct\n  0: wrong or absent"
     rules = "\n".join(f"  - {r}" for r in spec.rules)
+    n_score = items_to_score(spec, key_entry)
     if key_entry.get("items"):
-        ref = "\n".join(
+        ref = "REFERENCE ANSWER KEY (from the passage):\n" + "\n".join(
             f"  ({it.get('label')}) {it.get('question', '')}\n      key points: " + "; ".join(it.get("key_points", []))
             for it in key_entry["items"]
         )
-        n_items = len(key_entry["items"])
-        item_note = "Score each lettered item (a)-(e)."
+        item_note = "Score every item the student attempted, listed in the order the student wrote them, using the item labels above."
+        if n_score < len(key_entry["items"]):
+            item_note += f" The student must answer any {n_score}; list every attempted item anyway (the software counts the first {n_score} written)."
+    elif key_entry.get("sequence_points"):
+        ref = (f"REFERENCE ANSWER KEY (expected content in passage order; any {n_score} earn credit):\n"
+               + "\n".join(f"    - {p}" for p in key_entry["sequence_points"]))
+        item_note = f"Score each of the {n_score} student boxes/items in order (label them 1..{n_score})."
     else:
-        pts = key_entry.get("sequence_points") or []
-        ref = "  Expected content in passage order (any 5 earn credit):\n" + "\n".join(f"    - {p}" for p in pts)
-        n_items = spec.n_items or 5
-        item_note = f"Score each of the {n_items} student boxes/items in order (label them 1..{n_items})."
+        ref = ("REFERENCE ANSWERS: none are available for this question. Judge each answer for accuracy and relevance "
+               "against the question" + (" and the source passage below." if source_text.strip() else " itself."))
+        if source_text.strip():
+            ref += f"\nSOURCE PASSAGE:\n\"\"\"\n{source_text.strip()[:1500]}\n\"\"\""
+        item_note = (f"Score every item the student attempted, listed in the order the student wrote them, labelled as the "
+                     f"student labelled them. The software counts the first {n_score} attempted items.")
     clean_ans = clean_rubric_answer(answer.answer_text)
-    return f"""{MODE_B_TAG} for Question {answer.q_no} ({spec.task_type}, {n_items} items x {avail:g} marks = {spec.max_mark:g}).
+    return f"""{MODE_B_TAG} for Question {answer.q_no} ({spec.task_type}, {n_score} items x {avail:g} marks = {spec.max_mark:g}).
 
 OFFICIAL QUESTION:
 \"\"\"
 {question_prompt_text.strip()[:1800]}
 \"\"\"
 
-REFERENCE ANSWER KEY (from the passage):
 {ref}
 
 STUDENT'S ANSWER (verified transcription):
@@ -730,9 +754,20 @@ def score_mode_b(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
     avail = float(key_entry.get("marks_available") or spec.mark_per_item or 2.0)
     allowed = sorted(spec.scale.keys()) if spec.scale else [0.0, 0.5, 1.0, 1.5, 2.0]
     allowed = [v for v in allowed if v <= avail] or [0.0, avail]
-    n_items = len(key_entry.get("items") or []) or spec.n_items or 5
+    n_score = items_to_score(spec, key_entry)
     total = 0.0
-    for it in (parsed.get("items") or [])[:n_items]:
+    counted = 0
+    for it in (parsed.get("items") or []):
+        cand = str(it.get("candidate_answer", ""))
+        row = {"item_label": str(it.get("item_label", "")).strip("().: "), "candidate_answer": cand[:160],
+               "marks_available": avail, "rationale": str(it.get("rationale", ""))[:200]}
+        if "candidate_answer" in it and is_blank_candidate(cand):
+            res.items.append({**row, "status": "not_attempted", "marks_awarded": 0.0})
+            continue
+        if counted >= n_score:      # "answer any N": only the first N attempted items are marked
+            res.items.append({**row, "status": "not_counted", "marks_awarded": 0.0})
+            continue
+        counted += 1
         try:
             m = float(it.get("marks_awarded", 0.0))
         except (TypeError, ValueError):
@@ -740,9 +775,10 @@ def score_mode_b(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         m = max(0.0, min(avail, m))
         m = min(allowed, key=lambda v: abs(v - m))          # clamp to the discrete scale
         total += m
-        res.items.append({"item_label": str(it.get("item_label", "")).strip("().: "), "candidate_answer": str(it.get("candidate_answer", ""))[:160],
-                          "status": "correct" if m >= avail else ("incorrect" if m == 0 else "partially_correct"),
-                          "marks_awarded": m, "marks_available": avail, "rationale": str(it.get("rationale", ""))[:200]})
+        res.items.append({**row, "status": "correct" if m >= avail else ("incorrect" if m == 0 else "partially_correct"),
+                          "marks_awarded": m})
+    if any(r["status"] == "not_counted" for r in res.items):
+        res.notes.append(f"answer any {n_score}: items after the first {n_score} attempted were not counted")
     res.awarded = min(spec.max_mark, snap_half(total))
     res.raw_total = res.awarded
     return res

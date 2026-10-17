@@ -14,7 +14,7 @@ from src.prompts.stage4_rubric import build_stage4_prompt, STAGE4_SYSTEM_PROMPT
 from src.prompts.stage4_modular import build_modular_question_prompt, STAGE4_MODULAR_SYSTEM_PROMPT
 from src.pipeline.stage2_verifier import _extract_json_from_text
 from src.pipeline.stage4_modes import (
-    load_rubric_specs, load_answer_key, key_for_question, source_text_for_question,
+    load_rubric_specs, load_answer_key, key_for_question, source_text_for_question, key_source_text,
     build_mode_a_prompt, build_mode_b_prompt, build_mode_c_prompt,
     score_mode_a, score_mode_b, score_mode_c, snap_half, band_for, STAGE4_MODES_SYSTEM_PROMPT,
 )
@@ -88,6 +88,8 @@ class Stage4Evaluator:
         self.engine = engine
         self.answer_keys_dir = answer_keys_dir
         self.penalty_calculator = PenaltyCalculator()
+        self._question_id: Optional[str] = None
+        self._answer_key: Dict[str, Any] = {}
 
     # ------------------------------------------------------------------ helpers
     def _generate_json(self, prompt: str, system_prompt: str, temperature: float, top_p: float,
@@ -139,7 +141,8 @@ class Stage4Evaluator:
         if mode == "A":
             prompt = build_mode_a_prompt(ans, spec, key_entry, question_prompt_text)
         elif mode == "B":
-            prompt = build_mode_b_prompt(ans, spec, key_entry, question_prompt_text)
+            b_source = key_source_text(self._answer_key, ans.q_no) if not key_entry.get("items") else ""
+            prompt = build_mode_b_prompt(ans, spec, key_entry, question_prompt_text, b_source)
         else:
             prompt = build_mode_c_prompt(ans, spec, question_prompt_text, errors_text, source_text)
 
@@ -246,6 +249,7 @@ class Stage4Evaluator:
         rubric_driven = bool(specs)
         answer_key = load_answer_key(question_obj.question_id if question_obj else None, self.answer_keys_dir) if rubric_driven else {}
         self._question_id = question_obj.question_id if question_obj else None
+        self._answer_key = answer_key
         penalty_conf = resolve_penalty_config_path(question_obj.question_id if question_obj else "SE_10_Q1")
         self.penalty_calculator = PenaltyCalculator(penalty_conf)
         gt_canon = {

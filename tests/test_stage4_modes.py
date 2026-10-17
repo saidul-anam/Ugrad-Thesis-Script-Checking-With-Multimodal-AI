@@ -303,3 +303,21 @@ def test_mode_a_and_c_carry_no_additive_penalty():
     ans_c = AlignedAnswerItem(q_no="7", answer_text="Trees are important for us. " * 20, page_numbers=[1], word_count=120, errors=errs)
     qe = ev._evaluate_rubric_driven(ans_c, specs["7"], "", {}, "Write a paragraph.", 10.0, "", 0.0, 0.1, 512, False, None)
     assert qe.linguistic_penalty == 0.0
+
+
+def test_snap_half_rounds_halves_up():
+    assert snap_half(7.25) == 7.5 and snap_half(7.75) == 8.0 and snap_half(7.2) == 7.0 and snap_half(0.25) == 0.5
+
+
+def test_mode_b_answer_any_scores_first_n_attempted():
+    from src.pipeline.stage4_modes import QuestionSpec
+    spec = QuestionSpec(q_no="10", mode="B", task_type="Short_Answer", max_mark=10, mark_per_item=2, n_items=5,
+                        scale={0.0: "", 1.0: "", 2.0: ""})
+    key = {"items": [{"label": c} for c in "abcdefgh"], "marks_available": 2}
+    parsed = {"items": [{"item_label": c, "candidate_answer": ("Not attempted" if c == "b" else f"answer {c}"),
+                         "marks_awarded": (0 if c in "ac" else 2)} for c in "abcdefgh"]}
+    sr = score_mode_b(parsed, spec, key)
+    st = {it["item_label"]: it["status"] for it in sr.items}
+    # attempted in order: a c d e f | g h not counted; b blank
+    assert st["b"] == "not_attempted" and st["g"] == "not_counted" and st["h"] == "not_counted"
+    assert sr.awarded == 6.0
