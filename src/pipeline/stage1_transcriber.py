@@ -112,8 +112,12 @@ def sanitize_and_normalize_stage1_output(raw_text: str) -> str:
     text = re.sub(r'([^\w\s])\1{3,}', r'\1', text)
 
     # 7c. Flatten nested struck tags: [struck: [struck: text]] -> [struck: text]
+    # Stops when a pass changes nothing: a nesting the pattern cannot flatten ("[struck: [struck: the] cat]")
+    # used to loop forever and hang the page.
     while re.search(r'\[struck:\s*\[struck:', text, re.IGNORECASE):
-        text = re.sub(r'\[struck:\s*\[struck:\s*([^\]]+)\]\s*\]', r'[struck: \1]', text, flags=re.IGNORECASE)
+        text, n = re.subn(r'\[struck:\s*\[struck:\s*([^\]]+)\]\s*\]', r'[struck: \1]', text, flags=re.IGNORECASE)
+        if not n:
+            break
 
     text = re.sub(r'\n{3,}', '\n\n', text).strip()
     return text

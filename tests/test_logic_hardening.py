@@ -33,6 +33,13 @@ def test_nested_struck_tag_flattening():
     assert "[struck: wrong word]" in cleaned
 
 
+def test_nested_struck_tag_that_cannot_be_flattened_does_not_hang():
+    # Stage 1 read "[struck: [struck: the] cat]" on a class-6 page; the flattening loop never ended
+    raw = "The [struck: [struck: the] cat] sat. [struck:[struck: a] [struck: b]]"
+    cleaned = sanitize_and_normalize_stage1_output(raw)
+    assert "cat] sat." in cleaned
+
+
 def test_fused_subpart_header_normalization():
     text1 = "Dans: The author illustrates hope."
     norm1 = normalize_header_text(text1)
