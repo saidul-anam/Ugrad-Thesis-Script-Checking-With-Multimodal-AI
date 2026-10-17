@@ -162,7 +162,8 @@ SE_10_Q1:
         key_points: ["Choose what is useful and needed rather than what only looks attractive", "Think before choosing"]
 
 # ---------------------------------------------------------------------------------------------------------------
-# Rearrangement sentence mapping to confirm (Mode A key, so it needs the teacher before it goes into the key).
+# Rearrangement sentence mapping. Now in configs/answer_keys/SE_07_Q1.yaml (2026-10-17): teacher marks confirmed it
+# (students who rewrote the story in this order got 8/8). Kept here for the record; the scanned paper should still be checked.
 # The paper text in data/questions/english/SE_07_Q1.txt shows the story as one paragraph without letters. Read in
 # the key's correct_sequence (c f e g a h d b), its 8 sentences give this mapping:
 SE_07_Q1_rearrangement_sentences:

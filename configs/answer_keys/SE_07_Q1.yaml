@@ -127,6 +127,21 @@ mode_a:
     # positional MAE 1.06 vs relative-order 1.33 (18 dev scripts; 4 reads in writing order excluded). See docs/PIPELINE_REVIEW_2026-10.md
     scoring: positional
     canonical_order: ["c", "f", "e", "g", "a", "h", "d", "b"]
+    # Shown to the model so it can map sentences a student rewrote to letters. The paper text
+    # (data/questions/english/SE_07_Q1.txt) prints the story as one paragraph in the solved order, without
+    # letters, so each sentence takes the letter at its position in correct_sequence. Teacher marks confirm
+    # it: 0002, 0014 and 0027 rewrote the story in this order and got 8/8 from the teacher; without this map
+    # the model labelled the sentences a..h in order and gave them 0. The scanned question paper should
+    # still be checked (docs/PIPELINE_REVIEW_2026-10.md, review list). Listed a..h, as a printed paper would.
+    sentences:
+      a: "I waved my torch desperately, but the car did not stop."
+      b: "Feeling relieved and safe, I politely began to request the owner to drop me near Lalpur."
+      c: "Suddenly, I noticed two large, yellow eyes approaching me."
+      d: "As the car passed by, I opened the door and jumped inside without hesitation."
+      e: "But soon, I realized the eyes were too large for that."
+      f: "At first, I was frightened and wondered if it was a tiger."
+      g: "As it came closer, I discovered it was a slow-moving Baby Austin car."
+      h: "Growing impatient, I made a quick decision."
 
 
 # Source passages / poems for summary and theme questions, copied verbatim from the question paper

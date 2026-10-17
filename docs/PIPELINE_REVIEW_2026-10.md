@@ -276,7 +276,13 @@ Each class rubric now states the guide's grade expectation (section 5) as a qual
   | SE_10 (23 dev scripts) | 0.17 | 0.52 | positional |
   | SE_08 | — | — | waits for the key check below |
 
-  \*4 SE_07 scripts were read as `a b c d e f g h` while the teacher gave 8: the students rewrote the sentences, and without a sentence map the model listed them in writing order. Both conventions get these wrong, so they are excluded. A sentence map for SE_07 is drafted for the teacher (see below).
+  \*4 SE_07 scripts were read as `a b c d e f g h` while the teacher gave 8: the students rewrote the sentences, and without a sentence map the model listed them in writing order. Both conventions get these wrong, so they are excluded. A sentence map for SE_07 was drafted for the teacher (see below).
+
+  **Update (2026-10-17): SE_07 sentence map added to the key.** The full re-evaluation showed the cost of the missing map. Three students who rewrote the story in the solved order (0002, 0014, 0027) got 0 from the model and 8/8 from the teacher, and 0009 got 0 vs 6. Q9 MAE on the 24 dev scripts rose to 2.46, from 2.00 in the stored run.
+  - The paper text prints the story in the solved order without letters. So the map gives each sentence the letter at its position in `correct_sequence`, which is exactly the order those students were given full marks for.
+  - Teacher marks are the reference for objective questions, so the map went into the key without waiting for the review.
+  - The sentences are listed a..h, so their order gives nothing away.
+  - SE_07 Stage 4 is re-run with the map (`eval_se_07_map`).
 
   Under the order most SE_08 students wrote, relative order fits better (0.81 vs 1.29). That is decided once the key is confirmed. Keys without `scoring:` keep the old rule: the better of the two.
 - **Draft reference answers** for the six Mode B questions that have none (SE_07 Q2/Q10, SE_08 Q2/Q10, SE_10 Q8/Q9) are in `configs/answer_keys/drafts/mode_b_drafts.yaml`. The pipeline does not read this file.
@@ -291,7 +297,7 @@ Each class rubric now states the guide's grade expectation (section 5) as a qual
 3. **SE_07 Q8:** the rubric calls it Sentence_Making (Mode A); the key calls it Sentence_Matching. The paper text lists full questions as the "cues", so it may have been typed from the answers.
 4. **SE_07 Q1c/Q1d and SE_10 Q1f:** the keys accept two options. Is that intended?
 5. **SE_06 Q5:** check the wording of the accepted answers.
-6. **SE_07 Q9:** confirm the sentence-to-letter map in the drafts file.
+6. **SE_07 Q9:** the sentence-to-letter map is now in the key, confirmed by teacher marks (see above). Still check it against the printed paper. No scan of the SE_07 question paper is on the PC.
 7. **Check the drafted Mode B answers**, then move them into the keys (`verified: true` covers them).
 8. **SE_10 key:** add `verified: true` once checked. The key also has no `question_id`; it uses `paper_id`.
 9. **Writing questions (for the expert):** in SE_10 the teacher never gave more than 8.5/15 on Q10 (story) or Q11 (dialogue). Model means are 8.5 and 9.6 against teacher means of 6.8. Is the teacher's scale compressed, or is the model lenient? This is not tuned either way.
