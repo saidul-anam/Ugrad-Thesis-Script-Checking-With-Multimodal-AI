@@ -9,6 +9,7 @@ stroke connectivity and micro-details (e.g. cursive loops, fine strikethroughs).
 
 import re
 import math
+from difflib import SequenceMatcher
 from typing import List, Tuple, Dict, Any, Optional
 from PIL import Image
 from pydantic import BaseModel, Field, ConfigDict
@@ -200,6 +201,49 @@ def _drop_marker_only_edge_line(lines: List[str], from_end: bool) -> List[str]:
     return lines
 
 
+def _similar_lines_merge(upper_lines: List[str], lower_lines: List[str]) -> str:
+    """
+    Join two bands that share no exact run of words, which happens when the two bands misread the overlap
+    differently ("normal trees" / "norormal troes"). This is the pipeline's original line matcher, with its
+    original ratios: the k (at most 8) last non-empty lines of the upper band that best resemble the k first
+    lines of the lower band (SequenceMatcher ratio above 0.75) are taken as the overlap and dropped from the
+    lower band. Failing that, leading lower-band lines that closely match one of the upper band's last four
+    lines (ratio 0.82 or more) are dropped. With no similar lines both bands are kept whole.
+    """
+    merged_lines = [line.rstrip() for line in upper_lines]
+    next_lines = [line.rstrip() for line in lower_lines]
+    tail_non_empty = [l for l in merged_lines if l.strip()]
+    head_non_empty = [l for l in next_lines if l.strip()]
+    if not tail_non_empty or not head_non_empty:
+        return "\n".join(merged_lines + next_lines)
+
+    best_overlap_head, best_match_score = 0, 0.0
+    for overlap_len in range(1, min(len(tail_non_empty), len(head_non_empty), 8) + 1):
+        tail_str = " ".join(tail_non_empty[-overlap_len:]).lower()
+        head_str = " ".join(head_non_empty[:overlap_len]).lower()
+        score = SequenceMatcher(None, tail_str, head_str).ratio()
+        if score > 0.75 and score > best_match_score:
+            best_match_score, best_overlap_head = score, overlap_len
+
+    cut_idx = 0
+    if best_match_score > 0.75:
+        last_matched_line = head_non_empty[best_overlap_head - 1].strip().lower()
+        for idx, nl in enumerate(next_lines):
+            if SequenceMatcher(None, nl.strip().lower(), last_matched_line).ratio() >= 0.85:
+                cut_idx = idx + 1
+                break
+    else:
+        for nl in head_non_empty[:3]:
+            if not any(SequenceMatcher(None, ml.strip().lower(), nl.strip().lower()).ratio() >= 0.82
+                       for ml in tail_non_empty[-4:]):
+                break
+            for idx, raw_nl in enumerate(next_lines):
+                if raw_nl.strip() == nl:
+                    cut_idx = idx + 1
+                    break
+    return "\n".join(merged_lines + next_lines[cut_idx:])
+
+
 def stitch_band_transcripts(band_texts: List[str]) -> str:
     """
     Merge overlapping band transcriptions into one page transcript.
@@ -208,8 +252,9 @@ def stitch_band_transcripts(band_texts: List[str]) -> str:
     (read partly, or marked [truncated]). Each band is joined to the text so far at the longest run of
     identical words in the overlap (see _overlap_seam): the text before the run comes from the upper band,
     the text after it from the lower band. Partial edge lines on both sides fall away because each lies on
-    the far side of the seam for the band that cut it. When no shared run is found the bands are simply
-    joined, dropping only edge lines that hold nothing but a [truncated] marker.
+    the far side of the seam for the band that cut it. When no shared run is found (the bands read the
+    overlap differently, or share no text), edge lines holding nothing but a [truncated] marker are dropped
+    and the bands are joined by line similarity (see _similar_lines_merge).
     """
     texts = [t.strip() for t in band_texts if t and t.strip()]
     if not texts:
@@ -223,9 +268,9 @@ def stitch_band_transcripts(band_texts: List[str]) -> str:
         if seam is not None:
             merged = merged[:a_toks[seam[0]][2]] + nxt[b_toks[seam[1]][2]:]
         else:
-            a_lines = _drop_marker_only_edge_line(merged.split("\n"), from_end=True)
-            b_lines = _drop_marker_only_edge_line(nxt.split("\n"), from_end=False)
-            merged = "\n".join(a_lines).rstrip() + "\n" + "\n".join(b_lines).lstrip()
+            a_lines = _drop_marker_only_edge_line(merged.rstrip().split("\n"), from_end=True)
+            b_lines = _drop_marker_only_edge_line(nxt.lstrip().split("\n"), from_end=False)
+            merged = _similar_lines_merge(a_lines, b_lines)
         prev_count = len(b_toks)
 
     merged = "\n".join(line.rstrip() for line in merged.split("\n"))

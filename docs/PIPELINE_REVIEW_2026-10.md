@@ -41,7 +41,7 @@ Work order: correctness bugs, then runtime, then accuracy, then rubric and evalu
 | Stored class 6–8 summaries capped by a rule their rubric does not have | 61 | 0 | re-applying caps offline |
 | Evaluation repeatable (same transcript, same segments) | no (LLM boundary layers) | yes (deterministic by default) | `segmentation_llm_recovery: false` |
 | Rubric/key/paper consistency errors (5 papers) | 8 (class 11) | 0 | `scripts/lint_rubrics.py` |
-| Unit tests | 310 pass, 8 fail | 348 pass | `pytest tests` |
+| Unit tests | 310 pass, 8 fail | 349 pass | `pytest tests` |
 | Extraction time per script | 20.5 min (Oct 13 run) | pending | per-stage timers |
 | Dev-page CER | 4.30% (stored outputs) | pending | `scripts/evaluate_transcription.py` |
 
@@ -164,11 +164,25 @@ The new joiner (`src/pipeline/band_tiler.py`):
 1. **Search window:** it looks for the longest run of identical words between the last half of the upper band and the first half of the lower band. The tiler overlaps bands by a quarter to a third of their height, so the shared text always lies there.
 2. **Seam:** it joins the bands at that run. Text before the run comes from the upper band and text after it from the lower band, so a cut line on either side falls away.
 3. **Acceptance:** the run must contain a complete line of both bands and more than one word. A line inside the overlap is read in full by both bands, while a lone "Ans:" can match by chance.
-4. **No match:** if no run qualifies, the bands are joined unchanged. Only edge lines that hold nothing but `[truncated]` are dropped.
+4. **No match:** if no run qualifies, edge lines that hold nothing but `[truncated]` are dropped and the old line-similarity joiner joins the pair, with its original ratios. This fallback was added after the first real-page test (below).
 
 Of 7 synthetic cases (`tests/test_band_stitching.py`), the old joiner fails 5.
 
 Each band's raw text is now kept in the page checkpoint (`stage1_transcription.band_transcripts`). The old and new joiners can therefore be compared on exactly the same model output, with no generation noise.
+
+**Measured on real band texts (56 dev GT pages, `after` run, Stage 1 output only):**
+
+| Joiner | Stage 1 CER (macro) | Inserted / deleted chars |
+|---|---|---|
+| Old: line similarity only | 6.07% | 867 / 363 |
+| Exact word run only, plain join when none is found (97262cd) | 9.00% | much higher: repeated lines |
+| Exact word run, line similarity when none is found (current) | **5.20%** | 805 / 207 |
+
+- The exact run alone made things worse. When the two bands misread the overlap differently ("normal troees … trees" / "norormal troees … troes"), no complete line is shared word for word, so it joined the bands whole and the overlap appeared twice. An exact seam was found on 86 of the 109 band joins.
+- The old joiner failed the other way on some pages: it cut lines that were not repeats.
+- The current joiner uses each method where it works. Against the old joiner it is better on 16 pages, worse on 5 and the same on 35.
+- `test_overlap_read_differently_by_the_two_bands_is_not_repeated` holds the real case.
+- The fallback was chosen after looking at these dev pages, so the 5.20% is a dev number. The check that settles it runs Stage 1 on 99 dev pages that have an Opus 5.5 reference but no hand-checked GT (`silver_trunc`).
 
 ### Ablation switches added
 

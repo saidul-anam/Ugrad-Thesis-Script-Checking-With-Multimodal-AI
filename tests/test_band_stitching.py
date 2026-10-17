@@ -63,3 +63,15 @@ def test_single_and_empty_inputs():
     assert stitch_band_transcripts([]) == ""
     assert stitch_band_transcripts(["  only band  "]) == "only band"
     assert stitch_band_transcripts(["first band", ""]) == "first band"
+
+
+def test_overlap_read_differently_by_the_two_bands_is_not_repeated():
+    # real case (dev page): each band misread the overlap in its own way, so no complete line is shared
+    # word for word; the near-identical lines are matched instead of being kept twice
+    upper = ("himself visited the tree he says \"Why\nyou are refusing to cut the trees?\"\n"
+             "The old tree says, \" The trees are not\nnormal troees they are special trees\n"
+             "from the paradise. If you cut them")
+    lower = ("norormal troees they are special troes\nfroom the parodise. If you cut them\n"
+             "you'll get huge disfame you'll lose\neverything you have this is the last")
+    out = stitch_band_transcripts([upper, lower])
+    assert out == upper + "\nyou'll get huge disfame you'll lose\neverything you have this is the last"
