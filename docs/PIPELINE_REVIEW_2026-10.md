@@ -189,9 +189,22 @@ Each band's raw text is now kept in the page checkpoint (`stage1_transcription.b
 | Switch | Default | What it tests |
 |---|---|---|
 | `pipeline.prompt_question_vocab` | true | Stage 1/2 prompts list up to 250 words from the question paper. Does that push the model toward dictionary words (silent autocorrection)? |
-| `pipeline.stage2_compact_output` | false | Stage 2 replies without the per-patch `confidence` and the page `verification_notes`: no decision reads them, and they cost about 10% of Stage 2's output tokens. `context_anchor` stays because it picks which copy of a repeated word gets patched. |
+| `pipeline.stage2_compact_output` | **true** (since the measurement below) | Stage 2 replies without the per-patch `confidence` and the page `verification_notes`: no decision reads them, and they cost about 10% of Stage 2's output tokens. `context_anchor` stays because it picks which copy of a repeated word gets patched. |
 
-Both have flags in `scripts/bench_pages.py` (`--no-prompt-vocab`, `--stage2-compact`).
+Both have flags in `scripts/bench_pages.py`: `--no-prompt-vocab`, and `--stage2-full` for the old, longer Stage 2 reply. Before the default changed, that flag was `--stage2-compact`.
+
+**Measured (56 dev GT pages, compared with the `after` run; same Stage 1 text, deterministic decoding):**
+
+| Run | Stage 1 CER | Stage 1+2 CER | Silent corrections | s/page S1 / S2 / S2b / total |
+|---|---|---|---|---|
+| `after` (word list on, full Stage 2 reply) | 9.00% | 7.84% | 26.2% | 12.0 / 23.7 / 11.6 / 47.4 |
+| `s2_compact` | 9.00% | 7.81% | 24.8% | 12.0 / 19.7 / 11.8 / 43.6 |
+| `no_vocab` | 9.00% (4.76% re-joined with the current joiner, vs 5.20%) | 6.88% | 27.2% | 10.2 / 21.6 / 11.7 / 43.6 |
+
+All three runs used the exact-run-only joiner that was in the code at the time, hence the high Stage 1 CER.
+
+- **Compact Stage 2 reply: adopted.** Stage 1+2 CER is unchanged (per-page mean difference −0.03 ± 0.44 points) and Stage 2 is 17% faster.
+- **Word list: not decided yet.** Removing it lowered Stage 1+2 CER by 0.96 ± 1.05 points per page (22 pages better, 22 worse), which is within the noise, and it did not reduce silent corrections. A larger check (99 more dev pages against the Opus reference, with the final code) is queued before the decision.
 
 `stage2_conditional` is now described honestly in the YAML: every handwritten page triggers Stage 2, so it skips nothing in practice.
 
@@ -339,7 +352,7 @@ All of these live in `configs/pipeline_config.yaml` under `pipeline:`. The defau
 |---|---|---|
 | `segmentation_llm_recovery` | false | model-based boundary layers on top of the deterministic segmenter |
 | `prompt_question_vocab` | true | question-paper word list in the Stage 1/2 prompts |
-| `stage2_compact_output` | false | shorter Stage 2 replies |
+| `stage2_compact_output` | true | shorter Stage 2 replies (adopted: same CER, faster) |
 | `stage4_calibration_gates` | false | the guide's hand-set gates (error density, story baseline, verbatim summary cap) |
 | `stage4_thinking_mode` | false | thinking mode in Stage 4 (`evaluate_scripts.py --thinking`) |
 

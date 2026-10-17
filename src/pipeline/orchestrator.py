@@ -628,7 +628,7 @@ class ScriptCheckingPipeline:
                     strikethrough_blocks=stage0_strike_res.blocks,
                     teacher_mask=t_mask,
                     prompt_vocab=prompt_vocab,
-                    compact_output=getattr(self.config.pipeline, "stage2_compact_output", False),
+                    compact_output=getattr(self.config.pipeline, "stage2_compact_output", True),
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=decoding.max_new_tokens,

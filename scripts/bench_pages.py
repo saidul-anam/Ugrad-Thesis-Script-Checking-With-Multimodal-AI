@@ -18,7 +18,7 @@ Usage:
   python scripts/bench_pages.py --tag baseline_b
   python scripts/bench_pages.py --tag after --scripts SE_10_Q1_0001 SE_10_Q1_0002
   python scripts/bench_pages.py --tag no_vocab --no-prompt-vocab      # ablation: no question words in the prompts
-  python scripts/bench_pages.py --tag s2_compact --stage2-compact     # ablation: shorter Stage 2 replies
+  python scripts/bench_pages.py --tag s2_full --stage2-full           # ablation: old, longer Stage 2 replies
 """
 
 import os
@@ -66,8 +66,8 @@ def main() -> None:
     ap.add_argument("--config", default="configs/pipeline_config.yaml")
     ap.add_argument("--scripts", nargs="*", help="limit to these script IDs")
     ap.add_argument("--mock", action="store_true")
-    ap.add_argument("--stage2-compact", action="store_true",
-                    help="ablation: Stage 2 replies without the unread confidence / verification_notes fields")
+    ap.add_argument("--stage2-full", action="store_true",
+                    help="ablation: Stage 2 replies with the unread confidence / verification_notes fields (old format)")
     ap.add_argument("--no-prompt-vocab", action="store_true",
                     help="ablation: leave the question-paper word list out of the Stage 1/2 prompts")
     args = ap.parse_args()
@@ -82,8 +82,8 @@ def main() -> None:
     cfg.arbitration.mode = "off"
     if args.no_prompt_vocab:
         cfg.pipeline.prompt_question_vocab = False
-    if args.stage2_compact:
-        cfg.pipeline.stage2_compact_output = True
+    if args.stage2_full:
+        cfg.pipeline.stage2_compact_output = False
     engine = create_engine(cfg, force_mock=args.mock)
     pipe = ScriptCheckingPipeline(engine=engine, config=cfg)
     pipe.stage3.run = lambda *a, **k: Stage3ErrorResult()       # page transcripts do not depend on Stage 3

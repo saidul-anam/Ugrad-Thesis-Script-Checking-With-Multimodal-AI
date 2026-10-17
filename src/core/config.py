@@ -86,10 +86,11 @@ class PipelineStageConfig(BaseModel):
                     "(docs/EXTRACTION_NEXT_STEPS.md step 2). The vocabulary still feeds the CPU checks either way."
     )
     stage2_compact_output: bool = Field(
-        False,
-        description="Ablation: leave out of the Stage 2 reply the fields that no decision reads (per-patch "
-                    "confidence, page verification_notes), to shorten generation. context_anchor stays: it picks "
-                    "which occurrence of a repeated word gets patched."
+        True,
+        description="Leave out of the Stage 2 reply the fields that no decision reads (per-patch confidence, page "
+                    "verification_notes), to shorten generation. On the 56 dev pages: same CER, Stage 2 ~17% faster "
+                    "(docs/PIPELINE_REVIEW_2026-10.md). context_anchor stays: it picks which occurrence of a "
+                    "repeated word gets patched. Ablation: false."
     )
     stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
     stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
