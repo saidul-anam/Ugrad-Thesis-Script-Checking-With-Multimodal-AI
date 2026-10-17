@@ -23,7 +23,8 @@ def test_pipeline_config_loads_step6_tuning():
     assert cfg.pipeline.stage1_thinking_mode is False, "Stage 1 verbatim must not use thinking mode to avoid preamble corruption"
     assert cfg.pipeline.stage2_thinking_mode is False, "Stage 2 structured reasoning is inside JSON fields"
     assert cfg.pipeline.stage3b_thinking_mode is True, "Stage 3b evidence arbitration uses thinking deliberation"
-    assert cfg.pipeline.stage4_thinking_mode is True, "Stage 4 rubric evaluation uses thinking deliberation"
+    # off by default: evaluate_scripts.py ran Stage 4 without thinking, so the stored evaluations were made that way
+    assert cfg.pipeline.stage4_thinking_mode is False, "Stage 4 thinking is an ablation (--thinking)"
 
 
 def test_engine_context_window_defaults():
@@ -47,10 +48,10 @@ def test_orchestrator_stage_thinking_routing():
     # When thinking_mode is not explicitly overridden in run_evaluation:
     decoding = pipeline.config.decoding
     active_eval_thinking = getattr(pipeline.config.pipeline, "stage4_thinking_mode", decoding.thinking_mode)
-    assert active_eval_thinking is True
+    assert active_eval_thinking is False
 
     # In extract_script, verify stage-level flags
     s1_thinking = getattr(pipeline.config.pipeline, "stage1_thinking_mode", False)
     s4_thinking = getattr(pipeline.config.pipeline, "stage4_thinking_mode", True)
     assert s1_thinking is False
-    assert s4_thinking is True
+    assert s4_thinking is False

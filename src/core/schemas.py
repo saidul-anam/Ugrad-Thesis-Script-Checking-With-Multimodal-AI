@@ -306,6 +306,7 @@ class Stage4EvaluationResult(BaseModel):
     missing_questions: List[str] = Field(default_factory=list, description="Rubric/GT questions with no answer segment")
     unscored_questions: List[str] = Field(default_factory=list, description="Questions whose model output could not be scored")
     rubric_driven: bool = Field(False, description="True when marks were computed from the mode-based rubric")
+    provenance: Dict[str, Any] = Field(default_factory=dict, description="Git commit and hashes of the config, rubric, answer key, penalty profile and scoring code")
     overall_feedback: str = Field(..., description="Constructive teacher-level feedback.")
     actionable_recommendations: List[str] = Field(default_factory=list)
 

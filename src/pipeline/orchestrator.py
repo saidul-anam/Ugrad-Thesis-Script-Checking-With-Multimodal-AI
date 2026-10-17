@@ -72,6 +72,8 @@ from src.utils.ground_truth import (
     canonicalize_question_key
 )
 from src.utils.script_files import paper_folder_name
+from src.utils.provenance import build_provenance
+from src.utils.rubric_resolver import resolve_answer_key_path, resolve_penalty_config_path
 
 
 
@@ -1496,6 +1498,10 @@ class ScriptCheckingPipeline:
                 generation_max_time=stage4_timeout_sec
             )
 
+        qid = question_obj.question_id if question_obj else script_id
+        stage4_result.provenance = build_provenance(
+            self.config, active_rubric_path, resolve_answer_key_path(qid), resolve_penalty_config_path(qid)
+        )
         export_stage4_artifacts(stage4_result, script_output_dir)
         u4 = self.engine.get_last_usage()
         ctx4 = self.engine.format_last_usage()

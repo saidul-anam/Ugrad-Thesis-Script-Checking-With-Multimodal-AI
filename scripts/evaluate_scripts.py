@@ -26,6 +26,7 @@ if not os.environ.get("PYTORCH_CUDA_ALLOC_CONF"):
     os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 
 import glob
+import re
 import argparse
 from pathlib import Path
 
@@ -523,9 +524,10 @@ def main():
             q_obj_check = ExtractedQuestion.model_validate(q_dict)
             with open(args.rubric, "r", encoding="utf-8") as f:
                 r_dict = yaml.safe_load(f)
-            is_valid, validation_errors = validate_paper_integrity(q_obj_check, r_dict, expected_total_marks=100.0)
+            paper_total = float(q_obj_check.total_marks or r_dict.get("total_marks") or 100.0)
+            is_valid, validation_errors = validate_paper_integrity(q_obj_check, r_dict, expected_total_marks=paper_total)
             if is_valid:
-                console.print(f"[bold green]✓ Paper & Rubric Integrity Certified:[/bold green] 100.0 Marks, {len(q_obj_check.sub_questions)} questions ({class_level})")
+                console.print(f"[bold green]✓ Paper & Rubric Integrity Certified:[/bold green] {paper_total:g} Marks, {len(q_obj_check.sub_questions)} questions ({class_level})")
             else:
                 for err in validation_errors:
                     console.print(f"[yellow]⚠️ Integrity notice: {err}[/yellow]")
@@ -601,6 +603,7 @@ def main():
         cfg.model.quantization = args.quant
     if args.thinking:
         cfg.decoding.thinking_mode = True
+        cfg.pipeline.stage4_thinking_mode = True
 
     console.print("\n[bold]Step 1: Initializing Inference Engine & Evaluator...[/bold]")
     engine = create_engine(
@@ -643,7 +646,7 @@ def main():
             report = pipeline.evaluate_extracted_script(
                 extraction_input=str(script_path),
                 rubric_path=args.rubric,
-                thinking_mode=cfg.decoding.thinking_mode,
+                thinking_mode=cfg.pipeline.stage4_thinking_mode,
                 output_dir=script_eval_dir,
                 question_input=args.question,
                 questions_root=args.questions_dir,

@@ -23,6 +23,21 @@ from src.pipeline.penalty_calculator import PenaltyCalculator
 from src.utils.rubric_resolver import resolve_penalty_config_path
 
 
+def class_test_questions(question_obj: Optional[ExtractedQuestion]) -> Dict[str, float]:
+    """Sub-questions that are class-test marks (given in class, not written in the script): {q: marks}."""
+    out: Dict[str, float] = {}
+    for sq in (question_obj.sub_questions if question_obj else []) or []:
+        sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
+        task_type = str(sq.get("task_type") or "").lower()
+        q_title = str(sq.get("name") or sq.get("title") or sq.get("prompt") or "").lower()
+        if sq_no and (task_type == "class_test" or re.match(r'^(?:q[0-9]+[:\s]*)?class[\s_-]*test(?:\s*assessment)?\s*[:0-9\s]*$', q_title.strip(), re.I)):
+            try:
+                out[canonicalize_question_key(sq_no)] = float(sq.get("max_marks") or sq.get("marks") or 0.0)
+            except (TypeError, ValueError):
+                out[canonicalize_question_key(sq_no)] = 0.0
+    return out
+
+
 # "Class Test : 10" closes some papers; it is a mark line, not part of the last question
 _CLASS_TEST_LINE_RE = re.compile(r'\n\s*(?:[0-9]{1,2}\.\s*)?class[\s_-]*test\b[^\n]*', re.I)
 
@@ -442,15 +457,12 @@ class Stage4Evaluator:
             total_linguistic_deductions += penalty
 
         # Questions expected by the question paper, rubric, or ground truth but absent from the segmentation
+        class_tests = class_test_questions(question_obj)
         rubric_or_paper_expected = set()
         if question_obj and question_obj.sub_questions:
             for sq in question_obj.sub_questions:
                 sq_no = str(sq.get("q_no") or sq.get("part") or sq.get("question_no") or "").strip()
-                task_type = str(sq.get("task_type") or "").lower()
-                q_title = str(sq.get("name") or sq.get("title") or sq.get("prompt") or "").lower()
-                if task_type == "class_test" or re.match(r'^(?:q[0-9]+[:\s]*)?class[\s_-]*test(?:\s*assessment)?\s*[:0-9\s]*$', q_title.strip(), re.I):
-                    continue
-                if sq_no:
+                if sq_no and canonicalize_question_key(sq_no) not in class_tests:
                     rubric_or_paper_expected.add(canonicalize_question_key(sq_no))
         else:
             rubric_or_paper_expected = set(specs.keys())
@@ -459,6 +471,8 @@ class Stage4Evaluator:
         for k in gt_canon.keys():
             # Avoid adding parent '1' if subparts (e.g. 1(A)) are already expected or answered
             if k.isdigit() and any(e.startswith(f"{k}(") for e in (rubric_or_paper_expected | answered)):
+                continue
+            if k in class_tests:        # class-test marks are not in the script
                 continue
             expected.add(k)
 
@@ -508,6 +522,7 @@ class Stage4Evaluator:
         ]
 
         total_paper_max = float(question_obj.total_marks) if (question_obj and question_obj.total_marks) else float(rubric_data.get("total_marks", total_max or 10.0))
+        total_paper_max -= sum(class_tests.values())     # e.g. SE_08: 100 - 10 class-test marks
 
         return Stage4EvaluationResult(
             subject=subject,
