@@ -23,6 +23,10 @@ from src.pipeline.penalty_calculator import PenaltyCalculator
 from src.utils.rubric_resolver import resolve_penalty_config_path
 
 
+# "Class Test : 10" closes some papers; it is a mark line, not part of the last question
+_CLASS_TEST_LINE_RE = re.compile(r'\n\s*(?:[0-9]{1,2}\.\s*)?class[\s_-]*test\b[^\n]*', re.I)
+
+
 def get_sub_question_prompt_and_marks(
     q_no: str,
     question_obj: Optional[ExtractedQuestion]
@@ -45,10 +49,12 @@ def get_sub_question_prompt_and_marks(
     # Match question header e.g. "1. Read...", "2. Read...", "7. Answer...", "A.", "B."
     clean_num = re.sub(r'\(.*?\)', '', q_no).strip()
     if clean_num:
-        pattern = re.compile(rf'(?:^|\n)\s*{re.escape(clean_num)}\.?\s+(.*?)(?=\n\s*(?:[0-9]{{1,2}}\.|\Z))', re.DOTALL)
+        # The next numbered question or the end of the paper ends the snippet (the last question used to
+        # fall through to its bare name because the end-of-text branch required a newline first)
+        pattern = re.compile(rf'(?:^|\n)\s*{re.escape(clean_num)}\.?\s+(.*?)(?=\n\s*[0-9]{{1,2}}\.|\Z)', re.DOTALL)
         match = pattern.search(full_text)
         if match:
-            snippet = match.group(1).strip()
+            snippet = _CLASS_TEST_LINE_RE.sub("", match.group(1)).strip()
             # If question has subpart e.g. 1(A), 1(B), 1(C)
             sub_part_match = re.search(r'\(([A-Za-z0-9]+)\)', q_no)
             if sub_part_match:
@@ -62,11 +68,12 @@ def get_sub_question_prompt_and_marks(
                         return f"Context:\n{snippet[:400]}...\n\nInstructions (Part {part_id}):\n{sub_m.group(1).strip()}", max_marks
             return snippet, max_marks
 
-    # Fallback to sub_question name
+    # Fallback to the sub-question's own instructions, then its name
     for sq in question_obj.sub_questions:
         if str(sq.get("q_no") or "").strip() == q_no:
             name = sq.get("name") or sq.get("title") or ""
-            return f"Question {q_no}: {name}", max_marks
+            instructions = sq.get("instructions") or sq.get("prompt") or sq.get("text") or ""
+            return (f"Question {q_no}: {name}\n{instructions}".strip()), max_marks
 
     return f"Evaluate handwritten answer for Question {q_no}.", max_marks
 

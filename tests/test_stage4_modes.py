@@ -259,3 +259,18 @@ def test_matches_accepted_enhanced():
     assert _matches_accepted("the age of ten, after his grand uncle's death", ["at the age of ten", "age of 10"], "Table_Completion")
     assert _matches_accepted("was Published completely in six separate Volumes.", ["published completely in six separate volumes"], "Table_Completion")
 
+
+
+def test_last_question_prompt_keeps_its_text():
+    from src.pipeline.stage4_evaluator import get_sub_question_prompt_and_marks
+    q = ExtractedQuestion(
+        question_id="X_Q1", language="english", total_marks=20.0,
+        question_text="1. Write a paragraph on trees. 10\n2. Write a dialogue about early rising. 10\nClass Test : 10",
+        sub_questions=[{"q_no": "1", "title": "Paragraph", "max_marks": 10},
+                       {"q_no": "2", "title": "Dialogue", "max_marks": 10},
+                       {"q_no": "3", "title": "Story", "max_marks": 5, "instructions": "Complete the story."}],
+    )
+    assert get_sub_question_prompt_and_marks("2", q)[0] == "Write a dialogue about early rising. 10"
+    assert get_sub_question_prompt_and_marks("1", q)[0] == "Write a paragraph on trees. 10"
+    # not in the paper text: the sub-question's own instructions are used
+    assert "Complete the story." in get_sub_question_prompt_and_marks("3", q)[0]
