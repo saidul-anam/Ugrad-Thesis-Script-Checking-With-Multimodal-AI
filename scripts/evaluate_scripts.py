@@ -362,6 +362,11 @@ def main():
         help="Enable reasoning / thinking mode ablation"
     )
     parser.add_argument(
+        "--calibration-gates",
+        action="store_true",
+        help="Ablation: apply the rubrics' hand-set calibration_gates (see configs/rubrics/*.yaml)"
+    )
+    parser.add_argument(
         "--mock",
         action="store_true",
         help="Run in Mock development mode without GPU or model weights"
@@ -612,6 +617,8 @@ def main():
     if args.thinking:
         cfg.decoding.thinking_mode = True
         cfg.pipeline.stage4_thinking_mode = True
+    if args.calibration_gates:
+        cfg.pipeline.stage4_calibration_gates = True
 
     console.print("\n[bold]Step 1: Initializing Inference Engine & Evaluator...[/bold]")
     engine = create_engine(

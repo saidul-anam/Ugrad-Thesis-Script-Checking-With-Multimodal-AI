@@ -235,8 +235,9 @@ def lint_paper(paper_id: str, rubric: Dict[str, Any], question_obj: Any, answer_
                         add(WARNING, q, f"cap '{name}' measures copying from the source passage, but the answer key "
                                         f"stores no source_texts entry for this question (located in the paper text instead)")
 
-    # ---- hard caps ----
-    for name, cap in caps.items():
+    # ---- hard caps (including the optional calibration gates) ----
+    gate_caps = ((rubric.get("calibration_gates") or {}).get("hard_caps") or {})
+    for name, cap in list(caps.items()) + [(f"calibration_gates.{n}", c) for n, c in gate_caps.items()]:
         if not isinstance(cap, dict):
             add(ERROR, "", f"hard cap '{name}' is free text; code can only apply structured caps")
             continue

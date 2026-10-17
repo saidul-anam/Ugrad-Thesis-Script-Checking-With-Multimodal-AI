@@ -321,3 +321,14 @@ def test_mode_b_answer_any_scores_first_n_attempted():
     # attempted in order: a c d e f | g h not counted; b blank
     assert st["b"] == "not_attempted" and st["g"] == "not_counted" and st["h"] == "not_counted"
     assert sr.awarded == 6.0
+
+
+def test_calibration_gates_apply_only_when_switched_on():
+    class10 = yaml.safe_load(open("configs/rubrics/english_class10_ssc.yaml", "r", encoding="utf-8"))
+    off = load_rubric_specs(class10)
+    on = load_rubric_specs(class10, calibration_gates=True)
+    assert "heavy_verbatim_copying" not in off["5"].hard_caps
+    assert on["5"].hard_caps["heavy_verbatim_copying"]["max_awarded"] == 3.0
+    assert not any("error_density_gating" in r for r in off["10"].general_rules)
+    assert any("error_density_gating" in r for r in on["10"].general_rules)
+    assert "off_topic" in off["5"].hard_caps            # task-requirement caps are not gates

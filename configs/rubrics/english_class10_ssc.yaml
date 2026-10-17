@@ -183,10 +183,6 @@ mode_specifications:
 
   mode_c_band_scored:
     hard_caps:
-      heavy_verbatim_copying:
-        threshold_ratio: 0.50
-        max_awarded: 3.0
-        applies_to: ["Summary"]
       short_length_below_50_words:
         threshold_words: 50
         max_awarded: 4.0
@@ -233,12 +229,10 @@ mode_specifications:
 general_evaluation_guidelines:
   - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
   - feature_based_elaboration: "Do NOT score additively based on raw word count. Grade narrative depth, conflict, and character resolution rather than sheer length. An answer can only reach Band 1 or 2 if it contains genuine development and narrative/dialogic substance."
-  - error_density_gating: "In Mode C, evaluate linguistic errors holistically. However, persistent basic errors (e.g., 3+ spelling mistakes, inconsistent past-tense narrative switching) gate language_mechanics at or below 50% of its ceiling (max 2.0/4.0), preventing high Band 1 or Band 2 scores."
   - mark_granularity: "Whole and half marks (0.5) only."
   - illegibility_handling: "Do not penalise transcription markers ([illegible], [unclear: word]). Mark item unscorable only if completely unreadable."
   - unattempted_vs_wrong: "Unattempted = not_attempted (0 marks). Attempted & wrong = incorrect (0 marks)."
   - no_structural_layout_penalty: "Do not penalise physical paragraph splits, indentations, line breaks, or structural formatting that may be artifacts of OCR extraction."
-  - story_baseline_calibration: "A simple linear completion of a story prompt without dramatic tension or character depth, written in simple repetitive sentences with basic spelling errors (e.g., ~100-120 words), is standard Band 3 (Satisfactory: 6.0 - 8.5 marks). It must NEVER be awarded Band 1 (>12 marks)."
 
 output_json_schema:
   q_no: "string"
@@ -271,3 +265,18 @@ output_json_schema:
   content_raw_score: "number"
   awarded_marks: "number"
   ocr_robustness_note: "Physical paragraph splits, line breaks, or structural formatting from OCR extraction are ignored in favor of writing quality and idea cohesion."
+
+# Hand-set calibration gates from docs/NCTB_Standard_Evaluation_Rubric_Guide.md section 4 (error-density gating,
+# narrative-elaboration baseline, verbatim-overlap summary cap). They were set from single scripts against teacher
+# marks, so they are OFF by default and apply only when pipeline.stage4_calibration_gates is true (ablation;
+# scripts/evaluate_scripts.py --calibration-gates). When on, the caps join mode_c_band_scored.hard_caps and the
+# guidelines join general_evaluation_guidelines.
+calibration_gates:
+  hard_caps:
+    heavy_verbatim_copying:
+      threshold_ratio: 0.50
+      max_awarded: 3.0
+      applies_to: ["Summary"]
+  general_evaluation_guidelines:
+    - error_density_gating: "In Mode C, evaluate linguistic errors holistically. However, persistent basic errors (e.g., 3+ spelling mistakes, inconsistent past-tense narrative switching) gate language_mechanics at or below 50% of its ceiling (max 2.0/4.0), preventing high Band 1 or Band 2 scores."
+    - story_baseline_calibration: "A simple linear completion of a story prompt without dramatic tension or character depth, written in simple repetitive sentences with basic spelling errors (e.g., ~100-120 words), is standard Band 3 (Satisfactory: 6.0 - 8.5 marks). It must NEVER be awarded Band 1 (>12 marks)."

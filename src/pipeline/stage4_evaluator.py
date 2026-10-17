@@ -99,9 +99,10 @@ class Stage4Evaluator:
     Supports both Modular (Question-by-Question) and Monolithic (Single-Pass) evaluation.
     """
 
-    def __init__(self, engine: BaseVLMEngine, answer_keys_dir: str = "configs/answer_keys"):
+    def __init__(self, engine: BaseVLMEngine, answer_keys_dir: str = "configs/answer_keys", calibration_gates: bool = False):
         self.engine = engine
         self.answer_keys_dir = answer_keys_dir
+        self.calibration_gates = calibration_gates
         self.penalty_calculator = PenaltyCalculator()
         self._question_id: Optional[str] = None
         self._answer_key: Dict[str, Any] = {}
@@ -260,7 +261,7 @@ class Stage4Evaluator:
         deltas: List[float] = []
         deltas_incl: List[float] = []
 
-        specs = load_rubric_specs(rubric_data)
+        specs = load_rubric_specs(rubric_data, calibration_gates=self.calibration_gates)
         rubric_driven = bool(specs)
         answer_key = load_answer_key(question_obj.question_id if question_obj else None, self.answer_keys_dir) if rubric_driven else {}
         self._question_id = question_obj.question_id if question_obj else None

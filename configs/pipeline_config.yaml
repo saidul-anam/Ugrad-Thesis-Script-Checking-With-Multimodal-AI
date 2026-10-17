@@ -55,6 +55,8 @@ pipeline:
   stage2_thinking_mode: false  # False: structured reasoning handled via 'reason' JSON field
   stage3b_thinking_mode: true  # TRUE: allows deep deliberation on allograph vs genuine error
   stage4_thinking_mode: false  # Stage 4 rubric judgement thinking mode; false matches how the stored evaluations were produced (ablation: --thinking)
+  # Ablation: apply the rubrics' hand-set calibration_gates (error density, story baseline, verbatim summary cap)
+  stage4_calibration_gates: false
 
   # Separate cap for stage 4: 2048 tokens gives thinking models enough budget for reasoning + full JSON
   stage4_max_new_tokens: 2048

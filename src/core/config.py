@@ -95,6 +95,11 @@ class PipelineStageConfig(BaseModel):
     stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
     stage3b_thinking_mode: bool = Field(True, description="Stage 3b evidence arbitration thinking mode (deep allograph deliberation)")
     stage4_thinking_mode: bool = Field(True, description="Stage 4 rubric evaluation thinking mode (analytical criteria deliberation)")
+    stage4_calibration_gates: bool = Field(
+        False,
+        description="Ablation: apply each rubric's `calibration_gates` block (the hand-set error-density, story "
+                    "baseline and verbatim-overlap gates of docs/NCTB_Standard_Evaluation_Rubric_Guide.md section 4)."
+    )
     stage4_max_new_tokens: int = Field(2048, description="Upper token budget for Stage 4 rubric generation")
     stage4_generation_timeout_sec: float = Field(180.0, description="Hard timeout for Stage 4 generation in seconds")
     rag: RagConfig = Field(default_factory=RagConfig)

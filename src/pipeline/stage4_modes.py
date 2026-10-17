@@ -67,10 +67,12 @@ def _parse_allocation(text: str) -> Tuple[float, int]:
     return 0.0, 0
 
 
-def load_rubric_specs(rubric_data: Dict[str, Any]) -> Dict[str, QuestionSpec]:
-    """Build one QuestionSpec per question from a mode-based rubric. Returns {} for legacy rubrics."""
+def load_rubric_specs(rubric_data: Dict[str, Any], calibration_gates: bool = False) -> Dict[str, QuestionSpec]:
+    """Build one QuestionSpec per question from a mode-based rubric. Returns {} for legacy rubrics.
+    With calibration_gates, the rubric's `calibration_gates` caps and guidelines are added (ablation)."""
     if not rubric_is_mode_based(rubric_data):
         return {}
+    gates = (rubric_data.get("calibration_gates") or {}) if calibration_gates else {}
     specs: Dict[str, QuestionSpec] = {}
     modes = rubric_data.get("scoring_modes", {})
     q_to_mode: Dict[str, str] = {}
@@ -83,11 +85,11 @@ def load_rubric_specs(rubric_data: Dict[str, Any]) -> Dict[str, QuestionSpec]:
     mode_b = ms.get("mode_b_point_scored", {}).get("tasks", {})
     mode_c = ms.get("mode_c_band_scored", {})
     mode_c_tasks = mode_c.get("tasks", {})
-    hard_caps = mode_c.get("hard_caps", {})
+    hard_caps = {**(mode_c.get("hard_caps") or {}), **(gates.get("hard_caps") or {})}
     bands_by_max = mode_c.get("performance_bands_by_max_mark", {})
     # general_evaluation_guidelines is a list of single-key dicts
     general = []
-    for g in rubric_data.get("general_evaluation_guidelines", []) or []:
+    for g in (rubric_data.get("general_evaluation_guidelines") or []) + (gates.get("general_evaluation_guidelines") or []):
         if isinstance(g, dict):
             for k, v in g.items():
                 general.append(f"{k}: {v}")

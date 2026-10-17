@@ -307,7 +307,8 @@ class ScriptCheckingPipeline:
         self.stage2 = Stage2Verifier(self.engine, legacy_filters=getattr(self.config.pipeline, "legacy_text_rules", False))
         self.line_reconciler = LineReconciler(self.engine)
         self.stage3 = Stage3ErrorAnalyzer(self.engine)
-        self.stage4 = Stage4Evaluator(self.engine)
+        self.stage4 = Stage4Evaluator(self.engine,
+                                      calibration_gates=getattr(self.config.pipeline, "stage4_calibration_gates", False))
 
         # RAG Context
         self.rag_provider = RAGContextProvider(
