@@ -246,6 +246,7 @@ mode_specifications:
           originality_comparisons_paraphrase: 1.5
 
 general_evaluation_guidelines:
+  - grade_expectation: "Class 7 (CEFR A2): expect developing compound sentences and clear sequence connectives (first, next, then, finally)."   # docs/NCTB_Standard_Evaluation_Rubric_Guide.md section 5
   - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
   - feature_based_elaboration: "Do NOT score additively based on raw word count. Grade narrative depth, conflict, and character resolution rather than sheer length. An answer can only reach Band 1 or 2 if it contains genuine development and substance."
   - age_appropriate_leniency: "Class 7 students are 12-13 years old. Evaluate communicative intent generously. Do not deduct heavily for minor subject-verb or spelling slips if meaning is clear."

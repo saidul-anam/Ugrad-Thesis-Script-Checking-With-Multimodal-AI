@@ -270,6 +270,7 @@ mode_specifications:
           originality_comparisons_paraphrase: 1.0
 
 general_evaluation_guidelines:
+  - grade_expectation: "Class 8 (CEFR A2+): expect clear paragraph unity and correct conversational turn-taking with appropriate register."   # docs/NCTB_Standard_Evaluation_Rubric_Guide.md section 5
   - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
   - feature_based_elaboration: "Do NOT score additively based on raw word count. Grade narrative depth, conflict, and character resolution rather than sheer length. An answer can only reach Band 1 or 2 if it contains genuine development and substance."
   - no_per_error_math: "In Mode C, evaluate error density holistically within performance bands without fixed deductions."

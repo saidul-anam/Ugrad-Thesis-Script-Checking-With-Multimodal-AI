@@ -251,6 +251,7 @@ mode_specifications:
           originality_comparisons_paraphrase: 1.5
 
 general_evaluation_guidelines:
+  - grade_expectation: "Class 6 (CEFR A1 to A2): age-appropriate leniency for 11-12 year olds. Prioritize communicative intent over minor agreement slips."   # docs/NCTB_Standard_Evaluation_Rubric_Guide.md section 5
   - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
   - feature_based_elaboration: "Do NOT score additively based on raw word count. Grade narrative depth, basic conflict, and communicative development rather than sheer length. An answer can only reach Band 1 or 2 if it contains genuine development."
   - age_appropriate_leniency: "Class 6 students are 11-12 years old. Evaluate communicative intent generously. Do not deduct heavily for minor subject-verb or spelling slips if meaning is clear."

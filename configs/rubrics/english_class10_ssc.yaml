@@ -227,6 +227,7 @@ mode_specifications:
           originality_comparisons_paraphrase: 2.0
 
 general_evaluation_guidelines:
+  - grade_expectation: "Class 10 (SSC, CEFR B1): formal secondary examination standard. Rigorous grammar, narrative depth, tense consistency, and vocabulary breadth."   # docs/NCTB_Standard_Evaluation_Rubric_Guide.md section 5
   - zero_presentation_bias: "Ignore penmanship, handwriting style, or minor scratch-outs."
   - feature_based_elaboration: "Do NOT score additively based on raw word count. Grade narrative depth, conflict, and character resolution rather than sheer length. An answer can only reach Band 1 or 2 if it contains genuine development and narrative/dialogic substance."
   - mark_granularity: "Whole and half marks (0.5) only."
