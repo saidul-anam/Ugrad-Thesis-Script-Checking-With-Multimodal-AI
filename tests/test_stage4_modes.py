@@ -7,7 +7,7 @@ from src.pipeline.stage4_modes import (
     load_rubric_specs, rubric_is_mode_based, load_answer_key, key_for_question,
     score_mode_a, score_mode_b, score_mode_c, snap_half, band_for, verbatim_overlap,
     build_mode_a_prompt, build_mode_b_prompt, build_mode_c_prompt, source_text_for_question,
-    _matches_accepted,
+    _matches_accepted, selected_option_labels,
 )
 
 RUBRIC = yaml.safe_load(open("configs/rubrics/english_writing.yaml", "r", encoding="utf-8"))
@@ -71,6 +71,19 @@ def test_score_mode_a_mcq_and_cloze():
                          {"item_label": "g", "candidate_answer": "discouraged"}, {"item_label": "j", "candidate_answer": "disaster"}]}
     sr4 = score_mode_a(parsed4, specs["4"], key4)
     assert sr4.awarded == 1.5          # 'courage' (wrong form) earns 0
+
+
+def test_selected_option_labels_ignores_option_text():
+    # one choice: articles and labels inside the option text are not extra selections
+    assert selected_option_labels("(ii) He was a patriotic and courageous person") == {"ii"}
+    assert selected_option_labels("iv. all of i, ii & iii.", ["iv", "all of i, ii & iii"]) == {"iv"}
+    assert selected_option_labels("ii. Household manager and a caregiver.") == {"ii"}
+    assert selected_option_labels("e.g. a test") == set()
+    # two choices
+    assert selected_option_labels("i, ii") == {"i", "ii"}
+    assert selected_option_labels("ii and iii") == {"ii", "iii"}
+    assert selected_option_labels("(iii) (iv) Adjective") == {"iii", "iv"}
+    assert selected_option_labels("(ii) municipal area (iii) rural area") == {"ii", "iii"}
 
 
 def test_score_mode_a_rearrangement_positional():

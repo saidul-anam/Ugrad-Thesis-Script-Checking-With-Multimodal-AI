@@ -245,6 +245,25 @@ _ROMAN = {
 }
 
 
+_OPT = r"(?:i{1,3}|iv|v|[a-e]|[1-5])"
+_FORMATTED_LABEL_RE = re.compile(rf"(?:^|(?<=\s))(?:\(\s*({_OPT})\s*\)|({_OPT})\s*(?:\)|[.:](?=\s+\S)))", re.I)
+_LABELS_ONLY_RE = re.compile(rf"^\s*\(?\s*{_OPT}\s*\)?(?:\s*(?:[,/&]|and|or)?\s*\(?\s*{_OPT}\s*\)?)*\s*[.]?\s*$", re.I)
+
+
+def selected_option_labels(candidate: str, accepted: List[str] = ()) -> Set[str]:
+    """Option labels the student chose: labels written as labels ('(ii)', 'ii)', 'iv.'), or every label of an
+    answer made of labels only ('ii, iii'). The text of accepted options is ignored, so 'all of i, ii & iii' or
+    the article 'a' in 'He was a patriotic person' are not read as choices."""
+    s = str(candidate or "")
+    for a in accepted or ():
+        a = str(a).strip()
+        if len(a) > 3:
+            s = re.sub(re.escape(a), " ", s, flags=re.I)
+    if _LABELS_ONLY_RE.match(s):
+        return {m.lower() for m in re.findall(rf"\b{_OPT}\b", s, flags=re.I)}
+    return {(m[0] or m[1]).lower() for m in _FORMATTED_LABEL_RE.findall(s)}
+
+
 def _matches_accepted(candidate: str, accepted: List[str], task_type: str = "") -> bool:
     c = _norm(candidate)
     if not c:
@@ -692,8 +711,8 @@ def score_mode_a(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
         if not cand.strip():
             status = "not_attempted"
         elif accepted:
-            # multiple selections earn 0 (MCQ rule): two different roman numerals / letters
-            multi = len(set(re.findall(r"\b(i{1,3}|iv|v|[a-e]|[1-5])\b", cand.lower()))) > 1 and spec.task_type == "MCQ"
+            # multiple selections earn 0 (MCQ rule): two different option labels chosen
+            multi = spec.task_type == "MCQ" and len(selected_option_labels(cand, accepted)) > 1
             status = "correct" if (_matches_accepted(cand, accepted, spec.task_type) and not multi) else "incorrect"
         else:
             status = str((got_items.get(lab) or {}).get("status") or "unscorable")
