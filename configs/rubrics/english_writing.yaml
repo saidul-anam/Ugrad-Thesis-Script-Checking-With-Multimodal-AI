@@ -181,9 +181,22 @@ mode_specifications:
         band_1: "Highest = coherent attempt; Lowest = fragmented/near-unreadable."
       ocr_robustness: "Do not penalise physical paragraph splits, indentations, line breaks, or structural formatting that may be artifacts of OCR extraction. Grade writing quality, logical progression, and organization & cohesion."
     hard_caps:
-      summary_violations: "Exceeding 1/3rd source length OR >50% verbatim copying -> capped at 50% of MAX_MARK (Cap 5 for 10-mark)."
-      theme_verbatim_copy: ">50% verbatim poem line reproduction -> capped at 50% of MAX_MARK (Cap 4 for 8-mark)."
-      graph_external_facts: "Personal opinions, moral judgments, or external facts -> HARD CAP AT 6 (Override cap)."
+      # Applied by code (stage4_modes.apply_hard_caps). Trigger by field: threshold_ratio = verbatim overlap
+      # with the source, max_length_ratio = answer length vs source, threshold_words = minimum length,
+      # none of these = the model's structural_audit flag (audit_flag, or the cap name).
+      summary_violations:     # exceeding 1/3 of the source length OR >50% verbatim -> 50% of MAX_MARK (5 of 10)
+        threshold_ratio: 0.5
+        max_length_ratio: 0.3333
+        max_ratio: 0.5
+        applies_to: ["Summary"]
+      theme_verbatim_copy:    # >50% verbatim poem lines -> 50% of MAX_MARK (4 of 8)
+        threshold_ratio: 0.5
+        max_ratio: 0.5
+        applies_to: ["Theme"]
+      graph_external_facts:   # personal opinions, moral judgements or external facts -> hard cap at 6
+        audit_flag: external_facts_or_personal_opinions
+        max_awarded: 6.0
+        applies_to: ["Graph_Chart"]
     performance_bands_by_max_mark:
       max_10:
         band_4: "8-10"
@@ -290,7 +303,7 @@ output_json_schema:
       raw_total: "number"
   structural_audit:
     cap_applied: "boolean"
-    applied_cap_reason: "string (None | Summary_Verbatim_Length | Theme_Verbatim_Copy | Graph_External_Facts)"
+    applied_cap_reason: "string (None | summary_violations | theme_verbatim_copy | graph_external_facts)"
   capped_from: "number or null"
   score_breakdown:
     type: "object or null (Mode C only)"

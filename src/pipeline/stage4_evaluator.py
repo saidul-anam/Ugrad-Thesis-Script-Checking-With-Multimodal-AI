@@ -161,9 +161,18 @@ class Stage4Evaluator:
         except Exception as ex:
             return QuestionEvaluationItem(awarded_marks=0.0, scoring_status="unscored",
                                           examiner_feedback=f"Scoring failed: {ex}", scoring_notes=[f"raw: {raw[:200]}"], **base)
-        pen_breakdown = self.penalty_calculator.calculate_question_penalties(
-            ans.errors or [], spec.task_type, max_mark
-        )
+        if sr.unscored:
+            return QuestionEvaluationItem(awarded_marks=0.0, scoring_status="unscored",
+                                          examiner_feedback="Model output held no criterion marks; question left unscored for review.",
+                                          scoring_notes=sr.notes + [f"raw: {raw[:200]}"], **base)
+        # Additive language deductions apply to point-scored short answers only: item-scored (A) answers are
+        # objective, and band-scored (C) compositions already judge language in their language criterion.
+        if mode == "B":
+            pen_breakdown = self.penalty_calculator.calculate_question_penalties(ans.errors or [], spec.task_type, max_mark)
+        else:
+            from src.pipeline.penalty_calculator import PenaltyBreakdown
+            pen_breakdown = PenaltyBreakdown(cap_reason=("objective item-scored question" if mode == "A"
+                                                         else "language judged in the language_mechanics criterion"))
         penalty = pen_breakdown.total_penalty
         base_score = float(sr.awarded if sr.cap_applied else (sr.raw_total if sr.raw_total is not None else sr.awarded))
         awarded = max(0.0, min(max_mark, snap_half(base_score - penalty)))
@@ -363,9 +372,25 @@ class Stage4Evaluator:
 
             # Clamp awarded marks between 0 and q_max_marks
             try:
-                raw_m = float(parsed.get("awarded_marks", parsed.get("final_score", 0.0)))
+                raw_m = float(parsed.get("awarded_marks", parsed.get("final_score")))
             except (ValueError, TypeError):
-                raw_m = round(q_max_marks * 0.5, 1)
+                raw_m = None
+            if raw_m is None:
+                print(f"[Stage 4 Modular] Warning: no mark in model output for Q{ans.q_no}. Marked UNSCORED.")
+                qe = QuestionEvaluationItem(
+                    q_no=ans.q_no, q_name=ans.q_name or f"Question {ans.q_no}", page_numbers=ans.page_numbers,
+                    max_marks=q_max_marks, awarded_marks=0.0, scoring_status="unscored", task_mode="generic",
+                    examiner_feedback="Model output held no mark; question left unscored for review.",
+                    scoring_notes=[f"raw: {str(response)[:200]}"], student_writing=ans.answer_text,
+                )
+                gt_val = gt_canon.get(q_canon)
+                if gt_val is not None:
+                    qe.human_ground_truth = gt_val
+                    qe.delta = round(abs(0.0 - gt_val), 2)
+                    deltas_incl.append(qe.delta)
+                question_evaluations.append(qe)
+                total_max += q_max_marks
+                continue
 
             if is_obj and content_raw > 0:
                 # Guarantee objective questions are graded on content with zero linguistic deduction
@@ -580,8 +605,8 @@ class Stage4Evaluator:
                 actionable_recommendations=parsed_data.get("actionable_recommendations", [])
             )
 
-        # Fallback default if model returned unformatted text
-        print(f"[Stage4Evaluator] Warning: Falling back to default scoring. Raw response len={len(response)}.")
+        # Unparseable output: report the script as unscored instead of inventing a mark
+        print(f"[Stage4Evaluator] Warning: model output could not be parsed; script left unscored. Raw response len={len(response)}.")
         return Stage4EvaluationResult(
             subject=rubric_data.get("subject", "General"),
             question_type=rubric_data.get("question_type", "Standard"),
@@ -590,11 +615,12 @@ class Stage4Evaluator:
             eval_mode="monolithic",
             criteria_scores=[],
             question_evaluations=[],
-            content_raw_score=5.0,
+            content_raw_score=0.0,
             linguistic_penalty=0.0,
-            final_score=5.0,
+            final_score=0.0,
             total_max_marks=total_max_marks,
-            percentage=50.0,
-            overall_feedback="Automated fallback evaluation generated.",
+            percentage=0.0,
+            unscored_questions=["all"],
+            overall_feedback="UNSCORED: the model output could not be parsed, so no mark was given. Review manually.",
             actionable_recommendations=["Review transcript and rubric criteria manually."]
         )

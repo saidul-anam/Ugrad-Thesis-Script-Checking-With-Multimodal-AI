@@ -120,7 +120,7 @@ def test_score_mode_c_ceilings_caps_and_band():
     parsed_g = {"raw_subscores": {"context_content_data": 3, "structure_format_brevity": 3, "language_mechanics": 2, "originality_comparisons_paraphrase": 2},
                 "structural_audit": {"external_facts_or_personal_opinions": True}}
     sr_g = score_mode_c(parsed_g, specs["8"], "chart text")
-    assert sr_g.awarded == 6.0 and sr_g.cap_reason == "Graph_External_Facts"
+    assert sr_g.awarded == 6.0 and sr_g.cap_reason == "graph_external_facts"
     assert sr_g.subscores["organization_cohesion"] == 3.0
     # theme: verbatim copying computed in code
     poem = "All people dream but not equally those who dream by night in the dusty recesses of their mind wake in the morning to find that it was vanity"
@@ -202,7 +202,7 @@ def test_mode_c_multi_tier_self_healing_parsing():
     assert sr2.raw_total == 7.5
     assert sr2.awarded == 7.5
 
-    # Tier 3: No numbers at all, only narrative mentioning Band 2 (Good)
+    # No numbers at all, only narrative mentioning Band 2 (Good): never turned into a mark
     parsed_tier3 = {
         "criteria_reasoning": {
             "context_content_data": {"justification": "good content"},
@@ -216,8 +216,7 @@ def test_mode_c_multi_tier_self_healing_parsing():
     # Write a paragraph of > 15 words
     student_writing = "Tree plantation is very important for our environment. Trees give us oxygen and shelter and protect against global warming."
     sr3 = score_mode_c(parsed_tier3, spec_7, student_writing)
-    assert sr3.awarded > 0.0
-    assert any("reconstructed_from_narrative_band" in n for n in sr3.notes)
+    assert sr3.unscored and sr3.awarded == 0.0
 
 
 def test_source_text_for_question_group_header_and_fail_open():
@@ -242,7 +241,7 @@ Lord Byron was an English poet who lived from 1788 to 1824. His father, Captain 
     short_src = "Instruction only"
     sr = score_mode_c(parsed, spec_sum, "A summary text consisting of fifty words here to test the brevity bypass...", short_src)
     assert not sr.cap_applied
-    assert any("length caps bypassed" in n for n in sr.notes)
+    assert any("cap not checked" in n for n in sr.notes)
 
 
 def test_matches_accepted_enhanced():
@@ -274,3 +273,33 @@ def test_last_question_prompt_keeps_its_text():
     assert get_sub_question_prompt_and_marks("1", q)[0] == "Write a paragraph on trees. 10"
     # not in the paper text: the sub-question's own instructions are used
     assert "Complete the story." in get_sub_question_prompt_and_marks("3", q)[0]
+
+
+def test_structured_hard_caps_from_rubric():
+    from src.pipeline.stage4_modes import QuestionSpec, apply_hard_caps, describe_hard_caps
+    caps = {
+        "heavy_verbatim_copying": {"threshold_ratio": 0.5, "max_awarded": 3.0, "applies_to": ["Summary"]},
+        "short_length_below_50_words": {"threshold_words": 50, "max_awarded": 4.0, "applies_to": ["Story"]},
+        "off_topic": {"max_awarded": 2.0, "applies_to": ["Summary", "Story"]},
+    }
+    src = " ".join(f"word{i} alpha beta gamma" for i in range(30))
+    summ = QuestionSpec(q_no="5", mode="C", task_type="summary", max_mark=10, hard_caps=caps)   # case-insensitive
+    assert apply_hard_caps(summ, src[:200], src, {})[:2] == (3.0, "heavy_verbatim_copying")
+    assert apply_hard_caps(summ, "my own short words about the passage here", src, {})[0] is None
+    assert apply_hard_caps(summ, "my own words", src, {"off_topic": True})[:2] == (2.0, "off_topic")
+    story = QuestionSpec(q_no="10", mode="C", task_type="Story", max_mark=15, hard_caps=caps)
+    assert apply_hard_caps(story, "a short story of nine words written here", "", {})[:2] == (4.0, "short_length_below_50_words")
+    # free-text caps and other task types are ignored
+    para = QuestionSpec(q_no="12", mode="C", task_type="Paragraph", max_mark=10, hard_caps={**caps, "x": "text cap"})
+    assert apply_hard_caps(para, "few words", src, {"off_topic": True})[0] is None
+    assert any("off_topic" in line for line in describe_hard_caps(summ))
+
+
+def test_mode_a_and_c_carry_no_additive_penalty():
+    engine = MockGemmaEngine()
+    ev = Stage4Evaluator(engine)
+    specs = load_rubric_specs(RUBRIC)
+    errs = [{"error_type": "spelling", "erroneous_text": f"wrd{i}", "suggested_correction": "word"} for i in range(6)]
+    ans_c = AlignedAnswerItem(q_no="7", answer_text="Trees are important for us. " * 20, page_numbers=[1], word_count=120, errors=errs)
+    qe = ev._evaluate_rubric_driven(ans_c, specs["7"], "", {}, "Write a paragraph.", 10.0, "", 0.0, 0.1, 512, False, None)
+    assert qe.linguistic_penalty == 0.0

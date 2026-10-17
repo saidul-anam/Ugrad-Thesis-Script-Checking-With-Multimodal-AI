@@ -85,7 +85,12 @@ class PenaltyCalculator:
             try:
                 with open(p, "r", encoding="utf-8") as f:
                     loaded = yaml.safe_load(f) or {}
-                    default_config.update(loaded)
+                # merge nested tables key by key, so a profile that omits a task type keeps its default
+                for k, v in loaded.items():
+                    if isinstance(v, dict) and isinstance(default_config.get(k), dict):
+                        default_config[k] = {**default_config[k], **v}
+                    else:
+                        default_config[k] = v
             except Exception as e:
                 print(f"[PenaltyCalculator] Warning: Failed loading config from {p}: {e}")
 

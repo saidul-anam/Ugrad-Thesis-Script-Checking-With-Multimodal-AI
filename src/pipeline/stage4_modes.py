@@ -517,7 +517,9 @@ def build_mode_c_prompt(answer: AlignedAnswerItem, spec: QuestionSpec, question_
         else:
             bands_formatted.append(f"  - {title}: {v_str} marks")
     bands = "\n".join(bands_formatted)
-    caps = "\n".join(f"  - {k}: {v}" for k, v in spec.hard_caps.items())
+    caps = "\n".join(f"  - {c}" for c in describe_hard_caps(spec)) or "  - none for this question"
+    audit_flags = ["attempted"] + [f for f in (cap_audit_flag(n, c) for n, c in caps_for_task(spec).items()) if f]
+    audit_json = ", ".join(f'"{f}": {"true" if f == "attempted" else "false"}' for f in dict.fromkeys(audit_flags))
     general_list = list(spec.general_rules[:10])
     general_list.append("OCR Robustness: Do NOT penalise physical paragraph splits, indentations, line breaks, or structural formatting that may be artifacts of OCR extraction. Grade writing quality, logical progression, and organization & cohesion.")
     general = "\n".join(f"  - {g}" for g in general_list)
@@ -547,7 +549,7 @@ CRITERIA AND CEILINGS (award each criterion 0 up to its ceiling, in 0.5 steps):
 PERFORMANCE BANDS FOR THIS MAX MARK (the sum of your criteria must fall in the band that matches the overall quality):
 {bands}
 
-HARD CAPS (report the facts; the cap itself is applied by the marking software):
+HARD CAPS (applied by the marking software from measured overlap/length and your structural_audit flags; do not lower the criterion marks for them):
 {caps}
 {layout}
 GENERAL GUIDELINES:
@@ -563,13 +565,8 @@ Output ONLY JSON:
     "praise_point": "one clear commendation of what the student did well",
     "actionable_revision_step": "one concrete actionable revision technique"
   }},
-  "examiner_reasoning": "2 sentences explaining the final mark allocation across the criteria ceilings",
-  "structural_audit": {{
-    "verbatim_copy_suspected": false,
-    "exceeds_length_limit": false,
-    "external_facts_or_personal_opinions": false,
-    "attempted": true
-  }}
+  "examiner_reasoning": "2 sentences on the main strengths and weaknesses behind the criterion marks. Do NOT state a total mark or a band: the software adds the criteria, applies caps and reports the total.",
+  "structural_audit": {{{audit_json}}}
 }}"""
 
 
@@ -594,6 +591,7 @@ class ScoreResult:
     feedback: str = ""
     strengths: List[str] = field(default_factory=list)
     weaknesses: List[str] = field(default_factory=list)
+    unscored: bool = False          # the model's output held no usable marks; never replaced by a guess
 
 
 def compute_lcs_alignment(student: List[str], expected: List[str]) -> Tuple[int, Set[int], Set[int]]:
@@ -750,6 +748,101 @@ def score_mode_b(parsed: Dict[str, Any], spec: QuestionSpec, key_entry: Dict[str
     return res
 
 
+def _norm_task(t: Any) -> str:
+    return re.sub(r"[^a-z]", "", str(t or "").lower())
+
+
+def caps_for_task(spec: QuestionSpec) -> Dict[str, Dict[str, Any]]:
+    """The rubric's structured hard caps that apply to this question's task type (case-insensitive)."""
+    tt = _norm_task(spec.task_type)
+    out = {}
+    for name, cap in (spec.hard_caps or {}).items():
+        if not isinstance(cap, dict):
+            continue                    # free-text caps cannot be applied by code
+        targets = cap.get("applies_to") or []
+        if isinstance(targets, str):
+            targets = [targets]
+        if any(_norm_task(t) == tt for t in targets):
+            out[name] = cap
+    return out
+
+
+def cap_audit_flag(name: str, cap: Dict[str, Any]) -> Optional[str]:
+    """Caps without a measurable threshold are triggered by a structural_audit flag the model reports:
+    `audit_flag`, or the cap's own name."""
+    if any(k in cap for k in ("threshold_ratio", "max_length_ratio", "threshold_words")):
+        return None
+    return str(cap.get("audit_flag") or name)
+
+
+def apply_hard_caps(spec: QuestionSpec, answer_text: str, source_text: str,
+                    audit: Dict[str, Any]) -> Tuple[Optional[float], str, List[str]]:
+    """Apply the rubric's structured hard caps. What triggers a cap depends on the fields it has:
+      threshold_ratio  -> verbatim 4-gram overlap with the source passage at or above this share
+      max_length_ratio -> answer longer than this share of the source passage (+5 words)
+      threshold_words  -> answer shorter than this many words
+      otherwise        -> the model's structural_audit flag (see cap_audit_flag) is true
+    The cap value is `max_awarded`, or `max_ratio` x the question's max mark. Overlap and length are
+    measured in code; the model's own copy/length flags are not used. Returns (tightest cap, reason, notes)."""
+    notes: List[str] = []
+    ans_words = len(_WORD.findall((answer_text or "").lower()))
+    src_words = len(_WORD.findall((source_text or "").lower()))
+    best: Tuple[Optional[float], str] = (None, "None")
+    overlap: Optional[float] = None
+    for name, cap in caps_for_task(spec).items():
+        if "max_awarded" in cap:
+            limit = float(cap["max_awarded"])
+        elif "max_ratio" in cap:
+            limit = snap_half(spec.max_mark * float(cap["max_ratio"]))
+        else:
+            continue
+        hit = False
+        if "threshold_ratio" in cap or "max_length_ratio" in cap:
+            if src_words < 20:
+                notes.append(f"{name}: source passage unresolved or short (src_words={src_words}); cap not checked")
+                continue
+            if "threshold_ratio" in cap:
+                if overlap is None:
+                    overlap = verbatim_overlap(answer_text, source_text)
+                    notes.append(f"verbatim_overlap={overlap:.2f} (src_words={src_words})")
+                hit = hit or overlap >= float(cap["threshold_ratio"])
+            if "max_length_ratio" in cap:
+                too_long = ans_words > src_words * float(cap["max_length_ratio"]) + 5
+                notes.append(f"{name}: answer_words={ans_words} too_long={too_long}")
+                hit = hit or too_long
+        elif "threshold_words" in cap:
+            hit = 0 < ans_words < int(cap["threshold_words"])
+        else:
+            hit = bool(audit.get(cap_audit_flag(name, cap)))
+        if hit and (best[0] is None or limit < best[0]):
+            best = (min(limit, spec.max_mark), name)
+    return best[0], best[1], notes
+
+
+def describe_hard_caps(spec: QuestionSpec) -> List[str]:
+    """Plain-language lines for the prompt, one per cap that applies to this question."""
+    lines = []
+    for name, cap in caps_for_task(spec).items():
+        if "max_awarded" in cap:
+            limit = f"at most {float(cap['max_awarded']):g} marks"
+        elif "max_ratio" in cap:
+            limit = f"at most {snap_half(spec.max_mark * float(cap['max_ratio'])):g} marks"
+        else:
+            continue
+        conds = []
+        if "threshold_ratio" in cap:
+            conds.append(f"{float(cap['threshold_ratio']):.0%} or more copied word-for-word from the source")
+        if "max_length_ratio" in cap:
+            conds.append(f"longer than {float(cap['max_length_ratio']):.0%} of the source")
+        if "threshold_words" in cap:
+            conds.append(f"shorter than {int(cap['threshold_words'])} words")
+        flag = cap_audit_flag(name, cap)
+        if flag:
+            conds.append(f"structural_audit.{flag} is true")
+        lines.append(f"{name}: {' or '.join(conds)} -> {limit}")
+    return lines
+
+
 def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, source_text: str = "") -> ScoreResult:
     res = ScoreResult(awarded=0.0)
     answer_text = clean_rubric_answer(answer_text)
@@ -789,89 +882,19 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
         else:
             res.subscores[crit] = 0.0
 
-    # Tier 3: Narrative Band Recovery if no numerical subscores found but student attempted composition
-    ans_words = len(_WORD.findall(answer_text.lower()))
-    audit = parsed.get("structural_audit") or {}
-    is_attempted = audit.get("attempted", True) if answer_text.strip() else False
-
-    if not extracted_any_subscore and is_attempted and ans_words >= 15 and spec.bands:
-        all_narrative = (
-            str(parsed.get("examiner_reasoning", "")) + " " +
-            str(parsed.get("feedback_summary", "")) + " " +
-            " ".join(str(cr.get(c, {}).get("justification", "")) for c in spec.criteria_ceilings)
-        ).lower()
-
-        band_patterns = [
-            ("band_1", r"\bband\s*1\b|\bexcellent\b|\bfull\s+marks\b"),
-            ("band_2", r"\bband\s*2\b|\bgood\b|\bhigh\s+marks\b"),
-            ("band_3", r"\bband\s*3\b|\bsatisfactory\b|\baverage\b"),
-            ("band_4", r"\bband\s*4\b|\blimited\b"),
-            ("band_5", r"\bband\s*5\b|\bpoor\b"),
-        ]
-        detected_band = None
-        for b_name, b_re in band_patterns:
-            if re.search(b_re, all_narrative):
-                matched_key = next((k for k in spec.bands.keys() if b_name in k.lower()), None)
-                if matched_key:
-                    detected_band = matched_key
-                    break
-
-        if detected_band:
-            rng_str = str(spec.bands[detected_band])
-            if "-" in rng_str:
-                lo, hi = map(float, rng_str.split("-", 1))
-                target_score = snap_half((lo + hi) / 2.0)
-            else:
-                target_score = snap_half(float(rng_str))
-            reconstruct_reason = f"reconstructed_from_narrative_band: {detected_band} (target={target_score})"
-        elif ans_words >= 25:
-            # Fallback for attempted substantial composition where narrative didn't name a band
-            target_score = snap_half(spec.max_mark * 0.5)
-            reconstruct_reason = f"reconstructed_from_attempted_narrative_default (target={target_score})"
-        else:
-            target_score = 0.0
-            reconstruct_reason = None
-
-        if target_score > 0.0:
-            tot_ceiling = sum(spec.criteria_ceilings.values()) or spec.max_mark or 1.0
-            ratio = min(1.0, target_score / tot_ceiling)
-            for crit, ceiling in spec.criteria_ceilings.items():
-                res.subscores[crit] = snap_half(ceiling * ratio)
-            if reconstruct_reason:
-                res.notes.append(reconstruct_reason)
+    if not extracted_any_subscore and answer_text.strip():
+        # No criterion marks in the output: leave the question for review instead of inventing a mark
+        res.unscored = True
+        res.notes.append("no criterion marks in model output")
 
     total = sum(res.subscores.values())
     res.raw_total = snap_half(total)
     audit = parsed.get("structural_audit") or {}
-    tt = (spec.task_type or "").lower()
-    half = snap_half(spec.max_mark * 0.5)
-    cap_value: Optional[float] = None
-    reason = "None"
     if audit.get("attempted") is False and not answer_text.strip():
-        res.awarded = 0.0
         res.notes.append("not attempted")
 
-    source_words = len(_WORD.findall((source_text or "").lower()))
-    if tt == "summary":
-        if source_words >= 25:
-            overlap = verbatim_overlap(answer_text, source_text)
-            too_long = len(_WORD.findall(answer_text.lower())) > (source_words / 3.0 + 5)
-            res.notes.append(f"verbatim_overlap={overlap:.2f} too_long={too_long} (src_words={source_words})")
-            if overlap > 0.5 or too_long or bool(audit.get("verbatim_copy_suspected")) or bool(audit.get("exceeds_length_limit")):
-                cap_value, reason = half, "Summary_Verbatim_Length"
-        else:
-            res.notes.append(f"source_passage_unresolved_or_short (src_words={source_words}) - length caps bypassed")
-    elif tt == "theme":
-        if source_words >= 20:
-            overlap = verbatim_overlap(answer_text, source_text)
-            res.notes.append(f"verbatim_overlap={overlap:.2f}")
-            if overlap > 0.5 or bool(audit.get("verbatim_copy_suspected")):
-                cap_value, reason = half, "Theme_Verbatim_Copy"
-        else:
-            res.notes.append(f"source_theme_unresolved_or_short (src_words={source_words}) - verbatim cap bypassed")
-    elif tt in ("graph_chart", "graph", "chart") and bool(audit.get("external_facts_or_personal_opinions")):
-        cap_val = float(spec.hard_caps.get("Graph_External_Facts", 0.0)) if "Graph_External_Facts" in spec.hard_caps else round(spec.max_mark * 0.6, 1)
-        cap_value, reason = min(cap_val if cap_val > 0 else round(spec.max_mark * 0.6, 1), spec.max_mark), "Graph_External_Facts"
+    cap_value, reason, cap_notes = apply_hard_caps(spec, answer_text, source_text, audit)
+    res.notes.extend(cap_notes)
 
     awarded = res.raw_total
     if cap_value is not None and awarded > cap_value:
@@ -901,22 +924,33 @@ def score_mode_c(parsed: Dict[str, Any], spec: QuestionSpec, answer_text: str, s
     res.feedback = res.examiner_reasoning or str(parsed.get("feedback_summary") or "")
     res.strengths = [str(s) for s in (parsed.get("strengths") or parsed.get("positive_aspects") or [])][:5]
     res.weaknesses = [str(s) for s in (parsed.get("weaknesses") or parsed.get("frequent_errors") or [])][:5]
-    ev = parsed.get("criterion_evidence") or {}
-    if isinstance(ev, dict):
-        hallucinations = []
-        norm_ans = re.sub(r'\s+', ' ', answer_text.lower())
-        for k, v in ev.items():
-            s = str(v).strip()
-            # If evidence contains quoted excerpts, check against student's answer text
-            quote_m = re.findall(r'["\']([^"\']{10,})["\']', s)
-            for q in quote_m:
-                norm_q = re.sub(r'\s+', ' ', q.lower())
-                if norm_q not in norm_ans:
-                    hallucinations.append(q[:40])
-        if hallucinations:
-            res.notes.append(f"evidence_quote_unverified: {hallucinations}")
+    ev = dict(parsed.get("criterion_evidence") or {}) if isinstance(parsed.get("criterion_evidence"), dict) else {}
+    for crit, r in (cr.items() if isinstance(cr, dict) else []):
+        if isinstance(r, dict) and str(r.get("evidence") or "").strip():
+            ev.setdefault(crit, r["evidence"])
+    if ev:
+        unverified = [f"{k}: {str(v)[:40]}" for k, v in ev.items() if not evidence_in_answer(str(v), answer_text)]
+        if unverified:
+            res.notes.append(f"evidence_quote_unverified: {unverified}")
         res.notes.append("evidence: " + json.dumps({k: str(v)[:80] for k, v in ev.items()}, ensure_ascii=False))
     return res
+
+
+def _words_only(s: str) -> str:
+    return " ".join(re.findall(r"[a-z0-9ঀ-৿']+", (s or "").lower()))
+
+
+def evidence_in_answer(evidence: str, answer_text: str) -> bool:
+    """True when every quoted fragment of the evidence (split at '...' ellipses; fragments of 3+ words)
+    occurs word-for-word in the student's answer. Evidence with no such fragment counts as verified."""
+    ans = f" {_words_only(answer_text)} "
+    quoted = re.findall(r'["\u201c\u2018]([^"\u201d\u2019]+)["\u201d\u2019]', evidence) or [evidence]
+    for q in quoted:
+        for frag in re.split(r"\.\.\.|\u2026", q):
+            w = _words_only(frag)
+            if len(w.split()) >= 3 and f" {w} " not in ans:
+                return False
+    return True
 
 
 def source_text_for_question(q_no: str, question_text: str, question_id: Optional[str] = None) -> str:
