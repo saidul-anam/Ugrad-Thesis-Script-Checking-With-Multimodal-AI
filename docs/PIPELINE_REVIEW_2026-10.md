@@ -110,6 +110,11 @@ Run on the stored transcripts with no model (`scripts/audit_segmentation.py`), t
 
 The remaining 9 are listed per script in `outputs/benchmarks/segmentation_audit_after10_*.json`. Most are answers the student wrote with no number, in the middle of another answer.
 
+**Follow-up (2026-10-17): headers with an unreadable number.**
+- **The gap:** 15 of about 760 answer headers in the imported text have no readable number ("Qno: Ques: Ans:", "Long:Ques: Ans:", "Ans to the Q/A-g"). The section splitter needs a digit, so their text was glued to the answer before. In SE_08_Q1_0017, Q9's letter sequence was filed under Q8.
+- **The change:** such a line now starts a new section. The section's question is still decided by the existing rules: a keyword or layout match, or a content switch needing evidence ≥ `MIN_REMAP_EVIDENCE` that is uniquely best. No threshold was added.
+- **Effect** (audit, all 123 imported transcripts and 30 class-10 pipeline transcripts): one assignment changed, the 0017 fix above, and nothing else moved.
+- **Still missing:** 0017's Q10 and Q12. Their text carries too little paper evidence: Q10 scores 1.1, below 2.
 ---
 
 ## 2. Runtime

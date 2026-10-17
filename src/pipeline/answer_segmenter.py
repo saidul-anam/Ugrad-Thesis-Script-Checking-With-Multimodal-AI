@@ -996,6 +996,15 @@ _STRUCTURAL_OPENING_RE = re.compile(
     re.IGNORECASE
 )
 _PART_DIVIDER_RE = re.compile(r'^\s*(?:Part[\s\-]*[A-Z0-9]\b|P[\s\-]*[A-Z0-9]\s*(?:Writting|Writing|Reading)?)\b.*$', re.IGNORECASE)
+# An answer header whose number is unreadable or left out ("Qno: Ques: Ans:", "Ans to the Q/A-g", "Answer to the
+# question"). It still opens a new answer, so the text below it may switch question by content (see _assign_sections).
+_UNNUMBERED_HEADER_RE = re.compile(
+    r'^\s*(?:\[struck:[^\]]*\]\s*)*(?:'
+    r'(?:[^\s0-9]{1,8}\s*[:\.\-]?\s*){0,2}Q(?:ues|us|uestion)\w*\s*[:\.\-]?\s*Ans(?:wer)?s?\b[\s:\.\-]*'
+    r'|Ans(?:wer)?s?\s+(?:to|of)\s+(?:the\s+)?Q\w*\b[^0-9\n]*'
+    r')$',
+    re.IGNORECASE
+)
 
 
 def build_answer_key_index(
@@ -1250,7 +1259,16 @@ class _Part:
 
 def _split_page_sections(page_text: str) -> List[str]:
     normalized = normalize_header_text(page_text)
-    sections = [s for s in HEADER_SPLIT_REGEX.split(normalized) if s.strip()]
+    sections = []
+    for sec in (s for s in HEADER_SPLIT_REGEX.split(normalized) if s.strip()):
+        # HEADER_SPLIT_REGEX needs a question number; an unnumbered header line also starts a section
+        lines, start = sec.split("\n"), 0
+        for i in range(1, len(lines)):
+            if _UNNUMBERED_HEADER_RE.match(lines[i]) and "\n".join(lines[start:i]).strip():
+                sections.append("\n".join(lines[start:i]))
+                start = i
+        sections.append("\n".join(lines[start:]))
+    sections = [s for s in sections if s.strip()]
     return sections or ([normalized] if normalized.strip() else [])
 
 
@@ -1276,6 +1294,7 @@ def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, lo
                 context=ctx
             )
             sec_clean = sec.strip()
+            first_line = sec_clean.split("\n", 1)[0]
             if not q and _PART_DIVIDER_RE.match(sec_clean) and len(sec_clean.split()) <= 6:
                 continue  # "Part-B : Writing Part" carries no answer text
 
@@ -1292,7 +1311,8 @@ def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, lo
                 if current is None:
                     target, how = q, source
                 elif (q not in completed and len(sec_clean.split()) >= MIN_CONTENT_WORDS
-                      and (s_idx == 0 or _STRUCTURAL_OPENING_RE.match(sec_clean.split("\n", 1)[0]))):
+                      and (s_idx == 0 or _STRUCTURAL_OPENING_RE.match(first_line)
+                           or _UNNUMBERED_HEADER_RE.match(first_line))):
                     sc = ctx.scores(sec_clean)
                     if sc.get(q, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, q):
                         target, how = q, source
@@ -1300,6 +1320,19 @@ def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, lo
                                     "evidence": {q: sc.get(q, 0), current: sc.get(current, 0)}})
                     else:
                         target, how = current, "continuation"
+                else:
+                    target, how = current, "continuation"
+            elif (not q and current is not None and _UNNUMBERED_HEADER_RE.match(first_line)
+                  and len(sec_clean.split()) >= MIN_CONTENT_WORDS):
+                # a header without a readable number opens a new answer: file it under the not-yet-answered
+                # question its content fits best, by the same evidence rule as a content switch
+                sc = ctx.scores(sec_clean)
+                open_qs = [x for x in ctx.order if x not in completed]
+                best = max(open_qs, key=lambda x: sc.get(x, 0)) if open_qs else None
+                if best and sc.get(best, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, best):
+                    target, how = best, "unnumbered_header"
+                    log.append({"event": "unnumbered_header", "page": page_no, "from": current, "to": best,
+                                "line": first_line[:80], "evidence": {best: sc.get(best, 0), current: sc.get(current, 0)}})
                 else:
                     target, how = current, "continuation"
             else:

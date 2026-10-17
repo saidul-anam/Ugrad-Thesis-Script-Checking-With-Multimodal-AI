@@ -414,3 +414,17 @@ def test_generalized_graph_and_story_fingerprints():
 
 
 
+
+
+def test_unnumbered_header_line_starts_a_new_section():
+    # a header whose number was not read ("Qno: Ques: Ans:") still opens a new answer, so the text below it
+    # is not glued to the previous answer and can be filed by content
+    from src.pipeline.answer_segmenter import _split_page_sections
+    page = ("5. e + iii = It also causes serious damage to the soil.\n"
+            "Qno: Ques: Ans:\n1 2 3 4 5 6 7 8\ne b d h a f c g\n"
+            "Ans to the Q/A-g\nThe king was kind.")
+    heads = [s.strip().split("\n")[0] for s in _split_page_sections(page)]
+    assert heads == ["5. e + iii = It also causes serious damage to the soil.", "Q No.: Ques: Ans:", "Ans to the Q/A-g"]
+    # ordinary lines that merely mention a question or an answer do not split
+    body = "He asked a question.\nThe answer was no.\nQuestions and answers are useful."
+    assert len(_split_page_sections(body)) == 1
