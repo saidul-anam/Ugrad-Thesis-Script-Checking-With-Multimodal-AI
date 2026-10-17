@@ -25,6 +25,7 @@ class Stage1TranscriptionResult(BaseModel):
     character_count: int = Field(0, description="Total characters transcribed.")
     word_count: int = Field(0, description="Total words transcribed.")
     detected_script: str = Field("unknown", description="Bangla, English, or Mixed script detected.")
+    band_transcripts: List[str] = Field(default_factory=list, description="Raw model output per horizontal band, before stitching (empty for single-band pages).")
 
 
 # ---------------------------------------------------------------------------

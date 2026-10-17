@@ -146,10 +146,10 @@ class Stage1Transcriber:
         # Determine whether to use multi-band tiling for native DPI stroke preservation
         w, h = image.size
         use_bands = self.enable_banding and h > self.tiler.max_page_height_for_single_band
+        band_transcripts: List[str] = []
 
         if use_bands:
             band_images, band_metas = self.tiler.tile_page(image)
-            band_transcripts: List[str] = []
 
             for b_img, b_meta in zip(band_images, band_metas):
                 # Filter strikethrough regions belonging to this band
@@ -240,5 +240,6 @@ class Stage1Transcriber:
             struck_count=len(struck_matches),
             character_count=len(raw_text),
             word_count=len(words),
-            detected_script=detected_script
+            detected_script=detected_script,
+            band_transcripts=band_transcripts,     # kept so stitching can be compared offline
         )
