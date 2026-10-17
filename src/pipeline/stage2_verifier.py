@@ -686,7 +686,8 @@ class Stage2Verifier:
         top_p: float = 0.1,
         max_new_tokens: int = 3072,
         thinking_mode: bool = False,
-        prompt_vocab: bool = True
+        prompt_vocab: bool = True,
+        compact_output: bool = False
     ) -> Stage2VerificationResult:
         # Phase 1: CPU Pre-Analysis
         if pre_analysis is None:
@@ -706,7 +707,8 @@ class Stage2Verifier:
             question_syllabus=question_syllabus,
             question_reference_vocab=question_reference_vocab if prompt_vocab else None,
             question_reference_numerals=question_reference_numerals,
-            strikethrough_regions=filtered_strikes
+            strikethrough_regions=filtered_strikes,
+            compact_output=compact_output
         )
 
         try:

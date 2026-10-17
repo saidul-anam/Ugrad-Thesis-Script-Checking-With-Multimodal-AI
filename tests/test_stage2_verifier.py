@@ -646,3 +646,13 @@ def test_default_stage2_applies_structurally_valid_patches_without_word_filters(
     out = Stage2Verifier(engine).run(image=None, stage1_transcript="we see the river\ndraft one\ndraft two\nend",
                                      pre_analysis=None).verified_transcript
     assert out == "we see to river\n[struck: draft one]\n[struck: draft two]\nend"
+
+
+def test_compact_output_drops_only_unread_reply_fields():
+    from src.prompts.stage2_verification import build_stage2_prompt
+    full = build_stage2_prompt("the cat sat")
+    compact = build_stage2_prompt("the cat sat", compact_output=True)
+    assert '"confidence"' in full and '"verification_notes"' in full
+    assert '"confidence"' not in compact and '"verification_notes"' not in compact
+    assert '"context_anchor"' in compact and '"reason"' in compact
+    assert compact.rstrip().endswith("]\n}")

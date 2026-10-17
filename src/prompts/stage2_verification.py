@@ -67,6 +67,9 @@ Return a valid JSON object matching this schema:
 }}
 """
 
+_SCHEMA_CONFIDENCE_LINE = '      "confidence": "high",\n'
+_SCHEMA_NOTES_LINE = ',\n  "verification_notes": "Summary of verification observations"'
+
 
 def build_stage2_prompt(
     stage1_transcript: str,
@@ -74,7 +77,8 @@ def build_stage2_prompt(
     question_syllabus: Optional[List[Dict[str, Any]]] = None,
     question_reference_vocab: Optional[List[str]] = None,
     question_reference_numerals: Optional[List[str]] = None,
-    strikethrough_regions: Optional[List[Any]] = None
+    strikethrough_regions: Optional[List[Any]] = None,
+    compact_output: bool = False
 ) -> str:
     """Build the Stage 2 Autocorrection Verification prompt with pre-analysis hints and syllabus priors."""
     context_sections = []
@@ -115,8 +119,12 @@ def build_stage2_prompt(
 
     syllabus_str = ("\n" + "\n\n".join(context_sections) + "\n") if context_sections else ""
 
-    return STAGE2_PROMPT_TEMPLATE.format(
+    prompt = STAGE2_PROMPT_TEMPLATE.format(
         stage1_transcript=stage1_transcript,
         pre_analysis_section=pre_analysis_str,
         syllabus_section=syllabus_str
     )
+    if compact_output:
+        # ablation: drop the reply fields no decision reads (per-patch confidence, page notes) to shorten the reply
+        prompt = prompt.replace(_SCHEMA_CONFIDENCE_LINE, "").replace(_SCHEMA_NOTES_LINE, "")
+    return prompt

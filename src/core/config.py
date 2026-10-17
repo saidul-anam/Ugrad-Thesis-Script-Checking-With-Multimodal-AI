@@ -85,6 +85,12 @@ class PipelineStageConfig(BaseModel):
                     "Ablation: false, to measure whether the list pushes the model toward dictionary words "
                     "(docs/EXTRACTION_NEXT_STEPS.md step 2). The vocabulary still feeds the CPU checks either way."
     )
+    stage2_compact_output: bool = Field(
+        False,
+        description="Ablation: leave out of the Stage 2 reply the fields that no decision reads (per-patch "
+                    "confidence, page verification_notes), to shorten generation. context_anchor stays: it picks "
+                    "which occurrence of a repeated word gets patched."
+    )
     stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
     stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
     stage3b_thinking_mode: bool = Field(True, description="Stage 3b evidence arbitration thinking mode (deep allograph deliberation)")
