@@ -79,6 +79,12 @@ class PipelineStageConfig(BaseModel):
                     "transition recovery) on top of the deterministic segmenter. Off by default so that "
                     "re-segmenting the same transcript always gives the same answers (src/pipeline/answer_segmenter.py)"
     )
+    prompt_question_vocab: bool = Field(
+        True,
+        description="List the question paper's words in the Stage 1 and Stage 2 prompts as a reading aid. "
+                    "Ablation: false, to measure whether the list pushes the model toward dictionary words "
+                    "(docs/EXTRACTION_NEXT_STEPS.md step 2). The vocabulary still feeds the CPU checks either way."
+    )
     stage1_thinking_mode: bool = Field(False, description="Stage 1 verbatim thinking mode (keep False to prevent transcript corruption)")
     stage2_thinking_mode: bool = Field(False, description="Stage 2 verification thinking mode (structured reasoning in JSON reason field)")
     stage3b_thinking_mode: bool = Field(True, description="Stage 3b evidence arbitration thinking mode (deep allograph deliberation)")

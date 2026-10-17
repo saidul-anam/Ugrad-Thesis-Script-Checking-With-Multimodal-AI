@@ -466,6 +466,7 @@ class ScriptCheckingPipeline:
         active_thinking = decoding.thinking_mode if thinking_mode is None else thinking_mode
         stage1_thinking = getattr(self.config.pipeline, "stage1_thinking_mode", False) if thinking_mode is None else thinking_mode
         stage2_thinking = getattr(self.config.pipeline, "stage2_thinking_mode", False) if thinking_mode is None else thinking_mode
+        prompt_vocab = getattr(self.config.pipeline, "prompt_question_vocab", True)
         stage0b_thinking = active_thinking
         stage3b_thinking = getattr(self.config.pipeline, "stage3b_thinking_mode", True) if thinking_mode is None else thinking_mode
 
@@ -555,7 +556,7 @@ class ScriptCheckingPipeline:
             pt.begin("stage1")
             stage1_result = self.stage1.run(
                 image=stage1_input_img,
-                question_reference_vocab=question_vocab if question_obj else None,
+                question_reference_vocab=question_vocab if (question_obj and prompt_vocab) else None,
                 question_reference_numerals=question_numerals if question_obj else None,
                 question_syllabus=question_obj.sub_questions if question_obj else None,
                 strikethrough_detected=stage0_strike_res.has_strikethrough,
@@ -625,6 +626,7 @@ class ScriptCheckingPipeline:
                     strikethrough_regions=stage0_strike_res.regions,
                     strikethrough_blocks=stage0_strike_res.blocks,
                     teacher_mask=t_mask,
+                    prompt_vocab=prompt_vocab,
                     temperature=decoding.temperature,
                     top_p=decoding.top_p,
                     max_new_tokens=decoding.max_new_tokens,

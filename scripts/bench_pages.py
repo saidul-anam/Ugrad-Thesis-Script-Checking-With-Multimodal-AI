@@ -17,6 +17,7 @@ Usage:
   python scripts/bench_pages.py --tag baseline_a
   python scripts/bench_pages.py --tag baseline_b
   python scripts/bench_pages.py --tag after --scripts SE_10_Q1_0001 SE_10_Q1_0002
+  python scripts/bench_pages.py --tag no_vocab --no-prompt-vocab      # ablation: no question words in the prompts
 """
 
 import os
@@ -64,6 +65,8 @@ def main() -> None:
     ap.add_argument("--config", default="configs/pipeline_config.yaml")
     ap.add_argument("--scripts", nargs="*", help="limit to these script IDs")
     ap.add_argument("--mock", action="store_true")
+    ap.add_argument("--no-prompt-vocab", action="store_true",
+                    help="ablation: leave the question-paper word list out of the Stage 1/2 prompts")
     args = ap.parse_args()
 
     pages = gt_pages(Path(args.gt_dir))
@@ -74,6 +77,8 @@ def main() -> None:
 
     cfg = load_config(args.config)
     cfg.arbitration.mode = "off"
+    if args.no_prompt_vocab:
+        cfg.pipeline.prompt_question_vocab = False
     engine = create_engine(cfg, force_mock=args.mock)
     pipe = ScriptCheckingPipeline(engine=engine, config=cfg)
     pipe.stage3.run = lambda *a, **k: Stage3ErrorResult()       # page transcripts do not depend on Stage 3
