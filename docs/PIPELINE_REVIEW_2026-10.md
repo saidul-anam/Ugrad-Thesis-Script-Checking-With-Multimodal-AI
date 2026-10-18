@@ -429,6 +429,8 @@ Run the page benchmark twice with the same settings: the difference between the 
 
 ## Pending GPU results
 
+**The work was paused on 2026-10-18.** `docs/NEXT_STEPS_2026-10-18.md` gives the current state, the results so far and the order of the remaining tasks. It also explains how to restart them with `outputs/review_2026_10/run_remaining.sh`.
+
 Done: `baseline_a`/`b`, `after`, `sl_before`/`sl_after`, `no_vocab`, `s2_compact`, `final` (numbers above). The class 6/7/8 Stage 4 re-evaluation on the imported text is also done.
 
 Still running (2026-10-17 evening, in this order):
