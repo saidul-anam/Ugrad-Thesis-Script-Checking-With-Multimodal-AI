@@ -1,6 +1,6 @@
 # Extraction accuracy fixes — 2026-10-06
 
-Response to `docs/PIPELINE_PROBLEMS_AUDIT.md` (P1–P10). Every change below is either removing a
+Response to `archive/docs/PIPELINE_PROBLEMS_AUDIT.md` (P1–P10). Every change below is either removing a
 rule that rewrites the transcript from text patterns alone, or replacing it with a decision that
 comes from the image. No word lists, no per-letter rules, no hand-tuned thresholds.
 

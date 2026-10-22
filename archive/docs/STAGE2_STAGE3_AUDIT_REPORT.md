@@ -4,7 +4,7 @@
 > **Status**: Completed Empirical Audit & Architectural RFC  
 > **Target System**: Multimodal AI Exam Script Checking Pipeline  
 > **Evaluation Base**: 15 Human-Verified Ground Truth Pages across 5 Representative Student Scripts (`SE_11_Q1_0002`, `0006`, `0010`, `0011`, `0013`)  
-> **Reference Outputs**: `outputs/benchmarks/transcription_english_20261003_230637.md`, `scratch/audit_tracer.py`
+> **Reference Outputs**: `outputs/benchmarks/transcription_english_20261003_230637.md`, `archive/scratch/audit_tracer.py`
 
 ---
 
@@ -29,7 +29,7 @@ We evaluated the pipeline across all 15 human-verified Ground Truth pages. The e
 | **Per-Page VLM Latency** | ~25s | **~75s (+50s)** | **3x Slower** | Fast |
 
 ### 1.3 Audit Breakdown of Proposed Patches
-Using our empirical patch tracer (`scratch/audit_tracer.py`), we audited every single patch applied by Stage 2 across the Ground Truth scripts:
+Using our empirical patch tracer (`archive/scratch/audit_tracer.py`), we audited every single patch applied by Stage 2 across the Ground Truth scripts:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐

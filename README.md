@@ -4,6 +4,23 @@ An automated 4-stage multimodal evaluation pipeline for handwritten exam scripts
 
 ---
 
+## 🗂️ Project Layout
+
+```
+src/              pipeline code (engine, stages, segmenter, Stage 4 grading)
+scripts/          command-line tools: extract, evaluate, benchmarks, data setup
+configs/          pipeline_config.yaml, rubrics, answer keys, penalties, eval split
+tests/            unit tests (pytest)
+docs/             current review, guides on accuracy and evaluation, rubric guide
+docs/guides/      how-to guides: HOW_TO_RUN, Architecture, human_transcribe, evaluate_batch
+clean_pdf.py      PDF cleaner; the pipeline runs it from the repo root by this name
+data/             scans, ground truth, questions (not in git)
+outputs/          extraction, grading and benchmark results (not in git)
+archive/          files no longer used, kept instead of deleted (see archive/README.md)
+```
+
+---
+
 ## 📂 Google Drive Dataset & Smart Caching
 
 The raw handwritten script PDFs are hosted at:

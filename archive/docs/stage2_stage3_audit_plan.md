@@ -263,7 +263,7 @@ gantt
   * Trace the exact mathematical impact of the Strikeout Phonetic Bug on arbitration decisions.
 
 ### Milestone 3: Comprehensive Audit Report & Architectural Redesign RFC
-* Synthesize findings into `docs/STAGE2_STAGE3_AUDIT_REPORT.md`:
+* Synthesize findings into `archive/docs/STAGE2_STAGE3_AUDIT_REPORT.md`:
   * Full empirical data tables comparing Current Pipeline vs. SOTA Best Practices.
   * Concrete architectural specifications for:
     1. **Stage 2 Redesign**: Pure Deterministic Fast Mode vs. Constrained Non-Word Invariance Verifier.

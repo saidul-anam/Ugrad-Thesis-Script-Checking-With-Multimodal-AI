@@ -1,6 +1,6 @@
 # Implementation Plan: Clean-PDF Integration, Standalone Teacher Marks & Pipeline Logic Hardening
 
-> **Target Goal**: Decouple teacher red-mark extraction from script transcription, integrate `clean_pdf.py` as the upstream document cleaner, streamline Stage 2 based on empirical audit findings, and resolve remaining code-level pipeline defects (Group B) cataloged in [`docs/PIPELINE_PROBLEMS_AUDIT.md`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/docs/PIPELINE_PROBLEMS_AUDIT.md).
+> **Target Goal**: Decouple teacher red-mark extraction from script transcription, integrate `clean_pdf.py` as the upstream document cleaner, streamline Stage 2 based on empirical audit findings, and resolve remaining code-level pipeline defects (Group B) cataloged in [`docs/PIPELINE_PROBLEMS_AUDIT.md`](file:///mnt/models/script_checking/Ugrad-Thesis-Script-Checking-With-Multimodal-AI/archive/docs/PIPELINE_PROBLEMS_AUDIT.md).
 
 ---
 
