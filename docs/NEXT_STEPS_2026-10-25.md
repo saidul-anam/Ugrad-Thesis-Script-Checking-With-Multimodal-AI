@@ -197,9 +197,10 @@ The full commands are in `docs/NEXT_STEPS_2026-10-23.md`.
 2. **Step 2: merge `review-followups`, then `run_followups.sh`** (about 6 h). Questions 1 and 2 in section 6 come first, because it starts a vLLM server.
    - After the merge, recompute the class-8 Q9 grades with the new key (`48d8da0`, section 4 B).
    - **If you have approved the segmenter fix by then,** apply it right after the merge and before
-     `run_followups.sh` (step 5 below). Then steps 2–4 grade with the new splitting once, and nothing needs
-     re-grading later. The fix changes which questions count as answered twice (46 → 23 flags), so step 3 depends
-     on it too.
+     `run_followups.sh` (step 5 below). Then the grading of steps 2–4 uses the new splitting and is not done twice.
+     The fix changes which questions count as answered twice (46 → 23 flags), so step 3 depends on it too.
+   - The grades made before the fix (classes 6 and 7, and class 8 from step 1) still need the changed questions
+     re-graded either way.
 3. **Questions answered twice:** re-grade them in classes 6, 7 and 10 (class 8 is re-graded by `run_followups.sh`). Then run `scripts/team_check.py` and fill in the team CSV.
 4. **Step 4: grade the Opus text with the pipeline's Stage 4** (classes 6/7, about 2 h). This is grading on clean text, to compare with the pipeline-text grades. The cloud run is different: it grades with Opus.
    - **Write the output to a new folder,** for example `outputs/evaluated_opus_text_gemma/english/`.
@@ -212,8 +213,8 @@ The full commands are in `docs/NEXT_STEPS_2026-10-23.md`.
    1. apply the patch on `gemma` after the merge;
    2. retrain both models, with the class-8 pipeline text in by then;
    3. run the tests and measure again;
-   4. if it goes in after steps 2–4: re-grade only the changed questions (38 pipeline scripts on today's texts, and
-      33 Opus scripts for the Opus grades).
+   4. re-grade only the changed questions of grades made before the fix: 38 pipeline scripts on today's texts, and
+      33 Opus scripts for the Opus grades. If the fix goes in after steps 2–4, their grades need this too.
 6. **Step 7: final evaluation.**
    - Run the dev split, then the test split **once**.
    - Score the class-10 test pages (0029–0033) once, at the very end.
