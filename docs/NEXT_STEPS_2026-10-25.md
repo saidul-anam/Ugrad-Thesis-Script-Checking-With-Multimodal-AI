@@ -14,7 +14,7 @@ work is done until you say the GPU is back.
 | What | State |
 |---|---|
 | Branch `gemma` | at `c977e1e`. Three local commits are not pushed (`df9c151`, `b697c19`, `c977e1e`). Push only when you decide to. |
-| Branch `review-followups` | 8 commits, not merged yet; the 8th (`3192802`) is the team-check change of section 3. It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
+| Branch `review-followups` | 9 commits, not merged yet; the last two (`3192802`, `1fbd7c9`) are the team-check change of section 3. It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
 | GPU runner | stopped after class 7 (2026-10-22). Class 8: 8 sample scripts done, 28 to go. |
 | Opus in the cloud | runs in a claude.ai/code session on the private repo. It transcribes class 8, then grades classes 6/7/8/10 **with the code unchanged**. It asks you before grading. |
 | Untracked file | `scripts/eval_opus_benchmark.py` (Oct 22, not from the Claude sessions). It computes CER against the Opus text. Left untouched. |
@@ -108,11 +108,11 @@ These are teacher-marked questions that got no section, and so scored 0. The tab
 
 ## 3. Code change: grade each copy, team check when the marks differ (approved 2026-10-25)
 
-Committed on `review-followups` as `3192802` (not on `gemma`, for the reasons below). 364 tests pass, 8 of them new. The one failing test (`test_setup_data_without_pipeline`) also fails without the change: the branch's folder has no ground-truth mark files. The diff is also saved in `outputs/review_2026_10/cpu_2026_10_25/team_check_proposal.diff`.
+Committed on `review-followups` as `3192802` and `1fbd7c9` (not on `gemma`, for the reasons below). 365 tests pass, 9 of them new. The one failing test (`test_setup_data_without_pipeline`) also fails without the change: the branch's folder has no ground-truth mark files. The diff is also saved in `outputs/review_2026_10/cpu_2026_10_25/team_check_proposal.diff`.
 
 | File | Change |
 |---|---|
-| `src/pipeline/answer_segmenter.py` | Finds the questions answered twice, with the flag of section 2a. It keeps each copy's text and pages in the new `attempts` / `attempt_pages` fields, and writes `repeated_questions` into `segmentation.json`. **The joined answer text is unchanged:** checked on 1,980 real questions, 0 differ, 24 have copies. |
+| `src/pipeline/answer_segmenter.py` | Finds the questions answered twice, with the flag of section 2a. It keeps each copy's text and pages in the new `attempts` / `attempt_pages` fields, and writes `repeated_questions` into `segmentation.json`. A copy with no answer words once struck text is removed does not count: it is a header alone, or the transcription already caught the crossing out (`1fbd7c9`). **The joined answer text is unchanged:** checked on 1,980 real questions, 0 differ, 22 have copies. |
 | `src/pipeline/stage4_evaluator.py` | Grades each copy on its own. Same mark: the question is scored as usual. Different marks, or a copy that can't be scored: the status is `team_check`, and all copy marks are kept. `final_score` uses the lower mark and the new `final_score_max` the higher one, so the total is a range. `team_check` questions are left out of the MAE. |
 | `src/core/schemas.py` | The new fields: `attempts`, `attempt_pages`, `attempt_marks`, `attempt_writing`, `team_check_questions`, `final_score_max`. |
 | `src/utils/export_utils.py` | The report shows "👥 Answered twice: team check", both marks ("1.0 or 3.0"), each copy with its pages, and the total as a range ("41.0–43.0"). |
