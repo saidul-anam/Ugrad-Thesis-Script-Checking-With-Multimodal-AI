@@ -14,7 +14,7 @@ work is done until you say the GPU is back.
 | What | State |
 |---|---|
 | Branch `gemma` | at `c977e1e`. Three local commits are not pushed (`df9c151`, `b697c19`, `c977e1e`). Push only when you decide to. |
-| Branch `review-followups` | 7 commits, not merged yet. It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
+| Branch `review-followups` | 8 commits, not merged yet; the 8th (`3192802`) is the team-check change of section 3. It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
 | GPU runner | stopped after class 7 (2026-10-22). Class 8: 8 sample scripts done, 28 to go. |
 | Opus in the cloud | runs in a claude.ai/code session on the private repo. It transcribes class 8, then grades classes 6/7/8/10 **with the code unchanged**. It asks you before grading. |
 | Untracked file | `scripts/eval_opus_benchmark.py` (Oct 22, not from the Claude sessions). It computes CER against the Opus text. Left untouched. |
@@ -106,9 +106,9 @@ These are teacher-marked questions that got no section, and so scored 0. The tab
 
 ---
 
-## 3. Proposed code change: grade each copy, team check when the marks differ (needs your OK)
+## 3. Code change: grade each copy, team check when the marks differ (approved 2026-10-25)
 
-The full diff is in `outputs/review_2026_10/cpu_2026_10_25/team_check_proposal.diff`. It was tested in a scratch copy of `review-followups`: 364 tests pass, 8 of them new. The one failing test (`test_setup_data_without_pipeline`) also fails without the change, because a data file is missing in the scratch copy.
+Committed on `review-followups` as `3192802` (not on `gemma`, for the reasons below). 364 tests pass, 8 of them new. The one failing test (`test_setup_data_without_pipeline`) also fails without the change: the branch's folder has no ground-truth mark files. The diff is also saved in `outputs/review_2026_10/cpu_2026_10_25/team_check_proposal.diff`.
 
 | File | Change |
 |---|---|
@@ -120,9 +120,11 @@ The full diff is in `outputs/review_2026_10/cpu_2026_10_25/team_check_proposal.d
 | `scripts/benchmark_evaluation.py` | New `--team-check <csv>`: a decided question counts with the chosen copy's mark; an undecided one stays out of every metric. The summary counts questions answered twice and those still open. |
 | `tests/test_answered_twice.py` (new) | 8 tests. |
 
-**Plan if you approve:**
-1. Write the change on a new branch `team-check` in a separate worktree, starting from `review-followups`, and run the tests there.
-2. Merge it after steps 1 and 2 below, then commit locally with no Claude trailers. Push only when you say so.
+**Why it is on `review-followups` and not on `gemma`:**
+- It is built on top of `review-followups`: that branch also changes `scripts/benchmark_evaluation.py`, so the diff does not apply to `gemma`.
+- The GPU runner reads and grades class 8 with the code on `gemma`. Classes 6 and 7 were done with that code, so `gemma` stays unchanged until class 8 is done.
+
+It is merged into `gemma` together with the other follow-ups (step 2 below). Push only when you say so.
 
 ---
 
@@ -130,7 +132,7 @@ The full diff is in `outputs/review_2026_10/cpu_2026_10_25/team_check_proposal.d
 
 ### Now (CPU only)
 
-- **A. Team-check code:** waits for your OK on section 3.
+- **A. Team-check code:** done (section 3); it is merged with the follow-ups.
 - **B. When the cloud results arrive:**
   1. Copy `results/` into the repo, following the mapping in the bundle's README.
   2. Run the repeat flag on the class-8 Opus text (section 5) and check the flagged pages against the scans.
@@ -149,7 +151,7 @@ The full commands are in `docs/NEXT_STEPS_2026-10-23.md`.
    - the word-list and joiner benchmarks: about 3 h;
    - class-10 Stage 4: about 5 h.
 2. **Step 2: merge `review-followups`, then `run_followups.sh`** (about 6 h). Questions 1 and 2 in section 6 come first, because it starts a vLLM server.
-3. **Merge `team-check`** (if approved). Then re-grade only the questions answered twice, and fill in the team CSV.
+3. **Questions answered twice:** re-grade them in classes 6, 7 and 10 (class 8 is re-graded by `run_followups.sh`). Then run `scripts/team_check.py` and fill in the team CSV.
 4. **Step 4: grade the Opus text with the pipeline's Stage 4** (classes 6/7, about 2 h). This is grading on clean text, to compare with the pipeline-text grades. The cloud run is different: it grades with Opus.
 5. **Step 6: the segmenter fix**, then re-grade the affected scripts.
 6. **Step 7: final evaluation.**
@@ -190,4 +192,3 @@ O=outputs/review_2026_10/cpu_2026_10_25
 4. **Segmenter fix (step 6):** may Claude write it? This includes unwrapping markup in header lines and finding headers in the middle of a line (section 2c).
 5. **Expert marking for writing:** is it still planned, and roughly how many answers?
 6. **Word list:** keep it or drop it, after the step 1 benchmarks.
-7. **Team-check code (section 3):** may Claude apply it on a `team-check` branch?
