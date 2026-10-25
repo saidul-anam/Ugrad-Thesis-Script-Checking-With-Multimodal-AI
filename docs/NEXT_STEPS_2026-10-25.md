@@ -13,10 +13,10 @@ work is done until you say the GPU is back.
 
 | What | State |
 |---|---|
-| Branch `gemma` | at `c977e1e`. Three local commits are not pushed (`df9c151`, `b697c19`, `c977e1e`). Push only when you decide to. |
+| Branch `gemma` | Local commits not pushed since `54ae9e2` (`git log origin/gemma..gemma`), including the docs of 2026-10-25. Push only when you decide to. |
 | Branch `review-followups` | 9 commits, not merged yet; the last two (`3192802`, `1fbd7c9`) are the team-check change of section 3. It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
 | GPU runner | stopped after class 7 (2026-10-22). Class 8: 8 sample scripts done, 28 to go. |
-| Opus in the cloud | runs in a claude.ai/code session on the private repo. It transcribes class 8, then grades classes 6/7/8/10 **with the code unchanged**. It asks you before grading. |
+| Opus in the cloud | **done** (2026-10-25): class 8 transcribed, classes 6/7/8/10 graded, each copy of the questions answered twice graded. Results and the PC checks: `docs/OPUS_CLOUD_RESULTS_2026-10-25.md`. |
 | Untracked file | `scripts/eval_opus_benchmark.py` (Oct 22, not from the Claude sessions). It computes CER against the Opus text. Left untouched. |
 
 ---
@@ -133,7 +133,16 @@ It is merged into `gemma` together with the other follow-ups (step 2 below). Pus
 ### Now (CPU only)
 
 - **A. Team-check code:** done (section 3); it is merged with the follow-ups.
-- **B. Cloud results (Opus in claude.ai/code).**
+- **B. Cloud results (Opus in claude.ai/code): done 2026-10-25.** The results, the scan checks, the team list
+  (`outputs/team_check/opus_cloud.csv`, 8 questions) and the grade comparison are in
+  `docs/OPUS_CLOUD_RESULTS_2026-10-25.md`. Main findings:
+  - the SE_08 Q9 answer key looks wrong: the teacher marked by position against `e b d h a f c g` (22 of 25 dev
+    scripts exactly), not the key's `e b d h a c g f`;
+  - the repeat flag and the team-check code miss a rewrite on the next page (both real class-8 repeats);
+  - Opus is closer to the teacher than Gemma on objective items in classes 7 and 8; on writing the two are about
+    equally far from the teacher.
+
+  What was planned:
   - **What the cloud did:**
     - transcribed class 8;
     - graded classes 6/7/8/10 with the code unchanged, so a question answered twice got one mark for both copies read together;
@@ -204,7 +213,10 @@ O=outputs/review_2026_10/cpu_2026_10_25
 
 1. **vLLM install:** is `/home/ubuntu/venvs/vllm` yours, and may we use it?
 2. **QAT checkpoint:** may we read `/mnt/models/google/gemma-4-31B-it-qat-w4a16-ct`?
-3. **SE_08 Q9:** score by position (the branch does this) or by relative order?
+3. **SE_08 Q9:** score by position (the branch does this) or by relative order? The class-8 Opus grades answer
+   part of this: the teacher scored by position, against `e b d h a f c g`. So the open point is the key itself; see
+   `docs/OPUS_CLOUD_RESULTS_2026-10-25.md` section 5, which also asks about repeats on consecutive pages and the
+   step-4 output folder.
 4. **Segmenter fix (step 6):** may Claude write it? This includes unwrapping markup in header lines and finding headers in the middle of a line (section 2c).
 5. **Expert marking for writing:** is it still planned, and roughly how many answers?
 6. **Word list:** keep it or drop it, after the step 1 benchmarks.
