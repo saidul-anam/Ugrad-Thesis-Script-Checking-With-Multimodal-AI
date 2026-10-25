@@ -13,10 +13,11 @@ work is done until you say the GPU is back.
 
 | What | State |
 |---|---|
-| Branch `gemma` | Local commits not pushed since `54ae9e2` (`git log origin/gemma..gemma`), including the docs of 2026-10-25. Push only when you decide to. |
-| Branch `review-followups` | 9 commits, not merged yet; the last two (`3192802`, `1fbd7c9`) are the team-check change of section 3. It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
+| Branch `gemma` | Local commits not pushed since `54ae9e2` (`git log origin/gemma..gemma`), including all the docs of 2026-10-25. Push only when you decide to. |
+| Branch `review-followups` | 10 commits, not merged yet, and never pushed. `3192802` and `1fbd7c9` are the team-check change of section 3. `48d8da0` is the SE_08 Q9 key change (approved 2026-10-25). It is merged after the GPU runner (step 1), so class 8 is read with the same code as classes 6 and 7. |
 | GPU runner | stopped after class 7 (2026-10-22). Class 8: 8 sample scripts done, 28 to go. |
 | Opus in the cloud | **done** (2026-10-25): class 8 transcribed, classes 6/7/8/10 graded, each copy of the questions answered twice graded. Results and the PC checks: `docs/OPUS_CLOUD_RESULTS_2026-10-25.md`. |
+| Segmenter fix (step 6) | **drafted** (2026-10-25), waiting for your OK: `docs/SEGMENTER_DRAFT_2026-10-25.md`, with the diff in `docs/SEGMENTER_DRAFT_2026-10-25.patch`. No code changed on any branch. |
 | Untracked file | `scripts/eval_opus_benchmark.py` (Oct 22, not from the Claude sessions). It computes CER against the Opus text. Left untouched. |
 
 ---
@@ -104,6 +105,8 @@ These are teacher-marked questions that got no section, and so scored 0. The tab
 - find headers in the middle of a line;
 - for the rest, let the content of an answer decide its question (out of order, typos, no header).
 
+All three are now drafted: see section 4 D and `docs/SEGMENTER_DRAFT_2026-10-25.md`.
+
 ---
 
 ## 3. Code change: grade each copy, team check when the marks differ (approved 2026-10-25)
@@ -142,6 +145,11 @@ It is merged into `gemma` together with the other follow-ups (step 2 below). Pus
   - Opus is closer to the teacher than Gemma on objective items in classes 7 and 8; on writing the two are about
     equally far from the teacher.
 
+  **Q9 key: changed** (you approved, 2026-10-25). `configs/answer_keys/SE_08_Q1.yaml` on `review-followups` now has
+  `e b d h a f c g`, still scored by position (`48d8da0`). The class-8 Q9 grades made with the old key (the GPU
+  runner's and any others) are recomputed after the merge, from the items Stage 4 already parsed; this needs no
+  model calls.
+
   What was planned:
   - **What the cloud did:**
     - transcribed class 8;
@@ -157,13 +165,24 @@ It is merged into `gemma` together with the other follow-ups (step 2 below). Pus
     5. Write the results into this file or a new `docs/` file, and commit locally (no Claude trailers, no push).
   - **The PC does no `claude -p` re-grading:** the cloud does it.
 - **C. Step 3a, hand-check about 10 Opus pages per class (you).** Pick pages with crossed-out words, and pages where the Gemini text and the pipeline text disagree. This also shows whether Opus and Gemini tidy the same mistakes (section 2b).
-- **D. Segmenter fix (step 6): draft it in a scratch copy, don't commit** (the user agreed, 2026-10-25).
-  - **What it covers** (section 2c):
-    - unwrap markup in header lines;
-    - find headers in the middle of a line;
-    - let the content of an answer decide its question when the header is missing, out of order or misread.
-  - **Measure it** with `audit_opus.py` (section 5) on the Opus, Gemini and pipeline texts, and check that no other question changes (like `tc_same_text.py --compare`).
-  - **The diff and the numbers go into `docs/` for the user's OK,** with no per-word lists or hand-set thresholds (the user's rule).
+- **D. Segmenter fix (step 6): drafted, 2026-10-25; waiting for your OK.** Everything is in
+  `docs/SEGMENTER_DRAFT_2026-10-25.md`: what it does in plain words, the numbers, every change judged, the known
+  limits, and how to apply it. The code is in the scratch copy `outputs/review_2026_10/segfix_draft/draft/`, and the
+  diff in `docs/SEGMENTER_DRAFT_2026-10-25.patch`.
+  - **What it adds:**
+    - D1: markup in header lines is unwrapped;
+    - D2: a learned header reader for shorthand, misspelled, Bengali and mid-line headers;
+    - D3: a learned content model that decides when a written header is wrong, and keeps text with the question it
+      clearly answers.
+    - Both models are trained on the dev scripts only, and nothing is set by hand: every decision takes the more
+      probable reading.
+  - **Teacher-marked questions with no text:**
+    - dev: Opus 20 → 7, pipeline 15 → 5, Gemini 6 → 5;
+    - test: Opus 3 → 1, pipeline 12 → 7, Gemini 0 → 0.
+  - **Agreement between the three texts** on which words belong to which question: dev Opus/pipeline goes from 90.1%
+    to 92.0%, out of 93.7% possible.
+  - **Questions answered twice:** the team-check flags go from 46 to 23 (22 of the 23 that go were false alarms).
+  - 366 tests pass. 3 of the 30 script texts that D3 changes are still partly wrong; they are listed there.
 - **While the user is away:** no push, no merge into `gemma`, no GPU work, and never touch other people's processes.
 - **E. Expert marks for writing (step 5):** Claude can prepare the sample and the marking sheet once question 5 in section 6 is answered.
 
@@ -176,9 +195,25 @@ The full commands are in `docs/NEXT_STEPS_2026-10-23.md`.
    - the word-list and joiner benchmarks: about 3 h;
    - class-10 Stage 4: about 5 h.
 2. **Step 2: merge `review-followups`, then `run_followups.sh`** (about 6 h). Questions 1 and 2 in section 6 come first, because it starts a vLLM server.
+   - After the merge, recompute the class-8 Q9 grades with the new key (`48d8da0`, section 4 B).
+   - **If you have approved the segmenter fix by then,** apply it right after the merge and before
+     `run_followups.sh` (step 5 below). Then steps 2–4 grade with the new splitting once, and nothing needs
+     re-grading later. The fix changes which questions count as answered twice (46 → 23 flags), so step 3 depends
+     on it too.
 3. **Questions answered twice:** re-grade them in classes 6, 7 and 10 (class 8 is re-graded by `run_followups.sh`). Then run `scripts/team_check.py` and fill in the team CSV.
 4. **Step 4: grade the Opus text with the pipeline's Stage 4** (classes 6/7, about 2 h). This is grading on clean text, to compare with the pipeline-text grades. The cloud run is different: it grades with Opus.
-5. **Step 6: the segmenter fix**, then re-grade the affected scripts.
+   - **Write the output to a new folder,** for example `outputs/evaluated_opus_text_gemma/english/`.
+     `outputs/evaluated_opus/english/`, the folder in `docs/NEXT_STEPS_2026-10-23.md`, now holds the cloud's Opus
+     grades.
+   - The input can be `/mnt/models/script_checking/opus_cloud_results/results/opus_inputs/english/` (already
+     imported).
+5. **Step 6: the segmenter fix, once you say yes** (`docs/SEGMENTER_DRAFT_2026-10-25.md` section 9), here or
+   right after the merge (step 2):
+   1. apply the patch on `gemma` after the merge;
+   2. retrain both models, with the class-8 pipeline text in by then;
+   3. run the tests and measure again;
+   4. if it goes in after steps 2–4: re-grade only the changed questions (38 pipeline scripts on today's texts, and
+      33 Opus scripts for the Opus grades).
 6. **Step 7: final evaluation.**
    - Run the dev split, then the test split **once**.
    - Score the class-10 test pages (0029–0033) once, at the very end.
@@ -213,10 +248,14 @@ O=outputs/review_2026_10/cpu_2026_10_25
 
 1. **vLLM install:** is `/home/ubuntu/venvs/vllm` yours, and may we use it?
 2. **QAT checkpoint:** may we read `/mnt/models/google/gemma-4-31B-it-qat-w4a16-ct`?
-3. **SE_08 Q9:** score by position (the branch does this) or by relative order? The class-8 Opus grades answer
-   part of this: the teacher scored by position, against `e b d h a f c g`. So the open point is the key itself; see
-   `docs/OPUS_CLOUD_RESULTS_2026-10-25.md` section 5, which also asks about repeats on consecutive pages and the
-   step-4 output folder.
-4. **Segmenter fix (step 6):** may Claude write it? This includes unwrapping markup in header lines and finding headers in the middle of a line (section 2c).
+3. **SE_08 Q9:** answered 2026-10-25. The key is now `e b d h a f c g`, still by position (`48d8da0` on
+   `review-followups`).
+4. **Segmenter fix (step 6):** drafted. May Claude apply it, and what about the known wrong cases and the test-split
+   note? See `docs/SEGMENTER_DRAFT_2026-10-25.md` section 10.
 5. **Expert marking for writing:** is it still planned, and roughly how many answers?
 6. **Word list:** keep it or drop it, after the step 1 benchmarks.
+7. **Repeats on the next page** (`docs/OPUS_CLOUD_RESULTS_2026-10-25.md` section 5, question 2): still open.
+   - The segmenter draft removes 3 of the 5 false alarms of the stricter check.
+   - It finds one more real rewrite, SE_07_Q1_0013 Q10.
+   - Neither base nor the draft's team-check code catches the two class-8 rewrites on the next page.
+   - Details: `docs/SEGMENTER_DRAFT_2026-10-25.md` section 6.

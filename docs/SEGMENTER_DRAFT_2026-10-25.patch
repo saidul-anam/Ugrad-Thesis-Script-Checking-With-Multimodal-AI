@@ -1,0 +1,1017 @@
+--- a/src/pipeline/answer_segmenter.py
++++ b/src/pipeline/answer_segmenter.py
+@@ -14,6 +14,8 @@
+     AlignedAnswerItem
+ )
+ from src.utils.text_metrics import levenshtein
++from src.pipeline.header_model import get_model as get_header_model, question_numbers, unwrap_header_markup
++from src.pipeline.content_model import get_model as get_content_model, situation as header_situation, tokens as content_tokens
+ from src.pipeline.token_guard import clean_rubric_answer
+ 
+ 
+@@ -169,14 +171,28 @@
+     return s
+ 
+ 
++def _reads_as_header(line: str) -> bool:
++    return bool(_extract_explicit_english_header(to_arabic_digits(line)))
++
++
+ def normalize_header_text(text: str) -> str:
+-    """Normalize OCR anomalies in question headings (header-candidate lines only; other lines are untouched)."""
++    """
++    Normalize OCR anomalies in question headings (header-candidate lines only; other lines are untouched).
++    A line whose transcription markup hides a header ('Answering to the [unclear: Quostion] No 2', '④no.Q.4') is
++    read without the markup; any other line keeps its markup.
++    """
+     if not text:
+         return text
+-    return "\n".join(
+-        _normalize_header_line(line) if is_header_candidate_line(line) else line
+-        for line in text.split("\n")
+-    )
++    out = []
++    for line in text.split("\n"):
++        norm = _normalize_header_line(line) if is_header_candidate_line(line) else line
++        plain = unwrap_header_markup(line)
++        if plain != line and is_header_candidate_line(plain) and not _reads_as_header(norm):
++            plain_norm = _normalize_header_line(plain)
++            if _reads_as_header(plain_norm):
++                norm = plain_norm
++        out.append(norm)
++    return "\n".join(out)
+ 
+ 
+ _KEYWORD_STOPWORDS = {
+@@ -1129,6 +1145,25 @@
+             for term in self.entities.get(q, set()):
+                 df[term] = df.get(term, 0) + 1
+         self.term_weight = {t: 1.0 / n for t, n in df.items()}
++        # the learned content model (content_model.py), when it was trained on this paper
++        self.paper = question_obj.question_id if question_obj is not None else None
++        model = get_content_model()
++        self.content = model if model is not None and self.paper and model.knows(self.paper) else None
++        # questions whose written header stands over content that fits it (set per script by _assign_sections)
++        self.claimed: Set[str] = set()
++
++    def content_posterior(self, text: str) -> Dict[str, float]:
++        """P(q | text) from the learned content model; empty without one."""
++        if self.content is None:
++            return {}
++        return self.content.posterior(self.paper, _content_tokens(text, self.order), self.order)
++
++    def content_keeps(self, text: str, here: Optional[str]) -> bool:
++        """The learned content model, when there is one, finds `here` (where the text is filed now) the single most
++        probable question for this text, so the text is not moved away from it."""
++        if self.content is None or here not in self.order:
++            return False
++        return _is_unique_best(self.content_posterior(text), here)
+ 
+     def scores(self, text: str) -> Dict[str, float]:
+         """Evidence for every question on the paper (weighted paper terms + answer-key items + layout)."""
+@@ -1153,34 +1188,56 @@
+     return re.sub(r"\(.*?\)", "", str(q or "")).strip()
+ 
+ 
++def _content_tokens(text: str, order: List[str]) -> List[str]:
++    """Content tokens of a section. A header line counts from after its number, so the header is not read as content
++    but an answer written on the header line ('(3) (e) Ans: ...') is."""
++    kept = []
++    for line in (text or "").split("\n"):
++        named = _base_q(_explicit_header_of_line(line, order))
++        if named:
++            spans = [span for q, span in question_numbers(to_arabic_digits(line), order) if q == named]
++            line = line[spans[0][1]:] if spans else ""
++        kept.append(line)
++    return content_tokens("\n".join(kept))
++
++
+ def resolve_header_collision(
+     section_text: str,
+     header_q: str,
+     current_parent: Optional[str],
+     completed_qs: Optional[Set[str]],
+-    ctx: QuestionContext
++    ctx: QuestionContext,
++    current_words: int = 0
+ ) -> Optional[str]:
+     """
+-    An explicit header that names a question already answered, or jumps back in paper order, is checked
+-    against the content below it. If a question not yet answered fits that content clearly better
+-    (more evidence, and at least MIN_REMAP_EVIDENCE), the header is taken as a slip and that question
+-    is returned. Legitimate out-of-order answers keep their header: their content fits it.
++    An explicit header that names a question already answered, jumps back in paper order, or repeats the
++    question being answered after `current_words` words of its answer (at least MIN_CONTENT_WORDS) is checked
++    against the content below it. If a question not yet answered fits that content clearly better (more
++    evidence, and at least MIN_REMAP_EVIDENCE), the header is taken as a slip and that question is returned.
++    A header naming a question already answered can also be an item numbered like it inside the answer being
++    written ('1 (a+v) ...' inside question 8): the question being answered is then a candidate too. A header
++    that repeats the question being answered over the next answer ('no. 12' over a dialogue) gives way to that
++    answer's question. Legitimate out-of-order answers keep their header: their content fits it.
+     """
+     order = ctx.order
+     if not order or header_q not in order:
+         return None
++    if ctx.content is not None:
++        return _content_overrules_header(section_text, header_q, current_parent, completed_qs, ctx)
+     completed = set(completed_qs or set()) - {current_parent}
+     backward = bool(
+         current_parent in order
+         and order.index(header_q) < order.index(current_parent)
+         and _base_q(current_parent) != _base_q(header_q)
+     )
+-    if header_q not in completed and not backward:
++    repeat = (current_parent is not None and _base_q(current_parent) == _base_q(header_q)
++              and current_words >= MIN_CONTENT_WORDS)
++    if header_q not in completed and not backward and not repeat:
+         return None
+     if len(section_text.split()) < MIN_CONTENT_WORDS:
+         return None
+     scores = ctx.scores(section_text)
+-    exclude = {header_q, current_parent} | completed
++    exclude = {header_q} | completed | ({current_parent} if header_q not in completed else set())
+     candidates = [q for q in order if q not in exclude and _base_q(q) != _base_q(header_q)]
+     if not candidates:
+         return None
+@@ -1190,6 +1247,33 @@
+     return None
+ 
+ 
++def _content_overrules_header(
++    section_text: str,
++    header_q: str,
++    current_parent: Optional[str],
++    completed_qs: Optional[Set[str]],
++    ctx: QuestionContext
++) -> Optional[str]:
++    """
++    With the learned content model: the question with the highest probability given the header (how often a header
++    in its situation names the wrong question) and the content below it. Candidates are the header's question, the
++    questions not yet answered that no other header of the script claims (ctx.claimed: one question, one header) and,
++    when the header names a question already answered, the question being answered (an item numbered like an earlier
++    question). Returns the winner when it is not the header's question.
++    """
++    if len(section_text.split()) < MIN_CONTENT_WORDS:
++        return None
++    order = ctx.order
++    current = _base_q(current_parent) or None
++    answered = {_base_q(q) for q in (completed_qs or set())}
++    where = header_situation(header_q, current, answered, order)
++    post = ctx.content.header_posterior(ctx.paper, _content_tokens(section_text, order), order, header_q, where)
++    candidates = [q for q in order if q == header_q or (q not in answered and q not in ctx.claimed)
++                  or (where == "answered" and q == current)]
++    best = max(candidates, key=lambda q: post[q])
++    return best if best != header_q else None
++
++
+ def _is_unique_best(scores: Dict[str, float], q: str) -> bool:
+     """q has strictly more evidence than every other question on the paper."""
+     return all(scores.get(q, 0) > v for k, v in scores.items() if k != q)
+@@ -1202,7 +1286,8 @@
+     valid_q_order: Optional[List[str]] = None,
+     entity_index: Optional[Dict[str, Set[str]]] = None,
+     completed_qs: Optional[Set[str]] = None,
+-    context: Optional[QuestionContext] = None
++    context: Optional[QuestionContext] = None,
++    current_words: int = 0
+ ) -> Tuple[Optional[str], str]:
+     """
+     Decide which question a section's leading lines name, and how:
+@@ -1221,7 +1306,7 @@
+     )
+     if q and source in ("explicit", "bengali", "subpart") and valid_q_order and question_obj is not None:
+         ctx = context or QuestionContext(question_obj, valid_q_order, entity_index)
+-        alt = resolve_header_collision(section_text, q, current_parent, completed_qs, ctx)
++        alt = resolve_header_collision(section_text, q, current_parent, completed_qs, ctx, current_words)
+         if alt:
+             return alt, "remap"
+     return q, source
+@@ -1258,6 +1343,40 @@
+         self.text, self.page, self.q, self.source = text, page, q, source
+ 
+ 
++def _read_learned_headers(
++    page_text: str, order: List[str], previous: Optional[str], has_header: Set[str], learned: bool = False
++) -> Tuple[str, Optional[str], bool]:
++    """
++    Headers the grammar misses, read by the learned header reader (header_model.py): such a line gets the canonical
++    header 'Ans to the Q No. N' in place of its header words, after any answer text before it on the same line.
++    Only questions without a header the grammar reads anywhere in the script (`has_header`) get one: a second header
++    for a question is more likely an item numbered like it ('(v) 6' in the answer before question 6). A header that
++    names the question already open, by a header the grammar reads or by the segmenter, adds nothing and is left as
++    written (items numbered '2ⓐ', '2ⓑ'); after a header this reader added it is kept (an item '5) Quiet = start'
++    read as the header of question 5 just before the student's own misspelled header of question 5).
++    `previous` is the question being answered when the page starts and `learned` whether a header this reader added
++    opened it; the page's text and the same two for the end of the page, as far as its headers tell, are returned.
++    """
++    model = get_header_model()
++    if model is None or not order:
++        return page_text, previous, learned
++    out: List[str] = []
++    prev_line: Optional[str] = None
++    for line in page_text.split("\n"):
++        named = _base_q(_explicit_header_of_line(line, order))
++        reading = None if named else model.read(line, order, previous, prev_line)
++        prev_line = line
++        if named in order:
++            previous, learned = named, False
++        if reading and (reading[0] != previous or learned) and reading[0] not in has_header:
++            q, start, (_, num_end), _ = reading
++            before, after = line[:start].rstrip(), line[num_end:].strip()
++            line = (before + "\n" if before else "") + f"Ans to the Q No. {q}" + ("\n" + after if after else "")
++            previous, learned = q, True
++        out.append(line)
++    return "\n".join(out), previous, learned
++
++
+ def _split_page_sections(page_text: str) -> List[str]:
+     normalized = normalize_header_text(page_text)
+     sections = []
+@@ -1277,12 +1396,34 @@
+     return _extract_explicit_english_header(to_arabic_digits(normalize_header_text(line)), valid_q_order=order or None)
+ 
+ 
++def _claimed_questions(page_items: List[Tuple[int, str]], ctx: QuestionContext) -> Set[str]:
++    """Questions with a written header (the grammar's) over at least MIN_CONTENT_WORDS words whose content, on its own,
++    the learned content model finds most probable (alone) for that question."""
++    claimed: Set[str] = set()
++    if ctx.content is None:
++        return claimed
++    for _, page_text in page_items:
++        for sec in _split_page_sections(page_text):
++            named = _base_q(_extract_explicit_english_header(to_arabic_digits(sec), valid_q_order=ctx.order or None))
++            if named in ctx.order and len(sec.split()) >= MIN_CONTENT_WORDS:
++                if _is_unique_best(ctx.content_posterior(sec), named):
++                    claimed.add(named)
++    return claimed
++
++
+ def _assign_sections(page_items: List[Tuple[int, str]], ctx: QuestionContext, log: List[Dict[str, Any]]) -> List[_Part]:
+     """Reading-order pass: file every section under a question."""
++    ctx.claimed = _claimed_questions(page_items, ctx)
+     parts: List[_Part] = []
+     current: Optional[str] = None
+     default_q = ctx.order[0] if ctx.order else "1"
++    has_header = {_base_q(_explicit_header_of_line(line, ctx.order)) for _, text in page_items for line in text.split("\n")}
++    learned_q: Optional[str] = None  # the question a header added by the learned reader opened last
+     for page_no, page_text in page_items:
++        open_q = _base_q(current) or None
++        page_text, last_q, learned = _read_learned_headers(page_text, ctx.order, open_q, has_header,
++                                                           open_q is not None and open_q == learned_q)
++        learned_q = last_q if learned else None
+         for s_idx, sec in enumerate(_split_page_sections(page_text)):
+             completed = {p.q for p in parts}
+             q, source = classify_header(
+@@ -1292,7 +1433,8 @@
+                 valid_q_order=ctx.order or None,
+                 entity_index=ctx.entities,
+                 completed_qs=completed,
+-                context=ctx
++                context=ctx,
++                current_words=sum(len(p.text.split()) for p in parts if p.q == current)
+             )
+             sec_clean = sec.strip()
+             first_line = sec_clean.split("\n", 1)[0]
+@@ -1315,7 +1457,8 @@
+                       and (s_idx == 0 or _STRUCTURAL_OPENING_RE.match(first_line)
+                            or _UNNUMBERED_HEADER_RE.match(first_line))):
+                     sc = ctx.scores(sec_clean)
+-                    if sc.get(q, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, q):
++                    if (sc.get(q, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, q)
++                            and not ctx.content_keeps(sec_clean, _base_q(current))):
+                         target, how = q, source
+                         log.append({"event": "content_switch", "page": page_no, "from": current, "to": q,
+                                     "evidence": {q: sc.get(q, 0), current: sc.get(current, 0)}})
+@@ -1330,7 +1473,8 @@
+                 sc = ctx.scores(sec_clean)
+                 open_qs = [x for x in ctx.order if x not in completed]
+                 best = max(open_qs, key=lambda x: sc.get(x, 0)) if open_qs else None
+-                if best and sc.get(best, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, best):
++                if (best and sc.get(best, 0) >= MIN_REMAP_EVIDENCE and _is_unique_best(sc, best)
++                        and not ctx.content_keeps(sec_clean, _base_q(current))):
+                     target, how = best, "unnumbered_header"
+                     log.append({"event": "unnumbered_header", "page": page_no, "from": current, "to": best,
+                                 "line": first_line[:80], "evidence": {best: sc.get(best, 0), current: sc.get(current, 0)}})
+@@ -1445,6 +1589,8 @@
+                 a_m, a_p = sc.get(mis_q, 0), sc.get(part.q, 0)
+                 if a_m < MIN_REMAP_EVIDENCE or not _is_unique_best(sc, mis_q):
+                     continue
++                if ctx.content_keeps(chunk, _base_q(part.q)):
++                    continue
+                 remaining = sum(len(p.text.split()) for j, p in enumerate(parts) if p.q == part.q and j != i)
+                 remaining += len("\n".join(lines[:st]).split())
+                 if remaining == 0:
+--- a/src/pipeline/content_model.py
++++ b/src/pipeline/content_model.py
+@@ -0,0 +1,234 @@
++"""
++Learned per-question content model: which question a piece of answer text answers, learned from the other
++students' answers to the same paper.
++
++  - Every question of a paper has a multinomial model of the tokens of its answers (lowercased words, numbers and
++    single symbols such as '+', '|', ':', which carry layout: matching pairs, tables, dialogue turns), with add-one
++    smoothing. The training answers are the ones the segmenter files under a written header (header lines removed,
++    so the number in the header is not learned as content).
++  - Naive Bayes is far too confident on long texts, so its log-likelihoods are turned into probabilities with two
++    fitted numbers: P(q | text) = softmax(beta * n^(gamma - 1) * loglik_q), n the number of tokens.
++  - Some answers look like no other student's (a cloze passage copied out in full where others list the words): the
++    content then says nothing, which the model reads as a share lam of texts whose probabilities are uniform.
++  - A written header is right most of the time. The model reads the probability that a header names the wrong
++    question as eps(situation), for the situation the header is in: it names the next question ('next'), one further
++    on ('later'), an earlier question not yet answered ('back'), a question already answered ('answered'), or the
++    question being answered ('repeat'). A wrong header names any other question equally often.
++  - beta and gamma are fitted by maximum likelihood on header sections of scripts the token counts did not see
++    (5 folds by script), with lam and eps per situation fitted by expectation-maximisation. lam and eps can be told
++    apart because lam is the same in every situation and eps is not. Nothing is set by hand.
++
++The segmenter uses it to decide whether the content below a header overrules the header: the question with the
++highest probability given both the header and the content wins. With the fitted numbers, content can only overrule
++a header in situations where a wrong header is more likely than content that says nothing (eps / (1 - eps) > lam
++roughly).
++Train it with scripts/train_content_model.py; the model is stored in configs/segmenter/content_model.json.
++"""
++
++import json
++import math
++import re
++from pathlib import Path
++from typing import Dict, Iterable, List, Optional, Sequence
++
++import numpy as np
++
++from src.pipeline.header_model import MARKUP_STRUCK_RE, MARKUP_UNCLEAR_RE
++
++MODEL_PATH = Path(__file__).resolve().parents[2] / "configs" / "segmenter" / "content_model.json"
++SITUATIONS = ("next", "later", "back", "answered", "repeat")
++FOLDS = 5
++_TOKEN_RE = re.compile(r"[a-z]+|[0-9]+|[^\sa-z0-9]")
++
++
++def tokens(text: str) -> List[str]:
++    """Tokens of answer text read without crossed-out words."""
++    s = MARKUP_UNCLEAR_RE.sub(lambda m: m.group(1), MARKUP_STRUCK_RE.sub(" ", text or ""))
++    return _TOKEN_RE.findall(s.lower())
++
++
++def situation(header_q: str, current: Optional[str], answered: Iterable[str], order: Sequence[str]) -> str:
++    """The situation of a header naming `header_q` while `current` is being answered (see the module docstring)."""
++    order = list(order)
++    if current is not None and current == header_q:
++        return "repeat"
++    if header_q in set(answered) - {current}:
++        return "answered"
++    if current not in order or header_q not in order:
++        return "next"
++    step = order.index(header_q) - order.index(current)
++    return "next" if step == 1 else "later" if step > 1 else "back"
++
++
++class _Counts:
++    def __init__(self, counts: Dict[str, Dict[str, Dict[str, int]]]):
++        self.counts = counts  # paper -> question -> token -> count
++        self.totals = {p: {q: sum(c.values()) for q, c in qs.items()} for p, qs in counts.items()}
++        self.vocab = {p: len({t for c in qs.values() for t in c}) for p, qs in counts.items()}
++
++    @classmethod
++    def build(cls, answers: Iterable[dict]) -> "_Counts":
++        counts: Dict[str, Dict[str, Dict[str, int]]] = {}
++        for a in answers:
++            c = counts.setdefault(a["paper"], {}).setdefault(a["q"], {})
++            for t in a["tokens"]:
++                c[t] = c.get(t, 0) + 1
++        return cls(counts)
++
++    def loglik(self, paper: str, toks: Sequence[str], order: Sequence[str]) -> np.ndarray:
++        qs, v = self.counts.get(paper, {}), self.vocab.get(paper, 0)
++        out = []
++        for q in order:
++            c, denom = qs.get(q, {}), self.totals.get(paper, {}).get(q, 0) + v + 1
++            out.append(sum(math.log((c.get(t, 0) + 1) / denom) for t in toks))
++        return np.array(out)
++
++
++def _softmax(z: np.ndarray) -> np.ndarray:
++    z = z - z.max(axis=-1, keepdims=True)
++    e = np.exp(z)
++    return e / e.sum(axis=-1, keepdims=True)
++
++
++def _header_terms(p_header: np.ndarray, lam: float, eps: np.ndarray, k: np.ndarray):
++    """P(the header names its question and the header is right / wrong | content), for every header section."""
++    c_header = (1 - lam) * p_header + lam / k
++    return (1 - eps) * c_header, eps / (k - 1) * (1 - c_header)
++
++
++def _fit_rates(p_header: np.ndarray, k: np.ndarray, sit: np.ndarray, start=None, iterations: int = 300):
++    """Expectation-maximisation for lam (content that says nothing) and eps per situation (wrong headers)."""
++    lam, eps = start if start is not None else (0.05, {s: 0.05 for s in SITUATIONS})
++    for _ in range(iterations):
++        e = np.array([eps.get(x, 0.05) for x in sit])
++        right, wrong = _header_terms(p_header, lam, e, k)
++        total = right + wrong
++        new_lam = float(np.clip((lam / k / total).mean(), 1e-6, 1 - 1e-6))
++        new_eps = {s: float(np.clip((wrong / total)[sit == s].mean(), 1e-6, 1 - 1e-6)) if (sit == s).any() else 0.05
++                   for s in SITUATIONS}
++        done = abs(new_lam - lam) < 1e-8 and all(abs(new_eps[s] - eps[s]) < 1e-8 for s in SITUATIONS)
++        lam, eps = new_lam, new_eps
++        if done:
++            break
++    e = np.array([eps[x] for x in sit])
++    right, wrong = _header_terms(p_header, lam, e, k)
++    return lam, eps, -float(np.log(right + wrong).sum())
++
++
++def _golden(f, lo: float, hi: float, iterations: int = 60) -> float:
++    """Minimum of a unimodal function on [lo, hi]."""
++    g = (math.sqrt(5) - 1) / 2
++    a, b = lo, hi
++    c, d = b - g * (b - a), a + g * (b - a)
++    fc, fd = f(c), f(d)
++    for _ in range(iterations):
++        if fc < fd:
++            b, d, fd = d, c, fc
++            c = b - g * (b - a)
++            fc = f(c)
++        else:
++            a, c, fc = c, d, fd
++            d = a + g * (b - a)
++            fd = f(d)
++    return (a + b) / 2
++
++
++class ContentModel:
++    def __init__(self, counts: _Counts, beta: float, gamma: float, lam: float, eps: Dict[str, float]):
++        self.counts, self.beta, self.gamma, self.lam, self.eps = counts, beta, gamma, lam, eps
++
++    @classmethod
++    def train(cls, answers: List[dict], headers: List[dict], folds: int = FOLDS) -> "ContentModel":
++        """
++        `answers`: {script, paper, q, tokens} for every answer filed under a written header (the counts);
++        `headers`: {script, paper, q, tokens, situation, order} for every header section (the calibration).
++        """
++        scripts = sorted({a["script"] for a in answers} | {h["script"] for h in headers})
++        fold_of = {s: i % folds for i, s in enumerate(scripts)}
++        ll, n, label, k, sit = [], [], [], [], []
++        for f in range(folds):
++            counts = _Counts.build(a for a in answers if fold_of[a["script"]] != f)
++            for h in headers:
++                if fold_of[h["script"]] != f or not h["tokens"]:
++                    continue
++                vec = counts.loglik(h["paper"], h["tokens"], h["order"])
++                ll.append(vec)
++                n.append(len(h["tokens"]))
++                label.append(list(h["order"]).index(h["q"]))
++                k.append(len(h["order"]))
++                sit.append(h["situation"])
++        width = max(len(v) for v in ll)
++        lls = np.full((len(ll), width), -np.inf)
++        for i, v in enumerate(ll):
++            lls[i, :len(v)] = v
++        n, label, k, sit = np.array(n, float), np.array(label), np.array(k, float), np.array(sit)
++        rows = np.arange(len(label))
++
++        def p_header(beta: float, gamma: float) -> np.ndarray:
++            return _softmax(beta * (n ** (gamma - 1))[:, None] * lls)[rows, label]
++
++        rates = [None]  # the last fitted rates start the next fit
++
++        def nll(beta: float, gamma: float) -> float:
++            lam, eps, value = _fit_rates(p_header(beta, gamma), k, sit, rates[0])
++            rates[0] = (lam, eps)
++            return value
++
++        best = None
++        for gamma in np.linspace(0.0, 1.0, 11):
++            log_beta = _golden(lambda lb: nll(math.exp(lb), gamma), -8.0, 2.0, iterations=30)
++            value = nll(math.exp(log_beta), gamma)
++            if best is None or value < best[0]:
++                best = (value, math.exp(log_beta), float(gamma))
++        _, beta, gamma = best
++        lam, eps, _ = _fit_rates(p_header(beta, gamma), k, sit)
++        return cls(_Counts.build(answers), beta, gamma, lam, eps)
++
++    @classmethod
++    def load(cls, path: Path = MODEL_PATH) -> "ContentModel":
++        data = json.loads(Path(path).read_text(encoding="utf-8"))
++        return cls(_Counts(data["counts"]), data["beta"], data["gamma"], data["lam"], data["eps"])
++
++    def save(self, path: Path = MODEL_PATH) -> None:
++        Path(path).parent.mkdir(parents=True, exist_ok=True)
++        Path(path).write_text(json.dumps({"beta": self.beta, "gamma": self.gamma, "lam": self.lam, "eps": self.eps,
++                                          "counts": self.counts.counts}), encoding="utf-8")
++
++    def knows(self, paper: str) -> bool:
++        return paper in self.counts.counts
++
++    def posterior(self, paper: str, toks: Sequence[str], order: Sequence[str]) -> Dict[str, float]:
++        """P(q | content) over the paper's questions."""
++        if not toks:
++            return {q: 1.0 / len(order) for q in order}
++        z = self.beta * len(toks) ** (self.gamma - 1) * self.counts.loglik(paper, toks, order)
++        return dict(zip(order, _softmax(z).tolist()))
++
++    def header_posterior(self, paper: str, toks: Sequence[str], order: Sequence[str], header_q: str,
++                         where: str) -> Dict[str, float]:
++        """P(q | header naming header_q in situation `where`, content), over the paper's questions."""
++        post = self.posterior(paper, toks, order)
++        eps, k = self.eps[where], len(order)
++        joint = {q: ((1 - eps) if q == header_q else eps / (k - 1)) * ((1 - self.lam) * post[q] + self.lam / k)
++                 for q in order}
++        z = sum(joint.values())
++        return {q: v / z for q, v in joint.items()}
++
++
++_MODEL: Optional[ContentModel] = None
++_MODEL_LOADED = False
++
++
++def get_model() -> Optional[ContentModel]:
++    """The trained model, or None when configs/segmenter/content_model.json does not exist."""
++    global _MODEL, _MODEL_LOADED
++    if not _MODEL_LOADED:
++        _MODEL = ContentModel.load() if MODEL_PATH.exists() else None
++        _MODEL_LOADED = True
++    return _MODEL
++
++
++def set_model(model: Optional[ContentModel]) -> None:
++    """Use this model instead of the stored one (evaluation with held-out folds); None turns it off."""
++    global _MODEL, _MODEL_LOADED
++    _MODEL, _MODEL_LOADED = model, True
+--- a/src/pipeline/header_model.py
++++ b/src/pipeline/header_model.py
+@@ -0,0 +1,253 @@
++"""
++Learned question-header reader.
++
++Students write question headers in more forms than any list of patterns covers ("A: to the question No.5",
++"Ans tothequsstion no:5", "2NOQ/A:", a header after the last sentence of the previous answer). This reader learns what
++header lines look like from the transcripts themselves, with the segmenter's header grammar as the teacher: every line
++that contains a number that is a question on the paper is an example, labelled a header when the grammar reads it as a
++header for that number and answer text otherwise. It has two parts:
++
++  1. Shape: a multinomial naive Bayes model with add-one smoothing over the character 2- to 4-grams of the lowercased
++     line read without transcription markup (the number replaced by a placeholder, so it learns the shape of the line,
++     not the number), the line length in powers of two and where the number sits (start, middle, end). A line is read
++     three ways: all answer text, all header, or answer text followed by a header that starts at a word; the score is
++     the log-odds of the best header reading against the answer-text reading.
++  2. Place: naive Bayes counts every overlapping n-gram as separate evidence, so its scores are far too confident and
++     drown everything else. A logistic regression turns the score into a probability, together with how the number
++     follows the question being answered before the line (the same question, the next one on the paper, one further
++     on, an earlier one, none yet), what comes before the line (the page start, a blank line, text) and whether the
++     header follows answer text on the same line. It is fitted on scores of lines the shape model did not see (5 folds
++     by script), so it learns how far a score can be trusted.
++
++A line is a header when the probability is above one half. The model only adds headers: the segmenter asks it about
++lines its grammar does not read as a header, and the lines the grammar misses are exactly those that look like the
++grammar's headers in shape and place but were written in a form it does not know.
++Train it with scripts/train_header_model.py; the model is stored in configs/segmenter/header_model.json.
++"""
++
++import json
++import math
++import re
++from pathlib import Path
++from typing import Dict, Iterable, List, Optional, Sequence, Tuple
++
++import numpy as np
++
++MODEL_PATH = Path(__file__).resolve().parents[2] / "configs" / "segmenter" / "header_model.json"
++NGRAM_SIZES = (2, 3, 4)
++PLACEHOLDER = "§"
++READINGS = ("body", "header", "split")
++PLACE_FEATURES = ("follows:first", "follows:same", "follows:next", "follows:later", "follows:earlier",
++                  "after:page_start", "after:blank", "after:text", "reading:split")
++WEIGHT_NAMES = ("bias", "shape_score") + PLACE_FEATURES
++FOLDS = 5
++
++MARKUP_STRUCK_RE = re.compile(r'(?:\[struck:|struck\[:)\s*(?:\[[^\]]*\]|[^\]\[])*\]|~~[^~\n]*~~', re.IGNORECASE)
++MARKUP_UNCLEAR_RE = re.compile(r'\[unclear:\s*([^\]]*)\]', re.IGNORECASE)
++_NUMBER_RE = re.compile(r'(?<![0-9])([0-9]{1,2})(?![0-9])')
++_WORD_START_RE = re.compile(r'(?<=\s)\S')
++
++
++def unwrap_header_markup(line: str) -> str:
++    """
++    A line as the student wrote it, for reading a header: '[unclear: X]' becomes X, and a struck span without digits
++    is cancelled (inside a word it joins the two halves: 'ques[struck: nen]tion'). Struck digits stay: they can name a
++    corrected question number (see struck-number recovery). Circled digits stay too: students use them to number
++    items inside an answer ('⑥ Ans: Rosamond ...').
++    """
++    s = MARKUP_UNCLEAR_RE.sub(lambda m: m.group(1).strip(), line)
++
++    def _cancel(m: "re.Match") -> str:
++        if re.search(r'[0-9]', m.group(0)):
++            return m.group(0)
++        before, after = m.string[m.start() - 1:m.start()], m.string[m.end():m.end() + 1]
++        return "" if before.isalnum() and after.isalnum() else " "
++
++    return MARKUP_STRUCK_RE.sub(_cancel, s)
++
++
++def _grams(s: str) -> List[str]:
++    padded = f"^{s}$"
++    return [padded[i:i + n] for n in NGRAM_SIZES for i in range(len(padded) - n + 1)]
++
++
++def features(line: str, span: Optional[Tuple[int, int]] = None) -> List[str]:
++    """Shape features of a line; `span` is the question number's position (None: a piece read as answer text)."""
++    if span is not None:
++        line = line[:span[0]] + PLACEHOLDER + line[span[1]:]
++    s = re.sub(r"\s+", " ", re.sub(r"[0-9]", "0", unwrap_header_markup(line).lower())).strip()
++    feats = _grams(s) + [f"<words:{min(len(s.split()).bit_length(), 6)}>"]
++    if span is not None:
++        before, _, after = s.partition(PLACEHOLDER)
++        where = "start" if not re.search(r"[a-z0-9]", before) else "end" if not re.search(r"[a-z0-9]", after) else "mid"
++        feats.append(f"<number:{where}>")
++    return feats
++
++
++def place(q: str, previous: Optional[str], order: Sequence[str], prev_line: Optional[str]) -> List[str]:
++    """Where a number stands: after which question (`previous`, the one being answered) and after what line."""
++    order = list(order)
++    if previous not in order:
++        follows = "first"
++    else:
++        step = order.index(q) - order.index(previous)
++        follows = "same" if step == 0 else "next" if step == 1 else "later" if step > 1 else "earlier"
++    before = "page_start" if prev_line is None else "blank" if not prev_line.strip() else "text"
++    return [f"follows:{follows}", f"after:{before}"]
++
++
++def question_numbers(line: str, valid: Iterable[str]) -> List[Tuple[str, Tuple[int, int]]]:
++    """Numbers in the line that are questions on the paper and are not crossed out: [(question, span)]."""
++    valid = set(valid)
++    struck = [m.span() for m in MARKUP_STRUCK_RE.finditer(line)]
++    out = []
++    for m in _NUMBER_RE.finditer(line):
++        q = str(int(m.group(1)))
++        if q in valid and not any(a <= m.start() < b for a, b in struck):
++            out.append((q, m.span()))
++    return out
++
++
++def header_starts(line: str, end: int) -> List[int]:
++    """Where a header that ends at `end` can start after answer text: at a word, outside transcription markup."""
++    markup = [m.span() for r in (MARKUP_STRUCK_RE, MARKUP_UNCLEAR_RE) for m in r.finditer(line)]
++    return [m.start() for m in _WORD_START_RE.finditer(line[:end])
++            if not any(a < m.start() < b for a, b in markup)]
++
++
++class ShapeModel:
++    """Part 1: naive Bayes over the shape features."""
++
++    def __init__(self, counts: Dict[str, Dict[str, int]], readings: Dict[str, int]):
++        self.counts = counts
++        self.readings = readings
++        self.totals = {c: sum(v.values()) for c, v in counts.items()}
++        self.vocab = len(set(counts["header"]) | set(counts["body"]))
++        n = sum(readings[r] + 1 for r in READINGS)
++        self.log_prior = {r: math.log((readings[r] + 1) / n) for r in READINGS}
++
++    @classmethod
++    def train(cls, examples: Iterable[dict]) -> "ShapeModel":
++        counts: Dict[str, Dict[str, int]] = {"header": {}, "body": {}}
++        readings = {r: 0 for r in READINGS}
++        for ex in examples:
++            readings[ex["label"]] += 1
++            line, span, i = ex["line"], ex["span"], ex.get("split_at")
++            if ex["label"] == "split":
++                pieces = [(features(line[:i]), "body"), (features(line[i:], (span[0] - i, span[1] - i)), "header")]
++            else:
++                pieces = [(features(line, span), ex["label"])]
++            for feats, c in pieces:
++                for f in feats:
++                    counts[c][f] = counts[c].get(f, 0) + 1
++        return cls(counts, readings)
++
++    def loglik(self, feats: Sequence[str], c: str) -> float:
++        counts, denom = self.counts[c], self.totals[c] + self.vocab
++        return sum(math.log((counts.get(f, 0) + 1) / denom) for f in feats)
++
++    def score(self, line: str, span: Tuple[int, int]) -> Tuple[float, int]:
++        """(log-odds of the best header reading against the answer-text reading, where that header starts)."""
++        feats = features(line, span)
++        as_body = self.log_prior["body"] + self.loglik(feats, "body")
++        readings = [(self.log_prior["header"] + self.loglik(feats, "header"), 0)]
++        starts = header_starts(line, span[0])
++        for i in starts:
++            readings.append((
++                self.log_prior["split"] - math.log(len(starts))
++                + self.loglik(features(line[:i]), "body")
++                + self.loglik(features(line[i:], (span[0] - i, span[1] - i)), "header"),
++                i,
++            ))
++        best, start = max(readings)
++        return best - as_body, start
++
++
++def _design(score: float, place_feats: Sequence[str]) -> List[float]:
++    return [1.0, score] + [1.0 if f in place_feats else 0.0 for f in PLACE_FEATURES]
++
++
++def _fit_logistic(x: np.ndarray, y: np.ndarray, iterations: int = 50) -> np.ndarray:
++    """Maximum-likelihood logistic regression by Newton's method (a vanishing ridge keeps the steps defined)."""
++    w = np.zeros(x.shape[1])
++    for _ in range(iterations):
++        p = 1.0 / (1.0 + np.exp(-np.clip(x @ w, -50, 50)))
++        hessian = (x * (p * (1 - p))[:, None]).T @ x + 1e-6 * np.eye(x.shape[1])
++        step = np.linalg.solve(hessian, x.T @ (y - p))
++        w += step
++        if np.max(np.abs(step)) < 1e-8:
++            break
++    return w
++
++
++class HeaderModel:
++    def __init__(self, shape: ShapeModel, weights: Sequence[float]):
++        self.shape = shape
++        self.weights = np.asarray(weights, dtype=float)
++
++    @classmethod
++    def train(cls, per_script: Dict[str, List[dict]], folds: int = FOLDS) -> "HeaderModel":
++        """`per_script`: examples of each training script (see scripts/train_header_model.py)."""
++        scripts = sorted(per_script)
++        rows, labels = [], []
++        for k in range(folds):
++            held = [s for i, s in enumerate(scripts) if i % folds == k]
++            shape = ShapeModel.train(e for i, s in enumerate(scripts) if i % folds != k for e in per_script[s])
++            for s in held:
++                for ex in per_script[s]:
++                    score, start = shape.score(ex["line"], ex["span"])
++                    rows.append(_design(score, ex["place"] if not start else [ex["place"][0], "after:text", "reading:split"]))
++                    labels.append(1.0 if ex["label"] != "body" else 0.0)
++        weights = _fit_logistic(np.array(rows), np.array(labels))
++        return cls(ShapeModel.train(e for s in scripts for e in per_script[s]), weights)
++
++    @classmethod
++    def load(cls, path: Path = MODEL_PATH) -> "HeaderModel":
++        data = json.loads(Path(path).read_text(encoding="utf-8"))
++        return cls(ShapeModel(data["counts"], data["readings"]), [data["weights"][k] for k in WEIGHT_NAMES])
++
++    def save(self, path: Path = MODEL_PATH) -> None:
++        Path(path).parent.mkdir(parents=True, exist_ok=True)
++        Path(path).write_text(json.dumps({
++            "weights": dict(zip(WEIGHT_NAMES, self.weights.tolist())),
++            "readings": self.shape.readings, "counts": self.shape.counts,
++        }), encoding="utf-8")
++
++    def logit(self, score: float, place_feats: Sequence[str]) -> float:
++        return float(np.dot(self.weights, _design(score, place_feats)))
++
++    def read(self, line: str, order: Sequence[str], previous: Optional[str] = None,
++             prev_line: Optional[str] = None) -> Optional[Tuple[str, int, Tuple[int, int], float]]:
++        """
++        The most probable header reading of a line: (question, where the header starts, the number's span, log-odds
++        that it is a header), or None when every number in it more probably belongs to answer text.
++        `previous` is the question being answered before the line, `prev_line` the line before it on the page.
++        """
++        best = None
++        for q, span in question_numbers(line, order):
++            score, start = self.shape.score(line, span)
++            where = place(q, previous, order, prev_line) if not start else \
++                place(q, previous, order, line[:start])[:1] + ["after:text", "reading:split"]
++            odds = self.logit(score, where)
++            if odds > 0 and (best is None or odds > best[3]):
++                best = (q, start, span, odds)
++        return best
++
++
++_MODEL: Optional[HeaderModel] = None
++_MODEL_LOADED = False
++
++
++def get_model() -> Optional[HeaderModel]:
++    """The trained model, or None when configs/segmenter/header_model.json does not exist."""
++    global _MODEL, _MODEL_LOADED
++    if not _MODEL_LOADED:
++        _MODEL = HeaderModel.load() if MODEL_PATH.exists() else None
++        _MODEL_LOADED = True
++    return _MODEL
++
++
++def set_model(model: Optional[HeaderModel]) -> None:
++    """Use this model instead of the stored one (evaluation with held-out folds); None turns the reader off."""
++    global _MODEL, _MODEL_LOADED
++    _MODEL, _MODEL_LOADED = model, True
+--- a/scripts/train_content_model.py
++++ b/scripts/train_content_model.py
+@@ -0,0 +1,99 @@
++"""
++Train the learned content model (src/pipeline/content_model.py) on the dev-split transcripts.
++
++The segmenter's reading-order pass, with its header grammar only (no learned header reader, no content model), files
++the Opus, pipeline and Gemini transcripts of classes 6, 7, 8 and 10. Every section that opens with a written header
++for a question on the paper gives a calibration example: its content (header lines removed), the question the header
++names and the header's situation. The section and the sections filed after it as its continuation are one answer
++for the token counts, when the segmenter filed it under the question its header names. Test-split scripts
++(configs/splits/eval_split.csv) and the class-10 transcription test scripts 0029-0033 are never used.
++
++    python scripts/train_content_model.py            # writes configs/segmenter/content_model.json
++"""
++import contextlib
++import csv
++import io
++import sys
++from pathlib import Path
++from typing import Dict, List, Tuple
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT))
++sys.path.insert(0, str(ROOT / "scripts"))
++
++from src.pipeline import content_model, header_model
++from src.pipeline.answer_segmenter import (
++    QuestionContext, _assign_sections, _base_q, _classify_header_raw, _content_tokens, _paper_catalog,
++)
++from src.pipeline.content_model import MODEL_PATH, ContentModel, situation
++from src.utils.question_utils import load_question_for_script
++from train_header_model import PAPERS, SKIP, page_texts, texts_of_paper
++
++EXPLICIT = ("explicit", "bengali", "subpart")
++
++
++def script_examples(sid: str, texts: List[str], q_obj, order: List[str]) -> Tuple[List[dict], List[dict]]:
++    """(answers, header sections) of one transcript of a script."""
++    ctx = QuestionContext(q_obj, order)
++    items = [(i, t) for i, t in enumerate(texts) if t]
++    with contextlib.redirect_stdout(io.StringIO()):
++        parts = _assign_sections(items, ctx, [])
++    paper = q_obj.question_id
++    answers, headers = [], []
++    current, answered = None, set()
++    for i, part in enumerate(parts):
++        named, source = _classify_header_raw(part.text, current_parent=current, question_obj=q_obj,
++                                             valid_q_order=order, completed_qs=answered)
++        hq = _base_q(named)
++        if source in EXPLICIT and hq in order:
++            toks = _content_tokens(part.text, order)
++            headers.append({"script": sid, "paper": paper, "q": hq, "tokens": toks, "order": order,
++                            "situation": situation(hq, current, answered, order)})
++            if _base_q(part.q) == hq:
++                j = i + 1
++                while j < len(parts) and parts[j].q == part.q and parts[j].source == "continuation":
++                    toks = toks + _content_tokens(parts[j].text, order)
++                    j += 1
++                answers.append({"script": sid, "paper": paper, "q": hq, "tokens": toks})
++        current = _base_q(part.q) or None
++        answered.add(current)
++    return answers, headers
++
++
++def collect(split: str = "dev") -> Dict[str, Tuple[List[dict], List[dict]]]:
++    """(answers, header sections) per script of the split, all three texts together."""
++    splits = {r["script_id"]: r["split"] for r in csv.DictReader(open(ROOT / "configs/splits/eval_split.csv"))}
++    header_model.set_model(None)
++    content_model.set_model(None)
++    per_script: Dict[str, Tuple[List[dict], List[dict]]] = {}
++    try:
++        for paper in PAPERS:
++            q_obj = load_question_for_script(paper, lang="english")
++            order, _, _ = _paper_catalog(q_obj)
++            for _src, sid, ext in texts_of_paper(paper):
++                if sid in SKIP or splits.get(sid) != split:
++                    continue
++                a, h = script_examples(sid, page_texts(ext), q_obj, order)
++                got = per_script.setdefault(sid, ([], []))
++                got[0].extend(a)
++                got[1].extend(h)
++    finally:
++        # the stored models are read again when they are next asked for
++        header_model._MODEL_LOADED = content_model._MODEL_LOADED = False
++    return per_script
++
++
++def train(per_script: Dict[str, Tuple[List[dict], List[dict]]]) -> ContentModel:
++    return ContentModel.train([a for a, _ in per_script.values() for a in a],
++                              [h for _, hs in per_script.values() for h in hs])
++
++
++if __name__ == "__main__":
++    per_script = collect("dev")
++    model = train(per_script)
++    model.save()
++    n_answers = sum(len(a) for a, _ in per_script.values())
++    n_headers = sum(len(h) for _, h in per_script.values())
++    print(f"{len(per_script)} dev scripts, {n_answers} answers, {n_headers} header sections; "
++          f"beta {model.beta:.4f}, gamma {model.gamma:.2f}, lam {model.lam:.4f}, eps " +
++          ", ".join(f"{s} {e:.4f}" for s, e in model.eps.items()) + f"; written to {MODEL_PATH.relative_to(ROOT)}")
+--- a/scripts/train_header_model.py
++++ b/scripts/train_header_model.py
+@@ -0,0 +1,116 @@
++"""
++Train the learned header reader (src/pipeline/header_model.py) on the dev-split transcripts.
++
++Every line that contains a number that is a question on its paper is an example. Its label comes from the
++segmenter's header grammar: a line the grammar reads as a header for that number is a header (a header after answer
++text on the same line gives a text piece and a header piece), any other line is answer text, and a line the grammar
++reads as a header for another number is left out. The question being answered when a page starts is the one the
++segmenter's reading-order pass (without the learned reader) files the end of the previous page under. The texts are the Opus transcripts, the pipeline transcripts and the
++Gemini transcripts of classes 6, 7, 8 and 10. Test-split scripts (configs/splits/eval_split.csv) and the class-10
++transcription test scripts 0029-0033 are never used.
++
++    python scripts/train_header_model.py            # writes configs/segmenter/header_model.json
++"""
++import contextlib
++import csv
++import io
++import json
++import sys
++from pathlib import Path
++from typing import Dict, List, Optional, Tuple
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT))
++sys.path.insert(0, str(ROOT / "scripts"))
++
++from src.core.schemas import ExtractionResult
++from src.pipeline.answer_segmenter import (
++    QuestionContext, _assign_sections, _base_q, _explicit_header_of_line, _paper_catalog, _reads_as_header,
++    normalize_header_text,
++)
++from src.pipeline.header_model import MODEL_PATH, HeaderModel, place, question_numbers, set_model
++from src.utils.question_utils import load_question_for_script
++
++PAPERS = ["SE_06_Q1", "SE_07_Q1", "SE_08_Q1", "SE_10_Q1"]
++# SE_06_Q1_0004 is a 2nd Paper scan, SE_07_Q1_0000 has no text, SE_10_Q1_0029-0033 are the transcription test
++SKIP = {"SE_06_Q1_0004", "SE_07_Q1_0000", "SE_10_Q1"} | {f"SE_10_Q1_00{n}" for n in range(29, 34)}
++
++
++def line_examples(page_text: str, order: List[str], previous: Optional[str]) -> Tuple[List[dict], Optional[str]]:
++    """Examples of a page's lines; `previous` is the question being answered when the page starts."""
++    out = []
++    prev_line: Optional[str] = None
++    for line in page_text.split("\n"):
++        named = _base_q(_explicit_header_of_line(line, order))
++        for q, span in question_numbers(line, order):
++            ex = {"line": line, "span": span, "place": place(q, previous, order, prev_line)}
++            if not named:
++                out.append({**ex, "label": "body"})
++            elif named == q:
++                before = normalize_header_text(line).split("\n")[0]
++                if not before.strip() or _reads_as_header(before):
++                    out.append({**ex, "label": "header"})
++                elif line.startswith(before) and span[0] >= len(before):
++                    out.append({**ex, "label": "split", "split_at": len(before)})
++        prev_line = line
++        if named in order:
++            previous = named
++    return out, previous
++
++
++def page_texts(extraction: ExtractionResult) -> List[str]:
++    return [(p.stage2_verification.verified_transcript or p.stage1_transcription.raw_transcript or "").strip()
++            for p in extraction.pages or []]
++
++
++def answered_at_page_start(texts: List[str], ctx: QuestionContext) -> List[Optional[str]]:
++    """The question the reading-order pass (without the learned reader) is filing under when each page starts."""
++    items = [(i, t) for i, t in enumerate(texts) if t]
++    with contextlib.redirect_stdout(io.StringIO()):
++        parts = _assign_sections(items, ctx, [])
++    out, current = [], None
++    for i in range(len(texts)):
++        out.append(current)
++        for part in parts:
++            if part.page == i:
++                current = _base_q(part.q) or None
++    return out
++
++
++def texts_of_paper(paper: str):
++    """(source, script_id, extraction) for the Opus, pipeline and Gemini transcripts of a paper."""
++    from setup_data_without_pipeline import create_extraction_result_from_txt
++    for txt in sorted((ROOT / f"data/ground_truth/transcripts/{paper}_extraction_opus_5.5").glob("*.txt")):
++        with contextlib.redirect_stdout(io.StringIO()):
++            ext, _, _ = create_extraction_result_from_txt(txt.stem.upper(), txt.read_text(), paper, sync_gt=False)
++        yield "opus", txt.stem.upper(), ext
++    for src, root in (("pipe", "outputs/extracted/english"), ("gemini", "data_without_pipeline/english")):
++        for p in sorted((ROOT / root / paper.lower()).glob("*/extraction_result.json")):
++            yield src, p.parent.name, ExtractionResult.model_validate(json.loads(p.read_text()))
++
++
++def collect(split: str = "dev") -> Dict[str, List[dict]]:
++    """Examples per script of the split, all three texts together."""
++    splits = {r["script_id"]: r["split"] for r in csv.DictReader(open(ROOT / "configs/splits/eval_split.csv"))}
++    per_script: Dict[str, List[dict]] = {}
++    set_model(None)
++    for paper in PAPERS:
++        q_obj = load_question_for_script(paper, lang="english")
++        order, _, _ = _paper_catalog(q_obj)
++        ctx = QuestionContext(q_obj, order)
++        for _src, sid, ext in texts_of_paper(paper):
++            if sid in SKIP or splits.get(sid) != split:
++                continue
++            texts = page_texts(ext)
++            for text, previous in zip(texts, answered_at_page_start(texts, ctx)):
++                per_script.setdefault(sid, []).extend(line_examples(text, order, previous)[0])
++    return per_script
++
++
++if __name__ == "__main__":
++    per_script = collect("dev")
++    model = HeaderModel.train(per_script)
++    model.save()
++    print(f"{len(per_script)} dev scripts, {sum(map(len, per_script.values()))} lines {model.shape.readings}, "
++          f"{model.shape.vocab} shape features; written to {MODEL_PATH.relative_to(ROOT)}")
++    print("place weights:", json.loads(MODEL_PATH.read_text())["weights"])
