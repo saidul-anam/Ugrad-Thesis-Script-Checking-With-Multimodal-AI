@@ -133,13 +133,29 @@ It is merged into `gemma` together with the other follow-ups (step 2 below). Pus
 ### Now (CPU only)
 
 - **A. Team-check code:** done (section 3); it is merged with the follow-ups.
-- **B. When the cloud results arrive:**
-  1. Copy `results/` into the repo, following the mapping in the bundle's README.
-  2. Run the repeat flag on the class-8 Opus text (section 5) and check the flagged pages against the scans.
-  3. Re-grade the flagged questions copy by copy with Opus (`claude -p` on this PC).
-  4. Build the list for the team.
+- **B. Cloud results (Opus in claude.ai/code).**
+  - **What the cloud did:**
+    - transcribed class 8;
+    - graded classes 6/7/8/10 with the code unchanged, so a question answered twice got one mark for both copies read together;
+    - a follow-up task grades each copy of those questions separately. Struck words are ignored as usual, and a copy that is entirely `[struck]` gets an empty mark with the note "fully struck".
+  - **Its output:** `results/answered_twice.csv` (one row per copy: mark, original_mark, verdict, note) and `results/answered_twice_summary.md` (each script's total as a range).
+  - **The user copies the whole cloud repo folder,** with its README and grading instructions, to `/mnt/models/script_checking/opus_cloud_results/`. The user is not reachable after that.
+  - **Then, on the PC (CPU only):**
+    1. Read the folder's README, and copy `results/` into the repo following its mapping. Don't overwrite anything in `data_without_pipeline/` or `data/ground_truth/`; new folders only.
+    2. Run the repeat flag on the class-8 Opus text (section 5). Compare it with the cloud's `answered_twice.csv`, and check each class-8 case on the scan pages (`data/raw_pdfs/english/SE_08_Q1/`): a real repeat, or a misread question number?
+    3. Build the team list, one row per question: the pages and mark of each copy, and an empty `chosen_copy` column. Use the same columns as `scripts/team_check.py` (on `review-followups`), and save it under `outputs/team_check/`. The team decides which copy counts; Claude doesn't.
+    4. Compare the Opus grades with the teacher (objective questions, the reference there) and with the grades on the pipeline text and the Gemini text. Leave class-10 test scripts 0029–0033 out.
+    5. Write the results into this file or a new `docs/` file, and commit locally (no Claude trailers, no push).
+  - **The PC does no `claude -p` re-grading:** the cloud does it.
 - **C. Step 3a, hand-check about 10 Opus pages per class (you).** Pick pages with crossed-out words, and pages where the Gemini text and the pipeline text disagree. This also shows whether Opus and Gemini tidy the same mistakes (section 2b).
-- **D. Segmenter fix (step 6):** the evidence from section 2c is ready. The design and the diff come to you first.
+- **D. Segmenter fix (step 6): draft it in a scratch copy, don't commit** (the user agreed, 2026-10-25).
+  - **What it covers** (section 2c):
+    - unwrap markup in header lines;
+    - find headers in the middle of a line;
+    - let the content of an answer decide its question when the header is missing, out of order or misread.
+  - **Measure it** with `audit_opus.py` (section 5) on the Opus, Gemini and pipeline texts, and check that no other question changes (like `tc_same_text.py --compare`).
+  - **The diff and the numbers go into `docs/` for the user's OK,** with no per-word lists or hand-set thresholds (the user's rule).
+- **While the user is away:** no push, no merge into `gemma`, no GPU work, and never touch other people's processes.
 - **E. Expert marks for writing (step 5):** Claude can prepare the sample and the marking sheet once question 5 in section 6 is answered.
 
 ### When the GPU is back (you tell Claude)
