@@ -898,7 +898,7 @@
 +          ", ".join(f"{s} {e:.4f}" for s, e in model.eps.items()) + f"; written to {MODEL_PATH.relative_to(ROOT)}")
 --- a/scripts/train_header_model.py
 +++ b/scripts/train_header_model.py
-@@ -0,0 +1,116 @@
+@@ -0,0 +1,123 @@
 +"""
 +Train the learned header reader (src/pipeline/header_model.py) on the dev-split transcripts.
 +
@@ -906,7 +906,8 @@
 +segmenter's header grammar: a line the grammar reads as a header for that number is a header (a header after answer
 +text on the same line gives a text piece and a header piece), any other line is answer text, and a line the grammar
 +reads as a header for another number is left out. The question being answered when a page starts is the one the
-+segmenter's reading-order pass (without the learned reader) files the end of the previous page under. The texts are the Opus transcripts, the pipeline transcripts and the
++segmenter's reading-order pass (without the learned reader and the content model) files the end of the previous
++page under. The texts are the Opus transcripts, the pipeline transcripts and the
 +Gemini transcripts of classes 6, 7, 8 and 10. Test-split scripts (configs/splits/eval_split.csv) and the class-10
 +transcription test scripts 0029-0033 are never used.
 +
@@ -929,7 +930,8 @@
 +    QuestionContext, _assign_sections, _base_q, _explicit_header_of_line, _paper_catalog, _reads_as_header,
 +    normalize_header_text,
 +)
-+from src.pipeline.header_model import MODEL_PATH, HeaderModel, place, question_numbers, set_model
++from src.pipeline import content_model, header_model
++from src.pipeline.header_model import MODEL_PATH, HeaderModel, place, question_numbers
 +from src.utils.question_utils import load_question_for_script
 +
 +PAPERS = ["SE_06_Q1", "SE_07_Q1", "SE_08_Q1", "SE_10_Q1"]
@@ -994,17 +996,22 @@
 +    """Examples per script of the split, all three texts together."""
 +    splits = {r["script_id"]: r["split"] for r in csv.DictReader(open(ROOT / "configs/splits/eval_split.csv"))}
 +    per_script: Dict[str, List[dict]] = {}
-+    set_model(None)
-+    for paper in PAPERS:
-+        q_obj = load_question_for_script(paper, lang="english")
-+        order, _, _ = _paper_catalog(q_obj)
-+        ctx = QuestionContext(q_obj, order)
-+        for _src, sid, ext in texts_of_paper(paper):
-+            if sid in SKIP or splits.get(sid) != split:
-+                continue
-+            texts = page_texts(ext)
-+            for text, previous in zip(texts, answered_at_page_start(texts, ctx)):
-+                per_script.setdefault(sid, []).extend(line_examples(text, order, previous)[0])
++    header_model.set_model(None)
++    content_model.set_model(None)
++    try:
++        for paper in PAPERS:
++            q_obj = load_question_for_script(paper, lang="english")
++            order, _, _ = _paper_catalog(q_obj)
++            ctx = QuestionContext(q_obj, order)
++            for _src, sid, ext in texts_of_paper(paper):
++                if sid in SKIP or splits.get(sid) != split:
++                    continue
++                texts = page_texts(ext)
++                for text, previous in zip(texts, answered_at_page_start(texts, ctx)):
++                    per_script.setdefault(sid, []).extend(line_examples(text, order, previous)[0])
++    finally:
++        # the stored models are read again when they are next asked for
++        header_model._MODEL_LOADED = content_model._MODEL_LOADED = False
 +    return per_script
 +
 +

@@ -1,8 +1,10 @@
-# Segmenter fix (step 6), draft for your OK (2026-10-25)
+# Segmenter fix (step 6), 2026-10-25
 
-This is step D of `docs/NEXT_STEPS_2026-10-25.md`, section 4. **It is a draft: no code in `src/` or `scripts/` has
-changed on any branch.** The code is in a scratch copy, and the whole diff is in
-`docs/SEGMENTER_DRAFT_2026-10-25.patch`. It is applied only after you say yes (section 9).
+This is step D of `docs/NEXT_STEPS_2026-10-25.md`, section 4.
+
+**Approved on 2026-10-25** (section 10). **Committed on `review-followups` as `063655b`**, with the two model files.
+It is not on `gemma` yet: it comes in with the merge of `review-followups`, after the GPU runner (section 9). The
+whole diff is also in `docs/SEGMENTER_DRAFT_2026-10-25.patch`.
 
 The segmenter splits a script's text into questions: it decides which question each piece of text answers. When it
 gets this wrong, a teacher-marked answer gets no text (and scores 0), or text is graded under the wrong question.
@@ -43,7 +45,7 @@ The draft adds three things. The two learned models are trained on the dev scrip
 
 | What | Where |
 |---|---|
-| The diff (against `review-followups` at `1fbd7c9`; it applies cleanly there) | `docs/SEGMENTER_DRAFT_2026-10-25.patch` (865 lines added, 17 removed) |
+| The diff (against `review-followups` at `1fbd7c9`; the same code as commit `063655b`, without the model files) | `docs/SEGMENTER_DRAFT_2026-10-25.patch` (872 lines added, 17 removed) |
 | Scratch copy with the draft | `outputs/review_2026_10/segfix_draft/draft/` (git-ignored) |
 | Scratch copy of the code before the draft (`review-followups` `1fbd7c9`) | `outputs/review_2026_10/segfix_draft/base/` |
 | The trained models (not in the patch; the trainers rebuild them) | `draft/configs/segmenter/header_model.json` (184 KB), `content_model.json` (238 KB) |
@@ -100,14 +102,14 @@ on its own line, so mid-line headers are split.
 |---|---|
 | bias | +0.31 |
 | shape score (per nat) | +0.016 |
-| number = first question | +1.43 |
+| number = first question | +1.44 |
 | number = the question being answered | +0.06 |
-| number = the next question | +0.59 |
-| number = a question further on | −0.45 |
-| number = an earlier question | −1.32 |
-| line starts the page | +0.41 |
+| number = the next question | +0.60 |
+| number = a question further on | −0.49 |
+| number = an earlier question | −1.31 |
+| line starts the page | +0.40 |
 | line follows a blank line | +0.37 |
-| line follows text | −0.47 |
+| line follows text | −0.46 |
 | header after text on the same line | −4.55 |
 
 **Two rules around it.** These are structural, not thresholds:
@@ -318,7 +320,7 @@ The full list of changed questions is in `runs/d3_vs_base.txt`.
 | SE_08_Q1_0029 | Gemini, Opus, pipe | test | The woodcutter story on p2–4 stays Q11 (was Q7, summary). Opus and pipe also: "(d) Ans: Hygiene is…" stays Q2 (was moved into Q1; teacher Q1 0). | ✓ |
 | SE_07_Q1_0022 | Gemini, Opus, pipe | dev | "(c) Ans: Mr Joynul Ali is a carpenter…" stays Q2 (was moved into Q1; Q1 has no teacher mark). | ✓ |
 
-**Still wrong in D3:**
+**Still wrong in D3** (left as they are; your decision, 2026-10-25):
 - **Pipe SE_06_Q1_0016 p8:** the rickshaw-puller paragraph (it belongs to Q12) moves from Q8 to Q9. It was wrong
   before too.
 - **The two ~ cases above.**
@@ -394,7 +396,8 @@ its own header. Run over all texts and all four classes (`seg_repeats.py`):
 - One of the three cases that led to the last change (pipeline SE_10_Q1_0011) is a test script; the other two are
   dev.
 - No grades of the test split have been computed, so the grading test of step 7 is still unseen.
-- In the thesis, the segmentation numbers of the test split should be reported as "looked at during development".
+- **Decided (2026-10-25):** in the thesis, the segmentation numbers of the test split are reported as "looked at
+  during development".
 
 ---
 
@@ -434,30 +437,40 @@ For the base run, run the same `seg_measure.py run ../runs/base.json` from `../b
 
 ---
 
-## 9. How to apply it, after your OK
+## 9. How it gets into `gemma`
 
-The fix belongs after step 1 (class 8 is read with the old code, like classes 6 and 7) and after `review-followups`
-is merged into `gemma` (step 2). Then:
+**Done:** committed on `review-followups` as `063655b`.
+- On that branch, with the data folders linked in, all 366 tests pass (the branch's own folder has no data, so 4
+  tests that read it fail there with or without the fix).
+- One fix was made while committing: the header trainer now switches the content model off while it builds its
+  examples, as the content trainer already did. Before, a stored content model changed the header model's training
+  data, so the result depended on which model was trained first. The measured numbers don't change (0 questions
+  differ); the stored header model's weights moved in the second decimal (section 3).
+
+**Still to do, after the GPU runner (step 1) and the merge of `review-followups` into `gemma` (step 2):**
 
 ```bash
-git show gemma:docs/SEGMENTER_DRAFT_2026-10-25.patch | git apply
-./script_checking/bin/python scripts/train_header_model.py     # with the class-8 pipeline text in by then
+./script_checking/bin/python scripts/train_header_model.py     # the class-8 pipeline text is in by then
 ./script_checking/bin/python scripts/train_content_model.py
 ./script_checking/bin/python -m pytest -q
 ```
 
-1. Commit the code and the two model files, `configs/segmenter/*.json` (422 KB together), which the segmenter needs.
+1. Commit the two retrained model files, `configs/segmenter/*.json`.
 2. Measure again (section 8), because class 8 then has more pipeline text.
-3. Re-grade only the questions that changed (section 4c, and `seg_measure.py compare` for the new list).
+3. Re-grade the questions whose splitting changed in grades made before the fix: classes 6 and 7, and class 8 from
+   step 1 (section 4c; `seg_measure.py compare` gives the new list).
 4. The cloud's Opus grades were made with the old splitting too: 33 Opus script texts change. For a fair Opus vs
    teacher comparison, those questions need grading again.
 
+Grading done after the merge (`run_followups.sh`, the answered-twice re-grades, step 4) already uses the new splitting.
+
 ---
 
-## 10. Questions for you
+## 10. Your answers (2026-10-25)
 
-1. **May Claude apply the patch** at step 6, as in section 9, and commit it with the two model files?
-2. **The three known wrong cases** (section 5): leave them, or should circled-number headers and the "second copy
-   under a readable header" case get a follow-up? Both would need a labelled example set, because the current header
-   patterns, which give the training labels, can't read them.
-3. **Test split:** fine to report the test-split segmentation numbers as "looked at during development" (section 7)?
+1. **Apply the patch and commit it with the two model files:** yes. Done on `review-followups` (`063655b`).
+2. **The three known wrong cases** (section 5): leave them. A follow-up on circled-number headers and on the "second
+   copy under a readable header" case would need a hand-labelled example set, because the current header patterns,
+   which give the training labels, can't read them.
+3. **Test split:** yes, the test-split segmentation numbers are reported as "looked at during development"
+   (section 7).
