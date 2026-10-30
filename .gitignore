@@ -23,6 +23,7 @@ share/python-wheels/
 MANIFEST
 outputs/
 data_without_pipeline/
+data/
 
 # PyInstaller / Py2app
 *.manifest
